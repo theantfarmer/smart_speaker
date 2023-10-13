@@ -1,0 +1,33 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "changed_states": "La disponibilit\u00e0 dell'aggiornamento di {entity_name} \u00e8 cambiata",
+            "turned_off": "{entity_name} \u00e8 stato aggiornato",
+            "turned_on": "{entity_name} ha un aggiornamento disponibile"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Aggiornamento"
+        },
+        "firmware": {
+            "name": "Firmware"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La piattaforma {platform} per l'integrazione {domain} non supporta l'impostazione della piattaforma. \n\nRimuovilo dalla configurazione e riavvia Home Assistant per risolvere questo problema.",
+            "title": "Supporto della piattaforma non supportato"
+        }
+    },
+    "services": {
+        "install": {
+            "fields": {
+                "backup": {
+                    "name": "Backup"
+                }
+            }
+        }
+    },
+    "title": "Aggiornamento"
+}

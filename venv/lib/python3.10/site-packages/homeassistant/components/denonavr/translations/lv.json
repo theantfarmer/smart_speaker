@@ -1,0 +1,16 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "use_telnet": "Izmantojiet Telnet savienojumu"
+                }
+            }
+        }
+    }
+}

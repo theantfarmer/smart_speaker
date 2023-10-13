@@ -1,0 +1,11 @@
+{
+    "services": {
+        "set_system_mode": {
+            "fields": {
+                "mode": {
+                    "name": "\u6a21\u5f0f"
+                }
+            }
+        }
+    }
+}

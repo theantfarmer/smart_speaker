@@ -1,0 +1,80 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "not_supported": "Csak a PrusaLink API v2 t\u00e1mogatott",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API kulcs",
+                    "host": "C\u00edm"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "cancel_job": {
+                "name": "Feladat megszak\u00edt\u00e1sa"
+            },
+            "pause_job": {
+                "name": "Feladat sz\u00fcneteltet\u00e9se"
+            },
+            "resume_job": {
+                "name": "Feladat folytat\u00e1sa"
+            }
+        },
+        "camera": {
+            "job_preview": {
+                "name": "El\u0151n\u00e9zet"
+            }
+        },
+        "sensor": {
+            "filename": {
+                "name": "F\u00e1jln\u00e9v"
+            },
+            "heatbed_target_temperature": {
+                "name": "F\u0171t\u0151\u00e1gy c\u00e9lh\u0151m\u00e9rs\u00e9klet"
+            },
+            "heatbed_temperature": {
+                "name": "A f\u0171t\u0151\u00e1gy h\u0151m\u00e9rs\u00e9klete"
+            },
+            "material": {
+                "name": "Anyag"
+            },
+            "nozzle_target_temperature": {
+                "name": "F\u00fav\u00f3ka c\u00e9lh\u0151m\u00e9rs\u00e9klet"
+            },
+            "nozzle_temperature": {
+                "name": "F\u00fav\u00f3ka h\u0151m\u00e9rs\u00e9klete"
+            },
+            "print_finish": {
+                "name": "Nyomtat\u00e1s befejez\u00e9se"
+            },
+            "print_speed": {
+                "name": "Nyomtat\u00e1si sebess\u00e9g"
+            },
+            "print_start": {
+                "name": "Nyomtat\u00e1s ind\u00edt\u00e1sa"
+            },
+            "printer_state": {
+                "state": {
+                    "cancelling": "\u00c9rv\u00e9nytelen\u00edt\u00e9sben",
+                    "idle": "T\u00e9tlen",
+                    "paused": "Sz\u00fcneteltetve",
+                    "pausing": "Sz\u00fcneteltet\u00e9sben",
+                    "printing": "Nyomtat\u00e1sban"
+                }
+            },
+            "progress": {
+                "name": "Folyamat"
+            },
+            "z_height": {
+                "name": "Z-magass\u00e1g"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "state": {
+        "yamaha_musiccast__zone_sleep": {
+            "off": "Izklopljeno"
+        },
+        "yamaha_musiccast__zone_surr_decoder_type": {
+            "toggle": "Preklopi"
+        }
+    }
+}

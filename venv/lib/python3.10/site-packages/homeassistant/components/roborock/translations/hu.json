@@ -1,0 +1,149 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "invalid_code": "A megadott k\u00f3d helytelen volt, k\u00e9rem, ellen\u0151rizze, \u00e9s pr\u00f3b\u00e1lja \u00fajra.",
+            "invalid_email": "Az \u00d6n \u00e1ltal megadott e-mail c\u00edmhez nem tartozik fi\u00f3k, k\u00e9rem, pr\u00f3b\u00e1lja meg \u00fajra.",
+            "invalid_email_format": "Az e-mail form\u00e1z\u00e1s\u00e1val probl\u00e9ma van - k\u00e9rem, pr\u00f3b\u00e1lja meg \u00fajra.",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt",
+            "unknown_roborock": "Ismeretlen roborock kiv\u00e9tel t\u00f6rt\u00e9nt - k\u00e9rem, ellen\u0151rizze a napl\u00f3it.",
+            "unknown_url": "Hiba t\u00f6rt\u00e9nt a roborock-fi\u00f3kja helyes URL-j\u00e9nek meghat\u00e1roz\u00e1sakor \u2013 k\u00e9rem, ellen\u0151rizze napl\u00f3it."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Ellen\u0151rz\u0151 k\u00f3d"
+                },
+                "description": "\u00cdrja be az e-mail c\u00edm\u00e9re k\u00fcld\u00f6tt ellen\u0151rz\u0151 k\u00f3dot"
+            },
+            "user": {
+                "data": {
+                    "username": "E-mail"
+                },
+                "description": "Adja meg a Roborock e-mail c\u00edm\u00e9t."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Mop intenzit\u00e1s",
+                "state": {
+                    "custom": "Egy\u00e9ni",
+                    "high": "Magas",
+                    "intense": "Intenz\u00edv",
+                    "low": "Alacsony",
+                    "medium": "K\u00f6zepes",
+                    "mild": "Enyhe",
+                    "moderate": "M\u00e9rs\u00e9kelt",
+                    "off": "Ki"
+                }
+            },
+            "mop_mode": {
+                "name": "Mop m\u00f3d",
+                "state": {
+                    "custom": "Egy\u00e9ni",
+                    "deep": "M\u00e9ly",
+                    "deep_plus": "M\u00e9ly+",
+                    "fast": "Gyors",
+                    "standard": "Standard"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "Takar\u00edt\u00e1si ter\u00fclet"
+            },
+            "cleaning_time": {
+                "name": "Takar\u00edt\u00e1si id\u0151"
+            },
+            "filter_time_left": {
+                "name": "H\u00e1tral\u00e9v\u0151 sz\u0171r\u0151 id\u0151"
+            },
+            "main_brush_time_left": {
+                "name": "H\u00e1tral\u00e9v\u0151 f\u0151kefe id\u0151"
+            },
+            "sensor_time_left": {
+                "name": "H\u00e1tral\u00e9v\u0151 \u00e9rz\u00e9kel\u0151 id\u0151"
+            },
+            "side_brush_time_left": {
+                "name": "H\u00e1tral\u00e9v\u0151 oldalkefe id\u0151"
+            },
+            "status": {
+                "name": "\u00c1llapot",
+                "state": {
+                    "charger_disconnected": "A t\u00f6lt\u0151 lev\u00e1lasztva",
+                    "charging": "T\u00f6lt\u0151dik",
+                    "charging_complete": "T\u00f6lt\u00e9s befejezve",
+                    "charging_problem": "T\u00f6lt\u00e9si probl\u00e9ma",
+                    "cleaning": "Takar\u00edt\u00e1s",
+                    "device_offline": "Eszk\u00f6z offline",
+                    "docking": "Dokkol\u00e1s",
+                    "emptying_the_bin": "Tart\u00e1ly \u00fcr\u00edt\u00e9se",
+                    "error": "Hiba",
+                    "going_to_target": "C\u00e9lir\u00e1nyba",
+                    "going_to_wash_the_mop": "Felmos\u00f3 tiszt\u00edt\u00e1sa fel\u00e9",
+                    "idle": "T\u00e9tlen",
+                    "manual_mode": "K\u00e9zi \u00fczemm\u00f3d",
+                    "paused": "Sz\u00fcneteltetve",
+                    "remote_control_active": "T\u00e1vir\u00e1ny\u00edt\u00f3 akt\u00edv",
+                    "returning_home": "Hazat\u00e9r\u00e9s",
+                    "segment_cleaning": "Szegmens tiszt\u00edt\u00e1s",
+                    "shutting_down": "Le\u00e1ll\u00edt\u00e1s",
+                    "spot_cleaning": "Folt tiszt\u00edt\u00e1s",
+                    "starting": "Indul\u00e1s",
+                    "updating": "Friss\u00edt\u00e9s",
+                    "washing_the_mop": "Felmos\u00f3 tiszt\u00edt\u00e1sa",
+                    "zoned_cleaning": "Z\u00f3n\u00e1s tiszt\u00edt\u00e1s"
+                }
+            },
+            "total_cleaning_area": {
+                "name": "Teljes takar\u00edt\u00e1si ter\u00fclet"
+            },
+            "total_cleaning_time": {
+                "name": "Teljes takar\u00edt\u00e1si id\u0151"
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Gyerekz\u00e1r"
+            },
+            "dnd_switch": {
+                "name": "Ne zavarj"
+            },
+            "status_indicator": {
+                "name": "\u00c1llapotjelz\u0151 f\u00e9ny"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Automatikus",
+                            "balanced": "Kiegyens\u00falyozott",
+                            "custom": "Egy\u00e9ni",
+                            "gentle": "Gyeng\u00e9d",
+                            "max": "Maximum",
+                            "max_plus": "Max plusz",
+                            "medium": "K\u00f6zepes",
+                            "off": "Ki",
+                            "quiet": "Halk",
+                            "silent": "Csendes",
+                            "standard": "Standard",
+                            "turbo": "Turb\u00f3"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_deprecation_start_pause": {
+            "description": "A vacuum.start_pause szolg\u00e1ltat\u00e1s Roborock t\u00e1mogat\u00e1sa \u00e1ltal elavult, \u00e9s a Home Assistant 2024.2-ben megsz\u0171nik; K\u00e9rj\u00fck, m\u00f3dos\u00edtsa a szolg\u00e1ltat\u00e1st haszn\u00e1l\u00f3 automatiz\u00e1l\u00e1st vagy szkriptet \u00fagy, hogy ehelyett a vacuum.pause vagy a vacuum.start h\u00edvja meg, \u00e9s v\u00e1lassza az al\u00e1bbi elk\u00fcld\u00e9s lehet\u0151s\u00e9get a probl\u00e9ma megoldottk\u00e9nt val\u00f3 megjel\u00f6l\u00e9s\u00e9hez.",
+            "title": "A Roborock vacuum.start_pause elt\u00e1vol\u00edt\u00e1sa folyamatban van"
+        }
+    }
+}

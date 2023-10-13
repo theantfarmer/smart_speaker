@@ -1,0 +1,100 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f"
+        },
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_access_token": "Ge\u00e7ersiz eri\u015fim anahtar\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "unknown": "Beklenmeyen hata"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "\u0130ki ad\u0131ml\u0131 kimlik do\u011frulama kodu"
+                },
+                "description": "E-posta veya SMS yoluyla g\u00f6nderilen PIN'i girin",
+                "title": "\u0130ki fakt\u00f6rl\u00fc kimlik do\u011frulama"
+            },
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131"
+                },
+                "title": "Blink hesab\u0131yla oturum a\u00e7\u0131n"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "camera_armed": {
+                "name": "Kamera haz\u0131r"
+            }
+        },
+        "sensor": {
+            "wifi_rssi": {
+                "name": "Wi-Fi RSSI's\u0131"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "simple_options": {
+                "data": {
+                    "scan_interval": "Tarama Aral\u0131\u011f\u0131 (saniye)"
+                },
+                "description": "Blink entegrasyonunu yap\u0131land\u0131r\u0131n",
+                "title": "Blink Se\u00e7enekleri"
+            }
+        }
+    },
+    "services": {
+        "blink_update": {
+            "description": "Yenilemeye zorlar.",
+            "name": "G\u00fcncelle"
+        },
+        "save_recent_clips": {
+            "description": "T\u00fcm son video klipleri \" %Y% m %d_% H %M% S_ {name} .mp4\" dosya modeliyle yerel dizine kaydeder.",
+            "fields": {
+                "file_path": {
+                    "description": "Yaz\u0131labilir yolun dizin ad\u0131 (dizinin yap\u0131land\u0131rmada allowlist_external_dirs'e dahil edilmesi gerekebilir).",
+                    "name": "\u00c7\u0131k\u0131\u015f dizini"
+                },
+                "name": {
+                    "description": "Son kliplerin \u00e7ekilece\u011fi kameran\u0131n ad\u0131.",
+                    "name": "Ad"
+                }
+            },
+            "name": "Son klipleri kaydet"
+        },
+        "save_video": {
+            "description": "Son kaydedilen video klibi yerel dosyaya kaydeder.",
+            "fields": {
+                "filename": {
+                    "description": "Yaz\u0131labilir yola dosya ad\u0131 (dizinin yap\u0131land\u0131rmada allowlist_external_dirs'e dahil edilmesi gerekebilir).",
+                    "name": "Dosya ad\u0131"
+                },
+                "name": {
+                    "description": "Video \u00e7ekilecek kameran\u0131n ad\u0131.",
+                    "name": "Ad"
+                }
+            },
+            "name": "Videoyu kaydet"
+        },
+        "send_pin": {
+            "description": "2FA i\u00e7in yan\u0131p s\u00f6nmesi i\u00e7in yeni bir PIN g\u00f6nderir.",
+            "fields": {
+                "pin": {
+                    "description": "Blink'ten PIN al\u0131nd\u0131. Yaln\u0131zca bir do\u011frulama e-postas\u0131 ald\u0131ysan\u0131z bo\u015f b\u0131rak\u0131n.",
+                    "name": "Pin"
+                }
+            },
+            "name": "Pin g\u00f6nder"
+        },
+        "trigger_camera": {
+            "description": "Kameradan yeni g\u00f6r\u00fcnt\u00fc \u00e7ekmesini ister.",
+            "name": "Tetikleyici kamera"
+        }
+    }
+}

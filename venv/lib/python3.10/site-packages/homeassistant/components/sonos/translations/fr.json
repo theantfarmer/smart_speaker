@@ -1,0 +1,78 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "Aucun appareil trouv\u00e9 sur le r\u00e9seau",
+            "not_sonos_device": "L'appareil d\u00e9couvert n'est pas un appareil Sonos",
+            "single_instance_allowed": "D\u00e9j\u00e0 configur\u00e9. Une seule configuration possible."
+        },
+        "step": {
+            "confirm": {
+                "description": "Voulez-vous configurer Sonos\u00a0?"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "microphone": {
+                "name": "Microphone"
+            }
+        },
+        "number": {
+            "audio_delay": {
+                "name": "D\u00e9lai audio"
+            },
+            "balance": {
+                "name": "Balance"
+            },
+            "bass": {
+                "name": "Basses"
+            },
+            "music_surround_level": {
+                "name": "Volume son surround"
+            },
+            "sub_gain": {
+                "name": "Gain caisson de basses"
+            },
+            "surround_level": {
+                "name": "Volume son surround"
+            },
+            "treble": {
+                "name": "Aig\u00fces"
+            }
+        },
+        "sensor": {
+            "audio_input_format": {
+                "name": "Format d'entr\u00e9e audio"
+            }
+        },
+        "switch": {
+            "buttons_enabled": {
+                "name": "Contr\u00f4les tactiles"
+            },
+            "cross_fade": {
+                "name": "Crossfade"
+            },
+            "dialog_level": {
+                "name": "Am\u00e9lioration des dialogues"
+            },
+            "loudness": {
+                "name": "Loudness"
+            },
+            "night_mode": {
+                "name": "Son mode nuit"
+            },
+            "status_light": {
+                "name": "Lumi\u00e8re d'\u00e9tat"
+            },
+            "sub_enabled": {
+                "name": "Caisson de basses activ\u00e9"
+            },
+            "surround_enabled": {
+                "name": "Son surround activ\u00e9"
+            },
+            "surround_mode": {
+                "name": "Son surround plein volume"
+            }
+        }
+    }
+}

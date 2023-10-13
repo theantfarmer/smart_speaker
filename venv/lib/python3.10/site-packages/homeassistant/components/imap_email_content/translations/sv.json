@@ -1,0 +1,17 @@
+{
+    "issues": {
+        "migration": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "title": "Din IMAP serverinst\u00e4llningar kommer att migreras"
+                    },
+                    "start": {
+                        "title": "Migrera din IMAP e-post konfiguration"
+                    }
+                }
+            },
+            "title": "Integreringen av IMAP-e-postinneh\u00e5ll beh\u00f6ver uppm\u00e4rksamhet"
+        }
+    }
+}

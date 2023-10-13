@@ -1,0 +1,59 @@
+{
+    "services": {
+        "put_paramset": {
+            "description": "Kutsub RPC XML-liideses putParamset.",
+            "fields": {
+                "address": {
+                    "description": "Homematic seadme aadress.",
+                    "name": "Aadress"
+                },
+                "interface": {
+                    "description": "Liideste nimi konfiguratsioonist."
+                }
+            }
+        },
+        "set_install_mode": {
+            "name": "M\u00e4\u00e4ra paigaldusre\u017eiim"
+        },
+        "set_variable_value": {
+            "description": "M\u00e4\u00e4rab s\u00f5lme nime.",
+            "fields": {
+                "entity_id": {
+                    "description": "Homematic Centrali nimi(ed) v\u00e4\u00e4rtuse m\u00e4\u00e4ramiseks.",
+                    "name": "Olem"
+                },
+                "name": {
+                    "description": "M\u00e4\u00e4ratava muutuja nimi.",
+                    "name": "Nimi"
+                },
+                "value": {
+                    "description": "Uus v\u00e4\u00e4rtus.",
+                    "name": "V\u00e4\u00e4rtus"
+                }
+            },
+            "name": "M\u00e4\u00e4ra muutuja v\u00e4\u00e4rtus"
+        },
+        "virtualkey": {
+            "description": "Vajutab CCU/Homegeari virtuaalset klahvi v\u00f5i simuleerib klahvivajutust.",
+            "fields": {
+                "address": {
+                    "description": "Homematicu seadme v\u00f5i BidCoS-RF aadress virtuaalse kaugjuhtimise jaoks.",
+                    "name": "Aadress"
+                },
+                "channel": {
+                    "description": "Kanal klahvivajutuse kutsumiseks.",
+                    "name": "Kanal"
+                },
+                "interface": {
+                    "description": "M\u00e4\u00e4ra liidese v\u00e4\u00e4rtus.",
+                    "name": "Liides"
+                },
+                "param": {
+                    "description": "Saadetav s\u00fcndmus, n\u00e4iteks PRESS_LONG, PRESS_SHORT.",
+                    "name": "Parameeter"
+                }
+            },
+            "name": "Virtuaalne v\u00f5ti"
+        }
+    }
+}

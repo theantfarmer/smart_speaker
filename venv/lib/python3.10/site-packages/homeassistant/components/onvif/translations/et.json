@@ -1,0 +1,72 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "already_in_progress": "Seadistamine on juba k\u00e4imas",
+            "no_devices_found": "V\u00f5rgust ei leitud \u00fchtegi seadet",
+            "no_h264": "H264 vooge pole saadaval. Kontrollie oma seadme profiili seadeid.",
+            "no_mac": "ONVIF-seadme unikaalset ID-d ei \u00f5nnestunud konfigureerida.",
+            "onvif_error": "T\u00f5rge ONVIF-seadme seadistamisel.  Lisateabe saamiseks kontrolli logisid.",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus"
+        },
+        "error": {
+            "auth_failed": "Tuvastamine urjus: {error}",
+            "cannot_connect": "\u00dchendamine nurjus",
+            "no_onvif_service": "ONVIF-teenust ei leitud. Kontrolli kas pordi number on \u00f5ige.",
+            "onvif_error": "Viga ONVIF kaamera seadistamisel: {error}. Lisateabe saamiseks vaata logisid."
+        },
+        "step": {
+            "configure": {
+                "data": {
+                    "host": "Host",
+                    "name": "Nimi",
+                    "password": "Salas\u00f5na",
+                    "port": "Port",
+                    "username": "Kasutajanimi"
+                },
+                "title": "Seadista ONVIF-seade"
+            },
+            "configure_profile": {
+                "data": {
+                    "include": "Loo kaamera olem"
+                },
+                "description": "Kas loon {profile} jaoks kaamera olem eraldusv\u00f5imega {resolution}?",
+                "title": "Profiilide seadistamine"
+            },
+            "device": {
+                "data": {
+                    "host": "Vali avastatud ONVIF seade"
+                },
+                "title": "Vali ONVIF-seade"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "description": "M\u00f5ned seadmed keelduvad autentimisest kui aeg on s\u00fcnkroonist v\u00e4ljas rohkem kui 5 sekundit. Kui autentimine ei \u00f5nnestu, veendu, et seadme kellaaeg on \u00f5ige, ja proovi uuesti.",
+                "title": "Taastuvasta ONVIF kaamera"
+            },
+            "user": {
+                "data": {
+                    "auto": "Otsi automaatselt"
+                },
+                "description": "Kl\u00f5psates nuppu Esita, otsime  v\u00f5rgust ONVIF-seadmeid, mis toetavad Profile S'i.\n\n M\u00f5ned tootjad on ONVIF-i vaikimisi keelanud. Veendu, et ONVIF on kaamera seadistustes lubatud.",
+                "title": "ONVIF-seadme seadistamine"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "onvif_devices": {
+                "data": {
+                    "enable_webhooks": "Luba veebihaagid",
+                    "extra_arguments": "T\u00e4iendavad FFMPEG argumendid",
+                    "rtsp_transport": "RTSP edastusviis",
+                    "use_wallclock_as_timestamps": "Seinakella kasutamine ajatemplitena"
+                },
+                "title": "ONVIF-seadme suvandid"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Bildbehandling",
+            "state_attributes": {
+                "faces": {
+                    "name": "Ansikten"
+                },
+                "total_faces": {
+                    "name": "Totalt antal ansikten"
+                }
+            }
+        }
+    },
+    "title": "Bildbehandling"
+}

@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant.",
+            "already_in_progress": "Konfigur\u0101cijas pl\u016bsma jau notiek",
+            "reauth_successful": "Atk\u0101rtota autentifik\u0101cija veiksm\u012bga",
+            "reauth_unsuccessful": "Atk\u0101rtota autentifik\u0101cija neizdev\u0101s. L\u016bdzu, iesl\u0113dziet televizoru un m\u0113\u0123iniet v\u0113lreiz."
+        },
+        "flow_title": "LG webOS Smart TV",
+        "step": {
+            "reauth_confirm": {
+                "description": "Televizor\u0101 noklik\u0161\u0137iniet uz Iesniegt un apstipriniet savieno\u0161anas piepras\u012bjumu. \n\n ![Image](/static/images/config_webos.png)",
+                "title": "webOS TV savieno\u0161ana p\u0101r\u012b"
+            },
+            "user": {
+                "data": {
+                    "host": "Saimniekdators",
+                    "name": "Nosaukums"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "sources": "Avotu saraksts"
+                }
+            }
+        }
+    }
+}

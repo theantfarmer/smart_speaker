@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u670d\u52a1\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86"
+        },
+        "step": {
+            "user": {
+                "description": "\u60a8\u8981\u914d\u7f6e\u8d2d\u7269\u6e05\u5355\u5417\uff1f",
+                "title": "\u8d2d\u7269\u6e05\u5355"
+            }
+        }
+    },
+    "services": {
+        "add_item": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        },
+        "complete_item": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        },
+        "incomplete_item": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        },
+        "remove_item": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        }
+    },
+    "title": "\u8d2d\u7269\u6e05\u5355"
+}

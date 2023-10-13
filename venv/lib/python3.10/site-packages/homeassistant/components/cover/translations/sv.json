@@ -1,0 +1,85 @@
+{
+    "device_automation": {
+        "action_type": {
+            "close": "St\u00e4ng {entity_name}",
+            "close_tilt": "St\u00e4ng {entity_name} lutning",
+            "open": "\u00d6ppna {entity_name}",
+            "open_tilt": "\u00d6ppna {entity_name} lutning",
+            "set_position": "S\u00e4tt {entity_name} position",
+            "set_tilt_position": "S\u00e4tt {entity_name} lutningsposition",
+            "stop": "Stoppa {entity_name}"
+        },
+        "condition_type": {
+            "is_closed": "{entity_name} \u00e4r st\u00e4ngd",
+            "is_closing": "{entity_name} st\u00e4ngs",
+            "is_open": "{entity_name} \u00e4r \u00f6ppen",
+            "is_opening": "{entity_name} \u00f6ppnas",
+            "is_position": "Nuvarande position f\u00f6r {entity_name} \u00e4r",
+            "is_tilt_position": "Nuvarande {entity_name} lutningsposition \u00e4r"
+        },
+        "trigger_type": {
+            "closed": "{entity_name} st\u00e4ngd",
+            "closing": "{entity_name} st\u00e4nger",
+            "opened": "{entity_name} \u00f6ppnades",
+            "opening": "{entity_name} \u00f6ppnas",
+            "position": "{entity_name} position \u00e4ndras",
+            "tilt_position": "{entity_name} lutningsposition \u00e4ndras"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Skydd",
+            "state": {
+                "closed": "St\u00e4ngd",
+                "closing": "St\u00e4nger",
+                "open": "\u00d6ppen",
+                "opening": "\u00d6ppnar",
+                "stopped": "Stoppad"
+            },
+            "state_attributes": {
+                "current_position": {
+                    "name": "Position"
+                },
+                "current_tilt_position": {
+                    "name": "Lutningsposition"
+                }
+            }
+        },
+        "awning": {
+            "name": "Markis"
+        },
+        "blind": {
+            "name": "Persienn"
+        },
+        "curtain": {
+            "name": "Gardin"
+        },
+        "damper": {
+            "name": "Spj\u00e4ll"
+        },
+        "door": {
+            "name": "D\u00f6rr"
+        },
+        "garage": {
+            "name": "Garage"
+        },
+        "gate": {
+            "name": "Port"
+        },
+        "shade": {
+            "name": "Rullgardin"
+        },
+        "shutter": {
+            "name": "F\u00f6nsterlucka"
+        },
+        "window": {
+            "name": "F\u00f6nster"
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "V\u00e4xla"
+        }
+    },
+    "title": "Skydd"
+}

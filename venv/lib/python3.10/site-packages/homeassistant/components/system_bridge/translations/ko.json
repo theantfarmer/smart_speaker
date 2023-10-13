@@ -1,0 +1,89 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\uae30\uae30\uac00 \uc774\ubbf8 \uad6c\uc131\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "reauth_successful": "\uc7ac\uc778\uc99d\uc5d0 \uc131\uacf5\ud588\uc2b5\ub2c8\ub2e4",
+            "unknown": "\uc608\uc0c1\uce58 \ubabb\ud55c \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4"
+        },
+        "error": {
+            "cannot_connect": "\uc5f0\uacb0\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4",
+            "invalid_auth": "\uc778\uc99d\uc774 \uc798\ubabb\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "unknown": "\uc608\uc0c1\uce58 \ubabb\ud55c \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "authenticate": {
+                "data": {
+                    "api_key": "API \ud0a4"
+                },
+                "description": "{name} \uc5d0 \ub300\ud55c \uad6c\uc131\uc5d0\uc11c \uc124\uc815\ud55c API \ud0a4\ub97c \uc785\ub825\ud558\uc2ed\uc2dc\uc624."
+            },
+            "user": {
+                "data": {
+                    "api_key": "API \ud0a4",
+                    "host": "\ud638\uc2a4\ud2b8",
+                    "port": "\ud3ec\ud2b8"
+                },
+                "description": "\uc5f0\uacb0 \uc138\ubd80 \uc815\ubcf4\ub97c \uc785\ub825\ud558\uc138\uc694."
+            }
+        }
+    },
+    "services": {
+        "open_path": {
+            "description": "\uae30\ubcf8 \uc751\uc6a9 \ud504\ub85c\uadf8\ub7a8\uc744 \uc0ac\uc6a9\ud558\uc5ec \uc11c\ubc84\uc5d0\uc11c \ud30c\uc77c \uc5f4\uae30",
+            "fields": {
+                "bridge": {
+                    "description": "\ud1b5\uc2e0\ud560 \uc11c\ubc84",
+                    "name": "\ube0c\ub9ac\uc9c0"
+                },
+                "path": {
+                    "description": "\uc5f4 \uacbd\ub85c",
+                    "name": "\uacbd\ub85c"
+                }
+            },
+            "name": "\uacbd\ub85c \uc5f4\uae30"
+        },
+        "open_url": {
+            "description": "\uae30\ubcf8 \uc751\uc6a9 \ud504\ub85c\uadf8\ub7a8\uc744 \uc0ac\uc6a9\ud558\uc5ec \uc11c\ubc84\uc5d0\uc11c URL \uc5f4\uae30",
+            "fields": {
+                "bridge": {
+                    "description": "\ud1b5\uc2e0\ud560 \uc11c\ubc84",
+                    "name": "\ube0c\ub9ac\uc9c0"
+                },
+                "url": {
+                    "description": "\uc5f4 URL",
+                    "name": "URL \uc8fc\uc18c"
+                }
+            },
+            "name": "URL \uc5f4\uae30"
+        },
+        "send_keypress": {
+            "description": "\ud0a4\ubcf4\ub4dc \ud0a4 \ub204\ub974\uae30 \ubcf4\ub0b4\uae30",
+            "fields": {
+                "bridge": {
+                    "description": "\uba85\ub839\uc744 \ubcf4\ub0bc \uc11c\ubc84",
+                    "name": "\ube0c\ub9ac\uc9c0"
+                },
+                "key": {
+                    "description": "\ud0a4\ub97c \ub204\ub985\ub2c8\ub2e4. \ubaa9\ub85d\uc740 \uc5ec\uae30\uc5d0\uc11c \ud655\uc778\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4: http://robotjs.io/docs/syntax#keys.",
+                    "name": "\ud0a4"
+                }
+            },
+            "name": "\ud0a4\ubcf4\ub4dc \ud0a4 \ub204\ub974\uae30 \ubcf4\ub0b4\uae30"
+        },
+        "send_text": {
+            "description": "\uc11c\ubc84\uc5d0\uc11c \uc785\ub825\ud560 \ud14d\uc2a4\ud2b8 \ubcf4\ub0b4\uae30",
+            "fields": {
+                "bridge": {
+                    "description": "\uba85\ub839\uc744 \ubcf4\ub0bc \uc11c\ubc84",
+                    "name": "\ube0c\ub9ac\uc9c0"
+                },
+                "text": {
+                    "description": "\uc785\ub825\ud560 \ud14d\uc2a4\ud2b8",
+                    "name": "\ud14d\uc2a4\ud2b8"
+                }
+            },
+            "name": "\ud0a4\ubcf4\ub4dc \ud14d\uc2a4\ud2b8 \ubcf4\ub0b4\uae30"
+        }
+    }
+}

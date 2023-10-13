@@ -1,0 +1,26 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O servi\u00e7o j\u00e1 est\u00e1 configurado",
+            "reauth_successful": "Reautentica\u00e7\u00e3o bem sucedida"
+        },
+        "error": {
+            "cannot_connect": "A liga\u00e7\u00e3o falhou",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida",
+            "unknown": "Erro inesperado",
+            "zeroconf_failed": "Chave de API n\u00e3o encontrada. Por favor, introduza-a manualmente"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Re-autenticar integra\u00e7\u00e3o"
+            },
+            "user": {
+                "data": {
+                    "api_key": "Chave da API",
+                    "url": "Endere\u00e7o URL",
+                    "verify_ssl": "Verificar o certificado SSL"
+                }
+            }
+        }
+    }
+}

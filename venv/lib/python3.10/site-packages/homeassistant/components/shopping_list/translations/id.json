@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Layanan sudah dikonfigurasi"
+        },
+        "step": {
+            "user": {
+                "description": "Ingin mengonfigurasi daftar belanja?",
+                "title": "Daftar Belanja"
+            }
+        }
+    },
+    "services": {
+        "add_item": {
+            "fields": {
+                "name": {
+                    "name": "Nama"
+                }
+            }
+        },
+        "complete_item": {
+            "fields": {
+                "name": {
+                    "name": "Nama"
+                }
+            }
+        },
+        "incomplete_item": {
+            "fields": {
+                "name": {
+                    "name": "Nama"
+                }
+            }
+        },
+        "remove_item": {
+            "fields": {
+                "name": {
+                    "name": "Nama"
+                }
+            }
+        }
+    },
+    "title": "Daftar Belanja"
+}

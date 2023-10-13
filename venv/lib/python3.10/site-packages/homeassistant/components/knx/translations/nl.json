@@ -1,0 +1,293 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dienst is al geconfigureerd",
+            "single_instance_allowed": "Al geconfigureerd. Slechts \u00e9\u00e9n configuratie mogelijk."
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_individual_address": "Waarde komt niet overeen met patroon voor KNX individueel adres.\n\"area.line.device",
+            "invalid_ip_address": "Ongeldig IPv4-adres.",
+            "no_router_discovered": "Er is geen KNXnet/IP-router gevonden op het netwerk.",
+            "no_tunnel_discovered": "Kon geen KNX-tunnelserver vinden op je netwerk."
+        },
+        "step": {
+            "connection_type": {
+                "data": {
+                    "connection_type": "KNX-verbindingstype"
+                },
+                "description": "Voer het verbindingstype in dat we moeten gebruiken voor je KNX-verbinding. \n AUTOMATISCH - De integratie zorgt voor de connectiviteit met je KNX-bus door een gateway-scan uit te voeren. \n TUNNELING - De integratie zal verbinding maken met je KNX-bus via tunneling. \n ROUTING - De integratie zal verbinding maken met je KNX-bus via routing.",
+                "title": "KNX-verbinding"
+            },
+            "knxkeys_tunnel_select": {
+                "data": {
+                    "user_id": "`Automatisch` zal het eerste vrije tunneleindpunt gebruiken."
+                },
+                "description": "Selecteer de tunnel die voor de verbinding wordt gebruikt.",
+                "title": "Tunnel eindpunt"
+            },
+            "manual_tunnel": {
+                "data": {
+                    "host": "Host",
+                    "local_ip": "Lokale IP van Home Assistant",
+                    "port": "Poort",
+                    "route_back": "Route terug / NAT-modus",
+                    "tunneling_type": "KNX Tunneling Type"
+                },
+                "data_description": {
+                    "host": "IP adres van het KNX/IP tunneling apparaat.",
+                    "local_ip": "Leeg laten om auto-discovery te gebruiken.",
+                    "port": "Poort van het KNX/IP-tunnelapparaat.",
+                    "route_back": "Schakel in als je KNXnet/IP-tunnelserver zich achter NAT bevindt. Geldt alleen voor UDP-verbindingen."
+                },
+                "description": "Voer de verbindingsinformatie van uw tunneling-apparaat in.",
+                "title": "Tunnelinstellingen"
+            },
+            "routing": {
+                "data": {
+                    "individual_address": "Individueel adres",
+                    "local_ip": "Lokale IP van Home Assistant",
+                    "multicast_group": "Multicast-groep",
+                    "multicast_port": "Multicast-poort"
+                },
+                "data_description": {
+                    "individual_address": "KNX-adres te gebruiken door Home Assistant, bijv. `0.0.4`",
+                    "local_ip": "Leeg laten om auto-discovery te gebruiken."
+                },
+                "description": "Configureer de routing opties"
+            },
+            "secure_knxkeys": {
+                "data": {
+                    "knxkeys_file": "Keyring-bestand",
+                    "knxkeys_password": "Het wachtwoord om het bestand `.knxkeys` te ontcijferen"
+                },
+                "data_description": {
+                    "knxkeys_password": "Dit werd ingesteld bij het exporteren van het bestand van ETS."
+                },
+                "description": "Voer de informatie voor uw `.knxkeys` bestand in.",
+                "title": "Sleutelbestand"
+            },
+            "secure_routing_manual": {
+                "data_description": {
+                    "sync_latency_tolerance": "Standaard is 1000"
+                }
+            },
+            "secure_tunnel_manual": {
+                "data": {
+                    "device_authentication": "Wachtwoord voor apparaatverificatie",
+                    "user_id": "Gebruikers-ID",
+                    "user_password": "Gebruikerswachtwoord"
+                },
+                "data_description": {
+                    "device_authentication": "Dit is ingesteld in het 'IP' paneel van de interface in ETS."
+                },
+                "title": "Beveiligde tunneling"
+            },
+            "tunnel": {
+                "data": {
+                    "gateway": "KNX Tunnel Connection"
+                },
+                "description": "Selecteer een gateway uit de lijst.",
+                "title": "Tunnel"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "telegram": "Telegram verzonden of ontvangen"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "individual_address": {
+                "name": "Individueel adres"
+            },
+            "telegram_count": {
+                "name": "Telegrammen"
+            },
+            "telegrams_incoming": {
+                "name": "Inkomende telegrammen"
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_individual_address": "Waarde komt niet overeen met patroon voor KNX individueel adres.\n\"area.line.device",
+            "invalid_ip_address": "Ongeldig IPv4-adres.",
+            "no_router_discovered": "Er is geen KNXnet/IP-router gevonden op het netwerk.",
+            "no_tunnel_discovered": "Kon geen KNX-tunnelserver vinden op je netwerk."
+        },
+        "step": {
+            "communication_settings": {
+                "data": {
+                    "rate_limit": "Rate limit",
+                    "state_updater": "Status updater"
+                },
+                "title": "Communicatie-instellingen"
+            },
+            "connection_type": {
+                "data": {
+                    "connection_type": "KNX-verbindingstype"
+                },
+                "description": "Voer het verbindingstype in dat we moeten gebruiken voor je KNX-verbinding. \n AUTOMATISCH - De integratie zorgt voor de connectiviteit met je KNX-bus door een gateway-scan uit te voeren. \n TUNNELING - De integratie zal verbinding maken met je KNX-bus via tunneling. \n ROUTING - De integratie zal verbinding maken met je KNX-bus via routing.",
+                "title": "KNX-verbinding"
+            },
+            "knxkeys_tunnel_select": {
+                "data": {
+                    "user_id": "`Automatisch` zal het eerste vrije tunneleindpunt gebruiken."
+                },
+                "description": "Selecteer de tunnel die voor de verbinding wordt gebruikt.",
+                "title": "Tunnel eindpunt"
+            },
+            "manual_tunnel": {
+                "data": {
+                    "host": "Host",
+                    "local_ip": "Lokale IP van Home Assistant",
+                    "port": "Poort",
+                    "route_back": "Route terug / NAT-modus",
+                    "tunneling_type": "KNX Tunneling Type"
+                },
+                "data_description": {
+                    "host": "IP adres van het KNX/IP tunneling apparaat.",
+                    "local_ip": "Leeg laten om auto-discovery te gebruiken.",
+                    "port": "Poort van het KNX/IP-tunnelapparaat.",
+                    "route_back": "Schakel in als je KNXnet/IP-tunnelserver zich achter NAT bevindt. Geldt alleen voor UDP-verbindingen."
+                },
+                "description": "Voer de verbindingsinformatie van uw tunneling-apparaat in.",
+                "title": "Tunnelinstellingen"
+            },
+            "options_init": {
+                "menu_options": {
+                    "communication_settings": "Communicatie-instellingen",
+                    "connection_type": "KNX-interface configureren",
+                    "secure_knxkeys": "Een `.knxkeys` bestand importeren"
+                },
+                "title": "KNX-instellingen"
+            },
+            "routing": {
+                "data": {
+                    "individual_address": "Individueel adres",
+                    "local_ip": "Lokale IP van Home Assistant",
+                    "multicast_group": "Multicast-groep",
+                    "multicast_port": "Multicast-poort"
+                },
+                "data_description": {
+                    "individual_address": "KNX-adres te gebruiken door Home Assistant, bijv. `0.0.4`",
+                    "local_ip": "Leeg laten om auto-discovery te gebruiken."
+                },
+                "description": "Configureer de routing opties"
+            },
+            "secure_knxkeys": {
+                "data": {
+                    "knxkeys_file": "Keyring-bestand",
+                    "knxkeys_password": "Het wachtwoord om het bestand `.knxkeys` te ontcijferen"
+                },
+                "data_description": {
+                    "knxkeys_password": "Dit werd ingesteld bij het exporteren van het bestand van ETS."
+                },
+                "description": "Voer de informatie voor uw `.knxkeys` bestand in.",
+                "title": "Sleutelbestand"
+            },
+            "secure_routing_manual": {
+                "data_description": {
+                    "sync_latency_tolerance": "Standaard is 1000"
+                }
+            },
+            "secure_tunnel_manual": {
+                "data": {
+                    "device_authentication": "Wachtwoord voor apparaatverificatie",
+                    "user_id": "Gebruikers-ID",
+                    "user_password": "Gebruikerswachtwoord"
+                },
+                "data_description": {
+                    "device_authentication": "Dit is ingesteld in het 'IP' paneel van de interface in ETS."
+                },
+                "title": "Beveiligde tunneling"
+            },
+            "tunnel": {
+                "data": {
+                    "gateway": "KNX Tunnel Connection"
+                },
+                "description": "Selecteer een gateway uit de lijst.",
+                "title": "Tunnel"
+            }
+        }
+    },
+    "services": {
+        "event_register": {
+            "fields": {
+                "address": {
+                    "name": "Groep adres"
+                },
+                "remove": {
+                    "name": "Verwijder event registratie"
+                }
+            },
+            "name": "Registreert KNX event"
+        },
+        "exposure_register": {
+            "fields": {
+                "address": {
+                    "name": "Groep adres"
+                },
+                "attribute": {
+                    "description": "Attribuut van de entiteit dat naar de KNX but zal worden gestuurd. De status wordt gestuurd indien deze aarde niet is ingesteld. Bijvoorbeeld voor een light is de status ''on'' of ''off`. Met attribuut kun je de ''brightness'' laten bekendmaken.",
+                    "name": "Entiteit attribuut"
+                },
+                "default": {
+                    "description": "Standaard waarde om naar de bus toe te sturen als de status of attribuut waarde `None`is. Bijvoorbeeld wanneer een licht de status ''off'' heeft en geen `brightness` attribuut heeft zodat de standaard waarde van 0 kan worden gebruikt. Wanneer deze waarde niet is gezet (of `None` is) wordt er geen waarde gestuurd naar de bus en een GroupReadRequest naar het adres zou de laatst bekende waarde teruggeven.",
+                    "name": "Standaardwaarde"
+                },
+                "entity_id": {
+                    "description": "Entiteits-ID waarvan de status of attribuut zal worden bekend gemaakt.",
+                    "name": "Entiteit"
+                },
+                "remove": {
+                    "description": "Indien `True` dan zal de bekendmaking worden verwijderd. Alleen `address` is noodzakelijk is vereist om te kunnen verwijderen."
+                },
+                "type": {
+                    "description": "Telegrammen worden gecodeerd zoals gegeven DPT. 'binair' en alle KNX-sensortypes zijn geldige waarden (zie https://www.home-assistant.io/integrations/knx/#value-types).",
+                    "name": "Waardetype"
+                }
+            },
+            "name": "Bekendmaken op KNX bus"
+        },
+        "read": {
+            "description": "Stuur `GroupValueRead` verzoeken naar de KNX bus. Het antwoord van `knx_event` kan worden gebruikt en zal worden verwerkt in KNX entiteiten.",
+            "fields": {
+                "address": {
+                    "description": "Groep adres(sen) om een verzoek naar toe te sturen. Lijsten zullen `multi groep` adressen lezen.",
+                    "name": "Groep adres"
+                }
+            },
+            "name": "Leest van KNX bus"
+        },
+        "reload": {
+            "description": "Herlaadt de KNX-integratie.",
+            "name": "Herladen"
+        },
+        "send": {
+            "description": "Stuurt willekeurige gegevens rechtstreeks naar de KNX-bus.",
+            "fields": {
+                "address": {
+                    "description": "Groep adres(sen) om naar te schrijven. Lijsten zullen naar `multi groep` adressen worden verstuurd.",
+                    "name": "Groep adres"
+                },
+                "payload": {
+                    "description": "Bericht om te zenden naar de bus. Integers worden behandeld als DPT 1/2/3 berichten. Dtuur een lijst voor DPT's > 6 bits. Elke waarde staat voor 1 octet (0-255). Voeg 0's als prefix toe tot de DPT byte lengte.",
+                    "name": "Payload"
+                },
+                "response": {
+                    "description": "Indien ingesteld op `True` zal het telegram worden verstuurd als en `GroupValueResonse` in plaats van een `GroupValueWrite`.",
+                    "name": "Zend als antwoord"
+                },
+                "type": {
+                    "description": "Indien ingesteld, zal het bericht niet als ruwe bytes worden verstuurd, maar worden gecodeerd als gegeven DPT. KNX sensortypes zijn geldige waarden (zie https://www.home-assistant.io/integrations/knx/#value-types).",
+                    "name": "Waardetype"
+                }
+            },
+            "name": "Verzenden naar KNX-bus"
+        }
+    }
+}

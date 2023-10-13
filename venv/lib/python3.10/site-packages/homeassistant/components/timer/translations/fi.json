@@ -1,0 +1,27 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "duration": {
+                    "name": "Kesto"
+                },
+                "editable": {
+                    "name": "Hallinta k\u00e4ytt\u00f6liittym\u00e4st\u00e4",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Kyll\u00e4"
+                    }
+                },
+                "finishes_at": {
+                    "name": "P\u00e4\u00e4ttyy"
+                },
+                "remaining": {
+                    "name": "J\u00e4ljell\u00e4"
+                },
+                "restore": {
+                    "name": "Palauta"
+                }
+            }
+        }
+    }
+}

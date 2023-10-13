@@ -1,0 +1,53 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_api_key": "Ung\u00fcltiger API-Schl\u00fcssel"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API-Schl\u00fcssel",
+                    "name": "Name",
+                    "url": "URL"
+                }
+            }
+        }
+    },
+    "services": {
+        "pause": {
+            "description": "H\u00e4lt Downloads an.",
+            "fields": {
+                "api_key": {
+                    "description": "Der SABnzbd-API-Schl\u00fcssel zum Anhalten von Downloads.",
+                    "name": "SABnzbd-API-Schl\u00fcssel"
+                }
+            },
+            "name": "Pause"
+        },
+        "resume": {
+            "description": "Setzt Downloads fort.",
+            "fields": {
+                "api_key": {
+                    "description": "Der SABnzbd-API-Schl\u00fcssel zum Fortsetzen von Downloads.",
+                    "name": "SABnzbd-API-Schl\u00fcssel"
+                }
+            },
+            "name": "Fortsetzen"
+        },
+        "set_speed": {
+            "description": "Legt das Download-Geschwindigkeitslimit fest.",
+            "fields": {
+                "api_key": {
+                    "description": "Der SABnzbd-API-Schl\u00fcssel zum Festlegen der Geschwindigkeitsbegrenzung.",
+                    "name": "SABnzbd-API-Schl\u00fcssel"
+                },
+                "speed": {
+                    "description": "Erlaubte H\u00f6chstgeschwindigkeit. Wenn die Angabe als Zahl ohne Einheiten erfolgt, wird sie als Prozentwert interpretiert. Wenn Einheiten angegeben werden (z. B. 500K), werden sie absolut interpretiert.",
+                    "name": "Geschwindigkeit"
+                }
+            },
+            "name": "Geschwindigkeit einstellen"
+        }
+    }
+}

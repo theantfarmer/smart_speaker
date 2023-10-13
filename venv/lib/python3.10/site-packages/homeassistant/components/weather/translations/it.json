@@ -1,0 +1,84 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Tempo atmosferico",
+            "state": {
+                "clear-night": "Sereno, notte",
+                "cloudy": "Nuvoloso",
+                "exceptional": "Eccezionale",
+                "fog": "Nebbia",
+                "hail": "Grandine",
+                "lightning": "Temporale",
+                "lightning-rainy": "Temporale, piovoso",
+                "partlycloudy": "Parzialmente nuvoloso",
+                "pouring": "Rovescio",
+                "rainy": "Piovoso",
+                "snowy": "Nevoso",
+                "snowy-rainy": "Nevoso, piovoso",
+                "sunny": "Soleggiato",
+                "windy": "Ventoso",
+                "windy-variant": "Ventoso"
+            },
+            "state_attributes": {
+                "apparent_temperature": {
+                    "name": "Temperatura apparente"
+                },
+                "cloud_coverage": {
+                    "name": "Copertura nuvolosa"
+                },
+                "dew_point": {
+                    "name": "Temperatura del punto di rugiada"
+                },
+                "forecast": {
+                    "name": "Previsione"
+                },
+                "humidity": {
+                    "name": "Umidit\u00e0"
+                },
+                "ozone": {
+                    "name": "Ozono"
+                },
+                "precipitation_unit": {
+                    "name": "Unit\u00e0 di precipitazione"
+                },
+                "pressure": {
+                    "name": "Pressione"
+                },
+                "pressure_unit": {
+                    "name": "Unit\u00e0 di pressione"
+                },
+                "temperature": {
+                    "name": "Temperatura"
+                },
+                "temperature_unit": {
+                    "name": "Unit\u00e0 di temperatura"
+                },
+                "visibility": {
+                    "name": "Visibilit\u00e0"
+                },
+                "visibility_unit": {
+                    "name": "Unit\u00e0 di visibilit\u00e0"
+                },
+                "wind_bearing": {
+                    "name": "Direzione del vento"
+                },
+                "wind_gust_speed": {
+                    "name": "Velocit\u00e0 delle raffiche di vento"
+                },
+                "wind_speed": {
+                    "name": "Velocit\u00e0 del vento"
+                },
+                "wind_speed_unit": {
+                    "name": "Unit\u00e0 di velocit\u00e0 del vento"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La piattaforma {platform} per l'integrazione {domain} non supporta l'impostazione della piattaforma. \n\nRimuovilo dalla configurazione e riavvia Home Assistant per risolvere questo problema.",
+            "title": "Supporto della piattaforma non supportato"
+        }
+    },
+    "title": "Tempo atmosferico"
+}

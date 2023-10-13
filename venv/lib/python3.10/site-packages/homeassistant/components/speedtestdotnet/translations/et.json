@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Juba seadistatud. V\u00f5imalik on ainult \u00fcks seadistamine."
+        },
+        "step": {
+            "user": {
+                "description": "Kas soovid seadistada SpeedTesti?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "download": {
+                "name": "Allalaadimine"
+            },
+            "ping": {
+                "name": "Ping"
+            },
+            "upload": {
+                "name": "\u00dcleslaadimine"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "server_name": "Testiserveri valimine"
+                }
+            }
+        }
+    }
+}

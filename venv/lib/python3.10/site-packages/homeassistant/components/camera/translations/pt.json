@@ -1,0 +1,48 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "C\u00e2mara ",
+            "state": {
+                "idle": "Em espera",
+                "recording": "A gravar",
+                "streaming": "Transmiss\u00e3o em fluxo cont\u00ednuo"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "Token de acesso"
+                },
+                "brand": {
+                    "name": "Marca"
+                },
+                "frontend_stream_type": {
+                    "name": "Tipo de transmiss\u00e3o",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Modelo"
+                },
+                "motion_detection": {
+                    "name": "Detec\u00e7\u00e3o de movimento"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "A plataforma {platform} para a integra\u00e7\u00e3o {domain} n\u00e3o suporta a configura\u00e7\u00e3o da plataforma.\n\nRemova-a da sua configura\u00e7\u00e3o e reinicie o Home Assistant para corrigir este problema.",
+            "title": "Suporte de plataforma n\u00e3o suportado"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Desligar"
+        },
+        "turn_on": {
+            "name": "Ligar"
+        }
+    },
+    "title": "C\u00e2mara"
+}

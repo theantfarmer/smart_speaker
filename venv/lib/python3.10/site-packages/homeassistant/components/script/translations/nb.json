@@ -1,0 +1,35 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Kj\u00f8rer automatiseringer"
+                },
+                "last_action": {
+                    "name": "Siste handling"
+                },
+                "last_triggered": {
+                    "name": "Sist utl\u00f8st"
+                },
+                "max": {
+                    "name": "Maks kj\u00f8rende skript"
+                },
+                "mode": {
+                    "name": "Kj\u00f8remodus",
+                    "state": {
+                        "parallel": "Parallell",
+                        "queued": "I k\u00f8",
+                        "restart": "Start p\u00e5 nytt",
+                        "single": "Enkelt"
+                    }
+                }
+            }
+        }
+    },
+    "title": ""
+}

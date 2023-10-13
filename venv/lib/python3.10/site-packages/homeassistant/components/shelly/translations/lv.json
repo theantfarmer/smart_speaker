@@ -1,0 +1,53 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "triple_push": "{subtype} tr\u012bsk\u0101r\u0161s piespiediens"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "heavy": "Smac\u012bgi",
+                            "mild": "Viegls",
+                            "none": "Nav",
+                            "test": "Tests",
+                            "unknown": "Nezin\u0101ms"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "operation": {
+                "state": {
+                    "fault": "K\u013c\u016bda",
+                    "normal": "norm\u0101ls",
+                    "unknown": "Nezin\u0101ms",
+                    "warmup": "Iesil\u0161ana"
+                },
+                "state_attributes": {
+                    "self_test": {
+                        "state": {
+                            "completed": "Pabeigts",
+                            "not_completed": "Nav pabeigts",
+                            "pending": "Gaida",
+                            "running": "Darbojas"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "selector": {
+        "ble_scanner_mode": {
+            "options": {
+                "active": "Akt\u012bvs",
+                "disabled": "Atsp\u0113jots",
+                "passive": "Pas\u012bva"
+            }
+        }
+    }
+}

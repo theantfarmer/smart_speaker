@@ -1,0 +1,10 @@
+{
+    "config": {
+        "abort": {
+            "invalid_identifier": "Den angivna regionidentifieraren \u00e4r ogiltig."
+        },
+        "error": {
+            "invalid_identifier": "Den angivna regionidentifieraren \u00e4r ogiltig."
+        }
+    }
+}

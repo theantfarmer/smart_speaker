@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "reauth_successful": "La riautenticazione ha avuto successo",
+            "unknown": "Errore imprevisto"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "unknown": "Errore imprevisto"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "authenticate": {
+                "data": {
+                    "api_key": "Chiave API"
+                },
+                "description": "Immetti la chiave API impostata nella configurazione per {name} ."
+            },
+            "user": {
+                "data": {
+                    "api_key": "Chiave API",
+                    "host": "Host",
+                    "port": "Porta"
+                },
+                "description": "Inserisci i dettagli della tua connessione."
+            }
+        }
+    },
+    "services": {
+        "open_path": {
+            "fields": {
+                "path": {
+                    "name": "Percorso"
+                }
+            }
+        },
+        "open_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

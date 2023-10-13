@@ -1,0 +1,92 @@
+{
+    "services": {
+        "send_animation": {
+            "fields": {
+                "password": {
+                    "name": "Senha"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Usu\u00e1rio"
+                }
+            }
+        },
+        "send_document": {
+            "fields": {
+                "password": {
+                    "name": "Senha"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Usu\u00e1rio"
+                }
+            }
+        },
+        "send_location": {
+            "fields": {
+                "latitude": {
+                    "name": "Latitude"
+                },
+                "longitude": {
+                    "name": "Longitude"
+                }
+            }
+        },
+        "send_photo": {
+            "fields": {
+                "password": {
+                    "name": "Senha"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Usu\u00e1rio"
+                }
+            }
+        },
+        "send_sticker": {
+            "fields": {
+                "password": {
+                    "name": "Senha"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Usu\u00e1rio"
+                }
+            }
+        },
+        "send_video": {
+            "fields": {
+                "password": {
+                    "name": "Senha"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Usu\u00e1rio"
+                }
+            }
+        },
+        "send_voice": {
+            "fields": {
+                "password": {
+                    "name": "Senha"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Usu\u00e1rio"
+                }
+            }
+        }
+    }
+}

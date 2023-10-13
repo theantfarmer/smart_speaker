@@ -1,0 +1,16 @@
+{
+    "services": {
+        "turn_on": {
+            "description": "Establece la luz RGB en el color predominante que se encuentra en la imagen proporcionada por la URL o la ruta del archivo.",
+            "fields": {
+                "color_extract_path": {
+                    "name": "Ruta"
+                },
+                "color_extract_url": {
+                    "name": "URL"
+                }
+            },
+            "name": "Encender"
+        }
+    }
+}

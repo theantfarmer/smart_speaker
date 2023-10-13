@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "addon_get_discovery_info_failed": "Det lykkedes ikke at f\u00e5 oplysninger om discovery af Matter Server-tilf\u00f8jelsesprogrammet.",
+            "addon_info_failed": "Kunne ikke hente oplysninger om Matter Server-tilf\u00f8jelsesprogrammet.",
+            "addon_install_failed": "Kunne ikke installere tilf\u00f8jelsesprogrammet Matter Server.",
+            "addon_start_failed": "Kunne ikke starte Matter Server-tilf\u00f8jelsesprogrammet.",
+            "already_configured": "Enheden er allerede konfigureret",
+            "already_in_progress": "Konfigurationsflow er allerede i gang",
+            "not_matter_addon": "Det fundne tilf\u00f8jelsesprogram er ikke det officielle Matter Server-tilf\u00f8jelsesprogram.",
+            "reconfiguration_successful": "Matter-integrationen blev omkonfigureret."
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_server_version": "Matter-serveren er ikke den korrekte version",
+            "unknown": "Uventet fejl"
+        },
+        "progress": {
+            "install_addon": "Vent venligst, mens installationen af tilf\u00f8jelsesprogrammet Matter Server afsluttes. Dette kan tage flere minutter.",
+            "start_addon": "Vent venligst, mens tilf\u00f8jelsesprogrammet Matter Server starter. Dette tilf\u00f8jelsesprogram er det, der h\u00e5ndterer Matter i Home Assistant. Opstarten kan tage nogle sekunder."
+        },
+        "step": {
+            "hassio_confirm": {
+                "title": "Konfigurer Matter-integrationen med tilf\u00f8jelsesprogrammet Matter Server"
+            },
+            "install_addon": {
+                "title": "Installationen af tilf\u00f8jelsesprogrammet er startet"
+            },
+            "manual": {
+                "data": {
+                    "url": "URL"
+                }
+            },
+            "on_supervisor": {
+                "data": {
+                    "use_addon": "Brug det officielle Matter Server Supervisor-tilf\u00f8jelsesprogram"
+                },
+                "description": "Vil du bruge det officielle Matter Server Supervisor-tilf\u00f8jelsesprogram? \n\nHvis du allerede k\u00f8rer Matter Server i en anden tilf\u00f8jelse, i en container, native osv., skal du ikke v\u00e6lge denne mulighed.",
+                "title": "V\u00e6lg forbindelsesmetode"
+            },
+            "start_addon": {
+                "title": "Starter tilf\u00f8jelsesprogrammet."
+            }
+        }
+    }
+}

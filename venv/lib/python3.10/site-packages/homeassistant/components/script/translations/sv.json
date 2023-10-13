@@ -1,0 +1,37 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Skript",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Automationer som k\u00f6rs"
+                },
+                "last_action": {
+                    "name": "Sista \u00e5tg\u00e4rden"
+                },
+                "last_triggered": {
+                    "name": "Senast utl\u00f6st"
+                },
+                "mode": {
+                    "name": "K\u00f6rl\u00e4ge",
+                    "state": {
+                        "parallel": "Parallell",
+                        "queued": "K\u00f6ad",
+                        "restart": "Starta om",
+                        "single": "Enkel"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "V\u00e4xla"
+        }
+    },
+    "title": "Skript"
+}

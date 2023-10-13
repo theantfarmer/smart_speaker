@@ -1,0 +1,22 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "unknown": "Tuntematon"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "operation": {
+                "state": {
+                    "unknown": "Tuntematon"
+                }
+            }
+        }
+    }
+}

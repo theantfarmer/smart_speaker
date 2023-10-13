@@ -1,0 +1,8 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant.",
+            "reauth_successful": "Atk\u0101rtota autentifik\u0101cija veiksm\u012bga"
+        }
+    }
+}

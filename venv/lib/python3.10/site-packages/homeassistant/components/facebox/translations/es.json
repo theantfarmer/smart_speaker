@@ -1,0 +1,22 @@
+{
+    "services": {
+        "teach_face": {
+            "description": "Ense\u00f1a a facebox una cara utilizando un archivo.",
+            "fields": {
+                "entity_id": {
+                    "description": "La entidad facebox para ense\u00f1ar.",
+                    "name": "Entidad"
+                },
+                "file_path": {
+                    "description": "La ruta al archivo de imagen.",
+                    "name": "Ruta del archivo"
+                },
+                "name": {
+                    "description": "El nombre de la cara a ense\u00f1ar.",
+                    "name": "Nombre"
+                }
+            },
+            "name": "Ense\u00f1ar cara"
+        }
+    }
+}

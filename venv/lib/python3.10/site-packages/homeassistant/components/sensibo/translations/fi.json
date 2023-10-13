@@ -1,0 +1,13 @@
+{
+    "entity": {
+        "select": {
+            "light": {
+                "state": {
+                    "dim": "Himme\u00e4",
+                    "off": "Pois",
+                    "on": "P\u00e4\u00e4ll\u00e4"
+                }
+            }
+        }
+    }
+}

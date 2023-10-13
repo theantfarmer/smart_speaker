@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "select": {
+            "zone_sleep": {
+                "state": {
+                    "off": "Izklopljeno"
+                }
+            },
+            "zone_surr_decoder_type": {
+                "state": {
+                    "toggle": "Preklopi"
+                }
+            }
+        }
+    }
+}

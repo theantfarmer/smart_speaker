@@ -1,0 +1,20 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "changed_states": "Dostupnost aktualizace {entity_name} zm\u011bn\u011bna",
+            "turned_off": "{entity_name} se stal aktu\u00e1ln\u00edm",
+            "turned_on": "{entity_name} m\u00e1 k dispozici aktualizaci"
+        }
+    },
+    "entity_component": {
+        "firmware": {
+            "name": "firmware"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    }
+}

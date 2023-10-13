@@ -1,0 +1,22 @@
+{
+    "services": {
+        "complete_task": {
+            "fields": {
+                "id": {
+                    "name": "ID"
+                }
+            }
+        },
+        "create_task": {
+            "fields": {
+                "id": {
+                    "name": "ID"
+                },
+                "name": {
+                    "name": "Nom"
+                }
+            },
+            "name": "Crea una tasca"
+        }
+    }
+}

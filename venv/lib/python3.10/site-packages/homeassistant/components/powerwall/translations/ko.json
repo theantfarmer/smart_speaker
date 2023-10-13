@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\uae30\uae30\uac00 \uc774\ubbf8 \uad6c\uc131\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "cannot_connect": "\uc5f0\uacb0\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4",
+            "reauth_successful": "\uc7ac\uc778\uc99d\uc5d0 \uc131\uacf5\ud588\uc2b5\ub2c8\ub2e4"
+        },
+        "error": {
+            "cannot_connect": "\uc5f0\uacb0\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4",
+            "invalid_auth": "\uc778\uc99d\uc774 \uc798\ubabb\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "unknown": "\uc608\uc0c1\uce58 \ubabb\ud55c \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4",
+            "wrong_version": "Powerwall\uc774 \uc9c0\uc6d0\ub418\uc9c0 \uc54a\ub294 \uc18c\ud504\ud2b8\uc6e8\uc5b4 \ubc84\uc804\uc744 \uc0ac\uc6a9\ud569\ub2c8\ub2e4. \ud574\uacb0\ud560 \uc218 \uc788\ub3c4\ub85d \uc774 \ubb38\uc81c\ub97c \uc5c5\uadf8\ub808\uc774\ub4dc\ud558\uac70\ub098 \ubcf4\uace0\ud558\ub294 \uac83\uc774 \uc88b\uc2b5\ub2c8\ub2e4."
+        },
+        "flow_title": "{name} ({ip_address})",
+        "step": {
+            "confirm_discovery": {
+                "description": "{name} ({ip_address})\uc744(\ub97c) \uc124\uc815\ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?",
+                "title": "Powerwall\uc5d0 \uc5f0\uacb0"
+            },
+            "reauth_confim": {
+                "data": {
+                    "password": "\uc554\ud638"
+                },
+                "description": "\ucd5c\uc2e0 \ubaa8\ub378\uc758 \uacbd\uc6b0 \ubc31\uc5c5 \uac8c\uc774\ud2b8\uc6e8\uc774 \ub0b4\ubd80\uc5d0 \uae30\ubcf8 \uc554\ud638\uac00 \uc778\uc1c4\ub418\uc5b4 \uc788\uc2b5\ub2c8\ub2e4. \uc774\uc804 \ubaa8\ub378\uc758 \uacbd\uc6b0 \uae30\ubcf8 \ube44\ubc00\ubc88\ud638\ub294 \ubc31\uc5c5 \uac8c\uc774\ud2b8\uc6e8\uc774 \uc77c\ub828 \ubc88\ud638\uc758 \ub9c8\uc9c0\ub9c9 5\uc790\uc774\uba70 Tesla \uc571\uc5d0\uc11c \ucc3e\uc744 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+                "title": "Powerwall \uc7ac\uc778\uc99d"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "\uc554\ud638"
+                },
+                "description": "\ucd5c\uc2e0 \ubaa8\ub378\uc758 \uacbd\uc6b0 Backup Gateway \ub0b4\ubd80\uc5d0 \uae30\ubcf8 \uc554\ud638\uac00 \uc778\uc1c4\ub418\uc5b4 \uc788\uc2b5\ub2c8\ub2e4. \uc774\uc804 \ubaa8\ub378\uc758 \uacbd\uc6b0 \uae30\ubcf8 \ube44\ubc00\ubc88\ud638\ub294 Backup Gateway \uc77c\ub828 \ubc88\ud638\uc758 \ub9c8\uc9c0\ub9c9 5\uc790\uc774\uba70 Tesla \uc571\uc5d0\uc11c \ucc3e\uc744 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+                "title": "Powerwall \uc7ac\uc778\uc99d"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP \uc8fc\uc18c",
+                    "password": "\uc554\ud638"
+                },
+                "description": "\uae30\ubcf8 \uc554\ud638\ub294 \ucd5c\uc2e0 \ubaa8\ub378\uc758 \uacbd\uc6b0 \ubc31\uc5c5 \uac8c\uc774\ud2b8\uc6e8\uc774 \ub0b4\ubd80\uc5d0 \uc778\uc1c4\ub429\ub2c8\ub2e4. \uc774\uc804 \ubaa8\ub378\uc758 \uacbd\uc6b0 \uae30\ubcf8 \uc554\ud638\ub294 Backup Gateway \uc77c\ub828 \ubc88\ud638\uc758 \ub9c8\uc9c0\ub9c9 5\uc790\uc774\uba70 Tesla \uc571\uc5d0\uc11c \ucc3e\uc744 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+                "title": "Powerwall\uc5d0 \uc5f0\uacb0"
+            }
+        }
+    }
+}

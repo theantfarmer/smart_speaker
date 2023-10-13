@@ -1,0 +1,98 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus"
+        },
+        "error": {
+            "api_error": "Ilmnes API t\u00f5rge",
+            "cannot_connect": "\u00dchenduse loomine nurjus, kontrolli kaamera IP-aadressi",
+            "invalid_auth": "Tuvastamine nurjus",
+            "not_admin": "Kasutaja peab olema administraator, kasutajal ''{username}'' on volituste tase ''{userlevel}''.",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "Reolinki sidumine peab \u00fchenduse andmed uuesti autentima.",
+                "title": "Taastuvasta sidumine"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Salas\u00f5na",
+                    "port": "Port",
+                    "use_https": "Luba HTTPS",
+                    "username": "Kasutajanimi"
+                },
+                "description": "Probleemide ilmnemisel vaata [t\u00f5rkeotsingu samme]( {troubleshooting_link} ). {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "V\u00e4ljas"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digitaalne",
+                    "digitalfirst": "Esmalt digitaalne",
+                    "pantiltfirst": "Esmalt keera/kalluta"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Automaatne",
+                    "blackwhite": "Mustvalge",
+                    "color": "V\u00e4rviline"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "adaptive": "Kohanduv",
+                    "auto": "Automaatne",
+                    "autoadaptive": "Automaatselt kohanduv",
+                    "off": "V\u00e4ljas",
+                    "schedule": "Ajakava"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "Automaatne ja alati \u00f6\u00f6sel sisse l\u00fclitatud",
+                    "auto": "Automaatne",
+                    "stayoff": "J\u00e4\u00e4 v\u00e4ljal\u00fclitatuks"
+                }
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "{ports}port(ide) automaatne lubamine urjus seadmes {name}. Kasuta [Reolink klienti]({info_link}), et see k\u00e4sitsi sisse l\u00fclitada.",
+            "title": "Reolinki port pole lubatud"
+        },
+        "firmware_update": {
+            "description": "\" {name} \" mudeliga \" {model} \" ja riistvaraversiooniga \" {hw_version} \" kasutab vana p\u00fcsivara versiooni \" {current_firmware} \", samas kui Reolinki sidumise n\u00f5uetekohaseks toimimiseks on vaja v\u00e4hemalt p\u00fcsivara versiooni \" {required_firmware} \". Uusima p\u00fcsivara saab alla laadida [Reolinki allalaadimiskeskusest]( {download_link} ).",
+            "title": "Vajalik on Reolinki p\u00fcsivara v\u00e4rskendus"
+        },
+        "https_webhook": {
+            "description": "Reolini tooted ei saa liikumiss\u00fcndmusi HTTPS-aadressile (SSL) edastada. Konfigureeri (kohalik) HTTP-aadress jaotises [v\u00f5rguseaded]( {network_link} ) jaotises \u201eHome Assistant URL\u201d. Praegune (kohalik) aadress on: \u201e {base_url} \u201d, kehtiv aadress v\u00f5ib olla n\u00e4iteks \u201ehttp://192.168.1.10:8123\u201d, kus \u201e192.168.1.10\u201d on koduabilise seadme IP.",
+            "title": "Reolini veebihaagi URL kasutab HTTPS-i (SSL)"
+        },
+        "webhook_url": {
+            "description": "Ei saanud algset ONVIF-staatust {name}. T\u00f5en\u00e4oliselt ei j\u00f5ua Reolink kaamera praeguse (kohaliku) Home Assistant URL-i `{base_url}`, seadista [v\u00f5rgu seadetes]({network_link}) jaotises \"Home Assistant URL\" (kohalik) HTTP-aadress, mis osutab Home Assistantile. N\u00e4iteks `http://192.168.1.10:8123`, kus `192.168.1.10` on Home Assistant'i seadme IP-aadress. Veendu ka, et Reolink kaamera j\u00f5uab sellele URL-ile. Kasutades kiiret liikumise/AI seisundi k\u00fcsitlust kuni esimese ONVIF push'i saamiseni.",
+            "title": "Reolinki webhook URL ei ole k\u00e4ttesaadav"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protokoll"
+                }
+            }
+        }
+    }
+}

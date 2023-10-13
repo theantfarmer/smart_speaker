@@ -1,0 +1,13 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API-avain",
+                    "name": "T\u00e4m\u00e4n asennuksen nimi",
+                    "site_id": "Solaredge site-id"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Datum/\u010das",
+            "state_attributes": {
+                "day": {
+                    "name": "Den"
+                },
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "hour": {
+                    "name": "Hodina"
+                },
+                "minute": {
+                    "name": "Minuta"
+                },
+                "month": {
+                    "name": "M\u011bs\u00edc"
+                },
+                "second": {
+                    "name": "Sekunda"
+                },
+                "timestamp": {
+                    "name": "\u010casov\u00e9 raz\u00edtko"
+                },
+                "year": {
+                    "name": "Rok"
+                }
+            }
+        }
+    },
+    "title": "Pomocn\u00edci - data/\u010dasy"
+}

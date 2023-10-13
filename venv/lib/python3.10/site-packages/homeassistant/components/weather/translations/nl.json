@@ -1,0 +1,70 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Weer",
+            "state": {
+                "cloudy": "Bewolkt",
+                "exceptional": "Uitzonderlijk",
+                "fog": "Mist",
+                "hail": "Hagel",
+                "lightning": "Bliksem",
+                "partlycloudy": "Gedeeltelijk bewolkt",
+                "pouring": "Regen",
+                "rainy": "Regenachtig",
+                "snowy": "Sneeuwachtig",
+                "snowy-rainy": "Sneeuw-, regenachtig",
+                "sunny": "Zonnig",
+                "windy": "Winderig",
+                "windy-variant": "Winderig"
+            },
+            "state_attributes": {
+                "cloud_coverage": {
+                    "name": "Bewolking"
+                },
+                "forecast": {
+                    "name": "Voorspelling"
+                },
+                "humidity": {
+                    "name": "Luchtvochtigheid"
+                },
+                "ozone": {
+                    "name": "Ozon"
+                },
+                "precipitation_unit": {
+                    "name": "Neerslag eenheid"
+                },
+                "pressure": {
+                    "name": "Luchtdruk"
+                },
+                "pressure_unit": {
+                    "name": "Druk eenheid"
+                },
+                "temperature": {
+                    "name": "Temperatuur"
+                },
+                "temperature_unit": {
+                    "name": "Temperatuureenheid"
+                },
+                "visibility": {
+                    "name": "Zichtbaarheid"
+                },
+                "visibility_unit": {
+                    "name": "Zicht eenheid"
+                },
+                "wind_bearing": {
+                    "name": "Windrichting"
+                },
+                "wind_speed": {
+                    "name": "Windsnelheid"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} van de {domain} integratie heeft geen platformondersteuning.\n\nVerwijder dit uit je configuratie en herstart Home Assistant om dit issue op te lossen.",
+            "title": "Platformondersteuning is niet ondersteund"
+        }
+    },
+    "title": "Weer"
+}

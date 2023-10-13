@@ -1,0 +1,44 @@
+{
+    "issues": {
+        "legacy_subscription": {
+            "fix_flow": {
+                "abort": {
+                    "operation_took_too_long": "Oper\u00e1cia trvala pr\u00edli\u0161 dlho. Sk\u00faste nesk\u00f4r pros\u00edm."
+                },
+                "step": {
+                    "confirm_change_plan": {
+                        "description": "Ned\u00e1vno sme aktualizovali n\u00e1\u0161 syst\u00e9m predplatn\u00e9ho. Ak chcete pokra\u010dova\u0165 v pou\u017e\u00edvan\u00ed Home Assistant Cloud, mus\u00edte jednorazovo schv\u00e1li\u0165 zmenu v slu\u017ebe PayPal. \n\n Trv\u00e1 to 1 min\u00fatu a nezv\u00fd\u0161i to cenu."
+                    }
+                }
+            },
+            "title": "Zisten\u00e9 star\u0161ie predplatn\u00e9"
+        }
+    },
+    "services": {
+        "remote_connect": {
+            "description": "Spr\u00edstupn\u00ed pou\u017e\u00edvate\u013esk\u00e9 rozhranie in\u0161tancie mimo miestnej siete pomocou slu\u017eby Home Assistant Cloud.",
+            "name": "Vzdialen\u00e9 pripojenie"
+        },
+        "remote_disconnect": {
+            "description": "Odpoj\u00ed pou\u017e\u00edvate\u013esk\u00e9 rozhranie aplik\u00e1cie Home Assistant od slu\u017eby Home Assistant Cloud. K in\u0161tancii aplik\u00e1cie Home Assistant u\u017e nebude mo\u017en\u00e9 pristupova\u0165 mimo miestnej siete.",
+            "name": "Vzdialen\u00e9 odpojenie"
+        }
+    },
+    "system_health": {
+        "info": {
+            "alexa_enabled": "Alexa povolen\u00e1",
+            "can_reach_cert_server": "Dosiahnutie servera certifik\u00e1tov",
+            "can_reach_cloud": "Home Assistant Cloud dosiahnut\u00fd",
+            "can_reach_cloud_auth": "Overovac\u00ed server dosiahnut\u00fd",
+            "certificate_status": "Stav certifik\u00e1tu",
+            "google_enabled": "Google povolen\u00e9",
+            "logged_in": "Prihl\u00e1sen\u00fd",
+            "relayer_connected": "Relayer pripojen\u00fd",
+            "relayer_region": "Regi\u00f3n Relayer",
+            "remote_connected": "Vzdialene pripojen\u00e9",
+            "remote_enabled": "Povolen\u00e9 vzdialen\u00e9 ovl\u00e1danie",
+            "remote_server": "Vzdialen\u00fd server",
+            "subscription_expiration": "Platnos\u0165 predplatn\u00e9ho"
+        }
+    }
+}

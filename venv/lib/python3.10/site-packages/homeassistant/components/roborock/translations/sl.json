@@ -1,0 +1,11 @@
+{
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "state": {
+                    "off": "Izklopljeno"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "\u041f\u0440\u0435\u0432\u043a\u043b\u044e\u0447\u0438 {entity_name}",
+            "turn_off": "\u0418\u0437\u043a\u043b\u044e\u0447\u0438 {entity_name}",
+            "turn_on": "\u0412\u043a\u043b\u044e\u0447\u0438 {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} \u0435 \u0438\u0437\u043a\u043b.",
+            "is_on": "{entity_name} \u0435 \u0432\u043a\u043b."
+        },
+        "trigger_type": {
+            "turned_off": "{entity_name} \u0435 \u0438\u0437\u043a\u043b\u044e\u0447\u0435\u043d",
+            "turned_on": "{entity_name} \u0435 \u0432\u043a\u043b\u044e\u0447\u0435\u043d"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "\u0418\u0437\u043a\u043b.",
+                "on": "\u0412\u043a\u043b."
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "\u042f\u0440\u043a\u043e\u0441\u0442"
+                },
+                "color_mode": {
+                    "name": "\u0426\u0432\u0435\u0442\u0435\u043d \u0440\u0435\u0436\u0438\u043c",
+                    "state": {
+                        "brightness": "\u0421\u0430\u043c\u043e \u044f\u0440\u043a\u043e\u0441\u0442",
+                        "color_temp": "\u0426\u0432\u0435\u0442\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+                        "hs": "HS",
+                        "onoff": "\u0412\u043a\u043b./\u0418\u0437\u043a\u043b.",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "\u041d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e",
+                        "white": "\u0411\u044f\u043b\u043e",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "\u0426\u0432\u0435\u0442\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 (mireds)"
+                },
+                "color_temp_kelvin": {
+                    "name": "\u0426\u0432\u0435\u0442\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430 (\u041a\u0435\u043b\u0432\u0438\u043d)"
+                },
+                "effect": {
+                    "name": "\u0415\u0444\u0435\u043a\u0442"
+                },
+                "effect_list": {
+                    "name": "\u041d\u0430\u043b\u0438\u0447\u043d\u0438 \u0435\u0444\u0435\u043a\u0442\u0438"
+                },
+                "supported_color_modes": {
+                    "name": "\u041d\u0430\u043b\u0438\u0447\u043d\u0438 \u0446\u0432\u0435\u0442\u043e\u0432\u0438 \u0440\u0435\u0436\u0438\u043c\u0438",
+                    "state": {
+                        "brightness": "\u0421\u0430\u043c\u043e \u044f\u0440\u043a\u043e\u0441\u0442",
+                        "color_temp": "\u0426\u0432\u0435\u0442\u043d\u0430 \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430",
+                        "hs": "HS",
+                        "onoff": "\u0412\u043a\u043b./\u0418\u0437\u043a\u043b.",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "\u041d\u0435\u0438\u0437\u0432\u0435\u0441\u0442\u043d\u043e",
+                        "white": "\u0411\u044f\u043b\u043e",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "title": "\u041e\u0441\u0432\u0435\u0442\u043b\u0435\u043d\u0438\u0435"
+}

@@ -1,0 +1,23 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\ubc84\ud2bc",
+            "state_attributes": {
+                "editable": {
+                    "name": "UI\ub97c \ud1b5\ud574 \uad00\ub9ac\ub428",
+                    "state": {
+                        "false": "\uc544\ub2c8\uc694",
+                        "true": "\ub124"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "press": {
+            "description": "\uae30\uae30\uc758 \ubb3c\ub9ac\uc801 \ubc84\ud2bc \ub204\ub984\uc744 \ubaa8\ubc29\ud569\ub2c8\ub2e4.",
+            "name": "\ub204\ub974\uae30"
+        }
+    },
+    "title": "\ubc84\ud2bc"
+}

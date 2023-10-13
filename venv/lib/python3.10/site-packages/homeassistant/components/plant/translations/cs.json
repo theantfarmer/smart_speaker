@@ -1,0 +1,12 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Monitor rostlin",
+            "state": {
+                "ok": "V po\u0159\u00e1dku",
+                "problem": "Probl\u00e9m"
+            }
+        }
+    },
+    "title": "Monitor rostlin"
+}

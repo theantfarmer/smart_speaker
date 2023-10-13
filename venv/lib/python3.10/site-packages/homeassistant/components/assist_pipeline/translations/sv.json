@@ -1,0 +1,17 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "assist_in_progress": {
+                "name": "Assist p\u00e5g\u00e5r"
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Assist pipeline",
+                "state": {
+                    "preferred": "F\u00f6redragen"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "config": {
+        "error": {
+            "add_holiday_error": "Nespr\u00e1vn\u00fd form\u00e1t data (RRRR-MM-DD)",
+            "already_configured": "Slu\u017eba je ji\u017e nastavena",
+            "remove_holiday_error": "Nespr\u00e1vn\u00fd form\u00e1t data (RRRR-MM-DD) nebo n\u00e1zev sv\u00e1tku"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "P\u0159idat sv\u00e1tky",
+                    "days_offset": "Posun",
+                    "excludes": "Vylu\u010duje",
+                    "province": "\u010clen\u011bn\u00ed zem\u011b",
+                    "remove_holidays": "Odstranit sv\u00e1tky",
+                    "workdays": "Pracovn\u00ed dny"
+                },
+                "data_description": {
+                    "add_holidays": "P\u0159id\u00e1n\u00ed vlastn\u00edch sv\u00e1tk\u016f jako RRRR-MM-DD",
+                    "days_offset": "Posun dn\u00ed",
+                    "excludes": "Seznam pracovn\u00edch dn\u016f k vylou\u010den\u00ed",
+                    "province": "St\u00e1t, teritorium, provincie, region",
+                    "remove_holidays": "Odstra\u0148te sv\u00e1tky jako RRRR-MM-DD nebo pomoc\u00ed \u010d\u00e1sti n\u00e1zvu",
+                    "workdays": "Seznam pracovn\u00edch dn\u016f"
+                }
+            },
+            "user": {
+                "data": {
+                    "country": "Zem\u011b",
+                    "name": "Jm\u00e9no"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "title": "YAML konfigurace Workday se odstra\u0148uje"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Nespr\u00e1vn\u00fd form\u00e1t data (RRRR-MM-DD)",
+            "already_configured": "Slu\u017eba je ji\u017e nastavena",
+            "remove_holiday_error": "Nespr\u00e1vn\u00fd form\u00e1t data (RRRR-MM-DD) nebo n\u00e1zev sv\u00e1tku"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "P\u0159idat sv\u00e1tky",
+                    "days_offset": "Posun",
+                    "excludes": "Vylu\u010duje",
+                    "province": "\u010clen\u011bn\u00ed zem\u011b",
+                    "remove_holidays": "Odstranit sv\u00e1tky",
+                    "workdays": "Pracovn\u00ed dny"
+                },
+                "data_description": {
+                    "add_holidays": "P\u0159id\u00e1n\u00ed vlastn\u00edch sv\u00e1tk\u016f jako RRRR-MM-DD",
+                    "days_offset": "Posun dn\u00ed",
+                    "excludes": "Seznam pracovn\u00edch dn\u016f k vylou\u010den\u00ed",
+                    "province": "St\u00e1t, teritorium, provincie, region",
+                    "remove_holidays": "Odstra\u0148te sv\u00e1tky jako RRRR-MM-DD nebo pomoc\u00ed \u010d\u00e1sti n\u00e1zvu",
+                    "workdays": "Seznam pracovn\u00edch dn\u016f"
+                },
+                "description": "Zm\u011bna dal\u0161\u00edch mo\u017enost\u00ed pro {name} nastavben\u00e9 pro zemi {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "P\u00e1tek",
+                "holiday": "Sv\u00e1tky",
+                "mon": "Pond\u011bl\u00ed",
+                "sat": "Sobota",
+                "sun": "Ned\u011ble",
+                "thu": "\u010ctvrtek",
+                "tue": "\u00dater\u00fd",
+                "wed": "St\u0159eda"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "\u017d\u00e1dn\u00e9 \u010dlen\u011bn\u00ed"
+            }
+        }
+    }
+}

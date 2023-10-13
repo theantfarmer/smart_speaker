@@ -1,0 +1,17 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "assist_in_progress": {
+                "name": "Asistence prob\u00edh\u00e1"
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Sekvence Asistenta",
+                "state": {
+                    "preferred": "Preferov\u00e1no"
+                }
+            }
+        }
+    }
+}

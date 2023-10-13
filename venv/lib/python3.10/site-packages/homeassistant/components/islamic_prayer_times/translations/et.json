@@ -1,0 +1,48 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Juba seadistatud. V\u00f5imalik on ainult \u00fcks seadistamine."
+        },
+        "step": {
+            "user": {
+                "description": "Kas soovitd seadistada Islam Prayer Times?",
+                "title": "Seadista Islamic Prayer Times"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "asr": {
+                "name": "Asr palve"
+            },
+            "dhuhr": {
+                "name": "Dhuhri palve"
+            },
+            "fajr": {
+                "name": "Fajr palve"
+            },
+            "isha": {
+                "name": "Isha palve"
+            },
+            "maghrib": {
+                "name": "Maghribi palve"
+            },
+            "midnight": {
+                "name": "Kesk\u00f6\u00f6 aeg"
+            },
+            "sunrise": {
+                "name": "P\u00e4ikeset\u00f5usu aeg"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "calculation_method": "Palve arvutamise meetod"
+                }
+            }
+        }
+    },
+    "title": ""
+}

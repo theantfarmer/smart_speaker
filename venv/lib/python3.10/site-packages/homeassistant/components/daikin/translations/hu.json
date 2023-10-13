@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "error": {
+            "api_password": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s, haszn\u00e1ljon API-kulcsot vagy jelsz\u00f3t.",
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API kulcs",
+                    "host": "C\u00edm",
+                    "password": "Jelsz\u00f3"
+                },
+                "description": "Adja meg a Daikin AC IP-c\u00edm\u00e9t.\n\nVegye figyelembe, hogy az API-kulcsot \u00e9s a jelsz\u00f3t csak a BRP072Cxx \u00e9s a SKYFi k\u00e9sz\u00fcl\u00e9kek haszn\u00e1lj\u00e1k.",
+                "title": "A Daikin l\u00e9gkond\u00edcion\u00e1l\u00f3 konfigur\u00e1l\u00e1sa"
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O dispositivo j\u00e1 est\u00e1 configurado"
+        },
+        "error": {
+            "cannot_connect": "A liga\u00e7\u00e3o falhou",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida"
+        },
+        "flow_title": "{name} ({ip_address})",
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Palavra-passe",
+                    "username": "Nome de Utilizador"
+                },
+                "description": "Do you want to setup {name} ({ip_address})? "
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Palavra-passe",
+                    "port": "Porta",
+                    "username": "Nome de Utilizador"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Endere\u00e7o",
+                    "password": "Palavra-passe",
+                    "port": "Porta",
+                    "username": "Nome de Utilizador",
+                    "verify_ssl": "Verificar o certificado SSL"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_service_set_doorbell_message": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "O servi\u00e7o `unifiprotect.set_doorbell_message` est\u00e1 obsoleto em favor da nova entidade de texto de campainha adicionada a cada dispositivo de campainha. Ele ser\u00e1 removido em v2023.3.0. Atualize para usar o servi\u00e7o [`text.set_value`]( {link} ).",
+                        "title": "set_doorbell_message est\u00e1 obsoleto"
+                    }
+                }
+            },
+            "title": "set_doorbell_message est\u00e1 obsoleto"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "max_media": "N\u00famero m\u00e1ximo de eventos a serem carregados para o Media Browser (aumenta o uso de RAM)"
+                }
+            }
+        }
+    }
+}

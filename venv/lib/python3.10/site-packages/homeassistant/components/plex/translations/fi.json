@@ -1,0 +1,51 @@
+{
+    "config": {
+        "abort": {
+            "all_configured": "Kaikki linkitetyt palvelimet on jo m\u00e4\u00e4ritetty",
+            "already_configured": "T\u00e4m\u00e4 Plex-palvelin on jo m\u00e4\u00e4ritetty",
+            "already_in_progress": "Konfiguraatioflow on jo k\u00e4ynniss\u00e4",
+            "token_request_timeout": "Tokenin haku aikakatkaistiin",
+            "unknown": "Odottamaton virhe"
+        },
+        "error": {
+            "faulty_credentials": "Valtuutus ep\u00e4onnistui, tarkista Token",
+            "no_servers": "Plex-tiliin ei ole linkitetty palvelimia",
+            "not_found": "Plex-palvelinta ei l\u00f6ydy",
+            "ssl_error": "SSL-varmenneongelma"
+        },
+        "step": {
+            "manual_setup": {
+                "data": {
+                    "host": "Palvelin (valinnainen, jos token on annettu)",
+                    "port": "Portti",
+                    "ssl": "K\u00e4yt\u00e4 SSL:\u00e4\u00e4",
+                    "token": "Token (valinnainen)"
+                },
+                "title": "Manuaalinen Plex-konfigurointi"
+            },
+            "select_server": {
+                "data": {
+                    "server": "Palvelin"
+                },
+                "description": "Useita palvelimia k\u00e4ytett\u00e4viss\u00e4, valitse yksi:",
+                "title": "Valitse Plex-palvelin"
+            },
+            "user_advanced": {
+                "data": {
+                    "setup_method": "Asennusmenetelm\u00e4"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "plex_mp_settings": {
+                "data": {
+                    "ignore_plex_web_clients": "Ohita Plex web-asiakasohjelmat",
+                    "use_episode_art": "K\u00e4yt\u00e4 episoditaidetta"
+                },
+                "description": "Plex-mediasoittimien asetukset"
+            }
+        }
+    }
+}

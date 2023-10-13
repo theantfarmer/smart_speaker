@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_system_id": "Ung\u00fcltige Airzone System-ID"
+        },
+        "step": {
+            "discovered_connection": {
+                "data": {
+                    "host": "Host",
+                    "id": "System-ID",
+                    "port": "Port"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "id": "System-ID",
+                    "port": "Port"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "grille_angles": {
+                "state": {
+                    "40deg": "40\u00b0",
+                    "45deg": "45\u00b0",
+                    "50deg": "50\u00b0",
+                    "90deg": "90\u00b0"
+                }
+            },
+            "sleep_times": {
+                "state": {
+                    "30m": "30 Minuten",
+                    "60m": "60 Minuten",
+                    "90m": "90 Minuten",
+                    "off": "Aus"
+                }
+            }
+        }
+    }
+}

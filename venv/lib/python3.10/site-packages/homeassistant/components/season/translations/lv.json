@@ -1,0 +1,19 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u0160is pakalpojums jau piesl\u0113gts Home Assistant"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "season": {
+                "state": {
+                    "autumn": "Rudens",
+                    "spring": "Pavasaris",
+                    "summer": "Vasara",
+                    "winter": "Ziema"
+                }
+            }
+        }
+    }
+}

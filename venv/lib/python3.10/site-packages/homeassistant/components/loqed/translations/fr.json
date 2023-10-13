@@ -1,0 +1,9 @@
+{
+    "entity": {
+        "sensor": {
+            "ble_strength": {
+                "name": "Signal Bluetooth"
+            }
+        }
+    }
+}

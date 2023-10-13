@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheden er allerede konfigureret",
+            "cannot_connect": "Forbindelse mislykkedes"
+        },
+        "error": {
+            "already_configured": "Enheden er allerede konfigureret",
+            "cannot_connect": "Forbindelse mislykkedes"
+        },
+        "step": {
+            "setup_network": {
+                "data": {
+                    "host": "V\u00e6rt",
+                    "port": "Port"
+                }
+            },
+            "setup_serial_manual_path": {
+                "data": {
+                    "port": "Sti til USB-enhed"
+                }
+            }
+        }
+    }
+}

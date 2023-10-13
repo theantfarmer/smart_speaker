@@ -1,0 +1,41 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "P\u0159epnout {entity_name}",
+            "turn_off": "Vypnout {entity_name}",
+            "turn_on": "Zapnout {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} je vypnuto",
+            "is_on": "{entity_name} je zapnuto"
+        },
+        "trigger_type": {
+            "turned_off": "{entity_name} vypnuto",
+            "turned_on": "{entity_name} zapnuto"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "D\u00e1lkov\u00e9 ovl\u00e1d\u00e1n\u00ed",
+            "state": {
+                "off": "Vypnuto",
+                "on": "Zapnuto"
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "D\u00e1lkov\u00e9 ovl\u00e1d\u00e1n\u00ed"
+}

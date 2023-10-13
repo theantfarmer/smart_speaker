@@ -1,0 +1,14 @@
+{
+    "issues": {
+        "migration": {
+            "fix_flow": {
+                "step": {
+                    "start": {
+                        "title": "Migrar a sua configura\u00e7\u00e3o de email IMAP"
+                    }
+                }
+            },
+            "title": "A integra\u00e7\u00e3o de email IMAP requer aten\u00e7\u00e3o"
+        }
+    }
+}

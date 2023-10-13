@@ -1,0 +1,24 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "max": {
+                    "name": "Max l\u00e4ngd"
+                },
+                "min": {
+                    "name": "Min l\u00e4ngd"
+                },
+                "mode": {
+                    "name": "L\u00e4ge",
+                    "state": {
+                        "password": "L\u00f6senord",
+                        "text": "Text"
+                    }
+                },
+                "pattern": {
+                    "name": "M\u00f6nster"
+                }
+            }
+        }
+    }
+}

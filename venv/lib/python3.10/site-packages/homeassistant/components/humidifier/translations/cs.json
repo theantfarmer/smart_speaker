@@ -1,0 +1,79 @@
+{
+    "device_automation": {
+        "action_type": {
+            "set_humidity": "Nastavit vlhkost pro {entity_name}",
+            "set_mode": "Zm\u011bnit re\u017eim na {entity_name}",
+            "toggle": "P\u0159epnout {entity_name}",
+            "turn_off": "Vypnout {entity_name}",
+            "turn_on": "Zapnout {entity_name}"
+        },
+        "condition_type": {
+            "is_mode": "{entity_name} je nastaven na konkr\u00e9tn\u00ed re\u017eim",
+            "is_off": "{entity_name} je vypnut\u00fd",
+            "is_on": "{entity_name} je zapnut\u00fd"
+        },
+        "trigger_type": {
+            "target_humidity_changed": "C\u00edlov\u00e1 vlhkost {entity_name} zm\u011bn\u011bna",
+            "turned_off": "{entity_name} vypnut",
+            "turned_on": "{entity_name} zapnut"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Zvlh\u010dova\u010d",
+            "state": {
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd"
+            },
+            "state_attributes": {
+                "available_modes": {
+                    "name": "Dostupn\u00e9 re\u017eimy"
+                },
+                "humidity": {
+                    "name": "C\u00edlov\u00e1 vlhkost"
+                },
+                "max_humidity": {
+                    "name": "Maxim\u00e1ln\u00ed c\u00edlov\u00e1 vlhkost"
+                },
+                "min_humidity": {
+                    "name": "Minim\u00e1ln\u00ed c\u00edlov\u00e1 vlhkost"
+                },
+                "mode": {
+                    "name": "Re\u017eim",
+                    "state": {
+                        "auto": "Auto",
+                        "away": "Pry\u010d",
+                        "baby": "D\u00edt\u011b",
+                        "boost": "Boost",
+                        "comfort": "Komfort",
+                        "eco": "Eko",
+                        "home": "Doma",
+                        "normal": "Norm\u00e1ln\u00ed",
+                        "sleep": "Sp\u00e1nek"
+                    }
+                }
+            }
+        },
+        "dehumidifier": {
+            "name": "Odvlh\u010dova\u010d"
+        },
+        "humidifier": {
+            "name": "Zvlh\u010dova\u010d"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Zvlh\u010dova\u010d"
+}

@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "bluetooth_not_available": "\u5fc5\u987b\u81f3\u5c11\u914d\u7f6e\u4e00\u4e2a\u84dd\u7259\u9002\u914d\u5668\u6216\u9065\u63a7\u5668\u624d\u80fd\u4f7f\u7528 iBeacon Tracker\u3002",
+            "single_instance_allowed": "\u8be5\u96c6\u6210\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86\uff0c\u4e14\u53ea\u80fd\u914d\u7f6e\u4e00\u6b21\u3002\u82e5\u8981\u91cd\u65b0\u914d\u7f6e\uff0c\u8bf7\u5148\u5220\u9664\u65e7\u96c6\u6210\u3002"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "estimated_distance": {
+                "name": "\u9884\u8ba1\u8ddd\u79bb"
+            },
+            "power": {
+                "name": "\u7535\u6e90"
+            },
+            "vendor": {
+                "name": "\u4f9b\u5e94\u5546"
+            }
+        }
+    }
+}

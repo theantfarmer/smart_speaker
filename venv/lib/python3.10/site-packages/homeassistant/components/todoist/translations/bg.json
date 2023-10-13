@@ -1,0 +1,20 @@
+{
+    "services": {
+        "new_task": {
+            "fields": {
+                "content": {
+                    "name": "\u0421\u044a\u0434\u044a\u0440\u0436\u0430\u043d\u0438\u0435"
+                },
+                "labels": {
+                    "name": "\u0415\u0442\u0438\u043a\u0435\u0442\u0438"
+                },
+                "priority": {
+                    "name": "\u041f\u0440\u0438\u043e\u0440\u0438\u0442\u0435\u0442"
+                },
+                "project": {
+                    "name": "\u041f\u0440\u043e\u0435\u043a\u0442"
+                }
+            }
+        }
+    }
+}

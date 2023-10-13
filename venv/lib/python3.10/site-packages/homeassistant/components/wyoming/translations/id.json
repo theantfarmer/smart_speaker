@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Layanan sudah dikonfigurasi",
+            "no_services": "Tidak ada layanan yang ditemukan di titik akhir"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Ingin mengonfigurasi Home Assistant untuk terhubung ke layanan Wyoming yang disediakan oleh add-on: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

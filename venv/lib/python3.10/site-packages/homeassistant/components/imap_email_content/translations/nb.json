@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "Integreringen av IMAP-e-postinnhold er utdatert. IMAP-serverkonfigurasjonen din ble allerede migrert til [imap-integrasjonen](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). For \u00e5 sette opp en sensor for IMAP-e-postinnholdet, sett opp en malsensor med konfigurasjonen: \n\n ``` yaml\n {yaml_example} ``` \n\n Vennligst fjern den utdaterte `imap_email_plaform`-sensorkonfigurasjonen fra `configuration.yaml`. \n\n V\u00e6r oppmerksom p\u00e5 at hendelsesfilteret kun filtrerer p\u00e5 den f\u00f8rste av de konfigurerte tillatte avsendere, tilpass filteret om n\u00f8dvendig. \n\n Du kan hoppe over denne delen hvis du allerede har satt opp en malsensor.",
+            "title": "Integreringen av IMAP-e-postinnhold er utdatert"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "IMAP-serverkonfigurasjonen var allerede migrert til imap-integrasjonen. Fjern `imap_email_plaform`-sensorkonfigurasjonen fra `configuration.yaml`.",
+                    "cannot_connect": "Migrering mislyktes. Kunne ikke koble til IMAP-serveren. Utf\u00f8r en manuell migrering."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "I dette trinnet vil en 'imap'-konfigurasjonsoppf\u00f8ring bli satt opp med f\u00f8lgende konfigurasjon: \n\n ```tekst\n Server {server}\n Port {port}\n Brukernavn {username}\n Passord *****\n Mappe {folder}\n ``` \n\n Se ogs\u00e5: (https://www.home-assistant.io/integrations/imap/) \n\n Tilpasningskonfigurasjon p\u00e5 tillatt `sender` er en del av malsensorkonfigurasjonen som kan kopieres og plasseres i `configuration.yaml. \n\n V\u00e6r oppmerksom p\u00e5 at hendelsesfilteret kun filtrerer p\u00e5 den f\u00f8rste av de konfigurerte tillatte avsendere, tilpass filteret om n\u00f8dvendig. \n\n ``` jaml\n {yaml_example} ```\n Ikke glem \u00e5 rydde opp i `configuration.yaml` etter migrering. \n\n Send inn for \u00e5 migrere IMAP-serverkonfigurasjonen til en \"imap\"-konfigurasjonsoppf\u00f8ring.",
+                        "title": "IMAP-serverinnstillingene blir overf\u00f8rt"
+                    },
+                    "start": {
+                        "description": "Integreringen av IMAP-e-postinnhold er utdatert. IMAP-serverkonfigurasjonen din kan migreres automatisk til [imap-integrasjonen](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), dette vil muliggj\u00f8re bruk av en egendefinert \u00abimap\u00bb-hendelsesutl\u00f8ser. For \u00e5 sette opp en sensor som har en IMAP-innholdstilstand, kan en malsensor brukes. Fjern `imap_email_plaform`-sensorkonfigurasjonen fra `configuration.yaml` etter migrering. \n\n Send inn for \u00e5 starte migreringen av IMAP-serverkonfigurasjonen til `imap`-integrasjonen.",
+                        "title": "Migrer IMAP-e-postkonfigurasjonen"
+                    }
+                }
+            },
+            "title": "Integreringen av IMAP-e-postinnhold trenger oppmerksomhet"
+        }
+    }
+}

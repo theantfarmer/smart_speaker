@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday has already been setup with chosen configuration",
+            "incorrect_province": "Incorrect subdivision from yaml import"
+        },
+        "error": {
+            "add_holiday_error": "Incorrect format on date (YYYY-MM-DD)",
+            "already_configured": "Service is already configured",
+            "remove_holiday_error": "Incorrect format on date (YYYY-MM-DD) or holiday name not found"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Add holidays",
+                    "days_offset": "Offset",
+                    "excludes": "Excludes",
+                    "province": "Subdivision of country",
+                    "remove_holidays": "Remove Holidays",
+                    "workdays": "Workdays"
+                },
+                "data_description": {
+                    "add_holidays": "Add custom holidays as YYYY-MM-DD",
+                    "days_offset": "Days offset",
+                    "excludes": "List of workdays to exclude",
+                    "province": "State, Territory, Province, Region of Country",
+                    "remove_holidays": "Remove holidays as YYYY-MM-DD or by using partial of name",
+                    "workdays": "List of workdays"
+                },
+                "description": "Set additional options for {name} configured for country {country}"
+            },
+            "user": {
+                "data": {
+                    "country": "Country",
+                    "name": "Name"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Configuring Workday using YAML is being removed.\n\nYour existing YAML configuration has been imported into the UI automatically.\n\nRemove the Workday YAML configuration from your configuration.yaml file and restart Home Assistant to fix this issue.",
+            "title": "The Workday YAML configuration is being removed"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Incorrect format on date (YYYY-MM-DD)",
+            "already_configured": "Service with this configuration already exist",
+            "remove_holiday_error": "Incorrect format on date (YYYY-MM-DD) or holiday name not found"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Add holidays",
+                    "days_offset": "Offset",
+                    "excludes": "Excludes",
+                    "province": "Subdivision of country",
+                    "remove_holidays": "Remove Holidays",
+                    "workdays": "Workdays"
+                },
+                "data_description": {
+                    "add_holidays": "Add custom holidays as YYYY-MM-DD",
+                    "days_offset": "Days offset",
+                    "excludes": "List of workdays to exclude",
+                    "province": "State, Territory, Province, Region of Country",
+                    "remove_holidays": "Remove holidays as YYYY-MM-DD or by using partial of name",
+                    "workdays": "List of workdays"
+                },
+                "description": "Change additional options for {name} configured for country {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Friday",
+                "holiday": "Holidays",
+                "mon": "Monday",
+                "sat": "Saturday",
+                "sun": "Sunday",
+                "thu": "Thursday",
+                "tue": "Tuesday",
+                "wed": "Wednesday"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "No subdivision"
+            }
+        }
+    },
+    "title": "Workday"
+}

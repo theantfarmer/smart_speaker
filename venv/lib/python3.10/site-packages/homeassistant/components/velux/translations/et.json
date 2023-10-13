@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reboot_gateway": {
+            "description": "Taask\u00e4ivitab KLF200 l\u00fc\u00fcsi.",
+            "name": "Taask\u00e4ivita l\u00fc\u00fcs"
+        }
+    }
+}

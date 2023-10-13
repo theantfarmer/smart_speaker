@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is al geconfigureerd"
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Wachtwoord"
+                },
+                "description": "Wil je {name} ( {host} ) instellen?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Wachtwoord"
+                }
+            }
+        }
+    },
+    "services": {
+        "load_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

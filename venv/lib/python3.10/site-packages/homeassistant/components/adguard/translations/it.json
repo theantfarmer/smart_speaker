@@ -1,0 +1,109 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il servizio \u00e8 gi\u00e0 configurato",
+            "existing_instance_updated": "Configurazione esistente aggiornata."
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Vuoi configurare Home Assistant per connettersi ad AdGuard Home fornito dal componente aggiuntivo: {addon}?",
+                "title": "AdGuard Home tramite il componente aggiuntivo di Home Assistant"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Password",
+                    "port": "Porta",
+                    "ssl": "Utilizza un certificato SSL",
+                    "username": "Nome utente",
+                    "verify_ssl": "Verifica il certificato SSL"
+                },
+                "description": "Configura l'istanza di AdGuard Home per consentire il monitoraggio e il controllo."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "average_processing_speed": {
+                "name": "Velocit\u00e0 di elaborazione media"
+            },
+            "dns_queries": {
+                "name": "Query DNS"
+            },
+            "dns_queries_blocked": {
+                "name": "Query DNS bloccate"
+            },
+            "dns_queries_blocked_ratio": {
+                "name": "Rapporto di query DNS bloccate"
+            },
+            "parental_control_blocked": {
+                "name": "Controllo genitori bloccato"
+            },
+            "rules_count": {
+                "name": "Conteggio delle regole"
+            },
+            "safe_browsing_blocked": {
+                "name": "Navigazione sicura bloccata"
+            },
+            "safe_searches_enforced": {
+                "name": "Ricerche sicure applicate"
+            }
+        },
+        "switch": {
+            "filtering": {
+                "name": "Filtrando"
+            },
+            "parental": {
+                "name": "Controllo dei genitori"
+            },
+            "protection": {
+                "name": "Protezione"
+            },
+            "query_log": {
+                "name": "Registro delle interrogazioni"
+            },
+            "safe_browsing": {
+                "name": "Navigazione sicura"
+            },
+            "safe_search": {
+                "name": "Ricerca sicura"
+            }
+        }
+    },
+    "services": {
+        "add_url": {
+            "fields": {
+                "name": {
+                    "name": "Nome"
+                },
+                "url": {
+                    "name": "URL"
+                }
+            }
+        },
+        "disable_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        },
+        "enable_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        },
+        "remove_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

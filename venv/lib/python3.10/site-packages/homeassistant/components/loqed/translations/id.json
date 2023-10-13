@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "invalid_auth": "Autentikasi tidak valid",
+            "unknown": "Kesalahan yang tidak diharapkan"
+        },
+        "flow_title": "Penyiapan LOQED Touch Smartlock",
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "Kunci API",
+                    "name": "Nama kunci Anda di aplikasi LOQED."
+                },
+                "description": "Masuk di {config_url} lalu:\n* Buat kunci API dengan mengklik 'Create'\n* Salin token akses yang dibuat."
+            }
+        }
+    }
+}

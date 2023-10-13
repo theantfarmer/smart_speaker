@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "already_in_progress": "Konfigur\u00e1cia u\u017e prebieha",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9",
+            "unsupported_device": "Nepodporovan\u00e9 zariadenie"
+        },
+        "error": {
+            "connection_timeout": "\u010casov\u00fd limit pripojenia",
+            "incorrect_password": "Nespr\u00e1vne heslo",
+            "incorrect_username": "Nespr\u00e1vne pou\u017e\u00edvate\u013esk\u00e9 meno",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "invalid_url": "Neplatn\u00e1 adresa URL",
+            "login_attempts_exceeded": "Bol prekro\u010den\u00fd maxim\u00e1lny po\u010det pokusov o prihl\u00e1senie, sk\u00faste to znova nesk\u00f4r",
+            "response_error": "Nezn\u00e1ma chyba zo zariadenia",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "description": "Zadajte prihlasovacie \u00fadaje k zariadeniu.",
+                "title": "Znova overi\u0165 integr\u00e1ciu"
+            },
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "url": "URL",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "description": "Zadajte pr\u00edstupov\u00e9 \u00fadaje zariadenia.",
+                "title": "Nakonfigurujte Huawei LTE"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "N\u00e1zov notifika\u010dnej slu\u017eby (zmena vy\u017eaduje re\u0161tart)",
+                    "recipient": "Pr\u00edjemcovia upozornen\u00ed SMS",
+                    "track_wired_clients": "Sledovanie klientov k\u00e1blovej siete",
+                    "unauthenticated_mode": "Neoveren\u00fd re\u017eim (zmena vy\u017eaduje op\u00e4tovn\u00e9 na\u010d\u00edtanie)"
+                }
+            }
+        }
+    },
+    "services": {
+        "clear_traffic_statistics": {
+            "description": "Vyma\u017ee \u0161tatistiky prev\u00e1dzky.",
+            "fields": {
+                "url": {
+                    "description": "URL smerova\u010da, ktor\u00fd sa m\u00e1 vymaza\u0165; nepovinn\u00e9, ak je nakonfigurovan\u00fd len jeden.",
+                    "name": "URL"
+                }
+            },
+            "name": "Vymazanie \u0161tatist\u00edk o prev\u00e1dzke"
+        },
+        "reboot": {
+            "description": "Re\u0161tartuje router.",
+            "fields": {
+                "url": {
+                    "description": "Adresa URL smerova\u010da, ktor\u00fd sa m\u00e1 re\u0161tartova\u0165; nepovinn\u00e9, ak je nakonfigurovan\u00fd len jeden.",
+                    "name": "URL"
+                }
+            },
+            "name": "Re\u0161tart"
+        },
+        "resume_integration": {
+            "description": "Obnovenie pozastavenej integr\u00e1cie.",
+            "fields": {
+                "url": {
+                    "description": "Adresa URL smerova\u010da, pre ktor\u00fd sa m\u00e1 integr\u00e1cia obnovi\u0165; nepovinn\u00e9, ak je nakonfigurovan\u00fd len jeden.",
+                    "name": "URL"
+                }
+            },
+            "name": "Obnovi\u0165 integr\u00e1ciu"
+        },
+        "suspend_integration": {
+            "description": "Pozastav\u00ed integr\u00e1ciu. Pozastavenie odhl\u00e1si integr\u00e1ciu zo smerova\u010da a zastav\u00ed pr\u00edstup k nej. U\u017eito\u010dn\u00e9 napr. ak je do\u010dasne potrebn\u00fd pr\u00edstup k webov\u00e9mu rozhraniu smerova\u010da z in\u00e9ho zdroja, napr. z webov\u00e9ho prehliada\u010da. Vyvolanie slu\u017eby resume_integration na obnovenie.\n.",
+            "fields": {
+                "url": {
+                    "description": "URL smerova\u010da, pre ktor\u00fd sa m\u00e1 integr\u00e1cia pozastavi\u0165; nepovinn\u00e9, ak je nakonfigurovan\u00fd len jeden.",
+                    "name": "URL"
+                }
+            },
+            "name": "Pozastavenie integr\u00e1cie"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "services": {
+        "submit_movie_request": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        },
+        "submit_music_request": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        },
+        "submit_tv_request": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        }
+    }
+}

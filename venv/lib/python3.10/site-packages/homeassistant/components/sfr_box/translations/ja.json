@@ -1,0 +1,22 @@
+{
+    "entity": {
+        "sensor": {
+            "net_infra": {
+                "state": {
+                    "adsl": "ADSL",
+                    "ftth": "FTTH",
+                    "gprs": "GPRS"
+                }
+            },
+            "wan_mode": {
+                "state": {
+                    "adsl_ppp": "ADSL (PPP)",
+                    "adsl_routed": "ADSL (Routed)",
+                    "ftth_routed": "FTTH (Routed)",
+                    "grps_ppp": "GPRS (PPP)",
+                    "unknown": "\u4e0d\u660e"
+                }
+            }
+        }
+    }
+}

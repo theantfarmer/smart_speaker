@@ -1,0 +1,66 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "invalid_auth": "Autentikasi tidak valid",
+            "unknown": "Kesalahan yang tidak diharapkan"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Kata Sandi",
+                    "username": "Nama Pengguna"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "current_gas": {
+                "name": "Gas saat ini"
+            },
+            "current_power": {
+                "name": "Daya saat ini"
+            },
+            "energy_consumption_off_peak_today": {
+                "name": "Konsumsi energi di luar puncak hari ini"
+            },
+            "energy_consumption_peak_today": {
+                "name": "Konsumsi energi puncak hari ini"
+            },
+            "energy_month": {
+                "name": "Energi bulan ini"
+            },
+            "energy_production_off_peak_today": {
+                "name": "Produksi energi di luar puncak hari ini"
+            },
+            "energy_production_peak_today": {
+                "name": "Produksi energi puncak hari ini"
+            },
+            "energy_today": {
+                "name": "Energi hari ini"
+            },
+            "energy_week": {
+                "name": "Energi pekan ini"
+            },
+            "energy_year": {
+                "name": "Energi tahun ini"
+            },
+            "gas_month": {
+                "name": "Gas bulan ini"
+            },
+            "gas_today": {
+                "name": "Gas hari ini"
+            },
+            "gas_week": {
+                "name": "Gas pekan ini"
+            },
+            "gas_year": {
+                "name": "Gas tahun ini"
+            }
+        }
+    }
+}

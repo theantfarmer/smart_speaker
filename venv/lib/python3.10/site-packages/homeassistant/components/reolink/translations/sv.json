@@ -1,0 +1,59 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad",
+            "reauth_successful": "\u00c5terautentisering lyckades"
+        },
+        "error": {
+            "api_error": "API-fel uppstod",
+            "invalid_auth": "Ogiltig autentisering",
+            "not_admin": "Anv\u00e4ndaren m\u00e5ste vara admin, anv\u00e4ndaren '' {username} '' har beh\u00f6righetsniv\u00e5 '' {userlevel} ''",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "step": {
+            "reauth_confirm": {
+                "description": "Reolink-integrationen m\u00e5ste autentisera dina anslutningsdetaljer p\u00e5 nytt",
+                "title": "\u00c5terautenticera integration"
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "password": "L\u00f6senord",
+                    "port": "Port",
+                    "username": "Anv\u00e4ndarnamn"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Av"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "blackwhite": "Svart&vit",
+                    "color": "F\u00e4rg"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "off": "Av",
+                    "schedule": "Schema"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "auto": "Auto"
+                }
+            }
+        }
+    },
+    "issues": {
+        "firmware_update": {
+            "title": "Reolink firmware uppdatering kr\u00e4vs"
+        }
+    }
+}

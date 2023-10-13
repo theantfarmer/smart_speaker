@@ -1,0 +1,41 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9"
+        },
+        "error": {
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "invalid_pin": "Poskytnut\u00fd k\u00f3d PIN je neplatn\u00fd",
+            "network_error": "Vyskytla sa chyba siete",
+            "no_panel_online": "Nebol n\u00e1jden\u00fd \u017eiadny online ovl\u00e1dac\u00ed panel Elmax.",
+            "reauth_panel_disappeared": "Dan\u00fd panel u\u017e nie je priraden\u00fd k tomuto pou\u017e\u00edvate\u013eovi. Prihl\u00e1ste sa pomocou \u00fa\u010dtu priraden\u00e9ho k tomuto panelu.",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "step": {
+            "panels": {
+                "data": {
+                    "panel_id": "ID panela",
+                    "panel_name": "N\u00e1zov panela",
+                    "panel_pin": "PIN k\u00f3d"
+                },
+                "description": "Vyberte panel, ktor\u00fd chcete pomocou tejto integr\u00e1cie ovl\u00e1da\u0165. Upozor\u0148ujeme, \u017ee panel mus\u00ed by\u0165 zapnut\u00fd, aby bolo mo\u017en\u00e9 ho nakonfigurova\u0165."
+            },
+            "reauth_confirm": {
+                "data": {
+                    "panel_pin": "Panel Pin",
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "description": "Znova sa overte pomocou panela."
+            },
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "description": "Prihl\u00e1ste sa do cloudu Elmax pomocou svojich prihlasovac\u00edch \u00fadajov"
+            }
+        }
+    }
+}

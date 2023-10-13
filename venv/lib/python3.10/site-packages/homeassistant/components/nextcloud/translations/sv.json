@@ -1,0 +1,15 @@
+{
+    "config": {
+        "flow_title": "Nextcloud",
+        "step": {
+            "user": {
+                "data": {
+                    "password": "L\u00f6senord",
+                    "url": "URL",
+                    "username": "Anv\u00e4ndarnamn"
+                },
+                "description": "Ange din Nextcloud information."
+            }
+        }
+    }
+}

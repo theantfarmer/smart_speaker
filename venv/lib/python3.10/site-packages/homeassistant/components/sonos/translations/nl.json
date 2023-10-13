@@ -1,0 +1,78 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "Geen apparaten gevonden op het netwerk",
+            "not_sonos_device": "Gevonden apparaat is geen Sonos-apparaat",
+            "single_instance_allowed": "Al geconfigureerd. Slechts \u00e9\u00e9n configuratie mogelijk."
+        },
+        "step": {
+            "confirm": {
+                "description": "Wilt u Sonos instellen?"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "microphone": {
+                "name": "Microfoon"
+            }
+        },
+        "number": {
+            "audio_delay": {
+                "name": "Audiovertraging"
+            },
+            "balance": {
+                "name": "Balans"
+            },
+            "bass": {
+                "name": "Bas"
+            },
+            "music_surround_level": {
+                "name": "Muziek surround niveau"
+            },
+            "sub_gain": {
+                "name": "Subwoofer gain"
+            },
+            "surround_level": {
+                "name": "Surroundniveau"
+            },
+            "treble": {
+                "name": "Hoge tonen"
+            }
+        },
+        "sensor": {
+            "audio_input_format": {
+                "name": "Audio-invoerformaat"
+            }
+        },
+        "switch": {
+            "buttons_enabled": {
+                "name": "Aanraakbedieningen"
+            },
+            "cross_fade": {
+                "name": "Crossfade"
+            },
+            "dialog_level": {
+                "name": "Spraakverbetering"
+            },
+            "loudness": {
+                "name": "Loudness"
+            },
+            "night_mode": {
+                "name": "Nachtgeluid"
+            },
+            "status_light": {
+                "name": "Statuslampje"
+            },
+            "sub_enabled": {
+                "name": "Subwoofer ingeschakeld"
+            },
+            "surround_enabled": {
+                "name": "Surround ingeschakeld"
+            },
+            "surround_mode": {
+                "name": "Surround muziek vol volume"
+            }
+        }
+    }
+}

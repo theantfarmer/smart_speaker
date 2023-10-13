@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheden er allerede konfigureret",
+            "reauth_successful": "Genautentificering lykkedes",
+            "unknown": "Uventet fejl"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_auth": "Ugyldig godkendelse",
+            "unknown": "Uventet fejl"
+        },
+        "step": {
+            "authenticate": {
+                "data": {
+                    "api_key": "API-n\u00f8gle"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "API-n\u00f8gle",
+                    "host": "V\u00e6rt",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "device_automation": {
+        "trigger_subtype": {
+            "press": "Paina",
+            "rotate_left": "K\u00e4\u00e4nn\u00e4 vasemmalle",
+            "rotate_right": "K\u00e4\u00e4nn\u00e4 oikealle"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "already_in_progress": "A be\u00e1ll\u00edt\u00e1si folyamat m\u00e1r el lett kezdve",
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "step": {
+            "discovery_confirm": {
+                "description": "Guardian eszk\u00f6z hozz\u00e1ad\u00e1sa a rendszerhez."
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP c\u00edm",
+                    "port": "Port"
+                },
+                "description": "Konfigur\u00e1lja a helyi Elexa Guardian eszk\u00f6zt."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "leak": {
+                "name": "Sziv\u00e1rg\u00e1s \u00e9szlelve"
+            },
+            "moved": {
+                "name": "Nemr\u00e9g mozdult"
+            }
+        },
+        "button": {
+            "reset_diagnostics": {
+                "name": "Szelepdiagnosztika vissza\u00e1ll\u00edt\u00e1sa"
+            }
+        },
+        "sensor": {
+            "uptime": {
+                "name": "Uptime"
+            }
+        },
+        "switch": {
+            "onboard_access_point": {
+                "name": "Saj\u00e1t hozz\u00e1f\u00e9r\u00e9si pont"
+            },
+            "valve_controller": {
+                "name": "Szelepvez\u00e9rl\u0151"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Friss\u00edtse a szolg\u00e1ltat\u00e1st haszn\u00e1l\u00f3 automatizmusokat vagy szkripteket, hogy helyette az `{alternate_service}` szolg\u00e1ltat\u00e1st haszn\u00e1lhassa `{alternate_target}` c\u00e9lentit\u00e1s-azonos\u00edt\u00f3val.",
+                        "title": "{deprecated_service} szolg\u00e1ltat\u00e1s elt\u00e1vol\u00edt\u00e1sra ker\u00fcl"
+                    }
+                }
+            },
+            "title": "{deprecated_service} szolg\u00e1ltat\u00e1s elt\u00e1vol\u00edt\u00e1sra ker\u00fcl"
+        }
+    }
+}

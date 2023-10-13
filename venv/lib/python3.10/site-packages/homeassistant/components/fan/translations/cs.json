@@ -1,0 +1,69 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "P\u0159epnout {entity_name}",
+            "turn_off": "Vypnout {entity_name}",
+            "turn_on": "Zapnout {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} je vypnut\u00fd",
+            "is_on": "{entity_name} je zapnut\u00fd"
+        },
+        "trigger_type": {
+            "turned_off": "{entity_name} vypnut",
+            "turned_on": "{entity_name} zapnut"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Ventil\u00e1tor",
+            "state": {
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd"
+            },
+            "state_attributes": {
+                "direction": {
+                    "name": "Sm\u011br",
+                    "state": {
+                        "forward": "Vp\u0159ed",
+                        "reverse": "Vzad"
+                    }
+                },
+                "oscillating": {
+                    "name": "Osciluj\u00edc\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "percentage": {
+                    "name": "Rychlost"
+                },
+                "percentage_step": {
+                    "name": "Krok rychlosti"
+                },
+                "preset_mode": {
+                    "name": "P\u0159ednastaven\u00fd re\u017eim"
+                },
+                "preset_modes": {
+                    "name": "Dostupn\u00e9 p\u0159ednastaven\u00e9 re\u017eimy"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Ventil\u00e1tor"
+}

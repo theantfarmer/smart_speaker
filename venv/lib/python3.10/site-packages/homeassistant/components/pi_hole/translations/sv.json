@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tj\u00e4nsten \u00e4r redan konfigurerad"
+        },
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "location": "Plats",
+                    "name": "Namn",
+                    "port": "Port",
+                    "ssl": "Anv\u00e4nd ett SSL certifikat",
+                    "verify_ssl": "Verifiera SSL-certifikat"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "status": {
+                "name": "Status"
+            }
+        },
+        "sensor": {
+            "domains_being_blocked": {
+                "name": "Dom\u00e4n blockerad"
+            }
+        }
+    }
+}

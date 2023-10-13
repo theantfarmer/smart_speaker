@@ -1,0 +1,62 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Automazione",
+            "state": {
+                "off": "Spento/a",
+                "on": "Acceso/a"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Automazioni in esecuzione"
+                },
+                "id": {
+                    "name": "ID"
+                },
+                "last_triggered": {
+                    "name": "Ultima attivazione"
+                },
+                "max": {
+                    "name": "Max automazioni in esecuzione"
+                },
+                "mode": {
+                    "name": "Modalit\u00e0 di esecuzione",
+                    "state": {
+                        "parallel": "In parallelo",
+                        "queued": "In coda",
+                        "restart": "Riavvio",
+                        "single": "Singola"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_not_found": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "L'automazione \"{name}\" (`{entity_id}`) ha un'azione che chiama un servizio sconosciuto: `{service}`. \n\nQuesto errore impedisce il corretto funzionamento dell'automazione. Forse questo servizio non \u00e8 pi\u00f9 disponibile, o forse lo ha causato un errore di battitura. \n\nPer correggere questo errore, [modifica l'automazione]({edit}) e rimuovi l'azione che chiama questo servizio. \n\nFai clic su INVIA di seguito per confermare di aver corretto questa automazione.",
+                        "title": "{name} utilizza un servizio sconosciuto"
+                    }
+                }
+            },
+            "title": "{name} utilizza un servizio sconosciuto"
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ricarica"
+        },
+        "toggle": {
+            "name": "Commuta"
+        },
+        "turn_off": {
+            "name": "Spegni"
+        },
+        "turn_on": {
+            "name": "Accendi"
+        }
+    },
+    "title": "Automazione"
+}

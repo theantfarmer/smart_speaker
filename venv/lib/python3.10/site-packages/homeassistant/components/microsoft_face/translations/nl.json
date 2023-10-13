@@ -1,0 +1,32 @@
+{
+    "services": {
+        "create_group": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "create_person": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "delete_group": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "delete_person": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        }
+    }
+}

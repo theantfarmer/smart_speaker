@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Sirene",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "available_tones": {
+                    "name": "Tilgjengelige toner"
+                }
+            }
+        }
+    },
+    "title": "Sirene"
+}

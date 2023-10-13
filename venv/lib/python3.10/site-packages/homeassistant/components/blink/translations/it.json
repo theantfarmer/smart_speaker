@@ -1,0 +1,68 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_access_token": "Token di accesso non valido",
+            "invalid_auth": "Autenticazione non valida",
+            "unknown": "Errore imprevisto"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "Codice a due fattori"
+                },
+                "description": "Inserisci il PIN inviato via email o SMS",
+                "title": "Autenticazione a due fattori"
+            },
+            "user": {
+                "data": {
+                    "password": "Password",
+                    "username": "Nome utente"
+                },
+                "title": "Accedi con l'account Blink"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "camera_armed": {
+                "name": "Telecamera armata"
+            }
+        },
+        "sensor": {
+            "wifi_rssi": {
+                "name": "Wi-Fi RSSI"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "simple_options": {
+                "data": {
+                    "scan_interval": "Intervallo di scansione (secondi)"
+                },
+                "description": "Configura l'integrazione di Blink",
+                "title": "Opzioni di Blink"
+            }
+        }
+    },
+    "services": {
+        "save_recent_clips": {
+            "fields": {
+                "name": {
+                    "name": "Nome"
+                }
+            }
+        },
+        "save_video": {
+            "fields": {
+                "name": {
+                    "name": "Nome"
+                }
+            }
+        }
+    }
+}

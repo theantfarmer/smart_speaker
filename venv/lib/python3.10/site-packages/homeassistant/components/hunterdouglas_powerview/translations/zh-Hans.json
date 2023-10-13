@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86"
+        },
+        "error": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25",
+            "unknown": "\u975e\u9884\u671f\u7684\u9519\u8bef"
+        },
+        "flow_title": "{name} ({host})",
+        "step": {
+            "link": {
+                "description": "\u60a8\u8981\u8bbe\u7f6e {name} ({host})\u5417\uff1f",
+                "title": "\u8fde\u63a5\u5230 PowerView \u96c6\u7ebf\u5668"
+            },
+            "user": {
+                "data": {
+                    "host": "IP \u5730\u5740"
+                },
+                "title": "\u8fde\u63a5\u5230 PowerView \u96c6\u7ebf\u5668"
+            }
+        }
+    }
+}

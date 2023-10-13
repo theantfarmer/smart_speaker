@@ -1,0 +1,101 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "Diminuir o brilho de {entity_name}",
+            "brightness_increase": "Aumentar o brilho de {entity_name}",
+            "flash": "Piscar {entity_name}",
+            "toggle": "Alternar {entity_name}",
+            "turn_off": "Desligar {entity_name}",
+            "turn_on": "Ligar {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} est\u00e1 desligado",
+            "is_on": "{entity_name} est\u00e1 ligado"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} ligado ou desligado",
+            "turned_off": "{entity_name} foi desligado",
+            "turned_on": "{entity_name} foi ligado"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Ilumina\u00e7\u00e3o",
+            "state": {
+                "off": "Desligado",
+                "on": "Ligado"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "Brilho"
+                },
+                "color_mode": {
+                    "name": "Modo de cor",
+                    "state": {
+                        "brightness": "Apenas brilho",
+                        "color_temp": "Temperatura da cor",
+                        "hs": "HS",
+                        "onoff": "Ligado/Desligado",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Desconhecido",
+                        "white": "Branco",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "Temperatura da cor (mireds)"
+                },
+                "color_temp_kelvin": {
+                    "name": "Temperatura da cor (Kelvin)"
+                },
+                "effect": {
+                    "name": "Efeito"
+                },
+                "effect_list": {
+                    "name": "Efeitos dispon\u00edveis"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "Temperatura m\u00e1xima da cor (Kelvin)"
+                },
+                "max_mireds": {
+                    "name": "Temperatura m\u00e1xima da cor (mireds)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "Temperatura m\u00ednima da cor (Kelvin)"
+                },
+                "min_mireds": {
+                    "name": "Temperatura m\u00ednima da cor (mireds)"
+                },
+                "supported_color_modes": {
+                    "name": "Modos de cor dispon\u00edveis",
+                    "state": {
+                        "brightness": "Apenas brilho",
+                        "color_temp": "Temperatura da cor",
+                        "hs": "HS",
+                        "onoff": "Ligado/Desligado",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Desconhecido",
+                        "white": "Branco",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "A plataforma {platform} para a integra\u00e7\u00e3o {domain} n\u00e3o suporta a configura\u00e7\u00e3o da plataforma.\n\nRemova-a da sua configura\u00e7\u00e3o e reinicie o Home Assistant para corrigir este problema.",
+            "title": "Suporte de plataforma n\u00e3o suportado"
+        }
+    },
+    "services": {
+        "turn_on": {
+            "name": "Ligar"
+        }
+    },
+    "title": "Ilumina\u00e7\u00e3o"
+}

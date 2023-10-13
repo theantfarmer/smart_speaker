@@ -1,0 +1,99 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86",
+            "already_in_progress": "\u914d\u7f6e\u6d41\u7a0b\u5df2\u5728\u8fdb\u884c\u4e2d",
+            "no_devices_found": "\u6ca1\u6709\u5728\u7f51\u7edc\u4e0a\u627e\u5230\u8bbe\u5907"
+        },
+        "error": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "step": {
+            "discovery_confirm": {
+                "description": "\u60a8\u8981\u8bbe\u7f6e {label} ({group}) \u5417\uff1f"
+            },
+            "pick_device": {
+                "data": {
+                    "device": "\u8bbe\u5907"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "\u4e3b\u673a"
+                },
+                "description": "\u5982\u679c\u4e3b\u673a\u7559\u7a7a\uff0c\u5c06\u4f7f\u7528\u81ea\u52a8\u53d1\u73b0\u67e5\u627e\u8bbe\u5907\u3002"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "clean_cycle": {
+                "name": "\u6e05\u6d01\u5468\u671f"
+            }
+        },
+        "select": {
+            "infrared_brightness": {
+                "name": "\u7ea2\u5916\u4eae\u5ea6"
+            },
+            "theme": {
+                "name": "\u4e3b\u9898"
+            }
+        },
+        "sensor": {
+            "rssi": {
+                "name": "RSSI"
+            }
+        }
+    },
+    "services": {
+        "effect_colorloop": {
+            "fields": {
+                "period": {
+                    "description": "\u989c\u8272\u53d8\u5316\u4e4b\u95f4\u7684\u6301\u7eed\u65f6\u95f4\u3002"
+                }
+            }
+        },
+        "effect_morph": {
+            "fields": {
+                "theme": {
+                    "name": "\u4e3b\u9898"
+                }
+            }
+        },
+        "effect_move": {
+            "fields": {
+                "theme": {
+                    "name": "\u4e3b\u9898"
+                }
+            }
+        },
+        "effect_pulse": {
+            "fields": {
+                "mode": {
+                    "name": "\u6a21\u5f0f"
+                },
+                "period": {
+                    "description": "\u6548\u679c\u7684\u6301\u7eed\u65f6\u95f4\u3002"
+                }
+            }
+        },
+        "set_hev_cycle_state": {
+            "fields": {
+                "duration": {
+                    "description": "HEV LED \u4f1a\u4fdd\u6301\u70b9\u4eae\u591a\u957f\u65f6\u95f4\u3002\u5982\u679c\u672a\u6307\u5b9a\uff0c\u5219\u4f7f\u7528\u914d\u7f6e\u7684\u9ed8\u8ba4\u6301\u7eed\u65f6\u95f4\u3002",
+                    "name": "\u6301\u7eed\u65f6\u95f4"
+                },
+                "power": {
+                    "name": "\u542f\u7528"
+                }
+            }
+        },
+        "set_state": {
+            "fields": {
+                "transition": {
+                    "description": "\u8fbe\u5230\u6700\u7ec8\u72b6\u6001\u6240\u9700\u7684\u6301\u7eed\u65f6\u95f4\u3002"
+                }
+            }
+        }
+    }
+}

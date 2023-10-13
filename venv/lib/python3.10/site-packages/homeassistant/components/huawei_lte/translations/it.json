@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "already_in_progress": "Il flusso di configurazione \u00e8 gi\u00e0 in corso",
+            "reauth_successful": "La riautenticazione ha avuto successo",
+            "unsupported_device": "Dispositivo non supportato"
+        },
+        "error": {
+            "connection_timeout": "Timeout di connessione",
+            "incorrect_password": "Password errata",
+            "incorrect_username": "Nome utente errato",
+            "invalid_auth": "Autenticazione non valida",
+            "invalid_url": "URL non valido",
+            "login_attempts_exceeded": "Superati i tentativi di accesso massimi, riprovare pi\u00f9 tardi",
+            "response_error": "Errore sconosciuto dal dispositivo",
+            "unknown": "Errore imprevisto"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Password",
+                    "username": "Nome utente"
+                },
+                "description": "Immettere le credenziali di accesso al dispositivo.",
+                "title": "Autentica nuovamente l'integrazione"
+            },
+            "user": {
+                "data": {
+                    "password": "Password",
+                    "url": "URL",
+                    "username": "Nome utente"
+                },
+                "description": "Inserisci i dettagli di accesso al dispositivo.",
+                "title": "Configura Huawei LTE"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "Nome del servizio di notifica (la modifica richiede il riavvio)",
+                    "recipient": "Destinatari della notifica SMS",
+                    "track_wired_clients": "Tieni traccia dei client di rete cablata",
+                    "unauthenticated_mode": "Modalit\u00e0 non autenticata (la modifica richiede il ricaricamento)"
+                }
+            }
+        }
+    },
+    "services": {
+        "clear_traffic_statistics": {
+            "description": "Cancella le statistiche sul traffico.",
+            "fields": {
+                "url": {
+                    "description": "URL del router da cancellare; facoltativo quando ne \u00e8 configurato solo uno.",
+                    "name": "URL"
+                }
+            },
+            "name": "Cancella le statistiche sul traffico"
+        },
+        "reboot": {
+            "description": "Riavvia il router.",
+            "fields": {
+                "url": {
+                    "description": "URL del router da riavviare; facoltativo quando ne \u00e8 configurato solo uno.",
+                    "name": "URL"
+                }
+            },
+            "name": "Riavvia"
+        },
+        "resume_integration": {
+            "description": "Riprende l'integrazione sospesa.",
+            "fields": {
+                "url": {
+                    "description": "URL del router per cui riprendere l'integrazione; facoltativo quando ne \u00e8 configurato solo uno.",
+                    "name": "URL"
+                }
+            },
+            "name": "Riprendere l'integrazione"
+        },
+        "suspend_integration": {
+            "description": "Sospendi l'integrazione. La sospensione disconnette l'integrazione dal router e interrompe l'accesso. Utile, ad esempio, se \u00e8 temporaneamente necessario accedere all'interfaccia Web del router da un'altra fonte, ad esempio un browser Web. Richiamare il servizio resume_integration per riprendere.\n.",
+            "fields": {
+                "url": {
+                    "description": "URL del router per cui sospendere l'integrazione; facoltativo quando ne \u00e8 configurato solo uno.",
+                    "name": "URL"
+                }
+            },
+            "name": "Sospendi integrazione"
+        }
+    }
+}

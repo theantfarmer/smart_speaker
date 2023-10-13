@@ -1,0 +1,8 @@
+{
+    "issues": {
+        "maria_db_range_index_regression": {
+            "description": "Vec\u0101k\u0101s MariaDB versijas iev\u0113rojami pasliktina veiktsp\u0113ju, kad tiek izg\u016bti v\u0113stures dati vai att\u012br\u012bta datub\u0101ze. Atjauniniet uz {min_versija} vai jaun\u0101ku MariaDB versiju un restart\u0113jiet Home Assistant. Ja izmantojat MariaDB kodola papildin\u0101jumu, p\u0101rliecinieties, ka tas ir atjaunin\u0101ts l\u012bdz jaun\u0101kajai versijai.",
+            "title": "MariaDB atjaunin\u0101\u0161ana l\u012bdz {min_versija} vai jaun\u0101kai versijai atrisina b\u016btisku veiktsp\u0113jas probl\u0113mu"
+        }
+    }
+}

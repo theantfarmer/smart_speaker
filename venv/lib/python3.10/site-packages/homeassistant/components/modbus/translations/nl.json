@@ -1,0 +1,13 @@
+{
+    "services": {
+        "reload": {
+            "name": "Herladen"
+        },
+        "restart": {
+            "name": "Herstarten"
+        },
+        "stop": {
+            "name": "Stoppen"
+        }
+    }
+}

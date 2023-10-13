@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "cannot_connect": "Impossibile connettersi",
+            "reauth_successful": "La riautenticazione ha avuto successo"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "unknown": "Errore imprevisto",
+            "wrong_version": "Il tuo Powerwall utilizza una versione software non supportata. Considerare l'aggiornamento o segnala questo problema in modo da poterlo risolvere."
+        },
+        "flow_title": "{name} ({ip_address})",
+        "step": {
+            "confirm_discovery": {
+                "description": "Vuoi configurare {name} ({ip_address})?",
+                "title": "Connettiti al Powerwall"
+            },
+            "reauth_confim": {
+                "data": {
+                    "password": "Password"
+                },
+                "description": "La password predefinita \u00e8 stampata all'interno del Backup Gateway per i modelli pi\u00f9 recenti. Per i modelli pi\u00f9 vecchi, la password predefinita \u00e8 costituita dagli ultimi cinque caratteri del numero di serie di Backup Gateway e pu\u00f2 essere trovata nell'app Tesla.",
+                "title": "Riautenticare il Powerwall"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Password"
+                },
+                "description": "La password predefinita \u00e8 stampata all'interno del Backup Gateway per i modelli pi\u00f9 recenti. Per i modelli pi\u00f9 vecchi, la password predefinita \u00e8 costituita dagli ultimi cinque caratteri del numero di serie di Backup Gateway e pu\u00f2 essere trovata nell'app Tesla.",
+                "title": "Riautenticare il Powerwall"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "Indirizzo IP",
+                    "password": "Password"
+                },
+                "description": "La password predefinita \u00e8 stampata all'interno del Backup Gateway per i modelli pi\u00f9 recenti. Per i modelli pi\u00f9 vecchi, la password predefinita \u00e8 costituita dagli ultimi cinque caratteri del numero di serie di Backup Gateway e pu\u00f2 essere trovata nell'app Tesla.",
+                "title": "Connettiti al Powerwall"
+            }
+        }
+    }
+}

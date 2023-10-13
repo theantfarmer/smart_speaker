@@ -1,0 +1,87 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konto wurde bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "invalid_station": "Eine Wetterstation mit dem angegebenen Namen konnte nicht gefunden werden",
+            "more_stations": "Mehrere Wetterstationen mit dem angegebenen Namen gefunden"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API-Schl\u00fcssel",
+                    "station": "Station"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "air_temperature": {
+                "name": "Lufttemperatur"
+            },
+            "measure_time": {
+                "name": "Messzeit"
+            },
+            "precipitation": {
+                "name": "Art des Niederschlages",
+                "state": {
+                    "drizzle": "Nieselregen",
+                    "freezing_rain": "Gefrierender Regen",
+                    "hail": "Hagel",
+                    "none": "Keine",
+                    "rain": "Regen",
+                    "rain_snow_mixed": "Regen und Schnee gemischt",
+                    "snow": "Schnee"
+                }
+            },
+            "precipitation_amountname": {
+                "name": "Name des Niederschlags",
+                "state": {
+                    "error": "Fehler",
+                    "heavy_rain": "Starker Regen",
+                    "heavy_snow": "Starker Schneefall",
+                    "heavy_snow_rain": "Starker Regen und Schnee gemischt",
+                    "mild_rain": "Leichter Regen",
+                    "mild_snow": "Leichter Schneefall",
+                    "mild_snow_rain": "Leichter Regen und Schnee gemischt",
+                    "moderate_rain": "M\u00e4\u00dfiger Regen",
+                    "moderate_snow": "M\u00e4\u00dfiger Schneefall",
+                    "moderate_snow_rain": "M\u00e4\u00dfiger Regen und Schnee gemischt",
+                    "none": "Keine",
+                    "other": "Andere",
+                    "unknown": "Unbekannt"
+                }
+            },
+            "road_temperature": {
+                "name": "Stra\u00dfentemperatur"
+            },
+            "wind_direction": {
+                "name": "Windrichtung"
+            },
+            "wind_direction_text": {
+                "name": "Windrichtungstext",
+                "state": {
+                    "east": "Osten",
+                    "east_south_east": "Ost-S\u00fcdosten",
+                    "north": "Norden",
+                    "north_east": "Nordosten",
+                    "north_north_east": "Nord-Nordosten",
+                    "north_north_west": "Nord-Nordwest",
+                    "north_west": "Nordwesten",
+                    "south": "S\u00fcden",
+                    "south_east": "S\u00fcdosten",
+                    "south_south_west": "S\u00fcd-S\u00fcdwesten",
+                    "south_west": "S\u00fcdwesten",
+                    "west": "Westen"
+                }
+            },
+            "wind_speed_max": {
+                "name": "Windgeschwindigkeit max"
+            }
+        }
+    }
+}

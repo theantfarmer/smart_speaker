@@ -1,0 +1,35 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Valikmen\u00fc\u00fc abiline",
+            "state_attributes": {
+                "editable": {
+                    "name": "Hallatakse kasutajaliideses",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Jah"
+                    }
+                },
+                "options": {
+                    "name": "Valikud"
+                }
+            }
+        }
+    },
+    "services": {
+        "select_previous": {
+            "name": "Eelmine"
+        },
+        "set_options": {
+            "description": "M\u00e4\u00e4rab valikud.",
+            "fields": {
+                "options": {
+                    "description": "Valikute loend.",
+                    "name": "Valikud"
+                }
+            },
+            "name": "M\u00e4\u00e4ra valikud"
+        }
+    },
+    "title": "Valikmen\u00fc\u00fc abiline"
+}

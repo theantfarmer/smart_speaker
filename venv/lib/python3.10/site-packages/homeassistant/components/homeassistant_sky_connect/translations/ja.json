@@ -1,0 +1,7 @@
+{
+    "options": {
+        "abort": {
+            "zha_migration_failed": "ZHA\u3078\u306e\u79fb\u884c\u306f\u6210\u529f\u3057\u307e\u305b\u3093\u3067\u3057\u305f\u3002"
+        }
+    }
+}

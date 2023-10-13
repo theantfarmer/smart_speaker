@@ -1,0 +1,11 @@
+{
+    "services": {
+        "teach_face": {
+            "fields": {
+                "name": {
+                    "name": "Nome"
+                }
+            }
+        }
+    }
+}

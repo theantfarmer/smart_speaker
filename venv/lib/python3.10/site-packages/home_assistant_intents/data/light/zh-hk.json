@@ -1,0 +1,73 @@
+{
+  "language": "zh-hk",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "(設置|調節|調整|調教)<name>(亮度)[<set_to>]<brightness>"
+          ],
+          "response": "brightness",
+          "requires_context": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "(設置|調節|調整|調教)<area>[<light>](亮度)[<set_to>]<brightness>"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "(設置|調節|調整|調教)<name>[<light>](亮度)[<set_to>]{brightness_level:brightness}"
+          ],
+          "requires_context": {
+            "domain": "light"
+          },
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "(設置|調節|調整|調教)<area>[<light>](亮度)[<set_to>]{brightness_level:brightness}"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "(設置|調節|調整|調教)<name>[顏色][<set_to>]{color}"
+          ],
+          "requires_context": {
+            "domain": "light"
+          },
+          "response": "color"
+        },
+        {
+          "sentences": [
+            "(設置|調節|調整|調教)<area><light>[顏色][<set_to>]{color}"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "color_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "{{ slots.name }}亮度已設置為{{ slots.brightness }}",
+        "brightness_area": "{{ slots.area }}燈亮度已設置為{{ slots.brightness }}",
+        "color": "{{ slots.name }}顏色已設置為{{ slots.color }}",
+        "color_area": "{{ slots.area }}燈顏色已設置為{{ slots.color }}"
+      }
+    }
+  }
+}

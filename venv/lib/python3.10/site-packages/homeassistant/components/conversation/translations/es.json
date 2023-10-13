@@ -1,0 +1,23 @@
+{
+    "services": {
+        "process": {
+            "description": "Inicia una conversaci\u00f3n a partir de un texto transcrito.",
+            "fields": {
+                "agent_id": {
+                    "description": "Agente de conversaci\u00f3n para procesar tu solicitud. El agente de conversaci\u00f3n es el cerebro de tu asistente. Procesa los comandos de texto entrantes.",
+                    "name": "Agente"
+                },
+                "language": {
+                    "description": "Idioma del texto. El valor predeterminado es el idioma del servidor.",
+                    "name": "Idioma"
+                },
+                "text": {
+                    "description": "Entrada de texto transcrito.",
+                    "name": "Texto"
+                }
+            },
+            "name": "Procesar"
+        }
+    },
+    "title": "Conversaci\u00f3n"
+}

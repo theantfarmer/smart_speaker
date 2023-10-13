@@ -1,0 +1,20 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "V\u00e6lg mulighed",
+            "state_attributes": {
+                "editable": {
+                    "name": "Administreret via brugerfladen",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "options": {
+                    "name": "Valgmuligheder"
+                }
+            }
+        }
+    },
+    "title": "V\u00e6lg mulighed"
+}

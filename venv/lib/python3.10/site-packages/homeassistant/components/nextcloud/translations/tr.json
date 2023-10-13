@@ -1,0 +1,38 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "connection_error_during_import": "yaml yap\u0131land\u0131rma i\u00e7e aktarma i\u015flemi s\u0131ras\u0131nda ba\u011flant\u0131 hatas\u0131 olu\u015ftu",
+            "reauth_successful": "Yeniden kimlik do\u011frulama ba\u015far\u0131l\u0131 oldu"
+        },
+        "error": {
+            "connection_error": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama"
+        },
+        "flow_title": "Nextcloud",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131"
+                },
+                "description": "{url} i\u00e7in giri\u015f bilgilerinizi g\u00fcncelleyin."
+            },
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "url": "URL",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131",
+                    "verify_ssl": "SSL sertifikas\u0131n\u0131 do\u011frulay\u0131n"
+                },
+                "description": "Nextcloud bilgilerinizi girin."
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Nextcloud'u YAML kullanarak yap\u0131land\u0131rmak kullan\u0131mdan kald\u0131r\u0131ld\u0131. \n\n Mevcut YAML yap\u0131land\u0131rman\u0131z, kullan\u0131c\u0131 aray\u00fcz\u00fcne otomatik olarak aktar\u0131ld\u0131. \n\n Bu sorunu \u00e7\u00f6zmek i\u00e7in \"nextcloud\" YAML yap\u0131land\u0131rmas\u0131n\u0131 configuration.yaml dosyan\u0131zdan kald\u0131r\u0131n ve Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "Nextcloud YAML yap\u0131land\u0131rmas\u0131 kullan\u0131mdan kald\u0131r\u0131ld\u0131"
+        }
+    }
+}

@@ -1,0 +1,66 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "V\u00e6r",
+            "state": {
+                "clear-night": "Klart, natt",
+                "cloudy": "Skyet",
+                "exceptional": "Eksepsjonell",
+                "fog": "T\u00e5ke",
+                "hail": "Hagl",
+                "lightning": "Lyn",
+                "lightning-rainy": "Lyn, regnfult",
+                "partlycloudy": "Delvis skyet",
+                "pouring": "Kraftig regn",
+                "rainy": "Regnfull",
+                "snowy": "Sn\u00f8",
+                "snowy-rainy": "Sn\u00f8, regn",
+                "sunny": "Solfylt",
+                "windy": "Vindfullt",
+                "windy-variant": "Vindfullt"
+            },
+            "state_attributes": {
+                "forecast": {
+                    "name": "Prognose"
+                },
+                "humidity": {
+                    "name": "Fuktighet"
+                },
+                "ozone": {
+                    "name": "Ozon"
+                },
+                "precipitation_unit": {
+                    "name": "Nedb\u00f8rsenhet"
+                },
+                "pressure": {
+                    "name": "Trykk"
+                },
+                "pressure_unit": {
+                    "name": "Trykkenhet"
+                },
+                "temperature": {
+                    "name": "Temperatur"
+                },
+                "temperature_unit": {
+                    "name": "Temperaturenhet"
+                },
+                "visibility": {
+                    "name": "Synlighet"
+                },
+                "visibility_unit": {
+                    "name": "Synlighet enhet"
+                },
+                "wind_bearing": {
+                    "name": "Vindendring"
+                },
+                "wind_speed": {
+                    "name": "Vindstyrke"
+                },
+                "wind_speed_unit": {
+                    "name": "Enhet for vindhastighet"
+                }
+            }
+        }
+    },
+    "title": "V\u00e6r"
+}

@@ -1,0 +1,31 @@
+{
+    "device_automation": {
+        "action_type": {
+            "press": "Appuyez sur le bouton {entity_name}"
+        },
+        "trigger_type": {
+            "pressed": "Appui sur {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Bouton"
+        },
+        "identify": {
+            "name": "Identifier"
+        },
+        "restart": {
+            "name": "Red\u00e9marrer"
+        },
+        "update": {
+            "name": "Mettre \u00e0 jour"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "title": "Bouton"
+}

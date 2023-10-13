@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "access_not_configured": "Silakan baca pesan di bawah ini yang kami dapatkan dari Google: \n\n {message}",
+            "already_configured": "Akun sudah dikonfigurasi",
+            "no_channel": "Buatlah saluran YouTube untuk dapat menggunakan integrasi ini. Petunjuknya dapat ditemukan di {support_url}.",
+            "reauth_successful": "Autentikasi ulang berhasil",
+            "unknown": "Kesalahan yang tidak diharapkan"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "invalid_auth": "Autentikasi tidak valid"
+        },
+        "step": {
+            "channels": {
+                "data": {
+                    "channels": "Saluran YouTube"
+                },
+                "description": "Pilih saluran yang ingin ditambahkan."
+            },
+            "reauth_confirm": {
+                "description": "Integrasi YouTube perlu mengautentikasi ulang akun Anda",
+                "title": "Autentikasi Ulang Integrasi"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "latest_upload": {
+                "name": "Unggahan terbaru"
+            },
+            "subscribers": {
+                "name": "Pelanggan"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "channels": "Saluran YouTube"
+                },
+                "description": "Pilih saluran yang ingin ditambahkan."
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Wetter",
+            "state": {
+                "clear-night": "Klare Nacht",
+                "cloudy": "Bew\u00f6lkt",
+                "exceptional": "Au\u00dfergew\u00f6hnlich",
+                "fog": "Nebel",
+                "hail": "Hagel",
+                "lightning": "Gewitter",
+                "lightning-rainy": "Gewitter, regnerisch",
+                "partlycloudy": "Teilweise bew\u00f6lkt",
+                "pouring": "Platzregen",
+                "rainy": "Regnerisch",
+                "snowy": "Verschneit",
+                "snowy-rainy": "Verschneit, regnerisch",
+                "sunny": "Sonnig",
+                "windy": "Windig",
+                "windy-variant": "Windig"
+            },
+            "state_attributes": {
+                "apparent_temperature": {
+                    "name": "Scheinbare Temperatur"
+                },
+                "cloud_coverage": {
+                    "name": "Bew\u00f6lkung"
+                },
+                "dew_point": {
+                    "name": "Taupunkttemperatur"
+                },
+                "forecast": {
+                    "name": "Prognose"
+                },
+                "humidity": {
+                    "name": "Luftfeuchtigkeit"
+                },
+                "ozone": {
+                    "name": "Ozon"
+                },
+                "precipitation_unit": {
+                    "name": "Niederschlagseinheit"
+                },
+                "pressure": {
+                    "name": "Druck"
+                },
+                "pressure_unit": {
+                    "name": "Druckeinheit"
+                },
+                "temperature": {
+                    "name": "Temperatur"
+                },
+                "temperature_unit": {
+                    "name": "Temperatureinheit"
+                },
+                "uv_index": {
+                    "name": "UV-Index"
+                },
+                "visibility": {
+                    "name": "Sichtbarkeit"
+                },
+                "visibility_unit": {
+                    "name": "Sichtbarkeitseinheit"
+                },
+                "wind_bearing": {
+                    "name": "Windlast"
+                },
+                "wind_gust_speed": {
+                    "name": "Windb\u00f6engeschwindigkeit"
+                },
+                "wind_speed": {
+                    "name": "Windgeschwindigkeit"
+                },
+                "wind_speed_unit": {
+                    "name": "Windgeschwindigkeitseinheit"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Die {platform}-Plattform f\u00fcr die {domain}-Integration unterst\u00fctzt die Plattform-Einrichtung nicht. \n\nBitte entferne es aus deiner Konfiguration und starte Home Assistant neu, um dieses Problem zu beheben.",
+            "title": "Plattform-Unterst\u00fctzung nicht unterst\u00fctzt"
+        }
+    },
+    "title": "Wetter"
+}

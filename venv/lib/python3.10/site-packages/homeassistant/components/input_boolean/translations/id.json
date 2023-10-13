@@ -1,0 +1,35 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Input boolean",
+            "state": {
+                "off": "Mati",
+                "on": "Nyala"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Dikelola lewat antarmuka",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Muat Ulang"
+        },
+        "toggle": {
+            "name": "Alihkan"
+        },
+        "turn_off": {
+            "name": "Matikan"
+        },
+        "turn_on": {
+            "name": "Nyalakan"
+        }
+    },
+    "title": "Input boolean"
+}

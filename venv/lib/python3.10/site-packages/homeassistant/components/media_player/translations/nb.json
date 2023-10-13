@@ -1,0 +1,163 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_buffering": "{entity_name} bufre",
+            "is_idle": "{entity_name} er inaktiv",
+            "is_off": "{entity_name} er sl\u00e5tt av",
+            "is_on": "{entity_name} er sl\u00e5tt p\u00e5",
+            "is_paused": "{entity_name} er satt p\u00e5 pause",
+            "is_playing": "{entity_name} spiller n\u00e5"
+        },
+        "trigger_type": {
+            "buffering": "{entity_name} starter bufring",
+            "changed_states": "{entity_name} endret tilstander",
+            "idle": "{entity_name} blir inaktiv",
+            "paused": "{entity_name} er satt p\u00e5 pause",
+            "playing": "{entity_name} begynner \u00e5 spille",
+            "turned_off": "{entity_name} sl\u00e5tt av",
+            "turned_on": "{entity_name} sl\u00e5tt p\u00e5"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Mediaspiller",
+            "state": {
+                "buffering": "Bufring",
+                "idle": "Inaktiv",
+                "off": "Av",
+                "on": "P\u00e5",
+                "paused": "Pauset",
+                "playing": "Spiller",
+                "standby": "Avventer"
+            },
+            "state_attributes": {
+                "app_id": {
+                    "name": "App-ID"
+                },
+                "app_name": {
+                    "name": "App"
+                },
+                "entity_picture_local": {
+                    "name": "Lokalt tilgjengelig enhetsbilde"
+                },
+                "groups_members": {
+                    "name": "Gruppemedlemmer"
+                },
+                "is_volume_muted": {
+                    "name": "Dempet",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "media_album_artist": {
+                    "name": "Albumartist"
+                },
+                "media_album_name": {
+                    "name": "Album"
+                },
+                "media_artist": {
+                    "name": "Artist"
+                },
+                "media_channel": {
+                    "name": "Kanal"
+                },
+                "media_content_id": {
+                    "name": "Innholds-ID"
+                },
+                "media_content_type": {
+                    "name": "Innholdstype",
+                    "state": {
+                        "album": "Album",
+                        "app": "App",
+                        "artist": "Artist",
+                        "channel": "Kanal",
+                        "channels": "Kanaler",
+                        "composer": "Komponist",
+                        "contributing_artist": "Medvirkende kunstner",
+                        "episode": "Episode",
+                        "game": "Spill",
+                        "genre": "Sjanger",
+                        "image": "Bilde",
+                        "movie": "Film",
+                        "music": "Musikk",
+                        "playlist": "Spilleliste",
+                        "podcast": "Podcast",
+                        "season": "\u00c5rstid",
+                        "track": "Spor",
+                        "tvshow": "TV-program",
+                        "url": "URL",
+                        "video": "Video"
+                    }
+                },
+                "media_duration": {
+                    "name": "Varighet"
+                },
+                "media_episode": {
+                    "name": "Episode"
+                },
+                "media_playlist": {
+                    "name": "Spilleliste"
+                },
+                "media_position": {
+                    "name": "Posisjon"
+                },
+                "media_position_updated_at": {
+                    "name": "Stillingen er oppdatert"
+                },
+                "media_season": {
+                    "name": "\u00c5rstid"
+                },
+                "media_series_title": {
+                    "name": "Serie"
+                },
+                "media_title": {
+                    "name": "Tittel"
+                },
+                "media_track": {
+                    "name": "Spor"
+                },
+                "repeat": {
+                    "name": "Gjenta",
+                    "state": {
+                        "all": "Alle",
+                        "off": "Av",
+                        "one": "En"
+                    }
+                },
+                "shuffle": {
+                    "name": "Tilfeldig rekkef\u00f8lge",
+                    "state": {
+                        "false": "Av",
+                        "true": "P\u00e5"
+                    }
+                },
+                "sound_mode": {
+                    "name": "Lydmodus"
+                },
+                "sound_mode_list": {
+                    "name": "Tilgjengelige lydmoduser"
+                },
+                "source": {
+                    "name": "Kilde"
+                },
+                "source_list": {
+                    "name": "Tilgjengelige kilder"
+                },
+                "volume_level": {
+                    "name": "Volum"
+                }
+            }
+        },
+        "receiver": {
+            "name": "Mottaker"
+        },
+        "speaker": {
+            "name": "H\u00f8yttaler"
+        },
+        "tv": {
+            "name": "TV"
+        }
+    },
+    "title": "Mediaspiller"
+}

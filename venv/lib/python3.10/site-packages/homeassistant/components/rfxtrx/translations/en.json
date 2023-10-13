@@ -1,0 +1,152 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Already configured. Only a single configuration possible.",
+            "cannot_connect": "Failed to connect"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect"
+        },
+        "step": {
+            "setup_network": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port"
+                },
+                "title": "Select connection address"
+            },
+            "setup_serial": {
+                "data": {
+                    "device": "Select device"
+                },
+                "title": "Device"
+            },
+            "setup_serial_manual_path": {
+                "data": {
+                    "device": "USB Device Path"
+                },
+                "title": "Path"
+            },
+            "user": {
+                "data": {
+                    "type": "Connection type"
+                },
+                "title": "Select connection type"
+            }
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "send_command": "Send command: {subtype}",
+            "send_status": "Send status update: {subtype}"
+        },
+        "trigger_type": {
+            "command": "Received command: {subtype}",
+            "status": "Received status: {subtype}"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "chill": {
+                "name": "Chill"
+            },
+            "count": {
+                "name": "Count"
+            },
+            "counter_value": {
+                "name": "Counter value"
+            },
+            "current_ch_1": {
+                "name": "Current Ch. 1"
+            },
+            "current_ch_2": {
+                "name": "Current Ch. 2"
+            },
+            "current_ch_3": {
+                "name": "Current Ch. 3"
+            },
+            "forecast": {
+                "name": "Forecast"
+            },
+            "forecast_status": {
+                "name": "Forecast status"
+            },
+            "humidity_status": {
+                "name": "Humidity status"
+            },
+            "instantaneous_power": {
+                "name": "Instantaneous power"
+            },
+            "sensor_status": {
+                "name": "Sensor status"
+            },
+            "sound": {
+                "name": "Sound"
+            },
+            "temperature_2": {
+                "name": "Temperature 2"
+            },
+            "total_energy_usage": {
+                "name": "Total energy usage"
+            },
+            "uv_index": {
+                "name": "UV index"
+            },
+            "wind_average_speed": {
+                "name": "Wind average speed"
+            },
+            "wind_direction": {
+                "name": "Wind direction"
+            },
+            "wind_gust": {
+                "name": "Wind gust"
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "already_configured_device": "Device is already configured",
+            "invalid_event_code": "Invalid event code",
+            "invalid_input_2262_off": "Invalid input for command off",
+            "invalid_input_2262_on": "Invalid input for command on",
+            "invalid_input_off_delay": "Invalid input for off delay",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "prompt_options": {
+                "data": {
+                    "automatic_add": "Enable automatic add",
+                    "debug": "Enable debugging",
+                    "device": "Select device to configure",
+                    "event_code": "Enter event code to add",
+                    "protocols": "Protocols"
+                },
+                "title": "Rfxtrx Options"
+            },
+            "set_device_options": {
+                "data": {
+                    "command_off": "Data bits value for command off",
+                    "command_on": "Data bits value for command on",
+                    "data_bit": "Number of data bits",
+                    "off_delay": "Off delay",
+                    "off_delay_enabled": "Enable off delay",
+                    "replace_device": "Select device to replace",
+                    "venetian_blind_mode": "Venetian blind mode"
+                },
+                "title": "Configure device options"
+            }
+        }
+    },
+    "services": {
+        "send": {
+            "description": "Sends a raw event on radio.",
+            "fields": {
+                "event": {
+                    "description": "A hexadecimal string to send.",
+                    "name": "Event"
+                }
+            },
+            "name": "Send"
+        }
+    }
+}

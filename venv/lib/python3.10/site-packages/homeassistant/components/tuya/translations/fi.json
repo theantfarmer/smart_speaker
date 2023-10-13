@@ -1,0 +1,31 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "country_code": "Tilisi maakoodi (esim. 1 Yhdysvalloissa, 358 Suomessa)",
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "description": "Anna Tuya-tunnistetietosi."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "light_mode": {
+                "state": {
+                    "none": "Pois"
+                }
+            },
+            "vacuum_mode": {
+                "state": {
+                    "spiral": "Kierre",
+                    "standby": "Valmiustila",
+                    "wall_follow": "Seuraa sein\u00e4\u00e4",
+                    "zone": "Alue"
+                }
+            }
+        }
+    }
+}

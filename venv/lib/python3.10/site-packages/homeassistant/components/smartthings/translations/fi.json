@@ -1,0 +1,12 @@
+{
+    "config": {
+        "error": {
+            "token_unauthorized": "Tunnus on virheellinen tai sit\u00e4 ei ole en\u00e4\u00e4 valtuutettu."
+        },
+        "step": {
+            "user": {
+                "title": "Vahvista Callback URL-osoite"
+            }
+        }
+    }
+}

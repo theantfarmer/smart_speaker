@@ -1,0 +1,85 @@
+{
+    "entity": {
+        "sensor": {
+            "air_quality": {
+                "state": {
+                    "good": "Hyv\u00e4",
+                    "hazardous": "Vaarallinen",
+                    "high": "Korkea",
+                    "low": "Matala",
+                    "moderate": "Kohtalainen",
+                    "unhealthy": "Ep\u00e4terveellinen"
+                }
+            },
+            "grass_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Taso",
+                        "state": {
+                            "good": "Hyv\u00e4",
+                            "hazardous": "Vaarallinen",
+                            "high": "Korkea",
+                            "low": "Matala",
+                            "moderate": "Kohtalainen",
+                            "unhealthy": "Ep\u00e4terveellinen"
+                        }
+                    }
+                }
+            },
+            "mold_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Taso",
+                        "state": {
+                            "good": "Hyv\u00e4",
+                            "hazardous": "Vaarallinen",
+                            "high": "Korkea",
+                            "low": "Matala",
+                            "moderate": "Kohtalainen",
+                            "unhealthy": "Ep\u00e4terveellinen"
+                        }
+                    }
+                }
+            },
+            "pressure_tendency": {
+                "state": {
+                    "rising": "Auringonnousu",
+                    "steady": "Vakaa"
+                }
+            },
+            "ragweed_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Taso",
+                        "state": {
+                            "good": "Hyv\u00e4"
+                        }
+                    }
+                }
+            },
+            "uv_index": {
+                "state_attributes": {
+                    "level": {
+                        "state": {
+                            "good": "Hyv\u00e4",
+                            "hazardous": "Vaarallinen",
+                            "high": "Korkea",
+                            "low": "Matala",
+                            "moderate": "Kohtalainen",
+                            "unhealthy": "Ep\u00e4terveellinen"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "forecast": "S\u00e4\u00e4ennuste"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u30b9\u30af\u30ea\u30d7\u30c8",
+            "state": {
+                "off": "\u30aa\u30d5",
+                "on": "\u30aa\u30f3"
+            }
+        }
+    },
+    "title": "\u30b9\u30af\u30ea\u30d7\u30c8"
+}

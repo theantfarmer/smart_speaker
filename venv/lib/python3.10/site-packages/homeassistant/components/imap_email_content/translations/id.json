@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "Integrasi konten email IMAP sudah tidak digunakan lagi. Konfigurasi server IMAP Anda telah dimigrasikan ke [integrasi imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Untuk menyiapkan sensor untuk konten email IMAP, siapkan sensor templat dengan konfigurasi config:\n\n```yaml\n{yaml_example}```\n\nHapus konfigurasi sensor `imap_email_plaform` yang sudah tidak digunakan lagi dari `configuration.yaml`.\n\nPerhatikan bahwa filter peristiwa hanya memfilter pada pengirim pertama dari pengirim yang diizinkan yang dikonfigurasi, sesuaikan filter jika diperlukan.\n\nAnda dapat melewatkan bagian ini jika telah menyiapkan sensor templat.",
+            "title": "Integrasi konten email IMAP tidak digunakan lagi"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "Konfigurasi server IMAP sudah dimigrasikan ke integrasi imap. Hapus konfigurasi sensor `imap_email_plaform` dari `configuration.yaml` Anda.",
+                    "cannot_connect": "Migrasi gagal. Gagal terhubung ke server IMAP. Lakukan migrasi manual."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "Pada langkah ini, entri konfigurasi `imap` akan disiapkan dengan konfigurasi berikut:\n\n```text\nServer\t{server}\nPort\t{port}\nNama pengguna\t{username}\nKata sandi\t*****\nFolder\t{folder}\n```\n\nLihat juga: (https://www.home-assistant.io/integrations/imap/)\n\nKonfigurasi pemfilteran pada `sender` yang diizinkan adalah bagian dari konfigurasi sensor templat yang dapat disalin dan ditempatkan di konfigurasi.yaml Anda.\n\nPerhatikan bahwa filter peristiwa hanya memfilter pengirim pertama yang dikonfigurasi saja yang diizinkan, sesuaikan filter jika diperlukan.\n\n```yaml\n{yaml_example}```\nJangan lupa untuk membersihkan `configuration.yaml` setelah migrasi.\n\nKirim untuk memigrasikan konfigurasi server IMAP Anda ke entri konfigurasi `imap`.",
+                        "title": "Pengaturan server IMAP Anda akan dimigrasi"
+                    },
+                    "start": {
+                        "description": "Integrasi konten email IMAP sudah tidak digunakan lagi. Konfigurasi server IMAP Anda dapat dimigrasikan secara otomatis ke [integrasi imap] (https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Ini akan memungkinkan penggunaan pemicu peristiwa `imap` khusus. Untuk menyiapkan sensor yang memiliki status konten IMAP, sensor templat dapat digunakan. Hapus konfigurasi sensor `imap_email_plaform` dari `configuration.yaml` Anda setelah proses migrasi.\n\nKirim untuk memulai migrasi konfigurasi server IMAP Anda ke integrasi `imap`.",
+                        "title": "Migrasikan konfigurasi email IMAP Anda"
+                    }
+                }
+            },
+            "title": "Integrasi konten email IMAP memerlukan perhatian"
+        }
+    }
+}

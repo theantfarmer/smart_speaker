@@ -1,0 +1,13 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Varmenteen nimi",
+                    "port": "Portti"
+                },
+                "title": "M\u00e4\u00e4rit\u00e4 testattava sertifikaatti"
+            }
+        }
+    }
+}

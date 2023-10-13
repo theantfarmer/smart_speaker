@@ -1,0 +1,33 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Taimer",
+            "state": {
+                "active": "Aktiivne",
+                "idle": "Ootel",
+                "paused": "Peatatud"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "Kestus"
+                },
+                "editable": {
+                    "name": "Hallatakse kasutajaliideses",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Jah"
+                    }
+                },
+                "finishes_at": {
+                    "name": "L\u00f5ppeb"
+                },
+                "remaining": {
+                    "name": "J\u00e4\u00e4nud"
+                },
+                "restore": {
+                    "name": "Taasta"
+                }
+            }
+        }
+    }
+}

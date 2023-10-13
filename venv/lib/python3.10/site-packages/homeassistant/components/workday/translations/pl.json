@@ -1,0 +1,90 @@
+{
+    "config": {
+        "abort": {
+            "incorrect_province": "Nieprawid\u0142owy podzia\u0142 z importu yaml"
+        },
+        "error": {
+            "add_holiday_error": "Nieprawid\u0142owy format daty (YYYY-MM-DD)",
+            "already_configured": "Us\u0142uga jest ju\u017c skonfigurowana",
+            "remove_holiday_error": "Nieprawid\u0142owy format daty (YYYY-MM-DD) lub nie znaleziono nazwy \u015bwi\u0119ta"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Dodaj \u015bwi\u0119ta",
+                    "days_offset": "Przesuni\u0119cie",
+                    "excludes": "Wykluczone",
+                    "province": "Podzia\u0142 kraju",
+                    "remove_holidays": "Usu\u0144 \u015bwi\u0119ta",
+                    "workdays": "Dni robocze"
+                },
+                "data_description": {
+                    "add_holidays": "Dodaj niestandardowe \u015bwi\u0119ta jako YYYY-MM-DD",
+                    "days_offset": "Przesuni\u0119cie dni",
+                    "excludes": "Lista dni roboczych do wykluczenia",
+                    "province": "Stan, terytorium, prowincja, region kraju",
+                    "remove_holidays": "Usu\u0144 \u015bwi\u0119ta jako YYYY-MM-DD lub u\u017cywaj\u0105c cz\u0119\u015bci nazwy",
+                    "workdays": "Lista dni roboczych"
+                }
+            },
+            "user": {
+                "data": {
+                    "country": "Kraj",
+                    "name": "Nazwa"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Konfiguracja Dni roboczych przy u\u017cyciu YAML zostanie usuni\u0119ta. \n\nTwoja istniej\u0105ca konfiguracja YAML zosta\u0142a automatycznie zaimportowana do interfejsu u\u017cytkownika. \n\nUsu\u0144 konfiguracj\u0119 YAML z pliku configuration.yaml i uruchom ponownie Home Assistanta, aby rozwi\u0105za\u0107 ten problem.",
+            "title": "Konfiguracja YAML dla Dni roboczych zostanie usuni\u0119ta"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Nieprawid\u0142owy format daty (YYYY-MM-DD)",
+            "already_configured": "Us\u0142uga jest ju\u017c skonfigurowana",
+            "remove_holiday_error": "Nieprawid\u0142owy format daty (YYYY-MM-DD) lub nie znaleziono nazwy \u015bwi\u0119ta"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Dodaj \u015bwi\u0119ta",
+                    "days_offset": "Przesuni\u0119cie",
+                    "excludes": "Wykluczone",
+                    "province": "Podzia\u0142 kraju",
+                    "remove_holidays": "Usu\u0144 \u015bwi\u0119ta",
+                    "workdays": "Dni robocze"
+                },
+                "data_description": {
+                    "add_holidays": "Dodaj niestandardowe \u015bwi\u0119ta jako YYYY-MM-DD",
+                    "days_offset": "Przesuni\u0119cie dni",
+                    "excludes": "Lista dni roboczych do wykluczenia",
+                    "province": "Stan, terytorium, prowincja, region kraju",
+                    "remove_holidays": "Usu\u0144 \u015bwi\u0119ta jako YYYY-MM-DD lub u\u017cywaj\u0105c cz\u0119\u015bci nazwy",
+                    "workdays": "Lista dni roboczych"
+                }
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Pi\u0105tek",
+                "holiday": "\u015awi\u0119ta",
+                "mon": "Poniedzia\u0142ek",
+                "sat": "Sobota",
+                "sun": "Niedziela",
+                "thu": "Czwartek",
+                "tue": "Wtorek",
+                "wed": "\u015aroda"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Brak podzia\u0142u"
+            }
+        }
+    }
+}

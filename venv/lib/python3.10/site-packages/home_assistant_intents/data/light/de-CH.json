@@ -1,0 +1,49 @@
+{
+  "language": "de-CH",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "(setz|steu|schteu|dimm|dim) [(d'|d' |d |die )(Helligkeit|Hälligkeit|Häuigkeit)][( vo| vor| vo der| vo dr| vodr)] <name> uf <brightness> [(ii|y)]"
+          ],
+          "requires_context": {
+            "domain": "light"
+          },
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "(setz|steu|schteu|dimm|dim) [(d'|d' |d |die )(Helligkeit|Hälligkeit|Häuigkeit)][( vo | vor | vo der | vo dr | vodr )](<Liecht>|<Liechter>) <area> uf <brightness> [(ii|y)]"
+          ],
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "(setz|steu|schteu|wächsle|wächslä) [(d' |d'|d )Farb (vo|vor|vo der|vo dr|vodr)] <name> (uf|nach) {color}"
+          ],
+          "requires_context": {
+            "domain": "light"
+          },
+          "response": "color"
+        },
+        {
+          "sentences": [
+            "(setz|steu|schteu|wächsle|wächslä) [(d' |d'|d )Farb (vo|vor|vo de )][(<Liecht>|<Liechter>)] <area> (uf|nach) {color}"
+          ],
+          "response": "color_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "D Häuigkeit vo {{slots.name}} isch uf {{slots.brightness}} gsetzt.",
+        "brightness_area": "D Häuigkeit vo de Lampe im Zimmer {{slots.area}} isch uf {{slots.brightness}} gsetzt.",
+        "color": "D Farb vo {{slots.name}} isch uf {{slots.color}} gänderet.",
+        "color_area": "D Farb vo de Lampe im Zimmer {{slots.area}} isch uf {{slots.color}} gänderet."
+      }
+    }
+  }
+}

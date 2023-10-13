@@ -1,0 +1,100 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_access_token": "Neplatn\u00fd pr\u00edstupov\u00fd token",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "Dvojfaktorov\u00fd k\u00f3d"
+                },
+                "description": "Zadajte PIN zaslan\u00fd na e-mail alebo SMS",
+                "title": "Dvojfaktorov\u00e1 autentifik\u00e1cia"
+            },
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "title": "Prihl\u00e1ste sa pomocou \u00fa\u010dtu Blink"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "camera_armed": {
+                "name": "Kamera aktivovan\u00e1"
+            }
+        },
+        "sensor": {
+            "wifi_rssi": {
+                "name": "Wi-Fi RSSI"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "simple_options": {
+                "data": {
+                    "scan_interval": "Interval skenovania (sekundy)"
+                },
+                "description": "Nastavenie integr\u00e1cie Blink",
+                "title": "Mo\u017enosti Blink"
+            }
+        }
+    },
+    "services": {
+        "blink_update": {
+            "description": "Vyn\u00fati obnovenie.",
+            "name": "Aktualiz\u00e1cia"
+        },
+        "save_recent_clips": {
+            "description": "Ulo\u017e\u00ed v\u0161etky posledn\u00e9 videoklipy do miestneho adres\u00e1ra so vzorom s\u00faboru \"%Y%m%d_%H%M%S_{name}.mp4\".",
+            "fields": {
+                "file_path": {
+                    "description": "N\u00e1zov adres\u00e1ra cesty, do ktorej mo\u017eno zapisova\u0165 (adres\u00e1r m\u00f4\u017ee by\u0165 potrebn\u00e9 zahrn\u00fa\u0165 do allowlist_external_dirs v konfigur\u00e1cii).",
+                    "name": "V\u00fdstupn\u00fd adres\u00e1r"
+                },
+                "name": {
+                    "description": "N\u00e1zov kamery, z ktorej sa maj\u00fa zachyti\u0165 posledn\u00e9 klipy.",
+                    "name": "N\u00e1zov"
+                }
+            },
+            "name": "Ulo\u017eenie posledn\u00fdch klipov"
+        },
+        "save_video": {
+            "description": "Ulo\u017e\u00ed posledn\u00fd zaznamenan\u00fd videoklip do miestneho s\u00faboru.",
+            "fields": {
+                "filename": {
+                    "description": "N\u00e1zov s\u00faboru do cesty, do ktorej mo\u017eno zapisova\u0165 (adres\u00e1r m\u00f4\u017ee by\u0165 potrebn\u00e9 zahrn\u00fa\u0165 do allowlist_external_dirs v konfigur\u00e1cii).",
+                    "name": "N\u00e1zov s\u00faboru"
+                },
+                "name": {
+                    "description": "N\u00e1zov kamery, z ktorej sa m\u00e1 zachyti\u0165 video.",
+                    "name": "N\u00e1zov"
+                }
+            },
+            "name": "Ulo\u017ei\u0165 video"
+        },
+        "send_pin": {
+            "description": "Odo\u0161le nov\u00fd PIN k\u00f3d, ktor\u00fd blik\u00e1 pre 2FA.",
+            "fields": {
+                "pin": {
+                    "description": "PIN k\u00f3d prijat\u00fd od spolo\u010dnosti Blink. Ak ste dostali len overovac\u00ed e-mail, nechajte pr\u00e1zdne.",
+                    "name": "Pin"
+                }
+            },
+            "name": "Odosla\u0165 pin"
+        },
+        "trigger_camera": {
+            "description": "\u017diada fotoapar\u00e1t, aby urobil nov\u00fd obr\u00e1zok.",
+            "name": "Sp\u00fa\u0161\u0165 kamery"
+        }
+    }
+}

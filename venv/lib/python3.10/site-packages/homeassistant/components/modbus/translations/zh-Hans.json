@@ -1,0 +1,13 @@
+{
+    "services": {
+        "reload": {
+            "name": "\u91cd\u65b0\u52a0\u8f7d"
+        },
+        "restart": {
+            "name": "\u91cd\u65b0\u5f00\u59cb"
+        },
+        "stop": {
+            "name": "\u505c\u6b62"
+        }
+    }
+}

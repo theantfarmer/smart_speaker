@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Input teks",
+            "state_attributes": {
+                "editable": {
+                    "name": "Dikelola lewat antarmuka",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                },
+                "max": {
+                    "name": "Panjang maksimum"
+                },
+                "min": {
+                    "name": "Panjang minimum"
+                },
+                "mode": {
+                    "name": "Mode",
+                    "state": {
+                        "password": "Kata sandi",
+                        "text": "Teks"
+                    }
+                },
+                "pattern": {
+                    "name": "Pola"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Muat Ulang"
+        }
+    },
+    "title": "Input teks"
+}

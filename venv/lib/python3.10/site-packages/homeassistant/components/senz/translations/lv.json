@@ -1,0 +1,8 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konts jau ir konfigur\u0113ts",
+            "already_in_progress": "Konfigur\u0101cijas pl\u016bsma jau notiek"
+        }
+    }
+}

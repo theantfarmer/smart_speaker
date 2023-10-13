@@ -1,0 +1,13 @@
+{
+    "services": {
+        "restart": {
+            "name": "Reinicia"
+        },
+        "start": {
+            "name": "Inicia"
+        },
+        "stop": {
+            "name": "Atura"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Reloads template entities from the YAML-configuration.",
+            "name": "Reload"
+        }
+    }
+}

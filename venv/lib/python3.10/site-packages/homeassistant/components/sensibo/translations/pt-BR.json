@@ -1,0 +1,142 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "A conta j\u00e1 foi configurada",
+            "reauth_successful": "A reautentica\u00e7\u00e3o foi bem-sucedida"
+        },
+        "error": {
+            "cannot_connect": "Falha ao conectar",
+            "incorrect_api_key": "Chave de API inv\u00e1lida para a conta selecionada",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida",
+            "no_devices": "Nenhum dispositivo descoberto",
+            "no_username": "N\u00e3o foi poss\u00edvel obter o nome de usu\u00e1rio"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Chave da API"
+                },
+                "data_description": {
+                    "api_key": "Siga a documenta\u00e7\u00e3o para obter sua chave de API"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "Chave da API"
+                },
+                "data_description": {
+                    "api_key": "Siga a documenta\u00e7\u00e3o para obter sua chave de API"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "horizontalswing": {
+                "state": {
+                    "fixedcenter": "Fixo centro",
+                    "fixedcenterleft": "Fixo centro esquerda",
+                    "fixedcenterright": "Fixo centro direita",
+                    "fixedleft": "Fixo esquerda",
+                    "fixedleftright": "Fixo esquerda direita",
+                    "fixedright": "Fixo direita",
+                    "rangecenter": "Centro do alcance",
+                    "rangefull": "Alcance completo",
+                    "stopped": "Parado"
+                }
+            },
+            "light": {
+                "state": {
+                    "dim": "Dim",
+                    "off": "Desligado",
+                    "on": "Ligado"
+                }
+            }
+        },
+        "sensor": {
+            "sensitivity": {
+                "state": {
+                    "n": "Normal",
+                    "s": "Sens\u00edvel"
+                }
+            },
+            "smart_type": {
+                "state": {
+                    "feelslike": "Parece que",
+                    "humidity": "Umidade",
+                    "temperature": "Temperatura"
+                }
+            }
+        }
+    },
+    "services": {
+        "enable_climate_react": {
+            "name": "Permitir a rea\u00e7\u00e3o clim\u00e1tica"
+        },
+        "enable_pure_boost": {
+            "description": "Ativa e define as configura\u00e7\u00f5es do Pure Boost.",
+            "fields": {
+                "ac_integration": {
+                    "description": "Integre com Ar Condicionado.",
+                    "name": "Integra\u00e7\u00e3o AC"
+                },
+                "geo_integration": {
+                    "description": "Integre-se com a Presence.",
+                    "name": "Integra\u00e7\u00e3o geogr\u00e1fica"
+                },
+                "indoor_integration": {
+                    "description": "Integre-se com a verifica\u00e7\u00e3o da qualidade do ar interno.",
+                    "name": "Qualidade do ar interno"
+                },
+                "outdoor_integration": {
+                    "description": "Integre-se com a verifica\u00e7\u00e3o da qualidade do ar externo.",
+                    "name": "Qualidade do ar exterior"
+                },
+                "sensitivity": {
+                    "description": "Defina a sensibilidade para Pure Boost.",
+                    "name": "Sensibilidade"
+                }
+            },
+            "name": "Ativar Pure Boost"
+        },
+        "enable_timer": {
+            "description": "Habilita o temporizador com hora personalizada.",
+            "fields": {
+                "minutes": {
+                    "description": "Contagem regressiva para o timer (para o estado do timer ativado).",
+                    "name": "Minutos"
+                }
+            },
+            "name": "Ativar temporizador"
+        },
+        "full_state": {
+            "description": "Define o estado completo para o dispositivo Sensibo.",
+            "fields": {
+                "fan_mode": {
+                    "description": "Defina o modo do ventilador.",
+                    "name": "Modo ventilador"
+                },
+                "horizontal_swing_mode": {
+                    "description": "Definir o modo de oscila\u00e7\u00e3o horizontal.",
+                    "name": "Modo de oscila\u00e7\u00e3o horizontal"
+                },
+                "light": {
+                    "description": "Defina a luz ligada ou desligada.",
+                    "name": "Luz"
+                },
+                "mode": {
+                    "description": "Modo HVAC a ser definido.",
+                    "name": "Modo HVAC"
+                },
+                "swing_mode": {
+                    "description": "Definir o modo de oscila\u00e7\u00e3o.",
+                    "name": "Modo de oscila\u00e7\u00e3o"
+                },
+                "target_temperature": {
+                    "description": "Defina a temperatura alvo.",
+                    "name": "Temperatura alvo"
+                }
+            }
+        }
+    }
+}

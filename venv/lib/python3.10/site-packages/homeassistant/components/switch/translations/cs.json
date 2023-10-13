@@ -1,0 +1,47 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "P\u0159epnout {entity_name}",
+            "turn_off": "Vypnout {entity_name}",
+            "turn_on": "Zapnout {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} je vypnut\u00fd",
+            "is_on": "{entity_name} je zapnut\u00fd"
+        },
+        "trigger_type": {
+            "turned_off": "{entity_name} vypnut",
+            "turned_on": "{entity_name} zapnut"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Vyp\u00edna\u010d",
+            "state": {
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd"
+            }
+        },
+        "outlet": {
+            "name": "Z\u00e1suvka"
+        },
+        "switch": {
+            "name": "Vyp\u00edna\u010d"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Vyp\u00edna\u010d"
+}

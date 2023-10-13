@@ -1,0 +1,63 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "reauth_successful": "Az \u00fajrahiteles\u00edt\u00e9s sikeres volt."
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "token": "Hozz\u00e1f\u00e9r\u00e9si token"
+                },
+                "description": "A Nuki integr\u00e1ci\u00f3nak \u00fajb\u00f3l hiteles\u00edtenie kell a h\u00edddal.",
+                "title": "Integr\u00e1ci\u00f3 \u00fajrahiteles\u00edt\u00e9se"
+            },
+            "user": {
+                "data": {
+                    "host": "C\u00edm",
+                    "port": "Port",
+                    "token": "Hozz\u00e1f\u00e9r\u00e9si token"
+                }
+            }
+        }
+    },
+    "entity": {
+        "lock": {
+            "nuki_lock": {
+                "state_attributes": {
+                    "battery_critical": {
+                        "state": {
+                            "off": "Norm\u00e1l",
+                            "on": "Alacsony"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "battery": {
+                "name": "Elem/Akku"
+            }
+        }
+    },
+    "issues": {
+        "https_webhook": {
+            "description": "A Nuki bridge nem tud esem\u00e9nyeket HTTPS-c\u00edmre (SSL) tov\u00e1bb\u00edtani, ez\u00e9rt a [h\u00e1l\u00f3zati be\u00e1ll\u00edt\u00e1sok]({network_link}) \"Home Assistant URL\" alatt sz\u00fcks\u00e9ges bekonfigur\u00e1lni egy (helyi) HTTP-c\u00edmet. A jelenlegi (helyi) c\u00edm a k\u00f6vetkez\u0151: `{base_url}`, egy \u00e9rv\u00e9nyes c\u00edm lehet p\u00e9ld\u00e1ul `http://192.168.1.10:8123`, ahol `192.168.1.10` a Home Assistant eszk\u00f6z IP c\u00edme.",
+            "title": "A Nuki webhook URL-je HTTPS-t (SSL) haszn\u00e1l"
+        }
+    },
+    "services": {
+        "set_continuous_mode": {
+            "fields": {
+                "enable": {
+                    "name": "Enged\u00e9lyez\u00e9s"
+                }
+            }
+        }
+    }
+}

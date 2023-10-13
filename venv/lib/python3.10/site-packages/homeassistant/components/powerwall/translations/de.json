@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "reauth_successful": "Die erneute Authentifizierung war erfolgreich"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "unknown": "Unerwarteter Fehler",
+            "wrong_version": "Deine Powerwall verwendet eine Softwareversion, die nicht unterst\u00fctzt wird. Bitte erw\u00e4ge ein Upgrade oder melde dieses Problem, damit es behoben werden kann."
+        },
+        "flow_title": "{name} ({ip_address})",
+        "step": {
+            "confirm_discovery": {
+                "description": "M\u00f6chtest du {name} ({ip_address}) einrichten?",
+                "title": "Verbinden mit der Powerwall"
+            },
+            "reauth_confim": {
+                "data": {
+                    "password": "Passwort"
+                },
+                "description": "Das Standardpasswort ist bei neueren Modellen im Backup Gateway aufgedruckt. Bei \u00e4lteren Modellen besteht das Standardkennwort aus den letzten f\u00fcnf Zeichen der Seriennummer des Backup Gateway und ist in der Tesla-App zu finden.",
+                "title": "Reauthentifizierung der Powerwall"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Passwort"
+                },
+                "description": "Das Standardpasswort ist bei neueren Modellen im Backup Gateway aufgedruckt. Bei \u00e4lteren Modellen besteht das Standardkennwort aus den letzten f\u00fcnf Zeichen der Seriennummer des Backup Gateway und ist in der Tesla-App zu finden.",
+                "title": "Reauthentifizierung der Powerwall"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP-Adresse",
+                    "password": "Passwort"
+                },
+                "description": "Das Standardpasswort ist bei neueren Modellen im Backup Gateway aufgedruckt. Bei \u00e4lteren Modellen besteht das Standardkennwort aus den letzten f\u00fcnf Zeichen der Seriennummer des Backup Gateway und ist in der Tesla-App zu finden.",
+                "title": "Verbinden mit der Powerwall"
+            }
+        }
+    }
+}

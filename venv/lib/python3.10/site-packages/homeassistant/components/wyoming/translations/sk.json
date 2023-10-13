@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Slu\u017eba u\u017e je nakonfigurovan\u00e1",
+            "no_services": "Na koncovom bode sa nena\u0161li \u017eiadne slu\u017eby"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Chcete nakonfigurova\u0165 Home Assistant na pripojenie k slu\u017ebe Wyoming, ktor\u00fa poskytuje doplnok: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Hostite\u013e",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

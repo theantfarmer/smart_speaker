@@ -1,0 +1,67 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Temporizador",
+            "state": {
+                "active": "Activo",
+                "idle": "Inactivo",
+                "paused": "En pausa"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "Duraci\u00f3n"
+                },
+                "editable": {
+                    "name": "Gestionado a trav\u00e9s de la IU",
+                    "state": {
+                        "false": "No",
+                        "true": "S\u00ed"
+                    }
+                },
+                "finishes_at": {
+                    "name": "Acaba a las"
+                },
+                "remaining": {
+                    "name": "Restantes"
+                },
+                "restore": {
+                    "name": "Restaurar"
+                }
+            }
+        }
+    },
+    "services": {
+        "cancel": {
+            "description": "Cancela un temporizador.",
+            "name": "Cancelar"
+        },
+        "change": {
+            "description": "Cambia un temporizador.",
+            "fields": {
+                "duration": {
+                    "description": "Duraci\u00f3n para sumar o restar al temporizador de ejecuci\u00f3n.",
+                    "name": "Duraci\u00f3n"
+                }
+            },
+            "name": "Cambiar"
+        },
+        "finish": {
+            "description": "Finaliza un temporizador.",
+            "name": "Finalizar"
+        },
+        "pause": {
+            "description": "Pausa un temporizador.",
+            "name": "Pausar"
+        },
+        "start": {
+            "description": "Inicia un temporizador.",
+            "fields": {
+                "duration": {
+                    "description": "Duraci\u00f3n que requiere el temporizador para finalizar. [opcional].",
+                    "name": "Duraci\u00f3n"
+                }
+            },
+            "name": "Iniciar"
+        }
+    }
+}

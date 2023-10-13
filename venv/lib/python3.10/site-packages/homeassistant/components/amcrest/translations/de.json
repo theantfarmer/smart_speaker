@@ -1,0 +1,38 @@
+{
+    "services": {
+        "goto_preset": {
+            "name": "Zur Voreinstellung gehen"
+        },
+        "ptz_control": {
+            "description": "Bewegt (Schwenken/Neigen) und/oder zoomt eine PTZ-Kamera.",
+            "fields": {
+                "movement": {
+                    "description": "Richtung, in die die Kamera bewegt werden soll.",
+                    "name": "Bewegung"
+                },
+                "travel_time": {
+                    "description": "Fahrzeit in Sekundenbruchteilen: von 0 bis 1."
+                }
+            },
+            "name": "PTZ-Steuerung"
+        },
+        "set_color_bw": {
+            "description": "Legt den Farbmodus der Kamera fest.",
+            "fields": {
+                "color_bw": {
+                    "description": "Farbmodus.",
+                    "name": "Farbe"
+                }
+            },
+            "name": "Farbe einstellen"
+        },
+        "start_tour": {
+            "description": "Startet die PTZ-Tour-Funktion der Kamera.",
+            "name": "Tour starten"
+        },
+        "stop_tour": {
+            "description": "Stoppt die PTZ-Tour-Funktion der Kamera.",
+            "name": "Tour anhalten"
+        }
+    }
+}

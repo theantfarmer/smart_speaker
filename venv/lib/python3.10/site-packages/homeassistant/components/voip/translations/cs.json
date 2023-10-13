@@ -1,0 +1,12 @@
+{
+    "entity": {
+        "select": {
+            "pipeline": {
+                "name": "Sekvence Asistenta",
+                "state": {
+                    "preferred": "Preferov\u00e1no"
+                }
+            }
+        }
+    }
+}

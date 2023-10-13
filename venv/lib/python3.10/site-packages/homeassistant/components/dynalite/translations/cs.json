@@ -1,0 +1,18 @@
+{
+    "services": {
+        "request_area_preset": {
+            "fields": {
+                "host": {
+                    "name": "Hostitel"
+                }
+            }
+        },
+        "request_channel_level": {
+            "fields": {
+                "host": {
+                    "name": "Hostitel"
+                }
+            }
+        }
+    }
+}

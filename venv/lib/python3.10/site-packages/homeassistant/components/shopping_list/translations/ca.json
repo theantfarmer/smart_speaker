@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El servei ja est\u00e0 configurat"
+        },
+        "step": {
+            "user": {
+                "description": "Vols configurar la llista de compres?",
+                "title": "Llista de compres"
+            }
+        }
+    },
+    "services": {
+        "add_item": {
+            "fields": {
+                "name": {
+                    "name": "Nom"
+                }
+            }
+        },
+        "complete_item": {
+            "fields": {
+                "name": {
+                    "name": "Nom"
+                }
+            }
+        },
+        "incomplete_item": {
+            "fields": {
+                "name": {
+                    "name": "Nom"
+                }
+            }
+        },
+        "remove_item": {
+            "fields": {
+                "name": {
+                    "name": "Nom"
+                }
+            }
+        }
+    },
+    "title": "Llista de compres"
+}

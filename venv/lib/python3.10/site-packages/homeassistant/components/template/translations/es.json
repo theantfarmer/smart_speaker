@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Recarga entidades de plantilla desde la configuraci\u00f3n YAML.",
+            "name": "Recargar"
+        }
+    }
+}

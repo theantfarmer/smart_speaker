@@ -1,0 +1,21 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Upozorn\u011bn\u00ed",
+            "state": {
+                "idle": "Ne\u010dinn\u00fd",
+                "off": "Zn\u00e1m\u00e9",
+                "on": "Aktivn\u00ed"
+            }
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Upozorn\u011bn\u00ed"
+}

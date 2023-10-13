@@ -1,0 +1,57 @@
+{
+  "language": "sk",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "<set> <name> na <brightness>",
+            "<set> jas <name> na <brightness>",
+            "<set> <name> jas <brightness>"
+          ],
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "<set> jas (v|na) <area> na <brightness>",
+            "<set> jas (v|na) <area> <brightness>",
+            "<set> (v|na) <area> <brightness> jas"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "<set> {color} [farbu] <name>",
+            "<set> <name> {color} [farbu]",
+            "<set> <name> na {color}"
+          ],
+          "response": "color"
+        },
+        {
+          "sentences": [
+            "<set> {color} [farbu] (v|na) <area>",
+            "<set> [v] <area> {color} [farbu]",
+            "<set> [v] <area> na {color}"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "color_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "Jas {{ slots.name }} nastavený na {{ slots.brightness }}",
+        "brightness_area": "Jas {{ slots.area }} nastavený na {{ slots.brightness }}",
+        "color": "Farba {{ slots.name }} zmenená na {{ slots.color }}",
+        "color_area": "Farba {{ slots.area }} zmenená na {{ slots.color }}"
+      }
+    }
+  }
+}

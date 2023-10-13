@@ -1,0 +1,61 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "V\u00e4xla {entity_name}",
+            "turn_off": "St\u00e4ng av {entity_name}",
+            "turn_on": "Sl\u00e5 p\u00e5 {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} \u00e4r avst\u00e4ngd",
+            "is_on": "{entity_name} \u00e4r p\u00e5"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} slogs p\u00e5 eller av",
+            "turned_off": "{entity_name} st\u00e4ngdes av",
+            "turned_on": "{entity_name} aktiverades"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Fl\u00e4kt",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "direction": {
+                    "name": "Riktning",
+                    "state": {
+                        "forward": "Fram\u00e5t",
+                        "reverse": "Omv\u00e4nd"
+                    }
+                },
+                "oscillating": {
+                    "name": "Oscillerande",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "percentage": {
+                    "name": "Hastighet"
+                },
+                "percentage_step": {
+                    "name": "Hastighetssteg"
+                },
+                "preset_mode": {
+                    "name": "F\u00f6rinst\u00e4llt l\u00e4ge"
+                },
+                "preset_modes": {
+                    "name": "Tillg\u00e4ngliga f\u00f6rinst\u00e4llningsl\u00e4gen"
+                }
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "V\u00e4xla"
+        }
+    },
+    "title": "Fl\u00e4kt"
+}

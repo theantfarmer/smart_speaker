@@ -1,0 +1,16 @@
+{
+    "config": {
+        "error": {
+            "invalid_key": "Virheellinen API-avain"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API-avain",
+                    "app_key": "Sovellusavain"
+                },
+                "title": "T\u00e4yt\u00e4 tietosi"
+            }
+        }
+    }
+}

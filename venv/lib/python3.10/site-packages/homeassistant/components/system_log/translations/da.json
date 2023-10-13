@@ -1,0 +1,22 @@
+{
+    "selector": {
+        "level": {
+            "options": {
+                "error": "Fejl"
+            }
+        }
+    },
+    "services": {
+        "write": {
+            "fields": {
+                "level": {
+                    "name": "Niveau"
+                },
+                "message": {
+                    "name": "Besked"
+                }
+            },
+            "name": "Skriv"
+        }
+    }
+}

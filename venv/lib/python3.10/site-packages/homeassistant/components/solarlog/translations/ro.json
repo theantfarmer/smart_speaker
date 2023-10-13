@@ -1,0 +1,20 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispozitivul a fost configurat deja"
+        },
+        "error": {
+            "already_configured": "Dispozitivul a fost configurat deja",
+            "cannot_connect": "A e\u0219uat conectarea"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Gazd\u0103 (host)",
+                    "name": "Prefixul de folosit cu senzorii Solar-Log"
+                },
+                "title": "Define\u0219te-\u021bi conexiunea Solar-Log"
+            }
+        }
+    }
+}

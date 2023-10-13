@@ -1,0 +1,72 @@
+{
+    "device_automation": {
+        "action_type": {
+            "arm_away": "Aktivovat {entity_name} v re\u017eimu nep\u0159\u00edtomnost",
+            "arm_home": "Aktivovat {entity_name} v re\u017eimu domov",
+            "arm_night": "Aktivovat {entity_name} v no\u010dn\u00edm re\u017eimu",
+            "arm_vacation": "Aktivovat {entity_name} v re\u017eimu dovolen\u00e1",
+            "disarm": "Odbezpe\u010dit {entity_name}",
+            "trigger": "Spustit {entity_name}"
+        },
+        "condition_type": {
+            "is_armed_away": "{entity_name} je v re\u017eimu nep\u0159\u00edtomnost",
+            "is_armed_home": "{entity_name} je v re\u017eimu domov",
+            "is_armed_night": "{entity_name} je v no\u010dn\u00edm re\u017eimu",
+            "is_armed_vacation": "{entity_name} je v re\u017eimu dovolen\u00e1",
+            "is_disarmed": "{entity_name} nen\u00ed zabezpe\u010den",
+            "is_triggered": "{entity_name} je spu\u0161t\u011bn"
+        },
+        "trigger_type": {
+            "armed_away": "{entity_name} v re\u017eimu nep\u0159\u00edtomnost",
+            "armed_home": "{entity_name} v re\u017eimu domov",
+            "armed_night": "{entity_name} v no\u010dn\u00edm re\u017eimu",
+            "armed_vacation": "{entity_name} v re\u017eimu dovolen\u00e1",
+            "disarmed": "{entity_name} nezabezpe\u010den",
+            "triggered": "{entity_name} spu\u0161t\u011bn"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Ovl\u00e1dac\u00ed panel alarmu",
+            "state": {
+                "armed": "Zabezpe\u010deno",
+                "armed_away": "Nep\u0159\u00edtomnost",
+                "armed_custom_bypass": "Zabezpe\u010deno u\u017eivatelsk\u00fdm obejit\u00edm",
+                "armed_home": "Re\u017eim domov",
+                "armed_night": "No\u010dn\u00ed re\u017eim",
+                "armed_vacation": "Dovolen\u00e1",
+                "arming": "Zabezpe\u010dov\u00e1n\u00ed",
+                "disarmed": "Nezabezpe\u010deno",
+                "disarming": "Odbezpe\u010dov\u00e1n\u00ed",
+                "pending": "\u010cekaj\u00edc\u00ed",
+                "triggered": "Spu\u0161t\u011bn"
+            },
+            "state_attributes": {
+                "changed_by": {
+                    "name": "Zm\u011bn\u011bno"
+                },
+                "code_arm_required": {
+                    "name": "K\u00f3d pro zabezpe\u010den\u00ed",
+                    "state": {
+                        "false": "Nepovinn\u00fd",
+                        "true": "Povinn\u00fd"
+                    }
+                },
+                "code_format": {
+                    "name": "Form\u00e1t k\u00f3du",
+                    "state": {
+                        "number": "\u010c\u00edslo",
+                        "text": "Text"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "title": "Ovl\u00e1dac\u00ed panel alarmu"
+}

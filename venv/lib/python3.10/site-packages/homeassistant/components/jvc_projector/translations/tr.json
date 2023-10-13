@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "already_in_progress": "Yap\u0131land\u0131rma ak\u0131\u015f\u0131 zaten devam ediyor",
+            "unknown": "Beklenmeyen hata"
+        },
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Parola do\u011frulama ba\u015far\u0131s\u0131z oldu",
+            "invalid_host": "Ge\u00e7ersiz ana bilgisayar ad\u0131 veya IP adresi"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Parola"
+                },
+                "description": "Parola do\u011frulama ba\u015far\u0131s\u0131z oldu",
+                "title": "Entegrasyonu Yeniden Do\u011frula"
+            },
+            "user": {
+                "data": {
+                    "host": "Sunucu",
+                    "password": "Parola",
+                    "port": "Port"
+                },
+                "data_description": {
+                    "host": "Projekt\u00f6r\u00fcn IP adresi veya ana bilgisayar ad\u0131",
+                    "password": "Projekt\u00f6r biri i\u00e7in yap\u0131land\u0131r\u0131lm\u0131\u015fsa iste\u011fe ba\u011fl\u0131 parola",
+                    "port": "Projekt\u00f6r\u00fcn IP ba\u011flant\u0131 noktas\u0131 (varsay\u0131lan 20554't\u00fcr)"
+                }
+            }
+        }
+    }
+}

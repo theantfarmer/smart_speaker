@@ -1,0 +1,34 @@
+{
+    "services": {
+        "disable_audio": {
+            "description": "Desactiva el flux d'\u00e0udio.",
+            "name": "Desactiva l'\u00e0udio"
+        },
+        "disable_motion_recording": {
+            "description": "Desactiva la gravaci\u00f3 d'un clip a l'emmagatzematge de la c\u00e0mera quan es detecta moviment.",
+            "name": "Desactiva la gravaci\u00f3 de moviment"
+        },
+        "ptz_control": {
+            "fields": {
+                "movement": {
+                    "name": "Moviment"
+                },
+                "travel_time": {
+                    "description": "Temps de despla\u00e7ament en fraccions de segons: de 0 a 1.",
+                    "name": "Temps de despla\u00e7ament"
+                }
+            },
+            "name": "Control PTZ"
+        },
+        "set_color_bw": {
+            "description": "Configura el mode de color de la c\u00e0mera.",
+            "fields": {
+                "color_bw": {
+                    "description": "Mode de color.",
+                    "name": "Color"
+                }
+            },
+            "name": "Estableix el color"
+        }
+    }
+}

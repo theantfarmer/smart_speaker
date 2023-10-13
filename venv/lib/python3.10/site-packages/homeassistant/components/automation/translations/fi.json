@@ -1,0 +1,27 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "current": {
+                    "name": "K\u00e4ynniss\u00e4 olevat automaatiot"
+                },
+                "last_triggered": {
+                    "name": "Viimeksi k\u00e4ynnistetty"
+                },
+                "max": {
+                    "name": "Ajettavien automaatioiden maksimim\u00e4\u00e4r\u00e4"
+                },
+                "mode": {
+                    "name": "Ajotila",
+                    "state": {
+                        "parallel": "Rinnakkain",
+                        "queued": "Jonossa",
+                        "restart": "K\u00e4ynnist\u00e4 uudelleen",
+                        "single": "Yksitt\u00e4inen"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Automaatio"
+}

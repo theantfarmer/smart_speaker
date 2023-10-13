@@ -1,0 +1,156 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi"
+        },
+        "error": {
+            "invalid_code": "Kode yang Anda masukkan salah, silakan periksa dan coba lagi.",
+            "invalid_email": "Tidak ada akun yang terkait dengan email yang Anda masukkan, silakan coba lagi.",
+            "invalid_email_format": "Terjadi masalah dengan pemformatan email Anda - coba lagi.",
+            "unknown": "Kesalahan yang tidak diharapkan",
+            "unknown_roborock": "Terjadi kesalahan roborock yang tidak diketahui - periksa log Anda.",
+            "unknown_url": "Ada masalah dalam menentukan URL yang benar untuk akun roborock Anda - periksa log Anda."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Kode verifikasi"
+                },
+                "description": "Ketikkan kode verifikasi yang dikirimkan ke email Anda"
+            },
+            "user": {
+                "data": {
+                    "username": "Email"
+                },
+                "description": "Masukkan alamat email Roborock Anda."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Intensitas pel",
+                "state": {
+                    "custom": "Khusus",
+                    "high": "Tinggi",
+                    "intense": "Intens",
+                    "low": "Rendah",
+                    "medium": "Sedang",
+                    "mild": "Ringan",
+                    "moderate": "Sedang",
+                    "off": "Mati"
+                }
+            },
+            "mop_mode": {
+                "name": "Modus pel",
+                "state": {
+                    "custom": "Khusus",
+                    "deep": "Deep",
+                    "deep_plus": "Deep+",
+                    "fast": "Cepat",
+                    "standard": "Standar"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "Area pembersihan"
+            },
+            "cleaning_time": {
+                "name": "Waktu pembersihan"
+            },
+            "filter_time_left": {
+                "name": "Waktu filter tersisa"
+            },
+            "main_brush_time_left": {
+                "name": "Waktu sikat utama tersisa"
+            },
+            "sensor_time_left": {
+                "name": "Waktu sensor tersisa"
+            },
+            "side_brush_time_left": {
+                "name": "Waktu sikat samping tersisa"
+            },
+            "status": {
+                "name": "Status",
+                "state": {
+                    "charger_disconnected": "Pengisi daya terputus",
+                    "charging": "Mengisi daya",
+                    "charging_complete": "Pengisian daya selesai",
+                    "charging_problem": "Masalah pengisian daya",
+                    "cleaning": "Membersihkan",
+                    "device_offline": "Perangkat offline",
+                    "docking": "Berlabuh",
+                    "emptying_the_bin": "Mengosongkan tempat sampah",
+                    "error": "Kesalahan",
+                    "going_to_target": "Menuju target",
+                    "going_to_wash_the_mop": "Akan mencuci kain pel",
+                    "idle": "Siaga",
+                    "manual_mode": "Mode manual",
+                    "paused": "Jeda",
+                    "remote_control_active": "Kontrol jarak jauh aktif",
+                    "returning_home": "Kembali ke rumah",
+                    "segment_cleaning": "Pembersihan segmen",
+                    "shutting_down": "Mematikan",
+                    "spot_cleaning": "Pembersihan spot",
+                    "starting": "Memulai",
+                    "updating": "Memperbarui",
+                    "washing_the_mop": "Mencuci kain pel",
+                    "zoned_cleaning": "Pembersihan zonasi"
+                }
+            },
+            "total_cleaning_area": {
+                "name": "Total area pembersihan"
+            },
+            "total_cleaning_time": {
+                "name": "Total waktu pembersihan"
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Kunci anak"
+            },
+            "dnd_switch": {
+                "name": "Jangan ganggu"
+            },
+            "status_indicator": {
+                "name": "Lampu indikator status"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Otomatis",
+                            "balanced": "Seimbang",
+                            "custom": "Khusus",
+                            "gentle": "Lembut",
+                            "max": "Maks",
+                            "max_plus": "Maks plus",
+                            "medium": "Sedang",
+                            "off": "Mati",
+                            "quiet": "Hening",
+                            "silent": "Bisu",
+                            "standard": "Standar",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_deprecation_start_pause": {
+            "description": "Dukungan layanan vacuum.start_pause pada vakum Roborock untuk sudah tidak dapat digunakan lagi dan akan dihapus di Home Assistant 2024.2; Harap sesuaikan semua otomasi atau skrip yang menggunakan layanan ini untuk menggunakan layanan vacuum.pause atau vacuum.start, lalu pilih kirimkan di bawah ini untuk menandai bahwa masalah ini telah teratasi.",
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "title": "Dukungan vacuum.start_pause pada vakum Roborock dalam proses penghapusan"
+                    }
+                }
+            },
+            "title": "Dukungan vacuum.start_pause pada vakum Roborock dalam proses penghapusan"
+        }
+    }
+}

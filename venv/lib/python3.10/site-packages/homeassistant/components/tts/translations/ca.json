@@ -1,0 +1,33 @@
+{
+    "services": {
+        "say": {
+            "fields": {
+                "cache": {
+                    "name": "Mem\u00f2ria cau"
+                },
+                "entity_id": {
+                    "name": "Entitat"
+                },
+                "language": {
+                    "name": "Idioma"
+                },
+                "message": {
+                    "name": "Missatge"
+                }
+            }
+        },
+        "speak": {
+            "fields": {
+                "cache": {
+                    "name": "Mem\u00f2ria cau"
+                },
+                "language": {
+                    "name": "Idioma"
+                },
+                "message": {
+                    "name": "Missatge"
+                }
+            }
+        }
+    }
+}

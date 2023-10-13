@@ -1,0 +1,48 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Bereits konfiguriert. Nur eine einzige Konfiguration m\u00f6glich."
+        },
+        "step": {
+            "user": {
+                "description": "M\u00f6chtest du islamische Gebetszeiten einrichten?",
+                "title": "Islamische Gebetszeiten einrichten"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "asr": {
+                "name": "Asr-Gebet"
+            },
+            "dhuhr": {
+                "name": "Dhuhr-Gebet"
+            },
+            "fajr": {
+                "name": "Fajr-Gebet"
+            },
+            "isha": {
+                "name": "Isha-Gebet"
+            },
+            "maghrib": {
+                "name": "Maghrib-Gebet"
+            },
+            "midnight": {
+                "name": "Mitternachtszeit"
+            },
+            "sunrise": {
+                "name": "Sonnenaufgangszeit"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "calculation_method": "Gebetsberechnungsmethode"
+                }
+            }
+        }
+    },
+    "title": "Islamische Gebetszeiten"
+}

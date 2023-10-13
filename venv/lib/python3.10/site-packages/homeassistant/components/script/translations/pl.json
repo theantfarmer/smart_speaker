@@ -1,0 +1,35 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Skrypt",
+            "state": {
+                "off": "wy\u0142.",
+                "on": "w\u0142."
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Uruchomione automatyzacje"
+                },
+                "last_action": {
+                    "name": "Ostatnia akcja"
+                },
+                "last_triggered": {
+                    "name": "Ostatnio wywo\u0142ana"
+                },
+                "max": {
+                    "name": "Maksymalnie uruchomionych skrypt\u00f3w"
+                },
+                "mode": {
+                    "name": "Tryb uruchamiania",
+                    "state": {
+                        "parallel": "r\u00f3wnoleg\u0142y",
+                        "queued": "kolejka",
+                        "restart": "restart",
+                        "single": "pojedynczy"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Skrypt"
+}

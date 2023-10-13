@@ -1,0 +1,35 @@
+{
+  "language": "sr",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "<подеси> <name> на <brightness>",
+            "<подеси> [осветљење | јачину [светла] | светло] <name> на <brightness> [снаге | јачине | светлине]",
+            "<подеси> [[јачину | интензитет] светл(а|о) у | осветљење у] <area> [на] <brightness> [снаге | јачине | светлине]"
+          ],
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "<подеси> боју <name> на {color}",
+            "<подеси> <name> [на] {color} [боју]",
+            "<подеси> [боју] светл(а|о) [у [просторији]] <area> на {color}"
+          ],
+          "response": "color_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "Јачина осветљености за светло {{ slots.name }} је постављена на {{ slots.brightness }}",
+        "brightness_area": "Јачина осветљености за област {{ slots.area }} је постављена на {{ slots.brightness }}",
+        "color": "Боја за светло {{ slots.name }} је постављена на {{ slots.color }}",
+        "color_area": "Боја светла за област {{ slots.area }} је постављена на {{ slots.color }}"
+      }
+    }
+  }
+}

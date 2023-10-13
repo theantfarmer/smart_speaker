@@ -1,0 +1,56 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Automatizace",
+            "state": {
+                "off": "Vypnuta",
+                "on": "Zapnuta"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Spu\u0161t\u011bn\u00e9 automatizace"
+                },
+                "id": {
+                    "name": "ID"
+                },
+                "last_triggered": {
+                    "name": "Naposledy spu\u0161t\u011bno"
+                },
+                "max": {
+                    "name": "Maxim\u00e1ln\u00ed po\u010det spu\u0161t\u011bn\u00fdch automatizac\u00ed"
+                },
+                "mode": {
+                    "name": "Re\u017eim spu\u0161t\u011bn\u00ed",
+                    "state": {
+                        "parallel": "Paraleln\u011b",
+                        "queued": "Fronta",
+                        "restart": "Restart",
+                        "single": "Jedin\u00fd"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_not_found": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Automatizace \"{name}\" (`{entity_id}`) m\u00e1 akci, kter\u00e1 vol\u00e1 nezn\u00e1mou slu\u017ebu: `{service}`.\n\nTato chyba br\u00e1n\u00ed spr\u00e1vn\u00e9mu spu\u0161t\u011bn\u00ed automatizace. Mo\u017en\u00e1 tato slu\u017eba ji\u017e nen\u00ed k dispozici, nebo ji zp\u016fsobil p\u0159eklep.\n\nChcete-li tuto chybu opravit, [upravte automatizaci]({edit}) a odstra\u0148te akci, kter\u00e1 tuto slu\u017ebu vol\u00e1.\n\nKliknut\u00edm na tla\u010d\u00edtko ULO\u017dIT potvr\u010fte, \u017ee jste tuto automatizaci opravili.",
+                        "title": "{name} pou\u017e\u00edv\u00e1 nezn\u00e1mou slu\u017ebu"
+                    }
+                }
+            },
+            "title": "{name} pou\u017e\u00edv\u00e1 nezn\u00e1mou slu\u017ebu"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Automatizace"
+}

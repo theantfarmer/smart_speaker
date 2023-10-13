@@ -1,0 +1,12 @@
+{
+    "services": {
+        "write": {
+            "fields": {
+                "message": {
+                    "name": "Message"
+                }
+            },
+            "name": "\u00c9crire"
+        }
+    }
+}

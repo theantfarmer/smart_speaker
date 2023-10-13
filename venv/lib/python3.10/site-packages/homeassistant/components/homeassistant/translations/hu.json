@@ -1,0 +1,64 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "{domain} integr\u00e1ci\u00f3 nem t\u00e1mogatja a YAML f\u00e1jl \u00e1ltali konfigur\u00e1ci\u00f3t. Lehet, hogy nyilv\u00e1nval\u00f3 probl\u00e9m\u00e1kat ez nem okoz, de a YAML-ben defini\u00e1lt konfigur\u00e1ci\u00f3s be\u00e1ll\u00edt\u00e1sok nem ker\u00fclnek alkalmaz\u00e1sra. \n\nMegold\u00e1s: \n\n1. Ha esetleg m\u00e9g nem tette meg, [\u00e1ll\u00edtsa be az integr\u00e1ci\u00f3t]({add_integration}).\n\n2. T\u00e1vol\u00edtsa el a YAML konfigur\u00e1ci\u00f3s f\u00e1jlb\u00f3l a bejegyz\u00e9st: `{domain}:`\n\n3. Ind\u00edtsa \u00fajra a Home Assistantot.",
+            "title": "Az integr\u00e1ci\u00f3 nem t\u00e1mogatja a YAML konfigur\u00e1ci\u00f3t: {domain}"
+        },
+        "country_not_configured": {
+            "description": "Az orsz\u00e1g nincs be\u00e1ll\u00edtva. K\u00e9rem, friss\u00edtse a konfigur\u00e1ci\u00f3t az al\u00e1bbi gombra kattintva.",
+            "title": "Az orsz\u00e1g nincs konfigur\u00e1lva"
+        },
+        "historic_currency": {
+            "description": "{currency} p\u00e9nznem m\u00e1r nincs haszn\u00e1latban, k\u00e9rem, konfigur\u00e1lja \u00fajra a p\u00e9nznemet.",
+            "title": "A be\u00e1ll\u00edtott p\u00e9nznem m\u00e1r nincs haszn\u00e1latban"
+        },
+        "integration_key_no_support": {
+            "description": "{domain} integr\u00e1ci\u00f3 nem t\u00e1mogatja a YAML f\u00e1jl \u00e1ltali konfigur\u00e1ci\u00f3t. Lehet, hogy nyilv\u00e1nval\u00f3 probl\u00e9m\u00e1kat ez nem okoz, de a YAML-ben defini\u00e1lt konfigur\u00e1ci\u00f3s be\u00e1ll\u00edt\u00e1sok nem ker\u00fclnek alkalmaz\u00e1sra. \n\nMegold\u00e1s: \n\n1. Ha esetleg m\u00e9g nem tette meg, [\u00e1ll\u00edtsa be az integr\u00e1ci\u00f3t]({add_integration}).\n\n2. T\u00e1vol\u00edtsa el a YAML konfigur\u00e1ci\u00f3s f\u00e1jlb\u00f3l a bejegyz\u00e9st: `{domain}:`\n\n3. Ind\u00edtsa \u00fajra a Home Assistantot.",
+            "title": "Az integr\u00e1ci\u00f3 nem t\u00e1mogatja a YAML konfigur\u00e1ci\u00f3t: {domain}"
+        },
+        "platform_only": {
+            "description": "{domain} integr\u00e1ci\u00f3 nem t\u00e1mogatja a YAML f\u00e1jl \u00e1ltali konfigur\u00e1ci\u00f3t, saj\u00e1t kulcsbejegyz\u00e9sben; azt a t\u00e1mogatott platfomok alatt kell be\u00e1ll\u00edtani.\n\nMegold\u00e1s: \n\n1. T\u00e1vol\u00edtsa el a YAML konfigur\u00e1ci\u00f3s f\u00e1jlb\u00f3l a bejegyz\u00e9st: `{domain}:`\n\n2. Ind\u00edtsa \u00fajra a Home Assistantot.",
+            "title": "A {domain} integr\u00e1ci\u00f3 nem t\u00e1mogatja a YAML konfigur\u00e1ci\u00f3t saj\u00e1t kulcsbejegyz\u00e9sben"
+        },
+        "python_version": {
+            "description": "A Home Assistant futtat\u00e1s\u00e1nak t\u00e1mogat\u00e1sa az aktu\u00e1lisan haszn\u00e1lt Python-verzi\u00f3ban {current_python_version} elavult, \u00e9s a Home Assistant {breaks_in_ha_version} verzi\u00f3j\u00e1ban elt\u00e1vol\u00edt\u00e1sra ker\u00fcl. K\u00e9rem, friss\u00edtse a Pythont a {required_python_version} verzi\u00f3ra, hogy megakad\u00e1lyozza a Home Assistant j\u00f6v\u0151beni m\u0171k\u00f6d\u00e9sk\u00e9ptelens\u00e9g\u00e9t.",
+            "title": "A Python {current_python_version} t\u00e1mogat\u00e1sa megsz\u0171nik"
+        },
+        "storage_corruption": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "A `{storage_key}` t\u00e1rol\u00f3 nem volt megnyithat\u00fc, ez\u00e9rt annak \u00e9rdek\u00e9ben hogy a Home Assistant tov\u00e1bb m\u0171k\u00f6dhessen \u00e1t lett nevezve: `{corrupt_path}`\n\nEgy \u00faj `{storage_key}` sz\u00fcks\u00e9g eset\u00e9n automatikusan l\u00e9trej\u00f6tt.\n\nHa manu\u00e1lisan szerkesztette a t\u00e1rol\u00f3f\u00e1jlt, jav\u00edtsa ki a szintaxis hib\u00e1kat itt: `{corrupt_path}`, majd \u00e1ll\u00edtsa vissza a f\u00e1jlt az eredeti \u00fatvonalra: `{original_path}`, \u00e9s ind\u00edtsa \u00fajra a Home Assistantot. Egy\u00e9b esetben \u00e1ll\u00edtsa vissza a rendszert egy biztons\u00e1gi ment\u00e9sb\u0151l.\n\nKattintson a MEHET gombra, hogy meger\u0151s\u00edtse, hogy kijav\u00edtotta a f\u00e1jlt vagy vissza\u00e1ll\u00edtott egy biztons\u00e1gi ment\u00e9st.\n\nA pontos hiba a k\u00f6vetkez\u0151 volt: {error}",
+                        "title": "T\u00e1rhelys\u00e9r\u00fcl\u00e9s \u00e9szlelve: `{storage_key}`"
+                    }
+                }
+            },
+            "title": "T\u00e1rhelys\u00e9r\u00fcl\u00e9s \u00e9szlelve: `{storage_key}`"
+        }
+    },
+    "services": {
+        "restart": {
+            "name": "\u00dajraind\u00edt\u00e1s"
+        },
+        "stop": {
+            "name": "Le\u00e1ll\u00edt\u00e1s"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "Processzor architekt\u00fara",
+            "config_dir": "Konfigur\u00e1ci\u00f3s k\u00f6nyvt\u00e1r",
+            "dev": "Fejleszt\u00e9s",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Telep\u00edt\u00e9s t\u00edpusa",
+            "os_name": "Oper\u00e1ci\u00f3s rendszer csal\u00e1d",
+            "os_version": "Oper\u00e1ci\u00f3s rendszer verzi\u00f3ja",
+            "python_version": "Python verzi\u00f3",
+            "timezone": "Id\u0151z\u00f3na",
+            "user": "Felhaszn\u00e1l\u00f3",
+            "version": "Verzi\u00f3",
+            "virtualenv": "Virtu\u00e1lis k\u00f6rnyezet"
+        }
+    }
+}

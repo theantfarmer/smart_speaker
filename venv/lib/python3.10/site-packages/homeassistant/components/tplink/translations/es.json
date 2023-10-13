@@ -1,0 +1,122 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositivo ya est\u00e1 configurado",
+            "no_devices_found": "No se encontraron dispositivos en la red"
+        },
+        "error": {
+            "cannot_connect": "No se pudo conectar"
+        },
+        "flow_title": "{name} {model} ({host})",
+        "step": {
+            "discovery_confirm": {
+                "description": "\u00bfQuieres configurar {name} {model} ({host})?"
+            },
+            "pick_device": {
+                "data": {
+                    "device": "Dispositivo"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "description": "Si dejas el host vac\u00edo, se usar\u00e1 el descubrimiento para encontrar dispositivos."
+            }
+        }
+    },
+    "services": {
+        "random_effect": {
+            "description": "Establece un efecto aleatorio.",
+            "fields": {
+                "backgrounds": {
+                    "description": "Lista de secuencias HSV (M\u00e1x 16).",
+                    "name": "Fondos"
+                },
+                "brightness": {
+                    "description": "Brillo inicial.",
+                    "name": "Brillo"
+                },
+                "brightness_range": {
+                    "description": "Rango de luminosidad.",
+                    "name": "Rango de brillo"
+                },
+                "duration": {
+                    "description": "Duraci\u00f3n.",
+                    "name": "Duraci\u00f3n"
+                },
+                "fadeoff": {
+                    "description": "Desvanecimiento.",
+                    "name": "Desvanecimiento"
+                },
+                "hue_range": {
+                    "description": "Rango de tonalidad.",
+                    "name": "Gama de tonos"
+                },
+                "init_states": {
+                    "description": "Secuencia HSV inicial.",
+                    "name": "Estados iniciales"
+                },
+                "random_seed": {
+                    "description": "Semilla aleatoria.",
+                    "name": "Semilla aleatoria"
+                },
+                "saturation_range": {
+                    "description": "Rango de saturaci\u00f3n.",
+                    "name": "Rango de saturaci\u00f3n"
+                },
+                "segments": {
+                    "description": "Lista de segmentos (0 para todos).",
+                    "name": "Segmentos"
+                },
+                "transition": {
+                    "description": "Transici\u00f3n.",
+                    "name": "Transici\u00f3n"
+                },
+                "transition_range": {
+                    "description": "Rango de transici\u00f3n.",
+                    "name": "Rango de transici\u00f3n"
+                }
+            },
+            "name": "Efecto aleatorio"
+        },
+        "sequence_effect": {
+            "description": "Establece un efecto de secuencia.",
+            "fields": {
+                "brightness": {
+                    "description": "Brillo inicial.",
+                    "name": "Brillo"
+                },
+                "direction": {
+                    "description": "Direcci\u00f3n.",
+                    "name": "Direcci\u00f3n"
+                },
+                "duration": {
+                    "description": "Duraci\u00f3n.",
+                    "name": "Duraci\u00f3n"
+                },
+                "repeat_times": {
+                    "description": "Repeticiones (0 para continuo).",
+                    "name": "Repeticiones"
+                },
+                "segments": {
+                    "description": "Lista de Segmentos (0 para todos).",
+                    "name": "Segmentos"
+                },
+                "sequence": {
+                    "description": "Lista de secuencias HSV (M\u00e1x 16).",
+                    "name": "Secuencia"
+                },
+                "spread": {
+                    "description": "Velocidad de propagaci\u00f3n.",
+                    "name": "Propagar"
+                },
+                "transition": {
+                    "description": "Transici\u00f3n.",
+                    "name": "Transici\u00f3n"
+                }
+            },
+            "name": "Efecto de secuencia"
+        }
+    }
+}

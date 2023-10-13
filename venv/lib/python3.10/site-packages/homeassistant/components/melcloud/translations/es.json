@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Integraci\u00f3n MELCloud ya configurada para este correo electr\u00f3nico. El token de acceso se ha actualizado."
+        },
+        "error": {
+            "cannot_connect": "No se pudo conectar",
+            "invalid_auth": "Autenticaci\u00f3n no v\u00e1lida",
+            "unknown": "Error inesperado"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Contrase\u00f1a",
+                    "username": "Correo electr\u00f3nico"
+                },
+                "description": "Con\u00e9ctate usando tu cuenta MELCloud.",
+                "title": "Conectar a MELCloud"
+            }
+        }
+    },
+    "services": {
+        "set_vane_horizontal": {
+            "description": "Establece la posici\u00f3n horizontal de las paletas.",
+            "fields": {
+                "position": {
+                    "description": "Posici\u00f3n horizontal de las paletas. Las opciones posibles se encuentran en el atributo de estado vane_horizontal_positions.\n.",
+                    "name": "Posici\u00f3n"
+                }
+            },
+            "name": "Establecer paletas horizontales"
+        },
+        "set_vane_vertical": {
+            "description": "Establece la posici\u00f3n vertical de las paletas.",
+            "fields": {
+                "position": {
+                    "description": "Posici\u00f3n vertical de las paletas. Las opciones posibles se encuentran en el atributo de estado vane_vertical_positions.\n.",
+                    "name": "Posici\u00f3n"
+                }
+            },
+            "name": "Establecer paletas verticales"
+        }
+    }
+}

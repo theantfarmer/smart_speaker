@@ -1,0 +1,19 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u670d\u52a1\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86"
+        },
+        "error": {
+            "not_allowed": "\u8def\u5f84\u4e0d\u5141\u8bb8",
+            "not_valid": "\u8def\u5f84\u65e0\u6548"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "file_path": "\u6587\u4ef6\u8def\u5f84"
+                }
+            }
+        }
+    },
+    "title": "\u6587\u4ef6\u5927\u5c0f"
+}

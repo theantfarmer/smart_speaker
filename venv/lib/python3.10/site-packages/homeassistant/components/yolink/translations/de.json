@@ -1,0 +1,88 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konto wurde bereits konfiguriert",
+            "already_in_progress": "Der Konfigurationsablauf wird bereits ausgef\u00fchrt",
+            "authorize_url_timeout": "Zeit\u00fcberschreitung beim Erstellen der Authorisierungs-URL.",
+            "missing_configuration": "Die Komponente ist nicht konfiguriert. Bitte der Dokumentation folgen.",
+            "no_url_available": "Keine URL verf\u00fcgbar. Informationen zu diesem Fehler findest du [im Hilfebereich]({docs_url}).",
+            "oauth_error": "Ung\u00fcltige Token-Daten empfangen.",
+            "reauth_successful": "Die erneute Authentifizierung war erfolgreich"
+        },
+        "create_entry": {
+            "default": "Erfolgreich authentifiziert"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "W\u00e4hle die Authentifizierungsmethode"
+            },
+            "reauth_confirm": {
+                "description": "Die yolink Integration muss dein Konto neu authentifizieren",
+                "title": "Integration erneut authentifizieren"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "button_1_long_press": "Taste 1 (lang dr\u00fccken)",
+            "button_1_short_press": "Taste 1 (kurz dr\u00fccken)",
+            "button_2_long_press": "Taste 2 (lang dr\u00fccken)",
+            "button_2_short_press": "Taste 2 (kurz dr\u00fccken)",
+            "button_3_long_press": "Taste 3 (lang dr\u00fccken)",
+            "button_3_short_press": "Taste 3 (kurz dr\u00fccken)",
+            "button_4_long_press": "Taste 4 (lang dr\u00fccken)",
+            "button_4_short_press": "Taste 4 (kurz dr\u00fccken)"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "power_failure_alarm": {
+                "name": "Stromausfallalarm",
+                "state": {
+                    "alert": "Alarm",
+                    "normal": "Normal",
+                    "off": "Aus"
+                }
+            },
+            "power_failure_alarm_beep": {
+                "name": "Alarmton bei Stromausfall",
+                "state": {
+                    "disabled": "Deaktiviert",
+                    "enabled": "Aktiviert"
+                }
+            },
+            "power_failure_alarm_mute": {
+                "name": "Stummschaltung des Stromausfallalarms",
+                "state": {
+                    "muted": "Stummgeschaltet",
+                    "unmuted": "Nicht stummgeschaltet"
+                }
+            },
+            "power_failure_alarm_volume": {
+                "name": "Lautst\u00e4rke des Stromausfallalarms",
+                "state": {
+                    "high": "Hoch",
+                    "low": "Niedrig",
+                    "medium": "Mittel"
+                }
+            }
+        },
+        "switch": {
+            "plug_1": {
+                "name": "Stecker 1"
+            },
+            "plug_2": {
+                "name": "Stecker 2"
+            },
+            "plug_3": {
+                "name": "Stecker 3"
+            },
+            "plug_4": {
+                "name": "Stecker 4"
+            },
+            "usb_ports": {
+                "name": "USB-Anschl\u00fcsse"
+            }
+        }
+    }
+}

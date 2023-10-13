@@ -1,0 +1,90 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "zmniejsz jasno\u015b\u0107 {entity_name}",
+            "brightness_increase": "zwi\u0119ksz jasno\u015b\u0107 {entity_name}",
+            "flash": "b\u0142y\u015bnij {entity_name}",
+            "toggle": "prze\u0142\u0105cz {entity_name}",
+            "turn_off": "wy\u0142\u0105cz {entity_name}",
+            "turn_on": "w\u0142\u0105cz {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "\u015bwiat\u0142o {entity_name} jest wy\u0142\u0105czone",
+            "is_on": "\u015bwiat\u0142o {entity_name} jest w\u0142\u0105czone"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} zostanie w\u0142\u0105czony lub wy\u0142\u0105czony",
+            "turned_off": "nast\u0105pi wy\u0142\u0105czenie {entity_name}",
+            "turned_on": "nast\u0105pi w\u0142\u0105czenie {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "\u015awiat\u0142o",
+            "state": {
+                "off": "wy\u0142.",
+                "on": "w\u0142."
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "Jasno\u015b\u0107"
+                },
+                "color_mode": {
+                    "name": "Tryb koloru",
+                    "state": {
+                        "brightness": "tylko jasno\u015b\u0107",
+                        "color_temp": "temperatura barwowa",
+                        "hs": "HS",
+                        "onoff": "w\u0142\u0105cz/wy\u0142\u0105cz",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "nieznany",
+                        "white": "bia\u0142y",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "Temperatura barwowa (mired)"
+                },
+                "color_temp_kelvin": {
+                    "name": "Temperatura barwowa (Kelwin)"
+                },
+                "effect": {
+                    "name": "Efekt"
+                },
+                "effect_list": {
+                    "name": "Dost\u0119pne efekty"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "Maksymalna temperatura barwowa (Kelwin)"
+                },
+                "max_mireds": {
+                    "name": "Maksymalna temperatura barwowa (mired)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "Minimalna temperatura barwowa (Kelwin)"
+                },
+                "min_mireds": {
+                    "name": "Minimalna temperatura barwowa (mired)"
+                },
+                "supported_color_modes": {
+                    "name": "Dost\u0119pne tryby koloru",
+                    "state": {
+                        "brightness": "tylko jasno\u015b\u0107",
+                        "color_temp": "temperatura barwowa",
+                        "hs": "HS",
+                        "onoff": "w\u0142\u0105cz/wy\u0142\u0105cz",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "nieznany",
+                        "white": "bia\u0142y",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "title": "\u015awiat\u0142o"
+}

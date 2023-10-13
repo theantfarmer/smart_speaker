@@ -1,0 +1,104 @@
+{
+    "device_automation": {
+        "action_type": {
+            "clean": "Lass {entity_name} reinigen",
+            "dock": "Lass {entity_name} zum Dock zur\u00fcckkehren"
+        },
+        "condition_type": {
+            "is_cleaning": "{entity_name} reinigt",
+            "is_docked": "{entity_name} ist angedockt"
+        },
+        "trigger_type": {
+            "cleaning": "{entity_name} hat mit der Reinigung begonnen",
+            "docked": "{entity_name} angedockt"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Vacuum",
+            "state": {
+                "cleaning": "Reinigt",
+                "docked": "Angedockt",
+                "error": "Fehler",
+                "idle": "Inaktiv",
+                "off": "Aus",
+                "on": "An",
+                "paused": "Pausiert",
+                "returning": "R\u00fcckkehr zur Dockingstation"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_vacuum_base_class": {
+            "description": "Die benutzerdefinierte Integration `{platform}` erweitert die veraltete Basisklasse `VacuumEntity` anstelle von `StateVacuumEntity`.\n\nBitte melde dies dem Autor der benutzerdefinierten Integration `{platform}`.\n\nSobald eine aktualisierte Version von `{platform}` verf\u00fcgbar ist, installiere diese und starte Home Assistant neu, um das Problem zu beheben.",
+            "title": "Die benutzerdefinierte Integration von {platform} verwendet eine veraltete Vakuumfunktion"
+        },
+        "platform_integration_no_support": {
+            "description": "Die {platform}-Plattform f\u00fcr die {domain}-Integration unterst\u00fctzt die Plattform-Einrichtung nicht. \n\nBitte entferne es aus deiner Konfiguration und starte Home Assistant neu, um dieses Problem zu beheben.",
+            "title": "Plattform-Unterst\u00fctzung nicht unterst\u00fctzt"
+        }
+    },
+    "services": {
+        "clean_spot": {
+            "description": "Weist den Staubsauger an, eine Fleckentfernung durchzuf\u00fchren.",
+            "name": "Stelle s\u00e4ubern"
+        },
+        "locate": {
+            "description": "Lokalisiert den Staubsaugerroboter.",
+            "name": "Lokalisieren"
+        },
+        "pause": {
+            "description": "Unterbricht die Reinigungsaufgabe.",
+            "name": "Pause"
+        },
+        "return_to_base": {
+            "description": "Weist den Staubsauger an, zu seiner Dockingstation zur\u00fcckzukehren.",
+            "name": "Zur\u00fcck zur Dockingstation"
+        },
+        "send_command": {
+            "description": "Sendet einen Befehl an den Staubsauger.",
+            "fields": {
+                "command": {
+                    "description": "Auszuf\u00fchrender Befehl. Die Befehle sind integrationsabh\u00e4ngig.",
+                    "name": "Befehl"
+                },
+                "params": {
+                    "description": "Parameter f\u00fcr den Befehl. Die Parameter sind integrationsspezifisch.",
+                    "name": "Parameter"
+                }
+            },
+            "name": "Befehl senden"
+        },
+        "set_fan_speed": {
+            "description": "Legt die L\u00fcftergeschwindigkeit des Staubsaugers fest.",
+            "fields": {
+                "fan_speed": {
+                    "description": "L\u00fcftergeschwindigkeit. Der Wert h\u00e4ngt von der Integration ab. Einige Integrationen haben Geschwindigkeitsstufen, wie z. B. \"mittel\". Einige verwenden einen Prozentsatz zwischen 0 und 100.",
+                    "name": "L\u00fcftergeschwindigkeit"
+                }
+            },
+            "name": "L\u00fcftergeschwindigkeit einstellen"
+        },
+        "start": {
+            "description": "Startet oder setzt die Reinigungsaufgabe fort.",
+            "name": "Start"
+        },
+        "start_pause": {
+            "description": "Startet, pausiert oder setzt die Reinigungsaufgabe fort.",
+            "name": "Start/Pause"
+        },
+        "stop": {
+            "description": "Stoppt die aktuelle Reinigungsaufgabe.",
+            "name": "Stopp"
+        },
+        "turn_off": {
+            "description": "Beendet die aktuelle Bereinigungsaufgabe und kehrt zur Dockingstation zur\u00fcck.",
+            "name": "Ausschalten"
+        },
+        "turn_on": {
+            "description": "Startet eine neue Reinigungsaufgabe.",
+            "name": "Einschalten"
+        }
+    },
+    "title": "Vacuum"
+}

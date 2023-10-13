@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "IMAP e-posta i\u00e7eri\u011fi entegrasyonu kullan\u0131mdan kald\u0131r\u0131lm\u0131\u015ft\u0131r. IMAP sunucusu yap\u0131land\u0131rman\u0131z zaten [imap entegrasyonuna](https://my.home-assistant.io/redirect/config_flow_start?domain=imap) ta\u015f\u0131nd\u0131. IMAP e-posta i\u00e7eri\u011fi i\u00e7in bir sens\u00f6r ayarlamak \u00fczere, yap\u0131land\u0131rma ile bir \u015fablon sens\u00f6r\u00fc ayarlay\u0131n: \n\n ```yaml\n {yaml_example} ``` \n\n L\u00fctfen kullan\u0131mdan kald\u0131r\u0131lan \"imap_email_plaform\" sens\u00f6r yap\u0131land\u0131rmas\u0131n\u0131 \"configuration.yaml\" dosyan\u0131zdan kald\u0131r\u0131n. \n\n Olay filtresinin yaln\u0131zca yap\u0131land\u0131r\u0131lm\u0131\u015f izin verilen g\u00f6ndericilerin ilkini filtreledi\u011fini unutmay\u0131n, gerekirse filtreyi \u00f6zelle\u015ftirin. \n\n Halihaz\u0131rda bir \u015fablon sens\u00f6r\u00fc ayarlad\u0131ysan\u0131z bu k\u0131sm\u0131 atlayabilirsiniz.",
+            "title": "IMAP e-posta i\u00e7eri\u011fi entegrasyonu kullan\u0131mdan kald\u0131r\u0131ld\u0131"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "IMAP sunucusu yap\u0131land\u0131rmas\u0131 zaten imap entegrasyonuna ta\u015f\u0131nm\u0131\u015ft\u0131. `configuration.yaml` dosyan\u0131zdan `imap_email_plaform` sens\u00f6r yap\u0131land\u0131rmas\u0131n\u0131 kald\u0131r\u0131n.",
+                    "cannot_connect": "Ta\u015f\u0131ma ba\u015far\u0131s\u0131z oldu. IMAP sunucusuna ba\u011flan\u0131lamad\u0131. Manuel ge\u00e7i\u015f ger\u00e7ekle\u015ftirin."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "Bu ad\u0131mda, a\u015fa\u011f\u0131daki yap\u0131land\u0131rma ile bir \"imap\" yap\u0131land\u0131rma giri\u015fi kurulacakt\u0131r: \n\n ```metin\n Sunucu {server}\n ba\u011flant\u0131 noktas\u0131 {port}\n kullan\u0131c\u0131 ad\u0131 {username}\n \u015eifre *****\n Klas\u00f6r {folder}\n ``` \n\n Ayr\u0131ca bak\u0131n\u0131z: (https://www.home-assistant.io/integrations/imap/) \n\n \u0130zin verilen \"g\u00f6nderen\" \u00fczerindeki filtreleme yap\u0131land\u0131rmas\u0131, \"configuration.yaml\" dosyan\u0131za kopyalan\u0131p yerle\u015ftirilebilen \u015fablon sens\u00f6r yap\u0131land\u0131rmas\u0131n\u0131n bir par\u00e7as\u0131d\u0131r. \n\n Olay filtresinin yaln\u0131zca yap\u0131land\u0131r\u0131lm\u0131\u015f izin verilen g\u00f6ndericilerin ilkini filtreledi\u011fini unutmay\u0131n, gerekirse filtreyi \u00f6zelle\u015ftirin. \n\n ```yaml\n {yaml_example} ```\n Ge\u00e7i\u015ften sonra `configuration.yaml` dosyan\u0131z\u0131 temizlemeyi unutmay\u0131n. \n\n IMAP sunucusu yap\u0131land\u0131rman\u0131z\u0131 bir \"imap\" yap\u0131land\u0131rma giri\u015fine ge\u00e7irmek i\u00e7in g\u00f6nderin.",
+                        "title": "IMAP sunucu ayarlar\u0131n\u0131z ta\u015f\u0131nacakt\u0131r"
+                    },
+                    "start": {
+                        "description": "IMAP e-posta i\u00e7eri\u011fi entegrasyonu kullan\u0131mdan kald\u0131r\u0131lm\u0131\u015ft\u0131r. IMAP sunucu yap\u0131land\u0131rman\u0131z otomatik olarak [imap entegrasyonuna](https://my.home-assistant.io/redirect/config_flow_start?domain=imap) ta\u015f\u0131nabilir, bu, \u00f6zel bir \"imap\" olay tetikleyicisinin kullan\u0131lmas\u0131n\u0131 sa\u011flar. IMAP i\u00e7erik durumuna sahip bir sens\u00f6r ayarlamak i\u00e7in bir \u015fablon sens\u00f6r kullan\u0131labilir. Ge\u00e7i\u015ften sonra \"imap_email_plaform\" sens\u00f6r yap\u0131land\u0131rmas\u0131n\u0131 \"configuration.yaml\" dosyan\u0131zdan kald\u0131r\u0131n. \n\n IMAP sunucusu yap\u0131land\u0131rman\u0131z\u0131n \"imap\" entegrasyonuna ge\u00e7i\u015fini ba\u015flatmak i\u00e7in g\u00f6nderin.",
+                        "title": "IMAP e-posta yap\u0131land\u0131rman\u0131z\u0131 ta\u015f\u0131y\u0131n"
+                    }
+                }
+            },
+            "title": "IMAP e-posta i\u00e7eri\u011fi entegrasyonu dikkat gerektiriyor"
+        }
+    }
+}

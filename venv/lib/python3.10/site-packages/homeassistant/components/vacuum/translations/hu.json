@@ -1,0 +1,55 @@
+{
+    "device_automation": {
+        "action_type": {
+            "clean": "{entity_name} takar\u00edt\u00e1s ind\u00edt\u00e1sa",
+            "dock": "{entity_name} visszak\u00fcld\u00e9se a dokkol\u00f3ra"
+        },
+        "condition_type": {
+            "is_cleaning": "{entity_name} takar\u00edt",
+            "is_docked": "{entity_name} dokkolva van"
+        },
+        "trigger_type": {
+            "cleaning": "{entity_name} elkezdett takar\u00edtani",
+            "docked": "{entity_name} dokkolt"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Porsz\u00edv\u00f3",
+            "state": {
+                "cleaning": "Takar\u00edt\u00e1s",
+                "docked": "Dokkolva",
+                "error": "Hiba",
+                "idle": "T\u00e9tlen",
+                "off": "Ki",
+                "on": "Be",
+                "paused": "Sz\u00fcnetel",
+                "returning": "Dokkol\u00e1s folyamatban"
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} integr\u00e1ci\u00f3 nem t\u00e1mogatja {platform} platform be\u00e1ll\u00edt\u00e1s\u00e1t.\n\nK\u00e9rem, t\u00e1vol\u00edtsa el a konfigur\u00e1ci\u00f3b\u00f3l, \u00e9s ind\u00edtsa \u00fajra a Home Assistantot a probl\u00e9ma megold\u00e1s\u00e1hoz.",
+            "title": "A platform nem t\u00e1mogatott"
+        }
+    },
+    "services": {
+        "pause": {
+            "name": "Sz\u00fcneteltet\u00e9s"
+        },
+        "start": {
+            "name": "Ind\u00edt\u00e1s"
+        },
+        "stop": {
+            "name": "Le\u00e1ll\u00edt\u00e1s"
+        },
+        "turn_off": {
+            "name": "Kikapcsol\u00e1s"
+        },
+        "turn_on": {
+            "name": "Bekapcsol\u00e1s"
+        }
+    },
+    "title": "Porsz\u00edv\u00f3"
+}

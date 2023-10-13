@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalend\u00e1\u0159",
+            "state": {
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Cel\u00fd den",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "description": {
+                    "name": "Popis"
+                },
+                "end_time": {
+                    "name": "Konec"
+                },
+                "location": {
+                    "name": "Um\u00edst\u011bn\u00ed"
+                },
+                "messages": {
+                    "name": "Zpr\u00e1va"
+                },
+                "start_time": {
+                    "name": "Za\u010d\u00e1tek"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "title": "Kalend\u00e1\u0159"
+}

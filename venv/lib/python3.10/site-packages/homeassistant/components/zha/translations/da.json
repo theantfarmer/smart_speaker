@@ -1,0 +1,296 @@
+{
+    "config": {
+        "abort": {
+            "not_zha_device": "Denne enhed er ikke en zha-enhed",
+            "single_instance_allowed": "Allerede konfigureret. Kun en enkelt konfiguration mulig.",
+            "usb_probe_failed": "Kunne ikke unders\u00f8ge usb-enheden"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_backup_json": "Ugyldig sikkerhedskopi-JSON"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "V\u00e6lg en automatisk sikkerhedskopi"
+                },
+                "description": "Gendan dine netv\u00e6rksindstillinger fra en automatisk sikkerhedskopi",
+                "title": "Gendan automatisk sikkerhedskopi"
+            },
+            "choose_formation_strategy": {
+                "description": "V\u00e6lg netv\u00e6rksindstillingerne for din radio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Gendan en automatisk sikkerhedskopi",
+                    "form_initial_network": "Opret et netv\u00e6rk",
+                    "form_new_network": "Slet netv\u00e6rksindstillinger og opret et nyt netv\u00e6rk",
+                    "reuse_settings": "Behold indstillinger for radionetv\u00e6rk",
+                    "upload_manual_backup": "Upload en manuel sikkerhedskopi"
+                },
+                "title": "Netv\u00e6rksdannelse"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Stien til seriel enhed"
+                },
+                "description": "V\u00e6lg den serielle port til din Zigbee-radio",
+                "title": "V\u00e6lg en seriel port"
+            },
+            "confirm": {
+                "description": "Vil du konfigurere {name}?"
+            },
+            "confirm_hardware": {
+                "description": "Vil du konfigurere {name}?"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Radiotype"
+                },
+                "description": "V\u00e6lg din Zigbee-radiotype",
+                "title": "Radiotype"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "porthastighed",
+                    "flow_control": "dataflowstyring",
+                    "path": "Seriel enhedssti"
+                },
+                "description": "Indtast indstillingerne for den serielle port",
+                "title": "Indstillinger for seriel port"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Udskift radioens IEEE-adresse permanent"
+                },
+                "description": "Din sikkerhedskopi har en anden IEEE-adresse end din radio.  For at dit netv\u00e6rk skal fungere korrekt, skal IEEE-adressen p\u00e5 din radio ogs\u00e5 \u00e6ndres.\n\nDette er en permanent \u00e6ndring.",
+                "title": "Overskriv radio-IEEE-adresse"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Upload en fil"
+                },
+                "description": "Gendan dine netv\u00e6rksindstillinger fra en uploadet JSON-sikkerhedskopifil. Du kan downloade en fra en anden ZHA-installation fra **Netv\u00e6rksindstillinger** eller bruge en Zigbee2MQTT 'coordinator_backup.json'-fil.",
+                "title": "Upload en manuel sikkerhedskopi"
+            },
+            "verify_radio": {
+                "description": "Den radio, du bruger ({name}), anbefales ikke, og underst\u00f8ttelsen af den kan blive fjernet i fremtiden. Se dokumentationen for Zigbee Home Automation-integrationen for [en liste over anbefalede adaptere]({docs_recommended_adapters_url}).",
+                "title": "Radio anbefales ikke"
+            }
+        }
+    },
+    "config_panel": {
+        "zha_alarm_options": {
+            "alarm_arm_requires_code": "Kode, der kr\u00e6ves til armering",
+            "alarm_failed_tries": "Antallet af p\u00e5 hinanden f\u00f8lgende mislykkede kodeindtastninger for at udl\u00f8se en alarm",
+            "alarm_master_code": "Hovedkode til alarmkontrolpanel(er)",
+            "title": "Indstillinger for alarmkontrolpanel"
+        },
+        "zha_options": {
+            "always_prefer_xy_color_mode": "Foretr\u00e6k altid XY-farvetilstand",
+            "consider_unavailable_battery": "Betragt batteridrevne enheder som utilg\u00e6ngelige efter (sekunder)",
+            "consider_unavailable_mains": "Betragt stikkontakt-str\u00f8mforsynede enheder som utilg\u00e6ngelige efter (sekunder)",
+            "default_light_transition": "Standard lysovergangstid (sekunder)",
+            "enable_identify_on_join": "Aktiv\u00e9r identifikationseffekt, n\u00e5r enheder tilslutter sig netv\u00e6rket",
+            "enhanced_light_transition": "Aktiv\u00e9r forbedret lysfarve/temperaturovergang fra slukket tilstand",
+            "group_members_assume_state": "Gruppemedlemmer antager gruppens tilstand",
+            "light_transitioning_flag": "Aktiv\u00e9r forbedret lysstyrkeskyder under lysovergang",
+            "title": "Globale indstillinger"
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "issue_all_led_effect": "Udsted effekt for alle LED'er",
+            "issue_individual_led_effect": "Udsted effekt for den enkelte LED",
+            "squawk": "Squawk",
+            "warn": "Advar"
+        },
+        "trigger_subtype": {
+            "both_buttons": "Begge knapper",
+            "button": "Knap",
+            "button_1": "F\u00f8rste knap",
+            "button_2": "Anden knap",
+            "button_3": "Tredje knap",
+            "button_4": "Fjerde knap",
+            "button_5": "Femte knap",
+            "button_6": "Sjette knap",
+            "close": "Luk",
+            "dim_down": "D\u00e6mp ned",
+            "dim_up": "D\u00e6mp op",
+            "face_1": "med ansigt 1 aktiveret",
+            "face_2": "med ansigt 2 aktiveret",
+            "face_3": "med ansigt 3 aktiveret",
+            "face_4": "med ansigt 4 aktiveret",
+            "face_5": "med ansigt 5 aktiveret",
+            "face_6": "med ansigt 6 aktiveret",
+            "face_any": "Med ethvert/specificeret ansigt(er) aktiveret",
+            "left": "Venstre",
+            "open": "\u00c5ben",
+            "right": "H\u00f8jre",
+            "turn_off": "Sluk",
+            "turn_on": "T\u00e6nd"
+        },
+        "trigger_type": {
+            "device_dropped": "Enhed faldt",
+            "device_flipped": "Enhed vendt \"{subtype}\"",
+            "device_knocked": "Enhed banket \"{subtype}\"",
+            "device_offline": "Enhed offline",
+            "device_rotated": "Enhed roteret \"{subtype}\"",
+            "device_shaken": "Enhed rystet",
+            "device_slid": "Enheden gled \"{subtype}\"",
+            "device_tilted": "Enheden vippet",
+            "remote_button_alt_double_press": "\"{subtype}\" dobbeltklikket (alternativ tilstand)",
+            "remote_button_alt_long_press": "\"{subtype}\" konstant trykket p\u00e5 (alternativ tilstand)",
+            "remote_button_alt_long_release": "\"{subtype}\" sluppet efter et langt tryk (alternativ tilstand)",
+            "remote_button_alt_quadruple_press": "\"{subtype}\" firedobbelt klikket (alternativ tilstand)",
+            "remote_button_alt_quintuple_press": "\"{subtype}\" femdobbelt klikket (alternativ tilstand)",
+            "remote_button_alt_short_press": "\"{subtype}\" trykket p\u00e5 (alternativ tilstand)",
+            "remote_button_alt_short_release": "\"{subtype}\" sluppet (alternativ tilstand)",
+            "remote_button_alt_triple_press": "\"{subtype}\" tredobbelt klikket (alternativ tilstand)",
+            "remote_button_double_press": "\"{subtype}\" dobbeltklikket",
+            "remote_button_long_press": "\"{subtype}\" trykket p\u00e5 konstant",
+            "remote_button_long_release": "\"{subtype}\" sluppet efter langt tryk",
+            "remote_button_quadruple_press": "\"{subtype}\" firedobbelt-klikket",
+            "remote_button_quintuple_press": "\"{subtype}\" femdobbelt-klikket",
+            "remote_button_short_press": "\"{subtype}\" trykket p\u00e5",
+            "remote_button_short_release": "\"{subtype}\" sluppet",
+            "remote_button_triple_press": "\"{subtype}\" tredobbeltklikket"
+        }
+    },
+    "options": {
+        "abort": {
+            "not_zha_device": "Denne enhed er ikke en zha-enhed",
+            "single_instance_allowed": "Allerede konfigureret. Kun en enkelt konfiguration mulig.",
+            "usb_probe_failed": "Kunne ikke unders\u00f8ge usb-enheden"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_backup_json": "Ugyldig sikkerhedskopi-JSON"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "V\u00e6lg en automatisk sikkerhedskopi"
+                },
+                "description": "Gendan dine netv\u00e6rksindstillinger fra en automatisk sikkerhedskopi",
+                "title": "Gendan automatisk sikkerhedskopi"
+            },
+            "choose_formation_strategy": {
+                "description": "V\u00e6lg netv\u00e6rksindstillingerne for din radio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Gendan en automatisk sikkerhedskopi",
+                    "form_initial_network": "Opret et netv\u00e6rk",
+                    "form_new_network": "Slet netv\u00e6rksindstillinger og opret et nyt netv\u00e6rk",
+                    "reuse_settings": "Behold indstillinger for radionetv\u00e6rk",
+                    "upload_manual_backup": "Upload en manuel sikkerhedskopi"
+                },
+                "title": "Netv\u00e6rksdannelse"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Stien til seriel enhed"
+                },
+                "description": "V\u00e6lg den serielle port til din Zigbee-radio",
+                "title": "V\u00e6lg en seriel port"
+            },
+            "init": {
+                "description": "ZHA vil blive stoppet. \u00d8nsker du at forts\u00e6tte?",
+                "title": "Omkonfigurer ZHA"
+            },
+            "instruct_unplug": {
+                "description": "Din gamle radio er blevet nulstillet.  Hvis hardwaren ikke l\u00e6ngere er n\u00f8dvendig, kan du nu frakoble den.\n\nDu kan nu tilslutte din nye radio.",
+                "title": "Frakobl din gamle radio"
+            },
+            "intent_migrate": {
+                "description": "F\u00f8r du tilslutter din nye radio, skal din gamle radio nulstilles.  En automatisk sikkerhedskopi udf\u00f8res.  Hvis du bruger en kombineret Z-Wave og Zigbee-adapter som HUSBZB-1, vil dette kun nulstille Zigbee-delen.\n\n* Bem\u00e6rk: Hvis du migrerer fra en **ConBee/RaspBee**, skal du s\u00f8rge for, at den k\u00f8rer firmware '0x26720700' eller nyere! Ellers kan nogle enheder muligvis ikke styres efter migrering, f\u00f8r de genstartes.*\n\n\u00d8nsker du at forts\u00e6tte?",
+                "title": "Migrer til en ny radio"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Radiotype"
+                },
+                "description": "V\u00e6lg din Zigbee-radiotype",
+                "title": "Radiotype"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "porthastighed",
+                    "flow_control": "dataflowstyring",
+                    "path": "Seriel enhedssti"
+                },
+                "description": "Indtast indstillingerne for den serielle port",
+                "title": "Indstillinger for seriel port"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Udskift radioens IEEE-adresse permanent"
+                },
+                "description": "Din sikkerhedskopi har en anden IEEE-adresse end din radio.  For at dit netv\u00e6rk skal fungere korrekt, skal IEEE-adressen p\u00e5 din radio ogs\u00e5 \u00e6ndres.\n\nDette er en permanent \u00e6ndring.",
+                "title": "Overskriv radio-IEEE-adresse"
+            },
+            "prompt_migrate_or_reconfigure": {
+                "description": "Migrerer du til en ny radio eller omkonfigurerer du den nuv\u00e6rende radio?",
+                "menu_options": {
+                    "intent_migrate": "Migrer til en ny radio",
+                    "intent_reconfigure": "Omkonfigurer den aktuelle radio"
+                },
+                "title": "Migrer eller omkonfigurer"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Upload en fil"
+                },
+                "description": "Gendan dine netv\u00e6rksindstillinger fra en uploadet JSON-sikkerhedskopifil. Du kan downloade en fra en anden ZHA-installation fra **Netv\u00e6rksindstillinger** eller bruge en Zigbee2MQTT 'coordinator_backup.json'-fil.",
+                "title": "Upload en manuel sikkerhedskopi"
+            },
+            "verify_radio": {
+                "description": "Den radio, du bruger ({name}), anbefales ikke, og underst\u00f8ttelsen af den kan blive fjernet i fremtiden. Se dokumentationen for Zigbee Home Automation-integrationen for [en liste over anbefalede adaptere]({docs_recommended_adapters_url}).",
+                "title": "Radio anbefales ikke"
+            }
+        }
+    },
+    "services": {
+        "issue_zigbee_cluster_command": {
+            "fields": {
+                "params": {
+                    "name": "Parameter"
+                }
+            }
+        },
+        "issue_zigbee_group_command": {
+            "fields": {
+                "args": {
+                    "name": "Argumenter"
+                }
+            }
+        },
+        "permit": {
+            "fields": {
+                "duration": {
+                    "name": "Varighed"
+                }
+            },
+            "name": "Tillad"
+        },
+        "remove": {
+            "name": "Fjern"
+        },
+        "set_zigbee_cluster_attribute": {
+            "fields": {
+                "manufacturer": {
+                    "name": "Producent"
+                }
+            }
+        },
+        "warning_device_warn": {
+            "fields": {
+                "duration": {
+                    "name": "Varighed"
+                },
+                "intensity": {
+                    "name": "Intensitet"
+                }
+            }
+        }
+    }
+}

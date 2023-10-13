@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Silta on jo m\u00e4\u00e4ritetty",
+            "no_bridges": "deCONZ-siltoja ei l\u00f6ydy"
+        },
+        "error": {
+            "no_key": "API-avainta ei voitu saada"
+        },
+        "step": {
+            "link": {
+                "title": "Linkit\u00e4 deCONZiin"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_subtype": {
+            "button_1": "Ensimm\u00e4inen painike",
+            "button_2": "Toinen painike",
+            "button_3": "Kolmas painike",
+            "button_4": "Nelj\u00e4s painike",
+            "left": "Vasen",
+            "right": "Oikea",
+            "turn_off": "Sammuta",
+            "turn_on": "Kytke p\u00e4\u00e4lle"
+        }
+    }
+}

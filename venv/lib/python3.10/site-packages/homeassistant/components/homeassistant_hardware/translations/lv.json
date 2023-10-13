@@ -1,0 +1,30 @@
+{
+    "silabs_multiprotocol_hardware": {
+        "options": {
+            "error": {
+                "unknown": "Neparedz\u0113ta k\u013c\u016bda"
+            },
+            "step": {
+                "addon_menu": {
+                    "menu_options": {
+                        "reconfigure_addon": "IEEE 802.15.4 radio daudzprotokolu atbalsta p\u0101rkonfigur\u0113\u0161ana",
+                        "uninstall_addon": "IEEE 802.15.4 radio daudzprotokolu atbalsta no\u0146em\u0161ana."
+                    }
+                },
+                "notify_channel_change": {
+                    "description": "Ir uzs\u0101kta Zigbee un Thread kan\u0101lu mai\u0146a, t\u0101 tiks pabeigta p\u0113c {delay_minutes}\u00a0min\u016bt\u0113m.",
+                    "title": "Uzs\u0101kta kan\u0101la mai\u0146a"
+                },
+                "reconfigure_addon": {
+                    "data": {
+                        "channel": "Kan\u0101ls"
+                    },
+                    "title": "IEEE 802.15.4 radio daudzprotokolu atbalsta p\u0101rkonfigur\u0113\u0161ana"
+                },
+                "uninstall_addon": {
+                    "title": "IEEE 802.15.4 radio daudzprotokolu atbalsta no\u0146em\u0161ana."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "config": {
+        "step": {
+            "confirm": {
+                "description": "Voulez-vous commencer la configuration\u00a0?"
+            }
+        }
+    }
+}

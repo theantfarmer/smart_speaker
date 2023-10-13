@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "missing_configuration": "Osis pole seadistatud. Palun vaata dokumentatsiooni.",
+            "no_url_available": "URL pole saadaval. Rohkem teavet [check the help section]({docs_url})"
+        },
+        "create_entry": {
+            "default": "Tuvastamine \u00f5nnestus"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Vali tuvastusmeetod"
+            }
+        }
+    },
+    "services": {
+        "start_program": {
+            "fields": {
+                "program": {
+                    "description": "Valitav programm.",
+                    "name": "Programm"
+                },
+                "unit": {
+                    "description": "Valiku \u00fchik.",
+                    "name": "Valiku \u00fchik"
+                },
+                "value": {
+                    "description": "Valiku v\u00e4\u00e4rtus.",
+                    "name": "Valiku v\u00e4\u00e4rtus"
+                }
+            },
+            "name": "K\u00e4ivita programm"
+        }
+    }
+}

@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: pylibrespot-java
+Version: 0.1.1
+Summary: Python Interface for librespot-java
+Home-page: http://github.com/uvjustin/pylibrespot-java/
+Author: Justin Wong
+Author-email: 46082645+uvjustin@users.noreply.github.com
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: aiohttp
+
+pylibrespot-java Python Library
+===============================
+
+version number: 0.1.1
+author: Justin Wong
+
+Overview
+--------
+
+A simple library to interface with a librespot-java server.
+
+Installation / Usage
+--------------------
+
+To install use pip:
+
+    $ pip install pylibrespot-java
+
+
+Or clone the repo:
+
+    $ git clone https://github.com/uvjustin/pylibrespot-java.git
+    $ python setup.py install
+    
+Contributing
+------------
+
+TBD
+
+Example
+-------
+
+TBD

@@ -1,0 +1,33 @@
+{
+    "issues": {
+        "country_not_configured": {
+            "description": "Landet har inte konfigurerats, var v\u00e4nlig och uppdatera konfigurationen med att klicka p\u00e5 \"l\u00e4s mer\" knappen nedan.",
+            "title": "Landet har inte konfigurerats"
+        },
+        "historic_currency": {
+            "description": "Valutan {currency} anv\u00e4nds inte l\u00e4ngre, v\u00e4nligen konfigurera om valutakonfigurationen.",
+            "title": "Den konfigurerade valutan anv\u00e4nds inte l\u00e4ngre"
+        },
+        "python_version": {
+            "description": "St\u00f6det f\u00f6r att k\u00f6ra hemassistenten i den aktuella Pythonversionen {current_python_version} \u00e4r f\u00f6r\u00e5ldrat och kommer att tas bort i Home Assistant {breaks_in_ha_version}. Uppgradera Python till {required_python_version} f\u00f6r att f\u00f6rhindra din Home Assistant-instans att sluta fungera.",
+            "title": "St\u00f6det f\u00f6r Python {current_python_version} tas bort"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "CPU-arkitektur",
+            "config_dir": "Konfigurationskatalog",
+            "dev": "Utveckling",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Installationstyp",
+            "os_name": "Operativsystemfamilj",
+            "os_version": "Operativsystemversion",
+            "python_version": "Python-version",
+            "timezone": "Tidszon",
+            "user": "Anv\u00e4ndare",
+            "version": "Version",
+            "virtualenv": "Virtuell milj\u00f6"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Elaborazione immagine",
+            "state_attributes": {
+                "faces": {
+                    "name": "Volti"
+                },
+                "total_faces": {
+                    "name": "Volti totali"
+                }
+            }
+        }
+    },
+    "title": "Elaborazione immagine"
+}

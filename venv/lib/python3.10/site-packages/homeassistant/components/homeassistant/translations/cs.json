@@ -1,0 +1,40 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "Integrace {domain} nepodporuje konfiguraci pomoc\u00ed souboru YAML. Nemus\u00edte si v\u0161imnout \u017e\u00e1dn\u00fdch zjevn\u00fdch probl\u00e9m\u016f s integrac\u00ed, ale jak\u00e1koli konfigura\u010dn\u00ed nastaven\u00ed definovan\u00e1 v YAML se ve skute\u010dnosti nepou\u017eij\u00ed.\n\nChcete-li to vy\u0159e\u0161it:\n\n1. Pokud jste tak je\u0161t\u011b neu\u010dinili, [nastavte integraci]({add_integration}).\n\n2. Odstra\u0148te `{domain}:` z konfigura\u010dn\u00edho souboru YAML.\n\n3. Restartujte Home Assistant.",
+            "title": "Integrace {domain} nepodporuje konfiguraci pomoc\u00ed souboru YAML"
+        },
+        "historic_currency": {
+            "description": "M\u011bna {currency} se ji\u017e nepou\u017e\u00edv\u00e1, zm\u011b\u0148te pros\u00edm konfiguraci m\u011bny.",
+            "title": "Nakonfigurovan\u00e1 m\u011bna se ji\u017e nepou\u017e\u00edv\u00e1"
+        },
+        "integration_key_no_support": {
+            "description": "Integrace {domain} nepodporuje konfiguraci pomoc\u00ed souboru YAML. Nemus\u00edte si v\u0161imnout \u017e\u00e1dn\u00fdch zjevn\u00fdch probl\u00e9m\u016f s integrac\u00ed, ale jak\u00e1koli konfigura\u010dn\u00ed nastaven\u00ed definovan\u00e1 v YAML se ve skute\u010dnosti nepou\u017eij\u00ed.\n\nChcete-li to vy\u0159e\u0161it:\n\n1. Pokud jste tak je\u0161t\u011b neu\u010dinili, [nastavte integraci]({add_integration}).\n\n2. Odstra\u0148te `{domain}:` z konfigura\u010dn\u00edho souboru YAML.\n\n3. Restartujte Home Assistant.",
+            "title": "Integrace {domain} nepodporuje konfiguraci pomoc\u00ed souboru YAML"
+        },
+        "platform_only": {
+            "description": "Integrace {domain} nepodporuje konfiguraci pod vlastn\u00edm kl\u00ed\u010dem, mus\u00ed b\u00fdt nakonfigurov\u00e1na pod podporovan\u00fdmi platformami.\n\nChcete-li to vy\u0159e\u0161it:\n\n1. Odstra\u0148te `{domain}:` z konfigura\u010dn\u00edho souboru YAML.\n\n2. Restartujte Home Assistant.",
+            "title": "Integrace {domain} nepodporuje konfiguraci v souboru YAML pod vlastn\u00edm kl\u00ed\u010dem"
+        },
+        "python_version": {
+            "description": "Podpora pro spou\u0161t\u011bn\u00ed Home Assistant v aktu\u00e1ln\u011b pou\u017e\u00edvan\u00e9 verzi Pythonu {current_python_version} je zastaral\u00e1 a bude odstran\u011bna v Home Assistant {breaks_in_ha_version}. Upgradujte pros\u00edm Python na {required_python_version}, abyste zabr\u00e1nili po\u0161kozen\u00ed instance Home Assistant.",
+            "title": "Podpora pro Python {current_python_version} se odstra\u0148uje"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "Architektura procesoru",
+            "dev": "V\u00fdvoj",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Typ instalace",
+            "os_name": "Rodina opera\u010dn\u00edch syst\u00e9m\u016f",
+            "os_version": "Verze opera\u010dn\u00edho syst\u00e9mu",
+            "python_version": "Verze Pythonu",
+            "timezone": "\u010casov\u00e9 p\u00e1smo",
+            "user": "U\u017eivatel",
+            "version": "Verze",
+            "virtualenv": "Virtu\u00e1ln\u00ed prost\u0159ed\u00ed"
+        }
+    }
+}

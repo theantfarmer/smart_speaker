@@ -1,0 +1,21 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "editable": {
+                    "name": "Beheerd via UI",
+                    "state": {
+                        "false": "Nee",
+                        "true": "Ja"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "press": {
+            "description": "Bootst de fysieke druk op de knop op het apparaat na.",
+            "name": "Druk"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Teksti",
+            "state_attributes": {
+                "max": {
+                    "name": "Maksimipituus"
+                },
+                "min": {
+                    "name": "Minimipituus"
+                }
+            }
+        }
+    }
+}

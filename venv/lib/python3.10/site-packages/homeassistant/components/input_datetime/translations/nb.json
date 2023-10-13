@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Innputt datotid",
+            "state_attributes": {
+                "day": {
+                    "name": "Dag"
+                },
+                "editable": {
+                    "name": "Administrert via UI",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "hour": {
+                    "name": "Time"
+                },
+                "minute": {
+                    "name": "Minutt"
+                },
+                "month": {
+                    "name": "M\u00e5ned"
+                },
+                "second": {
+                    "name": "Andre"
+                },
+                "timestamp": {
+                    "name": "Tidsstempel"
+                },
+                "year": {
+                    "name": "\u00c5r"
+                }
+            }
+        }
+    },
+    "title": "Innputt datotid"
+}

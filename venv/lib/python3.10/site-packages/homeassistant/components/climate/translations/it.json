@@ -1,0 +1,146 @@
+{
+    "device_automation": {
+        "action_type": {
+            "set_hvac_mode": "Cambia modalit\u00e0 HVAC su {entity_name}",
+            "set_preset_mode": "Modifica modalit\u00e0 su {entity_name}"
+        },
+        "condition_type": {
+            "is_hvac_mode": "{entity_name} \u00e8 impostato su una modalit\u00e0 HVAC specifica",
+            "is_preset_mode": "{entity_name} \u00e8 impostato su una modalit\u00e0 preimpostata specifica"
+        },
+        "trigger_type": {
+            "current_humidity_changed": "{entity_name} umidit\u00e0 misurata modificata",
+            "current_temperature_changed": "{entity_name} temperatura misurata cambiata",
+            "hvac_mode_changed": "{entity_name} modalit\u00e0 HVAC modificata"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Termostato",
+            "state": {
+                "auto": "Automatico",
+                "cool": "Freddo",
+                "dry": "Asciutto",
+                "fan_only": "Solo ventilatore",
+                "heat": "Calore",
+                "heat_cool": "Caldo/Freddo",
+                "off": "Spento/a"
+            },
+            "state_attributes": {
+                "aux_heat": {
+                    "name": "Riscaldamento ausiliario"
+                },
+                "current_humidity": {
+                    "name": "Umidit\u00e0 attuale"
+                },
+                "current_temperature": {
+                    "name": "Temperatura attuale"
+                },
+                "fan_mode": {
+                    "name": "Modalit\u00e0 ventilazione",
+                    "state": {
+                        "auto": "Automatico",
+                        "diffuse": "Diffuso",
+                        "focus": "Focalizzato",
+                        "high": "Alto",
+                        "low": "Basso",
+                        "medium": "Medio",
+                        "middle": "Mezzo",
+                        "off": "Spento/a",
+                        "on": "Acceso/a",
+                        "top": "Superiore"
+                    }
+                },
+                "fan_modes": {
+                    "name": "Modalit\u00e0 di ventilazioni"
+                },
+                "humidity": {
+                    "name": "Umidit\u00e0 desiderata"
+                },
+                "hvac_action": {
+                    "name": "Azione in corso",
+                    "state": {
+                        "cooling": "In raffeddamento",
+                        "drying": "In deumidificazione",
+                        "fan": "Ventilatore",
+                        "heating": "In riscaldamento",
+                        "idle": "Inattivo",
+                        "off": "Spento/a",
+                        "preheating": "Preriscaldamento"
+                    }
+                },
+                "hvac_modes": {
+                    "name": "Modalit\u00e0 HVAC"
+                },
+                "max_humidity": {
+                    "name": "Umidit\u00e0 desiderata massima"
+                },
+                "max_temp": {
+                    "name": "Temperatura desiderata massima"
+                },
+                "min_humidity": {
+                    "name": "Umidit\u00e0 desiderata minima"
+                },
+                "min_temp": {
+                    "name": "Temperatura desiderata minima"
+                },
+                "preset_mode": {
+                    "name": "Preimpostato",
+                    "state": {
+                        "activity": "Attivit\u00e0",
+                        "away": "Fuori casa",
+                        "boost": "Veloce",
+                        "comfort": "Comfort",
+                        "eco": "Eco",
+                        "home": "In casa",
+                        "none": "Nessuno",
+                        "sleep": "Sonno"
+                    }
+                },
+                "preset_modes": {
+                    "name": "Preimpostazioni"
+                },
+                "swing_mode": {
+                    "name": "Modalit\u00e0 di oscillazione",
+                    "state": {
+                        "both": "Entrambi",
+                        "horizontal": "Orizzontale",
+                        "off": "Spento/a",
+                        "on": "Acceso/a",
+                        "vertical": "Verticale"
+                    }
+                },
+                "swing_modes": {
+                    "name": "Modi di oscillazione"
+                },
+                "target_temp_high": {
+                    "name": "Temperatura desiderata pi\u00f9 alta"
+                },
+                "target_temp_low": {
+                    "name": "Temperatura desiderata pi\u00f9 bassa"
+                },
+                "target_temp_step": {
+                    "name": "Passo di temperatura desiderata"
+                },
+                "temperature": {
+                    "name": "Temperatura desiderata"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La piattaforma {platform} per l'integrazione {domain} non supporta l'impostazione della piattaforma. \n\nRimuovilo dalla configurazione e riavvia Home Assistant per risolvere questo problema.",
+            "title": "Supporto della piattaforma non supportato"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Spegni"
+        },
+        "turn_on": {
+            "name": "Accendi"
+        }
+    },
+    "title": "Termostato"
+}

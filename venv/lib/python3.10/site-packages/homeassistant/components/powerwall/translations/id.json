@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi",
+            "cannot_connect": "Gagal terhubung",
+            "reauth_successful": "Autentikasi ulang berhasil"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "invalid_auth": "Autentikasi tidak valid",
+            "unknown": "Kesalahan yang tidak diharapkan",
+            "wrong_version": "Powerwall Anda menggunakan versi perangkat lunak yang tidak didukung. Pertimbangkan untuk memutakhirkan atau melaporkan masalah ini agar dapat diatasi."
+        },
+        "flow_title": "{name} ({ip_address})",
+        "step": {
+            "confirm_discovery": {
+                "description": "Ingin menyiapkan {name} ({ip_address})?",
+                "title": "Hubungkan ke Powerwall"
+            },
+            "reauth_confim": {
+                "data": {
+                    "password": "Kata Sandi"
+                },
+                "description": "Kata sandi default tertera di dalam Backup Gateway untuk model yang baru. Untuk model yang lama, kata sandinya adalah 5 karakter terakhir nomor seri untuk Backup Gateway, yang dapat ditemukan di aplikasi Tesla.",
+                "title": "Autentikasi ulang Powerwall"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Kata Sandi"
+                },
+                "description": "Kata sandi default tertera di dalam Backup Gateway untuk model yang baru. Untuk model yang lama, kata sandinya adalah 5 karakter terakhir nomor seri untuk Backup Gateway, yang dapat ditemukan di aplikasi Tesla.",
+                "title": "Autentikasi ulang Powerwall"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "Alamat IP",
+                    "password": "Kata Sandi"
+                },
+                "description": "Kata sandi default tertera di dalam Backup Gateway untuk model yang baru. Untuk model yang lama, kata sandinya adalah 5 karakter terakhir nomor seri untuk Backup Gateway, yang dapat ditemukan di aplikasi Tesla.",
+                "title": "Hubungkan ke Powerwall"
+            }
+        }
+    }
+}

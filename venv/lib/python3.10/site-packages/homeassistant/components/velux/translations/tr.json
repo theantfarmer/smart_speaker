@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reboot_gateway": {
+            "description": "KLF200 A\u011f Ge\u00e7idini yeniden ba\u015flat\u0131r.",
+            "name": "A\u011f ge\u00e7idini yeniden ba\u015flat"
+        }
+    }
+}

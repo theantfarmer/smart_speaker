@@ -1,0 +1,43 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "state": {
+                "name": "K\u00e4ynniss\u00e4"
+            }
+        },
+        "sensor": {
+            "agent_version": {
+                "name": "K\u00e4ytt\u00f6j\u00e4rjestelm\u00e4n agentin versio"
+            },
+            "apparmor_version": {
+                "name": "Apparmor-versio"
+            },
+            "cpu_percent": {
+                "name": "Suorittimen k\u00e4ytt\u00f6 prosentteina"
+            },
+            "disk_free": {
+                "name": "Tallennustilaa vapaana"
+            },
+            "disk_total": {
+                "name": "Tallennustilaa yhteens\u00e4"
+            },
+            "disk_used": {
+                "name": "Tallennustilaa k\u00e4yetty"
+            },
+            "memory_percent": {
+                "name": "Muistin k\u00e4ytt\u00f6 prosentteina"
+            },
+            "version": {
+                "name": "Versio"
+            },
+            "version_latest": {
+                "name": "Uusin versio"
+            }
+        }
+    },
+    "issues": {
+        "issue_system_reboot_required": {
+            "title": "Uudelleenk\u00e4ynnistys vaaditaan"
+        }
+    }
+}

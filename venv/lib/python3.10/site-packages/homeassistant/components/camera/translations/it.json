@@ -1,0 +1,52 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Telecamera",
+            "state": {
+                "idle": "Inattivo",
+                "recording": "In registrazione",
+                "streaming": "In trasmissione"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "Token di accesso"
+                },
+                "brand": {
+                    "name": "Marca"
+                },
+                "frontend_stream_type": {
+                    "name": "Tipo di flusso",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Modello"
+                },
+                "motion_detection": {
+                    "name": "Rilevamento del movimento",
+                    "state": {
+                        "false": "Disabilitato",
+                        "true": "Abilitato"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La piattaforma {platform} per l'integrazione {domain} non supporta l'impostazione della piattaforma. \n\nRimuovilo dalla configurazione e riavvia Home Assistant per risolvere questo problema.",
+            "title": "Supporto della piattaforma non supportato"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Spegni"
+        },
+        "turn_on": {
+            "name": "Accendi"
+        }
+    },
+    "title": "Telecamera"
+}

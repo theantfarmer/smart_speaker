@@ -1,0 +1,21 @@
+{
+    "services": {
+        "enable_recording": {
+            "fields": {
+                "entity_id": {
+                    "name": "Entitet"
+                }
+            }
+        },
+        "set_color_bw": {
+            "fields": {
+                "color_bw": {
+                    "name": "F\u00e4rg"
+                },
+                "entity_id": {
+                    "name": "Entitet"
+                }
+            }
+        }
+    }
+}

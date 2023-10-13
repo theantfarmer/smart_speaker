@@ -1,0 +1,48 @@
+{
+  "language": "it",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "[<set>] [la] [luminosità] [<of>] <name> [(a|al)] [valore] <brightness>",
+            "[<set>] <name> [la] luminosità [(a|al)] [valore] <brightness>",
+            "[<set>] [(a|al)] [valore] <brightness> [la] luminosità [<of>] <name>"
+          ],
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "[<set>] [la] luminosità [(<of>|<the>|<in>)] <area> [(a|al)] [valore] <brightness>",
+            "[<set>] [<in>] <area> [la] luminosità [(a|al)] [valore] <brightness>",
+            "[<set>] [(a|al)] [valore] <brightness> [la] luminosità [(<of>|<the>|<in>)] <area>"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "<set> [<the>] <name> [(a|al|su|in)] [colore] {color}",
+            "<set> [(il)] [colore] [<of>] <name> [(a|al|su|in)] {color}",
+            "<set> [il] [colore] {color} [<to>] <name>",
+            "<set> [(a|al|su|in)] [colore] {color} [<the>] <name>",
+            "<set> [(a|al|su|in)] {color} [<the>] [colore] [<of>] <name>"
+          ],
+          "response": "color"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "Ho impostato la luminosita di {{ slots.name }} al {{ slots.brightness }} percento",
+        "brightness_area": "Ho impostato la luminosità in {{ slots.area }} al {{ slots.brightness }} percento",
+        "color": "Ho impostato il colore di {{ slots.name }} in {{ slots.color }}",
+        "color_area": "Ho impostato il colore in {{ slots.area }} su {{ slots.color }}"
+      }
+    }
+  }
+}

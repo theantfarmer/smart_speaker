@@ -1,0 +1,18 @@
+{
+    "config": {
+        "step": {
+            "pair": {
+                "data": {
+                    "pairing_code": "Yhdist\u00e4miskoodi"
+                }
+            },
+            "user": {
+                "data": {
+                    "device": "Laite"
+                },
+                "title": "Laitteen valinta"
+            }
+        }
+    },
+    "title": "HomeKit-ohjain"
+}

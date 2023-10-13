@@ -1,0 +1,41 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Temporitzador",
+            "state": {
+                "active": "Actiu",
+                "idle": "Inactiu",
+                "paused": "Pausat/ada"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "Durada"
+                },
+                "editable": {
+                    "name": "Gestionat mitjan\u00e7ant la Interf\u00edcie d'Usuari (IU)",
+                    "state": {
+                        "false": "No",
+                        "true": "S\u00ed"
+                    }
+                },
+                "finishes_at": {
+                    "name": "S'acaba a les"
+                },
+                "remaining": {
+                    "name": "Restant"
+                },
+                "restore": {
+                    "name": "Restaura"
+                }
+            }
+        }
+    },
+    "services": {
+        "pause": {
+            "name": "Pausa"
+        },
+        "start": {
+            "name": "Atura"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalenteri",
+            "state_attributes": {
+                "all_day": {
+                    "state": {
+                        "true": "Kyll\u00e4"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Kalenteri"
+}

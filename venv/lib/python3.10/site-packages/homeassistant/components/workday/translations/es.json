@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday ya se ha configurado con la configuraci\u00f3n elegida",
+            "incorrect_province": "Subdivisi\u00f3n incorrecta de la importaci\u00f3n de yaml"
+        },
+        "error": {
+            "add_holiday_error": "Formato incorrecto en la fecha (AAAA-MM-DD)",
+            "already_configured": "El servicio ya est\u00e1 configurado",
+            "remove_holiday_error": "Formato incorrecto en la fecha (AAAA-MM-DD) o no se encontr\u00f3 el nombre del d\u00eda festivo"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "A\u00f1adir d\u00edas festivos",
+                    "days_offset": "Desfase",
+                    "excludes": "Exclusiones",
+                    "province": "Subdivisi\u00f3n de pa\u00eds",
+                    "remove_holidays": "Eliminar d\u00edas festivos",
+                    "workdays": "D\u00edas laborables"
+                },
+                "data_description": {
+                    "add_holidays": "A\u00f1adir d\u00edas festivos personalizados como AAAA-MM-DD",
+                    "days_offset": "Desfase de d\u00edas",
+                    "excludes": "Lista de d\u00edas laborables a excluir",
+                    "province": "Estado, territorio, provincia, regi\u00f3n del pa\u00eds",
+                    "remove_holidays": "Elimina d\u00edas festivos como AAAA-MM-DD o usando parte del nombre",
+                    "workdays": "Lista de d\u00edas laborables"
+                },
+                "description": "Establecer opciones adicionales para {name} configuradas para el pa\u00eds {country}"
+            },
+            "user": {
+                "data": {
+                    "country": "Pa\u00eds",
+                    "name": "Nombre"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Se va a eliminar la configuraci\u00f3n de Workday mediante YAML. \n\nTu configuraci\u00f3n YAML existente se ha importado a la IU autom\u00e1ticamente. \n\nElimina la configuraci\u00f3n YAML de Workday de tu archivo configuration.yaml y reinicia Home Assistant para solucionar este problema.",
+            "title": "Se va a eliminar la configuraci\u00f3n de YAML de Workday"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Formato incorrecto en la fecha (AAAA-MM-DD)",
+            "already_configured": "Ya existe un servicio con esta configuraci\u00f3n",
+            "remove_holiday_error": "Formato incorrecto en la fecha (AAAA-MM-DD) o no se encontr\u00f3 el nombre del d\u00eda festivo"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "A\u00f1adir d\u00edas festivos",
+                    "days_offset": "Desfase",
+                    "excludes": "Exclusiones",
+                    "province": "Subdivisi\u00f3n de pa\u00eds",
+                    "remove_holidays": "Eliminar d\u00edas festivos",
+                    "workdays": "D\u00edas laborables"
+                },
+                "data_description": {
+                    "add_holidays": "A\u00f1adir d\u00edas festivos personalizados como AAAA-MM-DD",
+                    "days_offset": "Desfase de d\u00edas",
+                    "excludes": "Lista de d\u00edas laborables a excluir",
+                    "province": "Estado, territorio, provincia, regi\u00f3n del pa\u00eds",
+                    "remove_holidays": "Elimina d\u00edas festivos como AAAA-MM-DD o usando parte del nombre",
+                    "workdays": "Lista de d\u00edas laborables"
+                },
+                "description": "Cambiar opciones adicionales de {name} configuradas para el pa\u00eds {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Viernes",
+                "holiday": "D\u00edas festivos",
+                "mon": "Lunes",
+                "sat": "S\u00e1bado",
+                "sun": "Domingo",
+                "thu": "Jueves",
+                "tue": "Martes",
+                "wed": "Mi\u00e9rcoles"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Sin subdivisi\u00f3n"
+            }
+        }
+    },
+    "title": "D\u00eda laborable"
+}

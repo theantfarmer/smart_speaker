@@ -1,0 +1,489 @@
+{
+  "language": "pt",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "(desliga | desligue | desligar) [todas] as ventoinhas <na_zona>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "<desliga> [a[s]|o[s]] [luz[es]|interruptor[es]] [do|da] <nome>",
+            "<desliga> <nome>"
+          ],
+          "excludes_context": {
+            "domain": [
+              "binary_sensor",
+              "cover",
+              "lock",
+              "scene",
+              "script",
+              "sensor"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "<desliga> [(todas | todos)] [(o | os | a | as)] (luz | luzes | candeeiro | candeeiros) <na_zona>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "<fecha> [(o | a)] [(porta | portão) da] garagem"
+          ],
+          "response": "cover",
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<fecha> [as | os] [(cortinas | cortinados | estores | persianas)] <na_zona>"
+          ],
+          "response": "cover",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shutter"
+            ],
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassGetState": {
+      "data": [
+        {
+          "sentences": [
+            "<qual> [o estado] [do|da] <nome> [<na_zona>]"
+          ],
+          "response": "one",
+          "excludes_context": {
+            "domain": [
+              "scene",
+              "script"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "<nome> está {on_off_states:state} [<na_zona>]"
+          ],
+          "response": "one_yesno",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "(está|estão) (algum|alguns) {on_off_domains:domain} {on_off_states:state} [<na_zona>]"
+          ],
+          "response": "any"
+        },
+        {
+          "sentences": [
+            "(todos|todas) [os|as] {on_off_domains:domain} estão {on_off_states:state} [<na_zona>]"
+          ],
+          "response": "all"
+        },
+        {
+          "sentences": [
+            "(quais|qual|que) {on_off_domains:domain} (está|estão) {on_off_states:state} [<na_zona>]"
+          ],
+          "response": "which"
+        },
+        {
+          "sentences": [
+            "(quantos|quantas) {on_off_domains:domain} (está|estão) {on_off_states:state} [<na_zona>]"
+          ],
+          "response": "how_many"
+        },
+        {
+          "sentences": [
+            "está <nome> {cover_states:state} [<na_zona>]"
+          ],
+          "response": "one_yesno",
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(está|estão) (alguma|algumas) {cover_classes:device_class} {cover_states:state} [<na_zona>]"
+          ],
+          "response": "any",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "estão todas [as] {cover_classes:device_class} {cover_states:state} [<na_zona>]"
+          ],
+          "response": "all",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(quais|qual|que) {cover_classes:device_class} (está|estão) {cover_states:state} [<na_zona>]"
+          ],
+          "response": "which",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "quantas {cover_classes:device_class} estão {cover_states:state} [<na_zona>]"
+          ],
+          "response": "how_many",
+          "slots": {
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "<liga> [(todas | todos)] [(o | os | a | as)] (luz | luzes | candeeiro | candeeiros) <na_zona>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "<abre>  [(o|a)] [(porta|portão) da] garagem"
+          ],
+          "response": "cover",
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<abre>  [as|os] [(cortinas | cortinados | estores | persianas)] <na_zona>"
+          ],
+          "response": "cover",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shutter"
+            ],
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(liga | ligue | ligar) [todas] as ventoinhas <na_zona>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fans_area"
+        },
+        {
+          "sentences": [
+            "<liga> [a[s]|o[s]] [luz[es]|interruptor[es]] [do|da] <nome>",
+            "<liga> <nome>"
+          ],
+          "excludes_context": {
+            "domain": [
+              "binary_sensor",
+              "cover",
+              "lock",
+              "scene",
+              "script",
+              "sensor"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Desculpe, não percebi o pedido.",
+      "no_area": "Não existe nenhuma área com o nome {{ area }}.",
+      "no_domain": "{{ area }} não contém {{ domain }}.",
+      "no_device_class": "{{ area }} não contém {{ device_class }}.",
+      "no_entity": "Não existe nenhum dispositivo ou entidade com o nome {{ entity }}.",
+      "handle_error": "Ocorreu um erro inesperado ao processar o pedido."
+    },
+    "intents": {
+      "HassGetState": {
+        "one": "{{ slots.name | capitalize }} é {{ state.state_with_unit }}\n",
+        "one_yesno": "{% if query.matched %}\n  Sim\n{% else %}\n  Não, {{ state.state_with_unit }}\n{% endif %}\n",
+        "any": "{% if query.matched %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    Sim, {{ match[:3] | join(\", \") }} e {{ (match | length - 3) }} mais\n  {%- else -%}\n    Sim,\n    {% for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} e {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% else %}\n  Não\n{% endif %}\n",
+        "all": "{% if not query.unmatched: %}\n  Sim\n{% else %}\n  {% set no_match = query.unmatched | map(attribute=\"name\") | sort | list %}\n  {% if no_match | length > 4 %}\n    Não, {{ no_match[:3] | join(\", \") }} e {{ (no_match | length - 3) }} mais não\n  {%- else -%}\n    Não,\n    {% for name in no_match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} e {% endif -%}\n      {{ name }}\n    {%- endfor %} não\n  {% endif %}\n{% endif %}\n",
+        "which": "{% if not query.matched %}\n  (Nenhuma|Nenhum)\n{% else: %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    {{ match[:3] | join(\", \") }} e {{ (match | length - 3) }} mais\n  {% else %}\n    {%- for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} e {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% endif %}\n",
+        "how_many": "{{ query.matched | length }}\n"
+      },
+      "HassTurnOff": {
+        "default": "{{ slots.name }} desligado",
+        "lights_area": "Luzes desligadas",
+        "fans_area": "Ventoinhas desligadas",
+        "cover": "Fechado",
+        "light_all": "Todas as luzes desligadas",
+        "fan_all": "Todas as ventoinhas desligadas",
+        "cover_device_class": "Fechado {{ slots.device_class }}"
+      },
+      "HassTurnOn": {
+        "default": "{{ slots.name }} ligado",
+        "lights_area": "Luzes ligados",
+        "fans_area": "Ventoinhas ligadas",
+        "cover": "Aberto",
+        "cover_device_class": "{{ slots.device_class }} aberto",
+        "scene": "Ativado",
+        "script": "Iniciado"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "branco",
+          "out": "white"
+        },
+        {
+          "in": "branca",
+          "out": "white"
+        },
+        {
+          "in": "preto",
+          "out": "black"
+        },
+        {
+          "in": "preta",
+          "out": "black"
+        },
+        {
+          "in": "vermelho",
+          "out": "red"
+        },
+        {
+          "in": "vermelha",
+          "out": "red"
+        },
+        {
+          "in": "laranja",
+          "out": "orange"
+        },
+        {
+          "in": "amarelo",
+          "out": "yellow"
+        },
+        {
+          "in": "amarela",
+          "out": "yellow"
+        },
+        {
+          "in": "verde",
+          "out": "green"
+        },
+        {
+          "in": "azul",
+          "out": "blue"
+        },
+        {
+          "in": "roxo",
+          "out": "purple"
+        },
+        {
+          "in": "roxa",
+          "out": "purple"
+        },
+        {
+          "in": "castanho",
+          "out": "brown"
+        },
+        {
+          "in": "castanha",
+          "out": "brown"
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        {
+          "in": "(celsius|c|centígrados)",
+          "out": "celsius"
+        },
+        "fahrenheit",
+        {
+          "in": "f",
+          "out": "fahrenheit"
+        }
+      ]
+    },
+    "brightness_level": {
+      "values": [
+        {
+          "in": "(max | maximum | highest)",
+          "out": 100
+        },
+        {
+          "in": "( minimum | lowest)",
+          "out": 1
+        }
+      ]
+    },
+    "on_off_states": {
+      "values": [
+        {
+          "in": "(ligado|ligada|ligados|ligadas)",
+          "out": "on"
+        },
+        {
+          "in": "(desligado|desligada|desligado|desligadas)",
+          "out": "off"
+        }
+      ]
+    },
+    "on_off_domains": {
+      "values": [
+        {
+          "in": "(luz|luzes)",
+          "out": "light"
+        },
+        {
+          "in": "(ventoinha|ventoinhas)",
+          "out": "fan"
+        },
+        {
+          "in": "(interruptor|interruptores)",
+          "out": "switch"
+        }
+      ]
+    },
+    "cover_states": {
+      "values": [
+        {
+          "in": "(aberto|aberta|abertas)",
+          "out": "open"
+        },
+        {
+          "in": "(fechado|fechada|fechadas)",
+          "out": "closed"
+        },
+        {
+          "in": "a abrir",
+          "out": "opening"
+        },
+        {
+          "in": "a fechar",
+          "out": "closing"
+        }
+      ]
+    },
+    "cover_classes": {
+      "values": [
+        {
+          "in": "awning[s]",
+          "out": "awning"
+        },
+        {
+          "in": "blind[s]",
+          "out": "blind"
+        },
+        {
+          "in": "(cortina|cortinas)",
+          "out": "curtain"
+        },
+        {
+          "in": "door[s]",
+          "out": "door"
+        },
+        {
+          "in": "garage door[s]",
+          "out": "garage"
+        },
+        {
+          "in": "gate[s]",
+          "out": "gate"
+        },
+        {
+          "in": "shade[s]",
+          "out": "shade"
+        },
+        {
+          "in": "shutter[s]",
+          "out": "shutter"
+        },
+        {
+          "in": "window[s]",
+          "out": "window"
+        }
+      ]
+    },
+    "lock_states": {
+      "values": [
+        {
+          "in": "locked",
+          "out": "locked"
+        },
+        {
+          "in": "unlocked",
+          "out": "unlocked"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "muda": "(põe|ponha|muda|altera|coloca|deixa|pôr|mudar|alterar|colocar|deixar)",
+    "liga": "(liga|ligue|acende|acenda|ligar|acender)",
+    "desliga": "(desliga|desligue|apaga|apague|desligar|apagar)",
+    "abre": "(abra|abre|abrir)",
+    "fecha": "(fecha|feche|fechar)",
+    "nome": "[(o|os|a|as)] {name}",
+    "zona": "[(o|os|a|as)] {area}",
+    "na_zona": "(no|na|da|do) {area}",
+    "qual": "(que|qual|qual é|quais)",
+    "brilho": "{brightness}[%| porcento]",
+    "temperatura": "{temperature}[°| graus] [{temperature_unit}]"
+  },
+  "skip_words": [
+    "por favor",
+    "se faz favor",
+    "pode",
+    "podes"
+  ]
+}

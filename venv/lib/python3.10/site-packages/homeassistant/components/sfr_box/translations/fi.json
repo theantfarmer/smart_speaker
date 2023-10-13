@@ -1,0 +1,26 @@
+{
+    "entity": {
+        "sensor": {
+            "dsl_line_status": {
+                "state": {
+                    "unknown": "Tuntematon"
+                }
+            },
+            "dsl_training": {
+                "state": {
+                    "unknown": "Tuntematon"
+                }
+            },
+            "net_infra": {
+                "state": {
+                    "unknown": "Tuntematon"
+                }
+            },
+            "wan_mode": {
+                "state": {
+                    "unknown": "Tuntematon"
+                }
+            }
+        }
+    }
+}

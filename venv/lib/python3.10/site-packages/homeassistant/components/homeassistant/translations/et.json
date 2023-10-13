@@ -1,0 +1,87 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "Sidumine {domain} ei toeta YAML-faili kaudu konfigureerimist. Sa ei pruugi sidumisega ilmseid probleeme m\u00e4rgata, kuid YAML-is m\u00e4\u00e4ratletud konfiguratsiooniseadistusi tegelikult ei rakendata.\n\nSelle lahendamiseks:\n\n1. Kui seda pole veel teinud, [seadista sidumine]({add_integration}).\n\n2. Eemalda `{domain}:` oma YAML-konfiguratsioonifailist.\n\n3. Taask\u00e4ivita Home Assistant.",
+            "title": "Sidumine {domain} ei toeta YAML-i konfiguratsiooni"
+        },
+        "country_not_configured": {
+            "description": "\u00dchtegi riiki pole m\u00e4\u00e4ratud, v\u00e4rskenda s\u00e4tteid kl\u00f5psates alloleval nupul \"Lisateave\".",
+            "title": "Riik pole m\u00e4\u00e4ratud"
+        },
+        "deprecated_yaml": {
+            "description": "{integration_title} konfigureerimine YAML-i abil eemaldatakse. \n\n Olemasolev YAML-i konfiguratsioon imporditi kasutajaliidesesse automaatselt. \n\n Selle probleemi lahendamiseks eemalda failist configuration.yaml konfiguratsioon ` {domain} ` ja taask\u00e4ivita Home Assistant.",
+            "title": "{integration_title} YAML-i konfiguratsioon eemaldatakse"
+        },
+        "historic_currency": {
+            "description": "Valuuta {currency} ei ole enam kasutusel, seadista valuuta uuesti.",
+            "title": "Seadistatud valuutat enam ei kasutata"
+        },
+        "integration_key_no_support": {
+            "description": "Sidumine {domain} ei toeta YAML-faili kaudu konfigureerimist. Sa ei pruugi sidumisega ilmseid probleeme m\u00e4rgata, kuid YAML-is m\u00e4\u00e4ratletud konfiguratsiooniseadistusi tegelikult ei rakendata.\n\nSelle lahendamiseks:\n\n1. Kui seda pole veel teinud, [seadista sidumine]({add_integration}).\n\n2. Eemalda `{domain}:` oma YAML-konfiguratsioonifailist.\n\n3. Taask\u00e4ivita Home Assistant.",
+            "title": "Sidumine {domain} ei toeta YAML-i konfiguratsiooni"
+        },
+        "no_platform_setup": {
+            "description": "{platform} {domain} ei ole v\u00f5imalik seadistada lisades {domain} konfiguratsioonile ` {platform_key} `. Selle sidumise seadistamise kohta lisateabe saamiseks vaata dokumentatsiooni. \n\n Selle lahendamiseks tee j\u00e4rgmist:\n 1. Eemalda` {platform_key} ` esinemised ` {domain} :` konfiguratsioonist oma YAML-i konfiguratsioonifailis.\n 2. Taask\u00e4ivita Home Assistant. \n\n N\u00e4ide, mida tuleks eemaldada:\n {yaml_example}",
+            "title": "Kasutamata YAML-i konfiguratsioon {platform} sidumisele"
+        },
+        "platform_only": {
+            "description": "Sidumine {domain} ei toeta konfigureerimist oma v\u00f5tme all, see tuleb konfigureerida toetatud platvormidel. \n\n Selle lahendamiseks tee j\u00e4rgmist:\n\n 1. Eemalda YAML-i konfiguratsioonifailist ` {domain} :`. \n\n 2. Taask\u00e4ivita Home Assistant.",
+            "title": "Sidumine {domain} ei toeta YAML-i konfiguratsiooni oma v\u00f5tmega"
+        },
+        "python_version": {
+            "description": "Home Assistanti k\u00e4itamise tugi praeguses kasutatavas Pythoni versioonis {current_python_version} on aegunud ja see eemaldatakse rakendusest Home Assistant {breaks_in_ha_version} . T\u00e4ienda Python versioonile {required_python_version} , et v\u00e4ltida Home Assistanti eksemplari t\u00f6\u00f6 l\u00f5ppemist.",
+            "title": "Pythoni {current_python_version} tugi eemaldatakse"
+        },
+        "storage_corruption": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Salvestusruumi `{storage_key}` ei \u00f5nnestunud anal\u00fc\u00fcsida ja see on \u00fcmber nimetatud `{corrupt_path}`, et Home Assistant saaks j\u00e4tkata.\n\nVaikimisi `{storage_key}` v\u00f5is olla automaatselt loodud.\n\nKui muutsid salvestusfaili k\u00e4sitsi, paranda `{corrupt_path}` s\u00fcntaksivigad, taasta faili algsele teele `{original_path}` ja taask\u00e4ivita Home Assistant. Vastasel juhul taasta s\u00fcsteem varukoopiast.\n\nKl\u00f5psa allpool nuppu SUBMIT, et kinnitada, et oled faili parandanud v\u00f5i taastanud varukoopiast.\n\nT\u00e4pne viga oli: {error}",
+                        "title": "Atribuudi \"{storage_key}\" puhul tuvastati salvestusruumi rike"
+                    }
+                }
+            },
+            "title": "Atribuudi \"{storage_key}\" puhul tuvastati salvestusruumi rike"
+        }
+    },
+    "services": {
+        "check_config": {
+            "description": "Kontrollib Home Assistanti YAML-konfiguratsioonifaile vigade osas. Vead kuvatakse logides.",
+            "name": "Konfiguratsiooni kontroll"
+        },
+        "reload_config_entry": {
+            "description": "Taaslaeb m\u00e4\u00e4ratud konfiguratsioonikirje.",
+            "fields": {
+                "entry_id": {
+                    "description": "Uuesti laaditava konfiguratsioonikirje ID.",
+                    "name": "Konfiguratsioonikirje ID"
+                }
+            },
+            "name": "Taaslae konfiguratsiooni kirje"
+        },
+        "reload_core_config": {
+            "description": "Taaslaeb p\u00f5hikonfiguratsiooni YAML-i konfiguratsioonist.",
+            "name": "Taaslae p\u00f5hikonfiguratsioo"
+        },
+        "reload_custom_templates": {
+            "description": "Taaslaeb Jinja2 mallid, mis asuvad konfiguratsiooni kaustas `custom_templates`. Uued v\u00e4\u00e4rtused rakendatakse malli j\u00e4rgmisel renderdamisel."
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "Protsessori arhitektuur",
+            "config_dir": "Konfiguratsiooni kaust",
+            "dev": "Arendus",
+            "docker": "Docker",
+            "hassio": "Haldur",
+            "installation_type": "Paigalduse t\u00fc\u00fcp",
+            "os_name": "Operatsioonis\u00fcsteemi j\u00e4rk",
+            "os_version": "Operatsioonis\u00fcsteemi versioon",
+            "python_version": "Pythoni versioon",
+            "timezone": "Ajav\u00f6\u00f6nd",
+            "user": "Kasutaja",
+            "version": "Versioon",
+            "virtualenv": "Virtuaalne keskkond"
+        }
+    }
+}

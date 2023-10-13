@@ -1,0 +1,49 @@
+{
+    "services": {
+        "select_device": {
+            "fields": {
+                "device": {
+                    "name": "\u88dd\u7f6e"
+                }
+            }
+        },
+        "send_command": {
+            "fields": {
+                "raw": {
+                    "name": "\u539f\u59cb\u8cc7\u6599"
+                },
+                "src": {
+                    "description": "\u547d\u4ee4\u4f86\u6e90\u3002\u53ef\u4ee5\u662f\u5341\u9032\u4f4d\u6578\u5b57\u6216\u5e36\u6709\u5341\u516d\u9032\u4f4d\u7684\u5b57\u7b26\u4e32\uff1a\"0x10\"\u3002",
+                    "name": "\u4f86\u6e90"
+                }
+            },
+            "name": "\u50b3\u9001\u547d\u4ee4"
+        },
+        "standby": {
+            "description": "\u5c07\u6240\u6709\u652f\u63f4\u7684\u88dd\u7f6e\u5f85\u6a5f\u3002",
+            "name": "\u5f85\u547d"
+        },
+        "update": {
+            "description": "\u7531\u7db2\u8def\u66f4\u65b0\u88dd\u7f6e\u72c0\u614b",
+            "name": "\u66f4\u65b0\n"
+        },
+        "volume": {
+            "description": "\u8abf\u9ad8\u6216\u8abf\u4f4e\u7cfb\u7d71\u97f3\u91cf\u3002",
+            "fields": {
+                "down": {
+                    "description": "\u964d\u4f4e\u97f3\u91cf x \u7b49\u7d1a\u3002",
+                    "name": "\u8abf\u964d"
+                },
+                "mute": {
+                    "description": "\u5c07\u97f3\u6548\u7cfb\u7d71\u975c\u97f3\u3002",
+                    "name": "\u975c\u97f3"
+                },
+                "up": {
+                    "description": "\u589e\u52a0\u97f3\u91cf x \u7b49\u7d1a\u3002",
+                    "name": "\u8abf\u9ad8"
+                }
+            },
+            "name": "\u97f3\u91cf"
+        }
+    }
+}

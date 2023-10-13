@@ -1,0 +1,27 @@
+{
+    "entity_component": {
+        "door": {
+            "state": {
+                "off": "Zatvoren"
+            }
+        },
+        "garage_door": {
+            "state": {
+                "off": "Zatvoren"
+            }
+        },
+        "heat": {
+            "name": "Grejanje"
+        },
+        "opening": {
+            "state": {
+                "off": "Zatvoren"
+            }
+        },
+        "window": {
+            "state": {
+                "off": "Zatvoren"
+            }
+        }
+    }
+}

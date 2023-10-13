@@ -1,0 +1,19 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "editable": {
+                    "name": "Hallinta k\u00e4ytt\u00f6liittym\u00e4st\u00e4",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Kyll\u00e4"
+                    }
+                },
+                "next_event": {
+                    "name": "Seuraava tapahtuma"
+                }
+            }
+        }
+    },
+    "title": "Aikataulu"
+}

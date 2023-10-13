@@ -1,0 +1,22 @@
+{
+    "services": {
+        "teach_face": {
+            "description": "Teaches facebox a face using a file.",
+            "fields": {
+                "entity_id": {
+                    "description": "The facebox entity to teach.",
+                    "name": "Entity"
+                },
+                "file_path": {
+                    "description": "The path to the image file.",
+                    "name": "File path"
+                },
+                "name": {
+                    "description": "The name of the face to teach.",
+                    "name": "Name"
+                }
+            },
+            "name": "Teach face"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O servi\u00e7o j\u00e1 est\u00e1 configurado"
+        },
+        "error": {
+            "unknown_error": "Erro inesperado"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Endere\u00e7o",
+                    "name": "Nome",
+                    "port": "Porta"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "access_not_configured": "Google-t\u00f3l kapott \u00fczenet:\n\n{message}",
+            "already_configured": "A fi\u00f3k m\u00e1r konfigur\u00e1lva van",
+            "no_channel": "Az integr\u00e1ci\u00f3 haszn\u00e1lat\u00e1hoz egy YouTube-csatorna l\u00e9trehoz\u00e1sa sz\u00fcks\u00e9ges, a k\u00f6vekez\u0151ek szerint: {support_url}.",
+            "reauth_successful": "Az \u00fajrahiteles\u00edt\u00e9s sikeres volt.",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s"
+        },
+        "step": {
+            "channels": {
+                "data": {
+                    "channels": "YouTube csatorn\u00e1k"
+                },
+                "description": "V\u00e1lassza ki a hozz\u00e1adni k\u00edv\u00e1nt csatorn\u00e1kat."
+            },
+            "reauth_confirm": {
+                "description": "A YouTube integr\u00e1ci\u00f3nak \u00fajra kell hiteles\u00edtenie a fi\u00f3kj\u00e1t.",
+                "title": "Integr\u00e1ci\u00f3 \u00fajrahiteles\u00edt\u00e9se"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "latest_upload": {
+                "name": "Legut\u00f3bbi felt\u00f6lt\u00e9s"
+            },
+            "subscribers": {
+                "name": "Feliratkoz\u00f3k"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "channels": "YouTube csatorn\u00e1k"
+                },
+                "description": "V\u00e1lassza ki a hozz\u00e1adni k\u00edv\u00e1nt csatorn\u00e1kat."
+            }
+        }
+    }
+}

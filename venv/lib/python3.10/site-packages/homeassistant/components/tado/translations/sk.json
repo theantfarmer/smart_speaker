@@ -1,0 +1,90 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "no_homes": "S t\u00fdmto \u00fa\u010dtom tado nie s\u00fa prepojen\u00e9 \u017eiadne dom\u00e1cnosti.",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "title": "Pripojte sa k svojmu \u00fa\u010dtu Tado"
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "tado": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "fallback": "Vyberte z\u00e1lo\u017en\u00fd re\u017eim."
+                },
+                "description": "Z\u00e1lo\u017en\u00fd re\u017eim v\u00e1m umo\u017e\u0148uje vybra\u0165 si, kedy sa vr\u00e1tite k inteligentn\u00e9mu rozvrhu z manu\u00e1lneho prekrytia z\u00f3ny. (NEXT_TIME_BLOCK:= Zme\u0148te pri \u010fal\u0161ej zmene inteligentn\u00e9ho rozvrhu; MANUAL:= Neme\u0148te, k\u00fdm nezru\u0161\u00edte; TADO_DEFAULT:= Zme\u0148te na z\u00e1klade v\u00e1\u0161ho nastavenia v aplik\u00e1cii Tado).",
+                "title": "Upravte mo\u017enosti Tado."
+            }
+        }
+    },
+    "services": {
+        "set_climate_temperature_offset": {
+            "description": "Nastavuje teplotn\u00fd posun klimatick\u00fdch jednotiek.",
+            "fields": {
+                "offset": {
+                    "description": "Odsadenie, ktor\u00e9 by ste chceli (v z\u00e1vislosti od zariadenia).",
+                    "name": "Ofset"
+                }
+            },
+            "name": "Nastavenie teplotn\u00e9ho posunu kl\u00edmy"
+        },
+        "set_climate_timer": {
+            "description": "Zapne klimatick\u00e9 entity na nastaven\u00fd \u010das.",
+            "fields": {
+                "requested_overlay": {
+                    "description": "Vyberte toto alebo \u010dasov\u00e9 obdobie. Umo\u017e\u0148uje vybra\u0165 prekrytie. MANUAL:=Prekrytie, k\u00fdm pou\u017e\u00edvate\u013e neodstr\u00e1ni; NEXT_TIME_BLOCK:=Prekrytie do \u010fal\u0161ieho \u010dasov\u00e9ho bloku; TADO_DEFAULT:=Prekrytie zalo\u017een\u00e9 na nastaven\u00ed aplik\u00e1cie tado.",
+                    "name": "Prekrytie"
+                },
+                "temperature": {
+                    "description": "Teplota na nastavenie klimatickej entity.",
+                    "name": "Teplota"
+                },
+                "time_period": {
+                    "description": "Vyberte si t\u00fato mo\u017enos\u0165 alebo mo\u017enos\u0165 Prekrytie. Ak chcete by\u0165 konkr\u00e9tni, nastavte \u010dasov\u00e9 obdobie zmeny. Pr\u00edpadne pou\u017eite mo\u017enos\u0165 Overlay (Prekrytie).",
+                    "name": "\u010casov\u00e9 obdobie"
+                }
+            },
+            "name": "Nastavenie \u010dasova\u010da kl\u00edmy"
+        },
+        "set_water_heater_timer": {
+            "description": "Zapne ohrieva\u010d vody na nastaven\u00fd \u010das.",
+            "fields": {
+                "temperature": {
+                    "description": "Teplota, na ktor\u00fa sa m\u00e1 nastavi\u0165 ohrieva\u010d.",
+                    "name": "Teplota"
+                },
+                "time_period": {
+                    "description": "Nastavte \u010dasov\u00e9 obdobie pre zosilnenie.",
+                    "name": "\u010casov\u00e9 obdobie"
+                }
+            },
+            "name": "Nastavenie \u010dasova\u010da ohrieva\u010da vody"
+        }
+    }
+}

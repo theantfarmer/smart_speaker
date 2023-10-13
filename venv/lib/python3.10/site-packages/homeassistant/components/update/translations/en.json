@@ -1,0 +1,48 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "changed_states": "{entity_name} update availability changed",
+            "turned_off": "{entity_name} became up-to-date",
+            "turned_on": "{entity_name} got an update available"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Update"
+        },
+        "firmware": {
+            "name": "Firmware"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "The {platform} platform for the {domain} integration does not support platform setup.\n\nPlease remove it from your configuration and restart Home Assistant to fix this issue.",
+            "title": "Platform support not supported"
+        }
+    },
+    "services": {
+        "clear_skipped": {
+            "description": "Removes the skipped version marker from an update.",
+            "name": "Clear skipped update"
+        },
+        "install": {
+            "description": "Installs an update for this device or service.",
+            "fields": {
+                "backup": {
+                    "description": "If supported by the integration, this creates a backup before starting the update .",
+                    "name": "Backup"
+                },
+                "version": {
+                    "description": "The version to install. If omitted, the latest version will be installed.",
+                    "name": "Version"
+                }
+            },
+            "name": "Install update"
+        },
+        "skip": {
+            "description": "Marks currently available update as skipped.",
+            "name": "Skip update"
+        }
+    },
+    "title": "Update"
+}

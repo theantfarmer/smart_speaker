@@ -1,0 +1,17 @@
+{
+    "config": {
+        "error": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant.",
+            "timeout_connect": "Savienojuma izveides laika ierobe\u017eojums"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "floor_temperature": "Gr\u012bdas temperat\u016bra"
+                }
+            }
+        }
+    }
+}

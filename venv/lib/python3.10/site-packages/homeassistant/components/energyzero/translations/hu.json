@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van"
+        },
+        "step": {
+            "user": {
+                "description": "El szeretn\u00e9 kezdeni a be\u00e1ll\u00edt\u00e1st?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "average_price": {
+                "name": "\u00c1tlag - ma"
+            },
+            "current_hour_price": {
+                "name": "Aktu\u00e1lis \u00f3r\u00e1ban"
+            },
+            "highest_price_time": {
+                "name": "A legmagasabb \u00e1r pillanata \u2013 ma"
+            },
+            "hours_priced_equal_or_higher": {
+                "name": "A jelenlegivel megegyez\u0151 vagy magasabb \u00e1ras \u00f3r\u00e1k \u2013 ma"
+            },
+            "hours_priced_equal_or_lower": {
+                "name": "A jelenlegivel megegyez\u0151 vagy alacsonyabb \u00e1ras \u00f3r\u00e1k \u2013 ma"
+            },
+            "lowest_price_time": {
+                "name": "A legalacsonyabb \u00e1r pillanata - ma"
+            },
+            "max_price": {
+                "name": "Legmagasabb \u00e1r - ma"
+            },
+            "min_price": {
+                "name": "Legalacsonyabb \u00e1r - ma"
+            },
+            "next_hour_price": {
+                "name": "K\u00f6vetkez\u0151 \u00f3ra"
+            },
+            "percentage_of_max": {
+                "name": "A legmagasabb \u00e1r jelenlegi sz\u00e1zal\u00e9ka \u2013 ma"
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "services": {
+        "notify": {
+            "fields": {
+                "message": {
+                    "name": "\u0421\u044a\u043e\u0431\u0449\u0435\u043d\u0438\u0435"
+                },
+                "title": {
+                    "name": "\u0417\u0430\u0433\u043b\u0430\u0432\u0438\u0435"
+                }
+            }
+        },
+        "persistent_notification": {
+            "fields": {
+                "message": {
+                    "name": "\u0421\u044a\u043e\u0431\u0449\u0435\u043d\u0438\u0435"
+                },
+                "title": {
+                    "name": "\u0417\u0430\u0433\u043b\u0430\u0432\u0438\u0435"
+                }
+            }
+        }
+    },
+    "title": "\u0418\u0437\u0432\u0435\u0441\u0442\u0438\u044f"
+}

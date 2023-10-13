@@ -1,0 +1,72 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "L'int\u00e9gration {domain} ne prend pas en charge la configuration via le fichier YAML. Vous ne remarquerez peut-\u00eatre aucun probl\u00e8me \u00e9vident avec l'int\u00e9gration, mais tous les param\u00e8tres de configuration d\u00e9finis dans YAML ne sont pas r\u00e9ellement appliqu\u00e9s. \n\nPour r\u00e9soudre ce probl\u00e8me\u00a0: \n\n1. Si vous ne l'avez pas encore fait, [configurez l'int\u00e9gration]({add_integration}). \n\n2. Supprimez `{domain}`\u00a0: de votre fichier de configuration YAML. \n\n3. Red\u00e9marrez l'assistant domestique.",
+            "title": "L'int\u00e9gration {domain} ne prend pas en charge la configuration YAML"
+        },
+        "country_not_configured": {
+            "description": "Aucun pays n'a \u00e9t\u00e9 configur\u00e9, veuillez mettre \u00e0 jour la configuration en cliquant sur le bouton \"en savoir plus\" ci-dessous.",
+            "title": "Le pays n\u2019a pas \u00e9t\u00e9 configur\u00e9"
+        },
+        "deprecated_yaml": {
+            "description": "La configuration {integration_title} \u00e0 l'aide de YAML sera bient\u00f4t supprim\u00e9e. \n\nVotre configuration YAML existante a \u00e9t\u00e9 import\u00e9e automatiquement dans l'interface utilisateur. \n\nSupprimez la configuration `{domain}` de votre fichier configuration.yaml et red\u00e9marrez Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "La configuration YAML pour {integration_title} sera bient\u00f4t supprim\u00e9e"
+        },
+        "historic_currency": {
+            "description": "La devise {currency} n\u2019est plus utilis\u00e9e, veuillez actualiser la configuration de la devise.",
+            "title": "La devise configur\u00e9e n\u2019est plus utilis\u00e9e"
+        },
+        "integration_key_no_support": {
+            "description": "L'int\u00e9gration {domain} ne prend pas en charge la configuration via le fichier YAML. Vous ne remarquerez peut-\u00eatre aucun probl\u00e8me \u00e9vident avec l'int\u00e9gration, mais tous les param\u00e8tres de configuration d\u00e9finis dans YAML ne sont pas r\u00e9ellement appliqu\u00e9s. \n\nPour r\u00e9soudre ce probl\u00e8me\u00a0: \n\n1. Si vous ne l'avez pas encore fait, [configurez l'int\u00e9gration]({add_integration}). \n\n2. Supprimez `{domain}`\u00a0: de votre fichier de configuration YAML. \n\n3. Red\u00e9marrez l'assistant domestique.",
+            "title": "L'int\u00e9gration {domain} ne prend pas en charge la configuration YAML"
+        },
+        "no_platform_setup": {
+            "description": "Il n'est pas possible de configurer {platform} {domain} en ajoutant `{platform_key}` \u00e0 la configuration {domain} . Veuillez consulter la documentation pour plus d'informations sur la configuration de cette int\u00e9gration. \n\nPour r\u00e9soudre ce probl\u00e8me\u00a0:\n1. Supprimez les occurrences `{platform_key}` de la configuration `{domain}`\u00a0: dans votre fichier de configuration YAML.\n2. Red\u00e9marrez l'assistant domestique. \n\nExemple \u00e0 supprimer\u00a0:\n{yaml_example}\n",
+            "title": "Configuration YAML inutilis\u00e9e pour l'int\u00e9gration {platform}"
+        },
+        "platform_only": {
+            "description": "L'int\u00e9gration {domain} ne prend pas en charge la configuration sous sa propre cl\u00e9, elle doit \u00eatre configur\u00e9e sous ses plates-formes prises en charge. \n\n Pour r\u00e9soudre ce probl\u00e8me\u00a0: \n\n 1. Supprimez `{domain}`\u00a0: de votre fichier de configuration YAML. \n\n 2. Red\u00e9marrez l'Home Assistant.",
+            "title": "L'int\u00e9gration {domain} ne prend pas en charge la configuration YAML sous sa propre cl\u00e9"
+        },
+        "python_version": {
+            "description": "La prise en charge de l'ex\u00e9cution de Home Assistant avec la version de Python actuellement utilis\u00e9e {current_python_version} est obsol\u00e8te et sera supprim\u00e9e dans Home Assistant {breaks_in_ha_version}. Veuillez mettre \u00e0 niveau Python vers {required_python_version} pour \u00e9viter que votre instance Home Assistant ne tombe en panne.",
+            "title": "La prise en charge de Python {current_python_version} est en cours de suppression"
+        },
+        "storage_corruption": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Le stockage `{storage_key}` n'a pas pu \u00eatre analys\u00e9 et a \u00e9t\u00e9 renomm\u00e9 en `{corrupt_path}` pour permettre \u00e0 Home Assistant de continuer. \n\nUn `{storage_key}` par d\u00e9faut peut avoir \u00e9t\u00e9 cr\u00e9\u00e9 automatiquement. \n\nSi vous avez apport\u00e9 des modifications manuelles au fichier de stockage, corrigez les erreurs de syntaxe dans `{corrupt_path}`, restaurez le fichier dans le chemin d'origine `{original_path}` et red\u00e9marrez Home Assistant. Sinon, restaurez le syst\u00e8me \u00e0 partir d'une sauvegarde. \n\nCliquez sur SOUMETTRE ci-dessous pour confirmer que vous avez r\u00e9par\u00e9 le fichier ou restaur\u00e9 \u00e0 partir d'une sauvegarde. \n\nL'erreur exacte \u00e9tait\u00a0: {error}",
+                        "title": "Corruption du stockage d\u00e9tect\u00e9e pour `{storage_key}`"
+                    }
+                }
+            },
+            "title": "Corruption du stockage d\u00e9tect\u00e9e pour `{storage_key}`"
+        }
+    },
+    "services": {
+        "restart": {
+            "name": "Red\u00e9marrer"
+        },
+        "stop": {
+            "name": "Arr\u00eater"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "Architecture du processeur",
+            "config_dir": "R\u00e9pertoire de configuration",
+            "dev": "D\u00e9veloppement",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Type d'installation",
+            "os_name": "Famille du syst\u00e8me d'exploitation",
+            "os_version": "Version du syst\u00e8me d'exploitation",
+            "python_version": "Version de Python",
+            "timezone": "Fuseau horaire",
+            "user": "Utilisateur",
+            "version": "Version",
+            "virtualenv": "Environnement virtuel"
+        }
+    }
+}

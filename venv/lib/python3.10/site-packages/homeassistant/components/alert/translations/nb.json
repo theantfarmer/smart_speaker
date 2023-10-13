@@ -1,0 +1,13 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Varsling",
+            "state": {
+                "idle": "Inaktiv",
+                "off": "Anerkjente",
+                "on": "Aktiv"
+            }
+        }
+    },
+    "title": "Varsling"
+}

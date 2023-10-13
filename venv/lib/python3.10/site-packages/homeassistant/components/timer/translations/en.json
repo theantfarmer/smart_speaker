@@ -1,0 +1,67 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Timer",
+            "state": {
+                "active": "Active",
+                "idle": "Idle",
+                "paused": "Paused"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "Duration"
+                },
+                "editable": {
+                    "name": "Managed via UI",
+                    "state": {
+                        "false": "No",
+                        "true": "Yes"
+                    }
+                },
+                "finishes_at": {
+                    "name": "Finishes at"
+                },
+                "remaining": {
+                    "name": "Remaining"
+                },
+                "restore": {
+                    "name": "Restore"
+                }
+            }
+        }
+    },
+    "services": {
+        "cancel": {
+            "description": "Cancels a timer.",
+            "name": "Cancel"
+        },
+        "change": {
+            "description": "Changes a timer.",
+            "fields": {
+                "duration": {
+                    "description": "Duration to add or subtract to the running timer.",
+                    "name": "Duration"
+                }
+            },
+            "name": "Change"
+        },
+        "finish": {
+            "description": "Finishes a timer.",
+            "name": "Finish"
+        },
+        "pause": {
+            "description": "Pauses a timer.",
+            "name": "Pause"
+        },
+        "start": {
+            "description": "Starts a timer.",
+            "fields": {
+                "duration": {
+                    "description": "Duration the timer requires to finish. [optional].",
+                    "name": "Duration"
+                }
+            },
+            "name": "Start"
+        }
+    }
+}

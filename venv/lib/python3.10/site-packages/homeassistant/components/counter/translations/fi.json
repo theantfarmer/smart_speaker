@@ -1,0 +1,28 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Laskuri",
+            "state_attributes": {
+                "editable": {
+                    "name": "Hallinta k\u00e4ytt\u00f6liittym\u00e4st\u00e4",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Kyll\u00e4"
+                    }
+                },
+                "initial": {
+                    "name": "Alkuarvo"
+                },
+                "maximum": {
+                    "name": "Maksimi"
+                },
+                "minimum": {
+                    "name": "Minimi"
+                },
+                "step": {
+                    "name": "Askel"
+                }
+            }
+        }
+    }
+}

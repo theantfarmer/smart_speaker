@@ -1,0 +1,28 @@
+{
+    "device_automation": {
+        "action_type": {
+            "turn_off": "Vypnout {entity_name}",
+            "turn_on": "Zapnout {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Oh\u0159\u00edva\u010d vody",
+            "state": {
+                "eco": "Eko",
+                "electric": "Elektrick\u00e9",
+                "gas": "Plyn",
+                "heat_pump": "Tepeln\u00e9 \u010derpadlo",
+                "high_demand": "Vysok\u00e1 popt\u00e1vka",
+                "off": "Vypnut\u00fd",
+                "performance": "V\u00fdkon"
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    }
+}

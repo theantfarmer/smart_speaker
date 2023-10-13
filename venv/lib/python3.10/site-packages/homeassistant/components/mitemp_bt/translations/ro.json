@@ -1,0 +1,8 @@
+{
+    "issues": {
+        "replaced": {
+            "description": "Integrarea senzorului de temperatur\u0103 \u0219i umiditate Xiaomi Mijia BLE a \u00eencetat s\u0103 func\u021bioneze \u00een Home Assistant 2022.7 \u0219i a fost \u00eenlocuit\u0103 de integrarea Xiaomi BLE \u00een versiunea 2022.8.\n\nNu exist\u0103 o cale de migrare posibil\u0103, prin urmare, trebuie s\u0103 adaugi dispozitivul Xiaomi Mijia BLE manual folosind noua integrare.\n\nConfigura\u021bia YAML a senzorului de temperatur\u0103 \u0219i umiditate Xiaomi Mijia BLE existent\u0103 nu mai este utilizat\u0103 de Home Assistant. Elimin\u0103 configura\u021bia YAML din fi\u0219ierul configuration.yaml \u0219i reporne\u0219te Home Assistant pentru a remedia aceast\u0103 problem\u0103.",
+            "title": "Integrarea senzorului de temperatur\u0103 \u0219i umiditate Xiaomi Mijia BLE a fost \u00eenlocuit\u0103"
+        }
+    }
+}

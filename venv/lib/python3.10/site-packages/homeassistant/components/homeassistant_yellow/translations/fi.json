@@ -1,0 +1,13 @@
+{
+    "options": {
+        "step": {
+            "reboot_menu": {
+                "menu_options": {
+                    "reboot_later": "K\u00e4ynnist\u00e4 manuaalisesti my\u00f6hemmin uudelleen",
+                    "reboot_now": "K\u00e4ynnist\u00e4 uudelleen nyt"
+                },
+                "title": "Uudelleenk\u00e4ynnistys vaaditaan"
+            }
+        }
+    }
+}

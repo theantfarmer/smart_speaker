@@ -1,0 +1,68 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_account": "A fi\u00f3k m\u00e1r konfigur\u00e1lva van",
+            "ezviz_cloud_account_missing": "Az Ezviz cloud fi\u00f3k hi\u00e1nyzik. K\u00e9rem, konfigur\u00e1lja \u00fajra az Ezviz cloud fi\u00f3kot.",
+            "reauth_successful": "Az \u00fajrahiteles\u00edt\u00e9s sikeres volt.",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "invalid_host": "\u00c9rv\u00e9nytelen C\u00edm",
+            "mfa_required": "A k\u00e9tfaktoros autentik\u00e1ci\u00f3 be van kapcsolva a fi\u00f3kban. K\u00e9rem kapcsolja ki \u00e9s pr\u00f3b\u00e1lja \u00fajra"
+        },
+        "flow_title": "{serial}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "password": "Jelsz\u00f3",
+                    "username": "Felhaszn\u00e1l\u00f3n\u00e9v"
+                },
+                "description": "\u00cdrja be az RTSP-hiteles\u00edt\u0151 adatokat az Ezviz {serial}, {ip_address} IP-c\u00edm\u0171 kamer\u00e1hoz",
+                "title": "Felfedezett Ezviz kamera"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Jelsz\u00f3",
+                    "username": "Felhaszn\u00e1l\u00f3n\u00e9v"
+                },
+                "description": "Adja meg a hiteles\u00edt\u00e9si adatokat az Ezviz felh\u0151fi\u00f3k val\u00f3 \u00fajrahiteles\u00edt\u00e9shez",
+                "title": "Integr\u00e1ci\u00f3 \u00fajrahiteles\u00edt\u00e9se"
+            },
+            "user": {
+                "data": {
+                    "password": "Jelsz\u00f3",
+                    "url": "URL",
+                    "username": "Felhaszn\u00e1l\u00f3n\u00e9v"
+                },
+                "title": "Csatlakozzon az Ezviz Cloud szolg\u00e1ltat\u00e1shoz"
+            },
+            "user_custom_url": {
+                "data": {
+                    "password": "Jelsz\u00f3",
+                    "url": "URL",
+                    "username": "Felhaszn\u00e1l\u00f3n\u00e9v"
+                },
+                "description": "Adja meg k\u00e9zzel a r\u00e9gi\u00f3 URL-j\u00e9t",
+                "title": "Csatlakozzon egyedi Ezviz URL-hez"
+            }
+        }
+    },
+    "issues": {
+        "service_depreciation_detection_sensibility": {
+            "description": "Az Ezviz Detection sensitivity szolg\u00e1ltat\u00e1s elavult, \u00e9s el lesz t\u00e1vol\u00edtva a Home Assistant 2023.12-ben; M\u00f3dos\u00edtsa a szolg\u00e1ltat\u00e1st haszn\u00e1l\u00f3 automatiz\u00e1l\u00e1st vagy szkriptet, \u00e9s v\u00e1lassza az al\u00e1bbi k\u00fcld\u00e9s lehet\u0151s\u00e9get a probl\u00e9ma megoldottk\u00e9nt val\u00f3 megjel\u00f6l\u00e9s\u00e9hez.",
+            "title": "Az Ezviz Detection \u00e9rz\u00e9kenys\u00e9gi szolg\u00e1ltat\u00e1s elt\u00e1vol\u00edt\u00e1sra ker\u00fcl"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "ffmpeg_arguments": "A kamer\u00e1khoz az ffmpeg-nek \u00e1tadott argumentumok",
+                    "timeout": "K\u00e9r\u00e9s id\u0151korl\u00e1tja (m\u00e1sodperc)"
+                }
+            }
+        }
+    }
+}

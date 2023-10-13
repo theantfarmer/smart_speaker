@@ -1,0 +1,41 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "reauth_successful": "Yeniden kimlik do\u011frulama ba\u015far\u0131l\u0131 oldu"
+        },
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "no_sites_found": "Kullan\u0131c\u0131n\u0131n y\u00f6netebilece\u011fi site bulunamad\u0131.",
+            "unknown": "Beklenmeyen hata",
+            "unsupported_controller": "Omada Denetleyici s\u00fcr\u00fcm\u00fc desteklenmiyor."
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131"
+                },
+                "description": "Sa\u011flanan kimlik bilgileri \u00e7al\u0131\u015fmay\u0131 durdurdu. L\u00fctfen g\u00fcncelleyin.",
+                "title": "TP-Link Omada Kimlik Bilgilerini G\u00fcncelleyin"
+            },
+            "site": {
+                "data": {
+                    "site": "Site"
+                },
+                "title": "Hangi site(ler)in y\u00f6netilece\u011fini se\u00e7in"
+            },
+            "user": {
+                "data": {
+                    "host": "Sunucu",
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131",
+                    "verify_ssl": "SSL sertifikas\u0131n\u0131 do\u011frulay\u0131n"
+                },
+                "description": "Omada denetleyicisi i\u00e7in ba\u011flant\u0131 ayr\u0131nt\u0131lar\u0131n\u0131 girin. Bulut denetleyicileri desteklenmez.",
+                "title": "TP-Link Omada Denetleyici"
+            }
+        }
+    }
+}

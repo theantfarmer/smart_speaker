@@ -1,0 +1,11 @@
+{
+    "services": {
+        "speedtest": {
+            "fields": {
+                "host": {
+                    "name": "Endere\u00e7o"
+                }
+            }
+        }
+    }
+}

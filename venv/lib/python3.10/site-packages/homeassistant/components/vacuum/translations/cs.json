@@ -1,0 +1,46 @@
+{
+    "device_automation": {
+        "action_type": {
+            "clean": "Nechat {entity_name} ukl\u00edzet",
+            "dock": "Nechat {entity_name} vr\u00e1tit se do stanice"
+        },
+        "condition_type": {
+            "is_cleaning": "{entity_name} ukl\u00edz\u00ed",
+            "is_docked": "{entity_name} je ve stanici"
+        },
+        "trigger_type": {
+            "cleaning": "{entity_name} zah\u00e1jil \u00faklid",
+            "docked": "{entity_name} p\u0159ijel do stanice"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Vysava\u010d",
+            "state": {
+                "cleaning": "Ukl\u00edz\u00ed",
+                "docked": "Ve stanici",
+                "error": "Chyba",
+                "idle": "Ne\u010dinn\u00fd",
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd",
+                "paused": "Pozastaven",
+                "returning": "N\u00e1vrat do stanice"
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Vysava\u010d"
+}

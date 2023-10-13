@@ -1,0 +1,108 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_not_locked": "{entity_name} on auki"
+        },
+        "trigger_type": {
+            "not_locked": "{entity_name} auki"
+        }
+    },
+    "entity_component": {
+        "battery_charging": {
+            "name": "Latautuu",
+            "state": {
+                "off": "Ei lataudu",
+                "on": "Latautuu"
+            }
+        },
+        "carbon_monoxide": {
+            "state": {
+                "off": "Ei hiilidioksidia"
+            }
+        },
+        "door": {
+            "state": {
+                "off": "Suljettu",
+                "on": "Auki"
+            }
+        },
+        "garage_door": {
+            "state": {
+                "off": "Suljettu",
+                "on": "Auki"
+            }
+        },
+        "gas": {
+            "state": {
+                "off": "Ei kaasua"
+            }
+        },
+        "heat": {
+            "state": {
+                "off": "Normaali",
+                "on": "Kuuma"
+            }
+        },
+        "light": {
+            "name": "Valo",
+            "state": {
+                "off": "Ei valoa",
+                "on": "Valo havaittu"
+            }
+        },
+        "lock": {
+            "state": {
+                "on": "Auki"
+            }
+        },
+        "moisture": {
+            "name": "Kosteus",
+            "state": {
+                "off": "Kuiva",
+                "on": "M\u00e4rk\u00e4"
+            }
+        },
+        "opening": {
+            "name": "Avataan",
+            "state": {
+                "off": "Suljettu",
+                "on": "Auki"
+            }
+        },
+        "presence": {
+            "name": "Paikallaolo"
+        },
+        "problem": {
+            "name": "Ongelma",
+            "state": {
+                "off": "Ok",
+                "on": "Ongelma"
+            }
+        },
+        "running": {
+            "name": "K\u00e4ynniss\u00e4"
+        },
+        "safety": {
+            "name": "Turva"
+        },
+        "smoke": {
+            "name": "Savu"
+        },
+        "sound": {
+            "name": "\u00c4\u00e4ni"
+        },
+        "update": {
+            "name": "P\u00e4ivit\u00e4"
+        },
+        "vibration": {
+            "name": "V\u00e4rin\u00e4"
+        },
+        "window": {
+            "name": "Ikkuna",
+            "state": {
+                "off": "Suljettu"
+            }
+        }
+    },
+    "title": "Bin\u00e4\u00e4risensori"
+}

@@ -1,0 +1,24 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "device_trackers": {
+                    "name": "Seurantalaitteet"
+                },
+                "gps_accuracy": {
+                    "name": "GPS:n tarkkuus"
+                },
+                "latitude": {
+                    "name": "Leveysaste"
+                },
+                "longitude": {
+                    "name": "Pituusaste"
+                },
+                "source": {
+                    "name": "L\u00e4hde"
+                }
+            }
+        }
+    },
+    "title": "Henkil\u00f6"
+}

@@ -1,0 +1,54 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi"
+        },
+        "error": {
+            "not_admin": "L'utilisateur doit \u00eatre administrateur, l'utilisateur \"{username}\" a le niveau d'autorisation \"{userlevel}\""
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "L\u2019int\u00e9gration Reolink doit r\u00e9authentifier vos informations de connexion",
+                "title": "R\u00e9-authentifier l'int\u00e9gration"
+            },
+            "user": {
+                "data": {
+                    "use_https": "Activer HTTPS"
+                },
+                "description": "Voir les [\u00e9tapes de d\u00e9pannage]({troubleshooting_link}) si vous rencontrez des probl\u00e8mes. {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "D\u00e9sactiv\u00e9"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "off": "D\u00e9sactiv\u00e9"
+                }
+            }
+        }
+    },
+    "issues": {
+        "firmware_update": {
+            "title": "Mise \u00e0 jour du micrologiciel Reolink n\u00e9cessaire"
+        },
+        "webhook_url": {
+            "title": "URL du webhook Reolink inaccessible"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protocole"
+                }
+            }
+        }
+    }
+}

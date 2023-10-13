@@ -1,0 +1,63 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_pin": "Nespr\u00e1vny PIN",
+            "pairing_failure": "Nepodarilo sa sp\u00e1rova\u0165: {error_id}",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "step": {
+            "pair": {
+                "data": {
+                    "pin": "PIN k\u00f3d"
+                },
+                "description": "Zadajte PIN zobrazen\u00fd na Va\u0161ej TV",
+                "title": "Sp\u00e1rova\u0165"
+            },
+            "user": {
+                "data": {
+                    "api_version": "Verzia API",
+                    "host": "Hostite\u013e"
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "turn_on": "Vy\u017eiadan\u00e9 zapnutie zariadenia"
+        }
+    },
+    "entity": {
+        "light": {
+            "ambilight": {
+                "name": "Ambilight"
+            }
+        },
+        "remote": {
+            "remote": {
+                "name": "Dia\u013ekov\u00e9 ovl\u00e1danie"
+            }
+        },
+        "switch": {
+            "ambilight_hue": {
+                "name": "Ambilight + Hue"
+            },
+            "screen_state": {
+                "name": "Stav obrazovky"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "allow_notify": "Povo\u013ete pou\u017e\u00edvanie notifika\u010dnej slu\u017eby"
+                }
+            }
+        }
+    }
+}

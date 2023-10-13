@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konts jau ir konfigur\u0113ts"
+        },
+        "error": {
+            "cannot_connect": "Piesl\u0113guma k\u013c\u016bda",
+            "unknown": "Neparedz\u0113ta k\u013c\u016bda"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Parole"
+                },
+                "description": "Vai v\u0113laties iestat\u012bt {name} ({host})?"
+            },
+            "user": {
+                "data": {
+                    "host": "Saimniekdators",
+                    "password": "Parole"
+                }
+            }
+        }
+    }
+}

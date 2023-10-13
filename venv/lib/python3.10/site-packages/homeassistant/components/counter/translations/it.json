@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Contatore",
+            "state_attributes": {
+                "editable": {
+                    "name": "Gestito tramite interfaccia utente",
+                    "state": {
+                        "false": "No",
+                        "true": "S\u00ec"
+                    }
+                },
+                "initial": {
+                    "name": "Valore iniziale"
+                },
+                "maximum": {
+                    "name": "Massimo"
+                },
+                "minimum": {
+                    "name": "Minimo"
+                },
+                "step": {
+                    "name": "Passo"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_configure_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Il servizio contatore `counter.configure` \u00e8 stato rimosso ed \u00e8 stato rilevato il suo utilizzo. Se vuoi cambiare il valore corrente di un contatore, usa invece il nuovo servizio `counter.set_value`. \n\nRimuovi l'utilizzo di questo servizio dalle tue automazioni e script e seleziona **invia** per chiudere questo problema.",
+                        "title": "Il servizio di configurazione dei contatori \u00e8 in fase di rimozione"
+                    }
+                }
+            },
+            "title": "Il servizio di configurazione dei contatori \u00e8 in fase di rimozione"
+        }
+    },
+    "title": "Contatore"
+}

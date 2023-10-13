@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "L\u00e4dt Template-Entit\u00e4ten aus der YAML-Konfiguration nach.",
+            "name": "Neu laden"
+        }
+    }
+}

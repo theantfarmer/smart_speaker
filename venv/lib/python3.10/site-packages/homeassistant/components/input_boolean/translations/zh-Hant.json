@@ -1,0 +1,35 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u958b\u95dc\u6846",
+            "state": {
+                "off": "\u95dc\u9589",
+                "on": "\u958b\u555f"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "\u91cd\u65b0\u52a0\u8f09"
+        },
+        "toggle": {
+            "name": "\u5207\u63db"
+        },
+        "turn_off": {
+            "name": "\u95dc\u9589"
+        },
+        "turn_on": {
+            "name": "\u958b\u555f"
+        }
+    },
+    "title": "\u958b\u95dc\u6846"
+}

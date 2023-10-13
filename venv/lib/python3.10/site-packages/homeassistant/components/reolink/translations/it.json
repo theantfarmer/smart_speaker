@@ -1,0 +1,96 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "reauth_successful": "La riautenticazione ha avuto successo"
+        },
+        "error": {
+            "api_error": "Si \u00e8 verificato un errore di API",
+            "cannot_connect": "Impossibile connettersi, controllare l'indirizzo IP della telecamera",
+            "invalid_auth": "Autenticazione non valida",
+            "not_admin": "L'utente deve essere un amministratore, l'utente \"{username}\" ha il livello di autorizzazione \"{userlevel}\"",
+            "unknown": "Errore imprevisto"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "L'integrazione Reolink ha bisogno di riautenticare i dettagli della tua connessione",
+                "title": "Autentica nuovamente l'integrazione"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Password",
+                    "port": "Porta",
+                    "use_https": "Abilita HTTPS",
+                    "username": "Nome utente"
+                },
+                "description": "Consulta la [procedura per la risoluzione dei problemi]({troubleshooting_link}) in caso di problemi. {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Spento/a"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digitale",
+                    "digitalfirst": "Digitale per primo",
+                    "pantiltfirst": "Panoramica/inclinazione per prima"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Automatico",
+                    "blackwhite": "Bianco e nero",
+                    "color": "Colore"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "auto": "Automatica",
+                    "off": "Spento/a",
+                    "schedule": "Programma"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "Auto & sempre attivo di notte",
+                    "auto": "Auto",
+                    "stayoff": "Stai fuori"
+                }
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "Impossibile abilitare automaticamente {ports} porta/e su {name}. Utilizza il [client Reolink]({info_link}) per impostarlo manualmente su Acceso",
+            "title": "Porta Reolink non abilitata"
+        },
+        "firmware_update": {
+            "description": "\"{name}\" con il modello \"{model}\" e versione hardware \"{hw_version}\" esegue una vecchia versione del firmware \"{current_firmware}\", mentre \u00e8 richiesta almeno la versione del firmware \"{required_firmware}\" per il corretto funzionamento dell'integrazione Reolink. L'ultimo firmware pu\u00f2 essere scaricato dal [Centro download Reolink]({download_link}).",
+            "title": "\u00c8 richiesto l'aggiornamento del firmware Reolink"
+        },
+        "https_webhook": {
+            "description": "I prodotti Reolink non possono inviare eventi di movimento a un indirizzo HTTPS (SSL), si prega di configurare un indirizzo HTTP (locale) in \"Home Assistant URL\" nelle [impostazioni di rete]({network_link}). L'indirizzo (locale) corrente \u00e8: `{base_url}`, un indirizzo valido potrebbe essere, ad esempio, `http://192.168.1.10:8123` dove `192.168.1.10` \u00e8 l'IP del dispositivo Home Assistant",
+            "title": "L'URL del webhook di Reolink utilizza HTTPS (SSL)"
+        },
+        "webhook_url": {
+            "description": "Non \u00e8 stato ricevuto lo stato ONVIF iniziale da {name}. Molto probabilmente la telecamera Reolink non riesce a raggiungere l'URL corrente (locale) di Home Assistant `{base_url}`, configurare un indirizzo HTTP (locale) sotto \"URL di Home Assistant\" nelle [impostazioni di rete]({network_link}) che punti a Home Assistant. Ad esempio `http://192.168.1.10:8123` dove `192.168.1.10` \u00e8 l'IP del dispositivo Home Assistant. Assicurarsi inoltre che la telecamera Reolink possa raggiungere tale URL. Utilizzare l'interrogazione rapida dello stato di movimento/AI fino alla ricezione del primo push ONVIF.",
+            "title": "URL webhook Reolink non raggiungibile"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protocollo"
+                }
+            }
+        }
+    }
+}

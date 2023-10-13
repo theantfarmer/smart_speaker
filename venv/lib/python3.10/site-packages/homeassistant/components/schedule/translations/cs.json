@@ -1,0 +1,22 @@
+{
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "next_event": {
+                    "name": "Dal\u0161\u00ed ud\u00e1lost"
+                }
+            }
+        }
+    }
+}

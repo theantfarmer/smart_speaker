@@ -1,0 +1,74 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert"
+        },
+        "error": {
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "Zwei-Schritte-Code"
+                },
+                "title": "Zwei-Schritte-Verifizierung"
+            },
+            "user": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "title": "Anmeldung mit Ring-Konto"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "ding": {
+                "name": "Klingeln"
+            }
+        },
+        "light": {
+            "light": {
+                "name": "Licht"
+            }
+        },
+        "sensor": {
+            "last_activity": {
+                "name": "Letzte Aktivit\u00e4t"
+            },
+            "last_ding": {
+                "name": "Letztes Klingeln"
+            },
+            "last_motion": {
+                "name": "Letzte Bewegung"
+            },
+            "volume": {
+                "name": "Lautst\u00e4rke"
+            },
+            "wifi_signal_category": {
+                "name": "WLAN-Signalkategorie"
+            },
+            "wifi_signal_strength": {
+                "name": "WLAN-Signalst\u00e4rke"
+            }
+        },
+        "siren": {
+            "siren": {
+                "name": "Sirene"
+            }
+        },
+        "switch": {
+            "siren": {
+                "name": "Sirene"
+            }
+        }
+    },
+    "services": {
+        "update": {
+            "description": "Aktualisiert die Daten, die wir f\u00fcr alle deine Ring-Ger\u00e4te haben.",
+            "name": "Aktualisieren"
+        }
+    }
+}

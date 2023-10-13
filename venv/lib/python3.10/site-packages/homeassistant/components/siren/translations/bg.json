@@ -1,0 +1,32 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u0421\u0438\u0440\u0435\u043d\u0430",
+            "state": {
+                "off": "\u0418\u0437\u043a\u043b\u044e\u0447\u0435\u043d\u0430",
+                "on": "\u0412\u043a\u043b\u044e\u0447\u0435\u043d\u0430"
+            },
+            "state_attributes": {
+                "available_tones": {
+                    "name": "\u041d\u0430\u043b\u0438\u0447\u043d\u0438 \u0442\u043e\u043d\u043e\u0432\u0435"
+                }
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "\u041f\u0440\u0435\u0432\u043a\u043b\u044e\u0447\u0432\u0430\u043d\u0435"
+        },
+        "turn_on": {
+            "fields": {
+                "duration": {
+                    "name": "\u041f\u0440\u043e\u0434\u044a\u043b\u0436\u0438\u0442\u0435\u043b\u043d\u043e\u0441\u0442"
+                },
+                "tone": {
+                    "name": "\u0422\u043e\u043d"
+                }
+            }
+        }
+    },
+    "title": "\u0421\u0438\u0440\u0435\u043d\u0430"
+}

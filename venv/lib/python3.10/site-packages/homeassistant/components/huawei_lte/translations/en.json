@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured",
+            "already_in_progress": "Configuration flow is already in progress",
+            "reauth_successful": "Re-authentication was successful",
+            "unsupported_device": "Unsupported device"
+        },
+        "error": {
+            "connection_timeout": "Connection timeout",
+            "incorrect_password": "Incorrect password",
+            "incorrect_username": "Incorrect username",
+            "invalid_auth": "Invalid authentication",
+            "invalid_url": "Invalid URL",
+            "login_attempts_exceeded": "Maximum login attempts exceeded, please try again later",
+            "response_error": "Unknown error from device",
+            "unknown": "Unexpected error"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Password",
+                    "username": "Username"
+                },
+                "description": "Enter device access credentials.",
+                "title": "Reauthenticate Integration"
+            },
+            "user": {
+                "data": {
+                    "password": "Password",
+                    "url": "URL",
+                    "username": "Username"
+                },
+                "description": "Enter device access details.",
+                "title": "Configure Huawei LTE"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "Notification service name (change requires restart)",
+                    "recipient": "SMS notification recipients",
+                    "track_wired_clients": "Track wired network clients",
+                    "unauthenticated_mode": "Unauthenticated mode (change requires reload)"
+                }
+            }
+        }
+    },
+    "services": {
+        "clear_traffic_statistics": {
+            "description": "Clears traffic statistics.",
+            "fields": {
+                "url": {
+                    "description": "URL of router to clear; optional when only one is configured.",
+                    "name": "URL"
+                }
+            },
+            "name": "Clear traffic statistics"
+        },
+        "reboot": {
+            "description": "Reboots router.",
+            "fields": {
+                "url": {
+                    "description": "URL of router to reboot; optional when only one is configured.",
+                    "name": "URL"
+                }
+            },
+            "name": "Reboot"
+        },
+        "resume_integration": {
+            "description": "Resumes suspended integration.",
+            "fields": {
+                "url": {
+                    "description": "URL of router to resume integration for; optional when only one is configured.",
+                    "name": "URL"
+                }
+            },
+            "name": "Resume integration"
+        },
+        "suspend_integration": {
+            "description": "Suspends integration. Suspending logs the integration out from the router, and stops accessing it. Useful e.g. if accessing the router web interface from another source such as a web browser is temporarily required. Invoke the resume_integration service to resume.\n.",
+            "fields": {
+                "url": {
+                    "description": "URL of router to suspend integration for; optional when only one is configured.",
+                    "name": "URL"
+                }
+            },
+            "name": "Suspend integration"
+        }
+    }
+}

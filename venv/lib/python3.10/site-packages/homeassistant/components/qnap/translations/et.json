@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "\u00dchendus hostiga nurjus",
+            "invalid_auth": "Tuvastamine nurjus",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Hostinimi",
+                    "password": "Salas\u00f5na",
+                    "port": "Port",
+                    "ssl": "Luba SSL",
+                    "username": "Kasutajanimi",
+                    "verify_ssl": "SSL-i kinnitamine"
+                },
+                "description": "qnap sensor v\u00f5imaldab saada erinevaid statistilisi andmeid QNAP NAS-i kohta.",
+                "title": "\u00dchendu QNAP-seadmega"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "QNAPi konfigureerimine YAMLi abil on eemaldatud.\n\nOlemasolev YAML-konfiguratsioon on automaatselt kasutajaliidesesse imporditud.\n\nProbleemi lahendamiseks eemalda QNAPi YAML-konfiguratsioon failist configuration.yaml ja k\u00e4ivita Home Assistant uuesti.",
+            "title": "QNAP YAML-i konfiguratsioon eemaldatakse"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "no_serial": "Nessun numero di serie nelle informazioni di rilevamento ssdp",
+            "not_ipv4_address": "Nessun indirizzo IPv4 nelle informazioni di rilevamento ssdp"
+        },
+        "error": {
+            "config": "Errore di connessione o di login: controlla la tua configurazione"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host (facoltativo)",
+                    "password": "Password",
+                    "username": "Nome utente (facoltativo)"
+                },
+                "description": "Host predefinito: {host}\nNome utente predefinito: {username}"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "consider_home": "Considera il tempo in casa (secondi)"
+                },
+                "description": "Specifica le impostazioni opzionali"
+            }
+        }
+    }
+}

@@ -3,7 +3,8 @@
 .DS_Store
 .vscode
 code/speaker/custom_instructions.txt
-code/speaker/gpt_key.py
+code/speaker/dont_tell.py
+code/dont_tell.py
 logs
 *.log
 npm-debug.log*

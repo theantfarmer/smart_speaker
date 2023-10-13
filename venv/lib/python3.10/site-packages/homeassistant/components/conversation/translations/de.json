@@ -1,0 +1,23 @@
+{
+    "services": {
+        "process": {
+            "description": "Startet ein Gespr\u00e4ch aus einem transkribierten Text.",
+            "fields": {
+                "agent_id": {
+                    "description": "Konversations-Agent zur Bearbeitung deiner Anfrage. Der Konversations-Agent ist das Gehirn deines Assistenten. Er verarbeitet die eingehenden Textbefehle.",
+                    "name": "Agent"
+                },
+                "language": {
+                    "description": "Sprache des Textes. Standardm\u00e4\u00dfig wird die Sprache des Servers verwendet.",
+                    "name": "Sprache"
+                },
+                "text": {
+                    "description": "Transkribierte Texteingabe.",
+                    "name": "Text"
+                }
+            },
+            "name": "Prozess"
+        }
+    },
+    "title": "Konversation"
+}

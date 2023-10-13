@@ -1,0 +1,37 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Mata in tal",
+            "state_attributes": {
+                "editable": {
+                    "name": "Hanteras via anv\u00e4ndargr\u00e4nssnittet",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "initial": {
+                    "name": "Initialt v\u00e4rde"
+                },
+                "max": {
+                    "name": "Maximum"
+                },
+                "min": {
+                    "name": "Minimum"
+                },
+                "mode": {
+                    "name": "L\u00e4ge",
+                    "state": {
+                        "auto": "Automatiskt",
+                        "box": "Box",
+                        "slider": "Skjutreglage"
+                    }
+                },
+                "step": {
+                    "name": "Steg"
+                }
+            }
+        }
+    },
+    "title": "Mata in tal"
+}

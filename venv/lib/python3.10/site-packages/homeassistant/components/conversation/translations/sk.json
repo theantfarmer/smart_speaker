@@ -1,0 +1,23 @@
+{
+    "services": {
+        "process": {
+            "description": "Spust\u00ed konverz\u00e1ciu z prep\u00edsan\u00e9ho textu.",
+            "fields": {
+                "agent_id": {
+                    "description": "Sprostredkovate\u013e konverz\u00e1cie spracuje va\u0161u \u017eiados\u0165. Konverza\u010dn\u00fd agent je mozgom v\u00e1\u0161ho asistenta. Sprac\u00fava prich\u00e1dzaj\u00face textov\u00e9 pr\u00edkazy.",
+                    "name": "Agent"
+                },
+                "language": {
+                    "description": "Jazyk textu. Predvolen\u00e9 nastavenie je jazyk servera.",
+                    "name": "Jazyk"
+                },
+                "text": {
+                    "description": "Prepis textov\u00e9ho vstupu.",
+                    "name": "Text"
+                }
+            },
+            "name": "Proces"
+        }
+    },
+    "title": "Konverz\u00e1cia"
+}

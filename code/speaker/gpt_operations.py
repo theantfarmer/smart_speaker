@@ -1,6 +1,6 @@
 # gpt_operations.py
 import openai
-from gpt_key import OPENAI_API_KEY
+from dont_tell import OPENAI_API_KEY
 
 openai.api_key = OPENAI_API_KEY
 

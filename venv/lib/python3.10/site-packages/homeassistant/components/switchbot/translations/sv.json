@@ -1,0 +1,81 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Enheten \u00e4r redan konfigurerad",
+            "cannot_connect": "Det gick inte att ansluta.",
+            "no_devices_found": "Inga enheter hittades p\u00e5 n\u00e4tverket ",
+            "switchbot_unsupported_type": "Switchbot-typ som inte st\u00f6ds.",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "confirm": {
+                "description": "Vill du konfigurera {name}?"
+            },
+            "lock_auth": {
+                "data": {
+                    "password": "L\u00f6senord",
+                    "username": "Anv\u00e4ndarnamn"
+                }
+            },
+            "lock_choose_method": {
+                "menu_options": {
+                    "lock_key": "Ange krypteringsnyckel manuellt"
+                }
+            },
+            "password": {
+                "data": {
+                    "password": "L\u00f6senord"
+                },
+                "description": "{name} -enheten kr\u00e4ver ett l\u00f6senord"
+            },
+            "user": {
+                "data": {
+                    "address": "Enhetsadress"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "door_open": {
+                "name": "D\u00f6rr"
+            },
+            "light": {
+                "name": "Belysning"
+            },
+            "motion": {
+                "name": "R\u00f6relse"
+            }
+        },
+        "sensor": {
+            "battery": {
+                "name": "Batteri"
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth signal"
+            },
+            "humidity": {
+                "name": "Fuktighet"
+            },
+            "power": {
+                "name": "Effekt"
+            },
+            "temperature": {
+                "name": "Temperatur"
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi signal"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "retry_count": "Antal ompr\u00f6vningar"
+                }
+            }
+        }
+    }
+}

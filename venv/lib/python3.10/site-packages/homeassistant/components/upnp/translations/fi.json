@@ -1,0 +1,11 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "one": "Tyhj\u00e4",
+            "other": "Tyhj\u00e4"
+        }
+    }
+}

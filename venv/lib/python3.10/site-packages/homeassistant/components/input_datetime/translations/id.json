@@ -1,0 +1,43 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Input tanggal waktu",
+            "state_attributes": {
+                "day": {
+                    "name": "Hari"
+                },
+                "editable": {
+                    "name": "Dikelola lewat antarmuka",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                },
+                "hour": {
+                    "name": "Jam"
+                },
+                "minute": {
+                    "name": "Menit"
+                },
+                "month": {
+                    "name": "Bulan"
+                },
+                "second": {
+                    "name": "Detik"
+                },
+                "timestamp": {
+                    "name": "Stempel waktu"
+                },
+                "year": {
+                    "name": "Tahun"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Muat Ulang"
+        }
+    },
+    "title": "Input tanggal waktu"
+}

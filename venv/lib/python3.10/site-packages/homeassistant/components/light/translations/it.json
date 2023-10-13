@@ -1,0 +1,107 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "Riduci la luminosit\u00e0 di {entity_name}",
+            "brightness_increase": "Aumenta la luminosit\u00e0 di {entity_name}",
+            "flash": "Flash {entity_name}",
+            "toggle": "Commuta {entity_name}",
+            "turn_off": "Spegnere {entity_name}",
+            "turn_on": "Accendere {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} \u00e8 disattivato",
+            "is_on": "{entity_name} \u00e8 attivo"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} attivata o disattivata",
+            "turned_off": "{entity_name} disattivato",
+            "turned_on": "{entity_name} attivato"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Luce",
+            "state": {
+                "off": "Spento/a",
+                "on": "Acceso/a"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "Luminosit\u00e0"
+                },
+                "color_mode": {
+                    "name": "Modalit\u00e0 colore",
+                    "state": {
+                        "brightness": "Solo luminosit\u00e0",
+                        "color_temp": "Temperatura di colore",
+                        "hs": "HS",
+                        "onoff": "Acceso/Spento",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Sconosciuto",
+                        "white": "Bianco",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "Temperatura di colore (mireds)"
+                },
+                "color_temp_kelvin": {
+                    "name": "Temperatura di colore (Kelvin)"
+                },
+                "effect": {
+                    "name": "Effetto"
+                },
+                "effect_list": {
+                    "name": "Effetti disponibili"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "Temperatura massima del colore (Kelvin)"
+                },
+                "max_mireds": {
+                    "name": "Temperatura massima del colore (mireds)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "Temperatura minima del colore (Kelvin)"
+                },
+                "min_mireds": {
+                    "name": "Temperatura minima del colore (mireds)"
+                },
+                "supported_color_modes": {
+                    "name": "Modalit\u00e0 colore disponibili",
+                    "state": {
+                        "brightness": "Solo luminosit\u00e0",
+                        "color_temp": "Temperatura di colore",
+                        "hs": "HS",
+                        "onoff": "Acceso/Spento",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Sconosciuto",
+                        "white": "Bianco",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La piattaforma {platform} per l'integrazione {domain} non supporta l'impostazione della piattaforma. \n\nRimuovilo dalla configurazione e riavvia Home Assistant per risolvere questo problema.",
+            "title": "Supporto della piattaforma non supportato"
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "Commuta"
+        },
+        "turn_off": {
+            "name": "Spegni"
+        },
+        "turn_on": {
+            "name": "Accendi"
+        }
+    },
+    "title": "Luce"
+}

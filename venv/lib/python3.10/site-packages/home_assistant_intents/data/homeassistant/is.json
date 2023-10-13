@@ -1,0 +1,143 @@
+{
+  "language": "is",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "<turn-off> <light> í <area>",
+            "<turn-off> <all> [<light>] í <area>",
+            "<turn-off> <area><light>"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "<turn-off> <name> [í <area>]"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_name"
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "<turn-on> <light> í <area>",
+            "<turn-on> <all> [<light>] í <area>",
+            "<turn-on> <area>[ ]<light>"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "<turn-on> <name> [í <area>]"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_name"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Fyrirgefðu en ég náði þessu ekki",
+      "no_area": "Ekkert svæði {{ area }} fannst",
+      "no_domain": "Í {{ area }} er ekkert {{ domain }}",
+      "no_device_class": "{{ area }} er ekki með tækja tegund {{ device_class }}",
+      "no_entity": "Ekkert tæki eða engin eining með nafni {{ entity }} fannst",
+      "handle_error": "Við meðhöndlun ásetningsins kom óvænt villa upp"
+    },
+    "intents": {
+      "HassGetState": {},
+      "HassTurnOff": {
+        "default": "Slökkti á {{ slots.domain }}",
+        "lights_name": "Slökkti á {{ slots.name }}",
+        "lights_area": "Slökkti á ljósum í {{ slots.area }}",
+        "fans_area": "Slökkti á viftum í {{ slots.area }}",
+        "cover": "Lokaði {{ slots.name }}",
+        "cover_area": "Lokaði {{ slots.area }}"
+      },
+      "HassTurnOn": {
+        "default": "Kveikti á {{ slots.domain }}",
+        "lights_name": "Kveikti á {{ slots.name }}",
+        "lights_area": "Kveikti á ljósum í {{ slots.area }}",
+        "fans_area": "Kveikti á viftum í {{ slots.area }}",
+        "cover": "Opnaði {{ slots.name }}",
+        "cover_area": "Opnaði {{ slots.area }}"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "hvít(t|ur|an|a|um|ri|u|s|rar)",
+          "out": "white"
+        },
+        {
+          "in": "(svart|svartur|svört)",
+          "out": "black"
+        },
+        {
+          "in": "(rauður|rautt|rauð)",
+          "out": "red"
+        },
+        {
+          "in": "(appelsínugulur|appelsínugult|applesínugul)",
+          "out": "orange"
+        },
+        {
+          "in": "(gulur|gul|gult)",
+          "out": "yellow"
+        },
+        {
+          "in": "(grænn|grænt|græn)",
+          "out": "green"
+        },
+        {
+          "in": "(blár|blá|blátt)",
+          "out": "blue"
+        },
+        {
+          "in": "(fjólublátt|fjólublár|jólublá)",
+          "out": "purple"
+        },
+        {
+          "in": "(brúnn|brún|brúnt)",
+          "out": "brown"
+        },
+        {
+          "in": "(bleikur|bleikt|bleik)",
+          "out": "pink"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "turn-on": "(kveikja|kveiktu[ á]|kveikt þú á|kveikt á|kveikja [á])",
+    "turn-off": "(slökkva|slökktu[ á]|slökkt þú á|slökkt á|slökkva [á])",
+    "light": "(ljósinu|ljósunum|ljósin|ljós)",
+    "area": "{area}[(inu|nu|ið|ð|inni|nni|nu|num)]",
+    "name": "{name}[(inu|nu|ið|ð|inni|nni|nu|num)]",
+    "all": "(öll|öllum|öllu|allt)"
+  },
+  "skip_words": [
+    "þú",
+    "geturðu",
+    "getur þú",
+    "viltu",
+    "vilt þú"
+  ]
+}

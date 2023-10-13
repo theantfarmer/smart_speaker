@@ -1,0 +1,19 @@
+{
+    "device_automation": {
+        "action_type": {
+            "turn_off": "Izklopi {entity_name}",
+            "turn_on": "Vklopi {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Grelec vode",
+            "state": {
+                "gas": "Plin",
+                "heat_pump": "Toplotna \u010crpalka",
+                "off": "Izklopljeno",
+                "performance": "U\u010dinkovitost"
+            }
+        }
+    }
+}

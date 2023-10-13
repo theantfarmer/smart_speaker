@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "No s'han trobat dispositius a la xarxa",
+            "not_sonos_device": "El dispositiu descobert no \u00e9s un dispositiu Sonos",
+            "single_instance_allowed": "Ja configurat. Nom\u00e9s \u00e9s possible una sola configuraci\u00f3."
+        },
+        "step": {
+            "confirm": {
+                "description": "Vols configurar Sonos?"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "microphone": {
+                "name": "Micr\u00f2fon"
+            }
+        }
+    },
+    "issues": {
+        "subscriptions_failed": {
+            "description": "Tornant a mode per sondeig, la funcionalitat pot estar limitada.\n\nEl dispositiu Sonos a {device_ip} no pot connectar amb Home Assistant a {listener_address}.\n\nConsulta la [documentaci\u00f3]({sub_fail_url}) per a m\u00e9s informaci\u00f3 sobre com resoldre aquest problema.",
+            "title": "Error de xarxa: les subscripcions han fallat"
+        }
+    }
+}

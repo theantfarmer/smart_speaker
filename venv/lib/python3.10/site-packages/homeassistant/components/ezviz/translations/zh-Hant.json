@@ -1,0 +1,123 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_account": "\u5e33\u865f\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210",
+            "ezviz_cloud_account_missing": "\u627e\u4e0d\u5230 Ezviz \u96f2\u5e33\u865f\u3002\u8acb\u91cd\u65b0\u8a2d\u5b9a Ezviz \u96f2\u5e33\u865f",
+            "reauth_successful": "\u91cd\u65b0\u8a8d\u8b49\u6210\u529f",
+            "unknown": "\u672a\u9810\u671f\u932f\u8aa4"
+        },
+        "error": {
+            "cannot_connect": "\u9023\u7dda\u5931\u6557",
+            "invalid_auth": "\u8eab\u4efd\u9a57\u8b49\u7121\u6548",
+            "invalid_host": "\u7121\u6548\u4e3b\u6a5f\u540d\u7a31\u6216 IP \u4f4d\u5740",
+            "mfa_required": "\u5e33\u865f\u5df2\u555f\u7528 2FA\uff0c\u8acb\u95dc\u9589\u4e26\u518d\u8a66\u4e00\u6b21"
+        },
+        "flow_title": "{serial}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "description": "\u8f38\u5165 IP \u70ba {ip_address} \u7684 EZVIZ \u651d\u5f71\u6a5f {serial} RTSP \u6191\u8b49",
+                "title": "\u81ea\u52d5\u641c\u7d22\u5230\u7684 EZVIZ \u651d\u5f71\u6a5f"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "description": "\u8f38\u5165\u6191\u8b49\u4ee5\u91cd\u65b0\u8a8d\u8a8d\u8b49 ezviz \u96f2\u670d\u52d9\u5e33\u865f",
+                "title": "\u91cd\u65b0\u8a8d\u8b49\u6574\u5408"
+            },
+            "user": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "url": "\u7db2\u5740",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "title": "\u9023\u7dda\u81f3 EZVIZ \u87a2\u77f3\u96f2"
+            },
+            "user_custom_url": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "url": "\u7db2\u5740",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "description": "\u624b\u52d5\u6307\u5b9a\u5340\u57df URL",
+                "title": "\u9023\u7dda\u81f3\u81ea\u8a02 EZVIZ URL"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "alarm_schedules_enabled": {
+                "name": "\u5df2\u555f\u7528\u8b66\u5831\u884c\u4e8b\u66c6"
+            },
+            "encrypted": {
+                "name": "\u52a0\u5bc6"
+            }
+        },
+        "image": {
+            "last_motion_image": {
+                "name": "\u4e0a\u6b21\u52d5\u4f5c\u5f71\u50cf"
+            }
+        },
+        "sensor": {
+            "alarm_sound_mod": {
+                "name": "\u8b66\u5831\u97f3\u6548\u7b49\u7d1a"
+            },
+            "last_alarm_pic": {
+                "name": "\u6700\u65b0\u8b66\u5831\u5716\u50cf URL"
+            },
+            "last_alarm_time": {
+                "name": "\u6700\u65b0\u8b66\u5831\u6642\u9593"
+            },
+            "last_alarm_type_code": {
+                "name": "\u6700\u65b0\u8b66\u5831\u985e\u578b\u4ee3\u78bc"
+            },
+            "last_alarm_type_name": {
+                "name": "\u6700\u65b0\u8b66\u5831\u985e\u578b\u540d\u7a31"
+            },
+            "local_ip": {
+                "name": "\u672c\u5730 IP"
+            },
+            "pir_status": {
+                "name": "PIR \u72c0\u614b"
+            },
+            "seconds_last_trigger": {
+                "name": "\u4e0a\u6b21\u89f8\u767c\u5f8c\u7d93\u904e\u79d2\u6578"
+            },
+            "supported_channels": {
+                "name": "\u652f\u63f4\u901a\u9053"
+            },
+            "wan_ip": {
+                "name": "WAN IP"
+            }
+        }
+    },
+    "issues": {
+        "service_depreciation_detection_sensibility": {
+            "description": "Ezviz \u5075\u6e2c\u9748\u654f\u5ea6\u670d\u52d9\u5df2\u7d93\u505c\u6b62\u4f7f\u7528\uff0c\u5c07\u65bc Home Assistant 2023.12 \u7248\u4e2d\u9032\u884c\u79fb\u9664\uff1b\u8acb\u8abf\u6574\u4f7f\u7528\u8a72\u670d\u52d9\u7684\u81ea\u52d5\u5316\u6216\u8173\u672c\uff0c\u4e26\u9078\u64c7\u4e0b\u65b9\u7684\u50b3\u9001\u4ee5\u6a19\u793a\u554f\u984c\u5df2\u7372\u89e3\u6c7a\u3002",
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Ezviz \u5075\u6e2c\u9748\u654f\u5ea6\u670d\u52d9\u5df2\u7d93\u4e0d\u518d\u4f7f\u7528\uff0c\u4e26\u5c07\u65bc Home Assistant 2023.12 \u7248\u4e2d\u9032\u884c\u79fb\u9664\u3002\n\u6b32\u8a2d\u5b9a\u9748\u654f\u5ea6\u3001\u53ef\u4ee5\u91dd\u5c0d\u5075\u6e2c\u9748\u654f\u5ea6\u5be6\u9ad4\u6539\u70ba\u4f7f\u7528 `number.set_value` \u670d\u52d9\u9032\u884c\u8a2d\u5b9a\u3002\n\n\u8acb\u7531\u81ea\u52d5\u5316\u8207\u8173\u672c\u4e2d\u79fb\u9664\u6b64\u670d\u52d9\uff0c\u4e26\u9078\u64c7 **\u50b3\u9001** \u4ee5\u95dc\u9589\u6b64\u554f\u984c\u3002",
+                        "title": "Ezviz \u5075\u6e2c\u9748\u654f\u5ea6\u670d\u52d9\u5373\u5c07\u79fb\u9664"
+                    }
+                }
+            },
+            "title": "Ezviz \u5075\u6e2c\u9748\u654f\u5ea6\u670d\u52d9\u5373\u5c07\u79fb\u9664"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "ffmpeg_arguments": "\u50b3\u905e\u81f3 ffmpeg \u4e4b\u651d\u5f71\u6a5f\u53c3\u6578",
+                    "timeout": "\u8acb\u6c42\u903e\u6642\uff08\u79d2\uff09"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "Zmanj\u0161ajte svetlost {entity_name}",
+            "brightness_increase": "Pove\u010dajte svetlost {entity_name}",
+            "flash": "Osvetli (pobliskaj) {entity_name}",
+            "toggle": "Preklopite {entity_name}",
+            "turn_off": "Izklopite {entity_name}",
+            "turn_on": "Vklopite {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} je izklopljen",
+            "is_on": "{entity_name} je vklopljen"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} vklopljen ali izklopljen",
+            "turned_off": "{entity_name} izklopljen",
+            "turned_on": "{entity_name} vklopljen"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "Izkl.",
+                "on": "Vkl."
+            },
+            "state_attributes": {
+                "color_mode": {
+                    "state": {
+                        "onoff": "Vklopljeno/Izklopljeno",
+                        "unknown": "Neznano"
+                    }
+                },
+                "supported_color_modes": {
+                    "state": {
+                        "onoff": "Vklopljeno/Izklopljeno",
+                        "unknown": "Neznano"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Lu\u010di"
+}

@@ -1,0 +1,9 @@
+{
+    "config": {
+        "step": {
+            "confirm": {
+                "description": "Chcete za\u010d\u00edt nastavovat?"
+            }
+        }
+    }
+}

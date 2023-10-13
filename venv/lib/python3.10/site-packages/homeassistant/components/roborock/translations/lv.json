@@ -1,0 +1,130 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant."
+        },
+        "error": {
+            "invalid_code": "Ievad\u012btais kods bija nepareizs, l\u016bdzu, p\u0101rbaudiet to un m\u0113\u0123iniet v\u0113lreiz.",
+            "invalid_email": "Ar ievad\u012bto e-pasta adresi nav saist\u012bts neviens konts. M\u0113\u0123iniet v\u0113lreiz.",
+            "invalid_email_format": "J\u016bsu e-pasta form\u0101t\u0101 ir radu\u0161\u0101s probl\u0113mas - m\u0113\u0123iniet v\u0113lreiz.",
+            "unknown": "Neparedz\u0113ta k\u013c\u016bda",
+            "unknown_roborock": "Notika nezin\u0101ms roborock iz\u0146\u0113mums - p\u0101rbaudiet \u017eurn\u0101lus.",
+            "unknown_url": "Rad\u0101s probl\u0113ma, nosakot pareizo url j\u016bsu roborock kontam - p\u0101rbaudiet \u017eurn\u0101lus."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Verifik\u0101cijas kods"
+                },
+                "description": "Ievadiet uz j\u016bsu e-pastu nos\u016bt\u012bto verifik\u0101cijas kodu"
+            },
+            "user": {
+                "data": {
+                    "username": "E-pasts"
+                },
+                "description": "Ievadiet savu Roborock e-pasta adresi."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Mopa intensit\u0101te",
+                "state": {
+                    "custom": "Izv\u0113les",
+                    "intense": "Intens\u012bvs",
+                    "mild": "Viegls",
+                    "moderate": "M\u0113rens",
+                    "off": "Izsl\u0113gts"
+                }
+            },
+            "mop_mode": {
+                "name": "Mopa re\u017e\u012bms",
+                "state": {
+                    "custom": "Izv\u0113les",
+                    "deep": "Sp\u0113c\u012bgi",
+                    "deep_plus": "Padzi\u013cin\u0101ts+",
+                    "fast": "\u0100trs",
+                    "standard": "Standarta"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_time": {
+                "name": "T\u012br\u012b\u0161anas laiks"
+            },
+            "filter_time_left": {
+                "name": "Atliku\u0161ais filtra laiks"
+            },
+            "main_brush_time_left": {
+                "name": "Atliku\u0161ais galven\u0101s birstes laiks"
+            },
+            "sensor_time_left": {
+                "name": "Atliku\u0161ais sensora laiks"
+            },
+            "side_brush_time_left": {
+                "name": "Atliku\u0161ais s\u0101nu birstes laiks"
+            },
+            "status": {
+                "name": "Statuss",
+                "state": {
+                    "charger_disconnected": "L\u0101d\u0113t\u0101js ir atvienots",
+                    "charging": "Uzl\u0101de",
+                    "charging_complete": "Uzl\u0101de pabeigta",
+                    "charging_problem": "Uzl\u0101des probl\u0113ma",
+                    "cleaning": "T\u012br\u012b\u0161ana",
+                    "device_offline": "Ier\u012bce bezsaist\u0113",
+                    "emptying_the_bin": "Tvertnes iztuk\u0161o\u0161ana",
+                    "error": "K\u013c\u016bda",
+                    "going_to_target": "Do\u0161an\u0101s uz m\u0113r\u0137i",
+                    "going_to_wash_the_mop": "Dodas mazg\u0101t mopu",
+                    "idle": "D\u012bkst\u0101ve",
+                    "manual_mode": "Manu\u0101lais re\u017e\u012bms",
+                    "paused": "Aptur\u0113ts",
+                    "remote_control_active": "Akt\u012bva t\u0101lvad\u012bbas pults",
+                    "returning_home": "Atgrie\u0161an\u0101s m\u0101j\u0101s",
+                    "segment_cleaning": "Segmenta t\u012br\u012b\u0161ana",
+                    "shutting_down": "Izsl\u0113g\u0161ana",
+                    "spot_cleaning": "Vietas t\u012br\u012b\u0161ana",
+                    "starting": "S\u0101kot no",
+                    "updating": "Atjaunin\u0101\u0161ana",
+                    "washing_the_mop": "Mopa mazg\u0101\u0161ana",
+                    "zoned_cleaning": "Zon\u0113ta t\u012br\u012b\u0161ana"
+                }
+            },
+            "total_cleaning_time": {
+                "name": "Kop\u0113jais t\u012br\u012b\u0161anas laiks"
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "B\u0113rnu sl\u0113dzene"
+            },
+            "status_indicator": {
+                "name": "Statusa indikatora gaisma"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Auto",
+                            "balanced": "L\u012bdzsvarots",
+                            "custom": "Izv\u0113les",
+                            "gentle": "Maigs",
+                            "max": "Maks.",
+                            "max_plus": "Max plus",
+                            "medium": "Vid\u0113js",
+                            "off": "Izsl\u0113gts",
+                            "quiet": "Kluss",
+                            "silent": "Pieklusin\u0101ts",
+                            "standard": "Standarta",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

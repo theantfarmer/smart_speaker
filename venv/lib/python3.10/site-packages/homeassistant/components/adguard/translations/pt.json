@@ -1,0 +1,61 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O servi\u00e7o j\u00e1 est\u00e1 configurado",
+            "existing_instance_updated": "Configura\u00e7\u00e3o existente atualizada."
+        },
+        "error": {
+            "cannot_connect": "A liga\u00e7\u00e3o falhou"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Deseja configurar o Home Assistant para se ligar ao AdGuard Home fornecido pelo suplemento: {addon}?",
+                "title": "AdGuard Home via suplemento de Supervisor"
+            },
+            "user": {
+                "data": {
+                    "host": "Endere\u00e7o",
+                    "password": "Palavra-passe",
+                    "port": "Porta",
+                    "ssl": "Utiliza um certificado SSL",
+                    "username": "Nome de Utilizador",
+                    "verify_ssl": "Verificar o certificado SSL"
+                },
+                "description": "Configure a sua inst\u00e2ncia do AdGuard Home para permitir a monitoriza\u00e7\u00e3o e o controlo."
+            }
+        }
+    },
+    "services": {
+        "add_url": {
+            "fields": {
+                "name": {
+                    "name": "Nome"
+                },
+                "url": {
+                    "name": "Endere\u00e7o URL"
+                }
+            }
+        },
+        "disable_url": {
+            "fields": {
+                "url": {
+                    "name": "Endere\u00e7o URL"
+                }
+            }
+        },
+        "enable_url": {
+            "fields": {
+                "url": {
+                    "name": "Endere\u00e7o URL"
+                }
+            }
+        },
+        "remove_url": {
+            "fields": {
+                "url": {
+                    "name": "Endere\u00e7o URL"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "max": {
+                    "name": "Maksimi"
+                },
+                "min": {
+                    "name": "Minimi"
+                },
+                "mode": {
+                    "name": "Tila",
+                    "state": {
+                        "auto": "Automaattinen",
+                        "box": "Laatikko",
+                        "slider": "Liukus\u00e4\u00e4din"
+                    }
+                },
+                "step": {
+                    "name": "Askel"
+                }
+            }
+        },
+        "energy_storage": {
+            "name": "Varastoitu energia"
+        },
+        "frequency": {
+            "name": "Taajuus"
+        },
+        "humidity": {
+            "name": "Kosteus"
+        },
+        "illuminance": {
+            "name": "Valaistusvoimakkuus"
+        },
+        "moisture": {
+            "name": "Kosteus"
+        },
+        "power": {
+            "name": "Teho"
+        },
+        "power_factor": {
+            "name": "Tehokerroin"
+        },
+        "pressure": {
+            "name": "Paine"
+        },
+        "reactive_power": {
+            "name": "Loisteho"
+        },
+        "signal_strength": {
+            "name": "Signaalin voimakkuus"
+        },
+        "sound_pressure": {
+            "name": "\u00c4\u00e4nenpaine"
+        },
+        "speed": {
+            "name": "Nopeus"
+        },
+        "temperature": {
+            "name": "L\u00e4mp\u00f6tila"
+        },
+        "voltage": {
+            "name": "J\u00e4nnite"
+        },
+        "volume": {
+            "name": "Tilavuus"
+        },
+        "volume_storage": {
+            "name": "Varastoitu tilavuus"
+        },
+        "water": {
+            "name": "Vesi"
+        },
+        "weight": {
+            "name": "Paino"
+        },
+        "wind_speed": {
+            "name": "Tuulen nopeus"
+        }
+    }
+}

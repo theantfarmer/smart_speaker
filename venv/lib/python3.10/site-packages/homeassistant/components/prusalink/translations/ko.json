@@ -1,0 +1,80 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "\uc5f0\uacb0\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4",
+            "invalid_auth": "\uc778\uc99d\uc774 \uc798\ubabb\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "not_supported": "PrusaLink API v2\ub9cc \uc9c0\uc6d0\ub429\ub2c8\ub2e4.",
+            "unknown": "\uc608\uc0c1\uce58 \ubabb\ud55c \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API \ud0a4",
+                    "host": "\ud638\uc2a4\ud2b8"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "cancel_job": {
+                "name": "\uc791\uc5c5 \ucde8\uc18c"
+            },
+            "pause_job": {
+                "name": "\uc791\uc5c5 \uc77c\uc2dc\uc911\uc9c0"
+            },
+            "resume_job": {
+                "name": "\uc791\uc5c5 \uc7ac\uac1c"
+            }
+        },
+        "camera": {
+            "job_preview": {
+                "name": "\ubbf8\ub9ac \ubcf4\uae30"
+            }
+        },
+        "sensor": {
+            "filename": {
+                "name": "\ud30c\uc77c \uc774\ub984"
+            },
+            "heatbed_target_temperature": {
+                "name": "\ud788\ud2b8\ubca0\ub4dc \ud76c\ub9dd \uc628\ub3c4"
+            },
+            "heatbed_temperature": {
+                "name": "\ud788\ud2b8\ubca0\ub4dc \uc628\ub3c4"
+            },
+            "material": {
+                "name": "\uc7ac\ub8cc"
+            },
+            "nozzle_target_temperature": {
+                "name": "\ub178\uc990 \ud68c\ub9dd \uc628\ub3c4"
+            },
+            "nozzle_temperature": {
+                "name": "\ub178\uc990 \uc628\ub3c4"
+            },
+            "print_finish": {
+                "name": "\uc778\uc1c4 \ub9c8\ubb34\ub9ac"
+            },
+            "print_speed": {
+                "name": "\uc778\uc1c4 \uc18d\ub3c4"
+            },
+            "print_start": {
+                "name": "\uc778\uc1c4 \uc2dc\uc791"
+            },
+            "printer_state": {
+                "state": {
+                    "cancelling": "\ucde8\uc18c \uc911",
+                    "idle": "\uc720\ud734 \uc911",
+                    "paused": "\uc77c\uc2dc\uc911\uc9c0",
+                    "pausing": "\uc77c\uc2dc\uc815\uc9c0 \uc911",
+                    "printing": "\uc778\uc1c4 \uc911"
+                }
+            },
+            "progress": {
+                "name": "\uc9c4\ud589 \uc0c1\ud669"
+            },
+            "z_height": {
+                "name": "Z-\ub192\uc774"
+            }
+        }
+    }
+}

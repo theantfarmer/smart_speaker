@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Teller",
+            "state_attributes": {
+                "editable": {
+                    "name": "Administrert via UI",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "initial": {
+                    "name": "Opprinnelig verdi"
+                },
+                "maximum": {
+                    "name": "Maksimum"
+                },
+                "minimum": {
+                    "name": "Minimum"
+                },
+                "step": {
+                    "name": "Steg"
+                }
+            }
+        }
+    },
+    "title": "Teller"
+}

@@ -1,0 +1,36 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u30ab\u30ec\u30f3\u30c0\u30fc",
+            "state": {
+                "off": "\u30aa\u30d5",
+                "on": "\u30aa\u30f3"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "\u7d42\u65e5",
+                    "state": {
+                        "false": "\u3044\u3044\u3048",
+                        "true": "\u306f\u3044"
+                    }
+                },
+                "description": {
+                    "name": "\u8aac\u660e"
+                },
+                "end_time": {
+                    "name": "\u7d42\u4e86\u6642\u9593"
+                },
+                "location": {
+                    "name": "\u30ed\u30b1\u30fc\u30b7\u30e7\u30f3"
+                },
+                "messages": {
+                    "name": "\u30e1\u30c3\u30bb\u30fc\u30b8"
+                },
+                "start_time": {
+                    "name": "\u958b\u59cb\u6642\u9593"
+                }
+            }
+        }
+    },
+    "title": "\u30ab\u30ec\u30f3\u30c0\u30fc"
+}

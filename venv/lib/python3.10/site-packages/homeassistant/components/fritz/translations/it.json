@@ -1,0 +1,145 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "already_in_progress": "Il flusso di configurazione \u00e8 gi\u00e0 in corso",
+            "ignore_ip6_link_local": "L'indirizzo locale del collegamento IPv6 non \u00e8 supportato.",
+            "reauth_successful": "La riautenticazione ha avuto successo"
+        },
+        "error": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "already_in_progress": "Il flusso di configurazione \u00e8 gi\u00e0 in corso",
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "upnp_not_configured": "Impostazioni UPnP mancanti sul dispositivo."
+        },
+        "flow_title": "{name}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "password": "Password",
+                    "username": "Nome utente"
+                },
+                "description": "FRITZ!Box rilevato: {name} \n\nConfigura gli strumenti di FRITZ!Box per controllare il tuo {name}",
+                "title": "Configura gli strumenti di FRITZ!Box"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Password",
+                    "username": "Nome utente"
+                },
+                "description": "Aggiorna le credenziali di FRITZ!Box Tools per: {host} . \n\n FRITZ!Box Tools non riesce ad accedere al tuo FRITZ! Box.",
+                "title": "Aggiornamento degli strumenti del FRITZ!Box - credenziali"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Password",
+                    "port": "Porta",
+                    "username": "Nome utente"
+                },
+                "description": "Configura gli strumenti di FRITZ!Box per controllare il tuo FRITZ!Box.\nMinimo necessario: nome utente, password.",
+                "title": "Configura gli strumenti di FRITZ!Box"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "is_connected": {
+                "name": "Connessione"
+            },
+            "is_linked": {
+                "name": "Collegamento"
+            }
+        },
+        "button": {
+            "cleanup": {
+                "name": "Pulizia"
+            },
+            "firmware_update": {
+                "name": "Aggiornamento del firmware"
+            },
+            "reboot": {
+                "name": "Riavvia"
+            },
+            "reconnect": {
+                "name": "Riconnetti"
+            }
+        },
+        "sensor": {
+            "connection_uptime": {
+                "name": "Tempo di attivit\u00e0 della connessione"
+            },
+            "device_uptime": {
+                "name": "Ultimo riavvio"
+            },
+            "external_ip": {
+                "name": "IP esterno"
+            },
+            "external_ipv6": {
+                "name": "IPv6 esterno"
+            },
+            "gb_received": {
+                "name": "GB ricevuti"
+            },
+            "gb_sent": {
+                "name": "GB inviati"
+            },
+            "kb_s_received": {
+                "name": "Velocit\u00e0 effettiva di scaricamento"
+            },
+            "kb_s_sent": {
+                "name": "Velocit\u00e0 effettiva di caricamento"
+            },
+            "link_attenuation_received": {
+                "name": "Attenuazione della potenza di scaricamento del collegamento"
+            },
+            "link_attenuation_sent": {
+                "name": "Attenuazione della potenza di caricamento del collegamento"
+            },
+            "link_kb_s_received": {
+                "name": "Velocit\u00e0 effettiva di scaricamento del collegamento"
+            },
+            "link_kb_s_sent": {
+                "name": "Velocit\u00e0 effettiva di caricamento del collegamento"
+            },
+            "link_noise_margin_received": {
+                "name": "Margine di rumore di scaricamento del collegamento"
+            },
+            "link_noise_margin_sent": {
+                "name": "Margine del rumore di caricamento del collegamento"
+            },
+            "max_kb_s_received": {
+                "name": "Velocit\u00e0 massima di scaricamento della connessione"
+            },
+            "max_kb_s_sent": {
+                "name": "Velocit\u00e0 massima di caricamento della connessione"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "consider_home": "Secondi per considerare un dispositivo \"a casa\"",
+                    "old_discovery": "Abilita il vecchio metodo di rilevamento"
+                }
+            }
+        }
+    },
+    "services": {
+        "reconnect": {
+            "name": "Riconnetti"
+        },
+        "set_guest_wifi_password": {
+            "fields": {
+                "device_id": {
+                    "description": "Seleziona il Fritz!Box da configurare."
+                },
+                "password": {
+                    "name": "Password"
+                }
+            }
+        }
+    }
+}

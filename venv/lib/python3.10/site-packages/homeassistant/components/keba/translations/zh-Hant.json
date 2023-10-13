@@ -1,0 +1,14 @@
+{
+    "services": {
+        "disable": {
+            "name": "\u7981\u7528"
+        },
+        "set_current": {
+            "fields": {
+                "current": {
+                    "description": "\u5145\u96fb\u904e\u7a0b\u4e2d\u4f7f\u7528\u7684\u6700\u5927\u96fb\u6d41\u3002\u8a72\u503c\u53d6\u6c7a\u65bc DIP \u958b\u95dc\u8a2d\u7f6e\u548c\u5145\u96fb\u7ad9\u4f7f\u7528\u7684\u96fb\u7e9c\u3002"
+                }
+            }
+        }
+    }
+}

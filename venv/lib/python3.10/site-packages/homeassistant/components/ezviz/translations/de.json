@@ -1,0 +1,144 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_account": "Konto wurde bereits konfiguriert",
+            "ezviz_cloud_account_missing": "Ezviz-Cloud-Konto fehlt. Bitte konfiguriere das Ezviz-Cloud-Konto neu",
+            "reauth_successful": "Die erneute Authentifizierung war erfolgreich",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "invalid_host": "Ung\u00fcltiger Hostname oder IP-Adresse",
+            "mfa_required": "2FA auf Konto aktiviert, bitte deaktivieren und erneut versuchen"
+        },
+        "flow_title": "{serial}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "description": "RTSP-Anmeldeinformationen f\u00fcr EZVIZ-Kamera {serial} mit IP {ip_address} eingeben",
+                "title": "Entdeckte EZVIZ-Kamera"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "description": "Gib die Anmeldeinformationen ein, um dich erneut beim ezviz-Cloud-Konto zu authentifizieren",
+                "title": "Integration erneut authentifizieren"
+            },
+            "user": {
+                "data": {
+                    "password": "Passwort",
+                    "url": "URL",
+                    "username": "Benutzername"
+                },
+                "title": "Verbindung zur EZVIZ Cloud"
+            },
+            "user_custom_url": {
+                "data": {
+                    "password": "Passwort",
+                    "url": "URL",
+                    "username": "Benutzername"
+                },
+                "description": "URL Region manuell festlegen",
+                "title": "Verbinden mit benutzerdefinierter EZVIZ-URL"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "alarm_schedules_enabled": {
+                "name": "Alarmzeitpl\u00e4ne aktiviert"
+            },
+            "encrypted": {
+                "name": "Verschl\u00fcsselung"
+            }
+        },
+        "image": {
+            "last_motion_image": {
+                "name": "Letztes Bewegungsbild"
+            }
+        },
+        "select": {
+            "alarm_sound_mode": {
+                "name": "Warnton",
+                "state": {
+                    "intensive": "Intensiv",
+                    "silent": "Leise",
+                    "soft": "Weich"
+                }
+            }
+        },
+        "sensor": {
+            "alarm_sound_mod": {
+                "name": "Alarmtonpegel"
+            },
+            "last_alarm_pic": {
+                "name": "URL des letzten Alarmbildes"
+            },
+            "last_alarm_time": {
+                "name": "Letzte Alarmzeit"
+            },
+            "last_alarm_type_code": {
+                "name": "Code des letzten Alarmtyps"
+            },
+            "last_alarm_type_name": {
+                "name": "Name des letzten Alarmtyps"
+            },
+            "local_ip": {
+                "name": "Lokale IP"
+            },
+            "pir_status": {
+                "name": "PIR-Status"
+            },
+            "seconds_last_trigger": {
+                "name": "Sekunden seit letzter Ausl\u00f6sung"
+            },
+            "supported_channels": {
+                "name": "Unterst\u00fctzte Kan\u00e4le"
+            },
+            "wan_ip": {
+                "name": "WAN-IP"
+            }
+        }
+    },
+    "issues": {
+        "service_deprecation_alarm_sound_level": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Der Ezviz Alarmtonpegel-Dienst ist veraltet und wird in Home Assistant 2024.2 entfernt.\nUm den Alarmtonpegel einzustellen, kannst du stattdessen den Dienst `select.select_option` verwenden und die Warnton-Entit\u00e4t anvisieren.\n\nEntferne diesen Dienst aus den Automatisierungen und Skripten und w\u00e4hle **absenden**, um dieses Problem zu l\u00f6sen.",
+                        "title": "Der Ezviz-Alarm-Schallpegeldienst wird entfernt"
+                    }
+                }
+            },
+            "title": "Der Ezviz-Alarm-Schallpegeldienst wird entfernt"
+        },
+        "service_depreciation_detection_sensibility": {
+            "description": "Der Ezviz-Erkennungsempfindlichkeitsdienst ist veraltet und wird in Home Assistant 2023.12 entfernt; Bitte passe die Automatisierung oder das Skript an, das den Dienst verwendet, und w\u00e4hle unten \u201eSenden\u201c aus, um dieses Problem als gel\u00f6st zu markieren.",
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Der Ezviz-Erkennungsempfindlichkeitsdienst ist veraltet und wird in Home Assistant 2023.12 entfernt.\nUm die Empfindlichkeit festzulegen, kannst du stattdessen den Dienst `number.set_value` verwenden, der auf die Erkennungsempfindlichkeitsentit\u00e4t abzielt. \n\nBitte entferne die Nutzung dieses Dienstes aus deinen Automatisierungen und Skripten und w\u00e4hle **Senden**, um dieses Problem zu schlie\u00dfen.",
+                        "title": "Der Ezviz-Erkennungsempfindlichkeitsdienst wird entfernt"
+                    }
+                }
+            },
+            "title": "Der Ezviz-Erkennungsempfindlichkeitsdienst wird entfernt"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "ffmpeg_arguments": "An ffmpeg \u00fcbergebene Argumente f\u00fcr Kameras",
+                    "timeout": "Anfrage-Timeout (Sekunden)"
+                }
+            }
+        }
+    }
+}

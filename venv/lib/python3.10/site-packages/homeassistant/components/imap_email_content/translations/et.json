@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "IMAP-i meili sisu integreerimine on aegunud. IMAP-serveri konfiguratsioon viidi juba [imap-integratsiooni] (https://my.home-assistant.io/redirect/config_flow_start?domain=imap) \u00fcle. IMAP-i e-posti sisu anduri seadistamiseks seadistage malliandur konfiguratsiooniga: \n\n ```yaml\n {yaml_example} ``` \n\n Eemaldage failist \"configuration.yaml\" aegunud anduri konfiguratsioon \"imap_email_plaform\". \n\n Pange t\u00e4hele, et s\u00fcndmuste filter filtreerib ainult esimest konfigureeritud lubatud saatjat, vajadusel kohandage filtrit. \n\n Kui olete mallianduri juba seadistanud, v\u00f5ite selle osa vahele j\u00e4tta.",
+            "title": "IMAP-i e-posti sisu integreerimine on aegunud"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "IMAP-serveri konfiguratsioon oli juba migreeritud imap-integratsiooni. Eemaldage `imap_email_plaform` sensori konfiguratsioon oma `configuration.yaml`st.",
+                    "cannot_connect": "Teisaldamine eba\u00f5nnestus. IMAP-serveriga \u00fchenduse loomine nurjus. K\u00e4sitsi migreerimise teostamine."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "Selles etapis luuakse `imap` konfiguratsiooni kirje j\u00e4rgmise konfiguratsiooniga:\n\n``tekst\nServer {server}\nPort {port}\nKasutajanimi {username}\nSalas\u00f5na *****\nFolder {folder}\n```\n\nVt ka: (https://www.home-assistant.io/integrations/imap/)\n\nLubatud `sender`i konfiguratsiooni kohandamine on osa malli sensori konfiguratsioonist, mille saab kopeerida ja paigutada oma `configuration.yaml'i.\n\nPange t\u00e4hele, et s\u00fcndmusfilter filtreerib ainult esimest konfigureeritud lubatud saatjat, kohandage filtrit vajadusel.\n\n``yaml\n{yaml_example}```\n\u00c4rge unustage p\u00e4rast migratsiooni puhastada oma `configuration.yaml`.\n\nEsitage oma IMAP-serveri konfiguratsiooni migreerimiseks `imap` konfiguratsiooni kirje.",
+                        "title": "IMAP-serveri seaded viiakse \u00fcle"
+                    },
+                    "start": {
+                        "description": "IMAP-i meili sisu integreerimine on aegunud. IMAP-serveri konfiguratsiooni saab automaatselt \u00fcle viia rakendusse [imap integration] (https://my.home-assistant.io/redirect/config_flow_start?domain=imap), mis v\u00f5imaldab kasutada kohandatud s\u00fcndmuse \u201eimap\u201d p\u00e4\u00e4stikut. Anduri seadistamiseks, millel on IMAP-sisu olek, saab kasutada malliandurit. Eemaldage p\u00e4rast migreerimist anduri konfiguratsioon failist \"configuration.yaml\". \n\n Esitage, et alustada oma IMAP-serveri konfiguratsiooni migratsiooni imap-integratsiooniga.",
+                        "title": "Teisalda oma IMAP-i e-posti konfiguratsioon"
+                    }
+                }
+            },
+            "title": "IMAP e-posti sisu sidumine vajab t\u00e4helepanu"
+        }
+    }
+}

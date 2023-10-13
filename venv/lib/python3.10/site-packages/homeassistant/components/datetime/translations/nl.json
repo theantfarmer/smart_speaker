@@ -1,0 +1,14 @@
+{
+    "services": {
+        "set_value": {
+            "description": "Stelt de datum/tijd in voor een `datetime` entiteit.",
+            "fields": {
+                "datetime": {
+                    "description": "De datum/tijd om in te stellen. Uitgangspunt is de tijdzone van de Home Assistant instantie.",
+                    "name": "Datum & tijd"
+                }
+            },
+            "name": "Instellen datum/tijd"
+        }
+    }
+}

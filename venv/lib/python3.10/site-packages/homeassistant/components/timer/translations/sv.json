@@ -1,0 +1,33 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Timer",
+            "state": {
+                "active": "Aktiva",
+                "idle": "Inaktiv",
+                "paused": "Pausad"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "Varaktighet"
+                },
+                "editable": {
+                    "name": "Hanteras via anv\u00e4ndargr\u00e4nssnittet",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "finishes_at": {
+                    "name": "Avslutas vid"
+                },
+                "remaining": {
+                    "name": "\u00c5terst\u00e5ende"
+                },
+                "restore": {
+                    "name": "\u00c5terst\u00e4ll"
+                }
+            }
+        }
+    }
+}

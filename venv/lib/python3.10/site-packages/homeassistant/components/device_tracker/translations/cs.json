@@ -1,0 +1,51 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_home": "{entity_name} je doma",
+            "is_not_home": "{entity_name} nen\u00ed doma"
+        },
+        "trigger_type": {
+            "enters": "{entity_name} vstupuje do z\u00f3ny",
+            "leaves": "{entity_name} opou\u0161t\u00ed z\u00f3nu"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Sledova\u010d za\u0159\u00edzen\u00ed",
+            "state": {
+                "home": "Doma",
+                "not_home": "Pry\u010d"
+            },
+            "state_attributes": {
+                "battery": {
+                    "name": "Baterie"
+                },
+                "gps_accuracy": {
+                    "name": "P\u0159esnost GPS"
+                },
+                "latitude": {
+                    "name": "Zem\u011bpisn\u00e1 \u0161\u00ed\u0159ka"
+                },
+                "longitude": {
+                    "name": "Zem\u011bpisn\u00e1 d\u00e9lka"
+                },
+                "source_type": {
+                    "name": "Zdroj",
+                    "state": {
+                        "bluetooth": "Bluetooth",
+                        "bluetooth_le": "Bluetooth LE",
+                        "gps": "GPS",
+                        "router": "Sm\u011brova\u010d"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "title": "Sledova\u010d za\u0159\u00edzen\u00ed"
+}

@@ -1,0 +1,36 @@
+{
+    "services": {
+        "add_tracking": {
+            "description": "Aftership\uc5d0 \uc0c8 \uc6b4\uc1a1\uc7a5 \ubc88\ud638\ub97c \ucd94\uac00\ud569\ub2c8\ub2e4.",
+            "fields": {
+                "slug": {
+                    "description": "\uc0c8 \uc6b4\uc1a1\uc7a5 \uc870\ud68c\uc758 \uc2ac\ub7ec\uadf8(\uce90\ub9ac\uc5b4)",
+                    "name": "\uc2ac\ub7ec\uadf8"
+                },
+                "title": {
+                    "description": "\uc0c8 \uc6b4\uc1a1\uc7a5 \uc870\ud68c\uc758 \uc0ac\uc6a9\uc790 \uc9c0\uc815 \uc81c\ubaa9",
+                    "name": "\uc81c\ubaa9"
+                },
+                "tracking_number": {
+                    "description": "\uc0c8\ub85c \uc870\ud68c\ud560 \uc6b4\uc1a1\uc7a5 \ubc88\ud638",
+                    "name": "\uc6b4\uc1a1\uc7a5 \ubc88\ud638"
+                }
+            },
+            "name": "\uc6b4\uc1a1\uc7a5 \uc870\ud68c \ucd94\uac00"
+        },
+        "remove_tracking": {
+            "description": "Aftership\uc5d0\uc11c \uc6b4\uc1a1\uc7a5 \ubc88\ud638\ub97c \uc81c\uac70\ud569\ub2c8\ub2e4.",
+            "fields": {
+                "slug": {
+                    "description": "\uc81c\uac70\ud560 \uc6b4\uc1a1\uc7a5\uc758 \uc2ac\ub7ec\uadf8(\uce90\ub9ac\uc5b4)",
+                    "name": "\uc2ac\ub7ec\uadf8"
+                },
+                "tracking_number": {
+                    "description": "\uc81c\uac70\ud560 \uc6b4\uc1a1\uc7a5 \ubc88\ud638",
+                    "name": "\uc6b4\uc1a1\uc7a5 \ubc88\ud638"
+                }
+            },
+            "name": "\uc6b4\uc1a1\uc7a5 \uc870\ud68c \uc81c\uac70"
+        }
+    }
+}

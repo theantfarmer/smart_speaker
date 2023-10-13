@@ -11,18 +11,17 @@ function ChatHistory() {
   
   const scrollRef = useRef(null);
   
-  const fetchChatHistory = () => {
+  const fetchChatHistory = async () => {
     setIsLoading(true);
-    axios.get(`${API_BASE_URL}/chat-history`)
-      .then(response => {
-        setChatHistory(response.data);
-        setIsLoading(false);
-      })
-      .catch(error => {
-        console.error('There was an error fetching data:', error);
-        setError(error);
-        setIsLoading(false);
-      });
+    try {
+      const response = await axios.get(`${API_BASE_URL}/chat-history`);
+      setChatHistory(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('There was an error fetching data:', error);
+      setError(error);
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -36,21 +35,19 @@ function ChatHistory() {
     }
   }, [chatHistory]);
   
-  
-  const sendMessage = () => {
-    // Send message to server
-    axios.post(`${API_BASE_URL}/send-message`, { message: newMessage })
-    .then(response => {
-      fetchChatHistory();  // Fetch updated chat history
-      setNewMessage('');  // Clear the input field
-    })
-    .catch(error => {
-      console.error('Error sending message:', error);
-    });
-  };
+  const sendMessage = async () => {
+  try {
+    const response = await axios.post(`${API_BASE_URL}/send-message`, { message: newMessage });
+    console.log("Server response:", response.data);  // Debugging line
+    await fetchChatHistory();
+    setNewMessage('');
+  } catch (error) {
+    console.error('Error sending message:', error);
+  }
+};
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div>Hold ur horses</div>;
   }
 
   if (error) {

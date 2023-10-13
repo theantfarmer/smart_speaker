@@ -1,0 +1,103 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositiu ja est\u00e0 configurat",
+            "reauth_successful": "Re-autenticaci\u00f3 realitzada correctament"
+        },
+        "error": {
+            "api_error": "S'ha produ\u00eft un error a l'API",
+            "cannot_connect": "No s'ha pogut connectar, comprova l'adre\u00e7a IP de la c\u00e0mera",
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida",
+            "not_admin": "L'usuari ha de ser administrador, l'usuari ''{username}'' t\u00e9 nivell d'autoritzaci\u00f3 ''{userlevel}''",
+            "unknown": "Error inesperat"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "La integraci\u00f3 Reolink ha de tornar a autenticar la teva connexi\u00f3",
+                "title": "Reautenticaci\u00f3 de la integraci\u00f3"
+            },
+            "user": {
+                "data": {
+                    "host": "Amfitri\u00f3",
+                    "password": "Contrasenya",
+                    "port": "Port",
+                    "use_https": "Activa l'HTTPS",
+                    "username": "Nom d'usuari"
+                },
+                "description": "Consulta els [passos de resoluci\u00f3 de problemes]({troubleshooting_link}) si trobes algun problema. {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "OFF"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digital",
+                    "digitalfirst": "Digital, primer",
+                    "pantiltfirst": "Gir/inclinaci\u00f3, primer"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Autom\u00e0tic",
+                    "blackwhite": "Blanc i negre",
+                    "color": "Color"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "adaptive": "Adaptatiu",
+                    "auto": "Autom\u00e0tic",
+                    "autoadaptive": "Adaptatiu autom\u00e0tic",
+                    "off": "OFF",
+                    "schedule": "Horari"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "Autom\u00e0tic i sempre enc\u00e8s a la nit",
+                    "auto": "Autom\u00e0tic",
+                    "stayoff": "Apagat"
+                }
+            }
+        },
+        "sensor": {
+            "wifi_signal": {
+                "name": "Senyal Wi-Fi"
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "No s'han pogut activar autom\u00e0ticament el/s port/s {ports} de {name}. Utilitza el [client Reolink]({info_link}) per activar-ho manualment",
+            "title": "Port de Reolink no habilitat"
+        },
+        "firmware_update": {
+            "description": "\"{name}\" amb model \"{model}\" i versi\u00f3 de maquinari \"{hw_version}\" est\u00e0 executant una versi\u00f3 de microprogramari antiga (\"{current_firmware}\") per\u00f2 \u00e9s necess\u00e0ria, almenys, la versi\u00f3 \"{required_firmware}\" per al correcte funcionament de la integraci\u00f3 Reolink. L'\u00faltim microprogramari (firmware) es pot descarregar des del [Centre de desc\u00e0rregues de Reolink]({download_link}).",
+            "title": "Cal actualitzar el microprogramari de Reolink"
+        },
+        "https_webhook": {
+            "description": "Els productes Reolink no poden enviar esdeveniments de moviment a una adre\u00e7a HTTPS (SSL); configura una adre\u00e7a HTTP (local) sota \"URL de Home Assistant\" a la [configuraci\u00f3 de xarxa]({network_link}). L'adre\u00e7a (local) actual \u00e9s: `{base_url}`, una adre\u00e7a v\u00e0lida podria ser, per exemple, `http://192.168.1.10:8123` on `192.168.1.10` \u00e9s la IP del dispositiu Home Assistant",
+            "title": "L'URL del webhook de Reolink utilitza HTTPS (SSL)"
+        },
+        "webhook_url": {
+            "description": "No s'ha rebut l'estat inicial de l'ONVIF de {name}. \u00c9s probable que la c\u00e0mera Reolink no pugui accedir a l'URL (local) de Home Assistant `{base_url}`, configura una adre\u00e7a HTTP (local) a \"URL de Home Assistant\" a la [configuraci\u00f3 de xarxa]({network_link}) que apunti a Home Assistant. Per exemple, `http://192.168.1.10:8123` on `192.168.1.10` \u00e9s la IP del dispositiu Home Assistant. A m\u00e9s, assegura't que la c\u00e0mera Reolink pugui accedir a aquest URL. S'utilitza sondeig d'estat 'motion/AI' fins que es rep el primer missatge d'ONVIF.",
+            "title": "URL del webhook de Reolink inaccessible"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protocol"
+                }
+            }
+        }
+    }
+}

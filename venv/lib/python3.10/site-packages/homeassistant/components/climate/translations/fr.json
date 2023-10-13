@@ -1,0 +1,145 @@
+{
+    "device_automation": {
+        "action_type": {
+            "set_hvac_mode": "D\u00e9finir le mode CVC de {entity_name}",
+            "set_preset_mode": "Changer les pr\u00e9r\u00e9glages de {entity_name}"
+        },
+        "condition_type": {
+            "is_hvac_mode": "{entity_name} est r\u00e9gl\u00e9 sur un mode CVC sp\u00e9cifique",
+            "is_preset_mode": "{entity_name} est d\u00e9fini sur un mode pr\u00e9d\u00e9fini sp\u00e9cifique"
+        },
+        "trigger_type": {
+            "current_humidity_changed": "Changement d'humidit\u00e9 mesur\u00e9e pour {entity_name}",
+            "current_temperature_changed": "Changement de temp\u00e9rature mesur\u00e9e pour {entity_name}",
+            "hvac_mode_changed": "Modification du mode CVC de {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Thermostat",
+            "state": {
+                "auto": "Auto",
+                "cool": "Refroidissement",
+                "dry": "D\u00e9shumidification",
+                "fan_only": "Ventilation uniquement",
+                "heat": "Chauffe",
+                "heat_cool": "Chauffage / Refroidissement",
+                "off": "D\u00e9sactiv\u00e9"
+            },
+            "state_attributes": {
+                "aux_heat": {
+                    "name": "Chauffage auxiliaire"
+                },
+                "current_humidity": {
+                    "name": "Humidit\u00e9 actuelle"
+                },
+                "current_temperature": {
+                    "name": "Temp\u00e9rature actuelle"
+                },
+                "fan_mode": {
+                    "name": "Mode de ventilation",
+                    "state": {
+                        "auto": "Auto",
+                        "diffuse": "Diffuse",
+                        "focus": "Focalis\u00e9e",
+                        "high": "\u00c9lev\u00e9e",
+                        "low": "Faible",
+                        "medium": "Moyenne",
+                        "middle": "Milieu",
+                        "off": "D\u00e9sactiv\u00e9",
+                        "on": "Activ\u00e9",
+                        "top": "Haute"
+                    }
+                },
+                "fan_modes": {
+                    "name": "Modes de ventilation"
+                },
+                "humidity": {
+                    "name": "Humidit\u00e9 cible"
+                },
+                "hvac_action": {
+                    "name": "Action actuelle",
+                    "state": {
+                        "cooling": "Refroidissement",
+                        "drying": "S\u00e9chage",
+                        "fan": "Ventilation",
+                        "heating": "En chauffe",
+                        "idle": "Inactif",
+                        "off": "D\u00e9sactiv\u00e9"
+                    }
+                },
+                "hvac_modes": {
+                    "name": "Modes CVC"
+                },
+                "max_humidity": {
+                    "name": "Humidit\u00e9 cible maximale"
+                },
+                "max_temp": {
+                    "name": "Temp\u00e9rature cible maximale"
+                },
+                "min_humidity": {
+                    "name": "Humidit\u00e9 cible minimale"
+                },
+                "min_temp": {
+                    "name": "Temp\u00e9rature cible minimale"
+                },
+                "preset_mode": {
+                    "name": "Pr\u00e9r\u00e9glage",
+                    "state": {
+                        "activity": "Activit\u00e9",
+                        "away": "Absent",
+                        "boost": "Boost",
+                        "comfort": "Confort",
+                        "eco": "\u00c9co",
+                        "home": "\u00c0 la maison",
+                        "none": "Aucun",
+                        "sleep": "Nuit"
+                    }
+                },
+                "preset_modes": {
+                    "name": "Pr\u00e9r\u00e9glages"
+                },
+                "swing_mode": {
+                    "name": "Mode d\u2019oscillation",
+                    "state": {
+                        "both": "Les deux",
+                        "horizontal": "Horizontale",
+                        "off": "D\u00e9sactiv\u00e9",
+                        "on": "Activ\u00e9",
+                        "vertical": "Verticale"
+                    }
+                },
+                "swing_modes": {
+                    "name": "Modes d\u2019oscillation"
+                },
+                "target_temp_high": {
+                    "name": "Temp\u00e9rature cible sup\u00e9rieure"
+                },
+                "target_temp_low": {
+                    "name": "Temp\u00e9rature cible inf\u00e9rieure"
+                },
+                "target_temp_step": {
+                    "name": "Pas de temp\u00e9rature cible"
+                },
+                "temperature": {
+                    "name": "Temp\u00e9rature cible"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "\u00c9teindre"
+        },
+        "turn_on": {
+            "name": "Allumer"
+        }
+    },
+    "title": "Thermostat"
+}

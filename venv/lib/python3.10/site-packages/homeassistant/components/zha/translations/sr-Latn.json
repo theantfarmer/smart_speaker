@@ -1,0 +1,12 @@
+{
+    "config_panel": {
+        "zha_options": {
+            "title": "Globalne opcije"
+        }
+    },
+    "device_automation": {
+        "trigger_subtype": {
+            "open": "Otvoren"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheden er allerede konfigureret",
+            "cannot_connect": "Forbindelse mislykkedes",
+            "reauth_successful": "Genautentificering lykkedes"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_auth": "Ugyldig godkendelse",
+            "unknown": "Uventet fejl"
+        },
+        "step": {
+            "reauth_confim": {
+                "data": {
+                    "password": "Adgangskode"
+                }
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP-adresse",
+                    "password": "Adgangskode"
+                }
+            }
+        }
+    }
+}

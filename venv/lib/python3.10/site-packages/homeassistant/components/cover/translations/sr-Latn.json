@@ -1,0 +1,14 @@
+{
+    "entity_component": {
+        "_": {
+            "state": {
+                "closed": "Zatvoren"
+            }
+        }
+    },
+    "services": {
+        "open_cover": {
+            "name": "Otvoren"
+        }
+    }
+}

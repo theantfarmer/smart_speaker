@@ -1,0 +1,71 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "home_control": "A devolo Home Control k\u00f6zponti egys\u00e9g nem m\u0171k\u00f6dik ezzel az integr\u00e1ci\u00f3val.",
+            "reauth_successful": "Az \u00fajrahiteles\u00edt\u00e9s sikeres volt."
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "flow_title": "{product} ({name})",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Jelsz\u00f3"
+                }
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP c\u00edm"
+                },
+                "description": "El szeretn\u00e9 kezdeni a be\u00e1ll\u00edt\u00e1st?"
+            },
+            "zeroconf_confirm": {
+                "description": "Devolo otthoni h\u00e1l\u00f3zati eszk\u00f6z hozz\u00e1ad\u00e1sa a rendszerhez: `{host_name}`",
+                "title": "Felfedezett devolo otthoni h\u00e1l\u00f3zati eszk\u00f6z"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "connected_to_router": {
+                "name": "Csatlakoztatva a routerhez"
+            }
+        },
+        "button": {
+            "identify": {
+                "name": "Eszk\u00f6z azonos\u00edt\u00e1sa villog\u00f3 LED-del"
+            },
+            "pairing": {
+                "name": "PLC p\u00e1ros\u00edt\u00e1s ind\u00edt\u00e1sa"
+            },
+            "restart": {
+                "name": "Eszk\u00f6z \u00fajraind\u00edt\u00e1sa"
+            },
+            "start_wps": {
+                "name": "WPS ind\u00edt\u00e1sa"
+            }
+        },
+        "sensor": {
+            "connected_plc_devices": {
+                "name": "Csatlakoztatott PLC eszk\u00f6z\u00f6k"
+            },
+            "connected_wifi_clients": {
+                "name": "Csatlakoztatott Wifi kliensek"
+            },
+            "neighboring_wifi_networks": {
+                "name": "Szomsz\u00e9dos Wifi h\u00e1l\u00f3zatok"
+            }
+        },
+        "switch": {
+            "switch_guest_wifi": {
+                "name": "Vend\u00e9g Wifi enged\u00e9lyez\u00e9se"
+            },
+            "switch_leds": {
+                "name": "LED-ek enged\u00e9lyez\u00e9se"
+            }
+        }
+    }
+}

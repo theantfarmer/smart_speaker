@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert"
+        },
+        "step": {
+            "user": {
+                "description": "M\u00f6chtest Du mit der Einrichtung beginnen?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "average_price": {
+                "name": "Durchschnittlich \u2013 heute"
+            },
+            "current_hour_price": {
+                "name": "Aktuelle Stunde"
+            },
+            "highest_price_time": {
+                "name": "Zeit des h\u00f6chsten Preises \u2013 heute"
+            },
+            "hours_priced_equal_or_higher": {
+                "name": "Stundenpreise gleich oder h\u00f6her als aktuell \u2013 heute"
+            },
+            "hours_priced_equal_or_lower": {
+                "name": "Stundenpreise gleich oder niedriger als aktuell \u2013 heute"
+            },
+            "lowest_price_time": {
+                "name": "Zeitpunkt des niedrigsten Preises \u2013 heute"
+            },
+            "max_price": {
+                "name": "H\u00f6chster Preis \u2013 heute"
+            },
+            "min_price": {
+                "name": "Niedrigster Preis \u2013 heute"
+            },
+            "next_hour_price": {
+                "name": "N\u00e4chste Stunde"
+            },
+            "percentage_of_max": {
+                "name": "Aktueller Prozentsatz des h\u00f6chsten Preises \u2013 heute"
+            }
+        }
+    }
+}

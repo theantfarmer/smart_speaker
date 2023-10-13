@@ -1,0 +1,31 @@
+{
+    "config": {
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Gostitelj"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Izklopljeno"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "off": "Izklopljeno"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "stayoff": "Ostani ugasnjen"
+                }
+            }
+        }
+    }
+}

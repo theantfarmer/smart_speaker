@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dienst is al geconfigureerd",
+            "no_services": "Geen services gevonden op eindpunt"
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Wilt u Home Assistant configureren om verbinding te maken met de Wyoming-service die wordt geleverd door de add-on: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Poort"
+                }
+            }
+        }
+    }
+}

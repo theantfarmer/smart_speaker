@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Calendario",
+            "state": {
+                "off": "Spento/a",
+                "on": "Acceso/a"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Tutto il giorno",
+                    "state": {
+                        "false": "No",
+                        "true": "S\u00ec"
+                    }
+                },
+                "description": {
+                    "name": "Descrizione"
+                },
+                "end_time": {
+                    "name": "Ora di fine"
+                },
+                "location": {
+                    "name": "Posizione"
+                },
+                "messages": {
+                    "name": "Messaggio"
+                },
+                "start_time": {
+                    "name": "Ora di inizio"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La piattaforma {platform} per l'integrazione {domain} non supporta l'impostazione della piattaforma. \n\nRimuovilo dalla configurazione e riavvia Home Assistant per risolvere questo problema.",
+            "title": "Supporto della piattaforma non supportato"
+        }
+    },
+    "title": "Calendario"
+}

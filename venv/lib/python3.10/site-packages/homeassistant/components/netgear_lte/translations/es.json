@@ -1,0 +1,55 @@
+{
+    "services": {
+        "connect_lte": {
+            "description": "Pide al m\u00f3dem que establezca la conexi\u00f3n LTE.",
+            "fields": {
+                "host": {
+                    "description": "El m\u00f3dem que debe conectarse.",
+                    "name": "Host"
+                }
+            },
+            "name": "Conectar LTE"
+        },
+        "delete_sms": {
+            "description": "Borra los mensajes de la bandeja de entrada del m\u00f3dem.",
+            "fields": {
+                "host": {
+                    "description": "El m\u00f3dem en el que se deber\u00eda borrar un mensaje.",
+                    "name": "Host"
+                },
+                "sms_id": {
+                    "description": "Entero o lista de enteros con los IDs de las bandejas de entrada de los mensajes a borrar.",
+                    "name": "ID de SMS"
+                }
+            },
+            "name": "Borrar SMS"
+        },
+        "disconnect_lte": {
+            "description": "Pide al m\u00f3dem que cierre la conexi\u00f3n LTE.",
+            "fields": {
+                "host": {
+                    "description": "El m\u00f3dem que debe desconectarse.",
+                    "name": "Host"
+                }
+            },
+            "name": "Desconectar LTE"
+        },
+        "set_option": {
+            "description": "Ajusta las opciones del m\u00f3dem.",
+            "fields": {
+                "autoconnect": {
+                    "description": "Modo de conexi\u00f3n autom\u00e1tica.",
+                    "name": "Conexi\u00f3n autom\u00e1tica"
+                },
+                "failover": {
+                    "name": "Conmutaci\u00f3n por error"
+                },
+                "host": {
+                    "description": "El m\u00f3dem para configurar las opciones.",
+                    "name": "Host"
+                }
+            },
+            "name": "Establecer opci\u00f3n"
+        }
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_idle": "{entity_name} je nedejaven",
+            "is_off": "{entity_name} je izklopljen",
+            "is_on": "{entity_name} je vklopljen",
+            "is_paused": "{entity_name} je zaustavljen",
+            "is_playing": "{entity_name} predvaja"
+        },
+        "trigger_type": {
+            "idle": "{entity_name} postane nedejaven",
+            "turned_off": "{entity_name} je izklopljena"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "state": {
+                "idle": "Nedejaven",
+                "off": "Izklju\u010deno",
+                "on": "Vklopljeno"
+            },
+            "state_attributes": {
+                "repeat": {
+                    "state": {
+                        "off": "Izklopljeno",
+                        "one": "Prvi\u010d"
+                    }
+                },
+                "shuffle": {
+                    "state": {
+                        "false": "Izklopljeno",
+                        "true": "Vklopljeno"
+                    }
+                },
+                "source": {
+                    "name": "Vir"
+                }
+            }
+        }
+    },
+    "title": "Medijski predvajalnik"
+}

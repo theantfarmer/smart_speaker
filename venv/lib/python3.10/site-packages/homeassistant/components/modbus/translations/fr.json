@@ -1,0 +1,13 @@
+{
+    "services": {
+        "reload": {
+            "name": "Recharger"
+        },
+        "restart": {
+            "name": "Red\u00e9marrer"
+        },
+        "stop": {
+            "name": "Arr\u00eater"
+        }
+    }
+}

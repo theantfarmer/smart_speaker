@@ -1,0 +1,32 @@
+{
+    "issues": {
+        "legacy_subscription": {
+            "fix_flow": {
+                "abort": {
+                    "operation_took_too_long": "Det tog f\u00f6r l\u00e5ng tid. V\u00e4nligen f\u00f6rs\u00f6k igen senare."
+                },
+                "step": {
+                    "confirm_change_plan": {
+                        "description": "Vi uppdaterade nyligen v\u00e5rat prenumerationssystem. F\u00f6r att fors\u00e4tta anv\u00e4nda Home Assistant Cloud s\u00e5 beh\u00f6ver du g\u00f6ra ett godk\u00e4nnande i PayPal.\n\nDetta tar 1 minut och kommer inte p\u00e5verkar priset."
+                    }
+                }
+            }
+        }
+    },
+    "system_health": {
+        "info": {
+            "alexa_enabled": "Alexa Aktiverad",
+            "can_reach_cert_server": "N\u00e5 certifikatserver",
+            "can_reach_cloud": "N\u00e5 Home Assistant Cloud",
+            "can_reach_cloud_auth": "N\u00e5 autentiseringsserver",
+            "certificate_status": "Certifikat Status",
+            "google_enabled": "Google Aktiverad",
+            "logged_in": "Inloggad",
+            "relayer_connected": "Vidarebefodrare Ansluten",
+            "remote_connected": "Fj\u00e4rransluten",
+            "remote_enabled": "Fj\u00e4rr\u00e5tkomst Aktiverad",
+            "remote_server": "Fj\u00e4rrserver",
+            "subscription_expiration": "Prenumerationens utg\u00e5ng"
+        }
+    }
+}

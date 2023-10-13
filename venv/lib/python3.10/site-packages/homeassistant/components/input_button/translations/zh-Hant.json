@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u8f38\u5165\u6309\u9215",
+            "state_attributes": {
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                }
+            }
+        }
+    },
+    "title": "\u8f38\u5165\u6309\u9215"
+}

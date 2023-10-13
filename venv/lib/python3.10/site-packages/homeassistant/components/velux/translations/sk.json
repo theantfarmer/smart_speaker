@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reboot_gateway": {
+            "description": "Re\u0161tartuje br\u00e1nu KLF200.",
+            "name": "Re\u0161tart br\u00e1ny"
+        }
+    }
+}

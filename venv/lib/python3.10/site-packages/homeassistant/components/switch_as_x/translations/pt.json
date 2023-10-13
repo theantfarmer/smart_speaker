@@ -1,0 +1,14 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "entity_id": "Interruptor",
+                    "target_domain": "Novo Tipo"
+                },
+                "description": "Escolha um interruptor que deseja que apare\u00e7a no Home Assistant como uma luz, cobertura ou qualquer outra coisa. O interruptor original ficar\u00e1 oculto."
+            }
+        }
+    },
+    "title": "Interruptor como X"
+}

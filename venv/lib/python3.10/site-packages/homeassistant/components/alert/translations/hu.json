@@ -1,0 +1,24 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Riaszt\u00e1s",
+            "state": {
+                "idle": "T\u00e9tlen",
+                "off": "Tudom\u00e1sul v\u00e9ve",
+                "on": "Akt\u00edv"
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "Kapcsol\u00e1s"
+        },
+        "turn_off": {
+            "name": "Kikapcsol\u00e1s"
+        },
+        "turn_on": {
+            "name": "Bekapcsol\u00e1s"
+        }
+    },
+    "title": "Riaszt\u00e1s"
+}

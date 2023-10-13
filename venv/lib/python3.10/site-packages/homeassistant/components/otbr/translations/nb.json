@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Allerede konfigurert. Bare \u00e9n enkelt konfigurasjon er mulig."
+        },
+        "error": {
+            "cannot_connect": "Tilkobling mislyktes"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "url": "URL"
+                },
+                "description": "Oppgi URL for Open Thread Border Routers REST API"
+            }
+        }
+    },
+    "issues": {
+        "insecure_thread_network": {
+            "description": "Thread-nettverket ditt bruker en standard nettverksn\u00f8kkel eller passordfrase. \n\n Dette er en sikkerhetsrisiko. Opprett et nytt tr\u00e5dnettverk.",
+            "title": "Usikre tr\u00e5dnettverksinnstillinger oppdaget"
+        }
+    }
+}

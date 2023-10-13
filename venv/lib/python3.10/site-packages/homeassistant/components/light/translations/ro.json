@@ -1,0 +1,96 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "Scade luminozitatea {entity_name}",
+            "brightness_increase": "Cre\u0219te luminozitatea {entity_name}",
+            "flash": "Aprinde intermitent {entity_name}",
+            "toggle": "Comut\u0103 {entity_name}",
+            "turn_off": "Stinge {entity_name}",
+            "turn_on": "Aprinde {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} este stins\u0103",
+            "is_on": "{entity_name} este aprins\u0103"
+        },
+        "trigger_type": {
+            "changed_states": "La aprinderea sau stingerea {entity_name}",
+            "turned_off": "{entity_name} a fost stins\u0103",
+            "turned_on": "{entity_name} a fost aprins\u0103"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Lumin\u0103",
+            "state": {
+                "off": "Stins\u0103",
+                "on": "Aprins\u0103"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "Luminozitate"
+                },
+                "color_mode": {
+                    "name": "Mod culoare",
+                    "state": {
+                        "brightness": "Numai luminozitate",
+                        "color_temp": "Temperatur\u0103 de culoare",
+                        "hs": "HS",
+                        "onoff": "Pornit/Oprit",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Necunoscut",
+                        "white": "Alb",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "Temperatur\u0103 de culoare (mired)"
+                },
+                "color_temp_kelvin": {
+                    "name": "Temperatur\u0103 de culoare (Kelvin)"
+                },
+                "effect": {
+                    "name": "Efect"
+                },
+                "effect_list": {
+                    "name": "Efecte disponibile"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "Temperatur\u0103 de culoare maxim\u0103 (Kelvin)"
+                },
+                "max_mireds": {
+                    "name": "Temperatur\u0103 de culoare maxim\u0103 (mired)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "Temperatur\u0103 de culoare minim\u0103 (Kelvin)"
+                },
+                "min_mireds": {
+                    "name": "Temperatur\u0103 de culoare (mired)"
+                },
+                "supported_color_modes": {
+                    "name": "Moduri de culoare disponibile",
+                    "state": {
+                        "brightness": "Numai luminozitate",
+                        "color_temp": "Temperatur\u0103 de culoare",
+                        "hs": "HS",
+                        "onoff": "Pornit/Oprit",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Necunoscut",
+                        "white": "Alb",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pentru integrarea {domain} nu accept\u0103 configurarea platformei.\n\nElimin\u0103 platforma din configura\u021bie \u0219i reporne\u0219te Home Assistant pentru a remedia aceast\u0103 problem\u0103.",
+            "title": "Platforma neacceptat\u0103"
+        }
+    },
+    "title": "Lumin\u0103"
+}

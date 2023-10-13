@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Calendarizzazione",
+            "state": {
+                "off": "Spento/a",
+                "on": "Acceso/a"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Gestito tramite interfaccia utente",
+                    "state": {
+                        "false": "No",
+                        "true": "S\u00ec"
+                    }
+                },
+                "next_event": {
+                    "name": "Prossimo evento"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ricarica"
+        }
+    },
+    "title": "Calendarizzazione"
+}

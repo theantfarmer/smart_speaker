@@ -1,0 +1,52 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El compte ja est\u00e0 configurat",
+            "already_in_progress": "El flux de configuraci\u00f3 ja est\u00e0 en curs",
+            "authorize_url_timeout": "Temps d'espera esgotat durant la generaci\u00f3 de l'URL d'autoritzaci\u00f3.",
+            "missing_configuration": "El component no est\u00e0 configurat. Mira'n la documentaci\u00f3.",
+            "no_url_available": "No hi ha cap URL disponible. Per a m\u00e9s informaci\u00f3 sobre aquest error, [consulta la secci\u00f3 d'ajuda]({docs_url})",
+            "oauth_error": "S'han rebut dades token inv\u00e0lides.",
+            "reauth_successful": "Re-autenticaci\u00f3 realitzada correctament"
+        },
+        "create_entry": {
+            "default": "Autenticaci\u00f3 exitosa"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Selecciona el m\u00e8tode d'autenticaci\u00f3"
+            },
+            "reauth_confirm": {
+                "description": "La integraci\u00f3 yolink ha de tornar a autenticar-se amb el teu compte.",
+                "title": "Reautenticaci\u00f3 de la integraci\u00f3"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "button_1_long_press": "Bot\u00f3_1 (premut durant una estona)",
+            "button_1_short_press": "Bot\u00f3_1 (premut breument)",
+            "button_2_long_press": "Bot\u00f3_2 (premut durant una estona)",
+            "button_2_short_press": "Bot\u00f3_2 (premut breument)",
+            "button_3_long_press": "Bot\u00f3_3 (premut durant una estona)",
+            "button_3_short_press": "Bot\u00f3_3 (premut breument)",
+            "button_4_long_press": "Bot\u00f3_4 (premut durant una estona)",
+            "button_4_short_press": "Bot\u00f3_4 (premut breument)"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "power_failure_alarm": {
+                "state": {
+                    "off": "OFF"
+                }
+            },
+            "power_failure_alarm_beep": {
+                "state": {
+                    "disabled": "Desactivada",
+                    "enabled": "Activada"
+                }
+            }
+        }
+    }
+}

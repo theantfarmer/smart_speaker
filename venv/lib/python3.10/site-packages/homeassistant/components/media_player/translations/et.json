@@ -1,0 +1,169 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_buffering": "{entity_name} puhverdab",
+            "is_idle": "{entity_name} on j\u00f5udeolekus",
+            "is_off": "{entity_name} on v\u00e4lja l\u00fclitatud",
+            "is_on": "{entity_name} on sisse l\u00fclitatud",
+            "is_paused": "{entity_name} on peatatud",
+            "is_playing": "{entity_name} m\u00e4ngib"
+        },
+        "trigger_type": {
+            "buffering": "{entity_name} alustab puhverdamist",
+            "changed_states": "{entity_name} l\u00fclitus sisse v\u00f5i v\u00e4lja",
+            "idle": "{entity_name} muutub j\u00f5udeolekusse",
+            "paused": "{entity_name} on pausil",
+            "playing": "{entity_name} alustab taasesitamist",
+            "turned_off": "{entity_name} l\u00fclitus v\u00e4lja",
+            "turned_on": "{entity_name} l\u00fclitus sisse"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Meediam\u00e4ngija",
+            "state": {
+                "buffering": "Puhverdamine",
+                "idle": "Ootel",
+                "off": "V\u00e4ljas",
+                "on": "Sees",
+                "paused": "Peatatud",
+                "playing": "M\u00e4ngib",
+                "standby": "Unere\u017eiimil"
+            },
+            "state_attributes": {
+                "app_id": {
+                    "name": "Rakenduse ID"
+                },
+                "app_name": {
+                    "name": "Rakendus"
+                },
+                "entity_picture_local": {
+                    "name": "Kohalikult juurdep\u00e4\u00e4setav olemi pilt"
+                },
+                "groups_members": {
+                    "name": "R\u00fchma liikmed"
+                },
+                "is_volume_muted": {
+                    "name": "Vaigistatud",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Jah"
+                    }
+                },
+                "media_album_artist": {
+                    "name": "Albumi esitaja"
+                },
+                "media_album_name": {
+                    "name": "Album"
+                },
+                "media_artist": {
+                    "name": "Esitaja"
+                },
+                "media_channel": {
+                    "name": "Kanal"
+                },
+                "media_content_id": {
+                    "name": "Sisu ID"
+                },
+                "media_content_type": {
+                    "name": "Sisu t\u00fc\u00fcp",
+                    "state": {
+                        "album": "Album",
+                        "app": "Rakendus",
+                        "artist": "Esitaja",
+                        "channel": "Kanal",
+                        "channels": "Kanalid",
+                        "composer": "Helilooja",
+                        "contributing_artist": "Kaasesitaja",
+                        "episode": "Osa",
+                        "game": "M\u00e4ng",
+                        "genre": "\u017danr",
+                        "image": "Pilt",
+                        "movie": "Film",
+                        "music": "Muusika",
+                        "playlist": "Esitusloend",
+                        "podcast": "Taskuh\u00e4\u00e4ling",
+                        "season": "Hooaeg",
+                        "track": "Lugu",
+                        "tvshow": "Telesaade",
+                        "url": "URL",
+                        "video": "Video"
+                    }
+                },
+                "media_duration": {
+                    "name": "Kestus"
+                },
+                "media_episode": {
+                    "name": "Osa"
+                },
+                "media_playlist": {
+                    "name": "Esitusloend"
+                },
+                "media_position": {
+                    "name": "Positsioon"
+                },
+                "media_position_updated_at": {
+                    "name": "Positsioon v\u00e4rskendatud"
+                },
+                "media_season": {
+                    "name": "Hooaeg"
+                },
+                "media_series_title": {
+                    "name": "Seeria"
+                },
+                "media_title": {
+                    "name": "Nimetus"
+                },
+                "media_track": {
+                    "name": "Lugu"
+                },
+                "repeat": {
+                    "name": "Korda",
+                    "state": {
+                        "all": "K\u00f5ik lood",
+                        "off": "V\u00e4ljas",
+                        "one": "\u00dcks kord"
+                    }
+                },
+                "shuffle": {
+                    "name": "Juhuesitus",
+                    "state": {
+                        "false": "V\u00e4ljas",
+                        "true": "Sees"
+                    }
+                },
+                "sound_mode": {
+                    "name": "Heli re\u017eiim"
+                },
+                "sound_mode_list": {
+                    "name": "Saadaolevad helire\u017eiimid"
+                },
+                "source": {
+                    "name": "Allikas"
+                },
+                "source_list": {
+                    "name": "Saadaolevad allikad"
+                },
+                "volume_level": {
+                    "name": "Helitugevus"
+                }
+            }
+        },
+        "receiver": {
+            "name": "Vastuv\u00f5tja"
+        },
+        "speaker": {
+            "name": "K\u00f5lar"
+        },
+        "tv": {
+            "name": "TV"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} integreerimise platvorm {platform} ei toeta platvormi seadistamist. \n\n Selle probleemi lahendamiseks eemalda see oma konfiguratsioonist ja taask\u00e4ivita Home Assistant.",
+            "title": "Platvormi tuge ei toetata"
+        }
+    },
+    "title": "Meediam\u00e4ngija"
+}

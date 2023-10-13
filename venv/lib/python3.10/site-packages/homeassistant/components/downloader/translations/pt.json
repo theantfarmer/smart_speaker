@@ -1,0 +1,11 @@
+{
+    "services": {
+        "download_file": {
+            "fields": {
+                "url": {
+                    "name": "Endere\u00e7o URL"
+                }
+            }
+        }
+    }
+}

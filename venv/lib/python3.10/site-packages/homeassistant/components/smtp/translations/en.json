@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Reloads smtp notify services.",
+            "name": "Reload"
+        }
+    }
+}

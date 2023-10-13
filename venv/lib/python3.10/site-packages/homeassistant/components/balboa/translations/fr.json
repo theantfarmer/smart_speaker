@@ -1,0 +1,41 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'appareil est d\u00e9j\u00e0 configur\u00e9"
+        },
+        "error": {
+            "cannot_connect": "\u00c9chec de connexion",
+            "unknown": "Erreur inattendue"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "H\u00f4te"
+                },
+                "title": "Connectez-vous \u00e0 l'appareil Wi-Fi Balboa"
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "balboa": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "ready": "Pr\u00eat"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "sync_time": "Synchronisez l'heure de votre spa Balboa avec Home Assistant"
+                }
+            }
+        }
+    }
+}

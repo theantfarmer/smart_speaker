@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Es kann keine Verbindung zum Host hergestellt werden",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "unknown": "Unbekannter Fehler"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Hostname",
+                    "password": "Passwort",
+                    "port": "Port",
+                    "ssl": "SSL aktivieren",
+                    "username": "Benutzername",
+                    "verify_ssl": "SSL \u00fcberpr\u00fcfen"
+                },
+                "description": "Mit diesem QNAP-Sensor k\u00f6nnen verschiedene Statistiken von deinem QNAP NAS abgerufen werden.",
+                "title": "Verbinden mit QNAP-Ger\u00e4t"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Die Konfiguration von QNAP mit YAML wird entfernt. \n\nDeine vorhandene YAML-Konfiguration wurde automatisch in die Benutzeroberfl\u00e4che importiert. \n\nEntferne die QNAP YAML-Konfiguration aus deiner configuration.yaml-Datei und starte Home Assistant neu, um dieses Problem zu beheben.",
+            "title": "Die QNAP YAML-Konfiguration wird entfernt"
+        }
+    }
+}

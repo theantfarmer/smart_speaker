@@ -1,0 +1,20 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "Ugyldig autentisering",
+            "unknown": "Uventet feil"
+        },
+        "step": {
+            "pair": {
+                "data": {
+                    "pin": "PIN-kode"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Vert"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositivo ya est\u00e1 configurado"
+        },
+        "error": {
+            "invalid_auth": "Autenticaci\u00f3n no v\u00e1lida",
+            "unknown": "Error inesperado"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "C\u00f3digo de dos factores"
+                },
+                "title": "Autenticaci\u00f3n de dos factores"
+            },
+            "user": {
+                "data": {
+                    "password": "Contrase\u00f1a",
+                    "username": "Nombre de usuario"
+                },
+                "title": "Iniciar sesi\u00f3n con cuenta Ring"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "ding": {
+                "name": "Timbre"
+            }
+        },
+        "light": {
+            "light": {
+                "name": "Luz"
+            }
+        },
+        "sensor": {
+            "last_activity": {
+                "name": "\u00daltima actividad"
+            },
+            "last_ding": {
+                "name": "\u00daltimo timbre"
+            },
+            "last_motion": {
+                "name": "\u00daltimo movimiento"
+            },
+            "volume": {
+                "name": "Volumen"
+            },
+            "wifi_signal_category": {
+                "name": "Categor\u00eda de se\u00f1al Wi-Fi"
+            },
+            "wifi_signal_strength": {
+                "name": "Intensidad de la se\u00f1al Wi-Fi"
+            }
+        },
+        "siren": {
+            "siren": {
+                "name": "Sirena"
+            }
+        },
+        "switch": {
+            "siren": {
+                "name": "Sirena"
+            }
+        }
+    },
+    "services": {
+        "update": {
+            "description": "Actualiza los datos que tenemos para todos tus dispositivos Ring.",
+            "name": "Actualizar"
+        }
+    }
+}

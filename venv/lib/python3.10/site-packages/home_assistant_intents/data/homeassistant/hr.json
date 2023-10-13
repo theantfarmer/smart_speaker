@@ -1,0 +1,656 @@
+{
+  "language": "hr",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "<isključi> [sve] (ventilator[e]|ventilaciju) [u|na] <area>",
+            "<isključi> <area> (ventilator[e]|ventilaciju)"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fans_area"
+        },
+        {
+          "sentences": [
+            "<isključi> [sve|svu] (ventilatore|ventilaciju) [u (stanu|kući)]"
+          ],
+          "response": "fans_area",
+          "slots": {
+            "domain": "fan",
+            "area": "all",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "<isključi> {name}",
+            "<isključi> {name} [u|na] {area}"
+          ],
+          "response": "default_name",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "<isključi> [svjetlo|svjetla|rasvjetu] [u|na] [prostoriji] <area>",
+            "<isključi> [sva] [svjetl(a|o)] [u] <area> [svjetla|rasvjetu]"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "<zatvori> <sve> {cover_classes:device_class} [u|na] [<area>]",
+            "<zatvori> <area> {cover_classes:device_class}"
+          ],
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "cover_device_class"
+        },
+        {
+          "sentences": [
+            "<zatvori> <name>"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "door",
+              "garage",
+              "gate",
+              "shade",
+              "shutter",
+              "window"
+            ]
+          },
+          "response": "cover_single"
+        },
+        {
+          "sentences": [
+            "<zatvori> <name> [u|na] {area}"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "door",
+              "garage",
+              "gate",
+              "shade",
+              "shutter",
+              "window"
+            ]
+          },
+          "response": "cover_single"
+        },
+        {
+          "sentences": [
+            "otključaj <name> [[u|na] <area>]"
+          ],
+          "requires_context": {
+            "domain": "lock"
+          },
+          "response": "lock"
+        },
+        {
+          "sentences": [
+            "otključaj [sva|sve] <lock> [[u|na] <area>]",
+            "otključaj [sva|sve] <area> <lock>"
+          ],
+          "slots": {
+            "domain": "lock",
+            "name": "all"
+          },
+          "response": "lock"
+        }
+      ]
+    },
+    "HassGetState": {
+      "data": [
+        {
+          "sentences": [
+            "(koja je|koji je|reci mi) [status|vrijednost] <name> [[u|na] <area>]"
+          ],
+          "response": "one",
+          "excludes_context": {
+            "domain": [
+              "scene",
+              "script"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "(je li|da li je|postoji li) <name> {on_off_states:state} [[u|na] <area>]"
+          ],
+          "response": "one_yesno",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "(je li|da li je|ima li|postoji li) [[bilo] koj[i|a|e]] {on_off_domains:domain} {on_off_states:state} [[u|na] <area>]"
+          ],
+          "response": "any"
+        },
+        {
+          "sentences": [
+            "(je li|da li je|ima li|postoji li) [[bilo] koj[i|a|e]] {on_off_domains:domain} [[u|na] <area>] {on_off_states:state}"
+          ],
+          "response": "any"
+        },
+        {
+          "sentences": [
+            "(je li|da li je|ima li|postoji li) [[bilo] koj[i|a|e]] {on_off_states:state} {on_off_domains:domain} [[u|na] <area>]"
+          ],
+          "response": "any"
+        },
+        {
+          "sentences": [
+            "(je li|jesu li) {on_off_domains:domain} {on_off_states:state} [in <area>]"
+          ],
+          "response": "all"
+        },
+        {
+          "sentences": [
+            "(koji|koja) [su] {on_off_domains:domain} [su] {on_off_states:state} [[u|na] <area>]"
+          ],
+          "response": "which"
+        },
+        {
+          "sentences": [
+            "koliko je ({on_off_states:state} {on_off_domains:domain}|{on_off_domains:domain} {on_off_states:state}) [[u|na] <area>]"
+          ],
+          "response": "how_many"
+        },
+        {
+          "sentences": [
+            "(je li|da li je|ima li) <name> [[u|na|iz] <area>] {cover_states:state} [[u|na|iz] <area>]"
+          ],
+          "response": "one_yesno",
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(je li|da li je|ima li) {cover_states:state} {cover_classes:device_class} [[u|na|iz] <area>]"
+          ],
+          "response": "any",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(jesu li|da li su) {cover_states:state} (svi) {cover_classes:device_class}  [[u|na|iz] <area>]"
+          ],
+          "response": "all",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(koja [su]|koji [su]) {cover_classes:device_class} [su] {cover_states:state} [[u|na|iz] <area>]"
+          ],
+          "response": "which",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(koliko je) ({cover_classes:device_class}|{cover_states:state}) ({cover_states:state}|{cover_classes:device_class}) [[u|na|iz] <area>]"
+          ],
+          "response": "how_many",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(jesu li|je li|da li (su|je)) <name> {lock_states:state}  [[u|na] <area>]"
+          ],
+          "response": "one_yesno",
+          "requires_context": {
+            "domain": "lock"
+          },
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "(jesu li|da li su|ima li) [koja|kojih] <lock> {lock_states:state} [[u|na] <area>]",
+            "(jesu li|da li su|ima li) [koja|kojih] {lock_states:state} <lock> [[u|na] <area>]"
+          ],
+          "response": "any",
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "(jesu li|da li su) (sva|svi|sve) <lock> {lock_states:state} [[u|na] <area>]"
+          ],
+          "response": "all",
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "(koja|koji) [su] <lock> {lock_states:state} [[u|na] <area>]"
+          ],
+          "response": "which",
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "(koliko ima|koliko je) {lock_states:state} <lock> [[u|na] <area>]",
+            "(koliko ima|koliko je) <lock> {lock_states:state} [[u|na] <area>]"
+          ],
+          "response": "how_many",
+          "slots": {
+            "domain": "lock"
+          }
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "<uključi> [svjetlo|svjetla|rasvjetu] [u|na] [prostoriji] <area>",
+            "<uključi> [sva] [svjetl(a|o)] [u] <area> [svjetla|rasvjetu]"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "<otvori> <sve> {cover_classes:device_class} [u|na] [<area>]",
+            "<otvori> <area> {cover_classes:device_class}"
+          ],
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "cover_device_class"
+        },
+        {
+          "sentences": [
+            "<otvori> <name>"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "door",
+              "garage",
+              "gate",
+              "shade",
+              "shutter",
+              "window"
+            ]
+          },
+          "response": "cover_single"
+        },
+        {
+          "sentences": [
+            "<otvori> <name> [u|na] {area}"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "door",
+              "garage",
+              "gate",
+              "shade",
+              "shutter",
+              "window"
+            ]
+          },
+          "response": "cover_single"
+        },
+        {
+          "sentences": [
+            "<uključi> [sve] (ventilator[e]|ventilaciju) [u|na] <area>",
+            "<uključi> <area> (ventilator[e]|ventilaciju)"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fans_area"
+        },
+        {
+          "sentences": [
+            "<uključi> [sve|svu] (ventilatore|ventilaciju) [u (stanu|kući)]"
+          ],
+          "response": "fans_area",
+          "slots": {
+            "domain": "fan",
+            "area": "all",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "zaključaj <name> [[u|na] <area>]"
+          ],
+          "requires_context": {
+            "domain": "lock"
+          },
+          "response": "lock"
+        },
+        {
+          "sentences": [
+            "zaključaj [sva|sve] <lock> [[u|na] <area>]",
+            "zaključaj [sva|sve] <area> <lock>"
+          ],
+          "slots": {
+            "domain": "lock",
+            "name": "all"
+          },
+          "response": "lock"
+        },
+        {
+          "sentences": [
+            "(<uključi>|<otvori>) {name}",
+            "(<uključi>|<otvori>) {name} [u|na] {area}"
+          ],
+          "response": "default_name",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Nažalost, ne razumijem zahtjev",
+      "no_area": "Prostorija s imenom {{ area }} ne postoji",
+      "no_domain": "Ne postoji {{ domain }} u prostoriji {{ area }}",
+      "no_device_class": "Prostorija {{ area }} ne sadrži {{ device_class }}",
+      "no_entity": "Ne postoji uređaj ili entitet pod imenom {{ entity }}",
+      "handle_error": "Došlo je do neočekivane pogreške prilikom obrade zahtjeva"
+    },
+    "intents": {
+      "HassGetState": {
+        "one": "{{ slots.name | capitalize }} je {{ state.state_with_unit }}\n",
+        "one_yesno": "{% if query.matched %}\n  Da\n{% else %}\n  Ne\n{% endif %}\n",
+        "any": "{% if query.matched %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    Da, {{ match[:3] | join(\", \") }} i još {{ (match | length - 3) }}\n  {%- else -%}\n    Da,\n    {% for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} i {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% else %}\n  Ne\n{% endif %}\n",
+        "all": "{% if not query.unmatched: %}\n  Da\n{% else %}\n  {% set no_match = query.unmatched | map(attribute=\"name\") | sort | list %}\n  {% if no_match | length > 4 %}\n    Ne, nisu {{ no_match[:3] | join(\", \") }} i još {{ (no_match | length - 3) }}\n  {%- else -%}\n    Ne,\n      {% if no_match | length > 1 %}\n        nisu\n      {%- else -%}\n        nije\n      {% endif %}\n    {% for name in no_match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} i {% endif -%}\n      {{ name }}\n    {%- endfor %}\n  {% endif %}\n{% endif %}\n",
+        "which": "{% if not query.matched %}\n  Nema {{ slots.state[:-1]}}ih {{ slots.device_class[:-1] }}a\n{% else: %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    {{ match[:3] | join(\", \") }} and {{ (match | length - 3) }} more\n  {% else %}\n    {%- for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} i {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% endif %}\n",
+        "how_many": "{{ query.matched | length }}\n"
+      },
+      "HassTurnOff": {
+        "default": "Gasim {{ state.domain }}",
+        "default_name": "Gasim {{ slots.name }}",
+        "lights_area": "Svjetla su ugašena",
+        "cover_device_class": "Zatvaram {{ slots.device_class }}",
+        "cover_single": "Zatvaram {{ slots.name }}",
+        "fans_area": "Ventilatori su isključeni",
+        "lock": "Otključana"
+      },
+      "HassTurnOn": {
+        "default": "Palim {{ state.domain }}",
+        "default_name": "Palim {{ slots.name }}",
+        "lights_area": "Svjetla su upaljena",
+        "cover_single": "Otvaram {{ slots.name }}",
+        "cover_device_class": "Otvaram {{ slots.device_class }}",
+        "fans_area": "Ventilatori su uključeni",
+        "lock": "Zaključana"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "bijel(a|o|u)",
+          "out": "white"
+        },
+        {
+          "in": "crna(a|o|u)",
+          "out": "black"
+        },
+        {
+          "in": "crven(a|o|u)",
+          "out": "red"
+        },
+        {
+          "in": "narandžast(a|o|u)",
+          "out": "orange"
+        },
+        {
+          "in": "žut(a|o|u)",
+          "out": "yellow"
+        },
+        {
+          "in": "zelen(a|o|u)",
+          "out": "green"
+        },
+        {
+          "in": "plav(a|o|u)",
+          "out": "blue"
+        },
+        {
+          "in": "ljubičast(a|o|u)",
+          "out": "purple"
+        },
+        {
+          "in": "smeđ(a|e|u)",
+          "out": "brown"
+        },
+        {
+          "in": "roz(a|o|u)",
+          "out": "pink"
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "brightness_level": {
+      "values": [
+        {
+          "in": "(maksimum|najjače|maksimalnu|maksimalno)",
+          "out": 100
+        },
+        {
+          "in": "(minimum|minimalnu|minimalno|najslabije|najmanje)",
+          "out": 1
+        }
+      ]
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        "celsius",
+        {
+          "in": "c|celzijus|celzijusa|celzija|celzijev|celzijevih|celczijeva",
+          "out": "celsius"
+        },
+        "fahrenheit",
+        {
+          "in": "f | faranhajd | faranhajda",
+          "out": "fahrenheit"
+        }
+      ]
+    },
+    "on_off_states": {
+      "values": [
+        {
+          "in": "uključen[a|e|i|o|ih]|upaljen[a|e|i|o|ih]",
+          "out": "on"
+        },
+        {
+          "in": "isključen[a|e|i|o|ih]|ugašen[a|e|i|o|ih]",
+          "out": "off"
+        }
+      ]
+    },
+    "on_off_domains": {
+      "values": [
+        {
+          "in": "svjetl(o|a)|svjetala",
+          "out": "light"
+        },
+        {
+          "in": "ventilator(i|a)",
+          "out": "fan"
+        },
+        {
+          "in": "prekidač[a|i]|sklopk[a|e|i]",
+          "out": "switch"
+        }
+      ]
+    },
+    "cover_states": {
+      "values": [
+        {
+          "in": "otvoren[a|o|i|ih]|podignut(a)",
+          "out": "open"
+        },
+        {
+          "in": "zatvoren[a|o|i|ih]|spušten(a)|navučen(a)",
+          "out": "closed"
+        },
+        {
+          "in": "otvaram",
+          "out": "opening"
+        },
+        {
+          "in": "zatvaram",
+          "out": "closing"
+        }
+      ]
+    },
+    "cover_classes": {
+      "values": [
+        {
+          "in": "cerad(a|e|u)|tend(a|e|u)|nadstrešnic(a|e|u)",
+          "out": "awning"
+        },
+        {
+          "in": "rolet(a|e|u)|sjenil(o|a)|zasun[e]",
+          "out": "blind"
+        },
+        {
+          "in": "zavjes(a|e|u)|zastor[e]",
+          "out": "curtain"
+        },
+        {
+          "in": "vrata",
+          "out": "door"
+        },
+        {
+          "in": "garažna vrata",
+          "out": "garage"
+        },
+        {
+          "in": "kapij(a|e|u)",
+          "out": "gate"
+        },
+        {
+          "in": "žaluzin(a|e|u)|škura(a|e)",
+          "out": "shade"
+        },
+        {
+          "in": "zasun[e]|kapak|kapke",
+          "out": "shutter"
+        },
+        {
+          "in": "prozor[a|e|i]",
+          "out": "window"
+        }
+      ]
+    },
+    "lock_states": {
+      "values": [
+        {
+          "in": "zaključan[a|i|o|ih]|zaključaj",
+          "out": "locked"
+        },
+        {
+          "in": "otključan[a|i|o|ih]|otključaj",
+          "out": "unlocked"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "name": "{name}",
+    "area": "[prostorij[i|a]] {area}",
+    "brightness": "{brightness}[%| posto]",
+    "temperature": "{temperature}[°| <stupanj>] [{temperature_unit}]",
+    "stupanj": "[stupanj|stupnjeva]",
+    "temp": "temperatura|temperaturu",
+    "uključi": "uključi[te|mo]|upali[te|mo]",
+    "isključi": "isključi[te|mo]|ugasi[te|mo]",
+    "promijeni": "podesi[te|mo]|namjesti[te|mo]|postavi[te|mo]|stavi|promijeni[te|mo]|smanji|povećaj",
+    "otvori": "otvori[te|mo]|podigni[te|mo]",
+    "zatvori": "zatvori[te|mo]|spusti[te|mo]|navuci",
+    "koja_je": "koja je|kolika je|kakva je|reci [mi]",
+    "sve": "[sve|sva|svi]",
+    "lock": "vrata|brav[a|u|e]"
+  },
+  "skip_words": [
+    "molim [te|vas] [da]",
+    "može(š|te) [li] [da]",
+    "idemo",
+    "odmah"
+  ]
+}

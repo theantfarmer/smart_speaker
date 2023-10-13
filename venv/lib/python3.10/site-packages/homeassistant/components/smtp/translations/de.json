@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "L\u00e4dt die SMTP-Benachrichtigungsdienste neu.",
+            "name": "Neu laden"
+        }
+    }
+}

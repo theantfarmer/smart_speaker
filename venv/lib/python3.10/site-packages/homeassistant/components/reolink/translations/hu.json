@@ -1,0 +1,96 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "reauth_successful": "Az \u00fajrahiteles\u00edt\u00e9s sikeres volt."
+        },
+        "error": {
+            "api_error": "API hiba t\u00f6rt\u00e9nt",
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s, ellen\u0151rizze a kamera IP-c\u00edm\u00e9t.",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "not_admin": "A felhaszn\u00e1l\u00f3nak adminisztr\u00e1tornak kell lennie, \"{username}\" felhaszn\u00e1l\u00f3 jogosults\u00e1gi szintje pedig \"{userlevel}\".",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "A Reolink integr\u00e1ci\u00f3nak \u00fajra kell hiteles\u00edtenie a kapcsolaot.",
+                "title": "Integr\u00e1ci\u00f3 \u00fajrahiteles\u00edt\u00e9se"
+            },
+            "user": {
+                "data": {
+                    "host": "C\u00edm",
+                    "password": "Jelsz\u00f3",
+                    "port": "Port",
+                    "use_https": "HTTPS enged\u00e9lyez\u00e9se",
+                    "username": "Felhaszn\u00e1l\u00f3n\u00e9v"
+                },
+                "description": "Ha probl\u00e9m\u00e1k mer\u00fclnek fel, b\u0151vebb inform\u00e1ci\u00f3 itt: [hibaelh\u00e1r\u00edt\u00e1si l\u00e9p\u00e9sek]({troubleshooting_link}). {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Ki"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digit\u00e1lis",
+                    "digitalfirst": "Digit\u00e1lis priorit\u00e1s",
+                    "pantiltfirst": "P\u00e1szt\u00e1z\u00e1s/d\u00f6nt\u00e9s priorit\u00e1s"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Automatikus",
+                    "blackwhite": "Fekete-feh\u00e9r",
+                    "color": "Sz\u00edn"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "auto": "Automatikus",
+                    "off": "Ki",
+                    "schedule": "Id\u0151z\u00edt\u00e9s"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "Automatikus \u00e9s mindig bekapcsolva \u00e9jszaka",
+                    "auto": "Automatikus",
+                    "stayoff": "Kikapcsolva mindig"
+                }
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "A {ports} port(ok) automatikus enged\u00e9lyez\u00e9se sikertelen volt a {name} eszk\u00f6z\u00f6n. Haszn\u00e1lja a [Reolink kliens]({info_link}) alkalmaz\u00e1st a k\u00e9zi bekapcsol\u00e1shoz.",
+            "title": "A Reolink port nincs enged\u00e9lyezve"
+        },
+        "firmware_update": {
+            "description": "\"{name}\" \"{model}\" modellel \u00e9s \"{hw_version}\" hardver verzi\u00f3val, \"{current_firmware}\" r\u00e9gi firmware verzi\u00f3t futtatja, m\u00edg a Reolink integr\u00e1ci\u00f3 megfelel\u0151 m\u0171k\u00f6d\u00e9s\u00e9hez legal\u00e1bb a \"{required_firmware}\" firmware verzi\u00f3 sz\u00fcks\u00e9ges. A leg\u00fajabb firmware let\u00f6lthet\u0151 a [Reolink let\u00f6lt\u00e9si k\u00f6zpontb\u00f3l]({download_link}).",
+            "title": "Reolink firmware friss\u00edt\u00e9s sz\u00fcks\u00e9ges"
+        },
+        "https_webhook": {
+            "description": "A Reolink term\u00e9kek nem tudj\u00e1k a mozg\u00e1sesem\u00e9nyeket HTTPS-c\u00edmre (SSL) tov\u00e1bb\u00edtani, ez\u00e9rt a [h\u00e1l\u00f3zati be\u00e1ll\u00edt\u00e1sok]({network_link}) \"Home Assistant URL\" alatt sz\u00fcks\u00e9ges bekonfigur\u00e1lni egy (helyi) HTTP-c\u00edmet. A jelenlegi (helyi) c\u00edm a k\u00f6vetkez\u0151: `{base_url}`, egy \u00e9rv\u00e9nyes c\u00edm lehet p\u00e9ld\u00e1ul `http://192.168.1.10:8123`, ahol `192.168.1.10` a Home Assistant eszk\u00f6z IP c\u00edme.",
+            "title": "A Reolink webhook URL c\u00edme HTTPS (SSL) protokollt haszn\u00e1l"
+        },
+        "webhook_url": {
+            "description": "Nem \u00e9rkezett meg {name} kezdeti ONVIF-\u00e1llapota. Val\u00f3sz\u00edn\u0171leg a Reolink kamera nem tudja el\u00e9rni az aktu\u00e1lis helyi Home Assistant URL-t :`{base_url}`. K\u00e9rem, \u00e1ll\u00edtson be egy (helyi) HTTP-c\u00edmet a [h\u00e1l\u00f3zati be\u00e1ll\u00edt\u00e1sok]({network_link}) \"Home Assistant URL\" alatt, amely a Home Assistant-ra mutat. P\u00e9ld\u00e1ul `http://192.168.1.10:8123`, ahol `192.168.1.10` a Home Assistant eszk\u00f6z IP c\u00edme. Gy\u0151z\u0151dj\u00f6n meg arr\u00f3l is, hogy a Reolink kamera el tudja \u00e9rni ezt az URL-t. Az els\u0151 ONVIF \u00fczenet meg\u00e9rkez\u00e9s\u00e9ig gyors mozg\u00e1s/AI \u00e1llapot lek\u00e9rdez\u00e9s fog m\u0171k\u00f6dni.",
+            "title": "Reolink webhook URL el\u00e9rhetetlen"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protokoll"
+                }
+            }
+        }
+    }
+}

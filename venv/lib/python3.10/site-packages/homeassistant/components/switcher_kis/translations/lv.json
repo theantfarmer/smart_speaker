@@ -1,0 +1,13 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "T\u012bkl\u0101 nav atrasta neviena ier\u012bce",
+            "single_instance_allowed": "Jau konfigur\u0113ts. Iesp\u0113jama tikai viena konfigur\u0101cija."
+        },
+        "step": {
+            "confirm": {
+                "description": "Vai v\u0113laties s\u0101kt iestat\u012b\u0161anu?"
+            }
+        }
+    }
+}

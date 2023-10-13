@@ -1,0 +1,69 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Akun sudah dikonfigurasi"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "invalid_auth": "Autentikasi tidak valid",
+            "invalid_station": "Tidak dapat menemukan stasiun cuaca dengan nama yang ditentukan",
+            "more_stations": "Ditemukan beberapa stasiun cuaca dengan nama yang ditentukan"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "Kunci API",
+                    "station": "Stasiun"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "precipitation": {
+                "state": {
+                    "drizzle": "Gerimis",
+                    "freezing_rain": "Hujan beku",
+                    "hail": "Hujan es",
+                    "none": "Tidak ada",
+                    "rain": "Hujan",
+                    "rain_snow_mixed": "Campuran hujan dan salju",
+                    "snow": "Salju"
+                }
+            },
+            "precipitation_amountname": {
+                "state": {
+                    "error": "Kesalahan",
+                    "heavy_rain": "Hujan deras",
+                    "heavy_snow": "Salju tebal",
+                    "heavy_snow_rain": "Campuran hujan lebat dan salju",
+                    "mild_rain": "Hujan ringan",
+                    "mild_snow": "Salju ringan",
+                    "mild_snow_rain": "Campuran hujan ringan dan salju",
+                    "moderate_rain": "Hujan sedang",
+                    "moderate_snow": "Salju sedang",
+                    "moderate_snow_rain": "Campuran hujan dan salju sedang",
+                    "none": "Tidak ada",
+                    "other": "Lainnya",
+                    "unknown": "Tidak diketahui"
+                }
+            },
+            "wind_direction_text": {
+                "state": {
+                    "east": "Timur",
+                    "east_south_east": "Timur-tenggara",
+                    "north": "Utara",
+                    "north_east": "Timur laut",
+                    "north_north_east": "Utara-timur laut",
+                    "north_north_west": "Utara-barat laut",
+                    "north_west": "Barat laut",
+                    "south": "Selatan",
+                    "south_east": "Tenggara",
+                    "south_south_west": "Selatan-barat daya",
+                    "south_west": "Barat daya",
+                    "west": "Barat"
+                }
+            }
+        }
+    }
+}

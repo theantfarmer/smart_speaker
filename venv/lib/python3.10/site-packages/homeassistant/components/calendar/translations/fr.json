@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Calendrier",
+            "state": {
+                "off": "D\u00e9sactiv\u00e9",
+                "on": "Activ\u00e9"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Toute la journ\u00e9e",
+                    "state": {
+                        "false": "Non",
+                        "true": "Oui"
+                    }
+                },
+                "description": {
+                    "name": "Description"
+                },
+                "end_time": {
+                    "name": "Heure de fin"
+                },
+                "location": {
+                    "name": "Localisation"
+                },
+                "messages": {
+                    "name": "Message"
+                },
+                "start_time": {
+                    "name": "Heure de d\u00e9but"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "title": "Calendrier"
+}

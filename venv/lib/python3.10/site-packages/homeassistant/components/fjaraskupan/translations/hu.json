@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "Nem tal\u00e1lhat\u00f3 eszk\u00f6z a h\u00e1l\u00f3zaton",
+            "single_instance_allowed": "M\u00e1r konfigur\u00e1lva van. Csak egy konfigur\u00e1ci\u00f3 lehets\u00e9ges."
+        },
+        "step": {
+            "confirm": {
+                "description": "Fj\u00e4r\u00e5skupan szolg\u00e1ltat\u00e1s hozz\u00e1ad\u00e1sa a rendszerhez."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "carbon_filter": {
+                "name": "Sz\u00e9nsz\u0171r\u0151"
+            },
+            "grease_filter": {
+                "name": "Zs\u00edrsz\u0171r\u0151"
+            }
+        },
+        "number": {
+            "periodic_venting": {
+                "name": "Id\u0151szakos szell\u0151ztet\u00e9s"
+            }
+        }
+    }
+}

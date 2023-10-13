@@ -1,0 +1,62 @@
+{
+    "config": {
+        "abort": {
+            "access_token": "Eri\u015fim anahtar\u0131 olu\u015ftururken bilinmeyen hata.",
+            "already_configured": "Hesap zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "missing_configuration": "Bile\u015fen yap\u0131land\u0131r\u0131lmam\u0131\u015f. L\u00fctfen belgeleri takip edin."
+        },
+        "create_entry": {
+            "default": "Ba\u015far\u0131yla do\u011fruland\u0131"
+        },
+        "error": {
+            "follow_link": "L\u00fctfen ba\u011flant\u0131y\u0131 takip edin ve G\u00f6nder'e basmadan \u00f6nce kimlik do\u011frulamas\u0131 yap\u0131n",
+            "no_token": "Ambiclimate ile kimli\u011fi do\u011frulanmad\u0131"
+        },
+        "step": {
+            "auth": {
+                "description": "L\u00fctfen bu [ba\u011flant\u0131y\u0131]( {authorization_url} ) takip edin ve Ambiclimate hesab\u0131n\u0131za **izin verin**, ard\u0131ndan geri d\u00f6n\u00fcn ve a\u015fa\u011f\u0131daki **G\u00f6nder**'e bas\u0131n.\n (Belirtilen geri \u00e7a\u011f\u0131rma URL'sinin {cb_url} oldu\u011fundan emin olun)",
+                "title": "Ambiclimate kimlik do\u011frulamas\u0131"
+            }
+        }
+    },
+    "services": {
+        "send_comfort_feedback": {
+            "description": "Konfor modu i\u00e7in geri bildirim g\u00f6nderir.",
+            "fields": {
+                "name": {
+                    "description": "Cihaz ad\u0131n\u0131 i\u00e7eren dize.",
+                    "name": "Cihaz ad\u0131"
+                },
+                "value": {
+                    "description": "A\u015fa\u011f\u0131daki konfor de\u011ferlerinden herhangi birini g\u00f6nderin: \u00e7ok_s\u0131cak, \u00e7ok_\u0131l\u0131k, biraz_\u0131l\u0131k, rahat, biraz_so\u011fuk, \u00e7ok_so\u011fuk, donma\n.",
+                    "name": "Konfor de\u011feri"
+                }
+            },
+            "name": "Konfor geri bildirimi g\u00f6nderin"
+        },
+        "set_comfort_mode": {
+            "description": "Kliman\u0131zda konfor modunu etkinle\u015ftirir.",
+            "fields": {
+                "name": {
+                    "description": "Cihaz ad\u0131n\u0131 i\u00e7eren dize.",
+                    "name": "Cihaz ad\u0131"
+                }
+            },
+            "name": "Konfor modunu ayarlay\u0131n"
+        },
+        "set_temperature_mode": {
+            "description": "Kliman\u0131zda s\u0131cakl\u0131k modunu etkinle\u015ftirir.",
+            "fields": {
+                "name": {
+                    "description": "Cihaz ad\u0131n\u0131 i\u00e7eren dize.",
+                    "name": "Cihaz ad\u0131"
+                },
+                "value": {
+                    "description": "Santigrat cinsinden hedef de\u011fer.",
+                    "name": "S\u0131cakl\u0131k"
+                }
+            },
+            "name": "S\u0131cakl\u0131k modunu ayarla"
+        }
+    }
+}

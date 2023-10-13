@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Pomocn\u00edci - p\u0159ep\u00edna\u010de",
+            "state": {
+                "off": "Vypnuto",
+                "on": "Zapnuto"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Pomocn\u00edci - p\u0159ep\u00edna\u010de"
+}

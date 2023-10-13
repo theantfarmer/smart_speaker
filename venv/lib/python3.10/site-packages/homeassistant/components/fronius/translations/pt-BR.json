@@ -1,0 +1,239 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispositivo j\u00e1 est\u00e1 configurado",
+            "invalid_host": "Nome de host ou endere\u00e7o IP inv\u00e1lido"
+        },
+        "error": {
+            "cannot_connect": "Falha ao conectar",
+            "unknown": "Erro inesperado"
+        },
+        "flow_title": "{device}",
+        "step": {
+            "confirm_discovery": {
+                "description": "Deseja adicionar {device} ao Home Assistant?"
+            },
+            "user": {
+                "data": {
+                    "host": "Nome do host"
+                },
+                "description": "Configure o endere\u00e7o IP ou nome de host local do seu dispositivo Fronius.",
+                "title": "Fronius SolarNet"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "capacity_designed": {
+                "name": "Capacidade projetada"
+            },
+            "capacity_maximum": {
+                "name": "Capacidade m\u00e1xima"
+            },
+            "cash_factor": {
+                "name": "Tarifa de exporta\u00e7\u00e3o da rede"
+            },
+            "co2_factor": {
+                "name": "Fator CO\u2082"
+            },
+            "current_ac": {
+                "name": "Corrente AC"
+            },
+            "current_ac_phase_1": {
+                "name": "Fase atual 1"
+            },
+            "current_ac_phase_2": {
+                "name": "Fase atual 2"
+            },
+            "current_ac_phase_3": {
+                "name": "Fase atual 3"
+            },
+            "current_dc": {
+                "name": "Corrente DC"
+            },
+            "current_dc_2": {
+                "name": "Corrente DC 2"
+            },
+            "delivery_factor": {
+                "name": "Tarifa de importa\u00e7\u00e3o de rede"
+            },
+            "energy_day": {
+                "name": "Dia de energia"
+            },
+            "energy_reactive_ac_consumed": {
+                "name": "Energia reativa consumida"
+            },
+            "energy_reactive_ac_produced": {
+                "name": "Energia reativa produzida"
+            },
+            "energy_real_ac_consumed": {
+                "name": "Energia consumida"
+            },
+            "energy_real_ac_minus": {
+                "name": "Energia real menos"
+            },
+            "energy_real_ac_plus": {
+                "name": "Energia real plus"
+            },
+            "energy_real_consumed": {
+                "name": "Energia real consumida"
+            },
+            "energy_real_produced": {
+                "name": "Energia real produzida"
+            },
+            "energy_total": {
+                "name": "Energia total"
+            },
+            "energy_year": {
+                "name": "Ano energ\u00e9tico"
+            },
+            "error_code": {
+                "name": "C\u00f3digo de erro"
+            },
+            "frequency_ac": {
+                "name": "Frequ\u00eancia"
+            },
+            "frequency_phase_average": {
+                "name": "M\u00e9dia de fase de frequ\u00eancia"
+            },
+            "inverter_state": {
+                "name": "Estado do inversor"
+            },
+            "led_color": {
+                "name": "Cor do LED"
+            },
+            "led_state": {
+                "name": "Estado do LED"
+            },
+            "meter_location": {
+                "name": "Localiza\u00e7\u00e3o do medidor"
+            },
+            "meter_mode": {
+                "name": "Modo medidor"
+            },
+            "power_ac": {
+                "name": "Energia AC"
+            },
+            "power_apparent": {
+                "name": "Pot\u00eancia aparente"
+            },
+            "power_apparent_phase_1": {
+                "name": "Pot\u00eancia aparente fase 1"
+            },
+            "power_apparent_phase_2": {
+                "name": "Pot\u00eancia aparente fase 2"
+            },
+            "power_apparent_phase_3": {
+                "name": "Pot\u00eancia aparente fase 3"
+            },
+            "power_battery": {
+                "name": "Bateria de energia"
+            },
+            "power_factor": {
+                "name": "Fator de pot\u00eancia"
+            },
+            "power_factor_phase_1": {
+                "name": "Fator de pot\u00eancia fase 1"
+            },
+            "power_factor_phase_2": {
+                "name": "Fator de pot\u00eancia fase 2"
+            },
+            "power_factor_phase_3": {
+                "name": "Fator de pot\u00eancia fase 3"
+            },
+            "power_grid": {
+                "name": "Rede el\u00e9trica"
+            },
+            "power_load": {
+                "name": "Carga de energia"
+            },
+            "power_photovoltaics": {
+                "name": "Energia fotovoltaica"
+            },
+            "power_reactive": {
+                "name": "Pot\u00eancia reativa"
+            },
+            "power_reactive_phase_1": {
+                "name": "Pot\u00eancia reativa fase 1"
+            },
+            "power_reactive_phase_2": {
+                "name": "Pot\u00eancia reativa fase 2"
+            },
+            "power_reactive_phase_3": {
+                "name": "Pot\u00eancia reativa fase 3"
+            },
+            "power_real": {
+                "name": "Pot\u00eancia real"
+            },
+            "power_real_ac": {
+                "name": "Pot\u00eancia"
+            },
+            "power_real_phase_1": {
+                "name": "Pot\u00eancia real fase 1"
+            },
+            "power_real_phase_2": {
+                "name": "Pot\u00eancia real fase 2"
+            },
+            "power_real_phase_3": {
+                "name": "Pot\u00eancia real fase 3"
+            },
+            "relative_autonomy": {
+                "name": "Autonomia relativa"
+            },
+            "relative_self_consumption": {
+                "name": "Autoconsumo relativo"
+            },
+            "state_code": {
+                "name": "C\u00f3digo do estado"
+            },
+            "state_message": {
+                "name": "Mensagem do estado"
+            },
+            "state_of_charge": {
+                "name": "Estado da carga"
+            },
+            "status_code": {
+                "name": "C\u00f3digo de status"
+            },
+            "temperature_cell": {
+                "name": "Temperatura"
+            },
+            "temperature_channel_1": {
+                "name": "Temperatura"
+            },
+            "voltage_ac": {
+                "name": "Tens\u00e3o AC"
+            },
+            "voltage_ac_phase_1": {
+                "name": "Tens\u00e3o fase 1"
+            },
+            "voltage_ac_phase_2": {
+                "name": "Tens\u00e3o fase 2"
+            },
+            "voltage_ac_phase_3": {
+                "name": "Tens\u00e3o fase 3"
+            },
+            "voltage_ac_phase_to_phase_12": {
+                "name": "Tens\u00e3o fase 1-2"
+            },
+            "voltage_ac_phase_to_phase_23": {
+                "name": "Tens\u00e3o fase 2-3"
+            },
+            "voltage_ac_phase_to_phase_31": {
+                "name": "Tens\u00e3o fase 3-1"
+            },
+            "voltage_dc": {
+                "name": "Tens\u00e3o DC"
+            },
+            "voltage_dc_2": {
+                "name": "Tens\u00e3o DC 2"
+            },
+            "voltage_dc_maximum_cell": {
+                "name": "Tens\u00e3o m\u00e1xima da c\u00e9lula"
+            },
+            "voltage_dc_minimum_cell": {
+                "name": "Tens\u00e3o m\u00ednima da c\u00e9lula"
+            }
+        }
+    }
+}

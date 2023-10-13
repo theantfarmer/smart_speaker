@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "\u3059\u3067\u306b\u8a2d\u5b9a\u3055\u308c\u3066\u3044\u307e\u3059\u3002\u8a2d\u5b9a\u3067\u304d\u308b\u306e\u306f1\u3064\u3060\u3051\u3067\u3059\u3002"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "daily_power_return_total": {
+                "name": "\u30d1\u30ef\u30fc\u30ea\u30bf\u30fc\u30f3\u5408\u8a08 (\u65e5\u6b21)"
+            },
+            "daily_power_total_cost": {
+                "name": "\u96fb\u529b\u7dcf\u30b3\u30b9\u30c8 (\u65e5\u6b21)"
+            },
+            "daily_power_usage_total": {
+                "name": "\u96fb\u529b\u4f7f\u7528\u91cf\u5408\u8a08 (\u65e5\u6b21)"
+            },
+            "dsmr_version": {
+                "name": "DSMR\u30d0\u30fc\u30b8\u30e7\u30f3"
+            },
+            "gas_price": {
+                "name": "\u30ac\u30b9\u6599\u91d1"
+            },
+            "gas_usage": {
+                "name": "\u30ac\u30b9\u4f7f\u7528\u91cf"
+            },
+            "total_cost": {
+                "name": "\u30c8\u30fc\u30bf\u30eb\u30b3\u30b9\u30c8"
+            }
+        }
+    }
+}

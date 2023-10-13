@@ -1,0 +1,13 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Painike"
+        },
+        "restart": {
+            "name": "K\u00e4ynnist\u00e4 uudelleen"
+        },
+        "update": {
+            "name": "P\u00e4ivit\u00e4"
+        }
+    }
+}

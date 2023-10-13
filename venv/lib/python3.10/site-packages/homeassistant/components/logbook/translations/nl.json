@@ -1,0 +1,24 @@
+{
+    "services": {
+        "log": {
+            "description": "Maakt een aangepaste vermelding in het logboek.",
+            "fields": {
+                "domain": {
+                    "description": "Bepaalt welk icoon wordt gebruikt voor de logboekvermelding. Het icoon illustreert het integratiedomein dat is gerelateerd aan deze logboekvermelding.",
+                    "name": "Domein"
+                },
+                "entity_id": {
+                    "description": "Entiteit om naar te verwijzen in de logboekvermelding.",
+                    "name": "Entiteits-ID"
+                },
+                "message": {
+                    "description": "Bericht van de logboekvermelding.",
+                    "name": "Wereldbericht"
+                },
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        }
+    }
+}

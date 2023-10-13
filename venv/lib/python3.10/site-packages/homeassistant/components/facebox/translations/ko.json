@@ -1,0 +1,22 @@
+{
+    "services": {
+        "teach_face": {
+            "description": "\ud30c\uc77c\uc744 \uc0ac\uc6a9\ud558\uc5ec facebox\uc5d0\uac8c \uc5bc\uad74\uc744 \uac00\ub974\uce69\ub2c8\ub2e4.",
+            "fields": {
+                "entity_id": {
+                    "description": "\uac00\ub974\uce60 facebox \uad6c\uc131\uc694\uc18c",
+                    "name": "\uad6c\uc131\uc694\uc18c"
+                },
+                "file_path": {
+                    "description": "\uc774\ubbf8\uc9c0 \ud30c\uc77c\uc758 \uacbd\ub85c",
+                    "name": "\ud30c\uc77c \uacbd\ub85c"
+                },
+                "name": {
+                    "description": "\uac00\ub974\uce60 \uc5bc\uad74\uc758 \uc774\ub984",
+                    "name": "\uc774\ub984"
+                }
+            },
+            "name": "\uc5bc\uad74 \uac00\ub974\uce58\uae30"
+        }
+    }
+}

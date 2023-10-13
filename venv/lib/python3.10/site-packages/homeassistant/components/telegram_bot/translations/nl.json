@@ -1,0 +1,168 @@
+{
+    "services": {
+        "answer_callback_query": {
+            "description": "Reageert op een callback-query die is ontstaan door te klikken op een online toetsenbordknop. Het antwoord wordt aan de gebruiker getoond als een notificatie bovenaan het chatscherm of als een waarschuwing.",
+            "fields": {
+                "message": {
+                    "description": "Onopgemaakte tekstberichtinhoud van de notificatie."
+                },
+                "show_alert": {
+                    "description": "Toon een permanente notificatie."
+                }
+            }
+        },
+        "edit_caption": {
+            "fields": {
+                "caption": {
+                    "description": "Berichttekst van de notificatie."
+                }
+            }
+        },
+        "edit_message": {
+            "fields": {
+                "message": {
+                    "description": "Berichttekst van de notificatie."
+                }
+            }
+        },
+        "send_animation": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "password": {
+                    "name": "Wachtwoord"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Gebruikersnaam"
+                }
+            }
+        },
+        "send_document": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "password": {
+                    "name": "Wachtwoord"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Gebruikersnaam"
+                }
+            }
+        },
+        "send_location": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "latitude": {
+                    "name": "Breedtegraad"
+                },
+                "longitude": {
+                    "name": "Lengtegraad"
+                }
+            }
+        },
+        "send_message": {
+            "description": "Verstuurt een notificatie.",
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "message": {
+                    "description": "Berichttekst van de notificatie."
+                },
+                "target": {
+                    "description": "Een reeks van vooraf geautoriseerde chat IDs om de notificatie naar te sturen. Als deze niet aanwezig is, is de eerste toegestane chat ID de standaard."
+                }
+            }
+        },
+        "send_photo": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "password": {
+                    "name": "Wachtwoord"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Gebruikersnaam"
+                }
+            }
+        },
+        "send_poll": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                }
+            }
+        },
+        "send_sticker": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "password": {
+                    "name": "Wachtwoord"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Gebruikersnaam"
+                }
+            }
+        },
+        "send_video": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "password": {
+                    "name": "Wachtwoord"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Gebruikersnaam"
+                }
+            }
+        },
+        "send_voice": {
+            "fields": {
+                "disable_notification": {
+                    "description": "Verstuurt het bericht stil. iOS-gebruikers en webgebruikers ontvangen geen notificatie, Android-gebruikers ontvangen een notificatie zonder geluid.",
+                    "name": "Notificatie uitschakelen"
+                },
+                "password": {
+                    "name": "Wachtwoord"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Gebruikersnaam"
+                }
+            }
+        }
+    }
+}

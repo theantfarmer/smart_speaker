@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: pyforked-daapd
+Version: 0.1.14
+Summary: Python Interface for forked-daapd
+Home-page: http://github.com/uvjustin/pyforked-daapd/
+Author: Justin Wong
+Author-email: 46082645+uvjustin@users.noreply.github.com
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: aiohttp
+
+pyforked-daapd Python Library
+===============================
+
+version number: 0.1.14
+author: Justin Wong
+
+Overview
+--------
+
+A simple library to interface with an Owntone server.
+
+Installation / Usage
+--------------------
+
+To install use pip:
+
+    $ pip install pyforked-daapd
+
+
+Or clone the repo:
+
+    $ git clone https://github.com/uvjustin/pyforked-daapd.git
+    $ python setup.py install
+    
+Contributing
+------------
+
+TBD
+
+Example
+-------
+
+TBD

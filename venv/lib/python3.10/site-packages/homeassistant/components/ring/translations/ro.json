@@ -1,0 +1,26 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispozitivul a fost configurat deja"
+        },
+        "error": {
+            "invalid_auth": "Autentificare nevalid\u0103",
+            "unknown": "Eroare nea\u0219teptat\u0103"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "Cod de autentificare cu doi factori"
+                },
+                "title": "Autentificare cu doi factori"
+            },
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Utilizator"
+                },
+                "title": "Autentificare cu contul Ring"
+            }
+        }
+    }
+}

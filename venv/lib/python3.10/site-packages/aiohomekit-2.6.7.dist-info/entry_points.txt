@@ -1,0 +1,3 @@
+[console_scripts]
+aiohomekitctl=aiohomekit.__main__:sync_main
+

@@ -1,0 +1,14 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O servi\u00e7o j\u00e1 est\u00e1 configurado"
+        },
+        "step": {
+            "user": {
+                "description": "Pretende configurar a lista de compras?",
+                "title": "Lista de Compras"
+            }
+        }
+    },
+    "title": "Lista de Compras"
+}

@@ -1,0 +1,146 @@
+{
+    "device_automation": {
+        "action_type": {
+            "set_hvac_mode": "F\u0171t\u00e9s- \u00e9s l\u00e9gtechnikai (HVAC) \u00fczemm\u00f3d m\u00f3dos\u00edt\u00e1sa a k\u00f6vetkez\u0151n: {entity_name}",
+            "set_preset_mode": "{entity_name} \u00fczemm\u00f3dj\u00e1nak v\u00e1lt\u00e1sa"
+        },
+        "condition_type": {
+            "is_hvac_mode": "{entity_name} speci\u00e1lis f\u0171t\u00e9s, szell\u0151z\u00e9s \u00e9s l\u00e9gkondicion\u00e1l\u00e1s (HVAC) \u00fczemm\u00f3dra van be\u00e1ll\u00edtva",
+            "is_preset_mode": "{entity_name} \u00fczemm\u00f3dja van kiv\u00e1lasztva"
+        },
+        "trigger_type": {
+            "current_humidity_changed": "{entity_name} m\u00e9rt p\u00e1ratartalma megv\u00e1ltozott",
+            "current_temperature_changed": "{entity_name} m\u00e9rt h\u0151m\u00e9rs\u00e9klete megv\u00e1ltozott",
+            "hvac_mode_changed": "{entity_name} f\u0171t\u00e9s, szell\u0151z\u00e9s \u00e9s l\u00e9gkondicion\u00e1l\u00e1s (HVAC) \u00fczemm\u00f3d megv\u00e1ltozott"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Termoszt\u00e1t",
+            "state": {
+                "auto": "Automatikus",
+                "cool": "H\u0171t\u00e9s",
+                "dry": "P\u00e1r\u00e1tlan\u00edt\u00e1s",
+                "fan_only": "L\u00e9gmozg\u00e1s",
+                "heat": "F\u0171t\u00e9s",
+                "heat_cool": "F\u0171t\u00e9s/H\u0171t\u00e9s",
+                "off": "Ki"
+            },
+            "state_attributes": {
+                "aux_heat": {
+                    "name": "Auxili\u00e1ris f\u0171t\u00e9s"
+                },
+                "current_humidity": {
+                    "name": "Aktu\u00e1lis p\u00e1ratartalom"
+                },
+                "current_temperature": {
+                    "name": "Aktu\u00e1lis h\u0151m\u00e9rs\u00e9klet"
+                },
+                "fan_mode": {
+                    "name": "Ventil\u00e1tor m\u00f3d",
+                    "state": {
+                        "auto": "Automatikus",
+                        "diffuse": "Diff\u00faz",
+                        "focus": "F\u00f3kusz",
+                        "high": "Magas",
+                        "low": "Alacsony",
+                        "medium": "K\u00f6zepes",
+                        "middle": "K\u00f6zepes",
+                        "off": "Ki",
+                        "on": "Be",
+                        "top": "Fels\u0151"
+                    }
+                },
+                "fan_modes": {
+                    "name": "Ventil\u00e1tor m\u00f3dok"
+                },
+                "humidity": {
+                    "name": "K\u00edv\u00e1nt p\u00e1ratartalom"
+                },
+                "hvac_action": {
+                    "name": "Aktu\u00e1lis m\u0171velet",
+                    "state": {
+                        "cooling": "H\u0171t\u00e9s",
+                        "drying": "P\u00e1r\u00e1tlan\u00edt\u00e1s",
+                        "fan": "L\u00e9gmozg\u00e1s",
+                        "heating": "F\u0171t\u00e9s",
+                        "idle": "T\u00e9tlen",
+                        "off": "Ki",
+                        "preheating": "El\u0151meleg\u00edt\u00e9s"
+                    }
+                },
+                "hvac_modes": {
+                    "name": "M\u0171k\u00f6d\u00e9si m\u00f3dok"
+                },
+                "max_humidity": {
+                    "name": "Maxim\u00e1lis c\u00e9l p\u00e1ratartalom"
+                },
+                "max_temp": {
+                    "name": "Maxim\u00e1lis c\u00e9lh\u0151m\u00e9rs\u00e9klet"
+                },
+                "min_humidity": {
+                    "name": "Minim\u00e1lis c\u00e9l p\u00e1ratartalom"
+                },
+                "min_temp": {
+                    "name": "Minim\u00e1lis c\u00e9lh\u0151m\u00e9rs\u00e9klet"
+                },
+                "preset_mode": {
+                    "name": "\u00dczemm\u00f3d",
+                    "state": {
+                        "activity": "Tev\u00e9kenys\u00e9g",
+                        "away": "T\u00e1vol",
+                        "boost": "Turb\u00f3",
+                        "comfort": "Komfort",
+                        "eco": "Takar\u00e9kos",
+                        "home": "Otthon",
+                        "none": "Nincs",
+                        "sleep": "Alv\u00e1s"
+                    }
+                },
+                "preset_modes": {
+                    "name": "El\u0151be\u00e1ll\u00edt\u00e1sok"
+                },
+                "swing_mode": {
+                    "name": "Legyez\u00e9s",
+                    "state": {
+                        "both": "Mindkett\u0151",
+                        "horizontal": "V\u00edzszintes",
+                        "off": "Ki",
+                        "on": "Be",
+                        "vertical": "F\u00fcgg\u0151leges"
+                    }
+                },
+                "swing_modes": {
+                    "name": "Legyez\u00e9s"
+                },
+                "target_temp_high": {
+                    "name": "Fels\u0151 c\u00e9lh\u0151m\u00e9rs\u00e9klet"
+                },
+                "target_temp_low": {
+                    "name": "Als\u00f3 c\u00e9lh\u0151m\u00e9rs\u00e9klet"
+                },
+                "target_temp_step": {
+                    "name": "C\u00e9lh\u0151m\u00e9rs\u00e9klet l\u00e9pt\u00e9k"
+                },
+                "temperature": {
+                    "name": "K\u00edv\u00e1nt h\u0151m\u00e9rs\u00e9klet"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} integr\u00e1ci\u00f3 nem t\u00e1mogatja {platform} platform be\u00e1ll\u00edt\u00e1s\u00e1t.\n\nK\u00e9rem, t\u00e1vol\u00edtsa el a konfigur\u00e1ci\u00f3b\u00f3l, \u00e9s ind\u00edtsa \u00fajra a Home Assistantot a probl\u00e9ma megold\u00e1s\u00e1hoz.",
+            "title": "A platform nem t\u00e1mogatott"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Kikapcsol\u00e1s"
+        },
+        "turn_on": {
+            "name": "Bekapcsol\u00e1s"
+        }
+    },
+    "title": "H\u0171t\u00e9s/f\u0171t\u00e9s"
+}

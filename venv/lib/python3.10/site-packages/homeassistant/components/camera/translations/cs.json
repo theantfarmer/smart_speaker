@@ -1,0 +1,48 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kamera",
+            "state": {
+                "idle": "Ne\u010dinn\u00e1",
+                "recording": "Nahr\u00e1v\u00e1",
+                "streaming": "Streamuje"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "P\u0159\u00edstupov\u00fd token"
+                },
+                "brand": {
+                    "name": "Zna\u010dka"
+                },
+                "frontend_stream_type": {
+                    "name": "Typ streamu",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Model"
+                },
+                "motion_detection": {
+                    "name": "Detekce pohybu"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Kamera"
+}

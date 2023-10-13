@@ -1,0 +1,32 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "V\u00e4lj av eller p\u00e5",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Hanteras via anv\u00e4ndargr\u00e4nssnittet",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ladda om"
+        },
+        "toggle": {
+            "name": "V\u00e4xla"
+        },
+        "turn_off": {
+            "name": "St\u00e4ng av"
+        }
+    },
+    "title": "V\u00e4lj av eller p\u00e5"
+}

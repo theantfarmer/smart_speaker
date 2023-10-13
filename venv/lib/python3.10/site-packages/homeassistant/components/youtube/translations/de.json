@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "access_not_configured": "Bitte lese die folgende Nachricht, die wir von Google erhalten haben: \n\n{message}",
+            "already_configured": "Konto wurde bereits konfiguriert",
+            "no_channel": "Bitte erstelle einen YouTube-Kanal, um die Integration nutzen zu k\u00f6nnen. Anweisungen findest du unter {support_url}.",
+            "reauth_successful": "Die erneute Authentifizierung war erfolgreich",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung"
+        },
+        "step": {
+            "channels": {
+                "data": {
+                    "channels": "YouTube-Kan\u00e4le"
+                },
+                "description": "W\u00e4hle die Kan\u00e4le aus, die du hinzuf\u00fcgen m\u00f6chtest."
+            },
+            "reauth_confirm": {
+                "description": "Die YouTube-Integration muss dein Konto erneut authentifizieren",
+                "title": "Integration erneut authentifizieren"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "latest_upload": {
+                "name": "Letzter Upload"
+            },
+            "subscribers": {
+                "name": "Abonnenten"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "channels": "YouTube-Kan\u00e4le"
+                },
+                "description": "W\u00e4hle die Kan\u00e4le aus, die du hinzuf\u00fcgen m\u00f6chtest."
+            }
+        }
+    }
+}

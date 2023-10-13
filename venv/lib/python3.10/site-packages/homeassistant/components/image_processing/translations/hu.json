@@ -1,0 +1,16 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "K\u00e9pfeldolgoz\u00e1s",
+            "state_attributes": {
+                "faces": {
+                    "name": "Arcok"
+                },
+                "total_faces": {
+                    "name": "\u00d6sszes arc"
+                }
+            }
+        }
+    },
+    "title": "K\u00e9pfeldolgoz\u00e1s"
+}

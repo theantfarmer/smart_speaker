@@ -1,0 +1,51 @@
+{
+    "entity_component": {
+        "_": {
+            "state": {
+                "active": "\u6fc0\u6d3b",
+                "idle": "\u7a7a\u95f2",
+                "paused": "\u5df2\u6682\u505c"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "\u6301\u7eed\u65f6\u95f4"
+                },
+                "editable": {
+                    "name": "\u901a\u8fc7 UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "finishes_at": {
+                    "name": "\u5b8c\u6210\u4e8e"
+                },
+                "remaining": {
+                    "name": "\u5269\u4f59"
+                }
+            }
+        }
+    },
+    "services": {
+        "change": {
+            "fields": {
+                "duration": {
+                    "description": "\u6dfb\u52a0\u6216\u51cf\u53bb\u6b63\u5728\u8fd0\u884c\u7684\u8ba1\u65f6\u5668\u7684\u6301\u7eed\u65f6\u95f4\u3002",
+                    "name": "\u6301\u7eed\u65f6\u95f4"
+                }
+            }
+        },
+        "pause": {
+            "name": "\u6682\u505c"
+        },
+        "start": {
+            "fields": {
+                "duration": {
+                    "description": "\u8ba1\u65f6\u5668\u5b8c\u6210\u6240\u9700\u7684\u6301\u7eed\u65f6\u95f4\u3002 [\u9009\u4fee\u7684]\u3002",
+                    "name": "\u6301\u7eed\u65f6\u95f4"
+                }
+            },
+            "name": "\u5f00\u59cb"
+        }
+    }
+}

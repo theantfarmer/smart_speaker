@@ -1,0 +1,18 @@
+{
+    "services": {
+        "turn_on": {
+            "description": "Setzt das RGB-Licht auf die vorherrschende Farbe, die in dem \u00fcber die URL oder den Dateipfad angegebenen Bild gefunden wurde.",
+            "fields": {
+                "color_extract_path": {
+                    "description": "Der vollst\u00e4ndige Systempfad zu dem Bild, aus dem die RGB-Werte extrahiert werden sollen. Muss in `allowlist_external_dirs` erlaubt sein.",
+                    "name": "Pfad"
+                },
+                "color_extract_url": {
+                    "description": "Die URL des Bildes, aus dem die RGB-Werte extrahiert werden sollen. Muss in `allowlist_external_urls` erlaubt sein.",
+                    "name": "URL"
+                }
+            },
+            "name": "Einschalten"
+        }
+    }
+}

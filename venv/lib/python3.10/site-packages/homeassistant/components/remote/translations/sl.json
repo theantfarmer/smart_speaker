@@ -1,0 +1,24 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "Preklopi {entity_name}",
+            "turn_off": "Izklopi {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} je izklopljen"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} vklopljen ali izklopljen",
+            "turned_off": "{entity_name} je izklopljena"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "Izklopljeno",
+                "on": "Vklopljeno"
+            }
+        }
+    },
+    "title": "Oddaljeno"
+}

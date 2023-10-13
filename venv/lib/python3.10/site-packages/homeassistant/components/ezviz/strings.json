@@ -1,0 +1,68 @@
+{
+  "config": {
+    "flow_title": "{serial}",
+    "step": {
+      "user": {
+        "title": "Connect to EZVIZ Cloud",
+        "data": {
+          "username": "[%key:common::config_flow::data::username%]",
+          "password": "[%key:common::config_flow::data::password%]",
+          "url": "[%key:common::config_flow::data::url%]"
+        }
+      },
+      "user_custom_url": {
+        "title": "Connect to custom EZVIZ URL",
+        "description": "Manually specify your region URL",
+        "data": {
+          "username": "[%key:common::config_flow::data::username%]",
+          "password": "[%key:common::config_flow::data::password%]",
+          "url": "[%key:common::config_flow::data::url%]"
+        }
+      },
+      "confirm": {
+        "title": "Discovered EZVIZ Camera",
+        "description": "Enter RTSP credentials for EZVIZ camera {serial} with IP {ip_address}",
+        "data": {
+          "username": "[%key:common::config_flow::data::username%]",
+          "password": "[%key:common::config_flow::data::password%]"
+        }
+      },
+      "reauth_confirm": {
+        "title": "[%key:common::config_flow::title::reauth%]",
+        "description": "Enter credentials to reauthenticate to ezviz cloud account",
+        "data": {
+          "username": "[%key:common::config_flow::data::username%]",
+          "password": "[%key:common::config_flow::data::password%]"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]",
+      "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+      "invalid_host": "[%key:common::config_flow::error::invalid_host%]",
+      "mfa_required": "2FA enabled on account, please disable and retry"
+    },
+    "abort": {
+      "already_configured_account": "[%key:common::config_flow::abort::already_configured_account%]",
+      "unknown": "[%key:common::config_flow::error::unknown%]",
+      "ezviz_cloud_account_missing": "Ezviz cloud account missing. Please reconfigure Ezviz cloud account",
+      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "data": {
+          "timeout": "Request Timeout (seconds)",
+          "ffmpeg_arguments": "Arguments passed to ffmpeg for cameras"
+        }
+      }
+    }
+  },
+  "issues": {
+    "service_depreciation_detection_sensibility": {
+      "title": "Ezviz Detection sensitivity service is being removed",
+      "description": "Ezviz Detection sensitivity service is deprecated and will be removed in Home Assistant 2023.12; Please adjust the automation or script that uses the service and select submit below to mark this issue as resolved."
+    }
+  }
+}

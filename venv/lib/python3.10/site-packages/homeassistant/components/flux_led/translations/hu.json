@@ -1,0 +1,93 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "already_in_progress": "A be\u00e1ll\u00edt\u00e1si folyamat m\u00e1r el lett kezdve",
+            "no_devices_found": "Nem tal\u00e1lhat\u00f3 eszk\u00f6z a h\u00e1l\u00f3zaton"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "flow_title": "{model} {id} ({ipaddr})",
+        "step": {
+            "discovery_confirm": {
+                "description": "{model} {id} ({ipaddr}) hozz\u00e1ad\u00e1sa a rendszerhez."
+            },
+            "user": {
+                "data": {
+                    "host": "C\u00edm"
+                },
+                "description": "Ha nem ad meg c\u00edmet, akkor az eszk\u00f6z\u00f6k keres\u00e9se a felder\u00edt\u00e9ssel t\u00f6rt\u00e9nik."
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "unpair_remotes": {
+                "name": "T\u00e1vir\u00e1ny\u00edt\u00f3k p\u00e1ros\u00edt\u00e1s\u00e1nak megsz\u00fcntet\u00e9se"
+            }
+        },
+        "number": {
+            "effect_speed": {
+                "name": "Effekt sebess\u00e9g"
+            },
+            "music_pixels_per_segment": {
+                "name": "Zenei pixelek szegmensenk\u00e9nt"
+            },
+            "music_segments": {
+                "name": "Zenei szegmensek"
+            },
+            "pixels_per_segment": {
+                "name": "Pixelek szegmensenk\u00e9nt"
+            },
+            "segments": {
+                "name": "Szegmensek"
+            }
+        },
+        "select": {
+            "ic_type": {
+                "name": "IC t\u00edpus"
+            },
+            "operating_mode": {
+                "name": "\u00dczemm\u00f3d"
+            },
+            "power_restored": {
+                "name": "Az \u00e1ramell\u00e1t\u00e1s helyre\u00e1llt"
+            },
+            "remote_config": {
+                "name": "T\u00e1voli konfigur\u00e1ci\u00f3"
+            },
+            "white_channel": {
+                "name": "Feh\u00e9r csatorna"
+            },
+            "wiring": {
+                "name": "Bek\u00f6t\u00e9s"
+            }
+        },
+        "sensor": {
+            "paired_remotes": {
+                "name": "P\u00e1ros\u00edtott t\u00e1vvez\u00e9rl\u0151k"
+            }
+        },
+        "switch": {
+            "music": {
+                "name": "Zene"
+            },
+            "remote_access": {
+                "name": "T\u00e1voli hozz\u00e1f\u00e9r\u00e9s"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "custom_effect_colors": "Egy\u00e9ni effektus: 1-16 [R,G,B] sz\u00edn list\u00e1ja. P\u00e9lda: [255,0,255], [60,128,0]",
+                    "custom_effect_speed_pct": "Egy\u00e9ni effektus: A sz\u00edneket v\u00e1lt\u00f3 hat\u00e1s sz\u00e1zal\u00e9kos ar\u00e1nya.",
+                    "custom_effect_transition": "Egy\u00e9ni hat\u00e1s: A sz\u00ednek k\u00f6z\u00f6tti \u00e1tmenet t\u00edpusa.",
+                    "mode": "A v\u00e1lasztott f\u00e9nyer\u0151 m\u00f3d."
+                }
+            }
+        }
+    }
+}

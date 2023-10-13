@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Indtast dato og tid",
+            "state_attributes": {
+                "day": {
+                    "name": "Dag"
+                },
+                "editable": {
+                    "name": "Administreret via brugerfladen",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "hour": {
+                    "name": "Time"
+                },
+                "minute": {
+                    "name": "Minut"
+                },
+                "month": {
+                    "name": "M\u00e5ned"
+                },
+                "second": {
+                    "name": "Sekund"
+                },
+                "timestamp": {
+                    "name": "Tidsstempel"
+                },
+                "year": {
+                    "name": "\u00c5r"
+                }
+            }
+        }
+    },
+    "title": "Indtast dato og tid"
+}

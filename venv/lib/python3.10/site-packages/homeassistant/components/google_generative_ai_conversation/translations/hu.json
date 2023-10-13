@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API kulcs"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "model": "Modell",
+                    "prompt": "V\u00e1lasz sablon",
+                    "temperature": "H\u0151m\u00e9rs\u00e9klet",
+                    "top_k": "Fels\u0151 K",
+                    "top_p": "Fels\u0151 P"
+                }
+            }
+        }
+    }
+}

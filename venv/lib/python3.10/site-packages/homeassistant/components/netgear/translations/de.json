@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "no_serial": "Keine Seriennummer in den SSDP-Erkennungsinformationen",
+            "not_ipv4_address": "Keine IPv4-Adresse in den SSDP-Ermittlungsinformationen"
+        },
+        "error": {
+            "config": "Verbindungs- oder Anmeldefehler: Bitte \u00fcberpr\u00fcfe deine Konfiguration"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host (optional)",
+                    "password": "Passwort",
+                    "username": "Benutzername (Optional)"
+                },
+                "description": "Standardhost: {host}\nStandardbenutzername: {username}"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "consider_home": "Zu Hause Zeit (Sekunden)"
+                },
+                "description": "Optionale Einstellungen angeben"
+            }
+        }
+    }
+}

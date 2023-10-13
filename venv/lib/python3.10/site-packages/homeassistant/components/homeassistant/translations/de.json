@@ -1,0 +1,130 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "Die {domain}-Integration unterst\u00fctzt keine Konfiguration \u00fcber eine YAML-Datei. M\u00f6glicherweise bemerkt man bei der Integration keine offensichtlichen Probleme, aber die in YAML definierten Konfigurationseinstellungen werden nicht tats\u00e4chlich angewendet. \n\nUm dieses Problem zu beheben: \n\n1. Falls du dies noch nicht getan hast, [richte die Integration ein]({add_integration}). \n\n2. Entferne `{domain}:` aus deiner YAML-Konfigurationsdatei. \n\n3. Starte Home Assistant neu.",
+            "title": "Die {domain}-Integration unterst\u00fctzt keine YAML-Konfiguration"
+        },
+        "country_not_configured": {
+            "description": "Es wurde kein Land konfiguriert. Bitte aktualisiere die Konfiguration, indem du unten auf die Schaltfl\u00e4che \"Mehr erfahren\" klickst.",
+            "title": "Das Land wurde nicht konfiguriert"
+        },
+        "deprecated_yaml": {
+            "description": "Die Konfiguration von {integration_title} mithilfe von YAML wird entfernt. \n\nDeine vorhandene YAML-Konfiguration wurde automatisch in die Benutzeroberfl\u00e4che importiert. \n\nEntferne die Konfiguration `{domain}` aus deiner configuration.yaml-Datei und starte Home Assistant neu, um dieses Problem zu beheben.",
+            "title": "Die {integration_title} YAML-Konfiguration wird entfernt"
+        },
+        "historic_currency": {
+            "description": "Die W\u00e4hrung {currency} wird nicht mehr verwendet, bitte konfiguriere die W\u00e4hrungskonfiguration neu.",
+            "title": "Die konfigurierte W\u00e4hrung ist nicht mehr in Gebrauch"
+        },
+        "integration_key_no_support": {
+            "description": "Die {domain}-Integration unterst\u00fctzt keine Konfiguration \u00fcber eine YAML-Datei. M\u00f6glicherweise bemerkt man bei der Integration keine offensichtlichen Probleme, aber die in YAML definierten Konfigurationseinstellungen werden nicht tats\u00e4chlich angewendet. \n\nUm dieses Problem zu beheben: \n\n1. Falls du dies noch nicht getan hast, [richte die Integration ein]({add_integration}). \n\n2. Entferne `{domain}:` aus deiner YAML-Konfigurationsdatei. \n\n3. Starte Home Assistant neu.",
+            "title": "Die {domain}-Integration unterst\u00fctzt keine YAML-Konfiguration"
+        },
+        "no_platform_setup": {
+            "description": "Es ist nicht m\u00f6glich {platform} {domain} durch Hinzuf\u00fcgen von `{platform_key}` zur {domain}-Konfiguration zu konfigurieren. Weitere Informationen zum Einrichten dieser Integration findest du in der Dokumentation. \n\nUm dieses Problem zu beheben:\n1. Entferne `{platform_key}`-Vorkommen aus der `{domain}:`-Konfiguration in deiner YAML-Konfigurationsdatei.\n2. Starte Home Assistant neu. \n\nBeispiel, das entfernt werden sollte:\n{yaml_example}",
+            "title": "Nicht verwendete YAML-Konfiguration f\u00fcr die {platform}-Integration"
+        },
+        "platform_only": {
+            "description": "Die {domain}-Integration unterst\u00fctzt keine Konfiguration unter ihrem eigenen Schl\u00fcssel, sie muss unter ihren unterst\u00fctzten Plattformen konfiguriert werden.\n\nSo l\u00f6st man dieses Problem:\n\n1. Entferne `{domain}:` aus deiner YAML-Konfigurationsdatei.\n\n2. Starte Home Assistant neu.",
+            "title": "Die {domain}-Integration unterst\u00fctzt keine YAML-Konfiguration unter eigenem Schl\u00fcssel"
+        },
+        "python_version": {
+            "description": "Die Unterst\u00fctzung f\u00fcr die Ausf\u00fchrung von Home Assistant in der aktuell verwendeten Python-Version {current_python_version} ist veraltet und wird in Home Assistant {breaks_in_ha_version} entfernt. Bitte aktualisiere Python auf {required_python_version}, um zu verhindern, dass deine Home Assistant-Instanz besch\u00e4digt wird.",
+            "title": "Die Unterst\u00fctzung f\u00fcr Python {current_python_version} wird entfernt"
+        },
+        "storage_corruption": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Der Speicher `{storage_key}` konnte nicht analysiert werden und wurde in `{corrupt_path}` umbenannt, damit Home Assistant fortfahren kann. \n\nM\u00f6glicherweise wurde automatisch ein Standard-`{storage_key}` erstellt. \n\nWenn du manuelle \u00c4nderungen an der Speicherdatei vorgenommen hast, behebe alle Syntaxfehler in `{corrupt_path}`, stelle die Datei im urspr\u00fcnglichen Pfad `{original_path}` wieder her und starte Home Assistant neu. Andernfalls stelle das System aus einem Backup wieder her. \n\nKlicke unten auf SENDEN, um zu best\u00e4tigen, dass du die Datei repariert oder aus einem Backup wiederhergestellt hast. \n\nDer genaue Fehler war: {error}",
+                        "title": "Speicherbesch\u00e4digung f\u00fcr `{storage_key}` erkannt"
+                    }
+                }
+            },
+            "title": "Speicherbesch\u00e4digung f\u00fcr `{storage_key}` erkannt"
+        }
+    },
+    "services": {
+        "check_config": {
+            "description": "\u00dcberpr\u00fcft die YAML-Konfigurationsdateien des Home Assistant auf Fehler. Fehler werden in den Home Assistant-Protokollen angezeigt.",
+            "name": "Konfiguration pr\u00fcfen"
+        },
+        "reload_config_entry": {
+            "description": "L\u00e4dt den angegebenen Konfigurationseintrag neu.",
+            "fields": {
+                "entry_id": {
+                    "description": "Die Konfigurationseintrags-ID des neu zu ladenden Eintrags.",
+                    "name": "Konfigurationseintrags-ID"
+                }
+            },
+            "name": "Konfigurationseintrag neu laden"
+        },
+        "reload_core_config": {
+            "description": "L\u00e4dt die Kernkonfiguration aus der YAML-Konfiguration neu.",
+            "name": "Kernkonfiguration neu laden"
+        },
+        "reload_custom_templates": {
+            "description": "L\u00e4dt Jinja2-Vorlagen neu, die sich im Ordner \u201ecustom_templates\u201c in deiner Konfiguration befinden. Neue Werte werden beim n\u00e4chsten Rendern der Vorlage angewendet.",
+            "name": "Neu laden von benutzerdefinierten Jinja2-Vorlagen"
+        },
+        "restart": {
+            "description": "Startet Home Assistant neu.",
+            "name": "Neu starten"
+        },
+        "save_persistent_states": {
+            "description": "Speichert die persistenten Zust\u00e4nde sofort. Beh\u00e4lt das normale periodische Speicherintervall bei.",
+            "name": "Dauerhafte Zust\u00e4nde speichern"
+        },
+        "set_location": {
+            "description": "Aktualisiert den Home Assistant-Standort.",
+            "fields": {
+                "latitude": {
+                    "description": "Breitengrad deines Standorts.",
+                    "name": "Breitengrad"
+                },
+                "longitude": {
+                    "description": "L\u00e4ngengrad deines Standorts.",
+                    "name": "L\u00e4ngengrad"
+                }
+            },
+            "name": "Standort festlegen"
+        },
+        "stop": {
+            "description": "Stoppt Home Assistant.",
+            "name": "Stopp"
+        },
+        "toggle": {
+            "description": "Allgemeiner Dienst zum Ein-/Ausschalten von Ger\u00e4ten unter einer beliebigen Dom\u00e4ne.",
+            "name": "Generisches Umschalten"
+        },
+        "turn_off": {
+            "description": "Allgemeiner Dienst zum Ausschalten von Ger\u00e4ten unter einer beliebigen Dom\u00e4ne.",
+            "name": "Generisches Ausschalten"
+        },
+        "turn_on": {
+            "description": "Allgemeiner Dienst zum Einschalten von Ger\u00e4ten unter einer beliebigen Dom\u00e4ne.",
+            "name": "Generisches Einschalten"
+        },
+        "update_entity": {
+            "description": "Zwingt eine oder mehrere Entit\u00e4ten, ihre Daten zu aktualisieren.",
+            "name": "Entit\u00e4t aktualisieren"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "CPU-Architektur",
+            "config_dir": "Konfigurationsverzeichnis",
+            "dev": "Entwicklung",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Installationstyp",
+            "os_name": "Betriebssystemfamilie",
+            "os_version": "Betriebssystem-Version",
+            "python_version": "Python-Version",
+            "timezone": "Zeitzone",
+            "user": "Benutzer",
+            "version": "Version",
+            "virtualenv": "Virtuelle Umgebung"
+        }
+    }
+}

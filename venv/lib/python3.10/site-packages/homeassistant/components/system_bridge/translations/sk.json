@@ -1,0 +1,89 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "authenticate": {
+                "data": {
+                    "api_key": "API k\u013e\u00fa\u010d"
+                },
+                "description": "Zadajte k\u013e\u00fa\u010d API, ktor\u00fd ste nastavili vo svojej konfigur\u00e1cii pre {name}."
+            },
+            "user": {
+                "data": {
+                    "api_key": "API k\u013e\u00fa\u010d",
+                    "host": "Hostite\u013e",
+                    "port": "Port"
+                },
+                "description": "Zadajte podrobnosti o pripojen\u00ed."
+            }
+        }
+    },
+    "services": {
+        "open_path": {
+            "description": "Otvor\u00ed s\u00fabor na serveri pomocou predvolenej aplik\u00e1cie.",
+            "fields": {
+                "bridge": {
+                    "description": "Server, s ktor\u00fdm m\u00f4\u017eete hovori\u0165.",
+                    "name": "Bridge"
+                },
+                "path": {
+                    "description": "Cesta k otvoreniu.",
+                    "name": "Cesta"
+                }
+            },
+            "name": "Otvori\u0165 cestu"
+        },
+        "open_url": {
+            "description": "Otvor\u00ed adresu URL na serveri pomocou predvolenej aplik\u00e1cie.",
+            "fields": {
+                "bridge": {
+                    "description": "Server, s ktor\u00fdm m\u00f4\u017eete hovori\u0165.",
+                    "name": "Bridge"
+                },
+                "url": {
+                    "description": "URL na otvorenie.",
+                    "name": "URL"
+                }
+            },
+            "name": "Otvori\u0165 URL"
+        },
+        "send_keypress": {
+            "description": "Odo\u0161le stla\u010denie kl\u00e1vesnice.",
+            "fields": {
+                "bridge": {
+                    "description": "Server, na ktor\u00fd sa m\u00e1 pr\u00edkaz odosla\u0165.",
+                    "name": "Bridge"
+                },
+                "key": {
+                    "description": "Stla\u010dte tla\u010didlo. Zoznam je k dispoz\u00edcii tu: http://robotjs.io/docs/syntax#keys.",
+                    "name": "K\u013e\u00fa\u010d"
+                }
+            },
+            "name": "Odoslanie stla\u010denia kl\u00e1vesnice"
+        },
+        "send_text": {
+            "description": "Odo\u0161le text, ktor\u00fd m\u00e1 server zada\u0165.",
+            "fields": {
+                "bridge": {
+                    "description": "Server, na ktor\u00fd sa m\u00e1 pr\u00edkaz odosla\u0165.",
+                    "name": "Bridge"
+                },
+                "text": {
+                    "description": "Text na p\u00edsanie.",
+                    "name": "Text"
+                }
+            },
+            "name": "Odosla\u0165 text z kl\u00e1vesnice"
+        }
+    }
+}

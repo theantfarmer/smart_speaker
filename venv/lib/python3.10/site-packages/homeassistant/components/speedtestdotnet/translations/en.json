@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Already configured. Only a single configuration possible."
+        },
+        "step": {
+            "user": {
+                "description": "Do you want to start setup?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "download": {
+                "name": "Download"
+            },
+            "ping": {
+                "name": "Ping"
+            },
+            "upload": {
+                "name": "Upload"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "server_name": "Select test server"
+                }
+            }
+        }
+    }
+}

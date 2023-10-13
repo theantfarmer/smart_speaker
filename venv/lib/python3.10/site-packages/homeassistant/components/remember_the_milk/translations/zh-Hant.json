@@ -1,0 +1,11 @@
+{
+    "services": {
+        "create_task": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u7a31"
+                }
+            }
+        }
+    }
+}

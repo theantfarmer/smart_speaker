@@ -1,0 +1,60 @@
+{
+    "config": {
+        "abort": {
+            "access_token": "Error desconocido al generar un token de acceso.",
+            "already_configured": "La cuenta ya est\u00e1 configurada",
+            "missing_configuration": "El componente no est\u00e1 configurado. Por favor, sigue la documentaci\u00f3n."
+        },
+        "create_entry": {
+            "default": "Autenticado correctamente"
+        },
+        "error": {
+            "follow_link": "Por favor, sigue el enlace y autent\u00edcate antes de pulsar Enviar",
+            "no_token": "No autenticado con Ambiclimate"
+        },
+        "step": {
+            "auth": {
+                "description": "Por favor, sigue este [enlace]({authorization_url}) y **Permite** el acceso a tu cuenta Ambiclimate, luego regresa y pulsa **Enviar** a continuaci\u00f3n.\n(Aseg\u00farate de que la URL de devoluci\u00f3n de llamada especificada sea {cb_url})",
+                "title": "Autenticar Ambiclimate"
+            }
+        }
+    },
+    "services": {
+        "send_comfort_feedback": {
+            "fields": {
+                "name": {
+                    "description": "Cadena de texto con el nombre del dispositivo.",
+                    "name": "Nombre del dispositivo"
+                },
+                "value": {
+                    "name": "Valor de confort"
+                }
+            },
+            "name": "Enviar comentarios de confort"
+        },
+        "set_comfort_mode": {
+            "description": "Habilita el modo confort en tu AA.",
+            "fields": {
+                "name": {
+                    "description": "Cadena de texto con el nombre del dispositivo.",
+                    "name": "Nombre del dispositivo"
+                }
+            },
+            "name": "Configurar el modo confort"
+        },
+        "set_temperature_mode": {
+            "description": "Habilita el modo de temperatura en tu AA.",
+            "fields": {
+                "name": {
+                    "description": "Cadena de texto con el nombre del dispositivo.",
+                    "name": "Nombre del dispositivo"
+                },
+                "value": {
+                    "description": "Valor objetivo en Celsius.",
+                    "name": "Temperatura"
+                }
+            },
+            "name": "Configurar el modo de temperatura"
+        }
+    }
+}

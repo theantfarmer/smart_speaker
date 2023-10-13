@@ -1,0 +1,119 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "{domain} entegrasyonu, YAML dosyas\u0131 \u00fczerinden yap\u0131land\u0131rmay\u0131 desteklemiyor. Entegrasyonla ilgili herhangi bir bariz sorun fark etmeyebilirsiniz, ancak YAML'de tan\u0131mlanan hi\u00e7bir yap\u0131land\u0131rma ayar\u0131 ger\u00e7ekte uygulanmaz. \n\n Bunu \u00e7\u00f6zmek i\u00e7in: \n\n 1. Hen\u00fcz yapmad\u0131ysan\u0131z, [entegrasyon kurun]( {add_integration} ). \n\n 2. YAML yap\u0131land\u0131rma dosyan\u0131zdan ` {domain} :` \u00f6\u011fesini kald\u0131r\u0131n. \n\n 3. Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "{domain} entegrasyonu, YAML yap\u0131land\u0131rmas\u0131n\u0131 desteklemiyor"
+        },
+        "country_not_configured": {
+            "description": "Hi\u00e7bir \u00fclke yap\u0131land\u0131r\u0131lmad\u0131, l\u00fctfen a\u015fa\u011f\u0131daki \"daha fazla bilgi\" d\u00fc\u011fmesine t\u0131klayarak yap\u0131land\u0131rmay\u0131 g\u00fcncelleyin.",
+            "title": "\u00dclke yap\u0131land\u0131r\u0131lmad\u0131"
+        },
+        "deprecated_yaml": {
+            "description": "YAML kullanarak {integration_title} yap\u0131land\u0131rmas\u0131 kald\u0131r\u0131l\u0131yor. \n\n Mevcut YAML yap\u0131land\u0131rman\u0131z, kullan\u0131c\u0131 aray\u00fcz\u00fcne otomatik olarak aktar\u0131ld\u0131. \n\n Bu sorunu \u00e7\u00f6zmek i\u00e7in ` {domain} ` yap\u0131land\u0131rmas\u0131n\u0131 configuration.yaml dosyan\u0131zdan kald\u0131r\u0131n ve Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "{integration_title} YAML yap\u0131land\u0131rmas\u0131 kald\u0131r\u0131l\u0131yor"
+        },
+        "historic_currency": {
+            "description": "{currency} para birimi art\u0131k kullan\u0131mda de\u011fil, l\u00fctfen para birimi yap\u0131land\u0131rmas\u0131n\u0131 yeniden yap\u0131land\u0131r\u0131n.",
+            "title": "Yap\u0131land\u0131r\u0131lan para birimi art\u0131k kullan\u0131mda de\u011fil"
+        },
+        "integration_key_no_support": {
+            "description": "{domain} entegrasyonu, YAML dosyas\u0131 \u00fczerinden yap\u0131land\u0131rmay\u0131 desteklemiyor. Entegrasyonla ilgili herhangi bir bariz sorun fark etmeyebilirsiniz, ancak YAML'de tan\u0131mlanan hi\u00e7bir yap\u0131land\u0131rma ayar\u0131 ger\u00e7ekte uygulanmaz. \n\n Bunu \u00e7\u00f6zmek i\u00e7in: \n\n 1. Hen\u00fcz yapmad\u0131ysan\u0131z, [entegrasyon kurun]( {add_integration} ). \n\n 2. YAML yap\u0131land\u0131rma dosyan\u0131zdan ` {domain} :` \u00f6\u011fesini kald\u0131r\u0131n. \n\n 3. Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "{domain} entegrasyonu, YAML yap\u0131land\u0131rmas\u0131n\u0131 desteklemiyor"
+        },
+        "no_platform_setup": {
+            "description": "{domain} yap\u0131land\u0131rmas\u0131na ' {platform_key}' ekleyerek {platform} {domain} \u00f6\u011fesini yap\u0131land\u0131rmak m\u00fcmk\u00fcn de\u011fildir. Bu entegrasyonun nas\u0131l kurulaca\u011f\u0131 hakk\u0131nda daha fazla bilgi i\u00e7in l\u00fctfen belgelere bak\u0131n.\n\nBunu \u00e7\u00f6zmek i\u00e7in:\n1. YAML yap\u0131land\u0131rma dosyan\u0131zdaki \"{domain}:\" yap\u0131land\u0131rmas\u0131ndan \"{platform_key}\" olu\u015fumlar\u0131n\u0131 kald\u0131r\u0131n.\n2. Ev Asistan\u0131'n\u0131 yeniden ba\u015flat\u0131n.\n\nKald\u0131r\u0131lmas\u0131 gereken \u00f6rnek:\n{yaml_example}",
+            "title": "{platform} entegrasyonu i\u00e7in kullan\u0131lmayan YAML yap\u0131land\u0131rmas\u0131"
+        },
+        "platform_only": {
+            "description": "{domain} entegrasyonu, kendi anahtar\u0131 alt\u0131nda yap\u0131land\u0131rmay\u0131 desteklemez, desteklenen platformlar\u0131 alt\u0131nda yap\u0131land\u0131r\u0131lmal\u0131d\u0131r. \n\n Bunu \u00e7\u00f6zmek i\u00e7in: \n\n 1. YAML yap\u0131land\u0131rma dosyan\u0131zdan ` {domain} :` \u00f6\u011fesini kald\u0131r\u0131n. \n\n 2. Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "{domain} entegrasyonu, kendi anahtar\u0131 alt\u0131nda YAML yap\u0131land\u0131rmas\u0131n\u0131 desteklemiyor"
+        },
+        "python_version": {
+            "description": "Home Assistant'\u0131 \u015fu an kullan\u0131lan {current_python_version} Python s\u00fcr\u00fcm\u00fcnde \u00e7al\u0131\u015ft\u0131rma deste\u011fi kullan\u0131mdan kald\u0131r\u0131lm\u0131\u015ft\u0131r ve Home Assistant {breaks_in_ha_version} kald\u0131r\u0131lacakt\u0131r. Home Assistant \u00f6rne\u011finizin bozulmas\u0131n\u0131 \u00f6nlemek i\u00e7in l\u00fctfen Python'u {required_python_version} s\u00fcr\u00fcm\u00fcne y\u00fckseltin.",
+            "title": "Python {current_python_version} deste\u011fi kald\u0131r\u0131l\u0131yor"
+        }
+    },
+    "services": {
+        "check_config": {
+            "description": "Home Assistant YAML yap\u0131land\u0131rma dosyalar\u0131nda hata olup olmad\u0131\u011f\u0131n\u0131 kontrol eder. Hatalar Home Assistant g\u00fcnl\u00fcklerinde g\u00f6sterilecektir.",
+            "name": "Yap\u0131land\u0131rmay\u0131 kontrol edin"
+        },
+        "reload_config_entry": {
+            "description": "Belirtilen yap\u0131land\u0131rma giri\u015fini yeniden y\u00fckler.",
+            "fields": {
+                "entry_id": {
+                    "description": "Yeniden y\u00fcklenecek giri\u015fin yap\u0131land\u0131rma giri\u015fi kimli\u011fi.",
+                    "name": "Yap\u0131land\u0131rma giri\u015fi kimli\u011fi"
+                }
+            },
+            "name": "Yap\u0131land\u0131rma giri\u015fini yeniden y\u00fckle"
+        },
+        "reload_core_config": {
+            "description": "\u00c7ekirdek yap\u0131land\u0131rmay\u0131 YAML yap\u0131land\u0131rmas\u0131ndan yeniden y\u00fckler.",
+            "name": "\u00c7ekirdek yap\u0131land\u0131rmas\u0131n\u0131 yeniden y\u00fckle"
+        },
+        "reload_custom_templates": {
+            "description": "Yap\u0131land\u0131rman\u0131zdaki \"custom_templates\" klas\u00f6r\u00fcnde bulunan Jinja2 \u015fablonlar\u0131n\u0131 yeniden y\u00fckler. Yeni de\u011ferler, \u015fablonun sonraki i\u015flemesinde uygulanacakt\u0131r.",
+            "name": "\u00d6zel Jinja2 \u015fablonlar\u0131n\u0131 yeniden y\u00fckleyin"
+        },
+        "restart": {
+            "description": "Home Assistant'\u0131 yeniden ba\u015flat\u0131r.",
+            "name": "Yeniden ba\u015flat"
+        },
+        "save_persistent_states": {
+            "description": "Kal\u0131c\u0131 durumlar\u0131 hemen kaydeder. Normal periyodik kaydetme aral\u0131\u011f\u0131n\u0131 korur.",
+            "name": "Kal\u0131c\u0131 durumlar\u0131 kaydetme"
+        },
+        "set_location": {
+            "description": "Home Asistan\u0131 konumunu g\u00fcnceller.",
+            "fields": {
+                "latitude": {
+                    "description": "Bulundu\u011funuz yerin enlemi.",
+                    "name": "Enlem"
+                },
+                "longitude": {
+                    "description": "Bulundu\u011funuz yerin boylam\u0131.",
+                    "name": "Boylam"
+                }
+            },
+            "name": "Konumu ayarla"
+        },
+        "stop": {
+            "description": "Home Assistant'\u0131 durdurur.",
+            "name": "Durdur"
+        },
+        "toggle": {
+            "description": "Herhangi bir etki alan\u0131 alt\u0131nda cihazlar\u0131 a\u00e7mak/kapatmak i\u00e7in genel hizmet.",
+            "name": "Genel ge\u00e7i\u015f"
+        },
+        "turn_off": {
+            "description": "Herhangi bir etki alan\u0131 alt\u0131nda cihazlar\u0131 kapatmak i\u00e7in genel hizmet.",
+            "name": "Genel kapatma"
+        },
+        "turn_on": {
+            "description": "Herhangi bir etki alan\u0131 alt\u0131nda cihazlar\u0131 a\u00e7mak i\u00e7in genel hizmet.",
+            "name": "Genel a\u00e7ma"
+        },
+        "update_entity": {
+            "description": "Bir veya daha fazla varl\u0131\u011f\u0131 verilerini g\u00fcncellemeye zorlar.",
+            "name": "Varl\u0131\u011f\u0131 g\u00fcncelle"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "CPU Mimarisi",
+            "config_dir": "Yap\u0131land\u0131rma Dizini",
+            "dev": "Geli\u015ftirme",
+            "docker": "Docker",
+            "hassio": "S\u00fcperviz\u00f6r",
+            "installation_type": "Kurulum T\u00fcr\u00fc",
+            "os_name": "\u0130\u015fletim Sistemi Ailesi",
+            "os_version": "\u0130\u015fletim Sistemi S\u00fcr\u00fcm\u00fc",
+            "python_version": "Python S\u00fcr\u00fcm\u00fc",
+            "timezone": "Saat dilimi",
+            "user": "Kullan\u0131c\u0131",
+            "version": "S\u00fcr\u00fcm",
+            "virtualenv": "Sanal Ortam"
+        }
+    }
+}

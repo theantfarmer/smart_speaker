@@ -1,0 +1,32 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Text",
+            "state_attributes": {
+                "max": {
+                    "name": "Maxim\u00e1ln\u00ed d\u00e9lka"
+                },
+                "min": {
+                    "name": "Minim\u00e1ln\u00ed d\u00e9lka"
+                },
+                "mode": {
+                    "name": "Re\u017eim",
+                    "state": {
+                        "password": "Heslo",
+                        "text": "Text"
+                    }
+                },
+                "pattern": {
+                    "name": "Vzor"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "title": "Text"
+}

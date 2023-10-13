@@ -1,0 +1,89 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "reauth_successful": "Die erneute Authentifizierung war erfolgreich",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "authenticate": {
+                "data": {
+                    "api_key": "API-Schl\u00fcssel"
+                },
+                "description": "Bitte gib den API-Schl\u00fcssel ein, den du in deiner Konfiguration f\u00fcr {name} festgelegt hast."
+            },
+            "user": {
+                "data": {
+                    "api_key": "API-Schl\u00fcssel",
+                    "host": "Host",
+                    "port": "Port"
+                },
+                "description": "Bitte gib Verbindungsdaten ein."
+            }
+        }
+    },
+    "services": {
+        "open_path": {
+            "description": "\u00d6ffnet eine Datei auf dem Server mit der Standardanwendung.",
+            "fields": {
+                "bridge": {
+                    "description": "Der Server, mit dem gesprochen werden soll.",
+                    "name": "Br\u00fccke"
+                },
+                "path": {
+                    "description": "Pfad zum \u00d6ffnen.",
+                    "name": "Pfad"
+                }
+            },
+            "name": "Pfad \u00f6ffnen"
+        },
+        "open_url": {
+            "description": "\u00d6ffnet eine URL auf dem Server mit der Standardanwendung.",
+            "fields": {
+                "bridge": {
+                    "description": "Der Server, mit dem gesprochen werden soll.",
+                    "name": "Br\u00fccke"
+                },
+                "url": {
+                    "description": "URL zum \u00d6ffnen.",
+                    "name": "URL"
+                }
+            },
+            "name": "URL \u00f6ffnen"
+        },
+        "send_keypress": {
+            "description": "Sendet einen Tastendruck.",
+            "fields": {
+                "bridge": {
+                    "description": "Der Server, an den der Befehl gesendet werden soll.",
+                    "name": "Br\u00fccke"
+                },
+                "key": {
+                    "description": "Taste zum Dr\u00fccken. Liste hier verf\u00fcgbar: http://robotjs.io/docs/syntax#keys.",
+                    "name": "Taste"
+                }
+            },
+            "name": "Tastendruck senden"
+        },
+        "send_text": {
+            "description": "Sendet Text zur Eingabe durch den Server.",
+            "fields": {
+                "bridge": {
+                    "description": "Der Server, an den der Befehl gesendet werden soll.",
+                    "name": "Br\u00fccke"
+                },
+                "text": {
+                    "description": "Text zum Eingeben.",
+                    "name": "Text"
+                }
+            },
+            "name": "Tastaturtext senden"
+        }
+    }
+}

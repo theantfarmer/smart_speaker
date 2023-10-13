@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Ja configurat. Nom\u00e9s \u00e9s possible una sola configuraci\u00f3."
+        },
+        "step": {
+            "user": {
+                "description": "Vols comen\u00e7ar la configuraci\u00f3?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "download": {
+                "name": "Baixada"
+            },
+            "ping": {
+                "name": "Ping"
+            },
+            "upload": {
+                "name": "Pujada"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "server_name": "Seleccion el servidor de proves"
+                }
+            }
+        }
+    }
+}

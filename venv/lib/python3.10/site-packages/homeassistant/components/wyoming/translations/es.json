@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El servicio ya est\u00e1 configurado",
+            "no_services": "No se encontraron servicios en el extremo"
+        },
+        "error": {
+            "cannot_connect": "No se pudo conectar"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "\u00bfQuieres configurar Home Assistant para conectarse al servicio de Wyoming proporcionado por el complemento: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Puerto"
+                }
+            }
+        }
+    }
+}

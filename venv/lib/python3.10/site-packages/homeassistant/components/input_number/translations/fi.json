@@ -1,0 +1,34 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "editable": {
+                    "state": {
+                        "true": "Kyll\u00e4"
+                    }
+                },
+                "initial": {
+                    "name": "Alkuarvo"
+                },
+                "max": {
+                    "name": "Maksimi"
+                },
+                "min": {
+                    "name": "Minimi"
+                },
+                "mode": {
+                    "name": "Tila",
+                    "state": {
+                        "auto": "Automaattinen",
+                        "box": "Laatikko",
+                        "slider": "Liukus\u00e4\u00e4din"
+                    }
+                },
+                "step": {
+                    "name": "Askel"
+                }
+            }
+        }
+    },
+    "title": "Sy\u00f6t\u00e4 numero"
+}

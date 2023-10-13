@@ -1,0 +1,57 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dienst is al geconfigureerd",
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_host": "Ongeldige hostnaam of IP-adres",
+            "unknown": "Onverwachte fout"
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_host": "Ongeldige hostnaam of IP-adres",
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "post_heater": {
+                "name": "Naverwarmer"
+            }
+        },
+        "number": {
+            "supply_air_target_away": {
+                "name": "Aanvoerlucht temperatuur (Afwezig)"
+            },
+            "supply_air_target_boost": {
+                "name": "Aanvoerlucht temperatuur (Boost)"
+            },
+            "supply_air_target_home": {
+                "name": "Aanvoerlucht temperatuur (Thuis)"
+            }
+        },
+        "sensor": {
+            "cell_state": {
+                "name": "Celstatus"
+            },
+            "current_profile": {
+                "name": "Huidig profiel"
+            },
+            "efficiency": {
+                "name": "Effici\u00ebntie"
+            },
+            "exhaust_air": {
+                "name": "Afvoerlucht"
+            },
+            "extract_air": {
+                "name": "Onttrekken lucht"
+            }
+        }
+    }
+}

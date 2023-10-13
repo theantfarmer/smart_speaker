@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured",
+            "already_in_progress": "Configuration flow is already in progress"
+        },
+        "error": {
+            "connection_error": "Failed to connect"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "IP Address"
+                },
+                "description": "Connect to inverter",
+                "title": "GoodWe inverter"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "operation_mode": {
+                "state": {
+                    "backup": "Backup mode",
+                    "eco": "Eco mode",
+                    "eco_charge": "Eco charge mode",
+                    "eco_discharge": "Eco discharge mode",
+                    "general": "General mode",
+                    "off_grid": "Off grid mode",
+                    "peak_shaving": "Peak shaving mode"
+                }
+            }
+        }
+    }
+}

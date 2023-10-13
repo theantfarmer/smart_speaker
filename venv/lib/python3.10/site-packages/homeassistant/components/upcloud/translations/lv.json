@@ -1,0 +1,7 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u0160is pakalpojums jau piesl\u0113gts Home Assistant"
+        }
+    }
+}

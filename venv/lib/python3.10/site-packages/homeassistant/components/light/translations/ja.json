@@ -1,0 +1,90 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "{entity_name} \u660e\u308b\u3055\u3092\u4e0b\u3052\u308b",
+            "brightness_increase": "{entity_name} \u660e\u308b\u3055\u3092\u4e0a\u3052\u308b",
+            "flash": "\u30d5\u30e9\u30c3\u30b7\u30e5 {entity_name}",
+            "toggle": "\u30c8\u30b0\u30eb {entity_name}",
+            "turn_off": "\u30aa\u30d5\u306b\u3059\u308b {entity_name}",
+            "turn_on": "\u30aa\u30f3\u306b\u3059\u308b {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} \u306f\u30aa\u30d5\u3067\u3059",
+            "is_on": "{entity_name} \u304c\u30aa\u30f3\u3067\u3059"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} \u304c\u30aa\u30f3\u307e\u305f\u306f\u30aa\u30d5\u306b\u306a\u308a\u307e\u3057\u305f",
+            "turned_off": "{entity_name} \u30aa\u30d5\u306b\u306a\u308a\u307e\u3057\u305f",
+            "turned_on": "{entity_name} \u30aa\u30f3\u306b\u306a\u3063\u3066\u3044\u307e\u3059"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "\u7167\u660e",
+            "state": {
+                "off": "\u30aa\u30d5",
+                "on": "\u30aa\u30f3"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "\u8f1d\u5ea6"
+                },
+                "color_mode": {
+                    "name": "\u30ab\u30e9\u30fc\u30e2\u30fc\u30c9",
+                    "state": {
+                        "brightness": "\u8f1d\u5ea6\u306e\u307f",
+                        "color_temp": "\u8272\u6e29\u5ea6",
+                        "hs": "HS",
+                        "onoff": "\u30aa\u30f3/\u30aa\u30d5",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "\u4e0d\u660e",
+                        "white": "\u767d",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "\u8272\u6e29\u5ea6(mireds)"
+                },
+                "color_temp_kelvin": {
+                    "name": "\u8272\u6e29\u5ea6(\u30b1\u30eb\u30d3\u30f3)"
+                },
+                "effect": {
+                    "name": "\u30a8\u30d5\u30a7\u30af\u30c8"
+                },
+                "effect_list": {
+                    "name": "\u5229\u7528\u53ef\u80fd\u306a\u30a8\u30d5\u30a7\u30af\u30c8"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "\u6700\u9ad8\u8272\u6e29\u5ea6(\u30b1\u30eb\u30d3\u30f3)"
+                },
+                "max_mireds": {
+                    "name": "\u6700\u9ad8\u8272\u6e29\u5ea6(mired)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "\u6700\u4f4e\u8272\u6e29\u5ea6(\u30b1\u30eb\u30d3\u30f3)"
+                },
+                "min_mireds": {
+                    "name": "\u6700\u4f4e\u8272\u6e29\u5ea6(mired)"
+                },
+                "supported_color_modes": {
+                    "name": "\u5229\u7528\u53ef\u80fd\u306a\u30ab\u30e9\u30fc\u30e2\u30fc\u30c9",
+                    "state": {
+                        "brightness": "\u8f1d\u5ea6\u306e\u307f",
+                        "color_temp": "\u8272\u6e29\u5ea6",
+                        "hs": "HS",
+                        "onoff": "\u30aa\u30f3/\u30aa\u30d5",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "\u4e0d\u660e",
+                        "white": "\u767d",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "title": "\u7167\u660e"
+}

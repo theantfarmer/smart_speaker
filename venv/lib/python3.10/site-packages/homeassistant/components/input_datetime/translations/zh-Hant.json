@@ -1,0 +1,43 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u8f38\u5165\u65e5\u671f",
+            "state_attributes": {
+                "day": {
+                    "name": "\u65e5"
+                },
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "hour": {
+                    "name": "\u6642"
+                },
+                "minute": {
+                    "name": "\u5206"
+                },
+                "month": {
+                    "name": "\u6708"
+                },
+                "second": {
+                    "name": "\u79d2"
+                },
+                "timestamp": {
+                    "name": "\u6642\u9593\u6a19\u8a18"
+                },
+                "year": {
+                    "name": "\u5e74"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "\u91cd\u65b0\u52a0\u8f09"
+        }
+    },
+    "title": "\u8f38\u5165\u65e5\u671f"
+}

@@ -1,0 +1,63 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "S\u00e4\u00e4",
+            "state": {
+                "clear-night": "Y\u00f6, selke\u00e4\u00e4",
+                "cloudy": "Pilvist\u00e4",
+                "exceptional": "Poikkeuksellinen",
+                "fog": "Sumuista",
+                "hail": "Raekuuroja",
+                "lightning": "Ukkoskuuroja",
+                "lightning-rainy": "Ukkosvaara, sateista",
+                "partlycloudy": "Puolipilvist\u00e4",
+                "pouring": "Kaatosadetta",
+                "rainy": "Sateista",
+                "snowy": "Lumisadetta",
+                "snowy-rainy": "R\u00e4nt\u00e4sadetta",
+                "sunny": "Aurinkoista",
+                "windy": "Tuulista",
+                "windy-variant": "Tuulista"
+            },
+            "state_attributes": {
+                "forecast": {
+                    "name": "S\u00e4\u00e4ennuste"
+                },
+                "humidity": {
+                    "name": "Kosteus"
+                },
+                "ozone": {
+                    "name": "Otsoni"
+                },
+                "precipitation_unit": {
+                    "name": "Sadem\u00e4\u00e4r\u00e4n yksikk\u00f6"
+                },
+                "pressure": {
+                    "name": "Ilmanpaine"
+                },
+                "pressure_unit": {
+                    "name": "Ilmanpaineen yksikk\u00f6"
+                },
+                "temperature": {
+                    "name": "L\u00e4mp\u00f6tila"
+                },
+                "temperature_unit": {
+                    "name": "L\u00e4mp\u00f6tilan yksikk\u00f6"
+                },
+                "visibility": {
+                    "name": "N\u00e4kyvyys"
+                },
+                "visibility_unit": {
+                    "name": "N\u00e4kyvyyden yksikk\u00f6"
+                },
+                "wind_speed": {
+                    "name": "Tuulennopeus"
+                },
+                "wind_speed_unit": {
+                    "name": "Tuulen nopeuden yksikk\u00f6"
+                }
+            }
+        }
+    },
+    "title": "S\u00e4\u00e4"
+}

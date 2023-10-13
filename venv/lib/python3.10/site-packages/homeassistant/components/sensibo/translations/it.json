@@ -1,0 +1,161 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'account \u00e8 gi\u00e0 configurato",
+            "reauth_successful": "La riautenticazione ha avuto successo"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "incorrect_api_key": "Chiave API non valida per l'account selezionato",
+            "invalid_auth": "Autenticazione non valida",
+            "no_devices": "Nessun dispositivo rilevato",
+            "no_username": "Impossibile ottenere il nome utente"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Chiave API"
+                },
+                "data_description": {
+                    "api_key": "Segui la documentazione per ottenere la tua chiave API."
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "Chiave API"
+                },
+                "data_description": {
+                    "api_key": "Segui la documentazione per ottenere la tua chiave API."
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "filter_clean": {
+                "name": "Pulizia del filtro richiesta"
+            },
+            "is_main_sensor": {
+                "name": "Sensore principale"
+            },
+            "pure_ac_integration": {
+                "name": "Spinta pura collegata con AC"
+            },
+            "pure_geo_integration": {
+                "name": "Spinta pura collegata alla presenza"
+            },
+            "pure_measure_integration": {
+                "name": "Spinta pura collegata alla qualit\u00e0 dell'aria interna"
+            },
+            "pure_prime_integration": {
+                "name": "Spinta pura collegata alla qualit\u00e0 dell'aria esterna"
+            },
+            "room_occupied": {
+                "name": "Camera occupata"
+            }
+        },
+        "button": {
+            "reset_filter": {
+                "name": "Reimposta filtro"
+            }
+        },
+        "number": {
+            "calibration_humidity": {
+                "name": "Calibrazione dell'umidit\u00e0"
+            },
+            "calibration_temperature": {
+                "name": "Calibrazione della temperatura"
+            }
+        },
+        "select": {
+            "horizontalswing": {
+                "name": "Oscillazione orizzontale",
+                "state": {
+                    "fixedcenter": "Fisso al centro",
+                    "fixedcenterleft": "Fisso al centro sinistra",
+                    "fixedcenterright": "Fisso al centro destra",
+                    "fixedleft": "Fisso a sinistra",
+                    "fixedleftright": "Fisso a sinistra destra",
+                    "fixedright": "Fisso a destra",
+                    "rangecenter": "Intervallo centrale",
+                    "rangefull": "Intervallo completo",
+                    "stopped": "Fermata"
+                }
+            },
+            "light": {
+                "name": "Luce",
+                "state": {
+                    "dim": "Attenuata",
+                    "off": "Spento/a",
+                    "on": "Acceso/a"
+                }
+            }
+        },
+        "sensor": {
+            "airq_co2": {
+                "name": "Qualit\u00e0 Aria CO2"
+            },
+            "airq_tvoc": {
+                "name": "Qualit\u00e0 Aria COV Totale"
+            },
+            "battery_voltage": {
+                "name": "Tensione della batteria"
+            },
+            "climate_react_high": {
+                "name": "Soglia di reazione climatica di alta temperatura"
+            },
+            "climate_react_low": {
+                "name": "Soglia di reazione climatica di bassa temperatura"
+            },
+            "ethanol": {
+                "name": "Etanolo"
+            },
+            "feels_like": {
+                "name": "Temperatura percepita"
+            },
+            "filter_last_reset": {
+                "name": "Ultimo ripristino del filtro"
+            },
+            "rssi": {
+                "name": "RSSI"
+            },
+            "sensitivity": {
+                "name": "Sensibilit\u00e0 pura",
+                "state": {
+                    "n": "Normale",
+                    "s": "Sensibile"
+                }
+            },
+            "smart_type": {
+                "name": "Tipo di reazione climatica",
+                "state": {
+                    "feelslike": "Percepita",
+                    "humidity": "Umidit\u00e0",
+                    "temperature": "Temperatura"
+                }
+            },
+            "timer_time": {
+                "name": "Ora di fine del temporizzatore"
+            },
+            "tvoc": {
+                "name": "COV Totale"
+            }
+        },
+        "switch": {
+            "climate_react_switch": {
+                "name": "Reazione climatica"
+            },
+            "pure_boost_switch": {
+                "name": "Spinta pura"
+            },
+            "timer_on_switch": {
+                "name": "Temporizzatore"
+            }
+        },
+        "update": {
+            "fw_ver_available": {
+                "name": "Aggiornamento disponibile"
+            }
+        }
+    }
+}

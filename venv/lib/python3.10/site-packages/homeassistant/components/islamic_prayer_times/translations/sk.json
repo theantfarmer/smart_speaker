@@ -1,0 +1,48 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "U\u017e je nakonfigurovan\u00fd. Mo\u017en\u00e1 je len jedna konfigur\u00e1cia."
+        },
+        "step": {
+            "user": {
+                "description": "Chcete nastavi\u0165 \u010dasy islamsk\u00fdch modlitieb?",
+                "title": "Nastavte \u010dasy islamsk\u00fdch modlitieb"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "asr": {
+                "name": "Asr modlitba"
+            },
+            "dhuhr": {
+                "name": "Dhuhr modlitba"
+            },
+            "fajr": {
+                "name": "Fajr modlitba"
+            },
+            "isha": {
+                "name": "Isha modlitba"
+            },
+            "maghrib": {
+                "name": "Maghrib modlitba"
+            },
+            "midnight": {
+                "name": "\u010cas polnoci"
+            },
+            "sunrise": {
+                "name": "\u010cas v\u00fdchodu slnka"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "calculation_method": "Met\u00f3da v\u00fdpo\u010dtu modlitby"
+                }
+            }
+        }
+    },
+    "title": "\u010casy islamsk\u00fdch modlitieb"
+}

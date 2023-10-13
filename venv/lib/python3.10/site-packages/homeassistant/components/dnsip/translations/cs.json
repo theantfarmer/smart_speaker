@@ -1,0 +1,10 @@
+{
+    "options": {
+        "abort": {
+            "already_configured": "Slu\u017eba je ji\u017e nastavena"
+        },
+        "error": {
+            "invalid_resolver": "Neplatn\u00e1 IP adresa pro resolver"
+        }
+    }
+}

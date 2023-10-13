@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u8f38\u5165\u6846",
+            "state_attributes": {
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "max": {
+                    "name": "\u6700\u5927\u9577\u5ea6"
+                },
+                "min": {
+                    "name": "\u6700\u5c0f\u9577\u5ea6"
+                },
+                "mode": {
+                    "name": "\u6a21\u5f0f",
+                    "state": {
+                        "password": "\u5bc6\u78bc",
+                        "text": "\u6587\u5b57"
+                    }
+                },
+                "pattern": {
+                    "name": "\u5716\u6848"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "\u91cd\u65b0\u52a0\u8f09"
+        }
+    },
+    "title": "\u8f38\u5165\u6846"
+}

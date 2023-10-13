@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Syrena",
+            "state": {
+                "off": "wy\u0142.",
+                "on": "w\u0142."
+            },
+            "state_attributes": {
+                "available_tones": {
+                    "name": "Dost\u0119pne tony"
+                }
+            }
+        }
+    },
+    "title": "Syrena"
+}

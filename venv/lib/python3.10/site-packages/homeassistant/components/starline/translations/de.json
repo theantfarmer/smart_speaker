@@ -1,0 +1,136 @@
+{
+    "config": {
+        "error": {
+            "error_auth_app": "Falsche Anwendungs-ID oder Secret",
+            "error_auth_mfa": "Ung\u00fcltiger Code",
+            "error_auth_user": "Falscher Benutzername oder falsches Passwort"
+        },
+        "step": {
+            "auth_app": {
+                "data": {
+                    "app_id": "App-ID",
+                    "app_secret": "Geheimnis"
+                },
+                "description": "Anwendungs-ID und Geheimcode aus dem [StarLine Entwicklerkonto](https://my.starline.ru/developer)",
+                "title": "Anmeldeinformationen der Anwendung"
+            },
+            "auth_captcha": {
+                "data": {
+                    "captcha_code": "Code aus dem Bild"
+                },
+                "description": "{captcha_img}",
+                "title": "Captcha"
+            },
+            "auth_mfa": {
+                "data": {
+                    "mfa_code": "SMS Code"
+                },
+                "description": "Gib den an das Telefon gesendeten Code ein {Telefon_Nummer}",
+                "title": "Zwei-Faktor-Authentifizierung"
+            },
+            "auth_user": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "description": "StarLine Konto E-Mail und Passwort",
+                "title": "Anmeldeinformationen"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "alarm": {
+                "name": "Alarm"
+            },
+            "doors": {
+                "name": "T\u00fcren"
+            },
+            "hand_brake": {
+                "name": "Handbremse"
+            },
+            "hood": {
+                "name": "Haube"
+            },
+            "trunk": {
+                "name": "Kofferraum"
+            }
+        },
+        "device_tracker": {
+            "location": {
+                "name": "Standort"
+            }
+        },
+        "lock": {
+            "security": {
+                "name": "Sicherheit"
+            }
+        },
+        "sensor": {
+            "balance": {
+                "name": "Balance"
+            },
+            "battery": {
+                "name": "Batterie"
+            },
+            "engine_temperature": {
+                "name": "Motortemperatur"
+            },
+            "errors": {
+                "name": "OBD-Fehler"
+            },
+            "fuel": {
+                "name": "Kraftstoffmenge"
+            },
+            "gsm_signal": {
+                "name": "GSM-Signal"
+            },
+            "interior_temperature": {
+                "name": "Innentemperatur"
+            },
+            "mileage": {
+                "name": "Kilometerstand"
+            }
+        },
+        "switch": {
+            "additional_channel": {
+                "name": "Zus\u00e4tzlicher Kanal"
+            },
+            "engine": {
+                "name": "Motor"
+            },
+            "horn": {
+                "name": "Horn"
+            },
+            "webasto": {
+                "name": "Webasto"
+            }
+        }
+    },
+    "services": {
+        "set_scan_interval": {
+            "description": "Legt die Aktualisierungsh\u00e4ufigkeit fest.",
+            "fields": {
+                "scan_interval": {
+                    "description": "Aktualisierungsh\u00e4ufigkeit.",
+                    "name": "Scan Intervall"
+                }
+            },
+            "name": "Scan-Intervall festlegen"
+        },
+        "set_scan_obd_interval": {
+            "description": "Legt die H\u00e4ufigkeit der Aktualisierung der OBD-Informationen fest.",
+            "fields": {
+                "scan_interval": {
+                    "description": "Aktualisierungsh\u00e4ufigkeit.",
+                    "name": "Scan Intervall"
+                }
+            },
+            "name": "OBD-Scan-Intervall einstellen"
+        },
+        "update_state": {
+            "description": "Ruft den letzten Status der Ger\u00e4te vom StarLine-Server ab.",
+            "name": "Status aktualisieren"
+        }
+    }
+}

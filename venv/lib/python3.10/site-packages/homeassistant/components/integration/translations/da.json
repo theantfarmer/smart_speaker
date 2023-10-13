@@ -1,0 +1,12 @@
+{
+    "selector": {
+        "unit_time": {
+            "options": {
+                "d": "Dage",
+                "h": "Timer",
+                "min": "minutter",
+                "s": "sekunder"
+            }
+        }
+    }
+}

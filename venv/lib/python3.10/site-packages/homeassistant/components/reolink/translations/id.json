@@ -1,0 +1,96 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi",
+            "reauth_successful": "Autentikasi ulang berhasil"
+        },
+        "error": {
+            "api_error": "Terjadi kesalahan API",
+            "cannot_connect": "Gagal terhubung",
+            "invalid_auth": "Autentikasi tidak valid",
+            "not_admin": "Pengguna harus memiliki izin admin, pengguna ''{username}'' memiliki tingkat otorisasi ''{userlevel}''",
+            "unknown": "Kesalahan yang tidak diharapkan"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "Integrasi Reolink perlu mengautentikasi ulang koneksi Anda",
+                "title": "Autentikasi Ulang Integrasi"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Kata Sandi",
+                    "port": "Port",
+                    "use_https": "Aktifkan HTTPS",
+                    "username": "Nama Pengguna"
+                },
+                "description": "Lihat [langkah pemecahan masalah]({troubleshooting_link}) jika Anda mengalami masalah. {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Mati"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digital",
+                    "digitalfirst": "Digital terlebih dahulu",
+                    "pantiltfirst": "Geser/miringkan terlebih dahulu"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Otomatis",
+                    "blackwhite": "Hitam Putih",
+                    "color": "Warna"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "auto": "Otomatis",
+                    "off": "Mati",
+                    "schedule": "Jadwal"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "Otomatis & selalu menyala di malam hari",
+                    "auto": "Otomatis",
+                    "stayoff": "Jangan sentuh"
+                }
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "Gagal mengaktifkan {ports} port secara otomatis pada {name}. Gunakan [klien Reolink]({info_link}) untuk mengaturnya secara manual ke ON",
+            "title": "Port reolink tidak diaktifkan"
+        },
+        "firmware_update": {
+            "description": "\"{name}\" dengan model \"{model}\" dan versi perangkat keras \"{hw_version}\" menjalankan versi firmware lama \"{current_firmware}\". Setidaknya versi firmware \"{required_firmware}\" diperlukan untuk pengoperasian integrasi Reolink dengan benar. Firmware terbaru dapat diunduh dari [pusat unduhan Reolink]({download_link}).",
+            "title": "Diperlukan pembaruan firmware Reolink"
+        },
+        "https_webhook": {
+            "description": "Produk Reolink tidak dapat mendorong peristiwa gerakan ke alamat HTTPS (SSL). Konfigurasikan alamat HTTP (lokal) di bawah \"URL Home Assistant\" di [pengaturan jaringan] ({network_link}). Alamat (lokal) saat ini adalah: `{base_url}`",
+            "title": "URL webhook Reolink menggunakan HTTPS (SSL)"
+        },
+        "webhook_url": {
+            "description": "Tidak dapat menerima status awal ONVIF dari {name}. Kemungkinan kaera Reolink tidak dapat menjangkau alamat (lokal) Home Assistant `{base_url}` saat ini. Konfigurasikan alamat HTTP (lokal) di bawah \"URL Home Assistant\" di [pengaturan jaringan] ({network_link}). yang merujuk ke Home Assistant. Contoh alamat misalnya `http://192.168.1.10:8123` dengan `192.168.1.10` sebagai IP perangkat Home Assistant. Pastikan juga kamera Reolink bisa menjangkau URL tersebut. Saat ini menggunakan polling status gerakan cepat/AI hingga push ONVIF pertama diterima.",
+            "title": "URL webhook Reolink tidak dapat dijangkau"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protokol"
+                }
+            }
+        }
+    }
+}

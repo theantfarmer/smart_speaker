@@ -1,0 +1,56 @@
+{
+    "services": {
+        "connect_lte": {
+            "description": "Modemden LTE ba\u011flant\u0131s\u0131n\u0131 kurmas\u0131n\u0131 ister.",
+            "fields": {
+                "host": {
+                    "description": "Ba\u011flanmas\u0131 gereken modem.",
+                    "name": "Sunucu"
+                }
+            },
+            "name": "LTE'ye Ba\u011flan\u0131n"
+        },
+        "delete_sms": {
+            "description": "Modem gelen kutusundan mesajlar\u0131 siler.",
+            "fields": {
+                "host": {
+                    "description": "Silinmi\u015f bir mesaj\u0131 olmas\u0131 gereken modem.",
+                    "name": "Sunucu"
+                },
+                "sms_id": {
+                    "description": "Silinecek mesajlar\u0131n gelen kutusu kimliklerine sahip tamsay\u0131 veya tamsay\u0131lar listesi.",
+                    "name": "SMS Kimli\u011fi"
+                }
+            },
+            "name": "SMS'i sil"
+        },
+        "disconnect_lte": {
+            "description": "Modemden LTE ba\u011flant\u0131s\u0131n\u0131 kapatmas\u0131n\u0131 ister.",
+            "fields": {
+                "host": {
+                    "description": "Ba\u011flant\u0131s\u0131n\u0131 kesmesi gereken modem.",
+                    "name": "Sunucu"
+                }
+            },
+            "name": "LTE ba\u011flant\u0131s\u0131n\u0131 kes"
+        },
+        "set_option": {
+            "description": "Modem \u00fczerindeki se\u00e7enekleri ayarlar.",
+            "fields": {
+                "autoconnect": {
+                    "description": "Otomatik ba\u011flant\u0131 modu.",
+                    "name": "Otomatik ba\u011flant\u0131"
+                },
+                "failover": {
+                    "description": "Y\u00fck devretme modu.",
+                    "name": "Y\u00fck devretme"
+                },
+                "host": {
+                    "description": "Se\u00e7enekleri ayarlamak i\u00e7in modem.",
+                    "name": "Sunucu"
+                }
+            },
+            "name": "Se\u00e7ene\u011fi ayarlay\u0131n"
+        }
+    }
+}

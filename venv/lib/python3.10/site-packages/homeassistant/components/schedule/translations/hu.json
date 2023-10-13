@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Id\u0151z\u00edt\u0151",
+            "state": {
+                "off": "Ki",
+                "on": "Be"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Felhaszn\u00e1l\u00f3i fel\u00fclet \u00e1ltal kezelt",
+                    "state": {
+                        "false": "Nem",
+                        "true": "Igen"
+                    }
+                },
+                "next_event": {
+                    "name": "K\u00f6vetkez\u0151 esem\u00e9ny"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "\u00dajrat\u00f6lt\u00e9s"
+        }
+    },
+    "title": "Id\u0151z\u00edt\u0151"
+}

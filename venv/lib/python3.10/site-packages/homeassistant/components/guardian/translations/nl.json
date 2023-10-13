@@ -1,0 +1,91 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd",
+            "already_in_progress": "De configuratie is momenteel al bezig",
+            "cannot_connect": "Kan geen verbinding maken"
+        },
+        "step": {
+            "discovery_confirm": {
+                "description": "Wil je dit Guardian apparaat instellen?"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP-adres",
+                    "port": "Poort"
+                },
+                "description": "Configureer een lokaal Elexa Guardian-apparaat."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "leak": {
+                "name": "Lekdetectie"
+            },
+            "moved": {
+                "name": "Recent verplaatst"
+            }
+        },
+        "button": {
+            "reset_diagnostics": {
+                "name": "Reset klep diagnostiek"
+            }
+        },
+        "sensor": {
+            "uptime": {
+                "name": "Bedrijfstijd"
+            }
+        },
+        "switch": {
+            "onboard_access_point": {
+                "name": "Onboard toegangspunt"
+            },
+            "valve_controller": {
+                "name": "Klepregelaar"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Update alle automatiseringen of scripts die deze service gebruiken om in plaats daarvan de `{alternate_service}` service te gebruiken met een doelentiteit ID van `{alternate_target}`.",
+                        "title": "De {deprecated_service}-service wordt verwijderd"
+                    }
+                }
+            },
+            "title": "De {deprecated_service}-service wordt verwijderd"
+        }
+    },
+    "services": {
+        "pair_sensor": {
+            "fields": {
+                "device_id": {
+                    "name": "Klepregelaar"
+                }
+            }
+        },
+        "unpair_sensor": {
+            "fields": {
+                "device_id": {
+                    "name": "Klepregelaar"
+                }
+            }
+        },
+        "upgrade_firmware": {
+            "fields": {
+                "device_id": {
+                    "name": "Klepregelaar"
+                },
+                "port": {
+                    "name": "Poort"
+                },
+                "url": {
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

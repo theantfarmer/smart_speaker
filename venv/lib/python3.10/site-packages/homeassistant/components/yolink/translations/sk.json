@@ -1,0 +1,88 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u00da\u010det je u\u017e nakonfigurovan\u00fd",
+            "already_in_progress": "Konfigur\u00e1cia u\u017e prebieha",
+            "authorize_url_timeout": "\u010casov\u00fd limit generovania autorizovanej adresy URL.",
+            "missing_configuration": "Komponent nie je nakonfigurovan\u00fd. Postupujte pod\u013ea dokument\u00e1cie.",
+            "no_url_available": "Nie je k dispoz\u00edcii \u017eiadna adresa URL. Inform\u00e1cie o tejto chybe n\u00e1jdete [pozrite si sekciu pomocn\u00edka]({docs_url})",
+            "oauth_error": "Prijat\u00e9 neplatn\u00e9 \u00fadaje tokenu.",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9"
+        },
+        "create_entry": {
+            "default": "\u00daspe\u0161ne overen\u00e9"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Vyberte met\u00f3du overenia"
+            },
+            "reauth_confirm": {
+                "description": "Integr\u00e1cia yolink mus\u00ed znova overi\u0165 v\u00e1\u0161 \u00fa\u010det",
+                "title": "Znova overi\u0165 integr\u00e1ciu"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "button_1_long_press": "Tla\u010didlo_1 (dlh\u00e9 stla\u010denie)",
+            "button_1_short_press": "Tla\u010didlo_1 (kr\u00e1tke stla\u010denie)",
+            "button_2_long_press": "Tla\u010didlo_2 (dlh\u00e9 stla\u010denie)",
+            "button_2_short_press": "Tla\u010didlo_2 (kr\u00e1tke stla\u010denie)",
+            "button_3_long_press": "Tla\u010didlo_3 (dlh\u00e9 stla\u010denie)",
+            "button_3_short_press": "Tla\u010didlo_3 (kr\u00e1tke stla\u010denie)",
+            "button_4_long_press": "Tla\u010didlo_4 (dlh\u00e9 stla\u010denie)",
+            "button_4_short_press": "Tla\u010didlo_4 (kr\u00e1tke stla\u010denie)"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "power_failure_alarm": {
+                "name": "Alarm pri v\u00fdpadku nap\u00e1jania",
+                "state": {
+                    "alert": "Poplach",
+                    "normal": "Norm\u00e1lny",
+                    "off": "Neakt\u00edvny"
+                }
+            },
+            "power_failure_alarm_beep": {
+                "name": "Signaliz\u00e1cia v\u00fdpadku nap\u00e1jania",
+                "state": {
+                    "disabled": "Zak\u00e1zan\u00e9",
+                    "enabled": "Povolen\u00e9"
+                }
+            },
+            "power_failure_alarm_mute": {
+                "name": "Vypnutie alarmu pri v\u00fdpadku nap\u00e1jania",
+                "state": {
+                    "muted": "Stlmen\u00e9",
+                    "unmuted": "Nestlmen\u00e9"
+                }
+            },
+            "power_failure_alarm_volume": {
+                "name": "Hlasitos\u0165 alarmu pri v\u00fdpadku nap\u00e1jania",
+                "state": {
+                    "high": "Vysok\u00fd",
+                    "low": "N\u00edzky",
+                    "medium": "Stredn\u00fd"
+                }
+            }
+        },
+        "switch": {
+            "plug_1": {
+                "name": "Z\u00e1str\u010dka 1"
+            },
+            "plug_2": {
+                "name": "Z\u00e1str\u010dka 2"
+            },
+            "plug_3": {
+                "name": "Z\u00e1str\u010dka 3"
+            },
+            "plug_4": {
+                "name": "Z\u00e1str\u010dka 4"
+            },
+            "usb_ports": {
+                "name": "USB porty"
+            }
+        }
+    }
+}

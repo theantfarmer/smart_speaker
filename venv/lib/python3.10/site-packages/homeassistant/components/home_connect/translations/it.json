@@ -1,0 +1,80 @@
+{
+    "config": {
+        "abort": {
+            "missing_configuration": "Il componente non \u00e8 configurato. Segui la documentazione.",
+            "no_url_available": "Nessun URL disponibile. Per informazioni su questo errore, [controlla la sezione della guida]({docs_url})"
+        },
+        "create_entry": {
+            "default": "Autenticazione riuscita"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Scegli il metodo di autenticazione"
+            }
+        }
+    },
+    "services": {
+        "change_setting": {
+            "description": "Modifica un'impostazione.",
+            "fields": {
+                "device_id": {
+                    "name": "ID dispositivo"
+                },
+                "key": {
+                    "description": "Chiave dell'impostazione.",
+                    "name": "Chiave"
+                },
+                "value": {
+                    "description": "Valore dell'impostazione."
+                }
+            }
+        },
+        "select_program": {
+            "fields": {
+                "program": {
+                    "description": "Programma da selezionare.",
+                    "name": "Programma"
+                },
+                "unit": {
+                    "description": "Unit\u00e0 per l'opzione.",
+                    "name": "Unit\u00e0 opzione"
+                },
+                "value": {
+                    "description": "Valore dell'opzione.",
+                    "name": "Valore dell'opzione"
+                }
+            }
+        },
+        "set_option_active": {
+            "fields": {
+                "value": {
+                    "description": "Valore dell'opzione."
+                }
+            }
+        },
+        "set_option_selected": {
+            "fields": {
+                "value": {
+                    "description": "Valore dell'opzione."
+                }
+            }
+        },
+        "start_program": {
+            "fields": {
+                "program": {
+                    "description": "Programma da selezionare.",
+                    "name": "Programma"
+                },
+                "unit": {
+                    "description": "Unit\u00e0 per l'opzione.",
+                    "name": "Unit\u00e0 opzione"
+                },
+                "value": {
+                    "description": "Valore dell'opzione.",
+                    "name": "Valore dell'opzione"
+                }
+            },
+            "name": "Avvia programma"
+        }
+    }
+}

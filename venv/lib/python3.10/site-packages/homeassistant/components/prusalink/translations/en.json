@@ -1,0 +1,80 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "invalid_auth": "Invalid authentication",
+            "not_supported": "Only PrusaLink API v2 is supported",
+            "unknown": "Unexpected error"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API Key",
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "cancel_job": {
+                "name": "Cancel job"
+            },
+            "pause_job": {
+                "name": "Pause job"
+            },
+            "resume_job": {
+                "name": "Resume job"
+            }
+        },
+        "camera": {
+            "job_preview": {
+                "name": "Preview"
+            }
+        },
+        "sensor": {
+            "filename": {
+                "name": "Filename"
+            },
+            "heatbed_target_temperature": {
+                "name": "Heatbed target temperature"
+            },
+            "heatbed_temperature": {
+                "name": "Heatbed temperature"
+            },
+            "material": {
+                "name": "Material"
+            },
+            "nozzle_target_temperature": {
+                "name": "Nozzle target temperature"
+            },
+            "nozzle_temperature": {
+                "name": "Nozzle temperature"
+            },
+            "print_finish": {
+                "name": "Print finish"
+            },
+            "print_speed": {
+                "name": "Print speed"
+            },
+            "print_start": {
+                "name": "Print start"
+            },
+            "printer_state": {
+                "state": {
+                    "cancelling": "Cancelling",
+                    "idle": "Idle",
+                    "paused": "Paused",
+                    "pausing": "Pausing",
+                    "printing": "Printing"
+                }
+            },
+            "progress": {
+                "name": "Progress"
+            },
+            "z_height": {
+                "name": "Z-Height"
+            }
+        }
+    }
+}

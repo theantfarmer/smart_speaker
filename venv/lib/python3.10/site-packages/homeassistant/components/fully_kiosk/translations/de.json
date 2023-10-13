@@ -1,0 +1,126 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konto wurde bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Passwort"
+                },
+                "description": "M\u00f6chtest du {name} ({host}) einrichten?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Passwort"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "device_admin": {
+                "name": "Ger\u00e4teadministrator"
+            },
+            "kiosk_mode": {
+                "name": "Kioskmodus"
+            },
+            "plugged_in": {
+                "name": "Eingesteckt"
+            }
+        },
+        "button": {
+            "load_start_url": {
+                "name": "Start-URL laden"
+            },
+            "restart_browser": {
+                "name": "Browser neustarten"
+            },
+            "restart_device": {
+                "name": "Ger\u00e4t neustarten"
+            },
+            "to_background": {
+                "name": "In den Hintergrund r\u00fccken"
+            },
+            "to_foreground": {
+                "name": "In den Vordergrund r\u00fccken"
+            }
+        },
+        "number": {
+            "screen_brightness": {
+                "name": "Bildschirmhelligkeit"
+            },
+            "screen_off_time": {
+                "name": "Bildschirm-Aus-Timer"
+            },
+            "screensaver_brightness": {
+                "name": "Bildschirmschoner-Helligkeit"
+            },
+            "screensaver_time": {
+                "name": "Bildschirmschoner-Timer"
+            }
+        },
+        "sensor": {
+            "current_page": {
+                "name": "Aktuelle Seite"
+            },
+            "foreground_app": {
+                "name": "Vordergrund-App"
+            },
+            "internal_storage_free_space": {
+                "name": "Interner freier Speicherplatz"
+            },
+            "internal_storage_total_space": {
+                "name": "Interner Speicherplatz insgesamt"
+            },
+            "ram_free_memory": {
+                "name": "Freier Speicher"
+            },
+            "ram_total_memory": {
+                "name": "Gesamtspeicher"
+            },
+            "screen_orientation": {
+                "name": "Bildschirmausrichtung"
+            }
+        },
+        "switch": {
+            "kiosk": {
+                "name": "Kiosk-Schloss"
+            },
+            "maintenance": {
+                "name": "Wartungsmodus"
+            },
+            "motion_detection": {
+                "name": "Bewegungserkennung"
+            },
+            "screen_on": {
+                "name": "Bildschirm"
+            },
+            "screensaver": {
+                "name": "Bildschirmschoner"
+            }
+        }
+    },
+    "services": {
+        "load_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        },
+        "set_config": {
+            "fields": {
+                "value": {
+                    "description": "Wert f\u00fcr den Konfigurationsparameter.",
+                    "name": "Wert"
+                }
+            }
+        }
+    }
+}

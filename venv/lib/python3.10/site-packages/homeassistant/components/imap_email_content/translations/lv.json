@@ -1,0 +1,18 @@
+{
+    "issues": {
+        "migration": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "title": "IMAP servera iestat\u012bjumi tiks migr\u0113ti"
+                    },
+                    "start": {
+                        "description": "IMAP e-pasta satura integr\u0101cija ir atcelta. J\u016bsu IMAP servera konfigur\u0101ciju var autom\u0101tiski migr\u0113t uz [imap integr\u0101cija](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), kas \u013caus izmantot piel\u0101gotu `imap` notikuma trigeri. Lai iestat\u012btu sensoru ar IMAP satura st\u0101vokli, var izmantot \u0161ablona sensoru. P\u0113c migr\u0101cijas no\u0146emiet sensora `imap_email_plaform` konfigur\u0101ciju fail\u0101 `configuration.yaml`.\n\nApstipriniet, lai s\u0101ktu IMAP servera konfigur\u0101cijas migr\u0101ciju uz `imap` integr\u0101ciju.",
+                        "title": "IMAP e-pasta konfigur\u0101cijas migr\u0113\u0161ana"
+                    }
+                }
+            },
+            "title": "J\u0101piev\u0113r\u0161 uzman\u012bba IMAP e-pasta satura integr\u0101cijai"
+        }
+    }
+}

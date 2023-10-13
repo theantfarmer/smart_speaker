@@ -1,0 +1,13 @@
+{
+    "services": {
+        "reload": {
+            "name": "Ricarica"
+        },
+        "restart": {
+            "name": "Riavvia"
+        },
+        "stop": {
+            "name": "Ferma"
+        }
+    }
+}

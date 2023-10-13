@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "access_token": "Unbekannter Fehler beim Generieren eines Zugriffstokens.",
+            "already_configured": "Konto wurde bereits konfiguriert",
+            "missing_configuration": "Die Komponente ist nicht konfiguriert. Bitte der Dokumentation folgen."
+        },
+        "create_entry": {
+            "default": "Erfolgreich authentifiziert"
+        },
+        "error": {
+            "follow_link": "Bitte folge dem Link und authentifiziere dich, bevor du auf Senden dr\u00fcckst",
+            "no_token": "Nicht authentifiziert mit Ambiclimate"
+        },
+        "step": {
+            "auth": {
+                "description": "Bitte folge diesem [Link]({authorization_url}) und **Erlaube** Zugriff auf dein Ambiclimate-Konto, komme dann zur\u00fcck und dr\u00fccke **Senden** darunter.\n (Pr\u00fcfe, dass die angegebene Callback-URL {cb_url} ist.)",
+                "title": "Ambiclimate authentifizieren"
+            }
+        }
+    },
+    "services": {
+        "send_comfort_feedback": {
+            "description": "Sendet eine R\u00fcckmeldung f\u00fcr den Komfortmodus.",
+            "fields": {
+                "value": {
+                    "name": "Komfort-Wert"
+                }
+            }
+        },
+        "set_comfort_mode": {
+            "description": "Aktiviert den Komfortmodus Ihrer Klimaanlage."
+        }
+    }
+}

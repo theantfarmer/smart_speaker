@@ -1,0 +1,11 @@
+{
+    "entity": {
+        "sensor": {
+            "whirlpool_tank": {
+                "state": {
+                    "unknown": "Tuntematon"
+                }
+            }
+        }
+    }
+}

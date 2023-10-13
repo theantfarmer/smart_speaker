@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Integr\u00e1cia MELCloud je pre tento e-mail u\u017e nakonfigurovan\u00e1. Pr\u00edstupov\u00fd token bol obnoven\u00fd."
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Email"
+                },
+                "description": "Pripojte sa pomocou svojho \u00fa\u010dtu MELCloud.",
+                "title": "Pripojte sa k MELCloud"
+            }
+        }
+    },
+    "services": {
+        "set_vane_horizontal": {
+            "description": "Nastav\u00ed horizont\u00e1lnu polohu lopatiek.",
+            "fields": {
+                "position": {
+                    "description": "Horizont\u00e1lna poloha lopatiek. Mo\u017en\u00e9 mo\u017enosti n\u00e1jdete v stavovom atrib\u00fate vane_horizontal_positions.\n.",
+                    "name": "Poz\u00edcia"
+                }
+            },
+            "name": "Nastavenie horizont\u00e1lnej lopatky"
+        },
+        "set_vane_vertical": {
+            "description": "Nastav\u00ed vertik\u00e1lnu polohu lopatiek.",
+            "fields": {
+                "position": {
+                    "description": "Vertik\u00e1lna poloha lopatiek. Mo\u017en\u00e9 mo\u017enosti n\u00e1jdete v stavovom atrib\u00fate vane_vertical_positions.\n.",
+                    "name": "Poz\u00edcia"
+                }
+            },
+            "name": "Nastavenie vertik\u00e1lnej lopatky"
+        }
+    }
+}

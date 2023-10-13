@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday \u00e8 gi\u00e0 stato configurato con la configurazione scelta",
+            "incorrect_province": "Suddivisione errata dall'importazione yaml"
+        },
+        "error": {
+            "add_holiday_error": "Formato errato della data (AAAA-MM-GG)",
+            "already_configured": "Il servizio \u00e8 gi\u00e0 configurato",
+            "remove_holiday_error": "Formato errato della data (AAAA-MM-GG) o nome della festivit\u00e0 non trovato"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Aggiungi festivit\u00e0",
+                    "days_offset": "Scostamento",
+                    "excludes": "Escludi",
+                    "province": "Suddivisione della nazione",
+                    "remove_holidays": "Rimuovi festivit\u00e0",
+                    "workdays": "Giorni lavorativi"
+                },
+                "data_description": {
+                    "add_holidays": "Aggiungi festivit\u00e0 personalizzate come AAAA-MM-GG",
+                    "days_offset": "Scostamento dei giorni",
+                    "excludes": "Elenco dei giorni lavorativi da escludere",
+                    "province": "Stato, Territorio, Provincia, Regione della Nazione",
+                    "remove_holidays": "Rimuovere le festivit\u00e0 come AAAA-MM-GG o utilizzando il nome parziale",
+                    "workdays": "Elenco dei giorni lavorativi"
+                },
+                "description": "Imposta opzioni aggiuntive per {name} configurato per il paese {country}"
+            },
+            "user": {
+                "data": {
+                    "country": "Nazione",
+                    "name": "Nome"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "La configurazione di Workday tramite YAML \u00e8 stata rimossa. \n\nLa configurazione YAML esistente \u00e8 stata importata automaticamente nell'interfaccia utente. \n\nRimuovi la configurazione YAML di Workday dal file configuration.yaml e riavvia Home Assistant per risolvere il problema.",
+            "title": "La configurazione YAML di Workday \u00e8 stata rimossa."
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Formato errato della data (AAAA-MM-GG)",
+            "already_configured": "Il servizio con questa configurazione esiste gi\u00e0",
+            "remove_holiday_error": "Formato errato della data (AAAA-MM-GG) o nome della festivit\u00e0 non trovato"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Aggiungi festivit\u00e0",
+                    "days_offset": "Scostamento",
+                    "excludes": "Escludi",
+                    "province": "Suddivisione della nazione",
+                    "remove_holidays": "Rimuovi festivit\u00e0",
+                    "workdays": "Giorni lavorativi"
+                },
+                "data_description": {
+                    "add_holidays": "Aggiungi festivit\u00e0 personalizzate come AAAA-MM-GG",
+                    "days_offset": "Scostamento dei giorni",
+                    "excludes": "Elenco dei giorni lavorativi da escludere",
+                    "province": "Stato, Territorio, Provincia, Regione della Nazione",
+                    "remove_holidays": "Rimuovere le festivit\u00e0 come AAAA-MM-GG o utilizzando il nome parziale",
+                    "workdays": "Elenco dei giorni lavorativi"
+                },
+                "description": "Modifica le opzioni aggiuntive per {name} configurate per il paese {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Venerd\u00ec",
+                "holiday": "Vacanze",
+                "mon": "Luned\u00ec",
+                "sat": "Sabato",
+                "sun": "Domenica",
+                "thu": "Gioved\u00ec",
+                "tue": "Marted\u00ec",
+                "wed": "Mercoled\u00ec"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Nessuna suddivisione"
+            }
+        }
+    },
+    "title": "Giorno lavorativo"
+}

@@ -1,0 +1,66 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad",
+            "reauth_successful": "\u00c5terautentisering lyckades"
+        },
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta.",
+            "different_account": "Kontot b\u00f6r vara detsamma som anv\u00e4ndes f\u00f6r att st\u00e4lla in integrationen",
+            "invalid_auth": "Ogiltig autentisering",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "country_code": "Landskod",
+                    "password": "L\u00f6senord",
+                    "username": "Anv\u00e4ndarnamn"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "cart_items_count": {
+                "name": "Antal i kundvagn "
+            },
+            "cart_total_price": {
+                "name": "Totalpris i kundvagnen "
+            },
+            "last_order_slot_start": {
+                "name": "Start p\u00e5 Sista leverans till plats"
+            },
+            "last_order_status": {
+                "name": "Status f\u00f6r senaste best\u00e4llning"
+            },
+            "last_order_total_price": {
+                "name": "Totalpris f\u00f6r senaste best\u00e4llning"
+            },
+            "next_delivery_eta_end": {
+                "name": "F\u00f6rv\u00e4ntat slut p\u00e5 n\u00e4sta leverans"
+            },
+            "next_delivery_eta_start": {
+                "name": "F\u00f6rv\u00e4ntad start till n\u00e4sta leverans "
+            },
+            "next_delivery_slot_end": {
+                "name": "Slut p\u00e5 vald platsh\u00e5llare"
+            },
+            "next_delivery_slot_start": {
+                "name": "Start p\u00e5 n\u00e4sta leverans till plats"
+            },
+            "selected_slot_end": {
+                "name": "Slut p\u00e5 vald platsh\u00e5llare"
+            },
+            "selected_slot_max_order_time": {
+                "name": "Maximal tids v\u00e4rde f\u00f6r platsh\u00e5llaren"
+            },
+            "selected_slot_min_order_value": {
+                "name": "Minimum valt v\u00e4rde f\u00f6r platsh\u00e5llaren"
+            },
+            "selected_slot_start": {
+                "name": "Start f\u00f6r vald platsh\u00e5llare"
+            }
+        }
+    }
+}

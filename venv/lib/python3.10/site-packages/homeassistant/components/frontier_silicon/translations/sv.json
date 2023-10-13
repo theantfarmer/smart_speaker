@@ -1,0 +1,30 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad ",
+            "cannot_connect": "Det gick inte att ansluta.",
+            "invalid_auth": "Ogiltig autentisering",
+            "reauth_successful": "\u00c5terautentisering lyckades",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "error": {
+            "cannot_connect": "Anslutningsfel ",
+            "invalid_auth": "Ogiltig autentisering ",
+            "unknown": "Ov\u00e4ntad fel"
+        },
+        "step": {
+            "device_config": {
+                "data": {
+                    "pin": "Pin kod"
+                },
+                "title": "Enhets konfiguration "
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "L'integrazione del contenuto e-mail IMAP \u00e8 deprecata. La configurazione del tuo server IMAP \u00e8 gi\u00e0 stata migrata all'[integrazione imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Per impostare un sensore per il contenuto dell'e-mail IMAP, imposta un sensore modello con la configurazione: \n\n ```yaml\n {yaml_example} ``` \n\n Rimuovi la configurazione obsoleta del sensore `imap_email_plaform` dal tuo `configuration.yaml`. \n\n Tieni presente che il filtro eventi filtra solo in base al primo dei mittenti consentiti configurati, personalizza il filtro se necessario. \n\n Puoi saltare questa parte se hai gi\u00e0 configurato un sensore modello.",
+            "title": "L'integrazione del contenuto e-mail IMAP \u00e8 deprecata"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "La configurazione del server IMAP \u00e8 gi\u00e0 stata migrata all'integrazione imap. Rimuovi la configurazione del sensore `imap_email_plaform` dal tuo `configuration.yaml`.",
+                    "cannot_connect": "Migrazione fallita. Impossibile connettersi al server IMAP. Eseguire una migrazione manuale."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "In questo passaggio verr\u00e0 impostata una voce di configurazione `imap` con la seguente configurazione: \n\n ```testo\n Server {server}\n Porta {port}\n Nome utente {username}\n Password *****\n Cartella {folder}\n ``` \n\nVedi anche: (https://www.home-assistant.io/integrations/imap/) \n\nLa configurazione del fitering sul \"mittente\" consentito fa parte della configurazione del sensore del modello che pu\u00f2 essere copiata e inserita nel file \"configuration.yaml\". \n\nTieni presente che il filtro eventi filtra solo in base al primo dei mittenti consentiti configurati, personalizza il filtro se necessario. \n\n ```yaml\n {yaml_example} ```\n Non dimenticare di ripulire il tuo `configuration.yaml` dopo la migrazione. \n\nInvia per migrare la configurazione del tuo server IMAP a una voce di configurazione `imap`.",
+                        "title": "Verr\u00e0 eseguita la migrazione delle impostazioni del tuo server IMAP"
+                    },
+                    "start": {
+                        "description": "L'integrazione del contenuto e-mail IMAP \u00e8 deprecata. La configurazione del tuo server IMAP pu\u00f2 essere migrata automaticamente all'[integrazione imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), questo consentir\u00e0 l'utilizzo di un trigger di evento `imap` personalizzato. Per configurare un sensore con uno stato del contenuto IMAP, \u00e8 possibile utilizzare un sensore modello. Rimuovi la configurazione del sensore `imap_email_plaform` dal tuo `configuration.yaml` dopo la migrazione. \n\nInvia per avviare la migrazione della configurazione del tuo server IMAP all'integrazione `imap`.",
+                        "title": "Migra la tua configurazione email IMAP"
+                    }
+                }
+            },
+            "title": "L'integrazione del contenuto e-mail IMAP richiede attenzione"
+        }
+    }
+}

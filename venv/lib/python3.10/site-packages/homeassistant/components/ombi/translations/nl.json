@@ -1,0 +1,25 @@
+{
+    "services": {
+        "submit_movie_request": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "submit_music_request": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "submit_tv_request": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        }
+    }
+}

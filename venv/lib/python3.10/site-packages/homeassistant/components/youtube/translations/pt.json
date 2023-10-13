@@ -1,0 +1,39 @@
+{
+    "config": {
+        "abort": {
+            "access_not_configured": "Por favor leia a seguinte mensagem da Google:\n\n{message}",
+            "already_configured": "Conta j\u00e1 configurada",
+            "reauth_successful": "Re-autentica\u00e7\u00e3o bem sucedida",
+            "unknown": "Erro inesperado"
+        },
+        "error": {
+            "cannot_connect": "Erro ao ligar",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida"
+        },
+        "step": {
+            "channels": {
+                "data": {
+                    "channels": "Canais YouTube"
+                },
+                "description": "Selecione os canais que deseja adicionar."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "subscribers": {
+                "name": "Subscritores"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "channels": "Canais YouTube"
+                },
+                "description": "Selecione os canais que deseja adicionar."
+            }
+        }
+    }
+}

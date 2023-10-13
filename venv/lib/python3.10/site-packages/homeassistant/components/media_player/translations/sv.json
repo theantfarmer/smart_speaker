@@ -1,0 +1,184 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_buffering": "{entity_name} buffrar",
+            "is_idle": "{entity_name} \u00e4r inaktiv",
+            "is_off": "{entity_name} \u00e4r avst\u00e4ngd",
+            "is_on": "{entity_name} \u00e4r p\u00e5",
+            "is_paused": "{entity_name} \u00e4r pausad",
+            "is_playing": "{entity_name} spelar"
+        },
+        "trigger_type": {
+            "buffering": "{entity_name} b\u00f6rjar buffra",
+            "changed_states": "{entity_name} \u00e4ndrade tillst\u00e5nd",
+            "idle": "{entity_name} blir inaktiv",
+            "paused": "{entity_name} \u00e4r pausad",
+            "playing": "{entity_name} b\u00f6rjar spela",
+            "turned_off": "{entity_name} st\u00e4ngdes av",
+            "turned_on": "{entity_name} slogs p\u00e5"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Media spelare",
+            "state": {
+                "buffering": "Buffrar",
+                "idle": "Inaktiv",
+                "off": "Av",
+                "on": "P\u00e5",
+                "paused": "Pausad",
+                "playing": "Spelar",
+                "standby": "Vilol\u00e4ge"
+            },
+            "state_attributes": {
+                "app_id": {
+                    "name": "App ID"
+                },
+                "app_name": {
+                    "name": "App"
+                },
+                "entity_picture_local": {
+                    "name": "Lokalt tillg\u00e4nglig entitets bild"
+                },
+                "groups_members": {
+                    "name": "Gruppmedlemmar"
+                },
+                "is_volume_muted": {
+                    "name": "D\u00e4mpad",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "media_album_artist": {
+                    "name": "Albumartist"
+                },
+                "media_album_name": {
+                    "name": "Album"
+                },
+                "media_artist": {
+                    "name": "Artist"
+                },
+                "media_channel": {
+                    "name": "Kanal"
+                },
+                "media_content_id": {
+                    "name": "Inneh\u00e5lls-ID"
+                },
+                "media_content_type": {
+                    "name": "Inneh\u00e5llstyp",
+                    "state": {
+                        "album": "Album",
+                        "app": "App",
+                        "artist": "Artist",
+                        "channel": "Kanal",
+                        "channels": "Kanaler",
+                        "composer": "Komposit\u00f6r",
+                        "contributing_artist": "Medverkande artist",
+                        "episode": "Avsnitt",
+                        "game": "Spel",
+                        "genre": "Genre",
+                        "image": "Bild",
+                        "movie": "Film",
+                        "music": "Musik",
+                        "playlist": "Spellista",
+                        "podcast": "Podcast",
+                        "season": "S\u00e4song",
+                        "track": "Sp\u00e5r",
+                        "tvshow": "TV-program",
+                        "url": "URL",
+                        "video": "Video"
+                    }
+                },
+                "media_duration": {
+                    "name": "Varaktighet"
+                },
+                "media_episode": {
+                    "name": "Avsnitt"
+                },
+                "media_playlist": {
+                    "name": "Spellista"
+                },
+                "media_position": {
+                    "name": "Position"
+                },
+                "media_position_updated_at": {
+                    "name": "Position uppdaterad"
+                },
+                "media_season": {
+                    "name": "S\u00e4song"
+                },
+                "media_series_title": {
+                    "name": "Serie"
+                },
+                "media_title": {
+                    "name": "Titel"
+                },
+                "media_track": {
+                    "name": "Sp\u00e5r"
+                },
+                "repeat": {
+                    "name": "Repetera",
+                    "state": {
+                        "all": "Alla",
+                        "off": "Av",
+                        "one": "En"
+                    }
+                },
+                "shuffle": {
+                    "name": "Blanda",
+                    "state": {
+                        "false": "Av",
+                        "true": "P\u00e5"
+                    }
+                },
+                "sound_mode": {
+                    "name": "Ljudl\u00e4ge"
+                },
+                "sound_mode_list": {
+                    "name": "Tillg\u00e4ngliga ljudl\u00e4gen"
+                },
+                "source": {
+                    "name": "K\u00e4lla"
+                },
+                "source_list": {
+                    "name": "Tillg\u00e4ngliga k\u00e4llor"
+                },
+                "volume_level": {
+                    "name": "Volym"
+                }
+            }
+        },
+        "receiver": {
+            "name": "Mottagare"
+        },
+        "speaker": {
+            "name": "H\u00f6gtalare"
+        },
+        "tv": {
+            "name": "TV"
+        }
+    },
+    "services": {
+        "media_seek": {
+            "fields": {
+                "seek_position": {
+                    "name": "Position"
+                }
+            }
+        },
+        "media_stop": {
+            "name": "Stoppa"
+        },
+        "toggle": {
+            "name": "V\u00e4xla"
+        },
+        "turn_off": {
+            "name": "St\u00e4ng av"
+        },
+        "turn_on": {
+            "name": "Starta"
+        }
+    },
+    "title": "Mediaspelare"
+}

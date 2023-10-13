@@ -1,0 +1,54 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konto har redan konfigurerats"
+        },
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta.",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "L\u00f6senord "
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "password": "L\u00f6senord"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "ram_free_memory": {
+                "name": "Ledigt minne"
+            },
+            "ram_total_memory": {
+                "name": "Totalt minne"
+            },
+            "screen_orientation": {
+                "name": "Sk\u00e4rmorientering"
+            }
+        },
+        "switch": {
+            "kiosk": {
+                "name": "Kiosk-l\u00e5s"
+            },
+            "maintenance": {
+                "name": "Underh\u00e5llsl\u00e4ge"
+            },
+            "motion_detection": {
+                "name": "R\u00f6relsedetektering"
+            },
+            "screen_on": {
+                "name": "Sk\u00e4rm"
+            },
+            "screensaver": {
+                "name": "Sk\u00e4rmsl\u00e4ckare"
+            }
+        }
+    }
+}

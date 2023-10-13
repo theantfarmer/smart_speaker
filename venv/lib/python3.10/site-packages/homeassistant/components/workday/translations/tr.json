@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday, se\u00e7ilen yap\u0131land\u0131rmayla zaten ayarland\u0131",
+            "incorrect_province": "Yaml i\u00e7e aktar\u0131m\u0131ndan yanl\u0131\u015f alt b\u00f6l\u00fcm"
+        },
+        "error": {
+            "add_holiday_error": "Tarih i\u00e7in yanl\u0131\u015f bi\u00e7im (YYYY-MM-DD)",
+            "already_configured": "Hizmet zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "remove_holiday_error": "Tarih bi\u00e7imi hatal\u0131 (YYYY-MM-DD) veya tatil ad\u0131 bulunamad\u0131"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Tatil ekleyin",
+                    "days_offset": "Telafi",
+                    "excludes": "Hari\u00e7",
+                    "province": "\u00dclke alt b\u00f6l\u00fcm\u00fc",
+                    "remove_holidays": "Tatilleri Kald\u0131r",
+                    "workdays": "\u00c7al\u0131\u015fma G\u00fcnleri"
+                },
+                "data_description": {
+                    "add_holidays": "\u00d6zel tatilleri YYYY-AA-GG olarak ekleyin",
+                    "days_offset": "G\u00fcn fark\u0131",
+                    "excludes": "Hari\u00e7 tutulacak i\u015f g\u00fcnlerinin listesi",
+                    "province": "Eyalet, B\u00f6lge, \u0130l, \u00dclke",
+                    "remove_holidays": "Tatilleri YYYY-AA-GG olarak veya ad\u0131n bir k\u0131sm\u0131n\u0131 kullanarak kald\u0131r\u0131n",
+                    "workdays": "\u00c7al\u0131\u015fma g\u00fcnlerinin listesi"
+                },
+                "description": "{country} \u00fclkesi i\u00e7in yap\u0131land\u0131r\u0131lm\u0131\u015f {name} i\u00e7in ek se\u00e7enekler belirleyin"
+            },
+            "user": {
+                "data": {
+                    "country": "\u00dclke",
+                    "name": "Ad"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Workday'i YAML kullanarak yap\u0131land\u0131rma kald\u0131r\u0131l\u0131yor. \n\n Mevcut YAML yap\u0131land\u0131rman\u0131z, kullan\u0131c\u0131 aray\u00fcz\u00fcne otomatik olarak aktar\u0131ld\u0131. \n\n Workday YAML yap\u0131land\u0131rmas\u0131n\u0131 configuration.yaml dosyan\u0131zdan kald\u0131r\u0131n ve bu sorunu \u00e7\u00f6zmek i\u00e7in Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "Workday YAML yap\u0131land\u0131rmas\u0131 kald\u0131r\u0131l\u0131yor"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Tarih i\u00e7in yanl\u0131\u015f bi\u00e7im (YYYY-MM-DD)",
+            "already_configured": "Bu yap\u0131land\u0131rmaya sahip hizmet zaten var",
+            "remove_holiday_error": "Tarih bi\u00e7imi hatal\u0131 (YYYY-MM-DD) veya tatil ad\u0131 bulunamad\u0131"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Tatil ekleyin",
+                    "days_offset": "Telafi",
+                    "excludes": "Hari\u00e7",
+                    "province": "\u00dclke alt b\u00f6l\u00fcm\u00fc",
+                    "remove_holidays": "Tatilleri Kald\u0131r",
+                    "workdays": "\u00c7al\u0131\u015fma G\u00fcnleri"
+                },
+                "data_description": {
+                    "add_holidays": "\u00d6zel tatilleri YYYY-AA-GG olarak ekleyin",
+                    "days_offset": "G\u00fcn fark\u0131",
+                    "excludes": "Hari\u00e7 tutulacak i\u015f g\u00fcnlerinin listesi",
+                    "province": "Eyalet, B\u00f6lge, \u0130l, \u00dclke",
+                    "remove_holidays": "Tatilleri YYYY-AA-GG olarak veya ad\u0131n bir k\u0131sm\u0131n\u0131 kullanarak kald\u0131r\u0131n",
+                    "workdays": "\u00c7al\u0131\u015fma g\u00fcnlerinin listesi"
+                },
+                "description": "{country} \u00fclkesi i\u00e7in yap\u0131land\u0131r\u0131lan {name} i\u00e7in ek se\u00e7enekleri de\u011fi\u015ftirin"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Cuma",
+                "holiday": "Tatiller",
+                "mon": "Pazartesi",
+                "sat": "Cumartesi",
+                "sun": "Pazar",
+                "thu": "Per\u015fembe",
+                "tue": "Sal\u0131",
+                "wed": "\u00c7ar\u015famba"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Alt b\u00f6l\u00fcm yok"
+            }
+        }
+    },
+    "title": "\u0130\u015f G\u00fcn\u00fc"
+}

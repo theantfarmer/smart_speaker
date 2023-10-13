@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kontoen er allerede konfigureret"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "unknown": "Uventet fejl"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Adgangskode"
+                },
+                "description": "Vil du konfigurere {integration} ?"
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e6rt",
+                    "password": "Adgangskode"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd",
+            "reauth_successful": "Herauthenticatie geslaagd"
+        },
+        "error": {
+            "api_error": "API-fout opgetreden",
+            "cannot_connect": "Verbinding mislukt, controleer het IP-adres van de camera",
+            "invalid_auth": "Ongeldige authenticatie",
+            "not_admin": "Gebruiker moet administrator rechten hebben, gebruiker ''{username}'' heeft autorisatieniveau ''{userlevel}''",
+            "unknown": "Onverwachte fout"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "title": "Integratie herauthenticeren"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Wachtwoord",
+                    "port": "Poort",
+                    "use_https": "HTTPS inschakelen",
+                    "username": "Gebruikersnaam"
+                },
+                "description": "Zie de [probleem oplossingen]({troubleshooting_link}) als je problemen ondervindt. {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Uit"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digitaal"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Automatisch",
+                    "blackwhite": "Zwart-wit",
+                    "color": "Kleur"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "auto": "Automatisch",
+                    "off": "Uit",
+                    "schedule": "Schema"
+                }
+            }
+        }
+    },
+    "issues": {
+        "firmware_update": {
+            "description": "\"{name}\" met model \"{model}\" en hardwareversie \"{hw_version}\" draait een oude firmwareversie \"{current_firmware}\", terwijl minimaal firmwareversie \"{required_firmware}\" vereist is voor de juiste werking van de Reolink-integratie. De nieuwste firmware kan worden gedownload van het [Reolink downloadcentrum]({download_link}).",
+            "title": "Reolink firmware-update vereist"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protocol"
+                }
+            }
+        }
+    }
+}

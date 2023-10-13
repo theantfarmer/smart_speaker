@@ -1,0 +1,52 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kamera",
+            "state": {
+                "idle": "Siaga",
+                "recording": "Merekam",
+                "streaming": "Streaming"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "Token akses"
+                },
+                "brand": {
+                    "name": "Merek"
+                },
+                "frontend_stream_type": {
+                    "name": "Jenis stream",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Model"
+                },
+                "motion_detection": {
+                    "name": "Deteksi gerakan",
+                    "state": {
+                        "false": "Nonaktif",
+                        "true": "Diaktifkan"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Matikan"
+        },
+        "turn_on": {
+            "name": "Nyalakan"
+        }
+    },
+    "title": "Kamera"
+}

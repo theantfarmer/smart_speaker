@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "cannot_connect": "Sekiz Uyku bulutuna ba\u011flan\u0131lam\u0131yor: {error}"
+        },
+        "error": {
+            "cannot_connect": "Sekiz Uyku bulutuna ba\u011flan\u0131lam\u0131yor: {error}"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131"
+                }
+            }
+        }
+    },
+    "services": {
+        "heat_set": {
+            "description": "Is\u0131tma/so\u011futma seviyesini sekiz saat uyku i\u00e7in ayarlar.",
+            "fields": {
+                "duration": {
+                    "description": "Saniye cinsinden hedef seviyede \u0131s\u0131tma/so\u011futma s\u00fcresi.",
+                    "name": "S\u00fcre"
+                },
+                "target": {
+                    "description": "Hedef so\u011futma/\u0131s\u0131tma seviyesi -100 ila 100 aras\u0131ndad\u0131r.",
+                    "name": "Hedef"
+                }
+            },
+            "name": "Is\u0131 ayar\u0131"
+        }
+    }
+}

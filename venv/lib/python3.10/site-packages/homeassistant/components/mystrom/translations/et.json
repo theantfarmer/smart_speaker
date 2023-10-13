@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud"
+        },
+        "error": {
+            "cannot_connect": "\u00dchendamine nurjus"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "name": "Nimi"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "MyStromi konfigureerimine YAML-i abil eemaldatakse. \n\nOlemasolev YAML-i konfiguratsioon imporditi kasutajaliidesesse automaatselt. \n\n Selle probleemi lahendamiseks eemalda myStrom YAML-i konfiguratsioon failist configuration.yaml ja taask\u00e4ivita Home Assistant.",
+            "title": "MyStrom YAML konfiguratsioon eemaldatakse"
+        }
+    }
+}

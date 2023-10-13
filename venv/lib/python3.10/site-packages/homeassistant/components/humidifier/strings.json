@@ -1,0 +1,84 @@
+{
+  "title": "Humidifier",
+  "device_automation": {
+    "trigger_type": {
+      "target_humidity_changed": "{entity_name} target humidity changed",
+      "changed_states": "{entity_name} turned on or off",
+      "turned_on": "{entity_name} turned on",
+      "turned_off": "{entity_name} turned off"
+    },
+    "condition_type": {
+      "is_mode": "{entity_name} is set to a specific mode",
+      "is_on": "{entity_name} is on",
+      "is_off": "{entity_name} is off"
+    },
+    "action_type": {
+      "set_humidity": "Set humidity for {entity_name}",
+      "set_mode": "Change mode on {entity_name}",
+      "toggle": "Toggle {entity_name}",
+      "turn_on": "Turn on {entity_name}",
+      "turn_off": "Turn off {entity_name}"
+    }
+  },
+  "entity_component": {
+    "_": {
+      "name": "[%key:component::humidifier::title%]",
+      "state": {
+        "off": "[%key:common::state::off%]",
+        "on": "[%key:common::state::on%]"
+      },
+      "state_attributes": {
+        "action": {
+          "name": "Action",
+          "state": {
+            "humidifying": "Humidifying",
+            "drying": "Drying",
+            "idle": "Idle",
+            "off": "Off"
+          }
+        },
+        "available_modes": {
+          "name": "Available modes"
+        },
+        "current_humidity": {
+          "name": "Current humidity"
+        },
+        "humidity": {
+          "name": "Target humidity"
+        },
+        "max_humidity": {
+          "name": "Max target humidity"
+        },
+        "min_humidity": {
+          "name": "Min target humidity"
+        },
+        "mode": {
+          "name": "Mode",
+          "state": {
+            "normal": "Normal",
+            "eco": "Eco",
+            "away": "Away",
+            "boost": "Boost",
+            "comfort": "Comfort",
+            "home": "Home",
+            "sleep": "Sleep",
+            "auto": "Auto",
+            "baby": "Baby"
+          }
+        }
+      }
+    },
+    "dehumidifier": {
+      "name": "Dehumidifier"
+    },
+    "humidifier": {
+      "name": "[%key:component::humidifier::entity_component::_::name%]"
+    }
+  },
+  "issues": {
+    "platform_integration_no_support": {
+      "title": "[%key:common::issues::platform_integration_no_support_title%]",
+      "description": "[%key:common::issues::platform_integration_no_support_description%]"
+    }
+  }
+}

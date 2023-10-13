@@ -1,0 +1,65 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Contul a fost configurat deja"
+        },
+        "error": {
+            "column_invalid": "Coloana `{column}` nu este returnat\u0103 de interogare",
+            "db_url_invalid": "URL de baz\u0103 de date nevalid",
+            "query_invalid": "Interogare SQL nevalid\u0103"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "column": "Coloan\u0103",
+                    "db_url": "URL-ul bazei de date",
+                    "name": "Nume",
+                    "query": "Interogare de selectare",
+                    "unit_of_measurement": "Unitatea de m\u0103sur\u0103",
+                    "value_template": "\u0218ablon al valorii"
+                },
+                "data_description": {
+                    "column": "Coloan\u0103 pe care interogarea returnat\u0103 s\u0103 o prezinte drept stare",
+                    "db_url": "URL-ul bazei de date, las\u0103 necompletat pentru a utiliza baza de date HA",
+                    "name": "Nume care va fi folosit pentru intrarea de configura\u021bie \u0219i, de asemenea, pentru senzor",
+                    "query": "Interogarea de rulat, trebuie s\u0103 \u00eenceap\u0103 cu 'SELECT'",
+                    "unit_of_measurement": "Unitatea de m\u0103sur\u0103 (op\u021bional)",
+                    "value_template": "\u0218ablon valoare (op\u021bional)"
+                }
+            }
+        }
+    },
+    "issues": {
+        "entity_id_query_does_full_table_scan": {
+            "description": "Interogarea `{query}` con\u021bine cuv\u00e2ntul cheie `entity_id`, dar nu face referire la tabelul `states_meta`. Acest lucru va provoca o scanare complet\u0103 a tabelului \u0219i instabilitatea bazei de date. Te rug\u0103m s\u0103 verifici documenta\u021bia \u0219i s\u0103 utilizezi `states_meta.entity_id`.",
+            "title": "Interogarea SQL face scanare complet\u0103 a tabelului"
+        }
+    },
+    "options": {
+        "error": {
+            "column_invalid": "Coloana `{column}` nu este returnat\u0103 de interogare",
+            "db_url_invalid": "URL de baz\u0103 de date nevalid",
+            "query_invalid": "Interogare SQL nevalid\u0103"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "column": "Coloan\u0103",
+                    "db_url": "URL-ul bazei de date",
+                    "name": "Nume",
+                    "query": "Interogare de selectare",
+                    "unit_of_measurement": "Unitatea de m\u0103sur\u0103",
+                    "value_template": "\u0218ablon al valorii"
+                },
+                "data_description": {
+                    "column": "Coloan\u0103 pe care interogarea returnat\u0103 s\u0103 o prezinte drept stare",
+                    "db_url": "URL-ul bazei de date, las\u0103 necompletat pentru a utiliza baza de date HA",
+                    "name": "Nume care va fi folosit pentru intrarea de configura\u021bie \u0219i, de asemenea, pentru senzor",
+                    "query": "Interogarea de rulat, trebuie s\u0103 \u00eenceap\u0103 cu 'SELECT'",
+                    "unit_of_measurement": "Unitatea de m\u0103sur\u0103 (op\u021bional)",
+                    "value_template": "\u0218ablon valoare (op\u021bional)"
+                }
+            }
+        }
+    }
+}

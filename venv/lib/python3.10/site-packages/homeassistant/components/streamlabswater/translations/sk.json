@@ -1,0 +1,14 @@
+{
+    "services": {
+        "set_away_mode": {
+            "description": "Nastavuje re\u017eim doma/nepr\u00edtomnos\u0165 pre monitor vody Streamlabs.",
+            "fields": {
+                "away_mode": {
+                    "description": "Doma alebo nepr\u00edtomnos\u0165.",
+                    "name": "Re\u017eim nepr\u00edtomnosti"
+                }
+            },
+            "name": "Nastavenie re\u017eimu nepr\u00edtomnosti"
+        }
+    }
+}

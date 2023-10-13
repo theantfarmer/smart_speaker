@@ -1,0 +1,14 @@
+{
+    "services": {
+        "log": {
+            "fields": {
+                "entity_id": {
+                    "name": "\u05de\u05d6\u05d4\u05d4 \u05d9\u05e9\u05d5\u05ea"
+                },
+                "name": {
+                    "name": "\u05e9\u05dd"
+                }
+            }
+        }
+    }
+}

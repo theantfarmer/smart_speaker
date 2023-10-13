@@ -1,0 +1,185 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "connection_error_during_import": "Yaml-konfiguratsiooni importimisel tekkis \u00fchendusviga",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus"
+        },
+        "error": {
+            "connection_error": "\u00dchendamine nurjus",
+            "invalid_auth": "Tuvastamine nurjus"
+        },
+        "flow_title": "Nextcloud",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "description": "V\u00e4rskenda oma {url} sisselogimisteavet."
+            },
+            "user": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "url": "URL",
+                    "username": "Kasutajanimi",
+                    "verify_ssl": "Kontrolli SSL sertifikaati"
+                },
+                "description": "Sisesta oma Nextcloudi teave."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "nextcloud_system_debug": {
+                "name": "Silumine on lubatud"
+            },
+            "nextcloud_system_enable_avatars": {
+                "name": "Avatarid on lubatud"
+            },
+            "nextcloud_system_enable_previews": {
+                "name": "Eelvaated on lubatud"
+            },
+            "nextcloud_system_filelocking_enabled": {
+                "name": "Failide lukustamine lubatud"
+            }
+        },
+        "sensor": {
+            "nextcloud_activeusers_last1hour": {
+                "name": "Aktiivsete kasutajate arv viimase tunni jooksul"
+            },
+            "nextcloud_activeusers_last24hours": {
+                "name": "Aktiivsete kasutajate arv eelmisel p\u00e4eval"
+            },
+            "nextcloud_activeusers_last5minutes": {
+                "name": "Aktiivsete kasutajate arv viimase 5 minuti jooksul"
+            },
+            "nextcloud_database_type": {
+                "name": "Andmebaasi t\u00fc\u00fcp"
+            },
+            "nextcloud_database_version": {
+                "name": "Andmebaasi versioon"
+            },
+            "nextcloud_server_php_max_execution_time": {
+                "name": "PHP maksimaalne t\u00e4itmisaeg"
+            },
+            "nextcloud_server_php_memory_limit": {
+                "name": "PHP m\u00e4lupiirang"
+            },
+            "nextcloud_server_php_upload_max_filesize": {
+                "name": "PHP \u00fcleslaadimise maksimaalne failisuurus"
+            },
+            "nextcloud_server_php_version": {
+                "name": "PHP versioon"
+            },
+            "nextcloud_server_webserver": {
+                "name": "Veebiserver"
+            },
+            "nextcloud_shares_num_fed_shares_received": {
+                "name": "Saadud jagamisi"
+            },
+            "nextcloud_shares_num_fed_shares_sent": {
+                "name": "Saadetud jagamisi"
+            },
+            "nextcloud_shares_num_shares": {
+                "name": "Jagamiste arv"
+            },
+            "nextcloud_shares_num_shares_groups": {
+                "name": "Grupi jagamiste arv"
+            },
+            "nextcloud_shares_num_shares_link": {
+                "name": "Linkide jagamiste arv"
+            },
+            "nextcloud_shares_num_shares_link_no_password": {
+                "name": "Paroolita linkide jagamiste arv"
+            },
+            "nextcloud_shares_num_shares_mail": {
+                "name": "Postijagamiste arv"
+            },
+            "nextcloud_shares_num_shares_room": {
+                "name": "Ruumi jagamiste arv"
+            },
+            "nextcloud_shares_num_shares_user": {
+                "name": "Kasutajate jagamiste arv"
+            },
+            "nextcloud_shares_permissions_3_1": {
+                "name": "\u00d5igused 3.1"
+            },
+            "nextcloud_storage_num_files": {
+                "name": "Failide arv"
+            },
+            "nextcloud_storage_num_storages": {
+                "name": "Salvestusruumide maht"
+            },
+            "nextcloud_storage_num_storages_home": {
+                "name": "Koduste salvestusruumide maht"
+            },
+            "nextcloud_storage_num_storages_local": {
+                "name": "Kohalike salvestusruumide maht"
+            },
+            "nextcloud_storage_num_storages_other": {
+                "name": "Muude salvestusruumide maht"
+            },
+            "nextcloud_storage_num_users": {
+                "name": "Kasutajate arv"
+            },
+            "nextcloud_system_apps_app_updates_calendar": {
+                "name": "Kalendri v\u00e4rskendused"
+            },
+            "nextcloud_system_apps_app_updates_contacts": {
+                "name": "Kontaktide v\u00e4rskendused"
+            },
+            "nextcloud_system_apps_app_updates_tasks": {
+                "name": "\u00dclesannete v\u00e4rskendused"
+            },
+            "nextcloud_system_apps_app_updates_twofactor_totp": {
+                "name": "Kaheastmelise autentimise v\u00e4rskendused"
+            },
+            "nextcloud_system_apps_num_installed": {
+                "name": "Paigaldatud rakendused"
+            },
+            "nextcloud_system_apps_num_updates_available": {
+                "name": "Saadaval on v\u00e4rskendused"
+            },
+            "nextcloud_system_cpuload": {
+                "name": "CPU koormus"
+            },
+            "nextcloud_system_freespace": {
+                "name": "Vaba salvestusruum"
+            },
+            "nextcloud_system_mem_free": {
+                "name": "Vaba m\u00e4lu"
+            },
+            "nextcloud_system_mem_total": {
+                "name": "M\u00e4lu kokku"
+            },
+            "nextcloud_system_memcache_distributed": {
+                "name": "S\u00fcsteemi hajutatud vahem\u00e4lu"
+            },
+            "nextcloud_system_memcache_local": {
+                "name": "S\u00fcsteemi kohalik vahem\u00e4lu"
+            },
+            "nextcloud_system_memcache_locking": {
+                "name": "S\u00fcsteemi vahem\u00e4lu lukustamine"
+            },
+            "nextcloud_system_swap_free": {
+                "name": "Vaba vahetusm\u00e4lu"
+            },
+            "nextcloud_system_swap_total": {
+                "name": "Vahetusm\u00e4lu kokku"
+            },
+            "nextcloud_system_theme": {
+                "name": "S\u00fcsteemi teema"
+            },
+            "nextcloud_system_version": {
+                "name": "S\u00fcsteemi versioon"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Nextcloudi konfigureerimine YAML-i abil on aegunud. \n\n Olemasolev YAML-i konfiguratsioon imporditi kasutajaliidesesse automaatselt. \n\n Eemalda selle probleemi lahendamiseks YAML-i konfiguratsioon \"nextcloud\" failist configuration.yaml ja taask\u00e4ivita Home Assistant.",
+            "title": "Nextcloudi YAML-i konfiguratsioon on aegunud"
+        }
+    }
+}

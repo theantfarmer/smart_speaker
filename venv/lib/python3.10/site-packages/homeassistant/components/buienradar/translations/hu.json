@@ -1,0 +1,505 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "A hely m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "already_configured": "A hely m\u00e1r konfigur\u00e1lva van"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "latitude": "Sz\u00e9less\u00e9g",
+                    "longitude": "Hossz\u00fas\u00e1g"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "barometerfc": {
+                "name": "Barom\u00e9ter \u00e9rt\u00e9k"
+            },
+            "barometerfcname": {
+                "name": "Barom\u00e9ter"
+            },
+            "barometerfcnamenl": {
+                "name": "Barom\u00e9ter"
+            },
+            "condition": {
+                "name": "Helyzet",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "lightning": "Vihar",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s"
+                }
+            },
+            "condition_1d": {
+                "name": "1 napos helyzet",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "lightning": "Vihar",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s"
+                }
+            },
+            "condition_2d": {
+                "name": "Viszony 2nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "lightning": "Vihar",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s"
+                }
+            },
+            "condition_3d": {
+                "name": "Viszony 3nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "lightning": "Vihar",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s"
+                }
+            },
+            "condition_4d": {
+                "name": "Viszony 4nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "lightning": "Vihar",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s"
+                }
+            },
+            "condition_5d": {
+                "name": "Viszony 5nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "lightning": "Vihar",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s"
+                }
+            },
+            "conditioncode": {
+                "name": "Viszony k\u00f3d"
+            },
+            "conditioncode_1d": {
+                "name": "Viszony k\u00f3d 1nap"
+            },
+            "conditioncode_2d": {
+                "name": "Viszony k\u00f3d 2nap"
+            },
+            "conditioncode_3d": {
+                "name": "Viszony k\u00f3d 3nap"
+            },
+            "conditioncode_4d": {
+                "name": "Viszony k\u00f3d 4nap"
+            },
+            "conditioncode_5d": {
+                "name": "Viszony k\u00f3d 5nap"
+            },
+            "conditiondetailed": {
+                "name": "R\u00e9szletes \u00e1llapot",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "light-rain": "Enyhe es\u0151",
+                    "light-snow": "Enyhe havaz\u00e1s",
+                    "lightning": "Vihar",
+                    "partlycloudy": "R\u00e9szben felh\u0151s",
+                    "partlycloudy-fog": "R\u00e9szben felh\u0151s, k\u00f6d",
+                    "partlycloudy-light-rain": "R\u00e9szben felh\u0151s, gyenge es\u0151",
+                    "partlycloudy-light-snow": "R\u00e9szben felh\u0151s, enyhe havaz\u00e1s",
+                    "partlycloudy-lightning": "R\u00e9szben felh\u0151s, vill\u00e1ml\u00e1s",
+                    "partlycloudy-rain": "R\u00e9szben felh\u0151s, es\u0151",
+                    "partlycloudy-snow": "R\u00e9szben felh\u0151s, h\u00f3",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s",
+                    "snowy-rainy": "Havas, es\u0151s"
+                }
+            },
+            "conditiondetailed_1d": {
+                "name": "R\u00e9szletes \u00e1llapot 1nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "light-rain": "Enyhe es\u0151",
+                    "light-snow": "Enyhe havaz\u00e1s",
+                    "lightning": "Vihar",
+                    "partlycloudy": "R\u00e9szben felh\u0151s",
+                    "partlycloudy-fog": "R\u00e9szben felh\u0151s, k\u00f6d",
+                    "partlycloudy-light-rain": "R\u00e9szben felh\u0151s, gyenge es\u0151",
+                    "partlycloudy-light-snow": "R\u00e9szben felh\u0151s, enyhe havaz\u00e1s",
+                    "partlycloudy-lightning": "R\u00e9szben felh\u0151s, vill\u00e1ml\u00e1s",
+                    "partlycloudy-rain": "R\u00e9szben felh\u0151s, es\u0151",
+                    "partlycloudy-snow": "R\u00e9szben felh\u0151s, h\u00f3",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s",
+                    "snowy-rainy": "Havas, es\u0151s"
+                }
+            },
+            "conditiondetailed_2d": {
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "light-rain": "Enyhe es\u0151",
+                    "light-snow": "Enyhe havaz\u00e1s",
+                    "lightning": "Vihar",
+                    "partlycloudy": "R\u00e9szben felh\u0151s",
+                    "partlycloudy-fog": "R\u00e9szben felh\u0151s, k\u00f6d",
+                    "partlycloudy-light-rain": "R\u00e9szben felh\u0151s, gyenge es\u0151",
+                    "partlycloudy-light-snow": "R\u00e9szben felh\u0151s, enyhe havaz\u00e1s",
+                    "partlycloudy-lightning": "R\u00e9szben felh\u0151s, vill\u00e1ml\u00e1s",
+                    "partlycloudy-rain": "R\u00e9szben felh\u0151s, es\u0151",
+                    "partlycloudy-snow": "R\u00e9szben felh\u0151s, h\u00f3",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s",
+                    "snowy-rainy": "Havas, es\u0151s"
+                }
+            },
+            "conditiondetailed_3d": {
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "light-rain": "Enyhe es\u0151",
+                    "light-snow": "Enyhe havaz\u00e1s",
+                    "lightning": "Vihar",
+                    "partlycloudy": "R\u00e9szben felh\u0151s",
+                    "partlycloudy-fog": "R\u00e9szben felh\u0151s, k\u00f6d",
+                    "partlycloudy-light-rain": "R\u00e9szben felh\u0151s, gyenge es\u0151",
+                    "partlycloudy-light-snow": "R\u00e9szben felh\u0151s, enyhe havaz\u00e1s",
+                    "partlycloudy-lightning": "R\u00e9szben felh\u0151s, vill\u00e1ml\u00e1s",
+                    "partlycloudy-rain": "R\u00e9szben felh\u0151s, es\u0151",
+                    "partlycloudy-snow": "R\u00e9szben felh\u0151s, h\u00f3",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s",
+                    "snowy-rainy": "Havas, es\u0151s"
+                }
+            },
+            "conditiondetailed_4d": {
+                "name": "R\u00e9szletes \u00e1llapot4nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "light-rain": "Enyhe es\u0151",
+                    "light-snow": "Enyhe havaz\u00e1s",
+                    "lightning": "Vihar",
+                    "partlycloudy": "R\u00e9szben felh\u0151s",
+                    "partlycloudy-fog": "R\u00e9szben felh\u0151s, k\u00f6d",
+                    "partlycloudy-light-rain": "R\u00e9szben felh\u0151s, gyenge es\u0151",
+                    "partlycloudy-light-snow": "R\u00e9szben felh\u0151s, enyhe havaz\u00e1s",
+                    "partlycloudy-lightning": "R\u00e9szben felh\u0151s, vill\u00e1ml\u00e1s",
+                    "partlycloudy-rain": "R\u00e9szben felh\u0151s, es\u0151",
+                    "partlycloudy-snow": "R\u00e9szben felh\u0151s, h\u00f3",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s",
+                    "snowy-rainy": "Havas, es\u0151s"
+                }
+            },
+            "conditiondetailed_5d": {
+                "name": "R\u00e9szletes \u00e1llapot 5nap",
+                "state": {
+                    "clear": "Tiszta",
+                    "cloudy": "Felh\u0151s",
+                    "fog": "K\u00f6d",
+                    "light-rain": "Enyhe es\u0151",
+                    "light-snow": "Enyhe havaz\u00e1s",
+                    "lightning": "Vihar",
+                    "partlycloudy": "R\u00e9szben felh\u0151s",
+                    "partlycloudy-fog": "R\u00e9szben felh\u0151s, k\u00f6d",
+                    "partlycloudy-light-rain": "R\u00e9szben felh\u0151s, gyenge es\u0151",
+                    "partlycloudy-light-snow": "R\u00e9szben felh\u0151s, enyhe havaz\u00e1s",
+                    "partlycloudy-lightning": "R\u00e9szben felh\u0151s, vill\u00e1ml\u00e1s",
+                    "partlycloudy-rain": "R\u00e9szben felh\u0151s, es\u0151",
+                    "partlycloudy-snow": "R\u00e9szben felh\u0151s, h\u00f3",
+                    "rainy": "Es\u0151s",
+                    "snowy": "Havaz\u00e1s",
+                    "snowy-rainy": "Havas, es\u0151s"
+                }
+            },
+            "conditionexact": {
+                "name": "Teljes \u00e1llapot"
+            },
+            "conditionexact_1d": {
+                "name": "Teljes \u00e1llapot 1nap"
+            },
+            "conditionexact_2d": {
+                "name": "Teljes \u00e1llapot 2nap"
+            },
+            "conditionexact_3d": {
+                "name": "Teljes \u00e1llapot 3nap"
+            },
+            "conditionexact_4d": {
+                "name": "Teljes \u00e1llapot 4nap"
+            },
+            "conditionexact_5d": {
+                "name": "Teljes \u00e1llapot 5nap"
+            },
+            "feeltemperature": {
+                "name": "H\u0151m\u00e9rs\u00e9kletet \u00e9rzet"
+            },
+            "groundtemperature": {
+                "name": "Talajh\u0151m\u00e9rs\u00e9klet"
+            },
+            "humidity": {
+                "name": "P\u00e1ratartalom"
+            },
+            "irradiance": {
+                "name": "Besug\u00e1rz\u00e1s"
+            },
+            "maxrain_1d": {
+                "name": "Maximum es\u0151 1nap"
+            },
+            "maxrain_2d": {
+                "name": "Maximum es\u0151 2nap"
+            },
+            "maxrain_3d": {
+                "name": "Maximum es\u0151 3nap"
+            },
+            "maxrain_4d": {
+                "name": "Maximum es\u0151 4nap"
+            },
+            "maxrain_5d": {
+                "name": "Maximum es\u0151 5nap"
+            },
+            "minrain_1d": {
+                "name": "Minimum es\u0151 1nap"
+            },
+            "minrain_2d": {
+                "name": "Minimum es\u0151 2nap"
+            },
+            "minrain_3d": {
+                "name": "Minimum es\u0151 3nap"
+            },
+            "minrain_4d": {
+                "name": "Minimum es\u0151 4nap"
+            },
+            "minrain_5d": {
+                "name": "Minimum es\u0151 5nap"
+            },
+            "mintemp_1d": {
+                "name": "Minimum h\u0151m\u00e9rs\u00e9klet 1nap"
+            },
+            "mintemp_2d": {
+                "name": "Minimum h\u0151m\u00e9rs\u00e9klet 2nap"
+            },
+            "mintemp_3d": {
+                "name": "Minimum h\u0151m\u00e9rs\u00e9klet 3nap"
+            },
+            "mintemp_4d": {
+                "name": "Minimum h\u0151m\u00e9rs\u00e9klet 4nap"
+            },
+            "mintemp_5d": {
+                "name": "Minimum h\u0151m\u00e9rs\u00e9klet 5nap"
+            },
+            "precipitation": {
+                "name": "Csapad\u00e9k"
+            },
+            "precipitation_forecast_average": {
+                "name": "Csapad\u00e9k el\u0151rejelz\u00e9s \u00e1tlag"
+            },
+            "precipitation_forecast_total": {
+                "name": "Csapad\u00e9k el\u0151rejelz\u00e9s \u00f6ssz"
+            },
+            "pressure": {
+                "name": "Nyom\u00e1s"
+            },
+            "rain_1d": {
+                "name": "Es\u0151 1nap"
+            },
+            "rain_2d": {
+                "name": "Es\u0151 2nap"
+            },
+            "rain_3d": {
+                "name": "Es\u0151 3nap"
+            },
+            "rain_4d": {
+                "name": "Es\u0151 4nap"
+            },
+            "rain_5d": {
+                "name": "Es\u0151 5nap"
+            },
+            "rainchance_1d": {
+                "name": "Es\u0151 es\u00e9ly 1nap"
+            },
+            "rainchance_2d": {
+                "name": "Es\u0151 es\u00e9ly 2nap"
+            },
+            "rainchance_3d": {
+                "name": "Es\u0151 es\u00e9ly 3nap"
+            },
+            "rainchance_4d": {
+                "name": "Es\u0151 es\u00e9ly 4nap"
+            },
+            "rainchance_5d": {
+                "name": "Es\u0151 es\u00e9ly 5nap"
+            },
+            "rainlast24hour": {
+                "name": "Es\u0151 utols\u00f3 24h"
+            },
+            "rainlasthour": {
+                "name": "Es\u0151 az elm\u00falt \u00f3r\u00e1ban"
+            },
+            "stationname": {
+                "name": "\u00c1llom\u00e1s neve"
+            },
+            "sunchance_1d": {
+                "name": "Naps\u00fct\u00e9s es\u00e9ly 1nap"
+            },
+            "sunchance_2d": {
+                "name": "Naps\u00fct\u00e9s es\u00e9ly 2nap"
+            },
+            "sunchance_3d": {
+                "name": "Naps\u00fct\u00e9s es\u00e9ly 3nap"
+            },
+            "sunchance_4d": {
+                "name": "Naps\u00fct\u00e9s es\u00e9ly 4nap"
+            },
+            "sunchance_5d": {
+                "name": "Naps\u00fct\u00e9s es\u00e9ly 5nap"
+            },
+            "symbol": {
+                "name": "Szimb\u00f3lum"
+            },
+            "symbol_1d": {
+                "name": "Szimb\u00f3lum 1nap"
+            },
+            "symbol_2d": {
+                "name": "Szimb\u00f3lum 2nap"
+            },
+            "symbol_3d": {
+                "name": "Szimb\u00f3lum 3nap"
+            },
+            "symbol_4d": {
+                "name": "Szimb\u00f3lum 4nap"
+            },
+            "symbol_5d": {
+                "name": "Szimb\u00f3lum 5nap"
+            },
+            "temperature": {
+                "name": "H\u0151m\u00e9rs\u00e9klet"
+            },
+            "temperature_1d": {
+                "name": "H\u0151m\u00e9rs\u00e9klet 1nap"
+            },
+            "temperature_2d": {
+                "name": "H\u0151m\u00e9rs\u00e9klet 2nap"
+            },
+            "temperature_3d": {
+                "name": "H\u0151m\u00e9rs\u00e9klet 3nap"
+            },
+            "temperature_4d": {
+                "name": "H\u0151m\u00e9rs\u00e9klet 4nap"
+            },
+            "temperature_5d": {
+                "name": "H\u0151m\u00e9rs\u00e9klet 5nap"
+            },
+            "visibility": {
+                "name": "L\u00e1t\u00f3t\u00e1vols\u00e1g"
+            },
+            "windazimuth": {
+                "name": "Sz\u00e9lir\u00e1ny (azimut)"
+            },
+            "windazimuth_1d": {
+                "name": "Sz\u00e9lir\u00e1ny 1nap (azimut)"
+            },
+            "windazimuth_2d": {
+                "name": "Sz\u00e9lir\u00e1ny 2nap (azimut)"
+            },
+            "windazimuth_3d": {
+                "name": "Sz\u00e9lir\u00e1ny 3nap (azimut)"
+            },
+            "windazimuth_4d": {
+                "name": "Sz\u00e9lir\u00e1ny 4nap (azimut)"
+            },
+            "windazimuth_5d": {
+                "name": "Sz\u00e9lir\u00e1ny 5nap (azimut)"
+            },
+            "winddirection": {
+                "name": "Sz\u00e9lir\u00e1ny"
+            },
+            "winddirection_1d": {
+                "name": "Sz\u00e9lir\u00e1ny 1nap"
+            },
+            "winddirection_2d": {
+                "name": "Sz\u00e9lir\u00e1ny 2nap"
+            },
+            "winddirection_3d": {
+                "name": "Sz\u00e9lir\u00e1ny 3nap"
+            },
+            "winddirection_4d": {
+                "name": "Sz\u00e9lir\u00e1ny 4nap"
+            },
+            "winddirection_5d": {
+                "name": "Sz\u00e9lir\u00e1ny 5nap"
+            },
+            "windforce": {
+                "name": "Sz\u00e9ler\u0151ss\u00e9g"
+            },
+            "windforce_1d": {
+                "name": "Sz\u00e9ler\u0151ss\u00e9g 1nap"
+            },
+            "windforce_2d": {
+                "name": "Sz\u00e9ler\u0151ss\u00e9g 2nap"
+            },
+            "windforce_3d": {
+                "name": "Sz\u00e9ler\u0151ss\u00e9g 3nap"
+            },
+            "windforce_4d": {
+                "name": "Sz\u00e9ler\u0151ss\u00e9g 4nap"
+            },
+            "windforce_5d": {
+                "name": "Sz\u00e9ler\u0151ss\u00e9g 5nap"
+            },
+            "windgust": {
+                "name": "Sz\u00e9ll\u00f6k\u00e9s"
+            },
+            "windspeed": {
+                "name": "Sz\u00e9lsebess\u00e9g"
+            },
+            "windspeed_1d": {
+                "name": "Sz\u00e9ll\u00f6k\u00e9s 1nap"
+            },
+            "windspeed_2d": {
+                "name": "Sz\u00e9ll\u00f6k\u00e9s 2nap"
+            },
+            "windspeed_3d": {
+                "name": "Sz\u00e9ll\u00f6k\u00e9s 3nap"
+            },
+            "windspeed_4d": {
+                "name": "Sz\u00e9ll\u00f6k\u00e9s 4nap"
+            },
+            "windspeed_5d": {
+                "name": "Sz\u00e9ll\u00f6k\u00e9s 5nap"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "country_code": "A kamera k\u00e9peinek megjelen\u00edt\u00e9s\u00e9hez az orsz\u00e1g k\u00f3dja.",
+                    "delta": "A kamera k\u00e9pfriss\u00edt\u00e9s\u00e9nek id\u0151tartama m\u00e1sodpercekben",
+                    "timeframe": "Percek, hogy el\u0151retekints\u00fcnk a csapad\u00e9k el\u0151rejelz\u00e9s\u00e9re"
+                }
+            }
+        }
+    }
+}

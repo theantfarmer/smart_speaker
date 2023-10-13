@@ -1,0 +1,32 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "codelock": "Codi de bloqueig rebut",
+            "fingerprint": "Codi d'empremta rebut",
+            "send_keys": "Claus d'enviament rebudes",
+            "transmitter": "Codi del transmissor rebut",
+            "transponder": "Codi del transponedor rebut"
+        }
+    },
+    "services": {
+        "output_abs": {
+            "fields": {
+                "brightness": {
+                    "description": "Lluminositat absoluta.",
+                    "name": "Lluminositat"
+                },
+                "transition": {
+                    "name": "Transici\u00f3"
+                }
+            }
+        },
+        "output_rel": {
+            "fields": {
+                "brightness": {
+                    "description": "Lluminositat relativa.",
+                    "name": "Lluminositat"
+                }
+            }
+        }
+    }
+}

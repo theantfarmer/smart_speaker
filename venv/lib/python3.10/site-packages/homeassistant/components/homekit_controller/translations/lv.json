@@ -1,0 +1,12 @@
+{
+    "entity": {
+        "select": {
+            "ecobee_mode": {
+                "state": {
+                    "away": "Promb\u016btne",
+                    "home": "M\u0101j\u0101s"
+                }
+            }
+        }
+    }
+}

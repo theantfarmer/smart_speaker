@@ -1,0 +1,68 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "A fi\u00f3k m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "invalid_station": "Nem tal\u00e1lhat\u00f3 a megadott nev\u0171 meteorol\u00f3giai \u00e1llom\u00e1s",
+            "more_stations": "T\u00f6bb meteorol\u00f3giai \u00e1llom\u00e1s tal\u00e1lhat\u00f3 a megadott n\u00e9vvel"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API kulcs",
+                    "station": "\u00c1llom\u00e1s"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "precipitation": {
+                "state": {
+                    "freezing_rain": "Fagyos es\u0151",
+                    "hail": "J\u00e9ges\u0151",
+                    "none": "Nincs",
+                    "rain": "Es\u0151",
+                    "rain_snow_mixed": "Havases\u0151",
+                    "snow": "Havaz\u00e1s"
+                }
+            },
+            "precipitation_amountname": {
+                "state": {
+                    "error": "Hiba",
+                    "heavy_rain": "Heves es\u0151",
+                    "heavy_snow": "Er\u0151s havaz\u00e1s",
+                    "heavy_snow_rain": "Er\u0151s havases\u0151",
+                    "mild_rain": "Enyhe es\u0151",
+                    "mild_snow": "Enyhe havaz\u00e1s",
+                    "mild_snow_rain": "Enyhe havases\u0151",
+                    "moderate_rain": "M\u00e9rs\u00e9kelt es\u0151",
+                    "moderate_snow": "M\u00e9rs\u00e9kelt havaz\u00e1s",
+                    "moderate_snow_rain": "M\u00e9rs\u00e9kelt havases\u0151",
+                    "none": "Nincs",
+                    "other": "Egy\u00e9b",
+                    "unknown": "Ismeretlen"
+                }
+            },
+            "wind_direction_text": {
+                "state": {
+                    "east": "Kelet",
+                    "east_south_east": "Kelet-d\u00e9lkelet",
+                    "north": "\u00c9szak",
+                    "north_east": "\u00c9szakkelet",
+                    "north_north_east": "\u00c9szak-\u00e9szakkelet",
+                    "north_north_west": "\u00c9szak-\u00e9szaknyugat",
+                    "north_west": "\u00c9szaknyugat",
+                    "south": "D\u00e9l",
+                    "south_east": "D\u00e9lkelet",
+                    "south_south_west": "D\u00e9l-d\u00e9lnyugat",
+                    "south_west": "D\u00e9lnyugat",
+                    "west": "Nyugat"
+                }
+            }
+        }
+    }
+}

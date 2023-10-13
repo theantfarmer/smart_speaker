@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "host": "Hostas"
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_subtype": {
+            "1": "Pirmasis mygtukas",
+            "2": "Antras mygtukas",
+            "3": "Tre\u010dias mygtukas",
+            "4": "Ketvirtas mygtukas"
+        }
+    }
+}

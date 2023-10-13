@@ -1,0 +1,8 @@
+{
+    "services": {
+        "speedtest": {
+            "description": "Okam\u017eite vykon\u00e1 test r\u00fdchlosti s Fast.com.",
+            "name": "Test r\u00fdchlosti"
+        }
+    }
+}

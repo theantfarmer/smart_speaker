@@ -1,0 +1,74 @@
+{
+    "services": {
+        "put_paramset": {
+            "description": "\u8c03\u7528 RPC XML \u63a5\u53e3\u4e2d\u7684 putParamset\u3002",
+            "fields": {
+                "address": {
+                    "description": "Homematic \u8bbe\u5907\u7684\u5730\u5740\u3002",
+                    "name": "\u5730\u5740"
+                },
+                "interface": {
+                    "description": "\u914d\u7f6e\u4e2d\u7684\u63a5\u53e3\u540d\u79f0\u3002",
+                    "name": "\u754c\u9762"
+                },
+                "paramset": {
+                    "description": "\u53c2\u6570\u96c6\u5b57\u5178\u3002",
+                    "name": "\u53c2\u6570\u96c6"
+                },
+                "paramset_key": {
+                    "description": "putParamset \u7684 paramset_key \u53c2\u6570\u3002",
+                    "name": "\u53c2\u6570\u952e"
+                },
+                "rx_mode": {
+                    "description": "\u4f7f\u7528\u7684\u63a5\u6536\u6a21\u5f0f\u3002",
+                    "name": "RX \u6a21\u5f0f"
+                }
+            },
+            "name": "\u653e\u7f6e\u53c2\u6570\u96c6"
+        },
+        "reconnect": {
+            "description": "\u91cd\u65b0\u8fde\u63a5\u5230\u6240\u6709 Homematic \u96c6\u7ebf\u5668\u3002",
+            "name": "\u91cd\u65b0\u8fde\u63a5"
+        },
+        "set_device_value": {
+            "description": "\u5728 RPC XML \u63a5\u53e3\u4e0a\u8bbe\u7f6e\u8bbe\u5907\u5c5e\u6027\u3002",
+            "fields": {
+                "address": {
+                    "name": "\u5730\u5740"
+                },
+                "channel": {
+                    "description": "\u8c03\u7528\u6309\u952e\u7684\u901a\u9053\u3002",
+                    "name": "\u9891\u9053"
+                },
+                "interface": {
+                    "name": "\u754c\u9762"
+                },
+                "value": {
+                    "name": "\u503c"
+                }
+            }
+        },
+        "set_install_mode": {
+            "fields": {
+                "mode": {
+                    "name": "\u6a21\u5f0f"
+                }
+            }
+        },
+        "set_variable_value": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u79f0"
+                }
+            }
+        },
+        "virtualkey": {
+            "fields": {
+                "channel": {
+                    "description": "\u8c03\u7528\u6309\u952e\u7684\u901a\u9053\u3002",
+                    "name": "\u9891\u9053"
+                }
+            }
+        }
+    }
+}

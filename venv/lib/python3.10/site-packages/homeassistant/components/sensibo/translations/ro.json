@@ -1,0 +1,72 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Contul a fost configurat deja",
+            "reauth_successful": "Re-autentificarea s-a realizat cu succes"
+        },
+        "error": {
+            "cannot_connect": "A e\u0219uat conectarea",
+            "incorrect_api_key": "Cheie API nevalid\u0103 pentru contul selectat",
+            "invalid_auth": "Autentificare nevalid\u0103",
+            "no_devices": "Nu s-au descoperit dispozitive",
+            "no_username": "Nu s-a putut ob\u021bine numele de utilizator"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Cheie API"
+                },
+                "data_description": {
+                    "api_key": "Urmeaz\u0103 instruc\u021biunile din documenta\u021bie pentru a-\u021bi ob\u021bine cheia API"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "Cheie API"
+                },
+                "data_description": {
+                    "api_key": "Urmeaz\u0103 instruc\u021biunile din documenta\u021bie pentru a-\u021bi ob\u021bine cheia API"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "horizontalswing": {
+                "state": {
+                    "fixedcenter": "Centru fix",
+                    "fixedcenterleft": "Centru fix st\u00e2nga",
+                    "fixedcenterright": "Fix centru dreapta",
+                    "fixedleft": "St\u00e2nga fix\u0103",
+                    "fixedleftright": "Fix st\u00e2nga dreapta",
+                    "fixedright": "Fix dreapta",
+                    "rangecenter": "Raz\u0103 central\u0103",
+                    "rangefull": "Raz\u0103 complet\u0103",
+                    "stopped": "Oprit"
+                }
+            },
+            "light": {
+                "state": {
+                    "dim": "Diminuat",
+                    "off": "Oprit",
+                    "on": "Pornit"
+                }
+            }
+        },
+        "sensor": {
+            "sensitivity": {
+                "state": {
+                    "n": "Normal",
+                    "s": "Sensibil"
+                }
+            },
+            "smart_type": {
+                "state": {
+                    "feelslike": "Se simte ca",
+                    "humidity": "Umiditate",
+                    "temperature": "Temperatur\u0103"
+                }
+            }
+        }
+    }
+}

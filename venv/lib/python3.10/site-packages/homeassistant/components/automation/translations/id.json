@@ -1,0 +1,62 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Otomasi",
+            "state": {
+                "off": "Mati",
+                "on": "Nyala"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Menjalankan otomasi"
+                },
+                "id": {
+                    "name": "ID"
+                },
+                "last_triggered": {
+                    "name": "Terpicu terakhir"
+                },
+                "max": {
+                    "name": "Jumlah maksimal otomasi yang berjalan"
+                },
+                "mode": {
+                    "name": "Mode operasi",
+                    "state": {
+                        "parallel": "Paralel",
+                        "queued": "Diantrekan",
+                        "restart": "Mulai ulang",
+                        "single": "Tunggal"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_not_found": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Otomasi \"{name}\" (`{entity_id}`) memiliki aksi yang memanggil layanan yang tidak diketahui: `{service}`.\n\nKesalahan ini mencegah otomasi berjalan dengan benar. Mungkin layanan ini tidak lagi tersedia, atau mungkin kesalahan ketik yang menyebabkannya.\n\nUntuk memperbaiki kesalahan ini, [edit otomasi]({edit}) dan hapus aksi yang memanggil layanan ini.\n\nKlik KIRIM di bawah ini untuk mengonfirmasi bahwa Anda telah memperbaiki otomasi ini.",
+                        "title": "{name} menggunakan layanan yang tidak dikenal"
+                    }
+                }
+            },
+            "title": "{name} menggunakan layanan yang tidak dikenal"
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Muat Ulang"
+        },
+        "toggle": {
+            "name": "Alihkan"
+        },
+        "turn_off": {
+            "name": "Matikan"
+        },
+        "turn_on": {
+            "name": "Nyalakan"
+        }
+    },
+    "title": "Otomasi"
+}

@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "already_in_progress": "A be\u00e1ll\u00edt\u00e1si folyamat m\u00e1r el lett kezdve"
+        },
+        "error": {
+            "connection_error": "Sikertelen csatlakoz\u00e1s"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "IP c\u00edm"
+                },
+                "description": "Csatlakoz\u00e1s az inverterhez",
+                "title": "GoodWe inverter"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "operation_mode": {
+                "state": {
+                    "backup": "Biztons\u00e1gi ment\u00e9s m\u00f3d",
+                    "eco": "Eco m\u00f3d",
+                    "eco_charge": "Eco t\u00f6lt\u00e9si m\u00f3d",
+                    "eco_discharge": "Eco kis\u00fct\u00e9si m\u00f3d",
+                    "general": "\u00c1ltal\u00e1nos m\u00f3d",
+                    "off_grid": "Sziget \u00fczemm\u00f3d",
+                    "peak_shaving": "Cs\u00facs\u00e9rt\u00e9k-cs\u00f6kkent\u0151 \u00fczemm\u00f3d"
+                }
+            }
+        }
+    }
+}

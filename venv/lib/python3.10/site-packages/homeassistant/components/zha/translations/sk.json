@@ -1,0 +1,506 @@
+{
+    "config": {
+        "abort": {
+            "not_zha_device": "Toto zariadenie nie je zariadenie zha",
+            "single_instance_allowed": "U\u017e je nakonfigurovan\u00fd. Mo\u017en\u00e1 je len jedna konfigur\u00e1cia.",
+            "usb_probe_failed": "Nepodarilo sa presk\u00fama\u0165 zariadenie USB"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_backup_json": "Neplatn\u00e1 z\u00e1loha JSON"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "Vyberte si automatick\u00e9 z\u00e1lohovanie"
+                },
+                "description": "Obnovte nastavenia siete z automatickej z\u00e1lohy",
+                "title": "Obnovenie automatickej z\u00e1lohy"
+            },
+            "choose_formation_strategy": {
+                "description": "Vyberte sie\u0165ov\u00e9 nastavenia pre va\u0161e r\u00e1dio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Obnovenie automatickej z\u00e1lohy",
+                    "form_initial_network": "Vytvorenie siete",
+                    "form_new_network": "Vyma\u017ete nastavenia siete a vytvorte nov\u00fa sie\u0165",
+                    "reuse_settings": "Ponechajte nastavenia siete r\u00e1dia",
+                    "upload_manual_backup": "Nahratie manu\u00e1lnej z\u00e1lohy"
+                },
+                "title": "Tvorba siete"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Cesta s\u00e9riov\u00e9ho zariadenia"
+                },
+                "description": "Vyberte s\u00e9riov\u00fd port pre va\u0161e r\u00e1dio Zigbee",
+                "title": "Vyberte s\u00e9riov\u00fd port"
+            },
+            "confirm": {
+                "description": "Chcete nastavi\u0165 {name}?"
+            },
+            "confirm_hardware": {
+                "description": "Chcete nastavi\u0165 {name}?"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Typ r\u00e1dia"
+                },
+                "description": "Vyberte si typ r\u00e1dia Zigbee",
+                "title": "Typ r\u00e1dia"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "R\u00fdchlos\u0165 portu",
+                    "flow_control": "Riadenie toku d\u00e1t",
+                    "path": "Cesta s\u00e9riov\u00e9ho zariadenia"
+                },
+                "description": "Zadajte nastavenia s\u00e9riov\u00e9ho portu",
+                "title": "Nastavenia s\u00e9riov\u00e9ho portu"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Natrvalo nahra\u010fte r\u00e1diov\u00fa adresu IEEE"
+                },
+                "description": "Va\u0161a z\u00e1loha m\u00e1 in\u00fa adresu IEEE ako va\u0161e r\u00e1dio. Aby va\u0161a sie\u0165 fungovala spr\u00e1vne, mala by sa zmeni\u0165 aj adresa IEEE v\u00e1\u0161ho r\u00e1dia. \n\n Ide o trval\u00fa oper\u00e1ciu.",
+                "title": "Prep\u00edsa\u0165 adresu IEEE r\u00e1dia"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Nahrajte s\u00fabor"
+                },
+                "description": "Obnovte nastavenia siete z nahran\u00e9ho z\u00e1lo\u017en\u00e9ho s\u00faboru JSON. M\u00f4\u017eete si ho stiahnu\u0165 z inej in\u0161tal\u00e1cie ZHA z **Nastavenia siete** alebo pou\u017ei\u0165 s\u00fabor Zigbee2MQTT `coordinator_backup.json`.",
+                "title": "Nahratie manu\u00e1lnej z\u00e1lohy"
+            },
+            "verify_radio": {
+                "description": "R\u00e1dio, ktor\u00e9 pou\u017e\u00edvate ({name}), sa neodpor\u00fa\u010da a jeho podpora m\u00f4\u017ee by\u0165 v bud\u00facnosti odstr\u00e1nen\u00e1. Pozrite si dokument\u00e1ciu integr\u00e1cie Zigbee Home Automation, kde n\u00e1jdete [zoznam odpor\u00fa\u010dan\u00fdch adapt\u00e9rov] ({docs_recommended_adapters_url}).",
+                "title": "R\u00e1dio sa neodpor\u00fa\u010da"
+            }
+        }
+    },
+    "config_panel": {
+        "zha_alarm_options": {
+            "alarm_arm_requires_code": "K\u00f3d po\u017eadovan\u00fd pre \u010dinnosti str\u00e1\u017eenia",
+            "alarm_failed_tries": "Po\u010det po sebe nasleduj\u00facich ne\u00faspe\u0161n\u00fdch zadan\u00ed k\u00f3du na spustenie alarmu",
+            "alarm_master_code": "Hlavn\u00fd k\u00f3d pre poplachov\u00e9 ovl\u00e1dacie panely",
+            "title": "Mo\u017enosti ovl\u00e1dacieho panela alarmov"
+        },
+        "zha_options": {
+            "always_prefer_xy_color_mode": "V\u017edy uprednost\u0148ujete farebn\u00fd re\u017eim XY",
+            "consider_unavailable_battery": "Zariadenia nap\u00e1jan\u00e9 z bat\u00e9rie pova\u017eujte za nedostupn\u00e9 po (sekund\u00e1ch)",
+            "consider_unavailable_mains": "Zariadenia nap\u00e1jan\u00e9 zo siete pova\u017eujte za nedostupn\u00e9 po (sekund\u00e1ch)",
+            "default_light_transition": "Predvolen\u00fd \u010das prechodu svetla (sekundy)",
+            "enable_identify_on_join": "Povoli\u0165 efekt identifik\u00e1cie, ke\u010f sa zariadenia prip\u00e1jaj\u00fa k sieti",
+            "enhanced_light_transition": "Povoli\u0165 vylep\u0161en\u00fd prechod farby svetla/teploty z vypnut\u00e9ho stavu",
+            "group_members_assume_state": "\u010clenovia skupiny prevezm\u00fa stav skupiny",
+            "light_transitioning_flag": "Povolenie vylep\u0161en\u00e9ho posuvn\u00edka jasu po\u010das prechodu svetla",
+            "title": "Glob\u00e1lne mo\u017enosti"
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "issue_all_led_effect": "V\u00fdstupn\u00fd efekt pre v\u0161etky LED",
+            "issue_individual_led_effect": "V\u00fdstupn\u00fd efekt pre jednu LED",
+            "squawk": "\u0160kr\u00edpanie",
+            "warn": "Upozornenie"
+        },
+        "trigger_subtype": {
+            "both_buttons": "Obe tla\u010didl\u00e1",
+            "button": "Tla\u010didlo",
+            "button_1": "Prv\u00e9 tla\u010didlo",
+            "button_2": "Druh\u00e9 tla\u010didlo",
+            "button_3": "Tretie tla\u010didlo",
+            "button_4": "\u0160tvrt\u00e9 tla\u010didlo",
+            "button_5": "Piate tla\u010didlo",
+            "button_6": "\u0160ieste tla\u010didlo",
+            "close": "Zavrie\u0165",
+            "dim_down": "Dim dole",
+            "dim_up": "Dim hore",
+            "face_1": "Aktivovan\u00e9 tv\u00e1rou 1",
+            "face_2": "Aktivovan\u00e9 tv\u00e1rou 2",
+            "face_3": "Aktivovan\u00e9 tv\u00e1rou 3",
+            "face_4": "Aktivovan\u00e9 tv\u00e1rou 4",
+            "face_5": "Aktivovan\u00e9 tv\u00e1rou 5",
+            "face_6": "Aktivovan\u00e9 tv\u00e1rou 6",
+            "face_any": "Aktiv\u00e1cia s \u013eubovo\u013en\u00fdm/fixn\u00fdm povrchom (povrchmi)",
+            "left": "V\u013eavo",
+            "open": "Otvori\u0165",
+            "right": "Vpravo",
+            "turn_off": "Vypn\u00fa\u0165",
+            "turn_on": "Zapn\u00fa\u0165"
+        },
+        "trigger_type": {
+            "device_dropped": "Zariadenie spadlo",
+            "device_flipped": "Zariadenie sa obr\u00e1tilo \"{subtype}\"",
+            "device_knocked": "Zariadenie zaklopalo \"{subtype}\"",
+            "device_offline": "Zariadenie je offline",
+            "device_rotated": "Zariadenie oto\u010den\u00e9 \"{subtype}\"",
+            "device_shaken": "Zariadenie sa zatriaslo",
+            "device_slid": "Zariadenie posunut\u00e9 \"{subtype}\"",
+            "device_tilted": "Zariadenie je naklonen\u00e9",
+            "remote_button_alt_double_press": "dvojit\u00e9 kliknutie na \"{subtype}\" (Alternat\u00edvny re\u017eim)",
+            "remote_button_alt_long_press": "\"{subtype}\" trvalo stla\u010den\u00e9 (Alternat\u00edvny re\u017eim)",
+            "remote_button_alt_long_release": "\"{subtype}\" uvo\u013enen\u00e9 po dlhom stla\u010den\u00ed (alternat\u00edvny re\u017eim)",
+            "remote_button_alt_quadruple_press": "\"{subtype}\" \u0161tvorit\u00e9 kliknutie (Alternat\u00edvny re\u017eim)",
+            "remote_button_alt_quintuple_press": "\"{subtype}\" p\u00e4\u0165n\u00e1sobn\u00e9 kliknutie (Alternat\u00edvny re\u017eim)",
+            "remote_button_alt_short_press": "\"{subtype}\" stla\u010den\u00e9 (alternat\u00edvny re\u017eim)",
+            "remote_button_alt_short_release": "\"{subtype}\" Uvolnen\u00e9 (alternat\u00edvny re\u017eim)",
+            "remote_button_alt_triple_press": "\"{subtype}\" trojit\u00e9 kliknutie (Alternat\u00edvny re\u017eim)",
+            "remote_button_double_press": "\"{subtype}\" dvojklik",
+            "remote_button_long_press": "\"{subtype}\" trvalo stla\u010den\u00e9",
+            "remote_button_long_release": "\"{subtype}\" uvo\u013enen\u00e9 po dlhom stla\u010den\u00ed",
+            "remote_button_quadruple_press": "\"{subtype}\" kliknut\u00e9 \u0161tyrikr\u00e1t",
+            "remote_button_quintuple_press": "\"{subtype}\" kliknut\u00e9 p\u00e4\u0165kr\u00e1t",
+            "remote_button_short_press": "\"{subtype}\" stla\u010den\u00e9",
+            "remote_button_short_release": "\"{subtype}\" bolo uvo\u013enen\u00e9",
+            "remote_button_triple_press": "\"{subtype}\" trojklik"
+        }
+    },
+    "options": {
+        "abort": {
+            "not_zha_device": "Toto zariadenie nie je zariadenie zha",
+            "single_instance_allowed": "U\u017e je nakonfigurovan\u00fd. Mo\u017en\u00e1 je len jedna konfigur\u00e1cia.",
+            "usb_probe_failed": "Nepodarilo sa presk\u00fama\u0165 zariadenie USB"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_backup_json": "Neplatn\u00e1 z\u00e1loha JSON"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "Vyberte si automatick\u00e9 z\u00e1lohovanie"
+                },
+                "description": "Obnovte nastavenia siete z automatickej z\u00e1lohy",
+                "title": "Obnovenie automatickej z\u00e1lohy"
+            },
+            "choose_formation_strategy": {
+                "description": "Vyberte sie\u0165ov\u00e9 nastavenia pre va\u0161e r\u00e1dio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Obnovenie automatickej z\u00e1lohy",
+                    "form_initial_network": "Vytvorenie siete",
+                    "form_new_network": "Vyma\u017ete nastavenia siete a vytvorte nov\u00fa sie\u0165",
+                    "reuse_settings": "Ponechajte nastavenia siete r\u00e1dia",
+                    "upload_manual_backup": "Nahratie manu\u00e1lnej z\u00e1lohy"
+                },
+                "title": "Tvorba siete"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Cesta s\u00e9riov\u00e9ho zariadenia"
+                },
+                "description": "Vyberte s\u00e9riov\u00fd port pre va\u0161e r\u00e1dio Zigbee",
+                "title": "Vyberte s\u00e9riov\u00fd port"
+            },
+            "init": {
+                "description": "Doplnok ZHA bude zastaven\u00fd. Prajete si pokra\u010dova\u0165?",
+                "title": "Prekonfigurova\u0165 ZHA"
+            },
+            "instruct_unplug": {
+                "description": "Va\u0161e star\u00e9 r\u00e1dio bolo resetovan\u00e9. Ak u\u017e hardv\u00e9r nepotrebujete, m\u00f4\u017eete ho odpoji\u0165. \n\n Teraz m\u00f4\u017eete pripoji\u0165 svoje nov\u00e9 r\u00e1dio.",
+                "title": "Odpojte star\u00e9 r\u00e1dio"
+            },
+            "intent_migrate": {
+                "description": "Pred pripojen\u00edm nov\u00e9ho r\u00e1dia je potrebn\u00e9 resetova\u0165 star\u00e9 r\u00e1dio. Vykon\u00e1 sa automatick\u00e9 z\u00e1lohovanie. Ak pou\u017e\u00edvate kombinovan\u00fd adapt\u00e9r Z-Wave a Zigbee, ako je HUSBZB-1, resetuje sa iba \u010das\u0165 Zigbee. \n\n *Pozn\u00e1mka: ak migrujete z **ConBee/RaspBee**, uistite sa, \u017ee pou\u017e\u00edva firmv\u00e9r `0x26720700` alebo nov\u0161\u00ed! V opa\u010dnom pr\u00edpade sa niektor\u00e9 zariadenia nemusia da\u0165 po migr\u00e1cii ovl\u00e1da\u0165, k\u00fdm sa nezapne a nezapne.* \n\n Chcete pokra\u010dova\u0165?",
+                "title": "Prejdite na nov\u00e9 r\u00e1dio"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Typ r\u00e1dia"
+                },
+                "description": "Vyberte si typ r\u00e1dia Zigbee",
+                "title": "Typ r\u00e1dia"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "R\u00fdchlos\u0165 portu",
+                    "flow_control": "Riadenie toku d\u00e1t",
+                    "path": "Cesta s\u00e9riov\u00e9ho zariadenia"
+                },
+                "description": "Zadajte nastavenia s\u00e9riov\u00e9ho portu",
+                "title": "Nastavenia s\u00e9riov\u00e9ho portu"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Natrvalo nahra\u010fte r\u00e1diov\u00fa adresu IEEE"
+                },
+                "description": "Va\u0161a z\u00e1loha m\u00e1 in\u00fa adresu IEEE ako va\u0161e r\u00e1dio. Aby va\u0161a sie\u0165 fungovala spr\u00e1vne, mala by sa zmeni\u0165 aj adresa IEEE v\u00e1\u0161ho r\u00e1dia. \n\n Ide o trval\u00fa oper\u00e1ciu.",
+                "title": "Prep\u00edsa\u0165 adresu IEEE r\u00e1dia"
+            },
+            "prompt_migrate_or_reconfigure": {
+                "description": "Prech\u00e1dzate na nov\u00e9 r\u00e1dio alebo men\u00edte konfigur\u00e1ciu aktu\u00e1lneho r\u00e1dia?",
+                "menu_options": {
+                    "intent_migrate": "Prejdite na nov\u00e9 r\u00e1dio",
+                    "intent_reconfigure": "Prekonfigurujte aktu\u00e1lne r\u00e1dio"
+                },
+                "title": "Migr\u00e1cia alebo zmena konfigur\u00e1cie"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Nahrajte s\u00fabor"
+                },
+                "description": "Obnovte nastavenia siete z nahran\u00e9ho z\u00e1lo\u017en\u00e9ho s\u00faboru JSON. M\u00f4\u017eete si ho stiahnu\u0165 z inej in\u0161tal\u00e1cie ZHA z **Nastavenia siete** alebo pou\u017ei\u0165 s\u00fabor Zigbee2MQTT `coordinator_backup.json`.",
+                "title": "Nahratie manu\u00e1lnej z\u00e1lohy"
+            },
+            "verify_radio": {
+                "description": "R\u00e1dio, ktor\u00e9 pou\u017e\u00edvate ({name}), sa neodpor\u00fa\u010da a jeho podpora m\u00f4\u017ee by\u0165 v bud\u00facnosti odstr\u00e1nen\u00e1. Pozrite si dokument\u00e1ciu integr\u00e1cie Zigbee Home Automation, kde n\u00e1jdete [zoznam odpor\u00fa\u010dan\u00fdch adapt\u00e9rov] ({docs_recommended_adapters_url}).",
+                "title": "R\u00e1dio sa neodpor\u00fa\u010da"
+            }
+        }
+    },
+    "services": {
+        "clear_lock_user_code": {
+            "description": "Vyma\u017ee pou\u017e\u00edvate\u013esk\u00fd k\u00f3d zo z\u00e1mku.",
+            "fields": {
+                "code_slot": {
+                    "description": "Slot na vymazanie k\u00f3du.",
+                    "name": "K\u00f3d slotu"
+                }
+            },
+            "name": "Vymaza\u0165 pou\u017e\u00edvate\u013ea z\u00e1mku"
+        },
+        "disable_lock_user_code": {
+            "description": "Zak\u00e1\u017ee pou\u017e\u00edvate\u013esk\u00fd k\u00f3d na z\u00e1mku.",
+            "fields": {
+                "code_slot": {
+                    "description": "Slot k\u00f3du na zak\u00e1zanie.",
+                    "name": "K\u00f3d slotu"
+                }
+            },
+            "name": "Zak\u00e1zanie uzamknutia pou\u017e\u00edvate\u013ea"
+        },
+        "enable_lock_user_code": {
+            "description": "Povol\u00ed pou\u017e\u00edvate\u013esk\u00fd k\u00f3d na z\u00e1mku.",
+            "fields": {
+                "code_slot": {
+                    "description": "Slot k\u00f3du na aktiv\u00e1ciu.",
+                    "name": "K\u00f3d slotu"
+                }
+            },
+            "name": "Povolenie uzamknutia pou\u017e\u00edvate\u013ea"
+        },
+        "issue_zigbee_cluster_command": {
+            "description": "Vyd\u00e1 pr\u00edkaz na zadanom klastri na zadanej entite.",
+            "fields": {
+                "args": {
+                    "description": "Argumenty, ktor\u00e9 sa maj\u00fa odovzda\u0165 pr\u00edkazu.",
+                    "name": "Argumenty"
+                },
+                "cluster_id": {
+                    "description": "Klaster ZCL na na\u010d\u00edtanie atrib\u00fatov.",
+                    "name": "ID klastra"
+                },
+                "cluster_type": {
+                    "description": "Typ klastra.",
+                    "name": "Typ klastra"
+                },
+                "command": {
+                    "description": "ID pr\u00edkazu, ktor\u00fd sa m\u00e1 vykona\u0165.",
+                    "name": "Pr\u00edkaz"
+                },
+                "command_type": {
+                    "description": "Typ pr\u00edkazu, ktor\u00fd sa m\u00e1 vykona\u0165.",
+                    "name": "Typ pr\u00edkazu"
+                },
+                "endpoint_id": {
+                    "description": "ID koncov\u00e9ho bodu pre klaster.",
+                    "name": "ID koncov\u00e9ho bodu"
+                },
+                "ieee": {
+                    "description": "Adresa IEEE pre zariadenie.",
+                    "name": "IEEE"
+                },
+                "manufacturer": {
+                    "description": "K\u00f3d v\u00fdrobcu.",
+                    "name": "V\u00fdrobca"
+                },
+                "params": {
+                    "description": "Parametre, ktor\u00e9 sa maj\u00fa odovzda\u0165 pr\u00edkazu.",
+                    "name": "Params"
+                }
+            },
+            "name": "Vydajte pr\u00edkaz klastra zigbee"
+        },
+        "issue_zigbee_group_command": {
+            "description": "Vyda\u0165 pr\u00edkaz na zadanom klastri v zadanej skupine.",
+            "fields": {
+                "args": {
+                    "description": "Argumenty, ktor\u00e9 sa maj\u00fa odovzda\u0165 pr\u00edkazu.",
+                    "name": "Argumenty"
+                },
+                "cluster_id": {
+                    "description": "Klaster ZCL na odoslanie pr\u00edkazu.",
+                    "name": "ID klastra"
+                },
+                "cluster_type": {
+                    "description": "Typ klastra.",
+                    "name": "Typ klastra"
+                },
+                "command": {
+                    "description": "ID pr\u00edkazu, ktor\u00fd sa m\u00e1 vykona\u0165.",
+                    "name": "Pr\u00edkaz"
+                },
+                "group": {
+                    "description": "Hexadecim\u00e1lna adresa skupiny.",
+                    "name": "Skupina"
+                },
+                "manufacturer": {
+                    "description": "K\u00f3d v\u00fdrobcu.",
+                    "name": "V\u00fdrobca"
+                }
+            },
+            "name": "Vyda\u0165 pr\u00edkaz skupiny zigbee"
+        },
+        "permit": {
+            "description": "Umo\u017e\u0148uje uzlom pripoji\u0165 sa k sieti Zigbee.",
+            "fields": {
+                "duration": {
+                    "description": "\u010cas na povolenie pripojenia.",
+                    "name": "Trvanie"
+                },
+                "ieee": {
+                    "description": "IEEE adresa uzla, ktor\u00fd umo\u017e\u0148uje nov\u00e9 pripojenie.",
+                    "name": "IEEE"
+                },
+                "install_code": {
+                    "description": "In\u0161tala\u010dn\u00fd k\u00f3d prip\u00e1jacieho zariadenia (mus\u00ed sa pou\u017ei\u0165 so source_ieee).",
+                    "name": "In\u0161tal\u00e1cia k\u00f3du"
+                },
+                "qr_code": {
+                    "description": "Hodnota in\u0161tala\u010dn\u00e9ho k\u00f3du QR (u r\u00f4znych dod\u00e1vate\u013eov sa l\u00ed\u0161i).",
+                    "name": "QR k\u00f3d"
+                },
+                "source_ieee": {
+                    "description": "IEEE adresa pripojen\u00e9ho zariadenia (mus\u00ed sa pou\u017ei\u0165 spolu s in\u0161tala\u010dn\u00fdm k\u00f3dom).",
+                    "name": "Zdroj IEEE"
+                }
+            },
+            "name": "Povolenie"
+        },
+        "reconfigure_device": {
+            "description": "Rekonfiguruje zariadenie ZHA (ozdravenie zariadenia). Pou\u017eite ju, ak m\u00e1te probl\u00e9my so zariaden\u00edm. Ak je pr\u00edslu\u0161n\u00e9 zariadenie nap\u00e1jan\u00e9 z bat\u00e9rie, uistite sa, \u017ee je pri pou\u017e\u00edvan\u00ed tejto slu\u017eby prebuden\u00e9 a prij\u00edma pr\u00edkazy.",
+            "fields": {
+                "ieee": {
+                    "description": "Adresa IEEE zariadenia, ktor\u00e9 sa m\u00e1 prekonfigurova\u0165.",
+                    "name": "IEEE"
+                }
+            },
+            "name": "Rekonfigur\u00e1cia zariadenia"
+        },
+        "remove": {
+            "description": "Odstr\u00e1ni uzol zo siete Zigbee.",
+            "fields": {
+                "ieee": {
+                    "description": "IEEE adresa uzla, ktor\u00fd sa m\u00e1 odstr\u00e1ni\u0165.",
+                    "name": "IEEE"
+                }
+            },
+            "name": "Odstr\u00e1ni\u0165"
+        },
+        "set_lock_user_code": {
+            "description": "Nastav\u00ed pou\u017e\u00edvate\u013esk\u00fd k\u00f3d na z\u00e1mku.",
+            "fields": {
+                "code_slot": {
+                    "description": "Slot pre k\u00f3d, do ktor\u00e9ho sa m\u00e1 k\u00f3d nastavi\u0165.",
+                    "name": "K\u00f3d slotu"
+                },
+                "user_code": {
+                    "description": "K\u00f3d na nastavenie.",
+                    "name": "K\u00f3d"
+                }
+            },
+            "name": "Nastavenie k\u00f3du pou\u017e\u00edvate\u013ea z\u00e1mku"
+        },
+        "set_zigbee_cluster_attribute": {
+            "description": "Nastav\u00ed hodnotu atrib\u00fatu pre zadan\u00fd klaster na zadanej entite.",
+            "fields": {
+                "attribute": {
+                    "description": "ID atrib\u00fatu, ktor\u00fd sa m\u00e1 nastavi\u0165.",
+                    "name": "Atrib\u00fat"
+                },
+                "cluster_id": {
+                    "description": "Klaster ZCL na na\u010d\u00edtanie atrib\u00fatov.",
+                    "name": "ID klastra"
+                },
+                "cluster_type": {
+                    "description": "Typ klastra.",
+                    "name": "Typ klastra"
+                },
+                "endpoint_id": {
+                    "description": "ID koncov\u00e9ho bodu pre klaster.",
+                    "name": "ID koncov\u00e9ho bodu"
+                },
+                "ieee": {
+                    "description": "Adresa IEEE pre zariadenie.",
+                    "name": "IEEE"
+                },
+                "manufacturer": {
+                    "description": "K\u00f3d v\u00fdrobcu.",
+                    "name": "V\u00fdrobca"
+                },
+                "value": {
+                    "description": "Hodnota, ktor\u00e1 sa m\u00e1 zap\u00edsa\u0165 do atrib\u00fatu.",
+                    "name": "Hodnota"
+                }
+            },
+            "name": "Nastavenie atrib\u00fatu klastra zigbee"
+        },
+        "warning_device_squawk": {
+            "description": "T\u00e1to slu\u017eba vyu\u017e\u00edva mo\u017enosti WD na vysielanie r\u00fdchleho zvukov\u00e9ho/vidite\u013en\u00e9ho impulzu naz\u00fdvan\u00e9ho \"squawk\". Pr\u00edkaz squawk nem\u00e1 \u017eiadny \u00fa\u010dinok, ak je WD pr\u00e1ve akt\u00edvny (prebieha v\u00fdstraha).",
+            "fields": {
+                "ieee": {
+                    "description": "Adresa IEEE pre zariadenie.",
+                    "name": "IEEE"
+                },
+                "level": {
+                    "description": "Pole Squawk Level sa pou\u017e\u00edva ako 2-bitov\u00fd v\u00fdpo\u010det a ur\u010duje intenzitu po\u010dute\u013en\u00e9ho zvuku squawk, ako je uveden\u00e9 v tabu\u013eke 8-26 \u0161pecifik\u00e1cie ZCL - Squawk Level Field Values.",
+                    "name": "\u00darove\u0148"
+                },
+                "mode": {
+                    "description": "Pole Squawk Mode sa pou\u017e\u00edva ako 4-bitov\u00fd v\u00fdpo\u010det a m\u00f4\u017ee ma\u0165 jednu z hodn\u00f4t uveden\u00fdch v tabu\u013eke 8-24 \u0161pecifik\u00e1cie ZCL - Pole Squawk Mode. Presn\u00e9 fungovanie ka\u017ed\u00e9ho re\u017eimu (ako WD \"squawkuje\") je \u0161pecifick\u00e9 pre implement\u00e1ciu.",
+                    "name": "Re\u017eim"
+                },
+                "strobe": {
+                    "description": "Pole stroboskopu sa pou\u017e\u00edva ako boolean a ur\u010duje, \u010di sa okrem zvukov\u00e9ho sign\u00e1lu vy\u017eaduje aj vizu\u00e1lna indik\u00e1cia, ako je uveden\u00e9 v tabu\u013eke 8-25 \u0161pecifik\u00e1cie ZCL - Stroboskop.",
+                    "name": "Stroboskop"
+                }
+            },
+            "name": "V\u00fdstra\u017en\u00e9 zariadenie \u0161kr\u00edpe"
+        },
+        "warning_device_warn": {
+            "description": "T\u00e1to slu\u017eba spust\u00ed prev\u00e1dzku v\u00fdstra\u017en\u00e9ho zariadenia. V\u00fdstra\u017en\u00e9 zariadenie varuje okolie zvukov\u00fdmi (sir\u00e9na) a vizu\u00e1lnymi (stroboskop) sign\u00e1lmi.",
+            "fields": {
+                "duration": {
+                    "description": "Po\u017eadovan\u00e9 trvanie varovania v sekund\u00e1ch (16 bitov). Ak je hodnota Strobe aj Warning Mode \"0\", toto pole sa ignoruje.",
+                    "name": "Trvanie"
+                },
+                "duty_cycle": {
+                    "description": "Ozna\u010duje d\u013a\u017eku cyklu blesku. To umo\u017e\u0148uje meni\u0165 d\u013a\u017eku trvania z\u00e1blesku pre r\u00f4zne typy poplachov (napr. po\u017eiar, pol\u00edcia, vl\u00e1manie). Platn\u00fd rozsah je 0-100 v krokoch po 10. V\u0161etky ostatn\u00e9 hodnoty sa musia zaokr\u00fahli\u0165 na najbli\u017e\u0161iu platn\u00fa hodnotu. Stroboskop vypo\u010d\u00edta pracovn\u00fd cyklus v trvan\u00ed jednej sekundy. Stav ON mus\u00ed predch\u00e1dza\u0165 stavu OFF. Napr\u00edklad, ak je v poli Strobe Duty Cycle (Pracovn\u00fd cyklus stroboskopu) uveden\u00e9 \"40,\", potom stroboskop blik\u00e1 zapnut\u00fd 4 desatiny sekundy a potom sa vypne na 6 desat\u00edn sekundy.",
+                    "name": "Pracovn\u00fd cyklus"
+                },
+                "ieee": {
+                    "description": "Adresa IEEE pre zariadenie.",
+                    "name": "IEEE"
+                },
+                "intensity": {
+                    "description": "Ud\u00e1va intenzitu stroboskopu, ako je uveden\u00e9 v tabu\u013eke 8-23 \u0161pecifik\u00e1cie ZCL. Tento atrib\u00fat je ur\u010den\u00fd na zmenu v\u00fdstupu stroboskopu (t. j. jasu), a nie jeho frekvencie, ktor\u00e1 je podrobne op\u00edsan\u00e1 v oddiele 8.4.2.3.1.6 \u0161pecifik\u00e1cie ZCL.",
+                    "name": "Intenzita"
+                },
+                "level": {
+                    "description": "Pole \u00darove\u0148 sir\u00e9ny sa pou\u017e\u00edva ako 2-bitov\u00fd v\u00fdpo\u010det a ozna\u010duje intenzitu po\u010dute\u013en\u00e9ho zvuku squawk, ako je uveden\u00e9 v tabu\u013eke 8-22 \u0161pecifik\u00e1cie ZCL.",
+                    "name": "\u00darove\u0148"
+                },
+                "mode": {
+                    "description": "Pole Warning Mode sa pou\u017e\u00edva ako 4-bitov\u00fd v\u00fdpo\u010det, m\u00f4\u017ee ma\u0165 jednu z hodn\u00f4t 0-6 definovan\u00fdch ni\u017e\u0161ie v tabu\u013eke 8-20 \u0161pecifik\u00e1cie ZCL. Presn\u00e9 spr\u00e1vanie v\u00fdstra\u017en\u00e9ho zariadenia v ka\u017edom re\u017eime je pod\u013ea pr\u00edslu\u0161n\u00fdch bezpe\u010dnostn\u00fdch noriem.",
+                    "name": "Re\u017eim"
+                },
+                "strobe": {
+                    "description": "Pole Strobe sa pou\u017e\u00edva ako 2-bitov\u00fd zoznam a ur\u010duje, \u010di sa okrem zvukovej sir\u00e9ny vy\u017eaduje aj vizu\u00e1lna indik\u00e1cia, ako je uveden\u00e9 v tabu\u013eke 8-21 \u0161pecifik\u00e1cie ZCL. \"0\" znamen\u00e1 bez stroboskopu, \"1\" znamen\u00e1 stroboskop. Ak je pole strobe (stroboskop) \"1\" a Warning Mode (V\u00fdstra\u017en\u00fd re\u017eim) \"0\" (\"Stop\"), aktivuje sa iba stroboskop.",
+                    "name": "Stroboskop"
+                }
+            },
+            "name": "V\u00fdstra\u017en\u00e9 zariadenie spust\u00ed v\u00fdstrahu"
+        }
+    }
+}

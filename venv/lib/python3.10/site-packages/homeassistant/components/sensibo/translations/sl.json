@@ -1,0 +1,24 @@
+{
+    "config": {
+        "error": {
+            "incorrect_api_key": "Neveljaven API klju\u010d za izbrani ra\u010dun"
+        }
+    },
+    "entity": {
+        "select": {
+            "light": {
+                "state": {
+                    "off": "Izklopljeno",
+                    "on": "Vklopljeno"
+                }
+            }
+        },
+        "sensor": {
+            "smart_type": {
+                "state": {
+                    "temperature": "Temperatura"
+                }
+            }
+        }
+    }
+}

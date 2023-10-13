@@ -1,0 +1,186 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_buffering": "{entity_name} sedang buffering",
+            "is_idle": "{entity_name} siaga",
+            "is_off": "{entity_name} mati",
+            "is_on": "{entity_name} nyala",
+            "is_paused": "{entity_name} dijeda",
+            "is_playing": "{entity_name} sedang memutar"
+        },
+        "trigger_type": {
+            "buffering": "{entity_name} mulai buffering",
+            "changed_states": "{entity_name} dinyalakan atau dimatikan",
+            "idle": "{entity_name} menjadi siaga",
+            "paused": "{entity_name} dijeda",
+            "playing": "{entity_name} mulai memutar",
+            "turned_off": "{entity_name} dimatikan",
+            "turned_on": "{entity_name} dinyalakan"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Pemutar media",
+            "state": {
+                "buffering": "Buffering",
+                "idle": "Siaga",
+                "off": "Mati",
+                "on": "Nyala",
+                "paused": "Jeda",
+                "playing": "Memutar",
+                "standby": "Siaga"
+            },
+            "state_attributes": {
+                "app_id": {
+                    "name": "ID Aplikasi"
+                },
+                "app_name": {
+                    "name": "App"
+                },
+                "entity_picture_local": {
+                    "name": "Gambar entitas yang dapat diakses lokal"
+                },
+                "groups_members": {
+                    "name": "Anggota grup"
+                },
+                "is_volume_muted": {
+                    "name": "Dibisukan",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                },
+                "media_album_artist": {
+                    "name": "Artis Album"
+                },
+                "media_album_name": {
+                    "name": "Album"
+                },
+                "media_artist": {
+                    "name": "Artis"
+                },
+                "media_channel": {
+                    "name": "Kanal"
+                },
+                "media_content_id": {
+                    "name": "ID konten"
+                },
+                "media_content_type": {
+                    "name": "Jenis konten",
+                    "state": {
+                        "album": "Album",
+                        "app": "App",
+                        "artist": "Artis",
+                        "channel": "Kanal",
+                        "channels": "Kanal",
+                        "composer": "Komposer",
+                        "contributing_artist": "Artis yang berkontribusi",
+                        "episode": "Episode",
+                        "game": "Game",
+                        "genre": "Genre",
+                        "image": "Gambar",
+                        "movie": "Film",
+                        "music": "Musik",
+                        "playlist": "Daftar Putar",
+                        "podcast": "Podcast",
+                        "season": "Musim",
+                        "track": "Trek",
+                        "tvshow": "Acara TV",
+                        "url": "URL",
+                        "video": "Video"
+                    }
+                },
+                "media_duration": {
+                    "name": "Durasi"
+                },
+                "media_episode": {
+                    "name": "Episode"
+                },
+                "media_playlist": {
+                    "name": "Daftar Putar"
+                },
+                "media_position": {
+                    "name": "Posisi"
+                },
+                "media_position_updated_at": {
+                    "name": "Posisi diperbarui"
+                },
+                "media_season": {
+                    "name": "Musim"
+                },
+                "media_series_title": {
+                    "name": "Serial"
+                },
+                "media_title": {
+                    "name": "Judul"
+                },
+                "media_track": {
+                    "name": "Trek"
+                },
+                "repeat": {
+                    "name": "Berulang",
+                    "state": {
+                        "all": "Semua",
+                        "off": "Mati",
+                        "one": "Tunggal"
+                    }
+                },
+                "shuffle": {
+                    "name": "Acak",
+                    "state": {
+                        "false": "Mati",
+                        "true": "Nyala"
+                    }
+                },
+                "sound_mode": {
+                    "name": "Mode suara"
+                },
+                "sound_mode_list": {
+                    "name": "Mode suara yang tersedia"
+                },
+                "source": {
+                    "name": "Sumber"
+                },
+                "source_list": {
+                    "name": "Sumber yang tersedia"
+                },
+                "volume_level": {
+                    "name": "Volume"
+                }
+            }
+        },
+        "receiver": {
+            "name": "Penerima"
+        },
+        "speaker": {
+            "name": "Speaker"
+        },
+        "tv": {
+            "name": "TV"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "services": {
+        "media_pause": {
+            "name": "Jeda"
+        },
+        "media_stop": {
+            "name": "Hentikan"
+        },
+        "toggle": {
+            "name": "Alihkan"
+        },
+        "turn_off": {
+            "name": "Matikan"
+        },
+        "turn_on": {
+            "name": "Nyalakan"
+        }
+    },
+    "title": "Pemutar media"
+}

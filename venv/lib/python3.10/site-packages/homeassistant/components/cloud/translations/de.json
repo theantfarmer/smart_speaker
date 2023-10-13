@@ -1,0 +1,44 @@
+{
+    "issues": {
+        "legacy_subscription": {
+            "fix_flow": {
+                "abort": {
+                    "operation_took_too_long": "Der Vorgang hat zu lange gedauert. Bitte versuche es sp\u00e4ter noch einmal."
+                },
+                "step": {
+                    "confirm_change_plan": {
+                        "description": "Wir haben k\u00fcrzlich unser Abonnementsystem aktualisiert. Um die Home Assistant Cloud weiterhin nutzen zu k\u00f6nnen, musst du die \u00c4nderung einmalig in PayPal genehmigen. \n\nDies dauert 1 Minute und erh\u00f6ht den Preis nicht."
+                    }
+                }
+            },
+            "title": "Legacy Abonnement erkannt"
+        }
+    },
+    "services": {
+        "remote_connect": {
+            "description": "Erm\u00f6glicht den Zugriff auf die Benutzeroberfl\u00e4che der Instanz von au\u00dferhalb des lokalen Netzwerks \u00fcber die Home Assistant Cloud.",
+            "name": "Fernverbindung"
+        },
+        "remote_disconnect": {
+            "description": "Trennt die Home Assistant-Benutzeroberfl\u00e4che von der Home Assistant-Cloud. Du kannst dann nicht mehr von au\u00dferhalb deines lokalen Netzwerks auf deine Home Assistant-Instanz zugreifen.",
+            "name": "Fernverbindung trennen"
+        }
+    },
+    "system_health": {
+        "info": {
+            "alexa_enabled": "Alexa aktiviert",
+            "can_reach_cert_server": "Zertifikatsserver erreichbar",
+            "can_reach_cloud": "Home Assistant Cloud erreichbar",
+            "can_reach_cloud_auth": "Authentifizierungsserver erreichbar",
+            "certificate_status": "Zertifikatstatus",
+            "google_enabled": "Google aktiviert",
+            "logged_in": "Angemeldet",
+            "relayer_connected": "Relais verbunden",
+            "relayer_region": "Relayer-Region",
+            "remote_connected": "Remote verbunden",
+            "remote_enabled": "Remote aktiviert",
+            "remote_server": "Remote-Server",
+            "subscription_expiration": "Ablauf des Abonnements"
+        }
+    }
+}

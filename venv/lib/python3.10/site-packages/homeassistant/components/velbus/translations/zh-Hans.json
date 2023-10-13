@@ -1,0 +1,20 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86"
+        },
+        "error": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86",
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "name": "\u8fd9\u4e2avelbus\u8fde\u63a5\u7684\u540d\u79f0",
+                    "port": "\u8fde\u63a5\u5b57\u7b26\u4e32"
+                },
+                "title": "\u5b9a\u4e49 velbus \u8fde\u63a5\u7c7b\u578b"
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "config": {
+        "step": {
+            "zeroconf_confirm": {
+                "description": "Chcete p\u0159idat Android TV ({name}) do Home Assistant?  Zapne se a zobraz\u00ed se na n\u011bm p\u00e1rovac\u00ed k\u00f3d, kter\u00fd budete muset zadat na dal\u0161\u00ed obrazovce.",
+                "title": "Objeven\u00e1 Android TV"
+            }
+        }
+    }
+}

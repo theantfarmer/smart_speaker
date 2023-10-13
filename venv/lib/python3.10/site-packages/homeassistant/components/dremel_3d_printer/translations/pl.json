@@ -1,0 +1,15 @@
+{
+    "entity": {
+        "sensor": {
+            "api_version": {
+                "name": "Wersja API"
+            },
+            "chamber": {
+                "name": "Komora"
+            },
+            "progress": {
+                "name": "Post\u0119p"
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb",
+            "state": {
+                "off": "\u30aa\u30d5",
+                "on": "\u30aa\u30f3"
+            },
+            "state_attributes": {
+                "editable": {
+                    "state": {
+                        "true": "\u306f\u3044"
+                    }
+                }
+            }
+        }
+    },
+    "title": "\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb"
+}

@@ -1,0 +1,111 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9"
+        },
+        "error": {
+            "api_error": "Vyskytla sa chyba API",
+            "cannot_connect": "Nepodarilo sa pripoji\u0165, skontrolujte IP adresu kamery",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "not_admin": "Pou\u017e\u00edvate\u013e mus\u00ed by\u0165 spr\u00e1vcom, pou\u017e\u00edvate\u013e ''{username}'' m\u00e1 \u00farove\u0148 autoriz\u00e1cie ''{userlevel}''",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "Integr\u00e1cia Reolink potrebuje op\u00e4tovne overi\u0165 \u00fadaje o pripojen\u00ed",
+                "title": "Znova overi\u0165 integr\u00e1ciu"
+            },
+            "user": {
+                "data": {
+                    "host": "Hostite\u013e",
+                    "password": "Heslo",
+                    "port": "Port",
+                    "use_https": "Povoli\u0165 HTTPS",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "description": "Ak sa vyskytn\u00fa probl\u00e9my, pozrite si [kroky na rie\u0161enie probl\u00e9mov]({troubleshooting_link}). {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Neakt\u00edvny"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "Digit\u00e1lne",
+                    "digitalfirst": "Najsk\u00f4r digit\u00e1lne",
+                    "pantiltfirst": "Najsk\u00f4r ot\u00e1\u010danie/nakl\u00e1\u0148anie"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "Auto",
+                    "blackwhite": "\u010cierna/biela",
+                    "color": "Farba"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "adaptive": "Prisp\u00f4sobiv\u00e9",
+                    "auto": "Auto",
+                    "autoadaptive": "Automatick\u00e9 prisp\u00f4sobenie",
+                    "off": "Neakt\u00edvny",
+                    "schedule": "Pl\u00e1novanie"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "Automatick\u00e9 a v\u017edy zapnut\u00e9 v noci",
+                    "auto": "Auto",
+                    "stayoff": "Zosta\u0165 vypnut\u00fd"
+                }
+            }
+        },
+        "sensor": {
+            "event_connection": {
+                "name": "Pripojenie udalosti",
+                "state": {
+                    "fast_poll": "R\u00fdchly poll",
+                    "onvif_long_poll": "ONVIF long poll",
+                    "onvif_push": "ONVIF push"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi sign\u00e1l"
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "Nepodarilo sa automaticky povoli\u0165 port(y) {ports} na {name}. Pomocou [klienta Reolink]({info_link}) ho manu\u00e1lne nastavte na ZAPNUT\u00c9",
+            "title": "Port Reolink nie je povolen\u00fd"
+        },
+        "firmware_update": {
+            "description": "\"{name}\" s modelom \"{model}\" a verziou hardv\u00e9ru \"{hw_version}\" pou\u017e\u00edva star\u00fa verziu firmv\u00e9ru \"{current_firmware}\", pri\u010dom pre spr\u00e1vnu \u010dinnos\u0165 Reolink je potrebn\u00e1 aspo\u0148 verzia firmv\u00e9ru \"{required_firmware}\" integr\u00e1cia. Najnov\u0161\u00ed firmv\u00e9r si m\u00f4\u017eete stiahnu\u0165 z [Centrum s\u0165ahovania Reolink] ({download_link}).",
+            "title": "Vy\u017eaduje sa aktualiz\u00e1cia firmv\u00e9ru Reolink"
+        },
+        "https_webhook": {
+            "description": "Produkty Reolink nem\u00f4\u017eu posiela\u0165 udalosti pohybu na adresu HTTPS (SSL), nakonfigurujte (lok\u00e1lnu) adresu HTTP v \u010dasti \u201eWebov\u00e1 adresa Home Assistant\u201c v [nastaveniach siete] ({network_link}). Aktu\u00e1lna (lok\u00e1lna) adresa je: `{base_url}`, platn\u00e1 adresa m\u00f4\u017ee by\u0165 napr\u00edklad `http://192.168.1.10:8123`, kde `192.168.1.10` je adresa IP zariadenia Home Assistant",
+            "title": "Webov\u00e1 adresa webhooku na op\u00e4tovn\u00e9 prepojenie pou\u017e\u00edva protokol HTTPS (SSL)"
+        },
+        "webhook_url": {
+            "description": "Nebol prijat\u00fd po\u010diato\u010dn\u00fd stav ONVIF od {name}. Kamera Reolink s najv\u00e4\u010d\u0161ou pravdepodobnos\u0165ou nem\u00f4\u017ee dosiahnu\u0165 aktu\u00e1lnu (lok\u00e1lnu) webov\u00fa adresu Home Assistant `{base_url}`, nakonfigurujte (lok\u00e1lnu) adresu HTTP v \u010dasti Adresa URL Home Assistant v [nastaveniach siete] ({network_link}), ktor\u00e1 ukazuje na Home Assistant. Napr\u00edklad \u201ehttp://192.168.1.10:8123\u201c, kde \u201e192.168.1.10\u201c je adresa IP zariadenia Home Assistant. Tie\u017e sa uistite, \u017ee kamera Reolink m\u00f4\u017ee dosiahnu\u0165 t\u00fato adresu URL. Pou\u017e\u00edvanie r\u00fdchleho pohybu/v\u00fdzvy stavu AI, k\u00fdm sa neprijme prv\u00e9 stla\u010denie ONVIF.",
+            "title": "Adresa URL webhooku Reolink je nedostupn\u00e1"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "Protokol"
+                }
+            }
+        }
+    }
+}

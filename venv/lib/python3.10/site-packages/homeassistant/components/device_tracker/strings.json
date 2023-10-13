@@ -1,0 +1,51 @@
+{
+  "title": "Device tracker",
+  "device_automation": {
+    "condition_type": {
+      "is_home": "{entity_name} is home",
+      "is_not_home": "{entity_name} is not home"
+    },
+    "trigger_type": {
+      "enters": "{entity_name} enters a zone",
+      "leaves": "{entity_name} leaves a zone"
+    }
+  },
+  "entity_component": {
+    "_": {
+      "name": "[%key:component::device_tracker::title%]",
+      "state": {
+        "home": "[%key:common::state::home%]",
+        "not_home": "[%key:common::state::not_home%]"
+      },
+      "state_attributes": {
+        "battery": {
+          "name": "Battery"
+        },
+        "gps_accuracy": {
+          "name": "GPS accuracy"
+        },
+        "latitude": {
+          "name": "Latitude"
+        },
+        "longitude": {
+          "name": "Longitude"
+        },
+        "source_type": {
+          "name": "Source",
+          "state": {
+            "bluetooth_le": "Bluetooth LE",
+            "bluetooth": "Bluetooth",
+            "gps": "GPS",
+            "router": "Router"
+          }
+        }
+      }
+    }
+  },
+  "issues": {
+    "platform_integration_no_support": {
+      "title": "[%key:common::issues::platform_integration_no_support_title%]",
+      "description": "[%key:common::issues::platform_integration_no_support_description%]"
+    }
+  }
+}

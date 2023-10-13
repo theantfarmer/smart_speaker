@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "UniFI Network on jo konfiguroitu"
+        },
+        "error": {
+            "faulty_credentials": "Virheellinen tunnistautuminen",
+            "service_unavailable": "Yhdist\u00e4minen ep\u00e4onnistui"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "port": "Portti",
+                    "site": "Sivuston ID",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus",
+                    "verify_ssl": "Varmista SSL-sertifikaatti"
+                },
+                "title": "M\u00e4\u00e4rit\u00e4 UniFi-verkko"
+            }
+        }
+    }
+}

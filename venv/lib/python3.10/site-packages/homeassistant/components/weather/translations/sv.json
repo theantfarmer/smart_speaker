@@ -1,0 +1,66 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "V\u00e4der",
+            "state": {
+                "clear-night": "Klart, natt",
+                "cloudy": "Molnigt",
+                "exceptional": "Exceptionellt",
+                "fog": "Dimma",
+                "hail": "Hagel",
+                "lightning": "Blixt",
+                "lightning-rainy": "\u00c5ska, regnigt",
+                "partlycloudy": "Delvis molnigt",
+                "pouring": "\u00d6sregn",
+                "rainy": "Regnigt",
+                "snowy": "Sn\u00f6ar ",
+                "snowy-rainy": "Sn\u00f6igt, regnigt",
+                "sunny": "Soligt",
+                "windy": "Bl\u00e5sigt",
+                "windy-variant": "Bl\u00e5sigt"
+            },
+            "state_attributes": {
+                "forecast": {
+                    "name": "Prognos"
+                },
+                "humidity": {
+                    "name": "Luftfuktighet"
+                },
+                "ozone": {
+                    "name": "Ozon"
+                },
+                "precipitation_unit": {
+                    "name": "Nederb\u00f6rdsenhet"
+                },
+                "pressure": {
+                    "name": "Tryck"
+                },
+                "pressure_unit": {
+                    "name": "Tryckenhet"
+                },
+                "temperature": {
+                    "name": "Temperatur"
+                },
+                "temperature_unit": {
+                    "name": "Temperaturenhet"
+                },
+                "visibility": {
+                    "name": "Sikt"
+                },
+                "visibility_unit": {
+                    "name": "Siktenhet"
+                },
+                "wind_bearing": {
+                    "name": "Vind b\u00e4ring"
+                },
+                "wind_speed": {
+                    "name": "Vindhastighet"
+                },
+                "wind_speed_unit": {
+                    "name": "Vindhastighetsenhet"
+                }
+            }
+        }
+    },
+    "title": "V\u00e4der"
+}

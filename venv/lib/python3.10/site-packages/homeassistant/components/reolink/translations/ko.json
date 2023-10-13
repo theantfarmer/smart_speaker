@@ -1,0 +1,111 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\uc7a5\uce58\uac00 \uc774\ubbf8 \uad6c\uc131\ub428",
+            "reauth_successful": "\uc7ac\uc778\uc99d \uc131\uacf5"
+        },
+        "error": {
+            "api_error": "API \uc624\ub958 \ubc1c\uc0dd",
+            "cannot_connect": "\uc5f0\uacb0\uc5d0 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4. \uce74\uba54\ub77c\uc758 IP \uc8fc\uc18c\ub97c \ud655\uc778\ud558\uc138\uc694.",
+            "invalid_auth": "\uc798\ubabb\ub41c \uc778\uc99d",
+            "not_admin": "\uc0ac\uc6a9\uc790\ub294 \uad00\ub9ac\uc790\uc5ec\uc57c \ud558\uba70, \uc0ac\uc6a9\uc790 ''{username}''\uc758 \uad8c\ud55c \ubd80\uc5ec \uc218\uc900\uc740 ''{userlevel}''\uc785\ub2c8\ub2e4.",
+            "unknown": "\uc608\uae30\uce58 \uc54a\uc740 \uc624\ub958"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "description": "Reolink \ud1b5\ud569\uad6c\uc131\uc694\uc18c\ub294 \uc5f0\uacb0 \uc138\ubd80 \uc815\ubcf4\ub97c \uc7ac\uc778\uc99d\ud574\uc57c \ud569\ub2c8\ub2e4.",
+                "title": "\ud1b5\ud569 \uc7ac\uc778\uc99d"
+            },
+            "user": {
+                "data": {
+                    "host": "\ud638\uc2a4\ud2b8",
+                    "password": "\uc554\ud638",
+                    "port": "\ud3ec\ud2b8",
+                    "use_https": "HTTPS \ud65c\uc131\ud654",
+                    "username": "\uc0ac\uc6a9\uc790 \uc774\ub984"
+                },
+                "description": "\ubb38\uc81c\uac00 \ubc1c\uc0dd\ud558\uba74 [\ubb38\uc81c \ud574\uacb0 \ub2e8\uacc4]({troubleshooting_link})\ub97c \ucc38\uc870\ud558\uc138\uc694. {\uc624\ub958}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "\uaebc\uc9d0"
+                }
+            },
+            "auto_track_method": {
+                "state": {
+                    "digital": "\ub514\uc9c0\ud138",
+                    "digitalfirst": "\ub514\uc9c0\ud138 \uc6b0\uc120",
+                    "pantiltfirst": "\ud32c/\ud2f8\ud2b8 \uba3c\uc800"
+                }
+            },
+            "day_night_mode": {
+                "state": {
+                    "auto": "\uc790\ub3d9",
+                    "blackwhite": "\ud751\ubc31",
+                    "color": "\uceec\ub7ec"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "adaptive": "\uc801\uc751\ud615",
+                    "auto": "\uc790\ub3d9",
+                    "autoadaptive": "\uc790\ub3d9 \uc801\uc751\ud615",
+                    "off": "\uaebc\uc9d0",
+                    "schedule": "\uc77c\uc815"
+                }
+            },
+            "status_led": {
+                "state": {
+                    "alwaysonatnight": "\uc790\ub3d9 & \ubc24\uc5d0 \ud56d\uc0c1 \ucf1c\uc9d0",
+                    "auto": "\uc790\ub3d9",
+                    "stayoff": "\uba38\ubb34\ub974\uae30"
+                }
+            }
+        },
+        "sensor": {
+            "event_connection": {
+                "name": "\uc774\ubca4\ud2b8 \uc5f0\uacb0",
+                "state": {
+                    "fast_poll": "\ube60\ub978 \ud3f4\ub9c1",
+                    "onvif_long_poll": "ONVIF \uae34 \ud3f4\ub9c1",
+                    "onvif_push": "ONVIF \ud478\uc2dc"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi \uc2e0\ud638"
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "{name}\uc5d0\uc11c {ports}port(s)\ub97c \uc790\ub3d9\uc73c\ub85c \uc0ac\uc6a9\ud558\ub3c4\ub85d \uc124\uc815\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. [Reolink \ud074\ub77c\uc774\uc5b8\ud2b8]({info_link})\ub97c \uc0ac\uc6a9\ud558\uc5ec \uc218\ub3d9\uc73c\ub85c ON\uc73c\ub85c \uc124\uc815\ud569\ub2c8\ub2e4.",
+            "title": "Reolink \ud3ec\ud2b8\uac00 \ud65c\uc131\ud654\ub418\uc9c0 \uc54a\uc74c"
+        },
+        "firmware_update": {
+            "description": "\ubaa8\ub378\uc774 \"{model}\"\uc774\uace0 \ud558\ub4dc\uc6e8\uc5b4 \ubc84\uc804\uc774 \"{hw_version}\"\uc778 \"{name}\"\uc740(\ub294) \uc774\uc804 \ud38c\uc6e8\uc5b4 \ubc84\uc804 \"{current_firmware}\"\uc744(\ub97c) \uc2e4\ud589 \uc911\uc774\uba70, Reolink \ud1b5\ud569\uad6c\uc131\uc694\uc18c\uc758 \uc801\uc808\ud55c \uc791\ub3d9\uc744 \uc704\ud574\uc11c\ub294 \ucd5c\uc18c\ud55c \ud38c\uc6e8\uc5b4 \ubc84\uc804 \"{required_firmware}\"\uc774(\uac00) \ud544\uc694\ud569\ub2c8\ub2e4. \ucd5c\uc2e0 \ud38c\uc6e8\uc5b4\ub294 [Reolink \ub2e4\uc6b4\ub85c\ub4dc \uc13c\ud130]({download_link})\uc5d0\uc11c \ub2e4\uc6b4\ub85c\ub4dc\ud560 \uc218 \uc788\uc2b5\ub2c8\ub2e4.",
+            "title": "Reolink \ud38c\uc6e8\uc5b4 \uc5c5\ub370\uc774\ud2b8 \ud544\uc694"
+        },
+        "https_webhook": {
+            "description": "Reolink \uc81c\ud488\uc740 \ubaa8\uc158 \uc774\ubca4\ud2b8\ub97c HTTPS \uc8fc\uc18c(SSL)\ub85c \ud478\uc2dc\ud560 \uc218 \uc5c6\uc73c\ubbc0\ub85c [\ub124\ud2b8\uc6cc\ud06c \uc124\uc815]({network_link})\uc758 \"Home Assistant URL\"\uc5d0\uc11c (\ub85c\uceec) HTTP \uc8fc\uc18c\ub97c \uad6c\uc131\ud558\uc2ed\uc2dc\uc624. \ud604\uc7ac(\ub85c\uceec) \uc8fc\uc18c\ub294 '{base_url}'\uc774\uba70, \uc720\ud6a8\ud55c \uc8fc\uc18c\ub294 \uc608\ub97c \ub4e4\uc5b4 'http://192.168.1.10:8123'\uc77c \uc218 \uc788\uc2b5\ub2c8\ub2e4. \uc5ec\uae30\uc11c '192.168.1.10'\uc740 Home Assistant \uc7a5\uce58\uc758 IP\uc785\ub2c8\ub2e4.",
+            "title": "Reolink \uc6f9\ud6c5 URL\uc740 HTTPS(SSL)\ub97c \uc0ac\uc6a9\ud569\ub2c8\ub2e4."
+        },
+        "webhook_url": {
+            "description": "{name}\uc5d0\uc11c \ucd08\uae30 ONVIF \uc0c1\ud0dc\ub97c \ubc1b\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4. \ub300\ubd80\ubd84\uc758 \uacbd\uc6b0 Reolink \uce74\uba54\ub77c\uac00 \ud604\uc7ac(\ub85c\uceec) Home Assistant URL\uc5d0 \ub3c4\ub2ec\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4 URL '{base_url}', Home Assistant\ub97c \uac00\ub9ac\ud0a4\ub294 [\ub124\ud2b8\uc6cc\ud06c \uc124\uc815]({network_link})\uc758 \"Home Assistant URL\" \uc544\ub798\uc5d0 (\ub85c\uceec) HTTP \uc8fc\uc18c\ub97c \uad6c\uc131\ud558\uc2ed\uc2dc\uc624. \uc608\ub97c \ub4e4\uc5b4 'http://192.168.1.10:8123', \uc5ec\uae30\uc11c '192.168.1.10'\uc740 Home Assistant \uc7a5\uce58\uc758 IP\uc785\ub2c8\ub2e4. \ub610\ud55c Reolink \uce74\uba54\ub77c\uac00 \ud574\ub2f9 URL\uc5d0 \uc5f0\uacb0\ud560 \uc218 \uc788\ub294\uc9c0 \ud655\uc778\ud558\uc2ed\uc2dc\uc624.",
+            "title": "Reolink \uc6f9\ud6c5 URL\uc5d0 \uc5f0\uacb0\ud560 \uc218 \uc5c6\uc74c"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "protocol": "\ud504\ub85c\ud1a0\ucf5c"
+                }
+            }
+        }
+    }
+}

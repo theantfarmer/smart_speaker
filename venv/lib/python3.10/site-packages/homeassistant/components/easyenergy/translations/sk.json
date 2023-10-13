@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9"
+        },
+        "step": {
+            "user": {
+                "description": "Chcete za\u010da\u0165 nastavova\u0165?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "average_price": {
+                "name": "Priemer - dnes"
+            },
+            "current_hour_price": {
+                "name": "Aktu\u00e1lna hodina"
+            },
+            "highest_price_time": {
+                "name": "\u010cas najvy\u0161\u0161ej ceny - dnes"
+            },
+            "hours_priced_equal_or_higher": {
+                "name": "Hodiny s rovnakou alebo vy\u0161\u0161ou cenou ako aktu\u00e1lne - dnes"
+            },
+            "hours_priced_equal_or_lower": {
+                "name": "Hodiny za rovnak\u00fa alebo ni\u017e\u0161iu cenu ako aktu\u00e1lne - dnes"
+            },
+            "lowest_price_time": {
+                "name": "\u010cas najni\u017e\u0161ej ceny - dnes"
+            },
+            "max_price": {
+                "name": "Najvy\u0161\u0161ia cena - dnes"
+            },
+            "min_price": {
+                "name": "Najni\u017e\u0161ia cena - dnes"
+            },
+            "next_hour_price": {
+                "name": "Nasleduj\u00faca hodina"
+            },
+            "percentage_of_max": {
+                "name": "Aktu\u00e1lne percento najvy\u0161\u0161ej ceny - dnes"
+            }
+        }
+    }
+}

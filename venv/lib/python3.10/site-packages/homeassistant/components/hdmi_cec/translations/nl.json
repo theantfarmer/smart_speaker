@@ -1,0 +1,51 @@
+{
+    "services": {
+        "power_on": {
+            "description": "Inschakelen van alle apparaten die dit ondersteunen.",
+            "name": "Inschakelen"
+        },
+        "select_device": {
+            "description": "Selecteer een HDMI-apparaat.",
+            "fields": {
+                "device": {
+                    "name": "Apparaat"
+                }
+            }
+        },
+        "send_command": {
+            "fields": {
+                "src": {
+                    "description": "Bron van commando. Kan een decimaal nummer of een tekst zijn met de hexadeximale notation: \"0x10\".",
+                    "name": "Bron"
+                }
+            },
+            "name": "Stuur commando"
+        },
+        "standby": {
+            "description": "Zet alle apparaten in stand-by, als dit wordt ondersteund.",
+            "name": "Stand-by"
+        },
+        "update": {
+            "description": "Werkt de apparaatstatus bij van het netwerk.",
+            "name": "Bijwerken"
+        },
+        "volume": {
+            "description": "Verhoogt of verlaagt het volume van een systeem.",
+            "fields": {
+                "down": {
+                    "description": "Verlaagt volume x niveaus.",
+                    "name": "Omlaag"
+                },
+                "mute": {
+                    "description": "Dempt audiosysteem.",
+                    "name": "Dempen"
+                },
+                "up": {
+                    "description": "Verhoogt volume x niveaus",
+                    "name": "Omhoog"
+                }
+            },
+            "name": "Volume"
+        }
+    }
+}

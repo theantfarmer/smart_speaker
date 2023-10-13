@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reboot_gateway": {
+            "description": "Reinicia el Gateway KLF200.",
+            "name": "Reiniciar puerta de enlace"
+        }
+    }
+}

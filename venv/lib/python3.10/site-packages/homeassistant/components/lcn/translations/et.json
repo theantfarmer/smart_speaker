@@ -1,0 +1,11 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "codelock": "Koodluku kood vastu v\u00f5etud",
+            "fingerprint": "Vastu v\u00f5etud s\u00f5rmej\u00e4ljekood",
+            "send_keys": "Vastuv\u00f5etud v\u00f5tmed",
+            "transmitter": "Saatja kood vastu v\u00f5etud",
+            "transponder": "Saadud transponderi kood"
+        }
+    }
+}

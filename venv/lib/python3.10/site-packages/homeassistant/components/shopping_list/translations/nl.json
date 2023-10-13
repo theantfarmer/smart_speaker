@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dienst is al geconfigureerd"
+        },
+        "step": {
+            "user": {
+                "description": "Wil je de Shopping List configureren?",
+                "title": "Shopping List"
+            }
+        }
+    },
+    "services": {
+        "add_item": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "complete_item": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "incomplete_item": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        },
+        "remove_item": {
+            "fields": {
+                "name": {
+                    "name": "Naam"
+                }
+            }
+        }
+    },
+    "title": "Shopping List"
+}

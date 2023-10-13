@@ -1,0 +1,36 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "already_in_progress": "Der Konfigurationsablauf wird bereits ausgef\u00fchrt",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "discovery_confirm": {
+                "description": "M\u00f6chtest du {name} einrichten?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "description": "Gib deine Roku-Informationen ein."
+            }
+        }
+    },
+    "services": {
+        "search": {
+            "description": "Emuliert das \u00d6ffnen des Suchbildschirms und die Eingabe des Suchschl\u00fcsselworts.",
+            "fields": {
+                "keyword": {
+                    "description": "Das Schl\u00fcsselwort, nach dem gesucht werden soll.",
+                    "name": "Stichwort"
+                }
+            },
+            "name": "Suche"
+        }
+    }
+}

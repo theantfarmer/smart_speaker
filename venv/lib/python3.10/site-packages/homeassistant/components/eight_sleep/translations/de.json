@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "cannot_connect": "Es kann keine Verbindung zur Eight Sleep Cloud hergestellt werden: {error}"
+        },
+        "error": {
+            "cannot_connect": "Es kann keine Verbindung zur Eight Sleep Cloud hergestellt werden: {error}"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                }
+            }
+        }
+    },
+    "services": {
+        "heat_set": {
+            "description": "Stellt die Heiz-/K\u00fchlstufe von Eight Sleep ein.",
+            "fields": {
+                "duration": {
+                    "description": "Dauer des Aufheizens/Abk\u00fchlens auf das Zielniveau in Sekunden.",
+                    "name": "Dauer"
+                },
+                "target": {
+                    "description": "Zielwert f\u00fcr die K\u00fchlung/Heizung von -100 bis 100.",
+                    "name": "Ziel"
+                }
+            }
+        }
+    }
+}

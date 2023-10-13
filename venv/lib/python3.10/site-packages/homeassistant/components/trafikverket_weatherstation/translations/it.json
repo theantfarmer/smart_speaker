@@ -1,0 +1,69 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'account \u00e8 gi\u00e0 configurato"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "invalid_station": "Impossibile trovare una stazione meteorologica con il nome specificato",
+            "more_stations": "Trovate pi\u00f9 stazioni meteorologiche con il nome specificato"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "Chiave API",
+                    "station": "Stazione"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "precipitation": {
+                "state": {
+                    "drizzle": "Pioggerella",
+                    "freezing_rain": "Pioggia gelata",
+                    "hail": "Grandine",
+                    "none": "Nessuna",
+                    "rain": "Pioggia",
+                    "rain_snow_mixed": "Pioggia e neve miste",
+                    "snow": "Neve"
+                }
+            },
+            "precipitation_amountname": {
+                "state": {
+                    "error": "Errore",
+                    "heavy_rain": "Pioggia battente",
+                    "heavy_snow": "Neve abbondante",
+                    "heavy_snow_rain": "Forti piogge e neve mista",
+                    "mild_rain": "Pioggia leggera",
+                    "mild_snow": "Neve leggera",
+                    "mild_snow_rain": "Pioggia leggera e neve mista",
+                    "moderate_rain": "Pioggia moderata",
+                    "moderate_snow": "Neve moderata",
+                    "moderate_snow_rain": "Pioggia moderata e neve mista",
+                    "none": "Nessuno",
+                    "other": "Altro",
+                    "unknown": "Sconosciuto"
+                }
+            },
+            "wind_direction_text": {
+                "state": {
+                    "east": "Est",
+                    "east_south_east": "Est-sud-est",
+                    "north": "Nord",
+                    "north_east": "Nord-est",
+                    "north_north_east": "Nord-nord-est",
+                    "north_north_west": "Nord-nord-ovest",
+                    "north_west": "Nord-ovest",
+                    "south": "Sud",
+                    "south_east": "Sud-est",
+                    "south_south_west": "Sud-sud-ovest",
+                    "south_west": "Sud-ovest",
+                    "west": "Ovest"
+                }
+            }
+        }
+    }
+}

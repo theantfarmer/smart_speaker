@@ -1,0 +1,16 @@
+{
+    "state": {
+        "tuya__light_mode": {
+            "none": "Pois"
+        },
+        "tuya__relay_status": {
+            "off": "Pois",
+            "on": "P\u00e4\u00e4ll\u00e4",
+            "power_off": "Pois",
+            "power_on": "P\u00e4\u00e4ll\u00e4"
+        },
+        "tuya__vacuum_mode": {
+            "chargego": "Palaa telakkaan"
+        }
+    }
+}

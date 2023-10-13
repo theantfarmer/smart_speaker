@@ -1,0 +1,14 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo konfiguroitu"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin"
+                }
+            }
+        }
+    }
+}

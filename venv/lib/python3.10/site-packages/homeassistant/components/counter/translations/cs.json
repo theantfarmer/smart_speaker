@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Po\u010d\u00edtadlo",
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no v u\u017eivatelsk\u00e9m rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "initial": {
+                    "name": "Po\u010d\u00e1te\u010dn\u00ed hodnota"
+                },
+                "maximum": {
+                    "name": "Maximum"
+                },
+                "minimum": {
+                    "name": "Minimum"
+                },
+                "step": {
+                    "name": "Krok"
+                }
+            }
+        }
+    },
+    "title": "Po\u010d\u00edtadlo"
+}

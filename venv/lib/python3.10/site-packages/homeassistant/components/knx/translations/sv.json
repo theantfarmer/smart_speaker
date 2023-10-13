@@ -1,0 +1,192 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tj\u00e4nsten \u00e4r redan konfigurerad",
+            "single_instance_allowed": "Redan konfigurerad. Endast en konfiguration m\u00f6jlig."
+        },
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta.",
+            "invalid_individual_address": "V\u00e4rdet matchar inte m\u00f6nstret f\u00f6r en individuell adress i KNX.\n'area.line.device'",
+            "invalid_ip_address": "Ogiltig IPv4-adress.",
+            "no_router_discovered": "Ingen KNXnet/IP router hittades p\u00e5 n\u00e4tverket.",
+            "no_tunnel_discovered": "Kunde inte hitta en KNX-tunnelserver p\u00e5 ditt n\u00e4tverk.",
+            "unsupported_tunnel_type": "Den valda tunneltypen st\u00f6ds inte av gateway."
+        },
+        "step": {
+            "connection_type": {
+                "data": {
+                    "connection_type": "KNX Anslutningstyp"
+                },
+                "description": "V\u00e4nligen ange vilken anslutningstyp som vi ska anv\u00e4nda f\u00f6r din KNX anslutning.\nAUTOMATISK - Integrationen tar hand om anslutningen till din KNX Bus genom att utf\u00f6ra en gateways\u00f6kning.\nTUNNEL - Integrationen kommer att ansluta till din KNX bus via tunnel.\nROUTE - Integrationen kommer att ansluta till din KNX bus via routing."
+            },
+            "knxkeys_tunnel_select": {
+                "data": {
+                    "user_id": "`Automatic` anv\u00e4nder den f\u00f6rsta lediga tunnelslutpunkten."
+                },
+                "description": "V\u00e4lj den tunnel som anv\u00e4nds f\u00f6r anslutningen.",
+                "title": "Tunnelslutpunkt"
+            },
+            "manual_tunnel": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "local_ip": "Lokal IP f\u00f6r Home Assistant",
+                    "port": "Port",
+                    "tunneling_type": "KNX tunneltyp"
+                },
+                "data_description": {
+                    "host": "IP-adressen f\u00f6r KNX/IP-tunnelenheten.",
+                    "local_ip": "L\u00e4mna tomt f\u00f6r att anv\u00e4nda automatisk uppt\u00e4ckt.",
+                    "port": "Port p\u00e5 KNX/IP-tunnelenheten.",
+                    "route_back": "Aktivera om din KNXnet/IP tunnel \u00e4r bakom NAT. G\u00e4ller bara f\u00f6r UDP-anslutningar."
+                },
+                "description": "Ange anslutningsinformationen f\u00f6r din tunnelenhet."
+            },
+            "routing": {
+                "data": {
+                    "individual_address": "Individuell adress",
+                    "local_ip": "Lokal IP f\u00f6r Home Assistant",
+                    "multicast_group": "Multicast-grupp",
+                    "multicast_port": "Multicast-port"
+                },
+                "data_description": {
+                    "individual_address": "KNX-adress som ska anv\u00e4ndas av Home Assistant, t.ex. `0.0.4`",
+                    "local_ip": "L\u00e4mna tomt f\u00f6r att anv\u00e4nda automatisk uppt\u00e4ckt."
+                },
+                "description": "Konfigurera routningsalternativen."
+            },
+            "secure_knxkeys": {
+                "data": {
+                    "knxkeys_password": "L\u00f6senordet f\u00f6r att dekryptera filen `.knxkeys`"
+                },
+                "data_description": {
+                    "knxkeys_password": "Detta st\u00e4lldes in n\u00e4r filen exporterades fr\u00e5n ETS."
+                },
+                "description": "V\u00e4nligen ange informationen f\u00f6r din `.knxkeys`-fil."
+            },
+            "secure_routing_manual": {
+                "title": "S\u00e4ker routing"
+            },
+            "secure_tunnel_manual": {
+                "data": {
+                    "device_authentication": "Enhetens autentiseringsl\u00f6senord",
+                    "user_id": "Anv\u00e4ndar-ID",
+                    "user_password": "Anv\u00e4ndarl\u00f6senord"
+                },
+                "data_description": {
+                    "user_id": "Detta \u00e4r ofta tunnelnummer +1. S\u00e5 'Tunnel 2' borde ha Anv\u00e4ndar-ID '3'."
+                },
+                "title": "S\u00e4ker tunneling"
+            },
+            "tunnel": {
+                "data": {
+                    "gateway": "KNX-tunnelanslutning"
+                },
+                "description": "V\u00e4lj en gateway fr\u00e5n listan.",
+                "title": "Tunnel"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "telegram": "Telegram skickat eller mottaget"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "connected_since": {
+                "name": "Anslutning etablerad"
+            },
+            "connection_type": {
+                "name": "Anslutningstyp"
+            },
+            "individual_address": {
+                "name": "Individuella adresser"
+            },
+            "telegram_count": {
+                "name": "Telegrams"
+            },
+            "telegrams_incoming": {
+                "name": "Inkommande telegram"
+            },
+            "telegrams_incoming_error": {
+                "name": "Fel i inkommande telegram"
+            },
+            "telegrams_outgoing": {
+                "name": "Utg\u00e5ende telegram"
+            },
+            "telegrams_outgoing_error": {
+                "name": "Fel i utg\u00e5ende telegram"
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "cannot_connect": "Misslyckades att ansluta",
+            "invalid_ip_address": "Ogiltig IPv4-adress.",
+            "no_router_discovered": "Ingen KNXnet/IP-router hittades p\u00e5 n\u00e4tverket.",
+            "no_tunnel_discovered": "Kunde inte hitta en KNX-tunnelserver p\u00e5 ditt n\u00e4tverk.",
+            "unsupported_tunnel_type": "Den valda tunneltypen st\u00f6ds inte av gateway."
+        },
+        "step": {
+            "communication_settings": {
+                "data": {
+                    "telegram_log_size": "Gr\u00e4ns f\u00f6r telegramhistorik"
+                },
+                "data_description": {
+                    "telegram_log_size": "Telegram att h\u00e5lla i minnet f\u00f6r KNX panelgruppsmonitor. H\u00f6gst: {telegram_log_size_max}"
+                }
+            },
+            "knxkeys_tunnel_select": {
+                "data": {
+                    "user_id": "`Automatic` anv\u00e4nder den f\u00f6rsta lediga tunnelslutpunkten."
+                },
+                "description": "V\u00e4lj den tunnel som anv\u00e4nds f\u00f6r anslutningen.",
+                "title": "Tunnelslutpunkt"
+            },
+            "manual_tunnel": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "local_ip": "Lokal IP f\u00f6r Home Assistant",
+                    "port": "Port",
+                    "tunneling_type": "KNX tunneltyp"
+                },
+                "data_description": {
+                    "host": "IP-adressen f\u00f6r KNX/IP-tunnelenheten.",
+                    "local_ip": "L\u00e4mna tomt f\u00f6r att anv\u00e4nda automatisk uppt\u00e4ckt."
+                }
+            },
+            "options_init": {
+                "menu_options": {
+                    "secure_knxkeys": "importera a fil `.knxkeys`"
+                }
+            },
+            "secure_knxkeys": {
+                "data": {
+                    "knxkeys_file": "Nyckelrings fil"
+                }
+            },
+            "secure_routing_manual": {
+                "title": "S\u00e4ker routing"
+            },
+            "secure_tunnel_manual": {
+                "data": {
+                    "user_id": "Anv\u00e4ndar-ID",
+                    "user_password": "Anv\u00e4ndarl\u00f6senord"
+                },
+                "title": "S\u00e4ker tunneling"
+            },
+            "tunnel": {
+                "data": {
+                    "gateway": "KNX-tunnelanslutning"
+                },
+                "description": "V\u00e4lj en gateway fr\u00e5n listan.",
+                "title": "Tunnel"
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ladda om"
+        }
+    }
+}

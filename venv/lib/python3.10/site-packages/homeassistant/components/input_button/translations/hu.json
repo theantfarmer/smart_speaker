@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Nyom\u00f3gomb",
+            "state_attributes": {
+                "editable": {
+                    "name": "Felhaszn\u00e1l\u00f3i fel\u00fclet \u00e1ltal kezelt",
+                    "state": {
+                        "false": "Nem",
+                        "true": "Igen"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Nyom\u00f3gomb"
+}

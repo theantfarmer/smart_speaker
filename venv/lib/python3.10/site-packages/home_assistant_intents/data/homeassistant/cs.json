@@ -1,0 +1,860 @@
+{
+  "language": "cs",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "<vypnout> [všechny] [stropní] (ventilátory|větráky) <area>",
+            "<area> <vypnout> [všechny] [stropní] (ventilátory|větráky)"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fans_area"
+        },
+        {
+          "sentences": [
+            "<vypnout> [stropní] (ventilátor|větrák) <area>",
+            "<area> <vypnout> [stropní] (ventilátor|větrák)"
+          ],
+          "slots": {
+            "domain": "fan"
+          },
+          "response": "fan"
+        },
+        {
+          "sentences": [
+            "<vypnout> {name}",
+            "{name} <vypnout>"
+          ],
+          "excludes_context": {
+            "domain": [
+              "cover",
+              "fan",
+              "light"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "(<vypnout>|<zhasnout>) [světlo] {name}",
+            "{name} (<vypnout>|<zhasnout>) [světlo]"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "light"
+        },
+        {
+          "sentences": [
+            "(<vypnout>|<zhasnout>) [všechna] světla <area>",
+            "<area> (<vypnout>|<zhasnout>) [všechna] světla"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "<zavrit> garáž",
+            "<zavrit> vrata od garáže",
+            "<zavrit> garážová vrata"
+          ],
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          },
+          "response": "garage"
+        },
+        {
+          "sentences": [
+            "<zavrit> {name} [<area>]"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<zatahnout> {name} [<area>]"
+          ],
+          "requires_context": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "shade",
+              "shutter"
+            ],
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "(<zavrit>|<zatahnout>) (rolet(u|y)|žaluzi(i|e)|závěs[y]|markýz[u|y]|stínítk[o|a]) <area>"
+          ],
+          "slots": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "shade",
+              "shutter"
+            ],
+            "domain": "cover"
+          },
+          "response": "cover_area"
+        }
+      ]
+    },
+    "HassGetState": {
+      "data": [
+        {
+          "sentences": [
+            "je {name} {cover_states:state} [<area>]",
+            "{cover_states:state} {name} [<area>]"
+          ],
+          "response": "one_yesno",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "jaký stav má {name}"
+          ],
+          "response": "one_cover",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(je|jsou) někter(é|á) {cover_classes:device_class} [<area>] {cover_states:state}",
+            "{cover_states:state} někter(é|á) {cover_classes:device_class}"
+          ],
+          "response": "any",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "jsou všechn(a|y) {cover_classes:device_class} [<area>] {cover_states:state}"
+          ],
+          "response": "all",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<ktere> {cover_classes:device_class} [<area>] (jsou|se) {cover_states:state}"
+          ],
+          "response": "which",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "Kolik {cover_classes:device_class} (je|se) [<area>] {cover_states:state}"
+          ],
+          "response": "how_many",
+          "slots": {
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "(<zapnout>|<rozsvitit>) [světlo] {name}",
+            "{name} (<zapnout>|<rozsvitit>) [světlo]"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "light"
+        },
+        {
+          "sentences": [
+            "(<zapnout>|<rozsvitit>) [všechna] [světla] <area>",
+            "<area> (<zapnout>|<rozsvitit>) [všechna] světla"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "<otevrit> garáž",
+            "<otevrit> vrata od garáže",
+            "<otevrit> garážová vrata"
+          ],
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          },
+          "response": "garage"
+        },
+        {
+          "sentences": [
+            "<otevrit> {name} [<area>]"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<roztahnout> {name} [<area>]"
+          ],
+          "requires_context": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "shade",
+              "shutter"
+            ],
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "(<otevrit>|<roztahnout>) (rolet(u|y)|žaluzi(i|e)|závěs[y]|markýz[u|y]|stínítk[o|a]) <area>"
+          ],
+          "slots": {
+            "device_class": [
+              "awning",
+              "blind",
+              "curtain",
+              "shade",
+              "shutter"
+            ],
+            "domain": "cover"
+          },
+          "response": "cover_area"
+        },
+        {
+          "sentences": [
+            "<zapnout> [všechny] [stropní] (ventilátory|větráky) <area>",
+            "<area> <zapnout> [všechny] [stropní] (ventilátory|větráky)"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fans_area"
+        },
+        {
+          "sentences": [
+            "<zapnout> [stropní] (ventilátor|větrák) <area>",
+            "<area> <zapnout> [stropní] (ventilátor|větrák)"
+          ],
+          "slots": {
+            "domain": "fan"
+          },
+          "response": "fan"
+        },
+        {
+          "sentences": [
+            "<zapnout> {name}",
+            "{name} <zapnout>"
+          ],
+          "excludes_context": {
+            "domain": [
+              "cover",
+              "fan",
+              "light"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Omlouvám se, ale nerozuměl jsem tomu",
+      "no_area": "Oblast {{ area }} jsem nenašel",
+      "no_domain": "{{ area }} neobsahuje {{ domain }}",
+      "no_device_class": "{{ area }} neobsahuje {{ device_class }}",
+      "no_entity": "Žádné zařízení ani entita se nejmenuje {{ entity }}",
+      "handle_error": "Při zpracování došlo k neočekávané chybě"
+    },
+    "intents": {
+      "HassGetState": {
+        "one": "{{ slots.name | capitalize }} je {{ state.state_with_unit }}\n",
+        "one_light": "Světlo {{ slots.name | capitalize }} je {{ state.state_with_unit }}\n",
+        "one_cover": "{% set present_continuous = ('je', 'jí', 'rá') %}\n{% set present_simple = ('no', 'ná', 'né') %}\n\n{{ slots.name | capitalize }} {{ 'se' if state.state_with_unit.endswith(present_continuous) else 'je' }} {{ state.state_with_unit }}\n",
+        "one_yesno": "{% set present_continuous = ('je', 'jí', 'rá') %}\n{% set present_simple = ('no', 'ná', 'né') %}\n\n{% if query.matched %}\n  Ano, {{ slots.name }} {{ 'se' if state.state_with_unit.endswith(present_continuous) else 'je' }} {{ state.state_with_unit }}\n{% else %}\n  Ne, {{ slots.name }} {{ 'se' if state.state_with_unit.endswith(present_continuous) else 'je' }} {{ state.state_with_unit }}\n{% endif %}\n",
+        "any": "{% if query.matched %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    Ano, {{ match[:3] | join(\", \") }} a {{ (match | length - 3) }} další\n  {%- else -%}\n    Ano,\n    {% for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} a {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% else %}\n  Ne\n{% endif %}\n",
+        "all": "{% if not query.unmatched: %}\n  Ano\n{% else %}\n  {% set no_match = query.unmatched | map(attribute=\"name\") | sort | list %}\n  {% if no_match | length > 4 %}\n    Ne, {{ no_match[:3] | join(\", \") }} a {{ (no_match | length - 3) }} další jsou {{ state.state_with_unit }}\n  {%- else -%}\n    Ne,\n    {% for name in no_match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} a {% endif -%}\n      {{ name }}\n    {%- endfor %} {{ 'není' if no_match | length == 1 else 'nejou'}} {{ state.state_with_unit }}\n  {% endif %}\n{% endif %}\n",
+        "which": "{% if not query.matched %}\n  žádné\n{% else: %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    {{ match[:3] | join(\", \") }} a {{ (match | length - 3) }} další\n  {% else %}\n    {%- for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} a {% endif -%}\n      {{ name }} {{ 'je' if match | length == 1 else 'jsou'}} {{ state.state_with_unit }}\n    {%- endfor -%}\n  {% endif %}\n{% endif %}\n",
+        "how_many": "{{ query.matched | length }}\n"
+      },
+      "HassTurnOff": {
+        "default": "{{ slots.name }} vypnuto",
+        "lights_area": "Světla v {{ slots.area }} byla zhasnuta",
+        "fans_area": "Větráky v {{ slots.area }} byly vypnuty",
+        "fan": "Větrák {{ slots.name }} vypnut",
+        "light": "Světlo {{ slots.name }} bylo zhasnuto",
+        "cover": "{{ slots.name | capitalize }} zavřeno",
+        "cover_area": "Stínění v {{ slots.area }} zavřeno",
+        "garage": "Garážová vrata zavřena"
+      },
+      "HassTurnOn": {
+        "default": "{{ slots.name }} byl zapnut",
+        "lights_area": "Světla v {{ slots.area }} byla rozsvícena",
+        "fans_area": "Větráky v {{ slots.area }} byly zapnuty",
+        "fan": "Větrák {{ slots.name }} byl zapnut",
+        "light": "Světlo {{ slots.name }} bylo rozsvíceno",
+        "cover": "{{ slots.name | capitalize }} otevřeno",
+        "cover_area": "Stínění v {{ slots.area }} otevřeno",
+        "garage": "Garážová vrata otevřena"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "bíl(á|ý|é|ou)",
+          "out": "white"
+        },
+        {
+          "in": "čern(á|ý|é|ou)",
+          "out": "black"
+        },
+        {
+          "in": "červen(á|ý|é|ou)",
+          "out": "red"
+        },
+        {
+          "in": "oranžov(á|ý|é|ou)",
+          "out": "orange"
+        },
+        {
+          "in": "žlut(á|ý|é|ou)",
+          "out": "yellow"
+        },
+        {
+          "in": "zelen(á|ý|é|ou)",
+          "out": "green"
+        },
+        {
+          "in": "modr(á|ý|é|ou)",
+          "out": "blue"
+        },
+        {
+          "in": "fialov(á|ý|é|ou)",
+          "out": "purple"
+        },
+        {
+          "in": "hněd(á|ý|é|ou)",
+          "out": "brown"
+        }
+      ]
+    },
+    "on_off_states": {
+      "values": [
+        {
+          "in": "(zapnut[(o|é|o|ý|á)]|rozsvícen(o|é|á))",
+          "out": "on"
+        },
+        {
+          "in": "(vypnut[(o|é|ý|á)]|zhasnut(o|é|á))",
+          "out": "off"
+        }
+      ]
+    },
+    "on_off_domains": {
+      "values": [
+        {
+          "in": "světl(o|a)",
+          "out": "light"
+        },
+        {
+          "in": "větrák[y]",
+          "out": "fan"
+        },
+        {
+          "in": "vypínač[e]",
+          "out": "switch"
+        }
+      ]
+    },
+    "cover_states": {
+      "values": [
+        {
+          "in": "(otevřen(o|ý|é|á|ých)|roztažen(á|é|o|ých))",
+          "out": "open"
+        },
+        {
+          "in": "(zavřen(o|ý|é|á|ých)|zatažen(é|o|á|ých))",
+          "out": "closed"
+        },
+        {
+          "in": "[se] otevír(á|ají) [se]",
+          "out": "opening"
+        },
+        {
+          "in": "[se] zavír(á|ají) [se]",
+          "out": "closing"
+        }
+      ]
+    },
+    "cover_classes": {
+      "values": [
+        {
+          "in": "markýz(a|y)",
+          "out": "awning"
+        },
+        {
+          "in": "(žaluzi(e|í)|rolet[(a|y)])",
+          "out": "blind"
+        },
+        {
+          "in": "závěs[y]",
+          "out": "curtain"
+        },
+        {
+          "in": "dveře",
+          "out": "door"
+        },
+        {
+          "in": "((garážov(é|á) (dveře|vrata))|garáž)",
+          "out": "garage"
+        },
+        {
+          "in": "brán(a|y)",
+          "out": "gate"
+        },
+        {
+          "in": "clon(a|y)",
+          "out": "shade"
+        },
+        {
+          "in": "okenice",
+          "out": "shutter"
+        },
+        {
+          "in": "okn(o|a)",
+          "out": "window"
+        }
+      ]
+    },
+    "lock_states": {
+      "values": [
+        {
+          "in": "zamčeno",
+          "out": "locked"
+        },
+        {
+          "in": "odemčeno",
+          "out": "unlocked"
+        }
+      ]
+    },
+    "bs_battery_states": {
+      "values": [
+        {
+          "in": "nízké",
+          "out": "on"
+        },
+        {
+          "in": "normalní",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_battery_charging_states": {
+      "values": [
+        {
+          "in": "nabíjí",
+          "out": "on"
+        },
+        {
+          "in": "nenabíjí",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_carbon_monoxide_states": {
+      "values": [
+        {
+          "in": "detekován",
+          "out": "on"
+        },
+        {
+          "in": "čisto",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_cold_states": {
+      "values": [
+        {
+          "in": "studené",
+          "out": "on"
+        },
+        {
+          "in": "normální",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_connectivity_states": {
+      "values": [
+        {
+          "in": "připojeno",
+          "out": "on"
+        },
+        {
+          "in": "odpojeno",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_door_states": {
+      "values": [
+        {
+          "in": "otevřené",
+          "out": "on"
+        },
+        {
+          "in": "zavřené",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_garage_door_states": {
+      "values": [
+        {
+          "in": "otevřené",
+          "out": "on"
+        },
+        {
+          "in": "zavřené",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_gas_states": {
+      "values": [
+        {
+          "in": "detekován",
+          "out": "on"
+        },
+        {
+          "in": "nezjištěn",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_heat_states": {
+      "values": [
+        {
+          "in": "horké",
+          "out": "on"
+        },
+        {
+          "in": "normalní",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_light_states": {
+      "values": [
+        {
+          "in": "detekován",
+          "out": "on"
+        },
+        {
+          "in": "tma",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_lock_states": {
+      "values": [
+        {
+          "in": "odemčeno",
+          "out": "on"
+        },
+        {
+          "in": "zamčeno",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_moisture_states": {
+      "values": [
+        {
+          "in": "vlhké",
+          "out": "on"
+        },
+        {
+          "in": "suché",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_motion_states": {
+      "values": [
+        {
+          "in": "detekován",
+          "out": "on"
+        },
+        {
+          "in": "bez pohybu",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_occupancy_states": {
+      "values": [
+        {
+          "in": "přítomný",
+          "out": "on"
+        },
+        {
+          "in": "nepřítomný",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_opening_states": {
+      "values": [
+        {
+          "in": "otevřený",
+          "out": "on"
+        },
+        {
+          "in": "zavřený",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_plug_states": {
+      "values": [
+        {
+          "in": "připojen",
+          "out": "on"
+        },
+        {
+          "in": "odpojen",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_power_states": {
+      "values": [
+        {
+          "in": "(zapojen|připojen)",
+          "out": "on"
+        },
+        {
+          "in": "nepřipojen",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_presence_states": {
+      "values": [
+        {
+          "in": "(doma|přítomný)",
+          "out": "on"
+        },
+        {
+          "in": "(pryč|nepřítomný)",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_problem_states": {
+      "values": [
+        {
+          "in": "detekován",
+          "out": "on"
+        },
+        {
+          "in": "ok",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_running_states": {
+      "values": [
+        {
+          "in": "běží",
+          "out": "on"
+        },
+        {
+          "in": "neběží",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_safety_states": {
+      "values": [
+        {
+          "in": "nebezpečné",
+          "out": "on"
+        },
+        {
+          "in": "bezpečné",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_smoke_states": {
+      "values": [
+        {
+          "in": "detekován",
+          "out": "on"
+        },
+        {
+          "in": "nedetekován",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_sound_states": {
+      "values": [
+        {
+          "in": "hraje",
+          "out": "on"
+        },
+        {
+          "in": "nehraje",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_tamper_states": {
+      "values": [
+        {
+          "in": "(detekován|ovlivňován)",
+          "out": "on"
+        },
+        {
+          "in": "čistý",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_update_states": {
+      "values": [
+        {
+          "in": "update k dispozici",
+          "out": "on"
+        },
+        {
+          "in": "nejnovější verze",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_vibration_states": {
+      "values": [
+        {
+          "in": "(detekován|vibruje)",
+          "out": "on"
+        },
+        {
+          "in": "(v klidu|nevibruje)",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_window_states": {
+      "values": [
+        {
+          "in": "otevřené",
+          "out": "on"
+        },
+        {
+          "in": "zavřené",
+          "out": "closed"
+        }
+      ]
+    },
+    "max": {
+      "values": [
+        {
+          "in": "(max|maxi(mum|mální)|[co] nej(víc|vyšší|větší))",
+          "out": 100
+        }
+      ]
+    },
+    "min": {
+      "values": [
+        {
+          "in": "(min|mini(mum|mální)|[co] nej(míň|menší|nižší))",
+          "out": 1
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        "celsia",
+        {
+          "in": "(c|celsia)",
+          "out": "celsia"
+        },
+        "fahrenheita",
+        {
+          "in": "(f|fahrenhait[a])",
+          "out": "fahrenheita"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "area": "[(na|v|ve)] {area}",
+    "zapnout": "(zapni|zapnout)",
+    "vypnout": "(vypni|vypnout|zastavit|zastav)",
+    "rozsvitit": "(rozsviť|rozsvítit|rožn(i|out))",
+    "zhasnout": "(zhasni|zhasnout)",
+    "nastavit": "(nastav|nastavit)",
+    "zmenit": "(změň|změnit)",
+    "ztlumit": "(ztlu(m|it)|snížit|sniž)",
+    "zvysit": "zv(yš|ýšit)",
+    "teplota": "{temperature}[°| stupňů] [{temperature_unit}]",
+    "brightness": "[na] {brightness}[%| procent]",
+    "zavrit": "(zavři|zavřít)",
+    "otevrit": "(otevři|otevřít)",
+    "roztahnout": "(roz|vy|od)táhn(out|i)",
+    "zatahnout": "zatáhn(out|i)",
+    "ktere": "(kter(á|é)|jak(é|á))"
+  },
+  "skip_words": [
+    "prosím"
+  ]
+}

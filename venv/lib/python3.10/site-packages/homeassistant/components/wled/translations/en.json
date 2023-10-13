@@ -1,0 +1,83 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured",
+            "cannot_connect": "Failed to connect",
+            "cct_unsupported": "This WLED device uses CCT channels, which is not supported by this integration"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "description": "Set up your WLED to integrate with Home Assistant."
+            },
+            "zeroconf_confirm": {
+                "description": "Do you want to add the WLED named `{name}` to Home Assistant?",
+                "title": "Discovered WLED device"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "live_override": {
+                "state": {
+                    "0": "Off",
+                    "1": "On",
+                    "2": "Until device restarts"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "keep_master_light": "Keep master light, even with 1 LED segment."
+                }
+            }
+        }
+    },
+    "services": {
+        "effect": {
+            "description": "Controls the effect settings of WLED.",
+            "fields": {
+                "effect": {
+                    "description": "Name or ID of the WLED light effect.",
+                    "name": "Effect"
+                },
+                "intensity": {
+                    "description": "Intensity of the effect. Number between 0 and 255.",
+                    "name": "Effect intensity"
+                },
+                "palette": {
+                    "description": "Name or ID of the WLED light palette.",
+                    "name": "Color palette"
+                },
+                "reverse": {
+                    "description": "Reverse the effect. Either true to reverse or false otherwise.",
+                    "name": "Reverse effect"
+                },
+                "speed": {
+                    "description": "Speed of the effect.",
+                    "name": "Effect speed"
+                }
+            },
+            "name": "Set effect"
+        },
+        "preset": {
+            "description": "Sets a preset for the WLED device.",
+            "fields": {
+                "preset": {
+                    "description": "ID of the WLED preset.",
+                    "name": "Preset ID"
+                }
+            },
+            "name": "Set preset (deprecated)"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "T\u00f6\u00f6p\u00e4eva sidumine on juba seadistatud valitud s\u00e4tetega",
+            "incorrect_province": "Vale alajaotus yamli impordist"
+        },
+        "error": {
+            "add_holiday_error": "Vale kuup\u00e4evavorming (AAAA-KK-PP)",
+            "already_configured": "Teenus on juba seadistatud",
+            "remove_holiday_error": "Kuup\u00e4eva vale vorming (AAAA-KK-PP) v\u00f5i p\u00fchade nime ei leitud"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Lisa p\u00fchad",
+                    "days_offset": "Nihe",
+                    "excludes": "V\u00e4lja arvatud",
+                    "province": "Riigi alajaotus",
+                    "remove_holidays": "Eemalda p\u00fchad",
+                    "workdays": "T\u00f6\u00f6p\u00e4evad"
+                },
+                "data_description": {
+                    "add_holidays": "Lisa kohandatud p\u00fchad kujul AAAA-KK-PP",
+                    "days_offset": "P\u00e4evade nihe",
+                    "excludes": "V\u00e4listatavate t\u00f6\u00f6p\u00e4evade loend",
+                    "province": "Riigi haldus\u00fcksus",
+                    "remove_holidays": "Eemalda p\u00fchad kujul AAAA-KK-PP v\u00f5i kasuta osalist nime",
+                    "workdays": "T\u00f6\u00f6p\u00e4evade loetelu"
+                },
+                "description": "M\u00e4\u00e4ra riigi {country} jaoks seadistatud {name} jaoks lisavalikud"
+            },
+            "user": {
+                "data": {
+                    "country": "Riik",
+                    "name": "Nimi"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "T\u00f6\u00f6p\u00e4eva konfigureerimine YAML-i abil eemaldatakse. \n\n Olemasolev YAML-i konfiguratsioon imporditi kasutajaliidesesse automaatselt. \n\n Eemalda selle probleemi lahendamiseks Workday YAML-i konfiguratsioon failist configuration.yaml ja taask\u00e4ivita Home Assistant.",
+            "title": "Workday YAML-i konfiguratsioon eemaldatakse"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Vale kuup\u00e4evavorming (AAA-KK-MM-TK)",
+            "already_configured": "Selle seadistusega teenus on juba olemas",
+            "remove_holiday_error": "Kuup\u00e4eva vale vorming (AAAA-KK-PP) v\u00f5i p\u00fchade nime ei leitud"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Lisa p\u00fchad",
+                    "days_offset": "Nihe",
+                    "excludes": "V\u00e4lja arvatud",
+                    "province": "Riigi alajaotus",
+                    "remove_holidays": "Eemalda p\u00fchad",
+                    "workdays": "T\u00f6\u00f6p\u00e4evad"
+                },
+                "data_description": {
+                    "add_holidays": "Lisa kohandatud p\u00fchad kujul AAAA-KK-PP",
+                    "days_offset": "P\u00e4evade nihe",
+                    "excludes": "V\u00e4listatavate t\u00f6\u00f6p\u00e4evade loend",
+                    "province": "Riigi haldus\u00fcksus",
+                    "remove_holidays": "Eemalda p\u00fchad kujul AAAA-KK-PP v\u00f5i kasuta osalist nime",
+                    "workdays": "T\u00f6\u00f6p\u00e4evade loetelu"
+                },
+                "description": "Muuda riigi {country} jaoks seadistatud {name} lisavalikuid"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Reede",
+                "holiday": "P\u00fchad",
+                "mon": "Esmasp\u00e4ev",
+                "sat": "Laup\u00e4ev",
+                "sun": "P\u00fchap\u00e4ev",
+                "thu": "Neljap\u00e4ev",
+                "tue": "Teisip\u00e4ev",
+                "wed": "Kolmap\u00e4ev"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Alajaotist ei ole"
+            }
+        }
+    },
+    "title": "T\u00f6\u00f6p\u00e4ev"
+}

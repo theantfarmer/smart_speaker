@@ -1,0 +1,59 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O dispositivo j\u00e1 est\u00e1 configurado"
+        },
+        "error": {
+            "cannot_connect": "A liga\u00e7\u00e3o falhou"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Endere\u00e7o",
+                    "port": "Porta"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "humidity": {
+                "name": "Humidade"
+            },
+            "humidity_hih3600": {
+                "name": "Humidade HIH3600"
+            },
+            "humidity_hih4000": {
+                "name": "Humidade HIH4000"
+            },
+            "humidity_hih5030": {
+                "name": "Humidade HIH5030"
+            },
+            "humidity_htm1735": {
+                "name": "Humidade HTM1735"
+            },
+            "humidity_raw": {
+                "name": "Humidade bruta"
+            },
+            "illuminance": {
+                "name": "Ilumin\u00e2ncia"
+            },
+            "pressure": {
+                "name": "Press\u00e3o"
+            },
+            "temperature": {
+                "name": "Temperatura"
+            },
+            "voltage": {
+                "name": "Voltagem"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "configure_device": {
+                "title": "Precis\u00e3o do Sensor OneWire"
+            }
+        }
+    }
+}

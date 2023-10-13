@@ -1,0 +1,37 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Arvv\u00e4\u00e4rtuse abiline",
+            "state_attributes": {
+                "editable": {
+                    "name": "Hallatakse kasutajaliideses",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Jah"
+                    }
+                },
+                "initial": {
+                    "name": "Algv\u00e4\u00e4rtus"
+                },
+                "max": {
+                    "name": "Maksimaalne"
+                },
+                "min": {
+                    "name": "Minimaalne"
+                },
+                "mode": {
+                    "name": "Re\u017eiim",
+                    "state": {
+                        "auto": "Automaatne",
+                        "box": "Kast",
+                        "slider": "Kerimisriba"
+                    }
+                },
+                "step": {
+                    "name": "Nihe"
+                }
+            }
+        }
+    },
+    "title": "Arvv\u00e4\u00e4rtuse abiline"
+}

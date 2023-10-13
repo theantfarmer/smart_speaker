@@ -1,0 +1,83 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "cct_unsupported": "Dieses WLED-Ger\u00e4t verwendet CCT Kan\u00e4le, die von dieser Integration nicht unterst\u00fctzt werden."
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "description": "Richte deinen WLED f\u00fcr die Integration mit Home Assistant ein."
+            },
+            "zeroconf_confirm": {
+                "description": "M\u00f6chtest du die WLED mit dem Namen `{name}` zu Home Assistant hinzuf\u00fcgen?",
+                "title": "WLED-Ger\u00e4t entdeckt"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "live_override": {
+                "state": {
+                    "0": "Aus",
+                    "1": "An",
+                    "2": "Bis zum Neustart des Ger\u00e4ts"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "keep_master_light": "Master-Licht beibehalten, auch mit 1 LED-Segment."
+                }
+            }
+        }
+    },
+    "services": {
+        "effect": {
+            "description": "Steuert die Effekteinstellungen von WLED.",
+            "fields": {
+                "effect": {
+                    "description": "Name oder ID des WLED-Lichteffekts.",
+                    "name": "Effekt"
+                },
+                "intensity": {
+                    "description": "Intensit\u00e4t des Effekts. Zahl zwischen 0 und 255.",
+                    "name": "Effektintensit\u00e4t"
+                },
+                "palette": {
+                    "description": "Name oder ID der WLED-Lichtpalette.",
+                    "name": "Farbpalette"
+                },
+                "reverse": {
+                    "description": "Kehren Sie den Effekt um. Entweder true zum Umkehren oder false andernfalls.",
+                    "name": "Umgekehrter Effekt"
+                },
+                "speed": {
+                    "description": "Geschwindigkeit des Effekts.",
+                    "name": "Effektgeschwindigkeit"
+                }
+            },
+            "name": "Effekt einstellen"
+        },
+        "preset": {
+            "description": "Legt eine Voreinstellung f\u00fcr das WLED-Ger\u00e4t fest.",
+            "fields": {
+                "preset": {
+                    "description": "ID der WLED-Voreinstellung.",
+                    "name": "Voreingestellung ID"
+                }
+            },
+            "name": "Voreinstellung setzen (veraltet)"
+        }
+    }
+}

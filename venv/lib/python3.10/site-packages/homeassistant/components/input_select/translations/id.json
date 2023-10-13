@@ -1,0 +1,25 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Input pilihan",
+            "state_attributes": {
+                "editable": {
+                    "name": "Dikelola lewat antarmuka",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                },
+                "options": {
+                    "name": "Opsi"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Muat Ulang"
+        }
+    },
+    "title": "Input pilihan"
+}

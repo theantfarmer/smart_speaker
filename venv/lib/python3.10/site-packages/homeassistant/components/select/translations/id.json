@@ -1,0 +1,34 @@
+{
+    "device_automation": {
+        "action_type": {
+            "select_first": "Ubah {entity_name} ke opsi pertama",
+            "select_last": "Ubah {entity_name} ke opsi terakhir",
+            "select_next": "Ubah {entity_name} ke opsi berikutnya",
+            "select_option": "Ubah opsi {entity_name}",
+            "select_previous": "Ubah {entity_name} ke opsi sebelumnya"
+        },
+        "condition_type": {
+            "selected_option": "Opsi terpilih {entity_name}"
+        },
+        "trigger_type": {
+            "current_option_changed": "Opsi {entity_name} berubah"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Pilihan",
+            "state_attributes": {
+                "options": {
+                    "name": "Opsi"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "title": "Pilihan"
+}

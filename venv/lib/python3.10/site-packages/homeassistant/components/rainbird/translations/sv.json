@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad"
+        },
+        "step": {
+            "user": {
+                "description": "Ange information om LNK WiFi-modulen f\u00f6r din Rain Bird-enhet.",
+                "title": "Konfigurera Rain Bird"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "duration": "Standard bevattningstid i minuter"
+                },
+                "title": "Konfigurera Rain Bird"
+            }
+        }
+    }
+}

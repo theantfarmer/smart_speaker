@@ -1,0 +1,64 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\uacc4\uc815\uc774 \uc774\ubbf8 \uad6c\uc131\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "reauth_successful": "\uc7ac\uc778\uc99d\uc5d0 \uc131\uacf5\ud588\uc2b5\ub2c8\ub2e4"
+        },
+        "error": {
+            "cannot_connect": "\uc5f0\uacb0\ud558\uc9c0 \ubabb\ud588\uc2b5\ub2c8\ub2e4",
+            "invalid_auth": "\uc778\uc99d\uc774 \uc798\ubabb\ub418\uc5c8\uc2b5\ub2c8\ub2e4"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "area_id": "\uc601\uc5ed ID",
+                    "name": "\uc774\ub984",
+                    "password": "\uc554\ud638",
+                    "username": "\uc0ac\uc6a9\uc790 \uc774\ub984"
+                }
+            },
+            "user": {
+                "data": {
+                    "area_id": "\uc601\uc5ed ID",
+                    "name": "\uc774\ub984",
+                    "password": "\uc554\ud638",
+                    "username": "\uc0ac\uc6a9\uc790 \uc774\ub984"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "battery": {
+                "name": "\ubc30\ud130\ub9ac"
+            },
+            "jam": {
+                "name": "\uace0\uc7a5"
+            },
+            "power_loss": {
+                "name": "\uc804\ub825 \uc190\uc2e4"
+            },
+            "tamper": {
+                "name": "\ud0ec\ud37c"
+            }
+        },
+        "button": {
+            "panic": {
+                "name": "\ud328\ub2c9 \ubc84\ud2bc"
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "code_format_mismatch": "\ucf54\ub4dc\uac00 \ud544\uc694\ud55c \uc790\ub9bf\uc218\uc640 \uc77c\uce58\ud558\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "code": "\uc7a0\uae08\uc7a5\uce58\uc5d0 \ub300\ud55c \uae30\ubcf8 \ucf54\ub4dc(\uc544\ubb34 \uac83\ub3c4 \uc9c0\uc815\ub418\uc9c0 \uc54a\uc740 \uacbd\uc6b0 \uc0ac\uc6a9\ub428)",
+                    "lock_code_digits": "\ud540\ucf54\ub4dc \uc22b\uc790 \uac1c\uc218"
+                }
+            }
+        }
+    }
+}

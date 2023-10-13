@@ -1,0 +1,15 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                }
+            }
+        }
+    }
+}

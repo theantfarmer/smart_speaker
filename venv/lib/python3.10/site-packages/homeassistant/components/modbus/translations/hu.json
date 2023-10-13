@@ -1,0 +1,13 @@
+{
+    "services": {
+        "reload": {
+            "name": "\u00dajrat\u00f6lt\u00e9s"
+        },
+        "restart": {
+            "name": "\u00dajraind\u00edt\u00e1s"
+        },
+        "stop": {
+            "name": "Le\u00e1ll\u00edt\u00e1s"
+        }
+    }
+}

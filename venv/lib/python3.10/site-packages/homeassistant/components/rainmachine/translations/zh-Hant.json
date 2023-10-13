@@ -1,0 +1,101 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u88dd\u7f6e\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210"
+        },
+        "error": {
+            "invalid_auth": "\u8eab\u4efd\u9a57\u8b49\u7121\u6548"
+        },
+        "flow_title": "{ip}",
+        "step": {
+            "user": {
+                "data": {
+                    "ip_address": "\u4e3b\u6a5f\u540d\u6216 IP \u4f4d\u5740",
+                    "password": "\u5bc6\u78bc",
+                    "port": "\u901a\u8a0a\u57e0"
+                },
+                "title": "\u586b\u5beb\u8cc7\u8a0a"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "flow_sensor": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668"
+            },
+            "freeze": {
+                "name": "\u51cd\u7d50\u9650\u5236"
+            },
+            "hourly": {
+                "name": "\u5c0f\u6642\u9650\u5236"
+            },
+            "month": {
+                "name": "\u6708\u4efd\u9650\u5236"
+            },
+            "raindelay": {
+                "name": "\u96e8\u5ef6\u9072\u9650\u5236"
+            },
+            "rainsensor": {
+                "name": "\u96e8\u6c34\u611f\u6e2c\u5668\u9650\u5236"
+            },
+            "weekday": {
+                "name": "\u5de5\u4f5c\u65e5\u9650\u5236"
+            }
+        },
+        "select": {
+            "freeze_protection_temperature": {
+                "name": "\u9632\u51cd\u4fdd\u8b77\u6eab\u5ea6"
+            }
+        },
+        "sensor": {
+            "flow_sensor_clicks_cubic_meter": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668\u6bcf\u7acb\u65b9\u516c\u5c3a\u9ede\u64ca\u6b21\u6578"
+            },
+            "flow_sensor_consumed_liters": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668\u6d88\u8017\u516c\u5347\u6578"
+            },
+            "flow_sensor_leak_clicks": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668\u6d29\u6f0f\u9ede\u64ca"
+            },
+            "flow_sensor_leak_volume": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668\u6d29\u6f0f\u91cf"
+            },
+            "flow_sensor_start_index": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668\u8d77\u59cb\u7d22\u5f15"
+            },
+            "flow_sensor_watering_clicks": {
+                "name": "\u6d41\u91cf\u611f\u6e2c\u5668\u9ede\u64ca"
+            },
+            "last_leak_detected": {
+                "name": "\u6700\u5f8c\u6aa2\u6e2c\u5230\u5916\u6d29"
+            },
+            "rain_sensor_rain_start": {
+                "name": "\u96e8\u5929\u611f\u6e2c\u5668\u96e8\u5929\u555f\u52d5"
+            }
+        },
+        "switch": {
+            "freeze_protect_enabled": {
+                "name": "\u9632\u51cd\u4fdd\u8b77"
+            },
+            "hot_days_extra_watering": {
+                "name": "\u708e\u71b1\u5929\u6c23\u984d\u5916\u7528\u6c34"
+            }
+        },
+        "update": {
+            "firmware": {
+                "name": "\u97cc\u9ad4"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "use_app_run_times": "Use zone run times \u4f7f\u7528 RainMachine App \u4e2d\u7684\u5340\u57df\u57f7\u884c\u6b21\u6578",
+                    "zone_run_time": "\u9810\u8a2d\u5340\u57df\u57f7\u884c\u6642\u9593\uff08\u79d2\uff09"
+                },
+                "title": "\u8a2d\u5b9a RainMachine"
+            }
+        }
+    }
+}

@@ -1,0 +1,286 @@
+{
+  "language": "hu",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "<turn_off> a (ventilátort | ventilátorokat | szellőztetést) <area>",
+            "(ventilátort | szellőztetést) ki <area>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "<name> <turn_off>"
+          ]
+        },
+        {
+          "sentences": [
+            "<turn_off> a (lámpát | lámpákat) <area>",
+            "<turn_off> <area> a (lámpát | lámpákat)"
+          ],
+          "slots": {
+            "domain": "light",
+            "name": "all"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "redőny <name> le",
+            "<name> redőny le"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": "shutter",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "redőny <area> le",
+            "<area> redőny le",
+            "redőny <area> <name> le",
+            "<area> <name> redőny le"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": "shutter",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "árnyékoló[k] <name> zár",
+            "<name> árnyékoló[k] zár"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shade"
+            ],
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "árnyékoló[k] <area> zár",
+            "<area> árnyékoló[k] zár",
+            "árnyékoló[k] <area> <name> zár",
+            "<area> <name> árnyékoló[k] zár"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shade"
+            ],
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "<turn_on> a (lámpát | lámpákat) <area>",
+            "<turn_on> <area> a (lámpát | lámpákat)"
+          ],
+          "slots": {
+            "domain": "light",
+            "name": "all"
+          },
+          "response": "lights_area"
+        },
+        {
+          "sentences": [
+            "redőny <name> fel",
+            "<name> redőny fel"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": "shutter",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "redőny <area> fel",
+            "<area> redőny fel",
+            "redőny <area> <name> fel",
+            "<area> <name> redőny fel"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": "shutter",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "árnyékoló[k] <name> nyit",
+            "<name> árnyékoló[k] nyit"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shade"
+            ],
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "árnyékoló[k] <area> nyit",
+            "<area> árnyékoló[k] nyit",
+            "árnyékoló[k] <area> <name> nyit",
+            "<area> <name> árnyékoló[k] nyit"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shade"
+            ],
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<turn_on> a (ventilátort | ventilátorokat | szellőztetést) <area>",
+            "(ventilátort | szellőztetést) be <area> "
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "<name> <turn_on>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Elnézést, ezt nem értettem",
+      "no_area": "{{ area }} terület nem található",
+      "no_domain": "{{ area }} (ban | ben) nem található {{ domain }}",
+      "no_device_class": "{{ area }} (ban | ben) nem található {{ device_class }}",
+      "no_entity": "{{ entity }} nem található",
+      "handle_error": "Váratlan hiba történt."
+    },
+    "intents": {
+      "HassGetState": {},
+      "HassTurnOff": {
+        "default": "{{ slots.name }} kikapcsolva.",
+        "lights_area": "Lámpák kikapcsolva itt: {{ slots.area }}.",
+        "fans_area": "Ventilátorok kikapcsolva itt: {{ slots.area }}.",
+        "cover": "{{ slots.name }} zárva.",
+        "cover_area": "Zárva itt: {{ slots.area }}.",
+        "cover_device_class": "{{ slots.device_class }} zárva."
+      },
+      "HassTurnOn": {
+        "default": "{{ slots.name }} bekapcsolva.",
+        "lights_area": "Lámpák felkapcsolva itt: {{ slots.area }}.",
+        "fans_area": "Ventilátorok bekapcsolva itt: {{ slots.area }}.",
+        "cover": "{{ slots.name }} nyitva.",
+        "cover_area": "Nyitva itt: {{ slots.area }}.",
+        "cover_device_class": "{{ slots.device_class }} nyitva."
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "fehér",
+          "out": "white"
+        },
+        {
+          "in": "fekete",
+          "out": "black"
+        },
+        {
+          "in": "piros",
+          "out": "red"
+        },
+        {
+          "in": "narancs",
+          "out": "orange"
+        },
+        {
+          "in": "sárga",
+          "out": "yellow"
+        },
+        {
+          "in": "zöld",
+          "out": "green"
+        },
+        {
+          "in": "kék",
+          "out": "blue"
+        },
+        {
+          "in": "lila",
+          "out": "purple"
+        },
+        {
+          "in": "barna",
+          "out": "brown"
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        {
+          "in": "c | celziusz | celsziusz",
+          "out": "celsius"
+        },
+        {
+          "in": "f | fárenhejt | fárenhájt",
+          "out": "fahrenheit"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "area": "[(a | az)] {area} [ban | ben]",
+    "name": "[(a | az)] {name}",
+    "what_is": "(mi | mennyi)",
+    "brightness": "{brightness}[%]",
+    "turn_on": "[kapcsol | kapcsold | kapcsolj | nyisd] (be|fel|föl)[kapcsol][ás]",
+    "turn_off": "[kapcsol | kapcsold | kapcsolj | zárd | oltsd] (ki|le|el)[kapcsol][ás]",
+    "temp": "(hőfok | hőmérséklet)",
+    "temperature": "{temperature}",
+    "set": "(állítsd | kérem | kérek | szeretnék)"
+  },
+  "skip_words": []
+}

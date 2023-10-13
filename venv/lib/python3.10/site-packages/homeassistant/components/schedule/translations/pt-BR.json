@@ -1,0 +1,29 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Hor\u00e1rio",
+            "state": {
+                "off": "Desligado",
+                "on": "Ligado"
+            },
+            "state_attributes": {
+                "editable": {
+                    "name": "Gerenciado via IU",
+                    "state": {
+                        "false": "N\u00e3o",
+                        "true": "Sim"
+                    }
+                },
+                "next_event": {
+                    "name": "Pr\u00f3ximo evento"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Recarregar"
+        }
+    },
+    "title": "Hor\u00e1rio"
+}

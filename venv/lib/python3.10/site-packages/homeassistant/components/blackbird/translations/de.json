@@ -1,0 +1,16 @@
+{
+    "services": {
+        "set_all_zones": {
+            "fields": {
+                "entity_id": {
+                    "name": "Entit\u00e4t"
+                },
+                "source": {
+                    "description": "Name der Quelle, zu der gewechselt werden soll.",
+                    "name": "Quelle"
+                }
+            },
+            "name": "Alle Zonen einstellen"
+        }
+    }
+}

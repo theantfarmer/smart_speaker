@@ -1,0 +1,18 @@
+{
+    "config": {
+        "step": {
+            "password": {
+                "data": {
+                    "password": "Salasana"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "light": {
+                "name": "Valo"
+            }
+        }
+    }
+}

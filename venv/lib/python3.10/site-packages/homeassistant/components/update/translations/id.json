@@ -1,0 +1,24 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "changed_states": "Ketersediaan pembaruan {entity_name} berubah",
+            "turned_off": "{entity_name} menjadi yang terbaru",
+            "turned_on": "Tersedia pembaruan untuk {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Versi Baru"
+        },
+        "firmware": {
+            "name": "firmware"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "title": "Versi Baru"
+}

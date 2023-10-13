@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Bereits konfiguriert. Nur eine einzige Konfiguration m\u00f6glich."
+        },
+        "step": {
+            "user": {
+                "description": "M\u00f6chtest Du mit der Einrichtung beginnen?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "download": {
+                "name": "Download"
+            },
+            "ping": {
+                "name": "Ping"
+            },
+            "upload": {
+                "name": "Upload"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "server_name": "Testserver ausw\u00e4hlen"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi",
+            "unsupported_model": "Model printer ini tidak didukung."
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "snmp_error": "Server SNMP dimatikan atau printer tidak didukung.",
+            "wrong_host": "Nama host atau alamat IP tidak valid."
+        },
+        "flow_title": "{model} {serial_number}",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "type": "Jenis printer"
+                }
+            },
+            "zeroconf_confirm": {
+                "data": {
+                    "type": "Jenis printer"
+                },
+                "description": "Ingin menambahkan printer {model} dengan nomor seri `{serial_number}` ke Home Assistant?",
+                "title": "Perangkat Printer Brother yang Ditemukan"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "belt_unit_remaining_life": {
+                "name": "Sisa masa pakai unit sabuk"
+            },
+            "black_drum_page_counter": {
+                "name": "Drum hitam pencacah halaman"
+            },
+            "black_drum_remaining_life": {
+                "name": "Drum hitam sisa umur"
+            },
+            "black_drum_remaining_pages": {
+                "name": "Drum hitam halaman tersisa"
+            },
+            "black_ink_remaining": {
+                "name": "Tinta hitam tersisa"
+            },
+            "black_toner_remaining": {
+                "name": "Toner hitam tersisa"
+            },
+            "bw_pages": {
+                "name": "Halaman hitam putih"
+            },
+            "color_pages": {
+                "name": "Halaman berwarna"
+            },
+            "cyan_drum_page_counter": {
+                "name": "Drum sian pencacah halaman"
+            },
+            "cyan_drum_remaining_life": {
+                "name": "Drum sian sisa umur"
+            },
+            "cyan_drum_remaining_pages": {
+                "name": "Drum sian halaman tersisa"
+            },
+            "cyan_ink_remaining": {
+                "name": "Tinta sian tersisa"
+            },
+            "cyan_toner_remaining": {
+                "name": "Toner sian tersisa"
+            },
+            "drum_page_counter": {
+                "name": "Drum pencacah halaman"
+            },
+            "drum_remaining_life": {
+                "name": "Drum sisa umur"
+            },
+            "drum_remaining_pages": {
+                "name": "Drum halaman tersisa"
+            },
+            "duplex_unit_page_counter": {
+                "name": "Penghitung halaman unit dupleks"
+            },
+            "fuser_remaining_life": {
+                "name": "Fuser sisa umur"
+            },
+            "laser_remaining_life": {
+                "name": "Laser sisa umur"
+            },
+            "last_restart": {
+                "name": "Mulai ulang terakhir"
+            },
+            "magenta_drum_page_counter": {
+                "name": "Drum magenta pencacah halaman"
+            },
+            "magenta_drum_remaining_life": {
+                "name": "Drum magenta sisa umur"
+            },
+            "magenta_drum_remaining_pages": {
+                "name": "Drum magenta halaman tersisa"
+            },
+            "magenta_ink_remaining": {
+                "name": "Tinta magenta tersisa"
+            },
+            "magenta_toner_remaining": {
+                "name": "Toner magenta tersisa"
+            },
+            "page_counter": {
+                "name": "Penghitung halaman"
+            },
+            "pf_kit_1_remaining_life": {
+                "name": "PF Kit 1 sisa masa pakai"
+            },
+            "pf_kit_mp_remaining_life": {
+                "name": "PF Kit MP sisa masa pakai"
+            },
+            "status": {
+                "name": "Status"
+            },
+            "yellow_drum_page_counter": {
+                "name": "Drum kuning pencacah halaman"
+            },
+            "yellow_drum_remaining_life": {
+                "name": "Drum kuning sisa umur"
+            },
+            "yellow_drum_remaining_pages": {
+                "name": "Drum kuning halaman tersisa"
+            },
+            "yellow_ink_remaining": {
+                "name": "Tinta kuning tersisa"
+            },
+            "yellow_toner_remaining": {
+                "name": "Toner kuning tersisa"
+            }
+        }
+    }
+}

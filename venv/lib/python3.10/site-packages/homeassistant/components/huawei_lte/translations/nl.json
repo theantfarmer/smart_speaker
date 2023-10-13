@@ -1,0 +1,85 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd",
+            "already_in_progress": "De configuratie is momenteel al bezig",
+            "reauth_successful": "Herauthenticatie geslaagd",
+            "unsupported_device": "Niet-ondersteund apparaat"
+        },
+        "error": {
+            "connection_timeout": "Time-out van de verbinding",
+            "incorrect_password": "Onjuist wachtwoord",
+            "incorrect_username": "Onjuiste gebruikersnaam",
+            "invalid_auth": "Ongeldige authenticatie",
+            "invalid_url": "Ongeldige URL",
+            "login_attempts_exceeded": "Maximale aanmeldingspogingen overschreden, probeer het later opnieuw.",
+            "response_error": "Onbekende fout van het apparaat",
+            "unknown": "Onverwachte fout"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "username": "Gebruikersnaam"
+                },
+                "description": "Voer je gegevens in",
+                "title": "Integratie herauthenticeren"
+            },
+            "user": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "url": "URL",
+                    "username": "Gebruikersnaam"
+                },
+                "description": "Voer de toegangsgegevens van het apparaat in.",
+                "title": "Configureer Huawei LTE"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "Naam meldingsservice (wijziging vereist opnieuw opstarten)",
+                    "recipient": "Ontvangers van sms-berichten",
+                    "track_wired_clients": "Volg bekabelde netwerkclients",
+                    "unauthenticated_mode": "Niet-geverifieerde modus (wijzigen vereist opnieuw laden)"
+                }
+            }
+        }
+    },
+    "services": {
+        "clear_traffic_statistics": {
+            "description": "Wis verkeersstatistieken.",
+            "fields": {
+                "url": {
+                    "description": "URL van router om te wissen, optioneel wanneer maar \u00e9\u00e9n router is ingesteld.",
+                    "name": "URL"
+                }
+            }
+        },
+        "reboot": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        },
+        "resume_integration": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        },
+        "suspend_integration": {
+            "fields": {
+                "url": {
+                    "description": "URL van de router om integratie voor op te schorten; optioneel wanneer er slechts \u00e9\u00e9n is geconfigureerd.",
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

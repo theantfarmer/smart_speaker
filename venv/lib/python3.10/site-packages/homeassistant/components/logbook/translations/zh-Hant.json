@@ -1,0 +1,11 @@
+{
+    "services": {
+        "log": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u7a31"
+                }
+            }
+        }
+    }
+}

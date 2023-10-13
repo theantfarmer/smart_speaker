@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Inmatningsknapp",
+            "state_attributes": {
+                "editable": {
+                    "name": "Hanteras via anv\u00e4ndargr\u00e4nssnittet",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Inmatningsknapp"
+}

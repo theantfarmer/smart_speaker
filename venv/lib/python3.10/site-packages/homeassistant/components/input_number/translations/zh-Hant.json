@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u6578\u5b57\u6846",
+            "state_attributes": {
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "initial": {
+                    "name": "\u521d\u59cb\u503c"
+                },
+                "max": {
+                    "name": "\u6700\u5927\u503c"
+                },
+                "min": {
+                    "name": "\u6700\u5c0f\u503c"
+                },
+                "mode": {
+                    "name": "\u6a21\u5f0f",
+                    "state": {
+                        "auto": "\u81ea\u52d5",
+                        "box": "\u52fe\u9078\u76d2",
+                        "slider": "\u6ed1\u687f"
+                    }
+                },
+                "step": {
+                    "name": "\u968e\u6bb5"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "\u91cd\u65b0\u52a0\u8f09"
+        }
+    },
+    "title": "\u6578\u5b57\u6846"
+}

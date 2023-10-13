@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_auth": "Neplatn\u00e9 overenie",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API k\u013e\u00fa\u010d"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "max_tokens": "Maxim\u00e1lny po\u010det tokenov, ktor\u00e9 sa maj\u00fa vr\u00e1ti\u0165 v odpovedi",
+                    "model": "Model dokon\u010denia",
+                    "prompt": "\u0160abl\u00f3na v\u00fdzvy",
+                    "temperature": "Teplota",
+                    "top_p": "Top P"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kontoen er allerede konfigureret",
+            "reauth_successful": "Genautentificering lykkedes"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_auth": "Ugyldig godkendelse",
+            "unknown": "Uventet fejl"
+        },
+        "step": {
+            "reauth_validate": {
+                "data": {
+                    "password": "Adgangskode"
+                }
+            },
+            "user_validate": {
+                "data": {
+                    "password": "Adgangskode",
+                    "username": "Brugernavn"
+                }
+            },
+            "validation": {
+                "data": {
+                    "code": "Bekr\u00e6ftelseskode"
+                },
+                "description": "Kontroller dit {login_method} ({username}), og angiv bekr\u00e6ftelseskoden nedenfor",
+                "title": "Tofaktorgodkendelse"
+            }
+        }
+    }
+}

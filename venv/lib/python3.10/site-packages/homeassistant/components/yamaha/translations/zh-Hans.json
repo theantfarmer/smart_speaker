@@ -1,0 +1,14 @@
+{
+    "services": {
+        "enable_output": {
+            "fields": {
+                "enabled": {
+                    "name": "\u5df2\u542f\u7528"
+                },
+                "port": {
+                    "name": "\u7aef\u53e3"
+                }
+            }
+        }
+    }
+}

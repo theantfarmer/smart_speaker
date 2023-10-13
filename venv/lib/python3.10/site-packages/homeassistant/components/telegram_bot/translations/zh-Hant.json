@@ -1,0 +1,92 @@
+{
+    "services": {
+        "send_animation": {
+            "fields": {
+                "password": {
+                    "name": "\u5bc6\u78bc"
+                },
+                "url": {
+                    "name": "\u7db2\u5740"
+                },
+                "username": {
+                    "name": "\u4f7f\u7528\u8005\u540d\u7a31"
+                }
+            }
+        },
+        "send_document": {
+            "fields": {
+                "password": {
+                    "name": "\u5bc6\u78bc"
+                },
+                "url": {
+                    "name": "\u7db2\u5740"
+                },
+                "username": {
+                    "name": "\u4f7f\u7528\u8005\u540d\u7a31"
+                }
+            }
+        },
+        "send_location": {
+            "fields": {
+                "latitude": {
+                    "name": "\u7def\u5ea6"
+                },
+                "longitude": {
+                    "name": "\u7d93\u5ea6"
+                }
+            }
+        },
+        "send_photo": {
+            "fields": {
+                "password": {
+                    "name": "\u5bc6\u78bc"
+                },
+                "url": {
+                    "name": "\u7db2\u5740"
+                },
+                "username": {
+                    "name": "\u4f7f\u7528\u8005\u540d\u7a31"
+                }
+            }
+        },
+        "send_sticker": {
+            "fields": {
+                "password": {
+                    "name": "\u5bc6\u78bc"
+                },
+                "url": {
+                    "name": "\u7db2\u5740"
+                },
+                "username": {
+                    "name": "\u4f7f\u7528\u8005\u540d\u7a31"
+                }
+            }
+        },
+        "send_video": {
+            "fields": {
+                "password": {
+                    "name": "\u5bc6\u78bc"
+                },
+                "url": {
+                    "name": "\u7db2\u5740"
+                },
+                "username": {
+                    "name": "\u4f7f\u7528\u8005\u540d\u7a31"
+                }
+            }
+        },
+        "send_voice": {
+            "fields": {
+                "password": {
+                    "name": "\u5bc6\u78bc"
+                },
+                "url": {
+                    "name": "\u7db2\u5740"
+                },
+                "username": {
+                    "name": "\u4f7f\u7528\u8005\u540d\u7a31"
+                }
+            }
+        }
+    }
+}

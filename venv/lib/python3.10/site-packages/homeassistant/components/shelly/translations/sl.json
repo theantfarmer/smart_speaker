@@ -1,0 +1,41 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "description": "Pred nastavitvijo je treba naprave, ki delujejo na baterije, prebuditi s pritiskom na gumb na napravi."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "heavy": "Te\u017eko",
+                            "mild": "Blago",
+                            "none": "Brez",
+                            "test": "Test",
+                            "unknown": "Neznano"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "operation": {
+                "state": {
+                    "unknown": "Neznano"
+                },
+                "state_attributes": {
+                    "self_test": {
+                        "state": {
+                            "pending": "V teku",
+                            "running": "V teku"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

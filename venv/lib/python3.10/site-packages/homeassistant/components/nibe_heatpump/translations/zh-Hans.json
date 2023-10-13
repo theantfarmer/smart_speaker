@@ -1,0 +1,12 @@
+{
+    "config": {
+        "error": {
+            "unknown": "\u975e\u9884\u671f\u7684\u9519\u8bef"
+        },
+        "step": {
+            "nibegw": {
+                "description": "\u5728\u5c1d\u8bd5\u914d\u7f6e\u96c6\u6210\u4e4b\u524d\uff0c\u8bf7\u9a8c\u8bc1\uff1a\n - NibeGW\u88c5\u7f6e\u8fde\u63a5\u5230\u70ed\u6cf5\u3002\n - MODBUS40\u9644\u4ef6\u5df2\u5728\u70ed\u6cf5\u914d\u7f6e\u4e2d\u542f\u7528\u3002\n - \u6cf5\u672a\u8fdb\u5165\u4e22\u5931 MODBUS40 \u9644\u4ef6\u7684\u8b66\u62a5\u72b6\u6001\u3002"
+            }
+        }
+    }
+}

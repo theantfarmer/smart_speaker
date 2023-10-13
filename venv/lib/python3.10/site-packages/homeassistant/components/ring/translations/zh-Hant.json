@@ -1,0 +1,68 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u88dd\u7f6e\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210"
+        },
+        "error": {
+            "invalid_auth": "\u8eab\u4efd\u9a57\u8b49\u7121\u6548",
+            "unknown": "\u672a\u9810\u671f\u932f\u8aa4"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "\u96d9\u91cd\u8a8d\u8b49\u78bc"
+                },
+                "title": "\u96d9\u91cd\u8a8d\u8b49"
+            },
+            "user": {
+                "data": {
+                    "password": "\u5bc6\u78bc",
+                    "username": "\u4f7f\u7528\u8005\u540d\u7a31"
+                },
+                "title": "\u4ee5 Ring \u5e33\u865f\u767b\u5165"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "ding": {
+                "name": "\u53ee"
+            }
+        },
+        "light": {
+            "light": {
+                "name": "\u71c8\u5149"
+            }
+        },
+        "sensor": {
+            "last_activity": {
+                "name": "\u4e0a\u6b21\u6d3b\u52d5"
+            },
+            "last_ding": {
+                "name": "\u6700\u5f8c\u7684\u53ee\u5679\u8072"
+            },
+            "last_motion": {
+                "name": "\u6700\u5f8c\u4e00\u9805\u8fd0\u52a8"
+            },
+            "volume": {
+                "name": "\u9ad4\u7a4d"
+            },
+            "wifi_signal_category": {
+                "name": "Wi-Fi\u4fe1\u865f\u985e\u5225"
+            },
+            "wifi_signal_strength": {
+                "name": "Wi-Fi \u4fe1\u865f\u5f37\u5ea6"
+            }
+        },
+        "siren": {
+            "siren": {
+                "name": "Siren"
+            }
+        },
+        "switch": {
+            "siren": {
+                "name": "Siren"
+            }
+        }
+    }
+}

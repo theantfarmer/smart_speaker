@@ -1,0 +1,49 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "A szolg\u00e1ltat\u00e1s m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "cannot_connect": "Nem siker\u00fclt csatlakozni a szerverhez. K\u00e9rem, ellen\u0151rizze a c\u00edmet \u00e9s a portot, majd pr\u00f3b\u00e1lkozzon \u00fajra. Gondoskodjon arr\u00f3l, hogy a szerveren legal\u00e1bb a Minecraft 1.7-es verzi\u00f3j\u00e1t futtassa.",
+            "invalid_ip": "Az IP -c\u00edm \u00e9rv\u00e9nytelen (a MAC-c\u00edmet nem siker\u00fclt meghat\u00e1rozni). K\u00e9rem, jav\u00edtsa ki, \u00e9s pr\u00f3b\u00e1lja \u00fajra.",
+            "invalid_port": "A portsz\u00e1mnak 1024 \u00e9s 65535 k\u00f6z\u00f6tt kell lennie. K\u00e9rem, jav\u00edtsa ki, \u00e9s pr\u00f3b\u00e1lja \u00fajra."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "C\u00edm",
+                    "name": "Elnevez\u00e9s"
+                },
+                "description": "Minecraft Server be\u00e1ll\u00edt\u00e1sa",
+                "title": "Kapcsold \u00f6ssze a Minecraft szervered"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "status": {
+                "name": "\u00c1llapot"
+            }
+        },
+        "sensor": {
+            "latency": {
+                "name": "K\u00e9sleltet\u00e9s"
+            },
+            "motd": {
+                "name": "Vil\u00e1g\u00fczenet"
+            },
+            "players_max": {
+                "name": "J\u00e1t\u00e9kosok max"
+            },
+            "players_online": {
+                "name": "J\u00e1t\u00e9kosok online"
+            },
+            "protocol_version": {
+                "name": "Protokoll verzi\u00f3"
+            },
+            "version": {
+                "name": "Verzi\u00f3"
+            }
+        }
+    }
+}

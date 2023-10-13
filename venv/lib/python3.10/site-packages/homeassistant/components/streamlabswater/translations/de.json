@@ -1,0 +1,13 @@
+{
+    "services": {
+        "set_away_mode": {
+            "description": "Legt den Heim-/Abwesendmodus f\u00fcr einen Streamlabs-Wassermonitor fest.",
+            "fields": {
+                "away_mode": {
+                    "name": "Abwesenheitsmodus"
+                }
+            },
+            "name": "Abwesenheitsmodus einstellen"
+        }
+    }
+}

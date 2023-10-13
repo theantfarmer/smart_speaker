@@ -1,0 +1,56 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Il dispositivo \u00e8 gi\u00e0 configurato",
+            "reauth_successful": "La riautenticazione ha avuto successo"
+        },
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "name_exists": "Il nome esiste gi\u00e0"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Password"
+                },
+                "description": "La password per {username} non \u00e8 valida.",
+                "title": "Autentica nuovamente l'integrazione"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "name": "Nome",
+                    "password": "Password",
+                    "port": "Porta",
+                    "username": "Nome utente"
+                },
+                "title": "Configura il Client di Trasmissione"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "transmission_status": {
+                "state": {
+                    "downloading": "In ricezione",
+                    "idle": "Inattivo",
+                    "seeding": "In trasmissione",
+                    "up_down": "Su/Gi\u00f9"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "limit": "Limite",
+                    "order": "Ordine",
+                    "scan_interval": "Frequenza di aggiornamento"
+                },
+                "title": "Configura le opzioni per Transmission"
+            }
+        }
+    }
+}

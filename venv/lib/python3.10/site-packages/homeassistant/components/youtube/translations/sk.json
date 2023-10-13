@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "access_not_configured": "Pre\u010d\u00edtajte si ni\u017e\u0161ie uveden\u00fa spr\u00e1vu, ktor\u00fa sme dostali od spolo\u010dnosti Google: \n\n {message}",
+            "already_configured": "\u00da\u010det je u\u017e nakonfigurovan\u00fd",
+            "no_channel": "Vytvorte si kan\u00e1l YouTube, aby ste mohli pou\u017e\u00edva\u0165 integr\u00e1ciu. Pokyny n\u00e1jdete na {support_url}.",
+            "reauth_successful": "Op\u00e4tovn\u00e9 overenie bolo \u00faspe\u0161n\u00e9",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_auth": "Neplatn\u00e9 overenie"
+        },
+        "step": {
+            "channels": {
+                "data": {
+                    "channels": "Kan\u00e1ly YouTube"
+                },
+                "description": "Vyberte kan\u00e1ly, ktor\u00e9 chcete prida\u0165."
+            },
+            "reauth_confirm": {
+                "description": "Integr\u00e1cia YouTube potrebuje op\u00e4tovn\u00e9 overenie v\u00e1\u0161ho konta",
+                "title": "Znova overi\u0165 integr\u00e1ciu"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "latest_upload": {
+                "name": "Najnov\u0161ie nahran\u00e9"
+            },
+            "subscribers": {
+                "name": "Odberatelia"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "channels": "Kan\u00e1ly YouTube"
+                },
+                "description": "Vyberte kan\u00e1ly, ktor\u00e9 chcete prida\u0165."
+            }
+        }
+    }
+}

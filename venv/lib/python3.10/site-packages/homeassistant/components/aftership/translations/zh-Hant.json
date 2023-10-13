@@ -1,0 +1,36 @@
+{
+    "services": {
+        "add_tracking": {
+            "description": "\u7531 Aftership \u65b0\u589e\u8ca8\u4ef6\u8ffd\u8e64\u865f\u78bc\u3002",
+            "fields": {
+                "slug": {
+                    "description": "\u8981\u65b0\u589e\u7684\u8ffd\u8e64\u5feb\u905e\u5546 (Slug)\u3002",
+                    "name": "Slug"
+                },
+                "title": {
+                    "description": "\u65b0\u589e\u8ffd\u8e64\u81ea\u8a02\u540d\u7a31\u3002",
+                    "name": "\u540d\u7a31"
+                },
+                "tracking_number": {
+                    "description": "\u8981\u65b0\u589e\u8ffd\u8e64\u7684\u8ca8\u4ef6\u8ffd\u8e64\u865f\u78bc\u3002",
+                    "name": "\u8ca8\u4ef6\u8ffd\u8e64\u865f\u78bc"
+                }
+            },
+            "name": "\u65b0\u589e\u8ca8\u4ef6\u8ffd\u8e64"
+        },
+        "remove_tracking": {
+            "description": "\u7531 Aftership \u79fb\u9664\u8ca8\u4ef6\u8ffd\u8e64\u865f\u78bc\u3002",
+            "fields": {
+                "slug": {
+                    "description": "\u8981\u79fb\u9664\u7684\u8ffd\u8e64\u5feb\u905e\u5546 (Slug)\u3002",
+                    "name": "Slug"
+                },
+                "tracking_number": {
+                    "description": "\u8981\u79fb\u9664\u8ffd\u8e64\u7684\u8ca8\u4ef6\u8ffd\u8e64\u865f\u78bc\u3002",
+                    "name": "\u8ca8\u4ef6\u8ffd\u8e64\u865f\u78bc"
+                }
+            },
+            "name": "\u79fb\u9664\u8ca8\u4ef6\u8ffd\u8e64"
+        }
+    }
+}

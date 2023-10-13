@@ -1,0 +1,62 @@
+{
+  "title": "Fan",
+  "device_automation": {
+    "condition_type": {
+      "is_on": "{entity_name} is on",
+      "is_off": "{entity_name} is off"
+    },
+    "trigger_type": {
+      "changed_states": "{entity_name} turned on or off",
+      "turned_on": "{entity_name} turned on",
+      "turned_off": "{entity_name} turned off"
+    },
+    "action_type": {
+      "toggle": "Toggle {entity_name}",
+      "turn_on": "Turn on {entity_name}",
+      "turn_off": "Turn off {entity_name}"
+    }
+  },
+  "entity_component": {
+    "_": {
+      "name": "[%key:component::fan::title%]",
+      "state": {
+        "off": "[%key:common::state::off%]",
+        "on": "[%key:common::state::on%]"
+      },
+      "state_attributes": {
+        "direction": {
+          "name": "Direction",
+          "state": {
+            "forward": "Forward",
+            "reverse": "Reverse"
+          }
+        },
+        "oscillating": {
+          "name": "Oscillating",
+          "state": {
+            "true": "[%key:common::state::yes%]",
+            "false": "[%key:common::state::no%]"
+          }
+        },
+        "percentage": {
+          "name": "Speed"
+        },
+        "percentage_step": {
+          "name": "Speed step"
+        },
+        "preset_modes": {
+          "name": "Available preset modes"
+        },
+        "preset_mode": {
+          "name": "Preset mode"
+        }
+      }
+    }
+  },
+  "issues": {
+    "platform_integration_no_support": {
+      "title": "[%key:common::issues::platform_integration_no_support_title%]",
+      "description": "[%key:common::issues::platform_integration_no_support_description%]"
+    }
+  }
+}

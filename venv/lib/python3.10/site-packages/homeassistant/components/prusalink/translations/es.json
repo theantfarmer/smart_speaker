@@ -1,0 +1,80 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "No se pudo conectar",
+            "invalid_auth": "Autenticaci\u00f3n no v\u00e1lida",
+            "not_supported": "Solo se admite la API v2 de PrusaLink",
+            "unknown": "Error inesperado"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "Clave API",
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "cancel_job": {
+                "name": "Cancelar el trabajo"
+            },
+            "pause_job": {
+                "name": "Pausar el trabajo"
+            },
+            "resume_job": {
+                "name": "Reanudar el trabajo"
+            }
+        },
+        "camera": {
+            "job_preview": {
+                "name": "Vista previa"
+            }
+        },
+        "sensor": {
+            "filename": {
+                "name": "Nombre de archivo"
+            },
+            "heatbed_target_temperature": {
+                "name": "Temperatura objetivo de la cama"
+            },
+            "heatbed_temperature": {
+                "name": "Temperatura de la cama"
+            },
+            "material": {
+                "name": "Material"
+            },
+            "nozzle_target_temperature": {
+                "name": "Temperatura objetivo de la boquilla"
+            },
+            "nozzle_temperature": {
+                "name": "Temperatura de la boquilla"
+            },
+            "print_finish": {
+                "name": "Final de impresi\u00f3n"
+            },
+            "print_speed": {
+                "name": "Velocidad de impresi\u00f3n"
+            },
+            "print_start": {
+                "name": "Inicio de impresi\u00f3n"
+            },
+            "printer_state": {
+                "state": {
+                    "cancelling": "Cancelando",
+                    "idle": "Inactivo",
+                    "paused": "En pausa",
+                    "pausing": "Pausando",
+                    "printing": "Imprimiendo"
+                }
+            },
+            "progress": {
+                "name": "Progreso"
+            },
+            "z_height": {
+                "name": "Altura Z"
+            }
+        }
+    }
+}

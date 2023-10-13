@@ -1,0 +1,106 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "longitude": "Garums"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "air_quality": {
+                "state": {
+                    "good": "Labi",
+                    "hazardous": "B\u012bstams",
+                    "high": "Augsts",
+                    "low": "Zems",
+                    "moderate": "M\u0113rens",
+                    "unhealthy": "Nevesel\u012bgs"
+                }
+            },
+            "grass_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "L\u012bmenis",
+                        "state": {
+                            "good": "Labi",
+                            "hazardous": "B\u012bstams",
+                            "high": "Augsts",
+                            "low": "Zems",
+                            "moderate": "M\u0113rens",
+                            "unhealthy": "Nevesel\u012bgs"
+                        }
+                    }
+                }
+            },
+            "mold_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "L\u012bmenis",
+                        "state": {
+                            "good": "Labi",
+                            "hazardous": "B\u012bstams",
+                            "high": "Augsts",
+                            "low": "Zems",
+                            "moderate": "M\u0113rens",
+                            "unhealthy": "Nevesel\u012bgs"
+                        }
+                    }
+                }
+            },
+            "pressure_tendency": {
+                "state": {
+                    "falling": "Riet",
+                    "rising": "Aust"
+                }
+            },
+            "ragweed_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "L\u012bmenis",
+                        "state": {
+                            "good": "Labi",
+                            "hazardous": "B\u012bstams",
+                            "high": "Augsts",
+                            "low": "Zems",
+                            "moderate": "M\u0113rens",
+                            "unhealthy": "Nevesel\u012bgs"
+                        }
+                    }
+                }
+            },
+            "tree_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "L\u012bmenis",
+                        "state": {
+                            "good": "Labi",
+                            "hazardous": "B\u012bstams",
+                            "high": "Augsts",
+                            "low": "Zems",
+                            "moderate": "M\u0113rens",
+                            "unhealthy": "Nevesel\u012bgs"
+                        }
+                    }
+                }
+            },
+            "uv_index": {
+                "state_attributes": {
+                    "level": {
+                        "name": "L\u012bmenis",
+                        "state": {
+                            "good": "Labi",
+                            "hazardous": "B\u012bstams",
+                            "high": "Augsts",
+                            "low": "Zems",
+                            "moderate": "M\u0113rens",
+                            "unhealthy": "Nevesel\u012bgs"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

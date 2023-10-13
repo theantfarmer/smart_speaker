@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86",
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "error": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "\u4e3b\u673a"
+                },
+                "description": "\u8bbe\u7f6e\u60a8\u7684 Modern Forms \u98ce\u6247\u4ee5\u4e0e Home Assistant \u96c6\u6210\u3002"
+            },
+            "zeroconf_confirm": {
+                "description": "\u60a8\u60f3\u5c06\u540d\u4e3a\u201c {name} \u201d\u7684 Modern Forms \u7c89\u4e1d\u6dfb\u52a0\u5230 Home Assistant \u5417\uff1f",
+                "title": "\u53d1\u73b0Modern Forms\u98ce\u6247\u8bbe\u5907"
+            }
+        }
+    }
+}

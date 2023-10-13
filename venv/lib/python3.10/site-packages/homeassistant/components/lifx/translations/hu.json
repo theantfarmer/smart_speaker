@@ -1,0 +1,58 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "already_in_progress": "A be\u00e1ll\u00edt\u00e1si folyamat m\u00e1r el lett kezdve",
+            "no_devices_found": "Nem tal\u00e1lhat\u00f3 eszk\u00f6z a h\u00e1l\u00f3zaton"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "flow_title": "{label} ({group})",
+        "step": {
+            "discovery_confirm": {
+                "description": "{label} ({group}) hozz\u00e1ad\u00e1sa a rendszerhez."
+            },
+            "pick_device": {
+                "data": {
+                    "device": "Eszk\u00f6z"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "C\u00edm"
+                },
+                "description": "Ha \u00fcresen hagyja a c\u00edm mez\u0151t, a rendszer megpr\u00f3b\u00e1lja az eszk\u00f6z\u00f6ket megkeresni."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "clean_cycle": {
+                "name": "Tiszt\u00edt\u00e1si ciklus"
+            }
+        },
+        "select": {
+            "infrared_brightness": {
+                "name": "Infrav\u00f6r\u00f6s f\u00e9nyer\u0151"
+            },
+            "theme": {
+                "name": "T\u00e9ma"
+            }
+        },
+        "sensor": {
+            "rssi": {
+                "name": "RSSI"
+            }
+        }
+    },
+    "services": {
+        "set_hev_cycle_state": {
+            "fields": {
+                "power": {
+                    "name": "Enged\u00e9lyez\u00e9s"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "services": {
+        "set_variable_value": {
+            "fields": {
+                "name": {
+                    "name": "Nome"
+                }
+            }
+        }
+    }
+}

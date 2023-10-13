@@ -1,0 +1,12 @@
+{
+    "services": {
+        "set_wall_db": {
+            "description": "Imposta il cursore \"Modalit\u00e0 parete\" dell'altoparlante in dB.",
+            "name": "Imposta parete dB"
+        },
+        "update_dsp": {
+            "description": "Aggiorna tutte le impostazioni DSP.",
+            "name": "Aggiorna DSP"
+        }
+    }
+}

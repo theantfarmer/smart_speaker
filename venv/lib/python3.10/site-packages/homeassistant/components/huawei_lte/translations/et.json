@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "already_in_progress": "Seadistamine on juba k\u00e4imas",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus",
+            "unsupported_device": "Seadet ei toetata"
+        },
+        "error": {
+            "connection_timeout": "\u00dchenduse ajal\u00f5pp",
+            "incorrect_password": "Vale salas\u00f5na",
+            "incorrect_username": "Vale kasutajanimi",
+            "invalid_auth": "Tuvastamise viga",
+            "invalid_url": "Sobimatu URL",
+            "login_attempts_exceeded": "Sisselogimiskatsete arv on \u00fcletatud. Proovi hiljem uuesti",
+            "response_error": "Seade andis tuvastamatu t\u00f5rke",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "description": "Sisesta seadme juurdep\u00e4\u00e4suload.",
+                "title": "Taastuvasta sidumine"
+            },
+            "user": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "url": "URL",
+                    "username": "Kasutajanimi"
+                },
+                "description": "Sisesta seadmele juurdep\u00e4\u00e4su \u00fcksikasjad.",
+                "title": "Huawei LTE seadistamine"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "Teavitusteenuse nimi (muudatus n\u00f5uab taask\u00e4ivitamist)",
+                    "recipient": "SMS teavituse saajad",
+                    "track_wired_clients": "J\u00e4lgi juhtmega v\u00f5rgukliente",
+                    "unauthenticated_mode": "Tuvastuseta re\u017eiim (muutmine n\u00f5uab taaslaadimist)"
+                }
+            }
+        }
+    },
+    "services": {
+        "clear_traffic_statistics": {
+            "description": "Kustutab statistika",
+            "fields": {
+                "url": {
+                    "description": "Kustutatava ruuteri URL; valikuline, kui konfigureeritud on ainult \u00fcks.",
+                    "name": "URL"
+                }
+            },
+            "name": "Kustuta statistika"
+        },
+        "reboot": {
+            "description": "Taask\u00e4ivitab ruuteri.",
+            "fields": {
+                "url": {
+                    "description": "Taask\u00e4ivitava ruuteri URL; valikuline, kui konfigureeritud on ainult \u00fcks.",
+                    "name": "URL"
+                }
+            },
+            "name": "Taask\u00e4ivita"
+        },
+        "resume_integration": {
+            "description": "J\u00e4tkab peatatud sidumist.",
+            "fields": {
+                "url": {
+                    "description": "Ruuteri URL, mille integreerimist j\u00e4tkata; valikuline, kui konfigureeritud on ainult \u00fcks.",
+                    "name": "URL"
+                }
+            },
+            "name": "J\u00e4tka sidumist"
+        },
+        "suspend_integration": {
+            "description": "Peatab integratsiooni. Peatamine logib integratsiooni ruuterist v\u00e4lja ja peatab sellele juurdep\u00e4\u00e4su. Kasulik nt juhul, kui ajutiselt on vajalik juurdep\u00e4\u00e4s ruuteri veebiliidesele muust allikast, n\u00e4iteks veebibrauserist. J\u00e4tkamiseks k\u00e4ivita teenus resume_integration.\n .",
+            "fields": {
+                "url": {
+                    "description": "Ruuteri URL, mille integreerimist j\u00e4tkata; valikuline, kui konfigureeritud on ainult \u00fcks.",
+                    "name": "URL"
+                }
+            },
+            "name": "Peata sidumine"
+        }
+    }
+}

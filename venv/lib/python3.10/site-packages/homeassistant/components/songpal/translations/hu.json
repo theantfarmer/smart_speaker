@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "not_songpal_device": "Nem Songpal eszk\u00f6z"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "flow_title": "{name} ({host})",
+        "step": {
+            "init": {
+                "description": "{name} ({host}) hozz\u00e1ad\u00e1sa a rendszerhez."
+            },
+            "user": {
+                "data": {
+                    "endpoint": "V\u00e9gpont"
+                }
+            }
+        }
+    }
+}

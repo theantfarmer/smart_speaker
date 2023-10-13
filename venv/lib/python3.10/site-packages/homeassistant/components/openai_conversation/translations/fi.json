@@ -1,0 +1,11 @@
+{
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "temperature": "L\u00e4mp\u00f6tila"
+                }
+            }
+        }
+    }
+}

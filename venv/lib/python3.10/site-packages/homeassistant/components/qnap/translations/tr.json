@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Ana bilgisayara ba\u011flan\u0131lam\u0131yor",
+            "invalid_auth": "K\u00f6t\u00fc kimlik do\u011frulama",
+            "unknown": "Bilinmeyen hata"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Ana bilgisayar ad\u0131",
+                    "password": "Parola",
+                    "port": "Port",
+                    "ssl": "SSL'yi etkinle\u015ftir",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131",
+                    "verify_ssl": "SSL'yi do\u011frula"
+                },
+                "description": "Bu qnap sens\u00f6r\u00fc, QNAP NAS'\u0131n\u0131zdan \u00e7e\u015fitli istatistikler alman\u0131z\u0131 sa\u011flar.",
+                "title": "QNAP cihaz\u0131na ba\u011flan\u0131n"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "YAML kullanarak QNAP yap\u0131land\u0131rmas\u0131 kald\u0131r\u0131l\u0131yor. \n\n Mevcut YAML yap\u0131land\u0131rman\u0131z, kullan\u0131c\u0131 aray\u00fcz\u00fcne otomatik olarak aktar\u0131ld\u0131. \n\n QNAP YAML yap\u0131land\u0131rmas\u0131n\u0131 configuration.yaml dosyan\u0131zdan kald\u0131r\u0131n ve bu sorunu \u00e7\u00f6zmek i\u00e7in Home Assistant'\u0131 yeniden ba\u015flat\u0131n.",
+            "title": "QNAP YAML yap\u0131land\u0131rmas\u0131 kald\u0131r\u0131l\u0131yor"
+        }
+    }
+}

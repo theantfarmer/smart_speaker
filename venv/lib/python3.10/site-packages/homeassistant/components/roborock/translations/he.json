@@ -1,0 +1,189 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u05ea\u05e6\u05d5\u05e8\u05ea \u05d4\u05d4\u05ea\u05e7\u05df \u05db\u05d1\u05e8 \u05e0\u05e7\u05d1\u05e2\u05d4"
+        },
+        "error": {
+            "invalid_code": "\u05d4\u05e7\u05d5\u05d3 \u05e9\u05d4\u05d6\u05e0\u05ea \u05d4\u05d9\u05d4 \u05e9\u05d2\u05d5\u05d9, \u05d9\u05e9 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05d5\u05ea\u05d5 \u05d5\u05dc\u05e0\u05e1\u05d5\u05ea \u05e9\u05d5\u05d1.",
+            "invalid_email": "\u05d0\u05d9\u05df \u05d7\u05e9\u05d1\u05d5\u05df \u05d4\u05de\u05e9\u05d5\u05d9\u05da \u05dc\u05d3\u05d5\u05d0\"\u05dc \u05e9\u05d4\u05d6\u05e0\u05ea, \u05d9\u05e9 \u05dc\u05e0\u05e1\u05d5\u05ea \u05e9\u05d5\u05d1.",
+            "invalid_email_format": "\u05d9\u05e9 \u05d1\u05e2\u05d9\u05d4 \u05d1\u05e2\u05d9\u05e6\u05d5\u05d1 \u05d4\u05d3\u05d5\u05d0\"\u05dc \u05e9\u05dc\u05da - \u05e0\u05d0 \u05dc\u05e0\u05e1\u05d5\u05ea \u05e9\u05d5\u05d1.",
+            "unknown": "\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05dc\u05ea\u05d9 \u05e6\u05e4\u05d5\u05d9\u05d4",
+            "unknown_roborock": "\u05d4\u05d9\u05d9\u05ea\u05d4 \u05d7\u05e8\u05d9\u05d2\u05d4 \u05dc\u05d0 \u05d9\u05d3\u05d5\u05e2\u05d4 \u05e9\u05dc roborock  - \u05e0\u05d0 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d4\u05d9\u05d5\u05de\u05e0\u05d9\u05dd \u05e9\u05dc\u05da.",
+            "unknown_url": "\u05d4\u05d9\u05d9\u05ea\u05d4 \u05d1\u05e2\u05d9\u05d4 \u05d1\u05e7\u05d1\u05d9\u05e2\u05ea \u05db\u05ea\u05d5\u05d1\u05ea \u05d4\u05d0\u05ea\u05e8 \u05d4\u05e0\u05db\u05d5\u05e0\u05d4 \u05e2\u05d1\u05d5\u05e8 \u05d7\u05e9\u05d1\u05d5\u05df Roborock \u05e9\u05dc\u05da - \u05e0\u05d0 \u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05ea \u05d4\u05d9\u05d5\u05de\u05e0\u05d9\u05dd \u05e9\u05dc\u05da."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "\u05e7\u05d5\u05d3 \u05d0\u05d9\u05de\u05d5\u05ea"
+                },
+                "description": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05d0\u05ea \u05e7\u05d5\u05d3 \u05d4\u05d0\u05d9\u05de\u05d5\u05ea \u05e9\u05e0\u05e9\u05dc\u05d7 \u05dc\u05d3\u05d5\u05d0\"\u05dc \u05e9\u05dc\u05da"
+            },
+            "user": {
+                "data": {
+                    "username": "\u05d3\u05d5\u05d0\"\u05dc"
+                },
+                "description": "\u05d9\u05e9 \u05dc\u05d4\u05d6\u05d9\u05df \u05d0\u05ea \u05db\u05ea\u05d5\u05d1\u05ea \u05d4\u05d3\u05d5\u05d0\"\u05dc \u05e9\u05dc\u05da \u05d1-Roborock."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "\u05e2\u05d5\u05e6\u05de\u05ea \u05d4\u05de\u05d2\u05d1",
+                "state": {
+                    "custom": "\u05de\u05d5\u05ea\u05d0\u05dd \u05d0\u05d9\u05e9\u05d9\u05ea",
+                    "high": "\u05d2\u05d1\u05d5\u05d4",
+                    "intense": "\u05d0\u05d9\u05e0\u05d8\u05e0\u05e1\u05d9\u05d1\u05d9",
+                    "low": "\u05e0\u05de\u05d5\u05da",
+                    "medium": "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9",
+                    "mild": "\u05de\u05ea\u05d5\u05df",
+                    "moderate": "\u05de\u05ea\u05d5\u05df",
+                    "off": "\u05db\u05d1\u05d5\u05d9"
+                }
+            },
+            "mop_mode": {
+                "name": "\u05de\u05e6\u05d1 \u05de\u05d2\u05d1",
+                "state": {
+                    "custom": "\u05de\u05d5\u05ea\u05d0\u05dd \u05d0\u05d9\u05e9\u05d9\u05ea",
+                    "deep": "\u05e2\u05de\u05d5\u05e7",
+                    "deep_plus": "\u05e2\u05de\u05d5\u05e7+",
+                    "fast": "\u05de\u05d4\u05d9\u05e8",
+                    "standard": "\u05e8\u05d2\u05d9\u05dc"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "\u05de\u05e0\u05e7\u05d4 \u05d0\u05d6\u05d5\u05e8"
+            },
+            "cleaning_time": {
+                "name": "\u05d6\u05de\u05df \u05e0\u05d9\u05e7\u05d5\u05d9"
+            },
+            "filter_time_left": {
+                "name": "\u05d6\u05de\u05df \u05e9\u05e0\u05d5\u05ea\u05e8 \u05dc\u05de\u05e1\u05e0\u05df"
+            },
+            "main_brush_time_left": {
+                "name": "\u05d6\u05de\u05df \u05e9\u05e0\u05d5\u05ea\u05e8 \u05dc\u05de\u05d1\u05e8\u05e9\u05ea \u05d4\u05e8\u05d0\u05e9\u05d9\u05ea"
+            },
+            "sensor_time_left": {
+                "name": "\u05d6\u05de\u05df \u05e9\u05e0\u05d5\u05ea\u05e8 \u05dc\u05d7\u05d9\u05d9\u05e9\u05df"
+            },
+            "side_brush_time_left": {
+                "name": "\u05d6\u05de\u05df \u05e9\u05e0\u05d5\u05ea\u05e8 \u05dc\u05de\u05d1\u05e8\u05e9\u05ea \u05e6\u05d3"
+            },
+            "status": {
+                "name": "\u05de\u05e6\u05d1",
+                "state": {
+                    "charger_disconnected": "\u05de\u05d8\u05e2\u05df \u05de\u05e0\u05d5\u05ea\u05e7",
+                    "charging": "\u05e0\u05d8\u05e2\u05df",
+                    "charging_complete": "\u05d4\u05d8\u05e2\u05d9\u05e0\u05d4 \u05d4\u05d5\u05e9\u05dc\u05de\u05d4",
+                    "charging_problem": "\u05d1\u05e2\u05d9\u05d9\u05ea \u05d8\u05e2\u05d9\u05e0\u05d4",
+                    "cleaning": "\u05de\u05e0\u05e7\u05d4",
+                    "device_offline": "\u05d4\u05ea\u05e7\u05df \u05dc\u05d0 \u05de\u05e7\u05d5\u05d5\u05df",
+                    "docking": "\u05d1\u05e2\u05d2\u05d9\u05e0\u05d4",
+                    "emptying_the_bin": "\u05de\u05e8\u05d5\u05e7\u05df \u05d0\u05ea \u05d4\u05e4\u05d7",
+                    "error": "\u05e9\u05d2\u05d9\u05d0\u05d4",
+                    "going_to_target": "\u05d4\u05d5\u05dc\u05da \u05dc\u05d9\u05e2\u05d3",
+                    "going_to_wash_the_mop": "\u05d4\u05d5\u05dc\u05da \u05dc\u05e9\u05d8\u05d5\u05e3 \u05d0\u05ea \u05d4\u05de\u05d2\u05d1",
+                    "idle": "\u05de\u05de\u05ea\u05d9\u05df",
+                    "manual_mode": "\u05de\u05e6\u05d1 \u05d9\u05d3\u05e0\u05d9",
+                    "paused": "\u05de\u05d5\u05e9\u05d4\u05d4",
+                    "remote_control_active": "\u05e9\u05dc\u05d8 \u05e8\u05d7\u05d5\u05e7 \u05e4\u05e2\u05d9\u05dc",
+                    "returning_home": "\u05d7\u05d5\u05d6\u05e8 \u05d4\u05d1\u05d9\u05ea\u05d4",
+                    "segment_cleaning": "\u05e0\u05d9\u05e7\u05d5\u05d9 \u05e1\u05d2\u05de\u05e0\u05d8",
+                    "shutting_down": "\u05db\u05d9\u05d1\u05d5\u05d9",
+                    "spot_cleaning": "\u05e0\u05d9\u05e7\u05d5\u05d9 \u05e0\u05e7\u05d5\u05d3\u05ea\u05d9",
+                    "starting": "\u05de\u05ea\u05d7\u05d9\u05dc",
+                    "updating": "\u05e2\u05d3\u05db\u05d5\u05df",
+                    "washing_the_mop": "\u05e9\u05d5\u05d8\u05e3 \u05d0\u05ea \u05d4\u05de\u05d2\u05d1",
+                    "zoned_cleaning": "\u05e0\u05d9\u05e7\u05d5\u05d9 \u05d0\u05d6\u05d5\u05e8"
+                }
+            },
+            "total_cleaning_area": {
+                "name": "\u05e9\u05d8\u05d7 \u05e0\u05d9\u05e7\u05d5\u05d9 \u05db\u05d5\u05dc\u05dc"
+            },
+            "total_cleaning_time": {
+                "name": "\u05d6\u05de\u05df \u05e0\u05d9\u05e7\u05d5\u05d9 \u05db\u05d5\u05dc\u05dc"
+            },
+            "vacuum_error": {
+                "name": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05e9\u05d5\u05d0\u05d1",
+                "state": {
+                    "battery_error": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05e1\u05d5\u05dc\u05dc\u05d4",
+                    "bumper_stuck": "\u05e4\u05d2\u05d5\u05e9 \u05ea\u05e7\u05d5\u05e2",
+                    "cannot_cross_carpet": "\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d7\u05e6\u05d5\u05ea \u05e9\u05d8\u05d9\u05d7",
+                    "charging_error": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05d8\u05e2\u05d9\u05e0\u05d4",
+                    "cliff_sensor_error": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05d7\u05d9\u05d9\u05e9\u05df \u05e6\u05d5\u05e7",
+                    "dock_locator_error": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05d0\u05d9\u05ea\u05d5\u05e8 \u05e2\u05d2\u05d9\u05e0\u05d4",
+                    "fan_error": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05de\u05d0\u05d5\u05d5\u05e8\u05e8",
+                    "filter_blocked": "\u05de\u05e1\u05e0\u05df \u05d7\u05e1\u05d5\u05dd",
+                    "internal_error": "\u05e9\u05d2\u05d9\u05d0\u05d4 \u05e4\u05e0\u05d9\u05de\u05d9\u05ea",
+                    "invisible_wall_detected": "\u05d6\u05d5\u05d4\u05d4 \u05e7\u05d9\u05e8 \u05d1\u05dc\u05ea\u05d9 \u05e0\u05e8\u05d0\u05d4",
+                    "lidar_blocked": "\u05dc\u05d9\u05d3\u05d0\u05e8 \u05e0\u05d7\u05e1\u05dd",
+                    "low_battery": "\u05e1\u05d5\u05dc\u05dc\u05d4 \u05d7\u05dc\u05e9\u05d4",
+                    "main_brush_jammed": "\u05de\u05d1\u05e8\u05e9\u05ea \u05e8\u05d0\u05e9\u05d9\u05ea \u05ea\u05e7\u05d5\u05e2\u05d4",
+                    "no_dustbin": "\u05d0\u05d9\u05df \u05e4\u05d7 \u05d0\u05e9\u05e4\u05d4",
+                    "nogo_zone_detected": "\u05d6\u05d5\u05d4\u05d4 \u05d0\u05d6\u05d5\u05e8 \u05d0\u05e1\u05d5\u05e8 \u05dc\u05e0\u05e1\u05d9\u05e2\u05d4",
+                    "none": "\u05dc\u05dc\u05d0",
+                    "return_to_dock_fail": "\u05db\u05e9\u05dc \u05d1\u05d7\u05d6\u05e8\u05d4 \u05dc\u05e2\u05d2\u05d9\u05e0\u05d4",
+                    "robot_on_carpet": "\u05e8\u05d5\u05d1\u05d5\u05d8 \u05e2\u05dc \u05e9\u05d8\u05d9\u05d7",
+                    "robot_tilted": "\u05e8\u05d5\u05d1\u05d5\u05d8 \u05de\u05d5\u05d8\u05d4",
+                    "robot_trapped": "\u05e8\u05d5\u05d1\u05d5\u05d8 \u05dc\u05db\u05d5\u05d3",
+                    "side_brush_error": "\u05e9\u05d2\u05d9\u05d0\u05ea \u05de\u05d1\u05e8\u05e9\u05ea \u05e6\u05d3",
+                    "side_brush_jammed": "\u05de\u05d1\u05e8\u05e9\u05ea \u05e6\u05d3 \u05e0\u05ea\u05e7\u05e2\u05d4",
+                    "vertical_bumper_pressed": "\u05e4\u05d2\u05d5\u05e9 \u05d0\u05e0\u05db\u05d9 \u05dc\u05d7\u05d5\u05e5",
+                    "vibrarise_jammed": "VibraRise \u05ea\u05e7\u05d5\u05e2",
+                    "wall_sensor_dirty": "\u05d7\u05d9\u05d9\u05e9\u05df \u05e7\u05d9\u05e8 \u05de\u05dc\u05d5\u05db\u05dc\u05da",
+                    "wheels_jammed": "\u05d2\u05dc\u05d2\u05dc\u05d9\u05dd \u05ea\u05e7\u05d5\u05e2\u05d9\u05dd",
+                    "wheels_suspended": "\u05d2\u05dc\u05d2\u05dc\u05d9\u05dd \u05ea\u05dc\u05d5\u05d9\u05d9\u05dd"
+                }
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "\u05e0\u05e2\u05d9\u05dc\u05ea \u05d9\u05dc\u05d3\u05d9\u05dd"
+            },
+            "dnd_switch": {
+                "name": "\u05e0\u05d0 \u05dc\u05d0 \u05dc\u05d4\u05e4\u05e8\u05d9\u05e2"
+            },
+            "status_indicator": {
+                "name": "\u05e0\u05d5\u05e8\u05d9\u05ea \u05d7\u05d9\u05d5\u05d5\u05d9 \u05de\u05e6\u05d1"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "\u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9",
+                            "balanced": "\u05de\u05d0\u05d5\u05d6\u05df",
+                            "custom": "\u05de\u05d5\u05ea\u05d0\u05dd \u05d0\u05d9\u05e9\u05d9\u05ea",
+                            "gentle": "\u05e2\u05d3\u05d9\u05df",
+                            "max": "\u05de\u05e7\u05e1\u05d9\u05de\u05d5\u05dd",
+                            "max_plus": "\u05de\u05e7\u05e1\u05d9\u05de\u05d5\u05dd \u05e4\u05dc\u05d5\u05e1",
+                            "medium": "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9",
+                            "off": "\u05db\u05d1\u05d5\u05d9",
+                            "quiet": "\u05e9\u05e7\u05d8",
+                            "silent": "\u05e9\u05e7\u05d8",
+                            "standard": "\u05e8\u05d2\u05d9\u05dc",
+                            "turbo": "\u05d8\u05d5\u05e8\u05d1\u05d5"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_deprecation_start_pause": {
+            "description": "\u05ea\u05de\u05d9\u05db\u05d4 \u05d1\u05e9\u05d5\u05d0\u05d1 \u05d0\u05d1\u05e7 Roborock \u05e2\u05d1\u05d5\u05e8 \u05e9\u05d9\u05e8\u05d5\u05ea vacuum.start_pause \u05d4\u05d5\u05e6\u05d0\u05d4 \u05de\u05e9\u05d9\u05de\u05d5\u05e9 \u05d5\u05ea\u05d5\u05e1\u05e8 \u05d4\u05d7\u05dc \u05de\u05d2\u05e8\u05e1\u05d4 Home Assistant 2024.2; \u05d9\u05e9 \u05dc\u05d4\u05ea\u05d0\u05d9\u05dd \u05db\u05dc \u05d0\u05d5\u05d8\u05d5\u05de\u05e6\u05d9\u05d4 \u05d0\u05d5 \u05e1\u05e7\u05e8\u05d9\u05e4\u05d8 \u05d4\u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1\u05e9\u05d9\u05e8\u05d5\u05ea \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05e7\u05e9\u05e8 \u05d1\u05de\u05e7\u05d5\u05dd \u05d6\u05d0\u05ea \u05dc-vacuum.pause \u05d0\u05d5 vacuum.start \u05d5\u05d5\u05dc\u05e1\u05de\u05df \u05e9\u05dc\u05d9\u05d7\u05d4 \u05dc\u05d4\u05dc\u05df \u05db\u05d3\u05d9 \u05dc\u05e1\u05de\u05df \u05d1\u05e2\u05d9\u05d4 \u05d6\u05d5 \u05db\u05d1\u05e2\u05d9\u05d4 \u05e9\u05e0\u05e4\u05ea\u05e8\u05d4.",
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "\u05ea\u05de\u05d9\u05db\u05d4 \u05d1\u05e9\u05d5\u05d0\u05d1 \u05d0\u05d1\u05e7 Roborock \u05e2\u05d1\u05d5\u05e8 \u05e9\u05d9\u05e8\u05d5\u05ea vacuum.start_pause \u05d4\u05d5\u05e6\u05d0\u05d4 \u05de\u05e9\u05d9\u05de\u05d5\u05e9 \u05d5\u05ea\u05d5\u05e1\u05e8 \u05d4\u05d7\u05dc \u05de\u05d2\u05e8\u05e1\u05d4 Home Assistant 2024.2; \u05d9\u05e9 \u05dc\u05d4\u05ea\u05d0\u05d9\u05dd \u05db\u05dc \u05d0\u05d5\u05d8\u05d5\u05de\u05e6\u05d9\u05d4 \u05d0\u05d5 \u05e1\u05e7\u05e8\u05d9\u05e4\u05d8 \u05d4\u05de\u05e9\u05ea\u05de\u05e9\u05d9\u05dd \u05d1\u05e9\u05d9\u05e8\u05d5\u05ea \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05e7\u05e9\u05e8 \u05d1\u05de\u05e7\u05d5\u05dd \u05d6\u05d0\u05ea \u05dc-vacuum.pause \u05d0\u05d5 vacuum.start \u05d5\u05d5\u05dc\u05e1\u05de\u05df \u05e9\u05dc\u05d9\u05d7\u05d4 \u05dc\u05d4\u05dc\u05df \u05db\u05d3\u05d9 \u05dc\u05e1\u05de\u05df \u05d1\u05e2\u05d9\u05d4 \u05d6\u05d5 \u05db\u05d1\u05e2\u05d9\u05d4 \u05e9\u05e0\u05e4\u05ea\u05e8\u05d4.",
+                        "title": "\u05ea\u05de\u05d9\u05db\u05ea \u05e9\u05d5\u05d0\u05d1 \u05d4\u05d0\u05d1\u05e7 Roborock \u05e2\u05d1\u05d5\u05e8 vacuum.start_pause \u05de\u05d5\u05e1\u05e8\u05ea"
+                    }
+                }
+            },
+            "title": "\u05ea\u05de\u05d9\u05db\u05ea \u05e9\u05d5\u05d0\u05d1 \u05d4\u05d0\u05d1\u05e7 Roborock \u05e2\u05d1\u05d5\u05e8 vacuum.start_pause \u05de\u05d5\u05e1\u05e8\u05ea"
+        }
+    }
+}

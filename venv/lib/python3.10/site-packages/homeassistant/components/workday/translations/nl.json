@@ -1,0 +1,73 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday is al ingesteld met de gekozen configuratie"
+        },
+        "error": {
+            "already_configured": "Dienst is al geconfigureerd"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Feestdagen toevoegen",
+                    "remove_holidays": "Feestdagen verwijderen",
+                    "workdays": "Werkdagen"
+                },
+                "data_description": {
+                    "excludes": "Uit te sluiten werkdagen",
+                    "province": "Staat, Territorium, Provincie, Landstreek of Land",
+                    "workdays": "Werkdagen"
+                }
+            },
+            "user": {
+                "data": {
+                    "country": "Land",
+                    "name": "Naam"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "title": "De Workday YAML-configuratie wordt verwijderd"
+        }
+    },
+    "options": {
+        "error": {
+            "already_configured": "Dienst is al geconfigureerd"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Feestdagen toevoegen",
+                    "remove_holidays": "Feestdagen verwijderen",
+                    "workdays": "Werkdagen"
+                },
+                "data_description": {
+                    "excludes": "Uit te sluiten werkdagen",
+                    "province": "Staat, Territorium, Provincie, Landstreek of Land",
+                    "workdays": "Werkdagen"
+                }
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Vrijdag",
+                "holiday": "Feestdagen",
+                "mon": "Maandag",
+                "sat": "Zaterdag",
+                "sun": "Zondag",
+                "thu": "Donderdag",
+                "tue": "Dinsdag",
+                "wed": "Woensdag"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Geen Onderverdeling"
+            }
+        }
+    }
+}

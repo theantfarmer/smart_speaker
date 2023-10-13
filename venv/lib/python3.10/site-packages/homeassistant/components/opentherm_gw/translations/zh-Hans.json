@@ -1,0 +1,47 @@
+{
+    "config": {
+        "error": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86",
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25",
+            "id_exists": "\u7f51\u5173 ID \u5df2\u5b58\u5728",
+            "timeout_connect": "\u5efa\u7acb\u8fde\u63a5\u8d85\u65f6"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "device": "\u8def\u5f84\u6216URL",
+                    "id": "ID",
+                    "name": "\u540d\u79f0"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "floor_temperature": "\u5730\u677f\u6e29\u5ea6",
+                    "read_precision": "\u8bfb\u53d6\u7cbe\u5ea6",
+                    "set_precision": "\u8bbe\u7f6e\u7cbe\u5ea6",
+                    "temporary_override_mode": "\u4e34\u65f6\u8bbe\u5b9a\u70b9\u8986\u76d6\u6a21\u5f0f"
+                }
+            }
+        }
+    },
+    "services": {
+        "set_gpio_mode": {
+            "fields": {
+                "mode": {
+                    "name": "\u6a21\u5f0f"
+                }
+            }
+        },
+        "set_led_mode": {
+            "fields": {
+                "mode": {
+                    "name": "\u6a21\u5f0f"
+                }
+            }
+        }
+    }
+}

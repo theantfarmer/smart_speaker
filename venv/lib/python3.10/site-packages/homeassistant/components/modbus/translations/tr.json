@@ -1,0 +1,72 @@
+{
+    "services": {
+        "reload": {
+            "description": "T\u00fcm modbus varl\u0131klar\u0131n\u0131 yeniden y\u00fckler.",
+            "name": "Tekrar y\u00fckle"
+        },
+        "restart": {
+            "description": "Modbus hub'\u0131n\u0131 yeniden ba\u015flat\u0131r (\u00e7al\u0131\u015f\u0131yorsa durdurun sonra ba\u015flat\u0131n).",
+            "fields": {
+                "hub": {
+                    "description": "Modbus hub ad\u0131.",
+                    "name": "Hub"
+                }
+            },
+            "name": "Yeniden ba\u015flat"
+        },
+        "stop": {
+            "description": "Modbus hub'\u0131n\u0131 durdurur.",
+            "fields": {
+                "hub": {
+                    "description": "Modbus hub ad\u0131.",
+                    "name": "Hub"
+                }
+            },
+            "name": "Durdur"
+        },
+        "write_coil": {
+            "description": "Bir modbus bobinine yazar.",
+            "fields": {
+                "address": {
+                    "description": "Yaz\u0131lacak kayd\u0131n adresi.",
+                    "name": "Adres"
+                },
+                "hub": {
+                    "description": "Modbus hub ad\u0131.",
+                    "name": "Hub"
+                },
+                "slave": {
+                    "description": "Modbus \u00fcnitesinin/ba\u011f\u0131ml\u0131s\u0131n\u0131n adresi.",
+                    "name": "Ba\u011f\u0131ml\u0131"
+                },
+                "state": {
+                    "description": "Yazmak i\u00e7in durum.",
+                    "name": "Durum"
+                }
+            },
+            "name": "Yazma bobini"
+        },
+        "write_register": {
+            "description": "Bir modbus tutma kayd\u0131na yazar.",
+            "fields": {
+                "address": {
+                    "description": "Yaz\u0131lacak tutma kayd\u0131n\u0131n adresi.",
+                    "name": "Adres"
+                },
+                "hub": {
+                    "description": "Modbus hub ad\u0131.",
+                    "name": "Hub"
+                },
+                "slave": {
+                    "description": "Modbus \u00fcnitesinin/ba\u011f\u0131ml\u0131s\u0131n\u0131n adresi.",
+                    "name": "Ba\u011f\u0131ml\u0131"
+                },
+                "value": {
+                    "description": "Yaz\u0131lacak de\u011fer (tek de\u011fer veya dizi).",
+                    "name": "De\u011fer"
+                }
+            },
+            "name": "Kay\u0131t yaz"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tj\u00e4nsten \u00e4r redan konfigurerad"
+        },
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta."
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Vill du konfigurera Home Assistant f\u00f6r att ansluta till Wyoming-tj\u00e4nsten som tillhandah\u00e5lls av till\u00e4gget: {addon} ?"
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

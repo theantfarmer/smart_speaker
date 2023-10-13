@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Lokacija je \u017ee konfigurirana"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API klju\u010d",
+                    "mode": "Na\u010din"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "mode": "Na\u010din"
+                }
+            }
+        }
+    }
+}

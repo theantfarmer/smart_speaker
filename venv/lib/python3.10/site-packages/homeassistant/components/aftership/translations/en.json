@@ -1,0 +1,36 @@
+{
+    "services": {
+        "add_tracking": {
+            "description": "Adds a new tracking number to Aftership.",
+            "fields": {
+                "slug": {
+                    "description": "Slug (carrier) of the new tracking.",
+                    "name": "Slug"
+                },
+                "title": {
+                    "description": "A custom title for the new tracking.",
+                    "name": "Title"
+                },
+                "tracking_number": {
+                    "description": "Tracking number for the new tracking.",
+                    "name": "Tracking number"
+                }
+            },
+            "name": "Add tracking"
+        },
+        "remove_tracking": {
+            "description": "Removes a tracking number from Aftership.",
+            "fields": {
+                "slug": {
+                    "description": "Slug (carrier) of the tracking to remove.",
+                    "name": "Slug"
+                },
+                "tracking_number": {
+                    "description": "Tracking number of the tracking to remove.",
+                    "name": "Tracking number"
+                }
+            },
+            "name": "Remove tracking"
+        }
+    }
+}

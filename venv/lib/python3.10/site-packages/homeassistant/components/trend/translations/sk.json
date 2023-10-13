@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Na\u010d\u00edta sn\u00edma\u010de trendov z konfigur\u00e1cie YAML.",
+            "name": "Znovu na\u010d\u00edta\u0165"
+        }
+    }
+}

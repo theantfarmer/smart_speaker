@@ -1,0 +1,11 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "region_identifier": "Warncell ID \u0438\u043b\u0438 \u0438\u043c\u0435"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,189 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert"
+        },
+        "error": {
+            "invalid_code": "Der eingegebene Code war falsch, bitte \u00fcberpr\u00fcfe ihn und versuche es erneut.",
+            "invalid_email": "Mit der eingegebenen E-Mail-Adresse ist kein Konto verkn\u00fcpft. Bitte versuche es erneut.",
+            "invalid_email_format": "Es gibt ein Problem mit der Formatierung deiner E-Mail. Bitte versuche es erneut.",
+            "unknown": "Unerwarteter Fehler",
+            "unknown_roborock": "Es gab eine unbekannte Roborock-Ausnahme. Bitte \u00fcberpr\u00fcfe deine Protokolle.",
+            "unknown_url": "Beim Ermitteln der richtigen URL f\u00fcr dein Roborock-Konto ist ein Problem aufgetreten. Bitte \u00fcberpr\u00fcfe deine Protokolle."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Verifizierungscode"
+                },
+                "description": "Gib den Verifizierungscode ein, der an deine E-Mail-Adresse gesendet wurde"
+            },
+            "user": {
+                "data": {
+                    "username": "E-Mail"
+                },
+                "description": "Gib deine Roborock E-Mail-Adresse ein."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Wisch-Intensit\u00e4t",
+                "state": {
+                    "custom": "Benutzerdefiniert",
+                    "high": "Hoch",
+                    "intense": "Intensiv",
+                    "low": "Niedrig",
+                    "medium": "Mittel",
+                    "mild": "Leicht",
+                    "moderate": "M\u00e4\u00dfig",
+                    "off": "Aus"
+                }
+            },
+            "mop_mode": {
+                "name": "Mop-Modus",
+                "state": {
+                    "custom": "Benutzerdefiniert",
+                    "deep": "Deep",
+                    "deep_plus": "Deep+",
+                    "fast": "Schnell",
+                    "standard": "Standard"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "Reinigungsbereich"
+            },
+            "cleaning_time": {
+                "name": "Reinigungszeit"
+            },
+            "filter_time_left": {
+                "name": "Verbleibende Filterzeit"
+            },
+            "main_brush_time_left": {
+                "name": "Verbleibende Zeit der Hauptb\u00fcrste"
+            },
+            "sensor_time_left": {
+                "name": "Verbleibende Sensorzeit"
+            },
+            "side_brush_time_left": {
+                "name": "Verbleibende Zeit der Seitenb\u00fcrste"
+            },
+            "status": {
+                "name": "Status",
+                "state": {
+                    "charger_disconnected": "Ladeger\u00e4t nicht angeschlossen",
+                    "charging": "L\u00e4dt",
+                    "charging_complete": "Ladevorgang abgeschlossen",
+                    "charging_problem": "Ladeproblem",
+                    "cleaning": "Reinigt",
+                    "device_offline": "Ger\u00e4t offline",
+                    "docking": "Andocken",
+                    "emptying_the_bin": "Entleeren des Beh\u00e4lters",
+                    "error": "Fehler",
+                    "going_to_target": "Auf dem Weg zum Ziel",
+                    "going_to_wash_the_mop": "Den Mopp waschen",
+                    "idle": "Inaktiv",
+                    "manual_mode": "Manueller Modus",
+                    "paused": "Pausiert",
+                    "remote_control_active": "Fernbedienung aktiv",
+                    "returning_home": "Nach Hause zur\u00fcckkehren",
+                    "segment_cleaning": "Segmentreinigung",
+                    "shutting_down": "Herunterfahren",
+                    "spot_cleaning": "Punktuelle Reinigung",
+                    "starting": "Startet",
+                    "updating": "Aktualisierung",
+                    "washing_the_mop": "Waschen des Mopps",
+                    "zoned_cleaning": "Zonenweise Reinigung"
+                }
+            },
+            "total_cleaning_area": {
+                "name": "Gesamter Reinigungsbereich"
+            },
+            "total_cleaning_time": {
+                "name": "Gesamtreinigungszeit"
+            },
+            "vacuum_error": {
+                "name": "Vakuum-Fehler",
+                "state": {
+                    "battery_error": "Batteriefehler",
+                    "bumper_stuck": "Sto\u00dff\u00e4nger klemmt",
+                    "cannot_cross_carpet": "Teppich kann nicht \u00fcberquert werden",
+                    "charging_error": "Ladefehler",
+                    "cliff_sensor_error": "Fehler des Klippensensors",
+                    "dock_locator_error": "Dock-Locator-Fehler",
+                    "fan_error": "L\u00fcfterfehler",
+                    "filter_blocked": "Filter verstopft",
+                    "internal_error": "Interner Fehler",
+                    "invisible_wall_detected": "Unsichtbare Wand erkannt",
+                    "lidar_blocked": "Lidar blockiert",
+                    "low_battery": "Niedriger Batteriestatus",
+                    "main_brush_jammed": "Hauptb\u00fcrste verklemmt",
+                    "no_dustbin": "Kein M\u00fclleimer",
+                    "nogo_zone_detected": "Sperrzone erkannt",
+                    "none": "Keine",
+                    "return_to_dock_fail": "R\u00fcckkehr zum Dock fehlgeschlagen",
+                    "robot_on_carpet": "Roboter auf Teppich",
+                    "robot_tilted": "Roboter gekippt",
+                    "robot_trapped": "Roboter gefangen",
+                    "side_brush_error": "Fehler Seitenb\u00fcrste",
+                    "side_brush_jammed": "Seitenb\u00fcrste verklemmt",
+                    "vertical_bumper_pressed": "Vertikaler Sto\u00dff\u00e4nger gedr\u00fcckt",
+                    "vibrarise_jammed": "VibraRise blockiert",
+                    "wall_sensor_dirty": "Wandsensor verschmutzt",
+                    "wheels_jammed": "R\u00e4der klemmen",
+                    "wheels_suspended": "R\u00e4der aufgeh\u00e4ngt"
+                }
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Kindersicherung"
+            },
+            "dnd_switch": {
+                "name": "Bitte nicht st\u00f6ren"
+            },
+            "status_indicator": {
+                "name": "Status-Kontrollleuchte"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Auto",
+                            "balanced": "Ausgeglichen",
+                            "custom": "Benutzerdefiniert",
+                            "gentle": "Sanft",
+                            "max": "Max",
+                            "max_plus": "Max plus",
+                            "medium": "Mittel",
+                            "off": "Aus",
+                            "quiet": "Ruhig",
+                            "silent": "Leise",
+                            "standard": "Standard",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_deprecation_start_pause": {
+            "description": "Die Roborock-Vakuumunterst\u00fctzung f\u00fcr den Dienst vacuum.start_pause ist veraltet und wird in Home Assistant 2024.2 entfernt. Bitte passe alle Automatisierungen oder Skripte, die den Dienst verwenden, so an, dass sie stattdessen vacuum.pause oder vacuum.start aufrufen und w\u00e4hle unten \"Senden\", um dieses Problem als behoben zu markieren.",
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Die Roborock-Vakuumunterst\u00fctzung f\u00fcr den Dienst vacuum.start_pause ist veraltet und wird in Home Assistant 2024.2 entfernt. Bitte passe alle Automatisierungen oder Skripte, die den Dienst verwenden, so an, dass sie stattdessen vacuum.pause oder vacuum.start aufrufen und w\u00e4hle unten \"Senden\", um dieses Problem als behoben zu markieren.",
+                        "title": "Die Roborock-Vakuum-Unterst\u00fctzung f\u00fcr vacuum.start_pause wird entfernt."
+                    }
+                }
+            },
+            "title": "Die Roborock-Vakuum-Unterst\u00fctzung f\u00fcr vacuum.start_pause wird entfernt."
+        }
+    }
+}

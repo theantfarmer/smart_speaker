@@ -1,0 +1,12 @@
+{
+    "issues": {
+        "deprecation_warning_characteristic": {
+            "title": "Obligatorisk \"state_characteristic\" antas f\u00f6r en statistikenhet"
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ladda om"
+        }
+    }
+}

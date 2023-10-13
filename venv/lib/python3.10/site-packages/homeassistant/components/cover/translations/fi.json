@@ -1,0 +1,43 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Suoja",
+            "state": {
+                "closed": "Suljettu",
+                "open": "Auki",
+                "opening": "Avataan"
+            }
+        },
+        "awning": {
+            "name": "Markiisi"
+        },
+        "blind": {
+            "name": "S\u00e4lekaihdin"
+        },
+        "curtain": {
+            "name": "Verho"
+        },
+        "damper": {
+            "name": "Vaimennin"
+        },
+        "door": {
+            "name": "Ovi"
+        },
+        "garage": {
+            "name": "Autotalli"
+        },
+        "gate": {
+            "name": "Portti"
+        },
+        "shade": {
+            "name": "Rullaverho"
+        },
+        "shutter": {
+            "name": "Suljin"
+        },
+        "window": {
+            "name": "Ikkuna"
+        }
+    },
+    "title": "Kaihtimet"
+}

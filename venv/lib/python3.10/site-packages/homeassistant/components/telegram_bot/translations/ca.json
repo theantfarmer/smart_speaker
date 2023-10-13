@@ -1,0 +1,92 @@
+{
+    "services": {
+        "send_animation": {
+            "fields": {
+                "password": {
+                    "name": "Contrasenya"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Nom d'usuari"
+                }
+            }
+        },
+        "send_document": {
+            "fields": {
+                "password": {
+                    "name": "Contrasenya"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Nom d'usuari"
+                }
+            }
+        },
+        "send_location": {
+            "fields": {
+                "latitude": {
+                    "name": "Latitud"
+                },
+                "longitude": {
+                    "name": "Longitud"
+                }
+            }
+        },
+        "send_photo": {
+            "fields": {
+                "password": {
+                    "name": "Contrasenya"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Nom d'usuari"
+                }
+            }
+        },
+        "send_sticker": {
+            "fields": {
+                "password": {
+                    "name": "Contrasenya"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Nom d'usuari"
+                }
+            }
+        },
+        "send_video": {
+            "fields": {
+                "password": {
+                    "name": "Contrasenya"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Nom d'usuari"
+                }
+            }
+        },
+        "send_voice": {
+            "fields": {
+                "password": {
+                    "name": "Contrasenya"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "Nom d'usuari"
+                }
+            }
+        }
+    }
+}

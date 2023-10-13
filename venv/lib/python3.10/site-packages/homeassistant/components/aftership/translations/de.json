@@ -1,0 +1,36 @@
+{
+    "services": {
+        "add_tracking": {
+            "description": "F\u00fcgt eine neue Trackingnummer zu Aftership hinzu.",
+            "fields": {
+                "slug": {
+                    "description": "Slug (Tr\u00e4ger) der neuen Sendungsverfolgungsnummer.",
+                    "name": "Slug"
+                },
+                "title": {
+                    "description": "Ein benutzerdefinierter Titel f\u00fcr die neue Sendungsverfolgung.",
+                    "name": "Titel"
+                },
+                "tracking_number": {
+                    "description": "Sendungsverfolgungsnummer f\u00fcr die neue Sendungsverfolgung.",
+                    "name": "Sendungsverfolgungsnummer"
+                }
+            },
+            "name": "Sendungsverfolgung hinzuf\u00fcgen"
+        },
+        "remove_tracking": {
+            "description": "Entfernt eine Sendungsverfolgungsnummer aus Aftership.",
+            "fields": {
+                "slug": {
+                    "description": "Slug (Tr\u00e4ger) der Sendungsverfolgungsnummer entfernen.",
+                    "name": "Slug"
+                },
+                "tracking_number": {
+                    "description": "Sendungsverfolgungsnummer der zu entfernenden Sendungsverfolgung.",
+                    "name": "Sendungsverfolgungsnummer"
+                }
+            },
+            "name": "Sendungsverfolgung entfernen"
+        }
+    }
+}

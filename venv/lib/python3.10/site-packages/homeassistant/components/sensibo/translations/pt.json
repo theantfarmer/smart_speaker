@@ -1,0 +1,72 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Conta j\u00e1 configurada",
+            "reauth_successful": "Reautentica\u00e7\u00e3o bem sucedida"
+        },
+        "error": {
+            "cannot_connect": "A liga\u00e7\u00e3o falhou",
+            "incorrect_api_key": "Chave de API inv\u00e1lida para a conta selecionada",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida",
+            "no_devices": "Nenhum dispositivo descoberto",
+            "no_username": "N\u00e3o foi poss\u00edvel obter o nome de utilizador"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Chave da API"
+                },
+                "data_description": {
+                    "api_key": "Siga a documenta\u00e7\u00e3o para obter sua chave de API."
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "Chave da API"
+                },
+                "data_description": {
+                    "api_key": "Siga a documenta\u00e7\u00e3o para obter sua chave de API."
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "horizontalswing": {
+                "state": {
+                    "fixedcenter": "Centro fixo",
+                    "fixedcenterleft": "Centro esquerdo fixo",
+                    "fixedcenterright": "Centro direito fixo",
+                    "fixedleft": "Esquerda fixa",
+                    "fixedleftright": "Fixo esquerda direita",
+                    "fixedright": "Direito fixo",
+                    "rangecenter": "Centro de alcance",
+                    "rangefull": "Alcance completo",
+                    "stopped": "Parado"
+                }
+            },
+            "light": {
+                "state": {
+                    "dim": "Escurecer",
+                    "off": "Desligado",
+                    "on": "Ligado"
+                }
+            }
+        },
+        "sensor": {
+            "sensitivity": {
+                "state": {
+                    "n": "Normal",
+                    "s": "Sens\u00edvel"
+                }
+            },
+            "smart_type": {
+                "state": {
+                    "feelslike": "Sente-se como",
+                    "humidity": "Humidade",
+                    "temperature": "Temperatura"
+                }
+            }
+        }
+    }
+}

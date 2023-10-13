@@ -1,0 +1,16 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad",
+            "cannot_connect": "Det gick inte att ansluta.",
+            "no_devices_found": "Inga enheter hittades i n\u00e4tverket",
+            "reauth_successful": "\u00c5terautentisering lyckades",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "step": {
+            "user": {
+                "description": "V\u00e4lj en enhet att konfigurera"
+            }
+        }
+    }
+}

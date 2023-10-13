@@ -1,0 +1,49 @@
+{
+    "services": {
+        "pulse": {
+            "description": "\u5728 IHC \u63a7\u5236\u5668\u4e0a\u53d1\u9001\u4e00\u4e2a\u8109\u51b2\u8f93\u5165\u3002",
+            "fields": {
+                "ihc_id": {
+                    "name": "IHC ID"
+                }
+            }
+        },
+        "set_runtime_value_bool": {
+            "fields": {
+                "ihc_id": {
+                    "name": "IHC ID"
+                },
+                "value": {
+                    "description": "\u8981\u8bbe\u7f6e\u7684\u5e03\u5c14\u503c\u3002",
+                    "name": "\u503c"
+                }
+            },
+            "name": "\u8bbe\u7f6e\u8fd0\u884c\u65f6\u503c\uff08\u5e03\u5c14\u503c\uff09"
+        },
+        "set_runtime_value_float": {
+            "description": "\u5728 IHC \u63a7\u5236\u5668\u4e0a\u8bbe\u7f6e\u4e00\u4e2a\u6d6e\u70b9\u8fd0\u884c\u65f6\u503c\u3002",
+            "fields": {
+                "ihc_id": {
+                    "name": "IHC ID"
+                },
+                "value": {
+                    "description": "\u8981\u8bbe\u7f6e\u7684\u6d6e\u70b9\u503c\u3002",
+                    "name": "\u503c"
+                }
+            },
+            "name": "\u8bbe\u7f6e\u8fd0\u884c\u65f6\u503c\uff08\u6d6e\u70b9\u6570\uff09"
+        },
+        "set_runtime_value_int": {
+            "description": "\u5728 IHC \u63a7\u5236\u5668\u4e0a\u8bbe\u7f6e\u4e00\u4e2a\u6574\u6570\u8fd0\u884c\u65f6\u503c\u3002",
+            "fields": {
+                "ihc_id": {
+                    "name": "IHC ID"
+                },
+                "value": {
+                    "description": "\u8981\u8bbe\u7f6e\u7684\u6574\u6570\u503c\u3002"
+                }
+            },
+            "name": "\u8bbe\u7f6e\u8fd0\u884c\u65f6\u503c\uff08\u6574\u6570\uff09"
+        }
+    }
+}

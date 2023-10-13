@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud"
+        },
+        "error": {
+            "cannot_connect": "\u00dchendamine nurjus",
+            "invalid_auth": "Tuvastamine nurjus"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "url": "URL",
+                    "username": "Kasutajanimi",
+                    "verify_ssl": "Kontrolli SSL sertifikaati"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "QBittorrenti konfigureerimine YAML-i abil eemaldatakse. \n\nOlemasolev YAML-i konfiguratsioon imporditi kasutajaliidesesse automaatselt. \n\n Selle probleemi lahendamiseks eemalda qBittorrenti YAML-i konfiguratsioon failist configuration.yaml ja taask\u00e4ivita Home Assistant.",
+            "title": "qBittorrent YAML konfiguratsioon eemaldatakse"
+        }
+    }
+}

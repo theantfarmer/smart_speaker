@@ -1,0 +1,186 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_buffering": "{entity_name} est en train de mettre en m\u00e9moire tampon",
+            "is_idle": "{entity_name} est inactif",
+            "is_off": "{entity_name} est d\u00e9sactiv\u00e9",
+            "is_on": "{entity_name} est activ\u00e9",
+            "is_paused": "{entity_name} est en pause",
+            "is_playing": "{entity_name} joue"
+        },
+        "trigger_type": {
+            "buffering": "{entity_name} commence \u00e0 mettre en m\u00e9moire tampon",
+            "changed_states": "{entity_name} a \u00e9t\u00e9 activ\u00e9 ou d\u00e9sactiv\u00e9",
+            "idle": "{entity_name} devient inactif",
+            "paused": "{entity_name} est mis en pause",
+            "playing": "{entity_name} commence \u00e0 jouer",
+            "turned_off": "{entity_name} a \u00e9t\u00e9 \u00e9teint",
+            "turned_on": "{entity_name} a \u00e9t\u00e9 allum\u00e9"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Lecteur multim\u00e9dia",
+            "state": {
+                "buffering": "Mise en m\u00e9moire tampon",
+                "idle": "Inactif",
+                "off": "D\u00e9sactiv\u00e9",
+                "on": "Activ\u00e9",
+                "paused": "En pause",
+                "playing": "Lecture en cours",
+                "standby": "En veille"
+            },
+            "state_attributes": {
+                "app_id": {
+                    "name": "ID de l'application"
+                },
+                "app_name": {
+                    "name": "Application"
+                },
+                "entity_picture_local": {
+                    "name": "Image de l'entit\u00e9 accessible localement"
+                },
+                "groups_members": {
+                    "name": "Membres du groupe"
+                },
+                "is_volume_muted": {
+                    "name": "Coup\u00e9",
+                    "state": {
+                        "false": "Non",
+                        "true": "Oui"
+                    }
+                },
+                "media_album_artist": {
+                    "name": "Artiste de l'album"
+                },
+                "media_album_name": {
+                    "name": "Album"
+                },
+                "media_artist": {
+                    "name": "Artiste"
+                },
+                "media_channel": {
+                    "name": "Canal"
+                },
+                "media_content_id": {
+                    "name": "ID de contenu"
+                },
+                "media_content_type": {
+                    "name": "Type de contenu",
+                    "state": {
+                        "album": "Album",
+                        "app": "Application",
+                        "artist": "Artiste",
+                        "channel": "Canal",
+                        "channels": "Canaux",
+                        "composer": "Compositeur",
+                        "contributing_artist": "Artiste collaborateur",
+                        "episode": "\u00c9pisode",
+                        "game": "Jeu",
+                        "genre": "Genre",
+                        "image": "Image",
+                        "movie": "Film",
+                        "music": "Musique",
+                        "playlist": "Liste de lecture",
+                        "podcast": "Podcast",
+                        "season": "Saison",
+                        "track": "Piste",
+                        "tvshow": "\u00c9mission de t\u00e9l\u00e9vision",
+                        "url": "URL",
+                        "video": "Vid\u00e9o"
+                    }
+                },
+                "media_duration": {
+                    "name": "Dur\u00e9e"
+                },
+                "media_episode": {
+                    "name": "\u00c9pisode"
+                },
+                "media_playlist": {
+                    "name": "Liste de lecture"
+                },
+                "media_position": {
+                    "name": "Position"
+                },
+                "media_position_updated_at": {
+                    "name": "Position mise \u00e0 jour"
+                },
+                "media_season": {
+                    "name": "Saison"
+                },
+                "media_series_title": {
+                    "name": "S\u00e9rie"
+                },
+                "media_title": {
+                    "name": "Titre"
+                },
+                "media_track": {
+                    "name": "Piste"
+                },
+                "repeat": {
+                    "name": "R\u00e9p\u00e9tition",
+                    "state": {
+                        "all": "Tout",
+                        "off": "D\u00e9sactiv\u00e9",
+                        "one": "Activ\u00e9"
+                    }
+                },
+                "shuffle": {
+                    "name": "Al\u00e9atoire",
+                    "state": {
+                        "false": "D\u00e9sactiv\u00e9",
+                        "true": "Activ\u00e9"
+                    }
+                },
+                "sound_mode": {
+                    "name": "Mode sonore"
+                },
+                "sound_mode_list": {
+                    "name": "Modes sonores disponibles"
+                },
+                "source": {
+                    "name": "Source"
+                },
+                "source_list": {
+                    "name": "Sources disponibles"
+                },
+                "volume_level": {
+                    "name": "Volume"
+                }
+            }
+        },
+        "receiver": {
+            "name": "R\u00e9cepteur"
+        },
+        "speaker": {
+            "name": "Haut-parleur"
+        },
+        "tv": {
+            "name": "TV"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "services": {
+        "media_pause": {
+            "name": "Mettre en pause"
+        },
+        "media_stop": {
+            "name": "Arr\u00eater"
+        },
+        "toggle": {
+            "name": "Basculer"
+        },
+        "turn_off": {
+            "name": "\u00c9teindre"
+        },
+        "turn_on": {
+            "name": "Allumer"
+        }
+    },
+    "title": "Lecteur multim\u00e9dia"
+}

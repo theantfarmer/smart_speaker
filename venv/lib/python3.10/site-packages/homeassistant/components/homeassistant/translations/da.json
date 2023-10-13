@@ -1,0 +1,34 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "title": "Integrationen {domain} underst\u00f8tter ikke YAML-konfiguration"
+        },
+        "country_not_configured": {
+            "description": "Intet land er blevet konfigureret. Opdater venligst konfigurationen ved at klikke p\u00e5 knappen \"f\u00e5 mere at vide\" nedenfor.",
+            "title": "Landet er ikke blevet konfigureret"
+        },
+        "integration_key_no_support": {
+            "title": "Integrationen {domain} underst\u00f8tter ikke YAML-konfiguration"
+        },
+        "platform_only": {
+            "title": "Integrationen {domain} underst\u00f8tter ikke YAML-konfiguration under sin egen n\u00f8gle"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "CPU-arkitektur",
+            "config_dir": "Konfigurationsmappe",
+            "dev": "Udvikler",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Installationstype",
+            "os_name": "Operativsystem-familie",
+            "os_version": "Operativsystem-version",
+            "python_version": "Python-version",
+            "timezone": "Tidszone",
+            "user": "Bruger",
+            "version": "Version",
+            "virtualenv": "Virtuelt milj\u00f8"
+        }
+    }
+}

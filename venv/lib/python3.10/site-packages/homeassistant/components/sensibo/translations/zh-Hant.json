@@ -1,0 +1,161 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u5e33\u865f\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210",
+            "reauth_successful": "\u91cd\u65b0\u8a8d\u8b49\u6210\u529f"
+        },
+        "error": {
+            "cannot_connect": "\u9023\u7dda\u5931\u6557",
+            "incorrect_api_key": "\u6240\u9078\u64c7\u5e33\u865f\u4e4b API \u91d1\u9470\u7121\u6548\u3002",
+            "invalid_auth": "\u8eab\u4efd\u9a57\u8b49\u7121\u6548",
+            "no_devices": "\u672a\u767c\u73fe\u4efb\u4f55\u88dd\u7f6e",
+            "no_username": "\u7121\u6cd5\u53d6\u5f97\u4f7f\u7528\u8005\u540d\u7a31"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "API \u91d1\u9470"
+                },
+                "data_description": {
+                    "api_key": "\u8acb\u8ddf\u96a8\u6587\u4ef6\u4ee5\u53d6\u5f97 API \u91d1\u9470"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "API \u91d1\u9470"
+                },
+                "data_description": {
+                    "api_key": "\u8acb\u8ddf\u96a8\u6587\u4ef6\u4ee5\u53d6\u5f97 API \u91d1\u9470"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "filter_clean": {
+                "name": "\u904e\u6ffe\u5668\u9700\u8981\u6e05\u7406"
+            },
+            "is_main_sensor": {
+                "name": "\u4e3b\u611f\u6e2c\u5668"
+            },
+            "pure_ac_integration": {
+                "name": "Pure Boost \u8207 AC \u76f8\u95dc"
+            },
+            "pure_geo_integration": {
+                "name": "Pure Boost \u8207\u5b58\u5728\u611f\u6e2c\u76f8\u95dc"
+            },
+            "pure_measure_integration": {
+                "name": "Pure Boost \u8207\u5ba4\u5167\u7a7a\u6c23\u54c1\u8cea\u76f8\u95dc"
+            },
+            "pure_prime_integration": {
+                "name": "Pure Boost \u8207\u5ba4\u5916\u7a7a\u6c23\u54c1\u8cea\u76f8\u95dc"
+            },
+            "room_occupied": {
+                "name": "\u623f\u9593\u6709\u4eba"
+            }
+        },
+        "button": {
+            "reset_filter": {
+                "name": "\u91cd\u7f6e\u6ffe\u7db2"
+            }
+        },
+        "number": {
+            "calibration_humidity": {
+                "name": "\u6fd5\u5ea6\u6821\u6b63"
+            },
+            "calibration_temperature": {
+                "name": "\u6eab\u5ea6\u6821\u6b63"
+            }
+        },
+        "select": {
+            "horizontalswing": {
+                "name": "\u6c34\u5e73\u64fa\u52d5",
+                "state": {
+                    "fixedcenter": "\u56fa\u5b9a\u4e2d",
+                    "fixedcenterleft": "\u56fa\u5b9a\u4e2d\u5de6",
+                    "fixedcenterright": "\u56fa\u5b9a\u4e2d\u53f3",
+                    "fixedleft": "\u56fa\u5b9a\u5de6",
+                    "fixedleftright": "\u56fa\u5b9a\u5de6\u53f3",
+                    "fixedright": "\u56fa\u5b9a\u53f3",
+                    "rangecenter": "\u7bc4\u570d\u4e2d",
+                    "rangefull": "\u5168\u7bc4\u570d",
+                    "stopped": "\u505c\u6b62"
+                }
+            },
+            "light": {
+                "name": "\u71c8\u5149",
+                "state": {
+                    "dim": "\u5fae\u5149",
+                    "off": "\u95dc\u9589",
+                    "on": "\u958b\u555f"
+                }
+            }
+        },
+        "sensor": {
+            "airq_co2": {
+                "name": "AirQ CO2"
+            },
+            "airq_tvoc": {
+                "name": "AirQ TVOC"
+            },
+            "battery_voltage": {
+                "name": "\u96fb\u6c60\u96fb\u58d3"
+            },
+            "climate_react_high": {
+                "name": "\u6c23\u5019\u53cd\u61c9\u9ad8\u6eab\u95be\u503c"
+            },
+            "climate_react_low": {
+                "name": "\u6c23\u5019\u53cd\u61c9\u4f4e\u6eab\u95be\u503c"
+            },
+            "ethanol": {
+                "name": "\u4e59\u9187"
+            },
+            "feels_like": {
+                "name": "\u9ad4\u611f\u6eab\u5ea6"
+            },
+            "filter_last_reset": {
+                "name": "\u904e\u6ffe\u5668\u4e0a\u6b21\u91cd\u7f6e"
+            },
+            "rssi": {
+                "name": "RSSI"
+            },
+            "sensitivity": {
+                "name": "Pure \u654f\u611f\u5ea6",
+                "state": {
+                    "n": "\u6b63\u5e38",
+                    "s": "\u654f\u611f"
+                }
+            },
+            "smart_type": {
+                "name": "\u6c23\u5019\u53cd\u61c9\u985e\u578b",
+                "state": {
+                    "feelslike": "\u9ad4\u611f",
+                    "humidity": "\u6fd5\u5ea6",
+                    "temperature": "\u6eab\u5ea6"
+                }
+            },
+            "timer_time": {
+                "name": "\u8a08\u6642\u5668\u7d50\u675f\u6642\u9593"
+            },
+            "tvoc": {
+                "name": "TVOC"
+            }
+        },
+        "switch": {
+            "climate_react_switch": {
+                "name": "\u6c23\u5019\u53cd\u61c9"
+            },
+            "pure_boost_switch": {
+                "name": "Pure Boost"
+            },
+            "timer_on_switch": {
+                "name": "\u8a08\u6642\u5668"
+            }
+        },
+        "update": {
+            "fw_ver_available": {
+                "name": "\u6709\u66f4\u65b0"
+            }
+        }
+    }
+}

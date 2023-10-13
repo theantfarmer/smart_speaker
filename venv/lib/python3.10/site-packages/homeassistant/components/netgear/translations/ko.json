@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\uae30\uae30\uac00 \uc774\ubbf8 \uad6c\uc131\ub418\uc5c8\uc2b5\ub2c8\ub2e4",
+            "no_serial": "ssdp \uac10\uc9c0 \uc815\ubcf4\uc5d0 \uc77c\ub828 \ubc88\ud638\uac00 \uc5c6\uc2b5\ub2c8\ub2e4.",
+            "not_ipv4_address": "ssdp \uac10\uc9c0 \uc815\ubcf4\uc5d0 IPv4 \uc8fc\uc18c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4."
+        },
+        "error": {
+            "config": "\uc5f0\uacb0 \ub610\ub294 \ub85c\uadf8\uc778 \uc624\ub958: \uad6c\uc131\uc744 \ud655\uc778\ud558\uc2ed\uc2dc\uc624."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "\ud638\uc2a4\ud2b8 (\uc120\ud0dd\uc0ac\ud56d)",
+                    "password": "\uc554\ud638",
+                    "username": "\uc0ac\uc6a9\uc790 \uc774\ub984 (\uc120\ud0dd\uc0ac\ud56d)"
+                },
+                "description": "\uae30\ubcf8 \ud638\uc2a4\ud2b8: {host}\n \uae30\ubcf8 \uc0ac\uc6a9\uc790 \uc774\ub984: {username}"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "consider_home": "\uc7ac\uc2e4 \ucd94\uce21 \uc2dc\uac04 (\ucd08)"
+                },
+                "description": "\uc635\uc158 \uc124\uc815 \uc9c0\uc815"
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+  "language": "he",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "קבע [את] [ה]בהירות ה<name> ל<brightness>",
+            "שנה [את] [ה]בהירות ה<name> ל<brightness>",
+            "הגדר [את] [ה]בהירות ה<name> ל<brightness>"
+          ],
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "קבע [את] [ה]בהירות ה<name> ל<brightness> ב<area>",
+            "שנה [את] [ה]בהירות ה<name> ל<brightness> ב<area>",
+            "הגדר [את] [ה]בהירות ה<name> ל<brightness> ב<area>"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "{{ slots.name }} בהירות שונתה ל-{{ slots.brightness }}",
+        "brightness_area": "הבהירות ב{{ slots.area }} שונתה ל-{{ slots.brightness }}",
+        "color": "{{ slots.name }} הצבע שונה ל-{{ slots.color }}",
+        "color_area": "הצבע ב{{ slots.area }} שונה ל-{{ slots.color }}"
+      }
+    }
+  }
+}

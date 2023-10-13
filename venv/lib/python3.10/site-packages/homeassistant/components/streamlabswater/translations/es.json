@@ -1,0 +1,14 @@
+{
+    "services": {
+        "set_away_mode": {
+            "description": "Establece el modo en casa/ausente para un monitor de agua Streamlabs.",
+            "fields": {
+                "away_mode": {
+                    "description": "En casa o ausente.",
+                    "name": "Modo ausente"
+                }
+            },
+            "name": "Establecer modo ausente"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Pengolahan citra",
+            "state_attributes": {
+                "faces": {
+                    "name": "Wajah"
+                },
+                "total_faces": {
+                    "name": "Jumlah wajah"
+                }
+            }
+        }
+    },
+    "title": "Pengolahan citra"
+}

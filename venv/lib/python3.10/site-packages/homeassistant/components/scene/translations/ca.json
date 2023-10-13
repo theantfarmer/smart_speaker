@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "name": "Torna a carregar"
+        }
+    },
+    "title": "Escena"
+}

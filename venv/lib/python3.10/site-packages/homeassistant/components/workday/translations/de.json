@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday wurde bereits mit der gew\u00e4hlten Konfiguration eingerichtet",
+            "incorrect_province": "Falsche Unterteilung aus dem YAML-Import"
+        },
+        "error": {
+            "add_holiday_error": "Falsches Datumsformat (JJJJ-MM-TT)",
+            "already_configured": "Der Dienst ist bereits konfiguriert",
+            "remove_holiday_error": "Falsches Datumsformat (JJJJ-MM-TT) oder Feiertagsname nicht gefunden"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Feiertage hinzuf\u00fcgen",
+                    "days_offset": "Versatz",
+                    "excludes": "Ausgeschlossen sind",
+                    "province": "Unterteilung des Landes",
+                    "remove_holidays": "Feiertage entfernen",
+                    "workdays": "Arbeitstage"
+                },
+                "data_description": {
+                    "add_holidays": "Benutzerdefinierte Feiertage als JJJJ-MM-TT hinzuf\u00fcgen",
+                    "days_offset": "Versatz der Tage",
+                    "excludes": "Liste der auszuschlie\u00dfenden Arbeitstage",
+                    "province": "Staat, Territorium, Provinz, Region des Landes",
+                    "remove_holidays": "Feiertage als JJJJ-MM-TT oder unter Verwendung eines Teils des Namens entfernen",
+                    "workdays": "Liste der Arbeitstage"
+                },
+                "description": "Zus\u00e4tzliche Optionen f\u00fcr {name} festlegen, die f\u00fcr das Land {country} konfiguriert sind"
+            },
+            "user": {
+                "data": {
+                    "country": "Land",
+                    "name": "Name"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Die Konfiguration von Workday mit YAML wird entfernt.\n\nDeine bestehende YAML-Konfiguration wurde automatisch in die Benutzeroberfl\u00e4che importiert.\n\nEntferne die Workday-YAML-Konfiguration aus deiner configuration.yaml-Datei und starte Home Assistant neu, um dieses Problem zu beheben.",
+            "title": "Die Workday YAML-Konfiguration wird entfernt"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Falsches Datumsformat (JJJJ-MM-TT)",
+            "already_configured": "Dienst mit dieser Konfiguration existiert bereits",
+            "remove_holiday_error": "Falsches Datumsformat (JJJJ-MM-TT) oder Feiertagsname nicht gefunden"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Feiertage hinzuf\u00fcgen",
+                    "days_offset": "Versatz",
+                    "excludes": "Ausgeschlossen sind",
+                    "province": "Unterteilung des Landes",
+                    "remove_holidays": "Feiertage entfernen",
+                    "workdays": "Arbeitstage"
+                },
+                "data_description": {
+                    "add_holidays": "Benutzerdefinierte Feiertage als JJJJ-MM-TT hinzuf\u00fcgen",
+                    "days_offset": "Versatz der Tage",
+                    "excludes": "Liste der auszuschlie\u00dfenden Arbeitstage",
+                    "province": "Staat, Territorium, Provinz, Region des Landes",
+                    "remove_holidays": "Feiertage als JJJJ-MM-TT oder unter Verwendung eines Teils des Namens entfernen",
+                    "workdays": "Liste der Arbeitstage"
+                },
+                "description": "Zus\u00e4tzliche Optionen f\u00fcr {name} \u00e4ndern, die f\u00fcr das Land {country} konfiguriert sind"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Freitag",
+                "holiday": "Feiertage",
+                "mon": "Montag",
+                "sat": "Samstag",
+                "sun": "Sonntag",
+                "thu": "Donnerstag",
+                "tue": "Dienstag",
+                "wed": "Mittwoch"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Keine Unterteilung"
+            }
+        }
+    },
+    "title": "Werktag"
+}

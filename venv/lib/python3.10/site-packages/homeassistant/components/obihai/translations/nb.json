@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten er allerede konfigurert"
+        },
+        "error": {
+            "cannot_connect": "Tilkobling mislyktes"
+        },
+        "step": {
+            "dhcp_confirm": {
+                "description": "Vil du sette opp {host}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Vert",
+                    "password": "Passord",
+                    "username": "Brukernavn"
+                }
+            }
+        }
+    },
+    "issues": {
+        "manual_migration": {
+            "description": "Konfigurasjon av Obihai-plattformen i YAML er avviklet og vil bli fjernet i Home Assistant 2023.6; Din eksisterende konfigurasjon har blitt importert til brukergrensesnittet automatisk og kan trygt fjernes fra filen configuration.yaml.",
+            "title": "Obihai YAML-konfigurasjonen blir fjernet"
+        }
+    }
+}

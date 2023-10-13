@@ -1,0 +1,33 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Innputt tekst",
+            "state_attributes": {
+                "editable": {
+                    "name": "Administrert via UI",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "max": {
+                    "name": "Maks lengde"
+                },
+                "min": {
+                    "name": "Min lengde"
+                },
+                "mode": {
+                    "name": "Modus",
+                    "state": {
+                        "password": "Passord",
+                        "text": "Tekst"
+                    }
+                },
+                "pattern": {
+                    "name": "M\u00f8nster"
+                }
+            }
+        }
+    },
+    "title": "Innputt tekst"
+}

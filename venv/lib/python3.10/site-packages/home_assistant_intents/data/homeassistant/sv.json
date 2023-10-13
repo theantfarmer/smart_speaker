@@ -1,0 +1,366 @@
+{
+  "language": "sv",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "<slå_av> [alla] (fläkten | fläktar | fläktarna) <i_på> <area>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "<slå_av> <name>"
+          ]
+        },
+        {
+          "sentences": [
+            "<stäng_gardiner> <name>"
+          ],
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<slå_av> [<alla>] <ljuskällor> <i_på> <area>",
+            "<slå_av> [<alla>] <area> <ljuskällor>",
+            "<slå_av> <area> [<alla>] <ljuskällor>",
+            "<slå_av> [<alla>] <area>[s]<ljuskällor>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "<slå_av> <ljuskällor> <name>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "(regla | <stäng_gardiner>) garagedörren"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<stäng_gardiner> <gardiner> <i_på> <area>",
+            "<stäng_gardiner> [<alla>] <area>[s]<gardiner>",
+            "<stäng_gardiner> [<alla>] <area> <gardiner>"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shutter"
+            ],
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassGetState": {
+      "data": [
+        {
+          "sentences": [
+            "(vad|hur) är [det för] [status på] <name> [<i_på> <area>]"
+          ],
+          "response": "one"
+        },
+        {
+          "sentences": [
+            "är <name> {on_off_states:state} [<i_på> <area>]",
+            "är <name> [<i_på> <area>] {on_off_states:state}"
+          ],
+          "response": "one_yesno",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "är (någon|något|några) {on_off_domains:domain} {on_off_states:state} [<i_på> <area>]"
+          ],
+          "response": "any"
+        },
+        {
+          "sentences": [
+            "är alla {on_off_domains:domain} {on_off_states:state} [<i_på> <area>]"
+          ],
+          "response": "all"
+        },
+        {
+          "sentences": [
+            "(vilka|vilken) {on_off_domains:domain} är {on_off_states:state} [<i_på> <area>]"
+          ],
+          "response": "which"
+        },
+        {
+          "sentences": [
+            "hur många {on_off_domains:domain} är {on_off_states:state} [<i_på> <area>]"
+          ],
+          "response": "how_many"
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "<slå_på> [<alla>] <ljuskällor> <i_på> <area>",
+            "<slå_på> [<alla>] <area> <ljuskällor>",
+            "<slå_på>  <area> [<alla>] <ljuskällor>",
+            "<slå_på> [<alla>] <area>[s]<ljuskällor>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "<slå_på> <ljuskällor> <name>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "<öppna_gardiner> garagedörren"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<öppna_gardiner> <gardiner> <i_på> <area>",
+            "<öppna_gardiner> <alla> <area><gardiner>",
+            "<öppna_gardiner> <alla> <area> <gardiner>"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": [
+              "blind",
+              "curtain",
+              "shutter"
+            ],
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "<slå_på> [alla] (fläkten | fläktar | fläktarna) <i_på> <area>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "<slå_på> <name>"
+          ]
+        },
+        {
+          "sentences": [
+            "<öppna_gardiner> <name>"
+          ],
+          "response": "cover"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Ursäkta, jag förstår inte",
+      "no_area": "Inget område med namnet {{ area }} kunde hittas",
+      "no_domain": "{{ area }} har inga {{ domain }}",
+      "no_device_class": "{{ area }} har ingen {{ device_class }}",
+      "no_entity": "Det finns ingen enhet eller entitet som heter {{ entity }}",
+      "handle_error": "Ett oväntat fel inträffade under utförandet av avsikten"
+    },
+    "intents": {
+      "HassGetState": {
+        "one": "{{ slots.name | capitalize }} är {{ state.state_with_unit }}\n",
+        "one_yesno": "{% if query.matched %}\n  Ja\n{% else %}\n  Nej, den är {{ state.state_with_unit }}\n{% endif %}\n",
+        "any": "{% if query.matched %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    Ja, {{ match[:3] | join(\", \") }} och {{ (match | length - 3) }} fler\n  {%- else -%}\n    Ja,\n    {% for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} och {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% else %}\n  Nej\n{% endif %}\n",
+        "all": "{% if not query.unmatched: %}\n  Ja\n{% else %}\n  {% set no_match = query.unmatched | map(attribute=\"name\") | sort | list %}\n  {% if no_match | length > 4 %}\n    Nej, inte {{ no_match[:3] | join(\", \") }} och {{ (no_match | length - 3) }} fler\n  {%- else -%}\n    Nej, inte\n    {% for name in no_match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} och {% endif -%}\n      {{ name }}\n    {%- endfor %}\n  {% endif %}\n{% endif %}\n",
+        "which": "{% if not query.matched %}\n  Inte någon\n{% else: %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    {{ match[:3] | join(\", \") }} och {{ (match | length - 3) }} fler\n  {% else %}\n    {%- for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} och {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% endif %}\n",
+        "how_many": "{{ query.matched | length }}\n"
+      },
+      "HassTurnOff": {
+        "default": "Slog av {{ slots.name }}",
+        "lights_area": "Släckte lamporna i {{ slots.area }}",
+        "fans_area": "Stoppade fläktarna i {{ slots.area }}",
+        "cover": "Stängde {{ slots.name }}",
+        "cover_area": "Stängde i {{ slots.area }}",
+        "cover_device_class": "Stängde {{ slots.device_class }}"
+      },
+      "HassTurnOn": {
+        "default": "Slog på {{ slots.name }}",
+        "lights_area": "Tände lamporna i {{ slots.area }}",
+        "fans_area": "Startade fläktarna i {{ slots.area }}",
+        "cover": "Öppnade {{ slots.name }}",
+        "cover_area": "Öppnade i {{ slots.area }}",
+        "cover_device_class": "Öppnade {{ slots.device_class }}"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "(vit | vitt)",
+          "out": "white"
+        },
+        {
+          "in": "svart",
+          "out": "black"
+        },
+        {
+          "in": "(röd | rött)",
+          "out": "red"
+        },
+        {
+          "in": "orange",
+          "out": "orange"
+        },
+        {
+          "in": "(gul | gult)",
+          "out": "yellow"
+        },
+        {
+          "in": "(grön | grönt)",
+          "out": "green"
+        },
+        {
+          "in": "(blå | blått)",
+          "out": "blue"
+        },
+        {
+          "in": "(lila | violett)",
+          "out": "purple"
+        },
+        {
+          "in": "(brun | brunt)",
+          "out": "brown"
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "brightness_level": {
+      "values": [
+        {
+          "in": "<maximal>",
+          "out": 100
+        },
+        {
+          "in": "<minimal>",
+          "out": 1
+        }
+      ]
+    },
+    "on_off_states": {
+      "values": [
+        {
+          "in": "på|igång|tända|tänd|påslagna",
+          "out": "on"
+        },
+        {
+          "in": "av|avstängda|släckta",
+          "out": "off"
+        }
+      ]
+    },
+    "on_off_domains": {
+      "values": [
+        {
+          "in": "(lampor|lampa|ljus)",
+          "out": "light"
+        },
+        {
+          "in": "fläktar",
+          "out": "fan"
+        },
+        {
+          "in": "[ström]brytare[n]",
+          "out": "switch"
+        }
+      ]
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        "celsius",
+        {
+          "in": "c",
+          "out": "celsius"
+        },
+        "fahrenheit",
+        {
+          "in": "f",
+          "out": "fahrenheit"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "name": "{name}[s|n|ns|en]",
+    "area": "{area}[e|me][t|n][s]",
+    "vad": "(vad är | vad är det | vad är det för | vilken)",
+    "är": "(är det | är)",
+    "brightness": "{brightness}[%| percent]",
+    "slå_på": "(tänd | sätt (på | igång | fart på) | slå (på | till) | starta)",
+    "slå_av": "(slå (av | från | ifrån) | släck | stäng [av] | stoppa)",
+    "i_på": "(i | på | vid | bredvid)",
+    "ändra": "(ställ in | sätt | justera | ändra | vrid (upp | ner))",
+    "temp": "(temperatur[en])",
+    "alla": "(all | alla | allt)",
+    "ljusintensitet": "(ljusstyrka | intensitet | styrka | nivå | effekt)",
+    "ljuskällor": "(ljuskällor[na]|ljus[en|et]|[glöd|led|diod]lamp[a|an|or|orna]|lysrör[en|et]|belysning[en])",
+    "dimra": "(ändra | sätt | vrid | dra [på] | skruva [på] | dimra | dimma | ställ [in] | höj | sänk)",
+    "möjliga": "(möjlig[a] | tillgänglig[a])",
+    "maximal": "(maximal | max[imum] | högsta | starkaste | intensivaste | full[t])",
+    "minimal": "(minimal | minimum | minsta | lägsta | svagaste)",
+    "gardiner": "([rull|motor]gardin[er|erna|en]|persienn[er|erna|en]|spjälgardin[er|erna|en]|draperi[er|erna|en])|förhänge[n|na]",
+    "stäng_gardiner": "(stäng [igen | till]| dra (ner | igen | för | till ) | hissa ner | veckla (ner | igen) | tillslut) | slå (igen |ihop | för) | rulla ner",
+    "öppna_gardiner": "(öppna [upp] | dra (upp | bort | isär | undan) | hissa upp | veckla upp | rulla upp)",
+    "varmt_kallt": "(varmt | varm | kallt | kall | het | svalt )",
+    "temperature": "{temperature}[°| grader] [{temperature_unit}]",
+    "färga": "(färga | ändra | byt)"
+  },
+  "skip_words": [
+    "snälla",
+    "tack",
+    "vänligen",
+    "kan du"
+  ]
+}

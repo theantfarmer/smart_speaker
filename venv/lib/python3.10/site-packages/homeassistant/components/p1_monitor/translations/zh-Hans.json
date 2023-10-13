@@ -1,0 +1,25 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "\u4e3b\u673a"
+                },
+                "description": "\u8bbe\u7f6e P1 Monitor \u4ee5\u4e0e Home Assistant \u96c6\u6210\u3002"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "voltage_phase_l2": {
+                "name": "\u7535\u538b\u76f8\u4f4d L2"
+            },
+            "voltage_phase_l3": {
+                "name": "\u7535\u538b\u76f8\u4f4d L3"
+            }
+        }
+    }
+}

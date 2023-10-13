@@ -1,0 +1,90 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ung\u00fcltige Authentifizierung",
+            "no_homes": "Es sind keine Standorte mit diesem Tado-Konto verkn\u00fcpft.",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "title": "Stelle eine Verbindung zu deinem Tado-Konto her"
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "tado": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "fallback": "Aktiviere den Fallback-Modus."
+                },
+                "description": "Mit dem Fallback-Modus kannst du festlegen, wann von deinem manuellen Zonen-Overlay auf den intelligenten Zeitplan umgeschaltet werden soll. (NEXT_TIME_BLOCK:= Wechsel bei der n\u00e4chsten Smart Schedule-\u00c4nderung; MANUAL:= Kein Wechsel, bis du abbrichst; TADO_DEFAULT:= Wechsel basierend auf deiner Einstellung in der Tado-App).",
+                "title": "Passe die Tado-Optionen an."
+            }
+        }
+    },
+    "services": {
+        "set_climate_temperature_offset": {
+            "description": "Legt den Temperatur-Offset der Klimaeinheiten fest.",
+            "fields": {
+                "offset": {
+                    "description": "Der gew\u00fcnschte Offset (abh\u00e4ngig von Ihrem Ger\u00e4t).",
+                    "name": "Offset"
+                }
+            },
+            "name": "Klimatemperatur-Offset einstellen"
+        },
+        "set_climate_timer": {
+            "description": "Aktiviert Klimaeinheiten f\u00fcr eine festgelegte Zeit.",
+            "fields": {
+                "requested_overlay": {
+                    "description": "W\u00e4hle dies oder den Zeitraum. Erm\u00f6glicht die Auswahl eines Overlays. MANUAL:=Overlay, bis der Benutzer es entfernt; NEXT_TIME_BLOCK:=\u00dcberlagerung bis zum n\u00e4chsten Zeitblock; TADO_DEFAULT:=Overlay basierend auf der Tado-App-Einstellung.",
+                    "name": "Overlay"
+                },
+                "temperature": {
+                    "description": "Temperatur, auf die die Klimaeinheit eingestellt werden soll.",
+                    "name": "Temperatur"
+                },
+                "time_period": {
+                    "description": "W\u00e4hle dies oder Overlay. Lege den Zeitraum f\u00fcr die \u00c4nderung fest, wenn du genau sein m\u00f6chtest. Alternativ kannst du Overlay verwenden.",
+                    "name": "Zeitraum"
+                }
+            },
+            "name": "Klima-Timer einstellen"
+        },
+        "set_water_heater_timer": {
+            "description": "Schaltet den Warmwasserbereiter f\u00fcr eine festgelegte Zeit ein.",
+            "fields": {
+                "temperature": {
+                    "description": "Temperatur, auf die die Heizung eingestellt werden soll.",
+                    "name": "Temperatur"
+                },
+                "time_period": {
+                    "description": "Legt den Zeitraum f\u00fcr den Boost fest.",
+                    "name": "Zeitraum"
+                }
+            },
+            "name": "Timer f\u00fcr Warmwasserbereiter einstellen"
+        }
+    }
+}

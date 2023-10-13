@@ -1,0 +1,14 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "editable": {
+                    "state": {
+                        "true": "\u306f\u3044"
+                    }
+                }
+            }
+        }
+    },
+    "title": "\u9078\u629e\u80a2\u5165\u529b"
+}

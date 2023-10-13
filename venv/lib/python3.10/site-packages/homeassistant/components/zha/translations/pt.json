@@ -1,0 +1,245 @@
+{
+    "config": {
+        "abort": {
+            "not_zha_device": "Este dispositivo n\u00e3o \u00e9 um dispositivo ZHA",
+            "single_instance_allowed": "Apenas uma configura\u00e7\u00e3o do ZHA \u00e9 permitida.",
+            "usb_probe_failed": "Falha ao sondar o dispositivo USB"
+        },
+        "error": {
+            "cannot_connect": "N\u00e3o \u00e9 poss\u00edvel conectar-se ao dispositivo ZHA.",
+            "invalid_backup_json": "JSON de backup inv\u00e1lido"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "Escolha um backup autom\u00e1tico"
+                },
+                "description": "Restaure as suas configura\u00e7\u00f5es de rede a partir de um backup autom\u00e1tico",
+                "title": "Restaurar Backup Autom\u00e1tico"
+            },
+            "choose_formation_strategy": {
+                "description": "Escolha as configura\u00e7\u00f5es de rede para o seu r\u00e1dio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Restaurar um backup autom\u00e1tico",
+                    "form_initial_network": "Criar uma rede",
+                    "form_new_network": "Apague as configura\u00e7\u00f5es de rede e forme uma nova rede",
+                    "reuse_settings": "Manter as configura\u00e7\u00f5es de rede de r\u00e1dio",
+                    "upload_manual_backup": "Carregar um backup manual"
+                },
+                "title": "Forma\u00e7\u00e3o de rede"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Caminho do dispositivo de s\u00e9rie"
+                },
+                "description": "Selecione a porta serial para o seu r\u00e1dio Zigbee",
+                "title": "Selecionar uma porta s\u00e9rie"
+            },
+            "confirm": {
+                "description": "Deseja configurar {name}?"
+            },
+            "confirm_hardware": {
+                "description": "Deseja configurar {name} ?"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Tipo de r\u00e1dio"
+                },
+                "description": "Escolha o seu tipo de r\u00e1dio Zigbee",
+                "title": "Tipo de r\u00e1dio"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "velocidade da porta",
+                    "flow_control": "controle de fluxo de dados",
+                    "path": "Caminho do dispositivo serial"
+                },
+                "description": "Digite as configura\u00e7\u00f5es da porta serial",
+                "title": "Configura\u00e7\u00f5es da porta serial"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Substituir permanentemente o endere\u00e7o IEEE do r\u00e1dio"
+                },
+                "description": "A sua c\u00f3pia de seguran\u00e7a tem um endere\u00e7o IEEE diferente do seu r\u00e1dio. Para que a sua rede funcione corretamente, o endere\u00e7o IEEE do seu r\u00e1dio tamb\u00e9m deve ser alterado.\n\nEsta \u00e9 uma opera\u00e7\u00e3o permanente.",
+                "title": "Sobrescrever o endere\u00e7o IEEE do r\u00e1dio"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Enviar um arquivo"
+                },
+                "description": "Restaure suas configura\u00e7\u00f5es de rede de um arquivo JSON de backup carregado. Voc\u00ea pode baixar um de uma instala\u00e7\u00e3o ZHA diferente em **Network Settings**, ou usar um arquivo Zigbee2MQTT `coordinator_backup.json`.",
+                "title": "Carregar um backup manual"
+            },
+            "verify_radio": {
+                "description": "O r\u00e1dio que est\u00e1 a utilizar ({name}) n\u00e3o \u00e9 recomendado e o suporte para o mesmo pode ser removido no futuro. Consulte a documenta\u00e7\u00e3o da integra\u00e7\u00e3o do Zigbee Home Automation para obter [uma lista de adaptadores recomendados] ({docs_recommended_adapters_url}).",
+                "title": "R\u00e1dio n\u00e3o \u00e9 recomendado"
+            }
+        }
+    },
+    "config_panel": {
+        "zha_alarm_options": {
+            "alarm_arm_requires_code": "C\u00f3digo necess\u00e1rio para a\u00e7\u00f5es de armar",
+            "alarm_failed_tries": "O n\u00famero de entradas de c\u00f3digo falhadas consecutivas para acionar um alarme",
+            "alarm_master_code": "C\u00f3digo mestre do(s) painel(is) de controlo do alarme",
+            "title": "Op\u00e7\u00f5es do Painel de Controlo de Alarme"
+        },
+        "zha_options": {
+            "always_prefer_xy_color_mode": "Prefere sempre o modo de cor XY",
+            "consider_unavailable_battery": "Considerar os dispositivos alimentados por bateria indispon\u00edveis ap\u00f3s (segundos)",
+            "consider_unavailable_mains": "Considerar os dispositivos alimentados pela rede el\u00e9trica indispon\u00edveis ap\u00f3s (segundos)",
+            "default_light_transition": "Tempo de transi\u00e7\u00e3o de luz predefinido (segundos)",
+            "group_members_assume_state": "Os membros do grupo assumem o estado de grupo",
+            "light_transitioning_flag": "Ativar a barra deslizante de brilho melhorado durante a transi\u00e7\u00e3o de luz",
+            "title": "Op\u00e7\u00f5es globais"
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "issue_all_led_effect": "Enviar efeito para todos os LEDs",
+            "issue_individual_led_effect": "Enviar efeito para LED individual",
+            "warn": "Avisar"
+        },
+        "trigger_subtype": {
+            "both_buttons": "Ambos os bot\u00f5es",
+            "button": "Bot\u00e3o",
+            "button_1": "Primeiro bot\u00e3o",
+            "button_2": "Segundo bot\u00e3o",
+            "button_3": "Terceiro bot\u00e3o",
+            "button_4": "Quarto bot\u00e3o",
+            "button_5": "Quinto bot\u00e3o",
+            "button_6": "Sexto bot\u00e3o",
+            "close": "Fechar",
+            "dim_down": "Escurecer",
+            "dim_up": "Clarear",
+            "face_1": "com a face 1 ativada",
+            "face_2": "com a face 2 ativada",
+            "face_3": "com a face 3 ativada",
+            "face_4": "com a face 4 ativada",
+            "face_5": "com a face 5 ativada",
+            "face_6": "com a face 6 ativada",
+            "face_any": "Com qualquer face/face especificada(s) ativada(s)",
+            "left": "Esquerda",
+            "open": "Abrir",
+            "right": "Direita",
+            "turn_off": "Desligar",
+            "turn_on": "Ligar"
+        },
+        "trigger_type": {
+            "device_dropped": "Dispositivo caiu",
+            "device_flipped": "Dispositivo invertido \"{subtype}\"",
+            "device_offline": "Dispositivo offline",
+            "device_shaken": "Dispositivo abanado",
+            "device_tilted": "Dispositivo inclinado"
+        }
+    },
+    "options": {
+        "abort": {
+            "not_zha_device": "Este dispositivo n\u00e3o \u00e9 um dispositivo ZHA",
+            "single_instance_allowed": "Apenas uma configura\u00e7\u00e3o do ZHA \u00e9 permitida.",
+            "usb_probe_failed": "Falha ao sondar o dispositivo USB"
+        },
+        "error": {
+            "cannot_connect": "N\u00e3o \u00e9 poss\u00edvel conectar-se ao dispositivo ZHA.",
+            "invalid_backup_json": "JSON de backup inv\u00e1lido"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "Escolha um backup autom\u00e1tico"
+                },
+                "description": "Restaure as suas configura\u00e7\u00f5es de rede a partir de um backup autom\u00e1tico",
+                "title": "Restaurar Backup Autom\u00e1tico"
+            },
+            "choose_formation_strategy": {
+                "description": "Escolha as configura\u00e7\u00f5es de rede para o seu r\u00e1dio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Restaurar um backup autom\u00e1tico",
+                    "form_initial_network": "Criar uma rede",
+                    "form_new_network": "Apague as configura\u00e7\u00f5es de rede e forme uma nova rede",
+                    "reuse_settings": "Manter as configura\u00e7\u00f5es de rede de r\u00e1dio",
+                    "upload_manual_backup": "Carregar um backup manual"
+                },
+                "title": "Forma\u00e7\u00e3o de rede"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Caminho do dispositivo de s\u00e9rie"
+                },
+                "description": "Selecione a porta serial para o seu r\u00e1dio Zigbee",
+                "title": "Selecionar uma porta s\u00e9rie"
+            },
+            "init": {
+                "description": "ZHA ser\u00e1 interrompido. Voc\u00ea deseja continuar?",
+                "title": "Reconfigurar ZHA"
+            },
+            "instruct_unplug": {
+                "title": "Desligue o seu r\u00e1dio antigo"
+            },
+            "intent_migrate": {
+                "description": "Antes de ligar o seu novo dispositivo, o seu dispositivo anterior tem de ser reiniciado. Ser\u00e1 efetuado um backup autom\u00e1tico. Se estiver a usar um adaptador que combine Z-Wave e Zigbee, como o HUSBZB-1, esta a\u00e7\u00e3o apenas ir\u00e1 reiniciar a parte Zigbee.\n\n*Note: Se estiver a migrar de um **ConBee/RaspBee**, certifique-se que est\u00e1 a executar o firmware  `0x26720700` ou mais recente! De outra forma, alguns dispositivos poder\u00e3o n\u00e3o ser control\u00e1veis ap\u00f3s a migra\u00e7\u00e3o at\u00e9 que sejam desligados e ligados.*\n\nQuer continuar?",
+                "title": "Migrar para um novo r\u00e1dio"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Tipo de r\u00e1dio"
+                },
+                "description": "Escolha o seu tipo de r\u00e1dio Zigbee",
+                "title": "Tipo de r\u00e1dio"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "velocidade da porta",
+                    "flow_control": "controle de fluxo de dados",
+                    "path": "Caminho do dispositivo serial"
+                },
+                "description": "Digite as configura\u00e7\u00f5es da porta serial",
+                "title": "Configura\u00e7\u00f5es da porta serial"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Substituir permanentemente o endere\u00e7o IEEE do r\u00e1dio"
+                },
+                "description": "A sua c\u00f3pia de seguran\u00e7a tem um endere\u00e7o IEEE diferente do seu r\u00e1dio. Para que a sua rede funcione corretamente, o endere\u00e7o IEEE do seu r\u00e1dio tamb\u00e9m deve ser alterado.\n\nEsta \u00e9 uma opera\u00e7\u00e3o permanente.",
+                "title": "Sobrescrever o endere\u00e7o IEEE do r\u00e1dio"
+            },
+            "prompt_migrate_or_reconfigure": {
+                "description": "Est\u00e1 a migrar para um novo r\u00e1dio ou a reconfigurar o r\u00e1dio atual?",
+                "menu_options": {
+                    "intent_migrate": "Migrar para um novo r\u00e1dio",
+                    "intent_reconfigure": "Reconfigurar o r\u00e1dio atual"
+                },
+                "title": "Migrar ou reconfigurar"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Enviar um arquivo"
+                },
+                "description": "Restaure suas configura\u00e7\u00f5es de rede de um arquivo JSON de backup carregado. Voc\u00ea pode baixar um de uma instala\u00e7\u00e3o ZHA diferente em **Network Settings**, ou usar um arquivo Zigbee2MQTT `coordinator_backup.json`.",
+                "title": "Carregar um backup manual"
+            },
+            "verify_radio": {
+                "description": "O r\u00e1dio que est\u00e1 a utilizar ({name}) n\u00e3o \u00e9 recomendado e o suporte para o mesmo pode ser removido no futuro. Consulte a documenta\u00e7\u00e3o da integra\u00e7\u00e3o do Zigbee Home Automation para obter [uma lista de adaptadores recomendados] ({docs_recommended_adapters_url}).",
+                "title": "R\u00e1dio n\u00e3o \u00e9 recomendado"
+            }
+        }
+    },
+    "services": {
+        "warning_device_squawk": {
+            "fields": {
+                "mode": {
+                    "name": "Modo"
+                }
+            }
+        },
+        "warning_device_warn": {
+            "fields": {
+                "mode": {
+                    "name": "Modo"
+                }
+            }
+        }
+    }
+}

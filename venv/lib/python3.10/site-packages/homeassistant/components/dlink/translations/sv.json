@@ -1,0 +1,24 @@
+{
+    "config": {
+        "error": {
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "step": {
+            "confirm_discovery": {
+                "data": {
+                    "password": "L\u00f6senord (standard: PIN-kod p\u00e5 baksidan)",
+                    "use_legacy_protocol": "Anv\u00e4nd \u00e4ldre protokoll",
+                    "username": "Anv\u00e4ndarnamn"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e4rd",
+                    "password": "L\u00f6senord (standard: PIN-kod p\u00e5 baksidan)",
+                    "use_legacy_protocol": "Anv\u00e4nd \u00e4ldre protokoll",
+                    "username": "Anv\u00e4ndarnamn"
+                }
+            }
+        }
+    }
+}

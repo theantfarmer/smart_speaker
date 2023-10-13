@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Inndataknapp",
+            "state_attributes": {
+                "editable": {
+                    "name": "Administrert via UI",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Inndataknapp"
+}

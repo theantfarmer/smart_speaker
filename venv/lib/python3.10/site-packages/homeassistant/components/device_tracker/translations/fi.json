@@ -1,0 +1,12 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Seurantalaite",
+            "state": {
+                "home": "Kotona",
+                "not_home": "Poissa"
+            }
+        }
+    },
+    "title": "Laiteseuranta"
+}

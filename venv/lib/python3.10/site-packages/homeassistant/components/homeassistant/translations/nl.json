@@ -1,0 +1,104 @@
+{
+    "issues": {
+        "config_entry_only": {
+            "description": "De {domain}-integratie ondersteunt geen configuratie via een YAML-bestand. Je merkt misschien geen duidelijke problemen met de integratie, maar eventuele configuratie-instellingen die in YAML zijn gedefinieerd, worden niet daadwerkelijk toegepast. \n\n Om dit op te lossen: \n\n 1. Als je dit nog niet hebt gedaan, [stel de integratie in]({add_integration}). \n\n 2. Verwijder `{domain}:` uit jouw YAML-configuratiebestand. \n\n 3. Start Home Assistant opnieuw.",
+            "title": "De {domain}-integratie ondersteunt geen YAML-configuratie"
+        },
+        "country_not_configured": {
+            "description": "Er is geen land geconfigureerd. Werk de configuratie bij door hieronder op de knop \"meer informatie\" te klikken.",
+            "title": "Het land is niet geconfigureerd"
+        },
+        "historic_currency": {
+            "description": "De valuta {currency} is niet langer in gebruik, gelieve de valuta opnieuw te configureren.",
+            "title": "De geconfigureerde valuta is niet meer in gebruik"
+        },
+        "integration_key_no_support": {
+            "description": "De {domain}-integratie ondersteunt geen configuratie via een YAML-bestand. Je merkt misschien geen duidelijke problemen met de integratie, maar eventuele configuratie-instellingen die in YAML zijn gedefinieerd, worden niet daadwerkelijk toegepast. \n\n Om dit op te lossen: \n\n 1. Als je dit nog niet hebt gedaan, [stel de integratie in]({add_integration}). \n\n 2. Verwijder `{domain}:` uit jouw YAML-configuratiebestand. \n\n 3. Start Home Assistant opnieuw.",
+            "title": "De {domain}-integratie ondersteunt geen YAML-configuratie"
+        },
+        "platform_only": {
+            "description": "De {domain}-integratie ondersteunt geen configuratie onder zijn eigen sleutel, deze moet worden geconfigureerd onder de ondersteunde platformen. \n\n Om dit op te lossen: \n\n 1. Verwijder `{domain}:` uit jouw YAML-configuratiebestand.\n\n 2. Start Home Assistant opnieuw.",
+            "title": "De {domain}-integratie ondersteunt geen YAML-configuratie onder zijn eigen sleutel"
+        },
+        "python_version": {
+            "description": "Ondersteuning om Home Assistant met de huidige Python (versie {current_python_version}) gaat vervallen en zal vervalleen in Home Assistant {breaks_in_ha_version}. Werk de Python software bij naar minimaal versie {required_python_version} om te voorkomen dat je Home Assistant instantie niet meer goed werkt.",
+            "title": "Ondersteuning voor Python {current_python_version} gaat vervallen"
+        }
+    },
+    "services": {
+        "check_config": {
+            "description": "Controleert de Home Assistant YAML-configuratiebestanden op fouten. Fouten worden getoond in de Home Assistant logboeken.",
+            "name": "Controleer configuratie"
+        },
+        "reload_config_entry": {
+            "fields": {
+                "entry_id": {
+                    "name": "Configuratie-item ID"
+                }
+            },
+            "name": "Herladen configuratie-invoer"
+        },
+        "reload_custom_templates": {
+            "name": "Herlaad aangepaste Jinja2-sjablonen"
+        },
+        "restart": {
+            "description": "Herstart Home Assistant.",
+            "name": "Herstarten"
+        },
+        "save_persistent_states": {
+            "description": "Bewaart de aanhoudende toestanden onmiddellijk. Houdt de normale periodieke opslaginterval in stand.",
+            "name": "Bewaar aanhoudende toestanden"
+        },
+        "set_location": {
+            "description": "Werkt de Home Assistant locatie bij.",
+            "fields": {
+                "latitude": {
+                    "description": "Breedtegraad van je locatie.",
+                    "name": "Breedtegraad"
+                },
+                "longitude": {
+                    "description": "Lengtegraad van je locatie.",
+                    "name": "Lengtegraad"
+                }
+            },
+            "name": "Locatie instellen"
+        },
+        "stop": {
+            "description": "Stopt Home Assistant.",
+            "name": "Stoppen"
+        },
+        "toggle": {
+            "description": "Generieke dienst om apparaten in/uit te schakelen voor elk domein.",
+            "name": "Generiek omschaken"
+        },
+        "turn_off": {
+            "description": "Generieke dienst om apparaten uit te schakelen voor een domein.",
+            "name": "Generiek uitschakelen"
+        },
+        "turn_on": {
+            "description": "Generieke dienst om apparaten in te schakelen voor een domein.",
+            "name": "Generiek inschakelen"
+        },
+        "update_entity": {
+            "description": "Forceert \u00e9\u00e9n of meer entiteiten om hun data bij te werken.",
+            "name": "Bijwerken entiteit"
+        }
+    },
+    "system_health": {
+        "info": {
+            "arch": "CPU-architectuur",
+            "config_dir": "Configuratiemap",
+            "dev": "Ontwikkeling",
+            "docker": "Docker",
+            "hassio": "Supervisor",
+            "installation_type": "Type installatie",
+            "os_name": "Besturingssysteem",
+            "os_version": "Versie van het besturingssysteem",
+            "python_version": "Python-versie",
+            "timezone": "Tijdzone",
+            "user": "Gebruiker",
+            "version": "Versie",
+            "virtualenv": "Virtuele omgeving"
+        }
+    }
+}

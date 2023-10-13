@@ -1,0 +1,14 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kontoen er allerede konfigureret"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Navn"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Device is already configured"
+        },
+        "error": {
+            "cannot_connect": "Failed to connect",
+            "invalid_system_id": "Invalid Airzone System ID"
+        },
+        "step": {
+            "discovered_connection": {
+                "data": {
+                    "host": "Host",
+                    "id": "System ID",
+                    "port": "Port"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "id": "System ID",
+                    "port": "Port"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "grille_angles": {
+                "state": {
+                    "40deg": "40\u00b0",
+                    "45deg": "45\u00b0",
+                    "50deg": "50\u00b0",
+                    "90deg": "90\u00b0"
+                }
+            },
+            "sleep_times": {
+                "state": {
+                    "30m": "30 minutes",
+                    "60m": "60 minutes",
+                    "90m": "90 minutes",
+                    "off": "Off"
+                }
+            }
+        }
+    }
+}

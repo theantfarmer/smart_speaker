@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Mata in text",
+            "state_attributes": {
+                "editable": {
+                    "name": "Hanteras via anv\u00e4ndargr\u00e4nssnittet",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "max": {
+                    "name": "Max l\u00e4ngd"
+                },
+                "min": {
+                    "name": "Min l\u00e4ngd"
+                },
+                "mode": {
+                    "name": "L\u00e4ge",
+                    "state": {
+                        "password": "L\u00f6senord",
+                        "text": "Text"
+                    }
+                },
+                "pattern": {
+                    "name": "M\u00f6nster"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ladda om"
+        }
+    },
+    "title": "Mata in text"
+}

@@ -1,0 +1,60 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "flow_title": "{serial_number}",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "C\u00edm",
+                    "port": "Port"
+                },
+                "description": "\u00c1ll\u00edtsa be az Elgato Light-ot, hogy integr\u00e1lhat\u00f3 legyen az HomeAssistantba."
+            },
+            "zeroconf_confirm": {
+                "description": "Elgato Light (`{serial_number}`) hozz\u00e1ad\u00e1sa a rendszerhez.",
+                "title": "Felfedezett Elgato Light eszk\u00f6z(\u00f6k)"
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "identify": {
+                "name": "Azonos\u00edt\u00e1s"
+            },
+            "restart": {
+                "name": "\u00dajraind\u00edt\u00e1s"
+            }
+        },
+        "sensor": {
+            "battery": {
+                "name": "Elem/Akku"
+            },
+            "charge_power": {
+                "name": "T\u00f6lt\u00e9si teljes\u00edtm\u00e9ny"
+            },
+            "input_charge_current": {
+                "name": "T\u00f6lt\u00e9si \u00e1ram"
+            },
+            "input_charge_voltage": {
+                "name": "T\u00f6lt\u00e9si fesz\u00fclts\u00e9g"
+            },
+            "voltage": {
+                "name": "Akkufesz\u00fclts\u00e9g"
+            }
+        },
+        "switch": {
+            "bypass": {
+                "name": "St\u00fadi\u00f3 m\u00f3d"
+            },
+            "energy_saving": {
+                "name": "Energiatakar\u00e9kos"
+            }
+        }
+    }
+}

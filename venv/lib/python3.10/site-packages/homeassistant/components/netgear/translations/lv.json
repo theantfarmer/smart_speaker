@@ -1,0 +1,16 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant.",
+            "no_serial": "Ssdp atra\u0161anas inform\u0101cij\u0101 nav s\u0113rijas numura",
+            "not_ipv4_address": "Ssdp atkl\u0101\u0161anas inform\u0101cij\u0101 nav IPv4 adreses"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Parole"
+                }
+            }
+        }
+    }
+}

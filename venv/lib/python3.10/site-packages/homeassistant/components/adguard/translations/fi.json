@@ -1,0 +1,16 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "port": "Portti",
+                    "ssl": "K\u00e4ytt\u00e4\u00e4 SSL-sertifikaattia",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus",
+                    "verify_ssl": "Vahvista SSL-sertifikaatti"
+                }
+            }
+        }
+    }
+}

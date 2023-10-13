@@ -1,0 +1,26 @@
+{
+    "services": {
+        "download_file": {
+            "description": "Stiahne s\u00fabor do umiestnenia s\u0165ahovania.",
+            "fields": {
+                "filename": {
+                    "description": "Ur\u010dite n\u00e1zov s\u00faboru.",
+                    "name": "N\u00e1zov s\u00faboru"
+                },
+                "overwrite": {
+                    "description": "\u010ci sa m\u00e1 s\u00fabor prep\u00edsa\u0165 alebo nie.",
+                    "name": "Prep\u00edsa\u0165"
+                },
+                "subdir": {
+                    "description": "Stiahnutie do podadres\u00e1ra.",
+                    "name": "Podadres\u00e1r"
+                },
+                "url": {
+                    "description": "Adresa URL s\u00faboru na stiahnutie.",
+                    "name": "URL"
+                }
+            },
+            "name": "Stiahnu\u0165 s\u00fabor"
+        }
+    }
+}

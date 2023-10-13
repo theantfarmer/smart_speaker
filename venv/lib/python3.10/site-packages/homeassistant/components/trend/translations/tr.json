@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Trend sens\u00f6rlerini YAML yap\u0131land\u0131rmas\u0131ndan yeniden y\u00fckler.",
+            "name": "Tekrar y\u00fckle"
+        }
+    }
+}

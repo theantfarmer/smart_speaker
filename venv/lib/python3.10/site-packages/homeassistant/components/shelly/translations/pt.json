@@ -1,0 +1,122 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O dispositivo j\u00e1 est\u00e1 configurado",
+            "reauth_successful": "Reautentica\u00e7\u00e3o bem sucedida",
+            "reauth_unsuccessful": "A reautentica\u00e7\u00e3o n\u00e3o foi bem sucedida, remova a integra\u00e7\u00e3o e configure-a novamente.",
+            "unsupported_firmware": "O dispositivo est\u00e1 a utilizar uma vers\u00e3o de firmware n\u00e3o suportada."
+        },
+        "error": {
+            "cannot_connect": "A liga\u00e7\u00e3o falhou",
+            "firmware_not_fully_provisioned": "Dispositivo n\u00e3o totalmente provisionado. Contacte o suporte da Shelly",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida",
+            "unknown": "Erro inesperado"
+        },
+        "flow_title": "Shelly: {name}",
+        "step": {
+            "confirm_discovery": {
+                "description": "Deseja configurar o {model} em {host} ?"
+            },
+            "credentials": {
+                "data": {
+                    "password": "Palavra-passe",
+                    "username": "Nome de Utilizador"
+                }
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Palavra-passe",
+                    "username": "Nome de Utilizador"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Endere\u00e7o"
+                },
+                "description": "Antes da configura\u00e7\u00e3o, os dispositivos alimentados por bateria t\u00eam de ser acordados. Pode acordar um dispositivo agora utilizando um bot\u00e3o no mesmo."
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_subtype": {
+            "button": "Bot\u00e3o",
+            "button1": "Primeiro bot\u00e3o",
+            "button2": "Segundo bot\u00e3o",
+            "button3": "Terceiro bot\u00e3o",
+            "button4": "Quarto bot\u00e3o"
+        },
+        "trigger_type": {
+            "btn_down": "Bot\u00e3o {subtype} para baixo",
+            "btn_up": "Bot\u00e3o {subtype} para cima",
+            "double": "{subtype} clique duplo",
+            "double_push": "{subtype} impulso duplo",
+            "long": "{subtype} clique longo",
+            "long_push": "{subtype} impulso longo",
+            "long_single": "{subtype} clique longo seguido de clique simples",
+            "single": "{subtype} clique simples",
+            "single_long": "{subtype} clique simples seguido de clique longo",
+            "single_push": "{subtype} impulso simples",
+            "triple": "{subtype} clique triplo",
+            "triple_push": "{subtype} impulso triplo"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "heavy": "Pesado",
+                            "mild": "Suave",
+                            "none": "Nenhum",
+                            "test": "Teste",
+                            "unknown": "Desconhecido"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "operation": {
+                "state": {
+                    "fault": "Falha",
+                    "normal": "normal",
+                    "unknown": "Desconhecido",
+                    "warmup": "Aquecimento"
+                },
+                "state_attributes": {
+                    "self_test": {
+                        "state": {
+                            "completed": "Conclu\u00eddo",
+                            "not_completed": "N\u00e3o conclu\u00eddo",
+                            "pending": "Pendente",
+                            "running": "Em execu\u00e7\u00e3o"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "ble_unsupported": "O suporte de Bluetooth requer a vers\u00e3o de firmware {ble_min_version} ou mais recente."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "ble_scanner_mode": "Modo de rastreio Bluetooth"
+                },
+                "description": "O rastreio Bluetooth pode ser ativo ou passivo. Com ativa, o Shelly solicita dados de dispositivos pr\u00f3ximos; com passiva, o Shelly recebe dados n\u00e3o solicitados de dispositivos pr\u00f3ximos."
+            }
+        }
+    },
+    "selector": {
+        "ble_scanner_mode": {
+            "options": {
+                "active": "Ativo",
+                "disabled": "Desativado",
+                "passive": "Passivo"
+            }
+        }
+    }
+}

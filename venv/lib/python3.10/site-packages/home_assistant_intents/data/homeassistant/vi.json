@@ -1,0 +1,457 @@
+{
+  "language": "vi",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "tắt <name> <area>",
+            "tắt <name> [trong]  <area>",
+            "tắt [tất cả | toàn bộ] <name> [trong] <area>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "tắt <name>"
+          ]
+        },
+        {
+          "sentences": [
+            "đóng <name>"
+          ],
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "đóng <name> <area>"
+          ],
+          "response": "cover_area"
+        },
+        {
+          "sentences": [
+            "đóng hết <name> <area>",
+            "kéo toàn bộ <name> trong <area> xuống"
+          ],
+          "response": "cover_area"
+        },
+        {
+          "sentences": [
+            "<turn_off> [tất cả | toàn bộ] (đèn) trong <area>",
+            "<turn_off> [tất cả | toàn bộ] đèn <area>",
+            "<turn_off> đèn <area>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "đóng cửa cuốn"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": "garage",
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassGetState": {
+      "data": [
+        {
+          "sentences": [
+            "trạng thái [của] <name> [trong | ở trong <area>] [là bao nhiêu | thế nào]"
+          ],
+          "response": "one"
+        },
+        {
+          "sentences": [
+            "<name>[trong | ở trong <area>] đang {on_off_states:state} (có phải không | phải không)"
+          ],
+          "response": "one_yesno",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "có {on_off_domains:domain} [nào] đang {on_off_states:state} [trong | ở trong] <area> [không | hay không]"
+          ],
+          "response": "any"
+        },
+        {
+          "sentences": [
+            "(tất cả | toàn bộ) {on_off_domains:domain} [trong | ở trong] [<area>] đang {on_off_states:state} [phải không | có phải không]"
+          ],
+          "response": "all"
+        },
+        {
+          "sentences": [
+            "những {on_off_domains:domain} nào đang {on_off_states:state} [trong | ở trong <area>]"
+          ],
+          "response": "which"
+        },
+        {
+          "sentences": [
+            "có bao nhiêu {on_off_domains:domain} đang {on_off_states:state} [trong | ở trong <area>]"
+          ],
+          "response": "how_many"
+        },
+        {
+          "sentences": [
+            "<name> [trong | ở trong <area>] đang {cover_states:state} [phải không | hay không | đúng không]"
+          ],
+          "response": "one_yesno",
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(có phải | kiểm tra) {cover_classes:device_class} [đang] {cover_states:state} [trong | ở trong <area>]"
+          ],
+          "response": "any",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "tất cả {cover_classes:device_class} [trong | ở trong] [<area>] đang {cover_states:state} [có phải không | phải không]"
+          ],
+          "response": "all",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(những | cái) {cover_classes:device_class} [nào] đang {cover_states:state} [trong | ở trong <area>]"
+          ],
+          "response": "which",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(bao nhiêu | có bao nhiêu | số lượng) {cover_classes:device_class} đang {cover_states:state} [trong | ở trong <area>]"
+          ],
+          "response": "how_many",
+          "slots": {
+            "domain": "cover"
+          }
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "<turn> [toàn bộ | tất cả] đèn [trong | bên trong] <area>",
+            "<turn> đèn <area>"
+          ],
+          "slots": {
+            "domain": "light"
+          }
+        },
+        {
+          "sentences": [
+            "mở cửa cuốn"
+          ],
+          "response": "cover_device_class",
+          "slots": {
+            "device_class": "garage_door",
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "mở rèm cuốn trong <area>"
+          ],
+          "response": "cover_area",
+          "slots": {
+            "device_class": [
+              "window",
+              "blind",
+              "curtain",
+              "shutter"
+            ],
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "bật <name> <area>",
+            "bật [hết | tất cả | toàn bộ] <name> <area>"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          }
+        },
+        {
+          "sentences": [
+            "bật <name>"
+          ]
+        },
+        {
+          "sentences": [
+            "mở <name>"
+          ],
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "mở <name> trong <area>"
+          ],
+          "response": "cover_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Xin lỗi, tôi chưa hiểu hành động này",
+      "no_area": "Không có khu vực nào tên là {{ area }}",
+      "no_domain": "{{ area }} không chứa {{ domain }}",
+      "no_device_class": "{{ area }} không có {{ device_class }} nào",
+      "no_entity": "Không có thiết bị hoặc thực thể nào tên là {{ entity }}",
+      "handle_error": "Đã xảy ra lỗi khi phân tích câu"
+    },
+    "intents": {
+      "HassGetState": {
+        "one": "{{ slots.name }} đang {{ state.state_with_unit }}",
+        "one_yesno": "{% if query.matched: %}\nđúng\n{% else: %}\nkhông, {{ slots.name }} đang {{ state.state_with_unit }}\n{% endif %}\n",
+        "any": "{% if query.matched: %}\nđúng, {{ query.matched | map(attribute=\"name\") | sort | join(\", \") }}\n{% else: %}\nkhông\n{% endif %}\n",
+        "all": "{% if not query.unmatched: %}\nđúng\n{% else: %}\nkhông, {{ query.unmatched | map(attribute=\"name\") | sort | join(\", \") }}\n{% endif %}\n",
+        "which": "{% if not query.matched: %}\nkhông cái nào\n{% else: %}\n{{ query.matched | map(attribute=\"name\") | sort | join(\", \") }}\n{% endif %}\n",
+        "how_many": "{% if not query.matched: %}\n0\n{% else: %}\n{{ query.matched | length }}\n{% endif %}\n"
+      },
+      "HassTurnOff": {
+        "default": "Đã tắt {{ slots.name }}",
+        "lights_area": "Đã tắt đèn trong {{ slots.area }}",
+        "fans_area": "Đã tắt quạt trong {{ slots.area }}",
+        "cover": "Đã đóng {{ slots.name }}",
+        "cover_area": "Đã đóng toàn bộ rèm {{ slots.area }}",
+        "cover_device_class": "Đã đóng {{ slots.device_class }}"
+      },
+      "HassTurnOn": {
+        "default": "Đã bật {{ slots.name }}",
+        "lights_area": "Đã bật đèn [trong] {{ slots.area }}",
+        "fans_area": "Đã bật quạt [trong] {{ slots.area }}",
+        "cover": "Đã mở {{ slots.name }}",
+        "cover_area": "Đã mở toàn bộ rèm [trong] {{ slots.area }}",
+        "switch": "Đã bật {{ slots.name }}",
+        "switch_area": "Đã bật toàn bộ công tắc [trong] {{ slots.area }}",
+        "climate": "Đã bật {{ slots.name }}",
+        "climate_area": "Đã bật toàn bộ (điều hòa| máy lạnh) [trong] {{ slots.area }}",
+        "cover_device_class": "Đã mở {{ slots.device_class }}"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "mầu trắng",
+          "out": "white"
+        },
+        {
+          "in": "mầu đen",
+          "out": "black"
+        },
+        {
+          "in": "mầu đỏ",
+          "out": "red"
+        },
+        {
+          "in": "mầu cam",
+          "out": "orange"
+        },
+        {
+          "in": "mầu vàng",
+          "out": "yellow"
+        },
+        {
+          "in": "mầu xanh lá",
+          "out": "green"
+        },
+        {
+          "in": "mầu xanh lục",
+          "out": "blue"
+        },
+        {
+          "in": "mầu tím",
+          "out": "purple"
+        },
+        {
+          "in": "mầu nâu",
+          "out": "brown"
+        },
+        {
+          "in": "mầu hồng",
+          "out": "pink"
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        {
+          "in": "độ",
+          "out": "celsius"
+        },
+        {
+          "in": "độ F",
+          "out": "fahrenheit"
+        }
+      ]
+    },
+    "brightness_level": {
+      "values": [
+        {
+          "in": "(max | maximum | highest)",
+          "out": 100
+        },
+        {
+          "in": "( minimum | lowest)",
+          "out": 1
+        }
+      ]
+    },
+    "on_off_states": {
+      "values": [
+        {
+          "in": "bật",
+          "out": "on"
+        },
+        {
+          "in": "tắt",
+          "out": "off"
+        }
+      ]
+    },
+    "on_off_domains": {
+      "values": [
+        {
+          "in": "đèn",
+          "out": "light"
+        },
+        {
+          "in": "quạt",
+          "out": "fan"
+        },
+        {
+          "in": "công tắc",
+          "out": "switch"
+        }
+      ]
+    },
+    "cover_states": {
+      "values": [
+        {
+          "in": "mở",
+          "out": "open"
+        },
+        {
+          "in": "đóng",
+          "out": "closed"
+        },
+        {
+          "in": "đang mở",
+          "out": "opening"
+        },
+        {
+          "in": "đang đóng",
+          "out": "closing"
+        }
+      ]
+    },
+    "cover_classes": {
+      "values": [
+        {
+          "in": "mái che",
+          "out": "awning"
+        },
+        {
+          "in": "rèm cầu vồng",
+          "out": "blind"
+        },
+        {
+          "in": "rèm",
+          "out": "curtain"
+        },
+        {
+          "in": "cửa",
+          "out": "door"
+        },
+        {
+          "in": "cửa cuốn",
+          "out": "garage"
+        },
+        {
+          "in": "cổng",
+          "out": "gate"
+        },
+        {
+          "in": "rèm cuộn",
+          "out": "shade"
+        },
+        {
+          "in": "rèm sáo",
+          "out": "shutter"
+        },
+        {
+          "in": "cửa sổ",
+          "out": "window"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "name": "[cái] {name}",
+    "area": "[ trong | ở trong | ngoài | ở ngoài | bên trong] {area}",
+    "what_is": "(cái gì | gì | những gì)",
+    "brightness": "{brightness}[%| phần trăm]",
+    "turn": "(bật | chuyển | thay đổi)",
+    "turn_off": "(tắt)",
+    "temp": "(nhiệt độ | độ)",
+    "temperature": "{temperature}[°| độ] [{temperature_unit}]",
+    "open": "(mở | kéo)",
+    "close": "(đóng | kéo | thu gọn)",
+    "window": "(rèm cuốn | rèm sáo | rèm | rèm cầu vồng | rèm vải)",
+    "percentage": "phần trăm"
+  },
+  "skip_words": [
+    "xin",
+    "hãy",
+    "làm ơn",
+    "vui lòng",
+    "hộ tôi",
+    "nhé",
+    "xin hãy"
+  ]
+}

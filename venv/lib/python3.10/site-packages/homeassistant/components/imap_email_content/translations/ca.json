@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "La integraci\u00f3 de contingut de correu IMAP est\u00e0 obsoleta. La configuraci\u00f3 del teu servidor IMAP ja s'ha migrat a la [integraci\u00f3 IMAP](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Per configurar un sensor de contingut de correu IMAP, configura un sensor de plantilla amb la configuraci\u00f3: \n\n```yaml\n{yaml_example}``` \n\nElimina la configuraci\u00f3 obsoleta del sensor `imap_email_plaform` del teu fitxer `configuration.yaml`. \n\nTingues en compte que el filtre d'esdeveniments nom\u00e9s filtra el primer dels remitents permesos configurats. Personalitza el filtre si cal. \n\nPots ometre aquesta part si ja has configurat un sensor de plantilla.",
+            "title": "La integraci\u00f3 de contingut de correu IMAP est\u00e0 obsoleta"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "La configuraci\u00f3 del servidor IMAP ja s'ha migrat a la integraci\u00f3 IMAP. Elimina la configuraci\u00f3 del sensor `imap_email_plaform` del teu fitxer `configuration.yaml`.",
+                    "cannot_connect": "La migraci\u00f3 ha fallat. No s'ha pogut connectar al servidor IMAP. Has de fer una migraci\u00f3 manual."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "En aquest pas es configurar\u00e0 una entrada de configuraci\u00f3 `imap` amb la configuraci\u00f3 seg\u00fcent: \n\n```text\nServidor\t{server}\nPort\t{port}\nNom d'usuari\t{username}\nContrasenya\t*****\nCarpeta\t{folder}\n``` \n\nConsulta tamb\u00e9: (https://www.home-assistant.io/integrations/imap/) \n\nLa configuraci\u00f3 de filtratge del remitent (`sender`) perm\u00e8s \u00e9s part de la configuraci\u00f3 del sensor plantilla que es pot copiar i enganxar al teu fitxer `configuration.yaml`. \n\nTingues en compte que el filtre d'esdeveniments nom\u00e9s filtra el primer dels remitents permesos configurats, personalitza el filtre si cal. \n\n```yaml\n{yaml_example}```\nNo t'oblidis d'esborrar les entrades necess\u00e0ries del fitxer `configuration.yaml` despr\u00e9s de la migraci\u00f3. \n\nEnvia per migrar la configuraci\u00f3 del teu servidor IMAP a una entrada de configuraci\u00f3 `imap`.",
+                        "title": "La teva configuraci\u00f3 del servidor IMAP ser\u00e0 migrada"
+                    },
+                    "start": {
+                        "description": "La integraci\u00f3 de contingut del correu IMAP est\u00e0 obsoleta. La configuraci\u00f3 del teu servidor IMAP es pot migrar autom\u00e0ticament a la [integraci\u00f3 IMAP](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), aix\u00f2 habilitar\u00e0 un nou disparador d'esdeveniments `imap` personalitzat. Per configurar un sensor que tingui l'estat del contingut IMAP, es pot utilitzar un sensor plantilla. Elimina la configuraci\u00f3 del sensor `imap_email_plaform` del teu fitxer `configuration.yaml` despr\u00e9s de la migraci\u00f3. \n\nEnvia per iniciar la migraci\u00f3 de la configuraci\u00f3 del teu servidor IMAP a la integraci\u00f3 `imap`.",
+                        "title": "Migra la teva configuraci\u00f3 de correu electr\u00f2nic IMAP"
+                    }
+                }
+            },
+            "title": "La integraci\u00f3 de contingut del correu IMAP necessita atenci\u00f3"
+        }
+    }
+}

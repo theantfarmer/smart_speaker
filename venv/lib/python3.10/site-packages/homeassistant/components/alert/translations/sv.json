@@ -1,0 +1,13 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Varna",
+            "state": {
+                "idle": "Vilar",
+                "off": "Bekr\u00e4ftad",
+                "on": "Aktiv"
+            }
+        }
+    },
+    "title": "Varna"
+}

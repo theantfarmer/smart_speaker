@@ -1,0 +1,43 @@
+{
+    "application_credentials": {
+        "description": "Siga as [instru\u00e7\u00f5es]({mais_info_url}) para [ecr\u00e3 de consentimento OAuth]({oauth_consent_url}) para dar acesso ao seu Home Assistant ao seu Google Mail. Tamb\u00e9m precisa de criar Credenciais de Aplica\u00e7\u00e3o ligadas \u00e0 sua conta:\n1. Ir a [Credenciais]({oauth_creds_url}) e clicar em **Criar Credenciais**.\n1. A partir da lista pendente selecione **OAuth client ID***.\n1. Selecionar **Aplica\u00e7\u00e3o Web** para o Tipo de Aplica\u00e7\u00e3o.\n\n"
+    },
+    "config": {
+        "abort": {
+            "already_configured": "Conta j\u00e1 configurada",
+            "already_in_progress": "O processo de configura\u00e7\u00e3o j\u00e1 est\u00e1 a decorrer",
+            "cannot_connect": "A liga\u00e7\u00e3o falhou",
+            "invalid_access_token": "Token de acesso inv\u00e1lido",
+            "missing_configuration": "O componente n\u00e3o est\u00e1 configurado. Por favor, siga a documenta\u00e7\u00e3o.",
+            "oauth_error": "Recebido token de autentica\u00e7\u00e3o inv\u00e1lido.",
+            "reauth_successful": "Reautentica\u00e7\u00e3o bem sucedida",
+            "timeout_connect": "Excedido o tempo limite para estabelecer liga\u00e7\u00e3o",
+            "unknown": "Erro inesperado",
+            "wrong_account": "Conta errada: Autentique-se com {email}."
+        },
+        "create_entry": {
+            "default": "Autenticado com sucesso"
+        },
+        "step": {
+            "auth": {
+                "title": "Associar conta Google"
+            },
+            "pick_implementation": {
+                "title": "Escolha o m\u00e9todo de autentica\u00e7\u00e3o"
+            },
+            "reauth_confirm": {
+                "description": "A integra\u00e7\u00e3o do Google Mail precisa de autenticar novamente a sua conta",
+                "title": "Re-autenticar integra\u00e7\u00e3o"
+            }
+        }
+    },
+    "services": {
+        "set_vacation": {
+            "fields": {
+                "enabled": {
+                    "name": "Ativo"
+                }
+            }
+        }
+    }
+}

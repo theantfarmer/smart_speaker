@@ -1,0 +1,32 @@
+{
+    "device_automation": {
+        "action_type": {
+            "clean": "Anna {entity_name} puhdistaa",
+            "dock": "Anna {entity_name} palata telakkaan"
+        },
+        "condition_type": {
+            "is_cleaning": "{entity_name} on siivoamassa",
+            "is_docked": "{entity_name} on telakoituna"
+        },
+        "trigger_type": {
+            "cleaning": "{entity_name} aloitti siivouksen",
+            "docked": "{entity_name} telakoitu"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Imuri",
+            "state": {
+                "cleaning": "Siivoaa",
+                "docked": "Telakoituna",
+                "error": "Virhe",
+                "idle": "Jouten",
+                "off": "Pois",
+                "on": "P\u00e4\u00e4ll\u00e4",
+                "paused": "Keskeytetty",
+                "returning": "Palaamassa telakkaan"
+            }
+        }
+    },
+    "title": "Imuri"
+}

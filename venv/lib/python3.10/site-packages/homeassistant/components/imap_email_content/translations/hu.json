@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "Az IMAP e-mail tartalom integr\u00e1ci\u00f3ja elavult. Az IMAP-kiszolg\u00e1l\u00f3 konfigur\u00e1ci\u00f3ja m\u00e1r \u00e1t lett \u00e1ll\u00edtva az [imap integr\u00e1ci\u00f3ra](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Az IMAP e-mail tartalom \u00e9rz\u00e9kel\u0151j\u00e9nek be\u00e1ll\u00edt\u00e1s\u00e1hoz \u00e1ll\u00edtson be egy sablon\u00e9rz\u00e9kel\u0151t a config:\n\n```yaml\n{yaml_example}```\n\nK\u00e9rem, t\u00e1vol\u00edtsa el az elavult `imap_email_plaform` \u00e9rz\u00e9kel\u0151 konfigur\u00e1ci\u00f3t a `configuration.yaml` f\u00e1jlb\u00f3l.\n\nVegye figyelembe, hogy az esem\u00e9nysz\u0171r\u0151 csak a konfigur\u00e1lt enged\u00e9lyezett felad\u00f3k k\u00f6z\u00fcl az els\u0151t sz\u0171ri, sz\u00fcks\u00e9g eset\u00e9n szabja testre a sz\u0171r\u0151t.\n\nEzt a r\u00e9szt kihagyhatja, ha m\u00e1r be\u00e1ll\u00edtott egy sablon \u00e9rz\u00e9kel\u0151t.",
+            "title": "Az IMAP e-mail integr\u00e1ci\u00f3ja elavult"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "Az IMAP-kiszolg\u00e1l\u00f3 konfigur\u00e1ci\u00f3ja m\u00e1r \u00e1tker\u00fclt az imap integr\u00e1ci\u00f3ba. T\u00e1vol\u00edtsa el az `imap_email_plaform` \u00e9rz\u00e9kel\u0151 konfigur\u00e1ci\u00f3t a `configuration.yaml` f\u00e1jlb\u00f3l.",
+                    "cannot_connect": "A migr\u00e1ci\u00f3 nem siker\u00fclt. Nem siker\u00fclt csatlakozni az IMAP-kiszolg\u00e1l\u00f3hoz. V\u00e9gezzen manu\u00e1lis migr\u00e1ci\u00f3t."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "Ebben a l\u00e9p\u00e9sben egy `imap` configur\u00e1ci\u00f3s bejegyz\u00e9st \u00e1ll\u00edtunk be a k\u00f6vetkez\u0151ekkel:\n\n```text\nKiszolg\u00e1l\u00f3 {server}\nPort {port}\nFelhaszn\u00e1l\u00f3n\u00e9v {username}\nJelsz\u00f3 *****\nMappa {folder}\n```\n\nB\u0151vebben: (https://www.home-assistant.io/integrations/imap/)\n\nFitering configuration on allowed `sender` is part of the template sensor config that can copied and placed in your `configuration.yaml.\n\nVegye figyelembe, hogy az esem\u00e9nysz\u0171r\u0151 csak a konfigur\u00e1lt enged\u00e9lyezett felad\u00f3k k\u00f6z\u00fcl az els\u0151t sz\u0171ri, sz\u00fcks\u00e9g eset\u00e9n szabja testre a sz\u0171r\u0151t.\n\n```yaml\n{yaml_example}````\nNe felejtse el megtiszt\u00edtani a `configuration.yaml` \u00e1llom\u00e1nyt a migr\u00e1ci\u00f3 ut\u00e1n.\n\nMentse az IMAP-kiszolg\u00e1l\u00f3 konfigur\u00e1ci\u00f3j\u00e1nak migr\u00e1l\u00e1s\u00e1t egy `imap` konfigur\u00e1ci\u00f3s bejegyz\u00e9sbe.",
+                        "title": "Az IMAP-kiszolg\u00e1l\u00f3 be\u00e1ll\u00edt\u00e1sai \u00e1tker\u00fclnek"
+                    },
+                    "start": {
+                        "description": "Az IMAP e-mail tartalom integr\u00e1ci\u00f3ja elavult. Az IMAP-kiszolg\u00e1l\u00f3 konfigur\u00e1ci\u00f3ja automatikusan \u00e1t\u00e1ll\u00edthat\u00f3 az [imap integr\u00e1ci\u00f3ra](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), ez lehet\u0151v\u00e9 teszi az egy\u00e9ni `imap` esem\u00e9nyind\u00edt\u00f3 haszn\u00e1lat\u00e1t. Az IMAP tartalmi \u00e1llapottal rendelkez\u0151 \u00e9rz\u00e9kel\u0151 be\u00e1ll\u00edt\u00e1s\u00e1hoz sablon \u00e9rz\u00e9kel\u0151t lehet haszn\u00e1lni. A migr\u00e1ci\u00f3 ut\u00e1n t\u00e1vol\u00edtsa el az `imap_email_plaform` \u00e9rz\u00e9kel\u0151 konfigur\u00e1ci\u00f3t a `configuration.yaml` \u00e1llom\u00e1nyb\u00f3l.\n\nK\u00fcldje el az IMAP-kiszolg\u00e1l\u00f3 konfigur\u00e1ci\u00f3j\u00e1nak az `imap` integr\u00e1ci\u00f3ba t\u00f6rt\u00e9n\u0151 migr\u00e1ci\u00f3j\u00e1nak elind\u00edt\u00e1s\u00e1hoz.",
+                        "title": "IMAP e-mail konfigur\u00e1ci\u00f3j\u00e1nak \u00e1ttelep\u00edt\u00e9se"
+                    }
+                }
+            },
+            "title": "Az IMAP e-mail tartalom integr\u00e1ci\u00f3ja figyelmet ig\u00e9nyel"
+        }
+    }
+}

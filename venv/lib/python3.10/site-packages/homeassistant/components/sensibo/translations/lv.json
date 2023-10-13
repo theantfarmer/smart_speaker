@@ -1,0 +1,58 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konts jau ir konfigur\u0113ts",
+            "reauth_successful": "Atk\u0101rtota autentifik\u0101cija veiksm\u012bga"
+        },
+        "error": {
+            "cannot_connect": "Piesl\u0113guma k\u013c\u016bda",
+            "invalid_auth": "Neder\u012bga autentifik\u0101cija"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "API atsl\u0113ga"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "API atsl\u0113ga"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "horizontalswing": {
+                "state": {
+                    "fixedcenter": "Fiks\u0113ts centr\u0101",
+                    "fixedcenterleft": "Fiks\u0113ts centrs\u0101 pa kreisi",
+                    "fixedcenterright": "Fiks\u0113ts centr\u0101 pa labi",
+                    "fixedleft": "Fiks\u0113ts pa kreisi",
+                    "stopped": "Aptur\u0113ts"
+                }
+            },
+            "light": {
+                "state": {
+                    "off": "Izsl\u0113gts",
+                    "on": "Iesl\u0113gts"
+                }
+            }
+        },
+        "sensor": {
+            "sensitivity": {
+                "state": {
+                    "n": "Norm\u0101ls",
+                    "s": "J\u016bt\u012bgs"
+                }
+            },
+            "smart_type": {
+                "state": {
+                    "feelslike": "J\u016btas k\u0101",
+                    "humidity": "Mitrums",
+                    "temperature": "Temperat\u016bra"
+                }
+            }
+        }
+    }
+}

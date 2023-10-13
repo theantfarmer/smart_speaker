@@ -1,0 +1,13 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Alert",
+            "state": {
+                "idle": "brak aktywno\u015bci",
+                "off": "potwierdzenie",
+                "on": "aktywny"
+            }
+        }
+    },
+    "title": "Alert"
+}

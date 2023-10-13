@@ -1,0 +1,8 @@
+{
+    "services": {
+        "speedtest": {
+            "description": "Ejecuta inmediatamente un test de velocidad con Fast.com.",
+            "name": "Test de velocidad"
+        }
+    }
+}

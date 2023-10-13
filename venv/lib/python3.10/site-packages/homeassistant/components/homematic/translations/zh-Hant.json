@@ -1,0 +1,18 @@
+{
+    "services": {
+        "set_install_mode": {
+            "fields": {
+                "mode": {
+                    "name": "\u6a21\u5f0f"
+                }
+            }
+        },
+        "set_variable_value": {
+            "fields": {
+                "name": {
+                    "name": "\u540d\u7a31"
+                }
+            }
+        }
+    }
+}

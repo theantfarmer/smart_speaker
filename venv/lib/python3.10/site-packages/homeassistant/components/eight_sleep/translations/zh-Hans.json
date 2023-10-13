@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "\u5bc6\u7801",
+                    "username": "\u7528\u6237\u540d"
+                }
+            }
+        }
+    },
+    "services": {
+        "heat_set": {
+            "fields": {
+                "duration": {
+                    "description": "\u4ee5\u79d2\u4e3a\u5355\u4f4d\u52a0\u70ed/\u51b7\u5374\u81f3\u76ee\u6807\u6c34\u5e73\u7684\u6301\u7eed\u65f6\u95f4\u3002",
+                    "name": "\u6301\u7eed\u65f6\u95f4"
+                }
+            }
+        }
+    }
+}

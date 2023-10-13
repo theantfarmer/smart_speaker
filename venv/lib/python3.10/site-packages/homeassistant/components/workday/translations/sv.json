@@ -1,0 +1,86 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Arbetsdag har redan st\u00e4llts in med vald konfiguration",
+            "incorrect_province": "Felaktig indelning fr\u00e5n yaml-import"
+        },
+        "error": {
+            "add_holiday_error": "Felaktigt format f\u00f6r datum (\u00c5\u00c5\u00c5\u00c5\u00c5-MM-DD)",
+            "already_configured": "Tj\u00e4nsten \u00e4r redan konfigurerad",
+            "remove_holiday_error": "Felaktigt format p\u00e5 datum (\u00c5\u00c5\u00c5\u00c5-MM-DD) eller helgdagsnamn hittades inte"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "L\u00e4gg till helgdagar",
+                    "days_offset": "Offset",
+                    "excludes": "Exkluderar",
+                    "province": "Indelning av land",
+                    "remove_holidays": "Ta bort helgdagar",
+                    "workdays": "Arbetsdagar"
+                },
+                "data_description": {
+                    "add_holidays": "L\u00e4gg till anpassade helgdagar som \u00c5\u00c5\u00c5\u00c5-MM-DD",
+                    "days_offset": "Dagar f\u00f6rskjutning",
+                    "excludes": "Lista \u00f6ver arbetsdagar som ska uteslutas",
+                    "province": "Stat, Territorium, Provins, Region i Land",
+                    "remove_holidays": "Ta bort helgdagar som \u00c5\u00c5\u00c5\u00c5-MM-DD eller med partiellt namn",
+                    "workdays": "Lista \u00f6ver arbetsdagar"
+                },
+                "description": "St\u00e4ll in arbetsdagsalternativ f\u00f6r {name}"
+            },
+            "user": {
+                "data": {
+                    "country": "Land",
+                    "name": "Namn"
+                }
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Felaktigt format p\u00e5 datum (\u00c5\u00c5\u00c5\u00c5-MM-DD)",
+            "already_configured": "Tj\u00e4nsten \u00e4r redan konfigurerad",
+            "remove_holiday_error": "Felaktigt format p\u00e5 datum (\u00c5\u00c5\u00c5\u00c5-MM-DD) eller helgdagsnamn hittades inte"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "L\u00e4gg till helgdagar",
+                    "days_offset": "Offset",
+                    "excludes": "Exkluderar",
+                    "province": "Indelning av land",
+                    "remove_holidays": "Ta bort helgdagar",
+                    "workdays": "Arbetsdagar"
+                },
+                "data_description": {
+                    "add_holidays": "L\u00e4gg till anpassade helgdagar som \u00c5\u00c5\u00c5\u00c5-MM-DD",
+                    "days_offset": "Dagar f\u00f6rskjutning",
+                    "excludes": "Lista \u00f6ver arbetsdagar som ska uteslutas",
+                    "province": "Stat, Territorium, Provins, Region i Land",
+                    "remove_holidays": "Ta bort helgdagar som \u00c5\u00c5\u00c5\u00c5-MM-DD eller med partiellt namn",
+                    "workdays": "Lista \u00f6ver arbetsdagar"
+                }
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Fredag",
+                "holiday": "Helgdagar",
+                "mon": "M\u00e5ndag",
+                "sat": "L\u00f6rdag",
+                "sun": "S\u00f6ndag",
+                "thu": "Torsdag",
+                "tue": "Tisdag",
+                "wed": "Onsdag"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Ingen underavdelning"
+            }
+        }
+    }
+}

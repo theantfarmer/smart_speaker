@@ -1,0 +1,119 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Konto har redan konfigurerats"
+        },
+        "step": {
+            "sensor": {
+                "data": {
+                    "attribute": "Attribut",
+                    "device_class": "Device Class",
+                    "index": "Index",
+                    "name": "Namn",
+                    "select": "Markera",
+                    "unit_of_measurement": "M\u00e5ttenhet"
+                },
+                "data_description": {
+                    "state_class": "Sensorn state_class"
+                }
+            },
+            "user": {
+                "data": {
+                    "authentication": "Autentisering",
+                    "encoding": "Teckenkodning",
+                    "headers": "Headers",
+                    "password": "L\u00f6senord",
+                    "resource": "Resurs",
+                    "username": "Anv\u00e4ndarnamn",
+                    "verify_ssl": "Verifiera SSL-certifikat"
+                },
+                "data_description": {
+                    "authentication": "Typ av HTTP-autentisering. Antingen basic eller digest",
+                    "headers": "Rubriker att anv\u00e4nda f\u00f6r webbf\u00f6rfr\u00e5gan",
+                    "resource": "Webbadressen till webbplatsen som inneh\u00e5ller v\u00e4rdet",
+                    "verify_ssl": "Aktiverar/inaktiverar verifiering av SSL/TLS-certifikat, till exempel om det \u00e4r sj\u00e4lvsignerat"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "edit_sensor": {
+                "data": {
+                    "attribute": "Attribut",
+                    "name": "Namn",
+                    "select": "Markera",
+                    "unit_of_measurement": "M\u00e5ttenhet"
+                },
+                "data_description": {
+                    "state_class": "Sensorn state_class"
+                }
+            },
+            "resource": {
+                "data": {
+                    "encoding": "Teckenkodning"
+                }
+            }
+        }
+    },
+    "selector": {
+        "device_class": {
+            "options": {
+                "apparent_power": "Skenbar effekt",
+                "aqi": "Luftkvalitetsindex",
+                "atmospheric_pressure": "Lufttryck",
+                "battery": "Batteri",
+                "carbon_dioxide": "Koldioxid",
+                "carbon_monoxide": "Kolmonoxid",
+                "current": "Str\u00f6m",
+                "data_rate": "Datahastighet",
+                "data_size": "Datastorlek",
+                "date": "Datum",
+                "distance": "Avst\u00e5nd",
+                "duration": "Varaktighet",
+                "energy": "Energi",
+                "energy_storage": "Lagrad energi",
+                "frequency": "Frekvens",
+                "gas": "Gas",
+                "humidity": "Luftfuktighet",
+                "illuminance": "Ljusstyrka",
+                "irradiance": "Str\u00e5lning",
+                "moisture": "Fukt",
+                "monetary": "Balans",
+                "nitrogen_dioxide": "Kv\u00e4vedioxid",
+                "nitrogen_monoxide": "Kv\u00e4veoxid",
+                "nitrous_oxide": "Lustgas",
+                "ozone": "Ozon",
+                "pm1": "PM1",
+                "pm10": "PM10",
+                "pm25": "PM2.5",
+                "power": "Effekt",
+                "power_factor": "Effektfaktor",
+                "precipitation": "Nederb\u00f6rd",
+                "precipitation_intensity": "Nederb\u00f6rdsintensitet",
+                "pressure": "Tryck",
+                "reactive_power": "Reaktiv effekt",
+                "signal_strength": "Signalstyrka",
+                "sound_pressure": "Ljudtryck",
+                "speed": "Hastighet",
+                "sulphur_dioxide": "Svaveldioxid",
+                "temperature": "Temperatur",
+                "timestamp": "Tidsst\u00e4mpel",
+                "volatile_organic_compounds": "VOC",
+                "voltage": "Sp\u00e4nning",
+                "volume": "Volym",
+                "volume_storage": "Lagrad volym",
+                "water": "Vatten",
+                "weight": "Vikt",
+                "wind_speed": "Vindhastighet"
+            }
+        },
+        "state_class": {
+            "options": {
+                "measurement": "M\u00e5tt",
+                "total": "Totalt",
+                "total_increasing": "Totalt \u00f6kande"
+            }
+        }
+    }
+}

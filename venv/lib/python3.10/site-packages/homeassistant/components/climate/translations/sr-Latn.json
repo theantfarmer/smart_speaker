@@ -1,0 +1,25 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Termostat",
+            "state": {
+                "heat": "Grejanje",
+                "heat_cool": "Grejanje/Hla\u0111enje"
+            },
+            "state_attributes": {
+                "hvac_action": {
+                    "name": "Trenutna akcija",
+                    "state": {
+                        "cooling": "Hla\u0111enje",
+                        "heating": "Grejanje",
+                        "idle": "Neaktivan",
+                        "off": "Isklju\u010den"
+                    }
+                },
+                "temperature": {
+                    "name": "Ciljana temperatura"
+                }
+            }
+        }
+    }
+}

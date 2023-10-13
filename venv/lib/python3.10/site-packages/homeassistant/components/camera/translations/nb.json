@@ -1,0 +1,34 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kamera",
+            "state": {
+                "idle": "Inaktiv",
+                "recording": "Opptak",
+                "streaming": "Str\u00f8mming"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "Tilgangstoken"
+                },
+                "brand": {
+                    "name": "Merke"
+                },
+                "frontend_stream_type": {
+                    "name": "Str\u00f8mtype",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Modell"
+                },
+                "motion_detection": {
+                    "name": "Bevegelsessensor"
+                }
+            }
+        }
+    },
+    "title": "Kamera"
+}

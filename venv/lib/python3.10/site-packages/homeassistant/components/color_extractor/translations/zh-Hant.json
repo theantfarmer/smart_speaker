@@ -1,0 +1,15 @@
+{
+    "services": {
+        "turn_on": {
+            "fields": {
+                "color_extract_path": {
+                    "name": "\u8def\u5f91"
+                },
+                "color_extract_url": {
+                    "name": "\u7db2\u5740"
+                }
+            },
+            "name": "\u958b\u555f"
+        }
+    }
+}

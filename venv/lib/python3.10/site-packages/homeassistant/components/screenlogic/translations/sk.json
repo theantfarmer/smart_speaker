@@ -1,0 +1,51 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "gateway_entry": {
+                "data": {
+                    "ip_address": "IP adresa",
+                    "port": "Port"
+                },
+                "description": "Zadajte inform\u00e1cie o va\u0161ej br\u00e1ne ScreenLogic.",
+                "title": "ScreenLogic"
+            },
+            "gateway_select": {
+                "data": {
+                    "selected_gateway": "Gateway"
+                },
+                "description": "Boli objaven\u00e9 nasleduj\u00face br\u00e1ny ScreenLogic. Vyberte jednu, ktor\u00fa chcete nakonfigurova\u0165, alebo sa rozhodnite manu\u00e1lne nakonfigurova\u0165 br\u00e1nu ScreenLogic.",
+                "title": "ScreenLogic"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "scan_interval": "Sekundy medzi skenovaniami"
+                },
+                "description": "Zadajte nastavenia pre {gateway_name}",
+                "title": "ScreenLogic"
+            }
+        }
+    },
+    "services": {
+        "set_color_mode": {
+            "description": "Nastav\u00ed farebn\u00fd re\u017eim pre v\u0161etky svetl\u00e1 s mo\u017enos\u0165ou farebn\u00e9ho zobrazenia pripojen\u00e9 k tejto br\u00e1ne ScreenLogic.",
+            "fields": {
+                "color_mode": {
+                    "description": "Farebn\u00fd re\u017eim ScreenLogic, ktor\u00fd sa m\u00e1 nastavi\u0165.",
+                    "name": "Farebn\u00fd re\u017eim"
+                }
+            },
+            "name": "Nastavenie re\u017eimu farieb"
+        }
+    }
+}

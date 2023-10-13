@@ -1,0 +1,10 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "fingerprint": "\u6536\u5230\u6307\u7eb9\u4ee3\u7801",
+            "send_keys": "\u6536\u5230\u53d1\u9001\u5bc6\u94a5",
+            "transmitter": "\u6536\u5230\u53d1\u5c04\u5668\u4ee3\u7801",
+            "transponder": "\u6536\u5230\u5e94\u7b54\u5668\u4ee3\u7801"
+        }
+    }
+}

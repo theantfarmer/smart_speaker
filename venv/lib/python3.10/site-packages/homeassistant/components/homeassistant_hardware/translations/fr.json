@@ -1,0 +1,72 @@
+{
+    "silabs_multiprotocol_hardware": {
+        "options": {
+            "abort": {
+                "addon_info_failed": "\u00c9chec de l'obtention des informations sur le module compl\u00e9mentaire Silicon Labs Multiprotocol.",
+                "addon_install_failed": "\u00c9chec de l'installation du module compl\u00e9mentaire Silicon Labs Multiprotocol.",
+                "addon_set_config_failed": "Impossible de d\u00e9finir la configuration de Silicon Labs Multiprotocol.",
+                "addon_start_failed": "\u00c9chec du d\u00e9marrage du module compl\u00e9mentaire Silicon Labs Multiprotocol.",
+                "not_hassio": "Les options mat\u00e9rielles ne peuvent \u00eatre configur\u00e9es que sur les installations HassOS.",
+                "zha_migration_failed": "La migration ZHA n\u2019a pas r\u00e9ussi."
+            },
+            "error": {
+                "unknown": "Erreur inattendue"
+            },
+            "progress": {
+                "install_addon": "Veuillez patienter pendant que l'installation du module compl\u00e9mentaire Silicon Labs Multiprotocol se termine. Cela peut prendre plusieurs minutes.",
+                "start_addon": "Veuillez patienter pendant que le d\u00e9marrage du module compl\u00e9mentaire Silicon Labs Multiprotocol se termine. Cela peut prendre quelques secondes."
+            },
+            "step": {
+                "addon_installed_other_device": {
+                    "title": "La prise en charge multiprotocole est d\u00e9j\u00e0 activ\u00e9e pour un autre appareil"
+                },
+                "addon_menu": {
+                    "menu_options": {
+                        "reconfigure_addon": "Reconfigurer la prise en charge multiprotocole radio IEEE 802.15.4",
+                        "uninstall_addon": "Supprimez la prise en charge du multiprotocole radio IEEE 802.15.4."
+                    }
+                },
+                "addon_not_installed": {
+                    "data": {
+                        "enable_multi_pan": "Activer la prise en charge multiprotocole"
+                    },
+                    "description": "Lorsque la prise en charge multiprotocole est activ\u00e9e, la radio IEEE 802.15.4 de {hardware_name} peut \u00eatre utilis\u00e9e \u00e0 la fois pour Zigbee et Thread (utilis\u00e9 par Matter) en m\u00eame temps. Si la radio est d\u00e9j\u00e0 utilis\u00e9e par l'int\u00e9gration ZHA Zigbee, ZHA sera reconfigur\u00e9 pour utiliser le firmware multiprotocole. \n\nRemarque : Il s'agit d'une fonctionnalit\u00e9 exp\u00e9rimentale.",
+                    "title": "Activer la prise en charge multiprotocole sur la radio IEEE 802.15.4"
+                },
+                "change_channel": {
+                    "data": {
+                        "channel": "Canal"
+                    },
+                    "title": "Reconfigurer la prise en charge multiprotocole radio IEEE 802.15.4"
+                },
+                "install_addon": {
+                    "title": "L'installation du module compl\u00e9mentaire multi-protocoles de Silicon Labs a commenc\u00e9."
+                },
+                "notify_channel_change": {
+                    "description": "Un changement de canal Zigbee et Thread a \u00e9t\u00e9 lanc\u00e9 et se terminera dans {delay_minutes}\u00a0minutes.",
+                    "title": "Changement de canal initi\u00e9"
+                },
+                "notify_unknown_multipan_user": {
+                    "description": "Home Assistant peut changer automatiquement les canaux pour OTBR et ZHA. Si vous avez configur\u00e9 une autre int\u00e9gration utilisant la radio (par exemple Zigbee2MQTT), vous devrez reconfigurer le canal dans cette int\u00e9gration apr\u00e8s avoir suivi ce guide.",
+                    "title": "Une configuration manuelle peut \u00eatre n\u00e9cessaire"
+                },
+                "reconfigure_addon": {
+                    "data": {
+                        "channel": "Canal"
+                    },
+                    "title": "Reconfigurer la prise en charge multiprotocole radio IEEE 802.15.4"
+                },
+                "show_revert_guide": {
+                    "description": "Si vous voulez utiliser uniquement le firmware Zigbee, suivez les \u00e9tapes manuelles suivantes :\n\n  * Supprimez le module compl\u00e9mentaire multi-protocoles de Silicon Labs.\n\n  * Flashez le firmware qui supporte uniquement Zigbee en suivant le guide https://github.com/NabuCasa/silabs-firmware/wiki/Flash-Silicon-Labs-radio-firmware-manually.\n\n  * Reconfigurez ZHA pour migrer les param\u00e8tres vers le nouveau canal",
+                    "title": "Le support multi-protocoles est activ\u00e9 pour cet appareil."
+                },
+                "start_addon": {
+                    "title": "Le module compl\u00e9mentaire multi-protocoles de Silicon Labs d\u00e9marre."
+                },
+                "uninstall_addon": {
+                    "title": "Supprimez la prise en charge du multiprotocole radio IEEE 802.15.4."
+                }
+            }
+        }
+    }
+}

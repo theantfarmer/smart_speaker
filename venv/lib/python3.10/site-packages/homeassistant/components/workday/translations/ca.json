@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dia laborable ja s'ha configurat amb la configuraci\u00f3 escollida",
+            "incorrect_province": "Importaci\u00f3 yaml de subdivisi\u00f3 de pa\u00eds incorrecta"
+        },
+        "error": {
+            "add_holiday_error": "Format de data incorrecte (AAAA-MM-DD)",
+            "already_configured": "El servei ja est\u00e0 configurat",
+            "remove_holiday_error": "Format de data incorrecte (AAAA-MM-DD) o nom de vacances/festiu no trobat"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Afegeix vacances/festius",
+                    "days_offset": "Despla\u00e7ament (\u00f2fset)",
+                    "excludes": "Exclusions",
+                    "province": "Subdivisi\u00f3 de pa\u00eds",
+                    "remove_holidays": "Elimina vacances/festius",
+                    "workdays": "Dies laborables"
+                },
+                "data_description": {
+                    "add_holidays": "Afegeix vacances/festius personalitzats en format AAAA-MM-DD",
+                    "days_offset": "Dies de despla\u00e7ament (\u00f2fset)",
+                    "excludes": "Llista de dies laborables a excloure",
+                    "province": "Estat, territori, prov\u00edncia, regi\u00f3 de pa\u00eds",
+                    "remove_holidays": "Elimina vacances/festius amb el format AAAA-MM-DD o amb una part del nom",
+                    "workdays": "Llista de dies laborables"
+                },
+                "description": "Estableix les opcions addicionals de dia laborable de {name} pel pa\u00eds {country}"
+            },
+            "user": {
+                "data": {
+                    "country": "Pa\u00eds",
+                    "name": "Nom"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "La configuraci\u00f3 de 'Dia laborable' mitjan\u00e7ant YAML s'eliminar\u00e0 de Home Assistant.\n\nLa configuraci\u00f3 YAML existent s'ha importat autom\u00e0ticament a la interf\u00edcie d'usuari.\n\nElimina la configuraci\u00f3 YAML de 'Dia laborable' del fitxer configuration.yaml i reinicia Home Assistant per solucionar aquest problema.",
+            "title": "La configuraci\u00f3 YAML de 'Dia laborable' est\u00e0 sent eliminada"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Format de data incorrecte (AAAA-MM-DD)",
+            "already_configured": "Ja existeix un servei amb aquesta configuraci\u00f3",
+            "remove_holiday_error": "Format de data incorrecte (AAAA-MM-DD) o nom de vacances/festiu no trobat"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Afegeix vacances/festius",
+                    "days_offset": "Despla\u00e7ament (\u00f2fset)",
+                    "excludes": "Exclusions",
+                    "province": "Subdivisi\u00f3 de pa\u00eds",
+                    "remove_holidays": "Elimina vacances/festius",
+                    "workdays": "Dies laborables"
+                },
+                "data_description": {
+                    "add_holidays": "Afegeix vacances/festius personalitzats en format AAAA-MM-DD",
+                    "days_offset": "Dies de despla\u00e7ament (\u00f2fset)",
+                    "excludes": "Llista de dies laborables a excloure",
+                    "province": "Estat, territori, prov\u00edncia, regi\u00f3 de pa\u00eds",
+                    "remove_holidays": "Elimina vacances/festius amb el format AAAA-MM-DD o amb una part del nom",
+                    "workdays": "Llista de dies laborables"
+                },
+                "description": "Canvia les opcions addicionals de {name} configurades pel pa\u00eds {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Divendres",
+                "holiday": "Vacances",
+                "mon": "Dilluns",
+                "sat": "Dissabte",
+                "sun": "Diumenge",
+                "thu": "Dijous",
+                "tue": "Dimarts",
+                "wed": "Dimecres"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Sense subdivisi\u00f3"
+            }
+        }
+    },
+    "title": "Dia laborable"
+}

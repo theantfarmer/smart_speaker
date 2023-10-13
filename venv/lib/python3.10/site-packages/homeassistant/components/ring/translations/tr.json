@@ -1,0 +1,74 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f"
+        },
+        "error": {
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "unknown": "Beklenmeyen hata"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "\u0130ki ad\u0131ml\u0131 kimlik do\u011frulama kodu"
+                },
+                "title": "\u0130ki fakt\u00f6rl\u00fc kimlik do\u011frulama"
+            },
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131"
+                },
+                "title": "Ring hesab\u0131yla oturum a\u00e7\u0131n"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "ding": {
+                "name": "Ding"
+            }
+        },
+        "light": {
+            "light": {
+                "name": "I\u015f\u0131k"
+            }
+        },
+        "sensor": {
+            "last_activity": {
+                "name": "Son etkinlik"
+            },
+            "last_ding": {
+                "name": "Son ding"
+            },
+            "last_motion": {
+                "name": "Son hareket"
+            },
+            "volume": {
+                "name": "Ses"
+            },
+            "wifi_signal_category": {
+                "name": "Wi-Fi sinyal kategorisi"
+            },
+            "wifi_signal_strength": {
+                "name": "WiFi sinyal g\u00fcc\u00fc"
+            }
+        },
+        "siren": {
+            "siren": {
+                "name": "Siren"
+            }
+        },
+        "switch": {
+            "siren": {
+                "name": "Siren"
+            }
+        }
+    },
+    "services": {
+        "update": {
+            "description": "T\u00fcm Ring cihazlar\u0131n\u0131z i\u00e7in sahip oldu\u011fumuz verileri g\u00fcnceller.",
+            "name": "G\u00fcncelle"
+        }
+    }
+}

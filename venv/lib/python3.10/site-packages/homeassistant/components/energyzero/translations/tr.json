@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f"
+        },
+        "step": {
+            "user": {
+                "description": "Kurulumu ba\u015flatmak istiyor musunuz?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "average_price": {
+                "name": "Ortalama - bug\u00fcn"
+            },
+            "current_hour_price": {
+                "name": "Ge\u00e7erli saat"
+            },
+            "highest_price_time": {
+                "name": "En y\u00fcksek fiyat\u0131n zaman\u0131 - bug\u00fcn"
+            },
+            "hours_priced_equal_or_higher": {
+                "name": "\u015eu anki saate e\u015fit veya daha y\u00fcksek fiyatl\u0131 saatler - bug\u00fcn"
+            },
+            "hours_priced_equal_or_lower": {
+                "name": "\u015eu anki saate e\u015fit veya daha d\u00fc\u015f\u00fck fiyatl\u0131 saatler - bug\u00fcn"
+            },
+            "lowest_price_time": {
+                "name": "En d\u00fc\u015f\u00fck fiyat\u0131n zaman\u0131 - bug\u00fcn"
+            },
+            "max_price": {
+                "name": "En y\u00fcksek fiyat - bug\u00fcn"
+            },
+            "min_price": {
+                "name": "En d\u00fc\u015f\u00fck fiyat - bug\u00fcn"
+            },
+            "next_hour_price": {
+                "name": "Sonraki saat"
+            },
+            "percentage_of_max": {
+                "name": "En y\u00fcksek fiyat\u0131n mevcut y\u00fczdesi - bug\u00fcn"
+            }
+        }
+    }
+}

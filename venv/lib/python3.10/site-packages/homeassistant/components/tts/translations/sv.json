@@ -1,0 +1,30 @@
+{
+    "services": {
+        "say": {
+            "fields": {
+                "language": {
+                    "name": "Spr\u00e5k"
+                },
+                "message": {
+                    "name": "Meddelande"
+                },
+                "options": {
+                    "name": "Alternativ"
+                }
+            }
+        },
+        "speak": {
+            "fields": {
+                "language": {
+                    "name": "Spr\u00e5k"
+                },
+                "message": {
+                    "name": "Meddelande"
+                },
+                "options": {
+                    "name": "Alternativ"
+                }
+            }
+        }
+    }
+}

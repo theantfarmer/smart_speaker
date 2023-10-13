@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reboot_gateway": {
+            "description": "Startet das KLF200 Gateway neu.",
+            "name": "Gateway neu starten"
+        }
+    }
+}

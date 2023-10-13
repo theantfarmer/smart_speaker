@@ -1,0 +1,101 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositiu ja est\u00e0 configurat"
+        },
+        "error": {
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida"
+        },
+        "flow_title": "{ip}",
+        "step": {
+            "user": {
+                "data": {
+                    "ip_address": "Nom de l'amfitri\u00f3 o adre\u00e7a IP",
+                    "password": "Contrasenya",
+                    "port": "Port"
+                },
+                "title": "Introdueix la teva informaci\u00f3"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "flow_sensor": {
+                "name": "Sensor de cabal"
+            },
+            "freeze": {
+                "name": "Restriccions de gelades"
+            },
+            "hourly": {
+                "name": "Restriccions per hores"
+            },
+            "month": {
+                "name": "Restriccions mensuals"
+            },
+            "raindelay": {
+                "name": "Restriccions de retard de pluja"
+            },
+            "rainsensor": {
+                "name": "Restriccions de sensor de pluja"
+            },
+            "weekday": {
+                "name": "Restriccions setmanals"
+            }
+        },
+        "select": {
+            "freeze_protection_temperature": {
+                "name": "Temperatura de protecci\u00f3 contra gelades"
+            }
+        },
+        "sensor": {
+            "flow_sensor_clicks_cubic_meter": {
+                "name": "Clics per metre c\u00fabic del sensor de cabal"
+            },
+            "flow_sensor_consumed_liters": {
+                "name": "Litres consumits del sensor de cabal"
+            },
+            "flow_sensor_leak_clicks": {
+                "name": "Clics de fuites del sensor de cabal"
+            },
+            "flow_sensor_leak_volume": {
+                "name": "Volum de fuites del sensor de cabal"
+            },
+            "flow_sensor_start_index": {
+                "name": "\u00cdndex d'inici del sensor de cabal"
+            },
+            "flow_sensor_watering_clicks": {
+                "name": "Clics del sensor de cabal"
+            },
+            "last_leak_detected": {
+                "name": "\u00daltima fuita detectada"
+            },
+            "rain_sensor_rain_start": {
+                "name": "Inici de pluja del sensor de pluja"
+            }
+        },
+        "switch": {
+            "freeze_protect_enabled": {
+                "name": "Protecci\u00f3 contra gelades"
+            },
+            "hot_days_extra_watering": {
+                "name": "Aigua extra en dies calorosos"
+            }
+        },
+        "update": {
+            "firmware": {
+                "name": "Microprogramari"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "use_app_run_times": "Utilitza els temps d'execuci\u00f3 de zona de l'aplicaci\u00f3 RainMachine",
+                    "zone_run_time": "Temps d'execuci\u00f3 predeterminat de la zona (en segons)"
+                },
+                "title": "Configuraci\u00f3 de RainMachine"
+            }
+        }
+    }
+}

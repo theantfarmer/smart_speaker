@@ -1,0 +1,18 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "heavy": "\u00deungt",
+                            "mild": "V\u00e6gt",
+                            "none": "Ekkert",
+                            "unknown": "\u00d3\u00feekkt"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

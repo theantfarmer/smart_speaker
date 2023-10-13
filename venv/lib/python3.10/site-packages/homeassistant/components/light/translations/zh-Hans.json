@@ -1,0 +1,275 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "\u964d\u4f4e {entity_name} \u7684\u4eae\u5ea6",
+            "brightness_increase": "\u63d0\u9ad8 {entity_name} \u7684\u4eae\u5ea6",
+            "flash": "\u4f7f {entity_name} \u95ea\u70c1",
+            "toggle": "\u5207\u6362 {entity_name}",
+            "turn_off": "\u5173\u95ed {entity_name}",
+            "turn_on": "\u5f00\u542f {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} \u5df2\u5173\u95ed",
+            "is_on": "{entity_name} \u5df2\u5f00\u542f"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} \u6253\u5f00\u6216\u5173\u95ed",
+            "turned_off": "{entity_name} \u5df2\u5173\u95ed",
+            "turned_on": "{entity_name} \u5df2\u5f00\u542f"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "\u706f\u5149",
+            "state": {
+                "off": "\u5173\u95ed",
+                "on": "\u5f00\u542f"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "\u4eae\u5ea6"
+                },
+                "color_mode": {
+                    "name": "\u8272\u5f69\u6a21\u5f0f",
+                    "state": {
+                        "brightness": "\u4ec5\u4eae\u5ea6",
+                        "color_temp": "\u8272\u6e29",
+                        "hs": "HS",
+                        "onoff": "\u5f00/\u5173",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "\u672a\u77e5",
+                        "white": "\u767d\u8272",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "\u8272\u6e29 (mireds)"
+                },
+                "color_temp_kelvin": {
+                    "name": "\u8272\u6e29\uff08\u5f00\u5c14\u6587\uff09"
+                },
+                "effect": {
+                    "name": "\u706f\u5149\u6548\u679c"
+                },
+                "effect_list": {
+                    "name": "\u53ef\u7528\u6548\u679c"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "\u6700\u5927\u8272\u6e29\uff08\u5f00\u5c14\u6587\uff09"
+                },
+                "max_mireds": {
+                    "name": "\u6700\u5927\u8272\u6e29 (mired)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "\u6700\u4f4e\u8272\u6e29\uff08\u5f00\u5c14\u6587\uff09"
+                },
+                "min_mireds": {
+                    "name": "\u6700\u4f4e\u8272\u6e29 (mireds)"
+                },
+                "supported_color_modes": {
+                    "name": "\u53ef\u7528\u7684\u989c\u8272\u6a21\u5f0f",
+                    "state": {
+                        "brightness": "\u4ec5\u4eae\u5ea6",
+                        "color_temp": "\u8272\u6e29",
+                        "hs": "HS",
+                        "onoff": "\u5f00/\u5173",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "\u672a\u77e5",
+                        "white": "\u767d\u8272",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "\u7528\u4e8e {domain} \u96c6\u6210\u7684 {platform} \u5e73\u53f0\u4e0d\u518d\u652f\u6301\u901a\u8fc7 YAML \u914d\u7f6e\u3002\n\n\u8bf7\u5c06\u5176\u4ece\u914d\u7f6e\u6587\u4ef6\u4e2d\u5220\u9664\uff0c\u7136\u540e\u91cd\u65b0\u542f\u52a8 Home Assistant \u4ee5\u89e3\u51b3\u6b64\u95ee\u9898\u3002",
+            "title": "\u5e73\u53f0\u4e0d\u652f\u6301"
+        }
+    },
+    "selector": {
+        "color_name": {
+            "options": {
+                "aliceblue": "\u7231\u4e3d\u4e1d\u84dd",
+                "antiquewhite": "\u4eff\u53e4\u767d",
+                "aqua": "\u6e56\u7eff\u8272",
+                "aquamarine": "\u6d45\u84dd\u8272",
+                "azure": "\u5929\u84dd\u8272",
+                "beige": "\u7c73\u8272",
+                "bisque": "\u9ec4\u8910\u8272",
+                "blanchedalmond": "\u767d\u674f\u8272",
+                "blue": "\u84dd\u8272",
+                "blueviolet": "\u7d2b\u7f57\u5170\u8272",
+                "brown": "\u68d5\u8272",
+                "burlywood": "\u786c\u6728\u8272",
+                "cadetblue": "\u58eb\u5b98\u84dd",
+                "chartreuse": "\u519b\u5170\u8272",
+                "chocolate": "\u5de7\u514b\u529b\u8272",
+                "coral": "\u73ca\u745a\u8272",
+                "cornflowerblue": "\u77e2\u8f66\u83ca\u84dd",
+                "cornsilk": "\u7389\u7c73\u4e1d\u8272",
+                "tomato": "\u756a\u8304\u7ea2",
+                "turquoise": "\u7eff\u677e\u8272",
+                "violet": "\u7d2b\u8272",
+                "wheat": "\u5c0f\u9ea6\u8272",
+                "white": "\u767d\u8272",
+                "whitesmoke": "\u767d\u70df\u8272",
+                "yellow": "\u9ec4\u8272",
+                "yellowgreen": "\u9ec4\u7eff\u8272"
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "description": "\u6839\u636e\u5f53\u524d\u72b6\u6001\u5c06\u4e00\u4e2a\u6216\u591a\u4e2a\u706f\u4ece\u6253\u5f00\u5207\u6362\u5230\u5173\u95ed\uff0c\u6216\u8005\u4ece\u5173\u95ed\u5207\u6362\u5230\u6253\u5f00\u3002",
+            "fields": {
+                "brightness": {
+                    "description": "\u8868\u793a\u4eae\u5ea6\u7684\u6570\u5b57\uff0c\u5176\u4e2d 0 \u5173\u95ed\u706f\uff0c1 \u662f\u6700\u5c0f\u4eae\u5ea6\uff0c255 \u662f\u6700\u5927\u4eae\u5ea6\u3002",
+                    "name": "\u4eae\u5ea6\u503c"
+                },
+                "brightness_pct": {
+                    "description": "\u8868\u793a\u4eae\u5ea6\u767e\u5206\u6bd4\u7684\u6570\u5b57\uff0c\u5176\u4e2d 0 \u5173\u95ed\u706f\uff0c1 \u4e3a\u6700\u5c0f\u4eae\u5ea6\uff0c100 \u4e3a\u6700\u5927\u4eae\u5ea6\u3002",
+                    "name": "\u4eae\u5ea6"
+                },
+                "color_name": {
+                    "description": "\u53ef\u4f9b\u4eba\u7c7b\u9605\u8bfb\u7684\u989c\u8272\u540d\u79f0\u3002",
+                    "name": "\u989c\u8272\u540d\u79f0"
+                },
+                "color_temp": {
+                    "description": "\u8272\u6e29\uff08\u4ee5 Mired \u4e3a\u5355\u4f4d\uff09\u3002",
+                    "name": "\u8272\u6e29"
+                },
+                "effect": {
+                    "description": "\u706f\u5149\u6548\u679c\u3002",
+                    "name": "\u6548\u679c"
+                },
+                "flash": {
+                    "description": "\u706f\u662f\u5426\u5e94\u8be5\u95ea\u70c1\u3002",
+                    "name": "\u95ea\u70c1"
+                },
+                "hs_color": {
+                    "description": "\u989c\u8272\u91c7\u7528\u8272\u8c03/\u9971\u548c\u5ea6\u683c\u5f0f\u3002\u4e24\u4e2a\u6574\u6570\u7684\u5217\u8868\u3002\u8272\u8c03\u4e3a 0-360\uff0c\u9971\u548c\u5ea6\u4e3a 0-100\u3002",
+                    "name": "\u8272\u76f8/\u9971\u548c\u5ea6"
+                },
+                "kelvin": {
+                    "description": "\u8272\u6e29\uff0c\u4ee5 Kelvin \u4e3a\u5355\u4f4d\u3002",
+                    "name": "\u8272\u6e29"
+                },
+                "profile": {
+                    "description": "\u8981\u4f7f\u7528\u7684\u706f\u5149\u9884\u8bbe\u7684\u540d\u79f0\u3002",
+                    "name": "\u9884\u8bbe"
+                },
+                "rgb_color": {
+                    "description": "RGB \u683c\u5f0f\u7684\u989c\u8272\u3002 0 \u5230 255 \u4e4b\u95f4\u7684\u4e09\u4e2a\u6574\u6570\u7684\u5217\u8868\uff0c\u8868\u793a\u7ea2\u8272\u3001\u7eff\u8272\u548c\u84dd\u8272\u7684\u503c\u3002",
+                    "name": "\u989c\u8272"
+                },
+                "transition": {
+                    "description": "\u5230\u8fbe\u4e0b\u4e00\u4e2a\u72b6\u6001\u6240\u9700\u7684\u6301\u7eed\u65f6\u95f4\u3002",
+                    "name": "\u8fc7\u6e21"
+                },
+                "white": {
+                    "description": "\u5c06\u706f\u5149\u8bbe\u7f6e\u4e3a\u767d\u5149\u6a21\u5f0f\u3002",
+                    "name": "\u767d\u5149"
+                },
+                "xy_color": {
+                    "description": "XY \u683c\u5f0f\u7684\u989c\u8272\u3002 0 \u5230 1 \u4e4b\u95f4\u7684\u4e24\u4e2a\u5341\u8fdb\u5236\u6570\u7684\u5217\u8868\u3002",
+                    "name": "XY \u989c\u8272"
+                }
+            },
+            "name": "\u5207\u6362"
+        },
+        "turn_off": {
+            "description": "\u5173\u95ed\u4e00\u4e2a\u6216\u591a\u4e2a\u706f\u3002",
+            "fields": {
+                "flash": {
+                    "description": "\u706f\u662f\u5426\u5e94\u8be5\u95ea\u70c1\u3002",
+                    "name": "\u95ea\u70c1"
+                },
+                "transition": {
+                    "description": "\u5230\u8fbe\u4e0b\u4e00\u4e2a\u72b6\u6001\u6240\u9700\u7684\u6301\u7eed\u65f6\u95f4\u3002",
+                    "name": "\u8fc7\u6e21"
+                }
+            },
+            "name": "\u5173\u95ed"
+        },
+        "turn_on": {
+            "description": "\u6253\u5f00\u4e00\u4e2a\u6216\u591a\u4e2a\u706f\u5e76\u8c03\u6574\u706f\u7684\u5c5e\u6027\uff0c\u5373\u4f7f\u5b83\u4eec\u5df2\u7ecf\u6253\u5f00\u3002",
+            "fields": {
+                "brightness": {
+                    "description": "\u8868\u793a\u4eae\u5ea6\u7684\u6570\u5b57\uff0c\u5176\u4e2d 0 \u5173\u95ed\u706f\uff0c1 \u662f\u6700\u5c0f\u4eae\u5ea6\uff0c255 \u662f\u6700\u5927\u4eae\u5ea6\u3002",
+                    "name": "\u4eae\u5ea6\u503c"
+                },
+                "brightness_pct": {
+                    "description": "\u8868\u793a\u4eae\u5ea6\u767e\u5206\u6bd4\u7684\u6570\u5b57\uff0c\u5176\u4e2d 0 \u5173\u95ed\u706f\uff0c1 \u4e3a\u6700\u5c0f\u4eae\u5ea6\uff0c100 \u4e3a\u6700\u5927\u4eae\u5ea6\u3002",
+                    "name": "\u4eae\u5ea6"
+                },
+                "brightness_step": {
+                    "description": "\u6309\u6570\u503c\u66f4\u6539\u4eae\u5ea6\u3002",
+                    "name": "\u4eae\u5ea6\u6b65\u957f\u503c"
+                },
+                "brightness_step_pct": {
+                    "description": "\u6309\u767e\u5206\u6bd4\u66f4\u6539\u4eae\u5ea6\u3002",
+                    "name": "\u4eae\u5ea6\u6b65\u957f"
+                },
+                "color_name": {
+                    "description": "\u53ef\u4f9b\u4eba\u7c7b\u9605\u8bfb\u7684\u989c\u8272\u540d\u79f0\u3002",
+                    "name": "\u989c\u8272\u540d\u79f0"
+                },
+                "color_temp": {
+                    "description": "\u8272\u6e29\uff08\u4ee5 Mired \u4e3a\u5355\u4f4d\uff09\u3002",
+                    "name": "\u8272\u6e29"
+                },
+                "effect": {
+                    "description": "\u706f\u5149\u6548\u679c\u3002",
+                    "name": "\u6548\u679c"
+                },
+                "flash": {
+                    "description": "\u706f\u662f\u5426\u5e94\u8be5\u95ea\u70c1\u3002",
+                    "name": "\u95ea\u70c1"
+                },
+                "hs_color": {
+                    "description": "\u989c\u8272\u91c7\u7528\u8272\u8c03/\u9971\u548c\u5ea6\u683c\u5f0f\u3002\u4e24\u4e2a\u6574\u6570\u7684\u5217\u8868\u3002\u8272\u8c03\u4e3a 0-360\uff0c\u9971\u548c\u5ea6\u4e3a 0-100\u3002",
+                    "name": "\u8272\u76f8/\u9971\u548c\u5ea6"
+                },
+                "kelvin": {
+                    "description": "\u8272\u6e29\uff0c\u4ee5 Kelvin \u4e3a\u5355\u4f4d\u3002",
+                    "name": "\u8272\u6e29"
+                },
+                "profile": {
+                    "description": "\u8981\u4f7f\u7528\u7684\u706f\u5149\u9884\u8bbe\u7684\u540d\u79f0\u3002",
+                    "name": "\u9884\u8bbe"
+                },
+                "rgb_color": {
+                    "description": "RGB \u683c\u5f0f\u7684\u989c\u8272\u3002 0 \u5230 255 \u4e4b\u95f4\u7684\u4e09\u4e2a\u6574\u6570\u7684\u5217\u8868\uff0c\u8868\u793a\u7ea2\u8272\u3001\u7eff\u8272\u548c\u84dd\u8272\u7684\u503c\u3002",
+                    "name": "\u989c\u8272"
+                },
+                "rgbw_color": {
+                    "name": "RGBW \u989c\u8272"
+                },
+                "rgbww_color": {
+                    "description": "RGBWW \u683c\u5f0f\u7684\u989c\u8272\u3002 0 \u5230 255 \u4e4b\u95f4\u7684\u4e94\u4e2a\u6574\u6570\u7684\u5217\u8868\uff0c\u8868\u793a\u7ea2\u3001\u7eff\u3001\u84dd\u3001\u51b7\u767d\u548c\u6696\u767d\u7684\u503c\u3002",
+                    "name": "RGBWW \u989c\u8272"
+                },
+                "transition": {
+                    "description": "\u5230\u8fbe\u4e0b\u4e00\u4e2a\u72b6\u6001\u6240\u9700\u7684\u6301\u7eed\u65f6\u95f4\u3002",
+                    "name": "\u8fc7\u6e21"
+                },
+                "white": {
+                    "description": "\u5c06\u706f\u5149\u8bbe\u7f6e\u4e3a\u767d\u5149\u6a21\u5f0f\u3002",
+                    "name": "\u767d\u5149"
+                },
+                "xy_color": {
+                    "description": "XY \u683c\u5f0f\u7684\u989c\u8272\u3002 0 \u5230 1 \u4e4b\u95f4\u7684\u4e24\u4e2a\u5341\u8fdb\u5236\u6570\u7684\u5217\u8868\u3002",
+                    "name": "XY \u989c\u8272"
+                }
+            },
+            "name": "\u6253\u5f00"
+        }
+    },
+    "title": "\u706f\u5149"
+}

@@ -1,0 +1,62 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_account": "Kontoen er allerede konfigurert",
+            "ezviz_cloud_account_missing": "Ezviz skykonto mangler. Vennligst rekonfigurer Ezviz skykonto",
+            "reauth_successful": "Re-autentisering var vellykket",
+            "unknown": "Uventet feil"
+        },
+        "error": {
+            "cannot_connect": "Tilkobling mislyktes",
+            "invalid_auth": "Ugyldig godkjenning",
+            "invalid_host": "Ugyldig vertsnavn eller IP-adresse",
+            "mfa_required": "2FA aktivert p\u00e5 konto, vennligst deaktiver og pr\u00f8v p\u00e5 nytt"
+        },
+        "flow_title": "{serial}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "password": "Passord",
+                    "username": "Brukernavn"
+                },
+                "description": "Skriv inn RTSP-legitimasjon for EZVIZ-kamera {serial} med IP {ip_address}",
+                "title": "Oppdaget EZVIZ-kamera"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Passord",
+                    "username": "Brukernavn"
+                },
+                "description": "Skriv inn legitimasjon for \u00e5 reautentisere til ezviz cloud-konto",
+                "title": "Godkjenne integrering p\u00e5 nytt"
+            },
+            "user": {
+                "data": {
+                    "password": "Passord",
+                    "url": "URL",
+                    "username": "Brukernavn"
+                },
+                "title": "Koble til EZVIZ Cloud"
+            },
+            "user_custom_url": {
+                "data": {
+                    "password": "Passord",
+                    "url": "URL",
+                    "username": "Brukernavn"
+                },
+                "description": "Angi url-adressen for omr\u00e5det manuelt",
+                "title": "Koble til egendefinert EZVIZ URL"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "ffmpeg_arguments": "Argumenter sendt til ffmpeg for kameraer",
+                    "timeout": "Be om tidsavbrudd (sekunder)"
+                }
+            }
+        }
+    }
+}

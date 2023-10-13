@@ -1,0 +1,34 @@
+{
+    "issues": {
+        "legacy_subscription": {
+            "fix_flow": {
+                "abort": {
+                    "operation_took_too_long": "L'op\u00e9ration a dur\u00e9 trop longtemps. Veuillez r\u00e9essayer plus tard."
+                },
+                "step": {
+                    "confirm_change_plan": {
+                        "description": "Nous avons r\u00e9cemment mis \u00e0 jour notre syst\u00e8me d'abonnement. Pour continuer \u00e0 utiliser Home Assistant Cloud, vous devez approuver une seule fois le changement dans PayPal.\n\nCela prend une minute et n'augmentera pas le prix."
+                    }
+                }
+            },
+            "title": "Ancien abonnement d\u00e9tect\u00e9"
+        }
+    },
+    "system_health": {
+        "info": {
+            "alexa_enabled": "Alexa activ\u00e9",
+            "can_reach_cert_server": "Acc\u00e9der au serveur de certificats",
+            "can_reach_cloud": "Acc\u00e9der \u00e0 Home Assistant Cloud",
+            "can_reach_cloud_auth": "Acc\u00e9der au serveur d'authentification",
+            "certificate_status": "\u00c9tat du certificat",
+            "google_enabled": "Google activ\u00e9",
+            "logged_in": "Connect\u00e9",
+            "relayer_connected": "Relais connect\u00e9",
+            "relayer_region": "R\u00e9gion relais",
+            "remote_connected": "Contr\u00f4le \u00e0 distance connect\u00e9",
+            "remote_enabled": "Contr\u00f4le \u00e0 distance activ\u00e9",
+            "remote_server": "Serveur distant",
+            "subscription_expiration": "Expiration de l'abonnement"
+        }
+    }
+}

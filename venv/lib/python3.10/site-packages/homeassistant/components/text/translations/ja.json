@@ -1,0 +1,24 @@
+{
+    "entity_component": {
+        "_": {
+            "state_attributes": {
+                "max": {
+                    "name": "\u6700\u5927\u9577"
+                },
+                "min": {
+                    "name": "\u6700\u5c0f\u306e\u9577\u3055"
+                },
+                "mode": {
+                    "name": "\u30e2\u30fc\u30c9",
+                    "state": {
+                        "password": "\u30d1\u30b9\u30ef\u30fc\u30c9",
+                        "text": "\u30c6\u30ad\u30b9\u30c8"
+                    }
+                },
+                "pattern": {
+                    "name": "\u30d1\u30bf\u30fc\u30f3"
+                }
+            }
+        }
+    }
+}

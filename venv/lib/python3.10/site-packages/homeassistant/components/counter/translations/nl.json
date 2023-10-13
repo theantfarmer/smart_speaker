@@ -1,0 +1,40 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Teller",
+            "state_attributes": {
+                "editable": {
+                    "name": "Beheerd via UI",
+                    "state": {
+                        "false": "Nee",
+                        "true": "Ja"
+                    }
+                },
+                "initial": {
+                    "name": "Initi\u00eble waarde"
+                },
+                "maximum": {
+                    "name": "Maximum"
+                },
+                "minimum": {
+                    "name": "Minimum"
+                },
+                "step": {
+                    "name": "Stap"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_configure_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "De counterservice `counter.configure` wordt verwijderd en er is gebruik van gedetecteerd. Als je de huidige waarde van een teller wilt wijzigen, gebruik dan de nieuwe `counter.set_value` service in plaats daarvan.\n\nVerwijder deze service uit je automatiseringen en scripts en selecteer **verzenden** om dit probleem te sluiten."
+                    }
+                }
+            }
+        }
+    },
+    "title": "Teller"
+}

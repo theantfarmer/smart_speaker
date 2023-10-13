@@ -1,0 +1,43 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Mata in datum och tid",
+            "state_attributes": {
+                "day": {
+                    "name": "Dag"
+                },
+                "editable": {
+                    "name": "Hanteras via anv\u00e4ndargr\u00e4nssnittet",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "hour": {
+                    "name": "Timme"
+                },
+                "minute": {
+                    "name": "Minut"
+                },
+                "month": {
+                    "name": "M\u00e5nad"
+                },
+                "second": {
+                    "name": "Sekund"
+                },
+                "timestamp": {
+                    "name": "Tidsst\u00e4mpel"
+                },
+                "year": {
+                    "name": "\u00c5r"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ladda om"
+        }
+    },
+    "title": "Mata in datum och tid"
+}

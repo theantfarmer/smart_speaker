@@ -1,0 +1,186 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El compte ja est\u00e0 configurat",
+            "reauth_successful": "Re-autenticaci\u00f3 realitzada correctament"
+        },
+        "error": {
+            "cannot_connect": "Ha fallat la connexi\u00f3",
+            "incorrect_api_key": "Clau API inv\u00e0lida per al compte seleccionat",
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida",
+            "no_devices": "No s'ha descobert cap dispositiu",
+            "no_username": "No s'ha pogut obtenir el nom d'usuari"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Clau API"
+                },
+                "data_description": {
+                    "api_key": "Consulta la documentaci\u00f3 per obtenir la teva clau API"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "Clau API"
+                },
+                "data_description": {
+                    "api_key": "Consulta la documentaci\u00f3 per obtenir la teva clau API"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "filter_clean": {
+                "name": "Neteja del filtre necess\u00e0ria"
+            },
+            "is_main_sensor": {
+                "name": "Sensor principal"
+            },
+            "pure_ac_integration": {
+                "name": "Pure Boost vinculat amb AC"
+            },
+            "pure_geo_integration": {
+                "name": "Pure Boost vinculat amb pres\u00e8ncia"
+            },
+            "pure_measure_integration": {
+                "name": "Pure Boost vinculat amb qualitat d'aire interior"
+            },
+            "pure_prime_integration": {
+                "name": "Pure Boost vinculat amb qualitat d'aire exterior"
+            },
+            "room_occupied": {
+                "name": "Habitaci\u00f3 ocupada"
+            }
+        },
+        "button": {
+            "reset_filter": {
+                "name": "Restableix filtre"
+            }
+        },
+        "number": {
+            "calibration_humidity": {
+                "name": "Calibraci\u00f3 d'humitat"
+            },
+            "calibration_temperature": {
+                "name": "Calibraci\u00f3 de temperatura"
+            }
+        },
+        "select": {
+            "horizontalswing": {
+                "name": "Oscil\u00b7laci\u00f3 horitzontal",
+                "state": {
+                    "fixedcenter": "Fix al centre",
+                    "fixedcenterleft": "Fix al centre i a l'esquerra",
+                    "fixedcenterright": "Fix al centre i a la dreta",
+                    "fixedleft": "Fix a l'esquerra",
+                    "fixedleftright": "Fix a l'esquerra i a la dreta",
+                    "fixedright": "Fix a la dreta",
+                    "rangecenter": "Rang central",
+                    "rangefull": "Rang complet",
+                    "stopped": "Aturat"
+                }
+            },
+            "light": {
+                "name": "Llum",
+                "state": {
+                    "dim": "Atenuat",
+                    "off": "OFF",
+                    "on": "ON"
+                }
+            }
+        },
+        "sensor": {
+            "airq_co2": {
+                "name": "CO2 d'AirQ"
+            },
+            "airq_tvoc": {
+                "name": "TVOC d'AirQ"
+            },
+            "battery_voltage": {
+                "name": "Tensi\u00f3 de bateria"
+            },
+            "climate_react_high": {
+                "name": "Llindar alt de temperatura de Climate React"
+            },
+            "climate_react_low": {
+                "name": "Llindar baix de temperatura de Climate React"
+            },
+            "ethanol": {
+                "name": "Etanol"
+            },
+            "feels_like": {
+                "name": "Temperatura de sensaci\u00f3"
+            },
+            "filter_last_reset": {
+                "name": "Darrer restabliment del filtre"
+            },
+            "rssi": {
+                "name": "RSSI"
+            },
+            "sensitivity": {
+                "name": "Sensibilitat de Pure",
+                "state": {
+                    "n": "Normal",
+                    "s": "Sensible"
+                }
+            },
+            "smart_type": {
+                "name": "Tipus de Climate React",
+                "state": {
+                    "feelslike": "Sensaci\u00f3 de",
+                    "humidity": "Humitat",
+                    "temperature": "Temperatura"
+                }
+            },
+            "timer_time": {
+                "name": "Hora final del temporitzador"
+            },
+            "tvoc": {
+                "name": "TVOC"
+            }
+        },
+        "switch": {
+            "climate_react_switch": {
+                "name": "Climate React"
+            },
+            "pure_boost_switch": {
+                "name": "Pure Boost"
+            },
+            "timer_on_switch": {
+                "name": "Temporitzador"
+            }
+        },
+        "update": {
+            "fw_ver_available": {
+                "name": "Actualitzaci\u00f3 disponible"
+            }
+        }
+    },
+    "services": {
+        "enable_climate_react": {
+            "fields": {
+                "smart_type": {
+                    "name": "Tipus de disparador"
+                }
+            }
+        },
+        "enable_pure_boost": {
+            "fields": {
+                "geo_integration": {
+                    "name": "Integraci\u00f3 geogr\u00e0fica"
+                },
+                "indoor_integration": {
+                    "name": "Qualitat de l'aire interior"
+                },
+                "outdoor_integration": {
+                    "name": "Qualitat de l'aire exterior"
+                },
+                "sensitivity": {
+                    "name": "Sensibilitat"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f"
+        },
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "no_homes": "Bu Tado hesab\u0131na ba\u011fl\u0131 ev yok.",
+            "unknown": "Beklenmeyen hata"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Parola",
+                    "username": "Kullan\u0131c\u0131 Ad\u0131"
+                },
+                "title": "Tado hesab\u0131n\u0131za ba\u011flan\u0131n"
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "tado": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Otomatik"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "fallback": "Geri d\u00f6n\u00fc\u015f modunu se\u00e7in."
+                },
+                "description": "Geri d\u00f6n\u00fc\u015f modu, manuel b\u00f6lge yerle\u015fiminizden Ak\u0131ll\u0131 Programa ne zaman geri d\u00f6nece\u011finizi se\u00e7menizi sa\u011flar. (NEXT_TIME_BLOCK:= Sonraki Ak\u0131ll\u0131 Program de\u011fi\u015fikli\u011finde de\u011fi\u015ftirin; MANUAL:= \u0130ptal edene kadar de\u011fi\u015ftirmeyin; TADO_DEFAULT:= Tado Uygulamas\u0131ndaki ayar\u0131n\u0131za g\u00f6re de\u011fi\u015ftirin).",
+                "title": "Tado se\u00e7eneklerini ayarlay\u0131n."
+            }
+        }
+    },
+    "services": {
+        "set_climate_temperature_offset": {
+            "description": "Klima \u00f6\u011felerinin s\u0131cakl\u0131k telafisini ayarlar.",
+            "fields": {
+                "offset": {
+                    "description": "\u0130stedi\u011finiz telafi (cihaz\u0131n\u0131za ba\u011fl\u0131 olarak).",
+                    "name": "Telafi"
+                }
+            },
+            "name": "Klima s\u0131cakl\u0131\u011f\u0131 telafisini ayarlama"
+        },
+        "set_climate_timer": {
+            "description": "Belirli bir s\u00fcre i\u00e7in klima varl\u0131klar\u0131n\u0131 a\u00e7ar.",
+            "fields": {
+                "requested_overlay": {
+                    "description": "Bunu veya Zaman D\u00f6nemini se\u00e7in. Bir kaplama se\u00e7menizi sa\u011flar. MANUAL:=Kullan\u0131c\u0131 kald\u0131rana kadar kaplama; NEXT_TIME_BLOCK:=Bir sonraki zaman kilidine kadar kaplama; TADO_DEFAULT:=Tado uygulama ayar\u0131na g\u00f6re kaplama.",
+                    "name": "Kaplama"
+                },
+                "temperature": {
+                    "description": "Klima varl\u0131\u011f\u0131n\u0131n ayarlanaca\u011f\u0131 s\u0131cakl\u0131k.",
+                    "name": "S\u0131cakl\u0131k"
+                },
+                "time_period": {
+                    "description": "Bunu veya Yerle\u015fimi se\u00e7in. Spesifik olmak istiyorsan\u0131z de\u011fi\u015fiklik i\u00e7in zaman aral\u0131\u011f\u0131n\u0131 ayarlay\u0131n. Alternatif olarak Yerle\u015fimi kullan\u0131n.",
+                    "name": "Zaman aral\u0131\u011f\u0131"
+                }
+            },
+            "name": "Klima zamanlay\u0131c\u0131s\u0131n\u0131 ayarlama"
+        },
+        "set_water_heater_timer": {
+            "description": "Belirli bir s\u00fcre i\u00e7in su \u0131s\u0131t\u0131c\u0131s\u0131n\u0131 a\u00e7ar.",
+            "fields": {
+                "temperature": {
+                    "description": "Is\u0131t\u0131c\u0131n\u0131n ayarlanaca\u011f\u0131 s\u0131cakl\u0131k.",
+                    "name": "S\u0131cakl\u0131k"
+                },
+                "time_period": {
+                    "description": "H\u0131zland\u0131rma i\u00e7in zaman aral\u0131\u011f\u0131n\u0131 ayarlay\u0131n.",
+                    "name": "Zaman aral\u0131\u011f\u0131"
+                }
+            },
+            "name": "Su \u0131s\u0131t\u0131c\u0131 zamanlay\u0131c\u0131s\u0131n\u0131 ayarlama"
+        }
+    }
+}

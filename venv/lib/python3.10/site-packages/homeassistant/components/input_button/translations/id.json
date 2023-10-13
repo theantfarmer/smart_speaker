@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Tombol input",
+            "state_attributes": {
+                "editable": {
+                    "name": "Dikelola lewat antarmuka",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Tombol input"
+}

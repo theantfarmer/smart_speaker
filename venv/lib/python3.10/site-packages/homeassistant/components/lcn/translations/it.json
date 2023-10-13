@@ -1,0 +1,11 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "codelock": "Codice di blocco ricevuto",
+            "fingerprint": "Codice dell'impronta digitale ricevuto",
+            "send_keys": "Invia chiavi ricevute",
+            "transmitter": "Codice trasmettitore ricevuto",
+            "transponder": "Codice transponder ricevuto"
+        }
+    }
+}

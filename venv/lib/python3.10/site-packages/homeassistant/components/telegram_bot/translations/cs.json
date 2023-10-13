@@ -1,0 +1,31 @@
+{
+    "services": {
+        "send_document": {
+            "fields": {
+                "username": {
+                    "name": "U\u017eivatelsk\u00e9 jm\u00e9no"
+                }
+            }
+        },
+        "send_sticker": {
+            "fields": {
+                "password": {
+                    "name": "Heslo"
+                },
+                "url": {
+                    "name": "URL"
+                },
+                "username": {
+                    "name": "U\u017eivatelsk\u00e9 jm\u00e9no"
+                }
+            }
+        },
+        "send_video": {
+            "fields": {
+                "password": {
+                    "name": "Heslo"
+                }
+            }
+        }
+    }
+}

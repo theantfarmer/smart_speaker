@@ -1,0 +1,25 @@
+{
+    "services": {
+        "add_tracking": {
+            "fields": {
+                "slug": {
+                    "name": "Slug"
+                },
+                "tracking_number": {
+                    "name": "N\u00famero de seguimiento"
+                }
+            }
+        },
+        "remove_tracking": {
+            "fields": {
+                "slug": {
+                    "name": "Slug"
+                },
+                "tracking_number": {
+                    "name": "N\u00famero de seguimiento"
+                }
+            },
+            "name": "Eliminar el seguimiento"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Det gick inte att ansluta.",
+            "wrong_password": "L\u00f6senordet \u00e4r felaktigt."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "IP-adress",
+                    "password": "L\u00f6senord"
+                }
+            }
+        }
+    }
+}

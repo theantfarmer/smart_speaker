@@ -1,0 +1,31 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Sir\u00e9na",
+            "state": {
+                "off": "Vypnuta",
+                "on": "Zapnuta"
+            },
+            "state_attributes": {
+                "available_tones": {
+                    "name": "Dostupn\u00e9 t\u00f3ny"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Sir\u00e9na"
+}

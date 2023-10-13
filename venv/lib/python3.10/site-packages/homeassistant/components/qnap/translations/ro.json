@@ -1,0 +1,23 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nu se poate conecta la gazd\u0103",
+            "invalid_auth": "Autentificare gre\u0219it\u0103",
+            "unknown": "Eroare necunoscut\u0103"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Hostname",
+                    "password": "Parol\u0103",
+                    "port": "Port",
+                    "ssl": "Activeaz\u0103 SSL",
+                    "username": "Nume de utilizator",
+                    "verify_ssl": "Verific\u0103 SSL"
+                },
+                "description": "Acest senzor qnap permite ob\u021binerea diferitelor statistici de la NAS-ul QNAP.",
+                "title": "Conecteaz\u0103-te la dispozitivul QNAP"
+            }
+        }
+    }
+}

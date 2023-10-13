@@ -1,0 +1,80 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "\u00dchendamine nurjus",
+            "invalid_auth": "Tuvastamine nurjus",
+            "not_supported": "Toetatud on ainult PrusaLink API v2",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API v\u00f5ti",
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "cancel_job": {
+                "name": "T\u00f6\u00f6 t\u00fchistamine"
+            },
+            "pause_job": {
+                "name": "T\u00f6\u00f6 peatamine"
+            },
+            "resume_job": {
+                "name": "T\u00f6\u00f6 j\u00e4tkamine"
+            }
+        },
+        "camera": {
+            "job_preview": {
+                "name": "Eelvaade"
+            }
+        },
+        "sensor": {
+            "filename": {
+                "name": "Faili nimi"
+            },
+            "heatbed_target_temperature": {
+                "name": "Kuumaaluse sihttemperatuur"
+            },
+            "heatbed_temperature": {
+                "name": "Aluse temperatuur"
+            },
+            "material": {
+                "name": "Materjal"
+            },
+            "nozzle_target_temperature": {
+                "name": "D\u00fc\u00fcsi sihttemperatuur"
+            },
+            "nozzle_temperature": {
+                "name": "D\u00fc\u00fcsi temperatuur"
+            },
+            "print_finish": {
+                "name": "Printimise l\u00f5petamine"
+            },
+            "print_speed": {
+                "name": "Printimise kiirus"
+            },
+            "print_start": {
+                "name": "Printimise algus"
+            },
+            "printer_state": {
+                "state": {
+                    "cancelling": "Loobumine",
+                    "idle": "Ootel",
+                    "paused": "Peatatud",
+                    "pausing": "Pausi tegemine",
+                    "printing": "Tr\u00fckkimine"
+                }
+            },
+            "progress": {
+                "name": "Edenemine"
+            },
+            "z_height": {
+                "name": "Z-k\u00f5rgus"
+            }
+        }
+    }
+}

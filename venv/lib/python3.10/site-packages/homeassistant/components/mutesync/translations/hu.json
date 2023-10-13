@@ -1,0 +1,16 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "Enged\u00e9lyezze a hiteles\u00edt\u00e9st a m\u00fctesync be\u00e1ll\u00edt\u00e1sai > Hiteles\u00edt\u00e9s men\u00fcpontban",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "C\u00edm"
+                }
+            }
+        }
+    }
+}

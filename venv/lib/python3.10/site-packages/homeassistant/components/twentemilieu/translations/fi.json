@@ -1,0 +1,12 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "house_number": "Talon numero",
+                    "post_code": "Postinumero"
+                }
+            }
+        }
+    }
+}

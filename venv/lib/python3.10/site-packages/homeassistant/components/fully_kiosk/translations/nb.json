@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kontoen er allerede konfigurert"
+        },
+        "error": {
+            "cannot_connect": "Tilkobling mislyktes",
+            "unknown": "Uventet feil"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Passord"
+                },
+                "description": "Vil du sette opp {name} ( {host} )?"
+            },
+            "user": {
+                "data": {
+                    "host": "Vert",
+                    "password": "Passord"
+                }
+            }
+        }
+    }
+}

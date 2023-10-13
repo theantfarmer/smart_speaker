@@ -1,0 +1,37 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u010c\u00edslo",
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "initial": {
+                    "name": "Po\u010d\u00e1te\u010dn\u00ed hodnota"
+                },
+                "max": {
+                    "name": "Maximum"
+                },
+                "min": {
+                    "name": "Minimum"
+                },
+                "mode": {
+                    "name": "Re\u017eim",
+                    "state": {
+                        "auto": "Automaticky",
+                        "box": "Box",
+                        "slider": "Posuvn\u00edk"
+                    }
+                },
+                "step": {
+                    "name": "Krok"
+                }
+            }
+        }
+    },
+    "title": "Pomocn\u00edci - \u010d\u00edsla"
+}

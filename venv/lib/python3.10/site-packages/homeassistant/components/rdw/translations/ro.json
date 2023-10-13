@@ -1,0 +1,18 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Serviciul este deja configurat"
+        },
+        "error": {
+            "cannot_connect": "A e\u0219uat conectarea",
+            "unknown_license_plate": "Pl\u0103cu\u021b\u0103 de \u00eenmatriculare necunoscut\u0103"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "license_plate": "Pl\u0103cu\u021b\u0103 de \u00eenmatriculare"
+                }
+            }
+        }
+    }
+}

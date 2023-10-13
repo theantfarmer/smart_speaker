@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Akun sudah dikonfigurasi"
+        },
+        "error": {
+            "cannot_connect": "Gagal terhubung",
+            "unknown": "Kesalahan yang tidak diharapkan"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "Kata Sandi"
+                },
+                "description": "Ingin menyiapkan {name} ({host})?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Kata Sandi"
+                }
+            }
+        }
+    },
+    "services": {
+        "load_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

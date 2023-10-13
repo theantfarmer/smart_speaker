@@ -1,0 +1,49 @@
+{
+    "device_automation": {
+        "action_type": {
+            "lock": "Zamknout {entity_name}",
+            "open": "Otev\u0159\u00edt {entity_name}",
+            "unlock": "Odemknout {entity_name}"
+        },
+        "condition_type": {
+            "is_locked": "{entity_name} je uzam\u010deno",
+            "is_unlocked": "{entity_name} je odem\u010deno"
+        },
+        "trigger_type": {
+            "locked": "{entity_name} zam\u010deno",
+            "unlocked": "{entity_name} odem\u010deno"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Z\u00e1mek",
+            "state": {
+                "jammed": "Zaseknut\u00fd",
+                "locked": "Zamknut\u00fd",
+                "locking": "Zamyk\u00e1n\u00ed",
+                "unlocked": "Odem\u010den\u00fd",
+                "unlocking": "Odemyk\u00e1n\u00ed"
+            },
+            "state_attributes": {
+                "changed_by": {
+                    "name": "Zm\u011bn\u011bno"
+                },
+                "code_format": {
+                    "name": "Form\u00e1t k\u00f3du"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pro integraci {domain} nepodporuje nastaven\u00ed platformy.\n\nOdstra\u0148te ji pros\u00edm z konfigurace a restartujte Home Assistant, abyste tento probl\u00e9m vy\u0159e\u0161ili.",
+            "title": "Podpora platformy nen\u00ed podporov\u00e1na"
+        }
+    },
+    "services": {
+        "open": {
+            "name": "Otev\u0159eno"
+        }
+    },
+    "title": "Z\u00e1mek"
+}

@@ -1,0 +1,95 @@
+{
+    "config": {
+        "error": {
+            "already_configured": "Ger\u00e4t ist bereits konfiguriert",
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "id_exists": "Gateway-ID ist bereits vorhanden",
+            "timeout_connect": "Zeit\u00fcberschreitung beim Verbindungsaufbau"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "device": "Pfad oder URL",
+                    "id": "ID",
+                    "name": "Name"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "floor_temperature": "Boden-Temperatur",
+                    "read_precision": "Pr\u00e4zision abfragen",
+                    "set_precision": "Pr\u00e4zision einstellen",
+                    "temporary_override_mode": "Tempor\u00e4rer Sollwert\u00fcbersteuerungsmodus"
+                }
+            }
+        }
+    },
+    "services": {
+        "set_central_heating_ovrd": {
+            "fields": {
+                "ch_override": {
+                    "description": "Der gew\u00fcnschte boolesche Wert f\u00fcr die Zentralheizungs\u00fcbersteuerung.",
+                    "name": "\u00dcbersteuerung der Zentralheizung"
+                }
+            },
+            "name": "\u00dcbersteuerung der Zentralheizung einstellen"
+        },
+        "set_clock": {
+            "description": "Stellt die Uhr und den Wochentag am angeschlossenen Thermostat ein.",
+            "fields": {
+                "date": {
+                    "description": "Optionales Datum, aus dem der Wochentag extrahiert wird. Der Standardwert ist heute.",
+                    "name": "Datum"
+                },
+                "time": {
+                    "description": "Optionale Zeit im 24-Stunden-Format, die dem Thermostat bereitgestellt wird. Standardm\u00e4\u00dfig wird die aktuelle Zeit verwendet.",
+                    "name": "Zeit"
+                }
+            },
+            "name": "Uhr einstellen"
+        },
+        "set_control_setpoint": {
+            "description": "Legt die \u00dcbersteuerung des Zentralheizungs-Sollwerts am Gateway fest. Du ben\u00f6tigst dies nur, wenn du deinen eigenen Software-Thermostat schreibst.",
+            "fields": {
+                "temperature": {
+                    "name": "Temperatur"
+                }
+            }
+        },
+        "set_gpio_mode": {
+            "description": "\u00c4ndert die Funktion der GPIO-Pins des Gateways.",
+            "fields": {
+                "id": {
+                    "description": "Die ID des GPIO-Pins.",
+                    "name": "ID"
+                },
+                "mode": {
+                    "description": "Modus, der f\u00fcr den GPIO-Pin eingestellt werden soll. Die Werte 0 bis 6 werden f\u00fcr beide GPIOs akzeptiert, 7 wird nur f\u00fcr GPIO \"B\" akzeptiert. Siehe https://www.home-assistant.io/integrations/opentherm_gw/#gpio-modes f\u00fcr eine Erl\u00e4uterung der Werte.",
+                    "name": "Modus"
+                }
+            },
+            "name": "Lege den GPIO-Modus fest"
+        },
+        "set_hot_water_ovrd": {
+            "description": "Legt die Option zur Aktivierung der Warmwasserbereitung am Gateway fest.",
+            "fields": {
+                "dhw_override": {
+                    "description": "Steuere die Option zur Aktivierung der Warmwasserbereitung. Wenn der Heizkessel so konfiguriert wurde, dass das Raumger\u00e4t steuert, wann eine kleine Menge Wasser vorgew\u00e4rmt gehalten werden soll, kann dieser Befehl Einfluss darauf haben. Der Wert sollte 0 oder 1 sein, um die \u00dcberschreibung im Aus- oder Ein-Zustand zu aktivieren, oder \u201eA\u201c, um die \u00dcberschreibung zu deaktivieren.",
+                    "name": "\u00dcberbr\u00fcckung der Warmwasserbereitung"
+                }
+            },
+            "name": "Warmwasser\u00fcberbr\u00fcckung einstellen"
+        },
+        "set_led_mode": {
+            "fields": {
+                "mode": {
+                    "name": "Modus"
+                }
+            }
+        }
+    }
+}

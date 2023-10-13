@@ -1,0 +1,29 @@
+{
+    "device_automation": {
+        "action_type": {
+            "arm_away": "U\u017erakinti {entity_name}",
+            "arm_home": "U\u017erakinti {entity_name} - Namie",
+            "arm_night": "U\u017erakinti {entity_name} - Naktin\u0117 apsauga",
+            "arm_vacation": "U\u017erakinti {entity_name} atostog\u0173 re\u017eime",
+            "disarm": "I\u0161jungti {entity_name}",
+            "trigger": "Suaktyvinti {entity_name}"
+        },
+        "condition_type": {
+            "is_armed_away": "{entity_name} yra u\u017erakinta",
+            "is_armed_home": "{entity_name} yra u\u017erakinta nam\u0173 re\u017eime",
+            "is_armed_night": "{entity_name} u\u017erakinta naktin\u0117 apsauga",
+            "is_armed_vacation": "{entity_name} u\u017erakinta atostog\u0173 re\u017eime",
+            "is_disarmed": "{entity_name} i\u0161jungta",
+            "is_triggered": "{entity_name} suveik\u0117"
+        },
+        "trigger_type": {
+            "armed_away": "{entity_name} u\u017erakinta",
+            "armed_home": "{entity_name} u\u017erakinta - Namie",
+            "armed_night": "{entity_name} u\u017erakinta - Naktin\u0117 apsauga",
+            "armed_vacation": "{entity_name} u\u017erakinta - atostog\u0173 re\u017eime",
+            "disarmed": "{entity_name} i\u0161jungta",
+            "triggered": "{entity_name} suveik\u0117"
+        }
+    },
+    "title": "Signalizacijos valdymo pultas"
+}

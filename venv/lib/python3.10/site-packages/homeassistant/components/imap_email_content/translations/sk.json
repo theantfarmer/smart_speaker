@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "Integr\u00e1cia obsahu e-mailov IMAP je zastaran\u00e1. Va\u0161a konfigur\u00e1cia servera IMAP u\u017e bola migrovan\u00e1 na [integr\u00e1ciu imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Ak chcete nastavi\u0165 senzor pre obsah e-mailu IMAP, nastavte senzor \u0161abl\u00f3ny s konfigur\u00e1ciou: \n\n ```jaml\n {yaml_example}``` \n\n Odstr\u00e1\u0148te zastaran\u00fa konfigur\u00e1ciu senzora `imap_email_plaform` zo s\u00faboru `configuration.yaml`. \n\n Upozor\u0148ujeme, \u017ee filter udalost\u00ed filtruje iba prv\u00e9ho z nakonfigurovan\u00fdch povolen\u00fdch odosielate\u013eov, v pr\u00edpade potreby si filter prisp\u00f4sobte. \n\n T\u00fato \u010das\u0165 m\u00f4\u017eete presko\u010di\u0165, ak ste u\u017e nastavili sn\u00edma\u010d \u0161abl\u00f3ny.",
+            "title": "Integr\u00e1cia e-mailov\u00e9ho obsahu IMAP je zastaran\u00e1"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "Konfigur\u00e1cia servera IMAP u\u017e bola prenesen\u00e1 do integr\u00e1cie imap. Odstr\u00e1\u0148te konfigur\u00e1ciu senzora `imap_email_plaform` z v\u00e1\u0161ho s\u00faboru `configuration.yaml`.",
+                    "cannot_connect": "Migr\u00e1cia zlyhala. Nepodarilo sa pripoji\u0165 k serveru IMAP. Vykonajte manu\u00e1lnu migr\u00e1ciu."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "V tomto kroku sa nastav\u00ed konfigura\u010dn\u00fd z\u00e1znam `imap` s nasleduj\u00facou konfigur\u00e1ciou: \n\n ```text\n Server {server}\n pr\u00edstav {port}\n Pou\u017e\u00edvate\u013esk\u00e9 meno {username}\n heslo *****\n Prie\u010dinok {folder}\n ``` \n\n Pozri tie\u017e: (https://www.home-assistant.io/integrations/imap/) \n\n Konfigur\u00e1cia filtrovania na povolenom \u201eodosielate\u013eovi\u201c je s\u00fa\u010das\u0165ou konfigur\u00e1cie sn\u00edma\u010da \u0161abl\u00f3ny, ktor\u00fa mo\u017eno skop\u00edrova\u0165 a umiestni\u0165 do s\u00faboru \u201econfiguration.yaml\u201c. \n\n Upozor\u0148ujeme, \u017ee filter udalost\u00ed filtruje iba prv\u00e9ho z nakonfigurovan\u00fdch povolen\u00fdch odosielate\u013eov, v pr\u00edpade potreby si filter prisp\u00f4sobte. \n\n ```jaml\n {yaml_example}```\n Po migr\u00e1cii nezabudnite vy\u010disti\u0165 s\u00fabor `configuration.yaml`. \n\n Odosla\u0165 na migr\u00e1ciu konfigur\u00e1cie servera IMAP na polo\u017eku konfigur\u00e1cie \u201eimap\u201c.",
+                        "title": "Va\u0161e nastavenia servera IMAP bud\u00fa migrovan\u00e9"
+                    },
+                    "start": {
+                        "description": "Integr\u00e1cia e-mailov\u00e9ho obsahu IMAP je zastaran\u00e1. Konfigur\u00e1ciu v\u00e1\u0161ho servera IMAP mo\u017eno automaticky migrova\u0165 na [integr\u00e1ciu imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), \u010do umo\u017en\u00ed pou\u017eitie vlastn\u00e9ho sp\u00fa\u0161\u0165a\u010da udalosti \u201eimap\u201c. Na nastavenie senzora, ktor\u00fd m\u00e1 stav obsahu IMAP, mo\u017eno pou\u017ei\u0165 senzor \u0161abl\u00f3ny. Po migr\u00e1cii odstr\u00e1\u0148te konfigur\u00e1ciu senzora `imap_email_plaform` zo s\u00faboru `configuration.yaml`. \n\n Odoslan\u00edm spust\u00edte migr\u00e1ciu konfigur\u00e1cie v\u00e1\u0161ho servera IMAP na integr\u00e1ciu `imap`.",
+                        "title": "Migrujte svoju konfigur\u00e1ciu e-mailu IMAP"
+                    }
+                }
+            },
+            "title": "Integr\u00e1cia e-mailov\u00e9ho obsahu IMAP si vy\u017eaduje pozornos\u0165"
+        }
+    }
+}

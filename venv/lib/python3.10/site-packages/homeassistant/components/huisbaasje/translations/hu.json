@@ -1,0 +1,78 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Jelsz\u00f3",
+                    "username": "Felhaszn\u00e1l\u00f3n\u00e9v"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "current_gas": {
+                "name": "Aktu\u00e1lis g\u00e1z"
+            },
+            "current_power": {
+                "name": "Aktu\u00e1lis teljes\u00edtm\u00e9ny"
+            },
+            "current_power_off_peak": {
+                "name": "Aktu\u00e1lis teljes\u00edtm\u00e9ny cs\u00facsid\u0151n k\u00edv\u00fcl"
+            },
+            "current_power_out_off_peak": {
+                "name": "Aktu\u00e1lis teljes\u00edtm\u00e9ny cs\u00facsid\u0151n bel\u00fcl"
+            },
+            "current_power_out_peak": {
+                "name": "Aktu\u00e1lis kimen\u0151 teljes\u00edtm\u00e9ny cs\u00facs"
+            },
+            "current_power_peak": {
+                "name": "Aktu\u00e1lis teljes\u00edtm\u00e9ny cs\u00facs\u00e9rt\u00e9kben"
+            },
+            "energy_consumption_off_peak_today": {
+                "name": "Energiafogyaszt\u00e1s cs\u00facsid\u0151n k\u00edv\u00fcl ma"
+            },
+            "energy_consumption_peak_today": {
+                "name": "Energiafogyaszt\u00e1s cs\u00facsid\u0151ben ma"
+            },
+            "energy_month": {
+                "name": "Ehavi energia"
+            },
+            "energy_production_off_peak_today": {
+                "name": "Ma cs\u00facsid\u0151n k\u00edv\u00fcli energia termel\u00e9s"
+            },
+            "energy_production_peak_today": {
+                "name": "Ma cs\u00facsid\u0151n bel\u00fcli energia termel\u00e9s"
+            },
+            "energy_today": {
+                "name": "Mai energia"
+            },
+            "energy_week": {
+                "name": "Eheti energia"
+            },
+            "energy_year": {
+                "name": "Ez\u00e9vi energia"
+            },
+            "gas_month": {
+                "name": "Ehavi g\u00e1z"
+            },
+            "gas_today": {
+                "name": "Mai g\u00e1z"
+            },
+            "gas_week": {
+                "name": "Eheti g\u00e1z"
+            },
+            "gas_year": {
+                "name": "Ez\u00e9vi g\u00e1z"
+            }
+        }
+    }
+}

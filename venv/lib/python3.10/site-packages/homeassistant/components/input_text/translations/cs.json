@@ -1,0 +1,33 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Text",
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "max": {
+                    "name": "Maxim\u00e1ln\u00ed d\u00e9lka"
+                },
+                "min": {
+                    "name": "Minim\u00e1ln\u00ed d\u00e9lka"
+                },
+                "mode": {
+                    "name": "Re\u017eim",
+                    "state": {
+                        "password": "Heslo",
+                        "text": "Text"
+                    }
+                },
+                "pattern": {
+                    "name": "Vzor"
+                }
+            }
+        }
+    },
+    "title": "Pomocn\u00edci - texty"
+}

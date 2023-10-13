@@ -1,0 +1,9 @@
+{
+    "config": {
+        "step": {
+            "confirm": {
+                "description": "Ingin memulai penyiapan?"
+            }
+        }
+    }
+}

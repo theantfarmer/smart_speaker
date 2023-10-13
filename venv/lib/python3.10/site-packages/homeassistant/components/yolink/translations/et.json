@@ -1,0 +1,88 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kasutaja on juba seadistatud",
+            "already_in_progress": "Seadistamine on juba k\u00e4imas",
+            "authorize_url_timeout": "Kinnitus-URLi loomise ajal\u00f5pp",
+            "missing_configuration": "Komponent pole seadistatud. Palun loe dokumentatsiooni.",
+            "no_url_available": "URL pole saadaval. Selle t\u00f5rke kohta teabe saamiseks vaata [spikrijaotis]({docs_url})",
+            "oauth_error": "Saadi sobimatud loaandmed.",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus"
+        },
+        "create_entry": {
+            "default": "Tuvastamine \u00f5nnestus"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Vali tuvastusmeetod"
+            },
+            "reauth_confirm": {
+                "description": "yolink sidumine peab konto uuesti tuvastama.",
+                "title": "Taastuvasta sidumine"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "button_1_long_press": "Nupp 1 (pikk vajutus)",
+            "button_1_short_press": "Nupp 1 (l\u00fchike vajutus)",
+            "button_2_long_press": "Nupp 2 (pikk vajutus)",
+            "button_2_short_press": "Nupp 2 (l\u00fchike vajutus)",
+            "button_3_long_press": "Nupp 3 (pikk vajutus)",
+            "button_3_short_press": "Nupp 3 (l\u00fchike vajutus)",
+            "button_4_long_press": "Nupp 4 (pikk vajutus)",
+            "button_4_short_press": "Nupp 4 (l\u00fchike vajutus)"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "power_failure_alarm": {
+                "name": "Elektrikatkestuse h\u00e4ire",
+                "state": {
+                    "alert": "Hoiatus",
+                    "normal": "Tavaline",
+                    "off": "V\u00e4ljas"
+                }
+            },
+            "power_failure_alarm_beep": {
+                "name": "Elektrikatkestuse h\u00e4iresignaal",
+                "state": {
+                    "disabled": "Keelatud",
+                    "enabled": "Lubatud"
+                }
+            },
+            "power_failure_alarm_mute": {
+                "name": "Elektrikatkestuse h\u00e4ire vaigistamine",
+                "state": {
+                    "muted": "Vaigistatud",
+                    "unmuted": "Vaigistamata"
+                }
+            },
+            "power_failure_alarm_volume": {
+                "name": "Elektrikatkestuse h\u00e4ire helitugevus",
+                "state": {
+                    "high": "K\u00f5rge",
+                    "low": "Madal",
+                    "medium": "Keskmine"
+                }
+            }
+        },
+        "switch": {
+            "plug_1": {
+                "name": "Pistik 1"
+            },
+            "plug_2": {
+                "name": "Pistik 2"
+            },
+            "plug_3": {
+                "name": "Pistik 3"
+            },
+            "plug_4": {
+                "name": "Pistik 4"
+            },
+            "usb_ports": {
+                "name": "USB-pordid"
+            }
+        }
+    }
+}

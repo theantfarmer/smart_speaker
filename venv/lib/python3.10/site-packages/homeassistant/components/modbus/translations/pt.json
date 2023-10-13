@@ -1,0 +1,10 @@
+{
+    "services": {
+        "reload": {
+            "name": "Recarregar"
+        },
+        "stop": {
+            "name": "Parar"
+        }
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud"
+        },
+        "error": {
+            "invalid_auth": "Tuvastamise viga"
+        },
+        "flow_title": "{ip}",
+        "step": {
+            "user": {
+                "data": {
+                    "ip_address": "Hostinimi v\u00f5i IP-aadress",
+                    "password": "Salas\u00f5na",
+                    "port": ""
+                },
+                "title": "Sisesta oma teave"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "flow_sensor": {
+                "name": "Vooluandur"
+            },
+            "freeze": {
+                "name": "K\u00fclmumise piirangud"
+            },
+            "hourly": {
+                "name": "Tunnipiirangud"
+            },
+            "month": {
+                "name": "Kuu piirangud"
+            },
+            "raindelay": {
+                "name": "Vihma viivituse piirangud"
+            },
+            "rainsensor": {
+                "name": "Vihmaanduri piirangud"
+            },
+            "weekday": {
+                "name": "N\u00e4dalap\u00e4eva piirangud"
+            }
+        },
+        "select": {
+            "freeze_protection_temperature": {
+                "name": "K\u00fclmumiskaitse temperatuur"
+            }
+        },
+        "sensor": {
+            "flow_sensor_clicks_cubic_meter": {
+                "name": "Vooluanduri impulsse kuupmeetri kohta"
+            },
+            "flow_sensor_consumed_liters": {
+                "name": "Vooluandur tarbimine liitrites"
+            },
+            "flow_sensor_leak_clicks": {
+                "name": "Vooluanduri lekkeimpulsid"
+            },
+            "flow_sensor_leak_volume": {
+                "name": "Vooluanduri lekke maht"
+            },
+            "flow_sensor_start_index": {
+                "name": "Vooluanduri alguse indeks"
+            },
+            "flow_sensor_watering_clicks": {
+                "name": "Vooluanduri impulsid"
+            },
+            "last_leak_detected": {
+                "name": "Viimati tuvastatud leke"
+            },
+            "rain_sensor_rain_start": {
+                "name": "Vihmaanduri vihma algus"
+            }
+        },
+        "switch": {
+            "freeze_protect_enabled": {
+                "name": "K\u00fclmumiskaitse"
+            },
+            "hot_days_extra_watering": {
+                "name": "Lisavesi kuumadel p\u00e4evadel"
+            }
+        },
+        "update": {
+            "firmware": {
+                "name": "P\u00fcsivara"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "use_app_run_times": "Kasuta tsoonide t\u00f6\u00f6aegu rakendusest RainMachine",
+                    "zone_run_time": "Vaiketsooni k\u00e4itamisaeg (sekundites)"
+                },
+                "title": "Seadista RainMachine"
+            }
+        }
+    }
+}

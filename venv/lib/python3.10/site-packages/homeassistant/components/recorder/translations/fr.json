@@ -1,0 +1,25 @@
+{
+    "issues": {
+        "maria_db_range_index_regression": {
+            "description": "Les anciennes versions de MariaDB souffrent d'une r\u00e9gression significative des performances lors de la r\u00e9cup\u00e9ration des donn\u00e9es de l'historique ou de la purge de la base de donn\u00e9es. Mettez \u00e0 jour vers la version MariaDB {min_version} ou plus r\u00e9cente et red\u00e9marrez Home Assistant. Si vous utilisez le module compl\u00e9mentaire MariaDB, veillez \u00e0 le mettre \u00e0 jour avec la derni\u00e8re version.",
+            "title": "La mise \u00e0 jour de MariaDB vers {min_version} ou une version plus r\u00e9cente r\u00e9sout un probl\u00e8me de performance important."
+        }
+    },
+    "services": {
+        "disable": {
+            "name": "D\u00e9sactiver"
+        },
+        "enable": {
+            "name": "Activer"
+        }
+    },
+    "system_health": {
+        "info": {
+            "current_recorder_run": "Heure de d\u00e9marrage de l'ex\u00e9cution actuelle",
+            "database_engine": "Moteur de la base de donn\u00e9es",
+            "database_version": "Version de la base de donn\u00e9es",
+            "estimated_db_size": "Taille estim\u00e9e de la base de donn\u00e9es (en Mio)",
+            "oldest_recorder_run": "Heure de d\u00e9marrage de l'ex\u00e9cution la plus ancienne"
+        }
+    }
+}

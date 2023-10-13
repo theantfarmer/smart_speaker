@@ -1,0 +1,8 @@
+{
+    "issues": {
+        "trigger_missing_local_only": {
+            "description": "Du m\u00e5ste v\u00e4lja om automatiseringsutl\u00f6saren {webhook_id} \u00e4r tillg\u00e4nglig fr\u00e5n Internet. [Redigera automatiseringen] ({redigera}) \"{automation_name}\", ('{entity_id}') och klicka p\u00e5 kugghjulsikonen bredvid Webhook-ID:t f\u00f6r att v\u00e4lja ett v\u00e4rde f\u00f6r 'Endast tillg\u00e4nglig fr\u00e5n det lokala n\u00e4tverket'",
+            "title": "Uppdaterar webhook utl\u00f6saren "
+        }
+    }
+}

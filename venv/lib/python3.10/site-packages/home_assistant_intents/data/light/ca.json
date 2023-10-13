@@ -1,0 +1,26 @@
+{
+  "language": "ca",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "<configura> <llums> (<area> | <name>) al <lluentor>",
+            "<engega> <llums> (<area> | <name>) al <lluentor>"
+          ],
+          "response": "brightness_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "Brillantor de {{ slots.name }} posat a {{ slots.brightness }}",
+        "brightness_area": "Brillantor a {{ slots.area }} posat a {{ slots.brightness }}",
+        "color": "{{ slots.name }} ara té el color {{ slots.color }}",
+        "color_area": "{{ slots.area }} ara té el color {{ slots.color }}"
+      }
+    }
+  }
+}

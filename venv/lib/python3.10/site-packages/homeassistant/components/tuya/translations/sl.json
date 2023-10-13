@@ -1,0 +1,39 @@
+{
+    "entity": {
+        "select": {
+            "basic_nightvision": {
+                "state": {
+                    "1": "Izklopljeno",
+                    "2": "Vklopljeno"
+                }
+            },
+            "light_mode": {
+                "state": {
+                    "none": "Izklju\u010deno"
+                }
+            },
+            "relay_status": {
+                "state": {
+                    "off": "Izklju\u010deno",
+                    "on": "Vklopljeno",
+                    "power_off": "Izklju\u010deno",
+                    "power_on": "Vklopljeno"
+                }
+            },
+            "vacuum_cistern": {
+                "state": {
+                    "closed": "Zaprto"
+                }
+            }
+        },
+        "sensor": {
+            "status": {
+                "state": {
+                    "cooling": "Hlajenje",
+                    "heating": "Ogrevanje",
+                    "heating_temp": "Temperatura ogrevanja"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Smtp bildirim hizmetlerini yeniden y\u00fckler.",
+            "name": "Tekrar y\u00fckle"
+        }
+    }
+}

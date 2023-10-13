@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "Integracja zawarto\u015bci poczty e-mail IMAP jest przestarza\u0142a. Twoja konfiguracja serwera IMAP zosta\u0142a ju\u017c przeniesiona do [integracji imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Aby skonfigurowa\u0107 czujnik dla tre\u015bci wiadomo\u015bci e-mail IMAP, skonfiguruj czujnik szablonu z konfiguracj\u0105: \n\n ```yaml\n {yaml_example}``` \n\nUsu\u0144 wycofan\u0105 konfiguracj\u0119 czujnika `imap_email_plaform` z pliku `configuration.yaml`. \n\nPami\u0119taj, \u017ce filtr zdarze\u0144 filtruje tylko pierwszego ze skonfigurowanych dozwolonych nadawc\u00f3w. W razie potrzeby dostosuj filtr. \n\nMo\u017cesz pomin\u0105\u0107 t\u0119 cz\u0119\u015b\u0107, je\u015bli masz ju\u017c skonfigurowany czujnik szablonu.",
+            "title": "Integracja zawarto\u015bci poczty e-mail IMAP jest przestarza\u0142a"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "Konfiguracja serwera IMAP zosta\u0142a ju\u017c przeniesiona do integracji imap. Usu\u0144 konfiguracj\u0119 czujnika `imap_email_plaform` z pliku `configuration.yaml`.",
+                    "cannot_connect": "Migracja nie powiod\u0142a si\u0119. Po\u0142\u0105czenie z serwerem IMAP nie powiod\u0142o si\u0119. Wykonaj r\u0119czn\u0105 migracj\u0119."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "W tym kroku wpis konfiguracyjny `imap` zostanie skonfigurowany z nast\u0119puj\u0105c\u0105 konfiguracj\u0105: \n\n```text\nserwer {server}\nport {port}\nnazwa u\u017cytkownika {username}\nHas\u0142o *****\nfolder {folder}\n``` \n\nZobacz te\u017c: (https://www.home-assistant.io/integrations/imap/) \n\nKonfiguracja filtrowania dla dozwolonego \u201enadawcy\u201d jest cz\u0119\u015bci\u0105 szablonu konfiguracji czujnika, kt\u00f3ry mo\u017cna skopiowa\u0107 i umie\u015bci\u0107 w pliku \u201econfiguration.yaml\u201d. \n\nPami\u0119taj, \u017ce filtr zdarze\u0144 filtruje tylko pierwszego ze skonfigurowanych dozwolonych nadawc\u00f3w. W razie potrzeby dostosuj filtr. \n\n```yaml\n{yaml_example}```\nNie zapomnij wyczy\u015bci\u0107 pliku `configuration.yaml` po migracji. \n\nNaci\u015bnij \"Prze\u015blij\", aby przeprowadzi\u0107 migracj\u0119 konfiguracji serwera IMAP do wpisu konfiguracji `imap`.",
+                        "title": "Twoje ustawienia serwera IMAP zostan\u0105 przeniesione"
+                    },
+                    "start": {
+                        "description": "Integracja zawarto\u015bci poczty e-mail IMAP jest przestarza\u0142a. Twoja konfiguracja serwera IMAP mo\u017ce zosta\u0107 automatycznie przeniesiona do [integracji imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), co umo\u017cliwi u\u017cycie niestandardowego wyzwalacza zdarzenia `imap`. Aby skonfigurowa\u0107 czujnik, kt\u00f3ry ma stan zawarto\u015bci IMAP, mo\u017cna u\u017cy\u0107 czujnika szablonu. Usu\u0144 konfiguracj\u0119 czujnika `imap_email_plaform` z pliku `configuration.yaml` po migracji. \n\nNaci\u015bnij \"Prze\u015blij\", aby rozpocz\u0105\u0107 migracj\u0119 konfiguracji serwera IMAP do integracji `imap`.",
+                        "title": "Przeprowad\u017a migracj\u0119 konfiguracji poczty e-mail IMAP"
+                    }
+                }
+            },
+            "title": "Integracja tre\u015bci wiadomo\u015bci e-mail IMAP wymaga uwagi"
+        }
+    }
+}

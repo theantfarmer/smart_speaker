@@ -1,0 +1,75 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd",
+            "reauth_successful": "Herauthenticatie geslaagd"
+        },
+        "error": {
+            "connection_error": "Kan geen verbinding maken",
+            "invalid_auth": "Ongeldige authenticatie"
+        },
+        "flow_title": "Nextcloud",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "username": "Gebruikersnaam"
+                }
+            },
+            "user": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "url": "URL",
+                    "username": "Gebruikersnaam",
+                    "verify_ssl": "SSL-certificaat verifi\u00ebren"
+                },
+                "description": "Voer je Nextcloud-informatie in."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "nextcloud_system_apps_num_updates_available": {
+                "name": "Updates beschikbaar"
+            },
+            "nextcloud_system_cpuload": {
+                "name": "CPU belasting"
+            },
+            "nextcloud_system_freespace": {
+                "name": "Vrije ruimte"
+            },
+            "nextcloud_system_mem_free": {
+                "name": "Vrij geheugen"
+            },
+            "nextcloud_system_mem_total": {
+                "name": "Totaal geheugen"
+            },
+            "nextcloud_system_memcache_distributed": {
+                "name": "Systeem geheugencache gedistribueerd"
+            },
+            "nextcloud_system_memcache_local": {
+                "name": "Systeem geheugencache lokaal"
+            },
+            "nextcloud_system_memcache_locking": {
+                "name": "Systeem geheugencache vergrendelen"
+            },
+            "nextcloud_system_swap_free": {
+                "name": "Swapgeheugen vrij"
+            },
+            "nextcloud_system_swap_total": {
+                "name": "Swapgeheugen totaal"
+            },
+            "nextcloud_system_theme": {
+                "name": "Systeemthema"
+            },
+            "nextcloud_system_version": {
+                "name": "Systeemversie"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Het gebruik van YAML om Nextcloud te configureren is niet langer ondersteund.\n\nJe huidige YAML-configuratie is automatisch naar de UI ge\u00efmporteerd.\n\nVerwijder de `nextcloud` YAML-configuratie uit je configuration.yaml bestand en start Home Assistant opnieuw op om dit probleem te verhelpen."
+        }
+    }
+}

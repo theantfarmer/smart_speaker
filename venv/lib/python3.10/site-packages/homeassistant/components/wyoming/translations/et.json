@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Teenus on juba seadistatud",
+            "no_services": "L\u00f5pp-punktis teenuseid ei leitud"
+        },
+        "error": {
+            "cannot_connect": "\u00dchendamine nurjus"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Kas soovid konfigureerida Home Assistant'i, et see \u00fchenduks lisandmooduli pakutava Wyomingi teenusega: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

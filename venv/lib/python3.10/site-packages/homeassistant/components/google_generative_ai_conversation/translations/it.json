@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Impossibile connettersi",
+            "invalid_auth": "Autenticazione non valida",
+            "unknown": "Errore imprevisto"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "Chiave API"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "model": "Modello",
+                    "prompt": "Modello di prompt",
+                    "temperature": "Temperatura",
+                    "top_k": "Top K",
+                    "top_p": "Top P"
+                }
+            }
+        }
+    }
+}

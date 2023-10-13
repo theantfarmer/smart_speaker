@@ -1,0 +1,130 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "already_in_progress": "H\u00e4\u00e4lestamine on k\u00e4imas",
+            "ignore_ip6_link_local": "IPv6 lingi kohalikku aadressi ei toetata.",
+            "reauth_successful": "Taastuvastamine \u00f5nnestus"
+        },
+        "error": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "already_in_progress": "Seadistamine on juba k\u00e4ivitatud",
+            "cannot_connect": "\u00dchendamine nurjus",
+            "invalid_auth": "Tuvastamine nurjus",
+            "upnp_not_configured": "Puuduvad seadme UPnP-seaded."
+        },
+        "flow_title": "{name}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "description": "Avasti FRITZ! Box: {name} \n\n Seadista FRITZ! Boxi t\u00f6\u00f6riistad oma {name} juhtimiseks",
+                "title": "FRITZ! Boxi t\u00f6\u00f6riistade seadistamine"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "description": "V\u00e4rskenda FRITZ!Box Tools'i volitusi: {host}.\n\nFRITZ!Box Tools ei saa FRITZ!Boxi sisse logida.",
+                "title": "FRITZ!Boxi t\u00f6\u00f6riistade uuendamine - volitused"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "password": "Salas\u00f5ma",
+                    "port": "Port",
+                    "username": "Kasutajanimi"
+                },
+                "description": "Seadista FRITZ!Box Tools oma FRITZ!Boxi juhtimiseks.\n Minimaalselt vajalik: kasutajanimi ja salas\u00f5na.",
+                "title": "Seadista FRITZ! Box Tools"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "is_connected": {
+                "name": "\u00dchendus"
+            },
+            "is_linked": {
+                "name": "\u00dchendus"
+            }
+        },
+        "button": {
+            "cleanup": {
+                "name": "Puhastamine"
+            },
+            "firmware_update": {
+                "name": "P\u00fcsivara v\u00e4rskendus"
+            },
+            "reboot": {
+                "name": "Taask\u00e4ivita"
+            },
+            "reconnect": {
+                "name": "Taas\u00fchenda"
+            }
+        },
+        "sensor": {
+            "connection_uptime": {
+                "name": "\u00dchenduse t\u00f6\u00f6aeg"
+            },
+            "device_uptime": {
+                "name": "Viimane taask\u00e4ivitamine"
+            },
+            "external_ip": {
+                "name": "V\u00e4line IP"
+            },
+            "external_ipv6": {
+                "name": "V\u00e4line IPv6"
+            },
+            "gb_received": {
+                "name": "GB vastu v\u00f5etud"
+            },
+            "gb_sent": {
+                "name": "GB saadetud"
+            },
+            "kb_s_received": {
+                "name": "Allalaadimise l\u00e4bilaskev\u00f5ime"
+            },
+            "kb_s_sent": {
+                "name": "\u00dcleslaadimise l\u00e4bilaskev\u00f5ime"
+            },
+            "link_attenuation_received": {
+                "name": "\u00dchenduse allalaadimise sumbuvus"
+            },
+            "link_attenuation_sent": {
+                "name": "\u00dchenduse \u00fcleslaadimise sumbuvus"
+            },
+            "link_kb_s_received": {
+                "name": "\u00dchenduse allalaadimise l\u00e4bilaskev\u00f5ime"
+            },
+            "link_kb_s_sent": {
+                "name": "\u00dchenduse \u00fcleslaadimise l\u00e4bilaskev\u00f5ime"
+            },
+            "link_noise_margin_received": {
+                "name": "\u00dchenduse allalaadimise m\u00fcra piir"
+            },
+            "link_noise_margin_sent": {
+                "name": "\u00dchenduse \u00fcleslaadimise m\u00fcra piir"
+            },
+            "max_kb_s_received": {
+                "name": "Maksimaalne \u00fchenduse allalaadimise l\u00e4bilaskev\u00f5ime"
+            },
+            "max_kb_s_sent": {
+                "name": "Maksimaalne \u00fchenduse \u00fcleslaadimise l\u00e4bilaskev\u00f5ime"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "consider_home": "Millal m\u00e4\u00e4rata seade olema kodus (sekundites)",
+                    "old_discovery": "Luba vana avastamismeetod"
+                }
+            }
+        }
+    }
+}

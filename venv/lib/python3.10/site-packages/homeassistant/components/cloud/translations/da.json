@@ -1,0 +1,24 @@
+{
+    "issues": {
+        "legacy_subscription": {
+            "title": "Gammelt abonnement registreret"
+        }
+    },
+    "system_health": {
+        "info": {
+            "alexa_enabled": "Alexa aktiveret",
+            "can_reach_cert_server": "Tilg\u00e5 certifikatserver",
+            "can_reach_cloud": "Tilg\u00e5 Home Assistant Cloud",
+            "can_reach_cloud_auth": "Tilg\u00e5 godkendelsesserver",
+            "certificate_status": "Certifikatstatus",
+            "google_enabled": "Google aktiveret",
+            "logged_in": "Logget ind",
+            "relayer_connected": "Relayer forbundet",
+            "relayer_region": "Relayer-region",
+            "remote_connected": "Fjernadgang forbundet",
+            "remote_enabled": "Fjernadgang aktiveret",
+            "remote_server": "Fjernserver",
+            "subscription_expiration": "Udl\u00f8b af abonnement"
+        }
+    }
+}

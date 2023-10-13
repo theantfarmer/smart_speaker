@@ -1,0 +1,43 @@
+{
+    "device_automation": {
+        "action_type": {
+            "turn_off": "L\u00fclita {entity_name} v\u00e4lja",
+            "turn_on": "L\u00fclita {entity_name} sisse"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Veesoojendi",
+            "state": {
+                "eco": "\u00d6ko",
+                "electric": "Elektriline",
+                "gas": "Gaas",
+                "heat_pump": "Soojuspump",
+                "high_demand": "Suur n\u00f5udlus",
+                "off": "V\u00e4ljas",
+                "performance": "J\u00f5udlus"
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} integreerimise platvorm {platform} ei toeta platvormi seadistamist. \n\n Selle probleemi lahendamiseks eemalda see oma konfiguratsioonist ja taask\u00e4ivita Home Assistant.",
+            "title": "Platvormi tuge ei toetata"
+        }
+    },
+    "services": {
+        "set_away_mode": {
+            "description": "L\u00fclitab eemaloluku re\u017eiimi sisse/v\u00e4lja.",
+            "fields": {
+                "away_mode": {
+                    "description": "Eemalolekure\u017eiimi uus v\u00e4\u00e4rtus.",
+                    "name": "Eemalolekure\u017eiim"
+                }
+            },
+            "name": "M\u00e4\u00e4ra eemalolekure\u017eiim"
+        },
+        "set_operation_mode": {
+            "description": "M\u00e4\u00e4rab t\u00f6\u00f6re\u017eiimi."
+        }
+    }
+}

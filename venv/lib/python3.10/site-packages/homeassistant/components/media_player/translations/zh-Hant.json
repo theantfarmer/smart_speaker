@@ -1,0 +1,200 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_buffering": "{entity_name} \u7de9\u885d\u4e2d",
+            "is_idle": "{entity_name}\u9592\u7f6e",
+            "is_off": "{entity_name}\u5df2\u95dc\u9589",
+            "is_on": "{entity_name}\u5df2\u958b\u555f",
+            "is_paused": "{entity_name}\u5df2\u66ab\u505c",
+            "is_playing": "{entity_name}\u6b63\u5728\u64ad\u653e"
+        },
+        "trigger_type": {
+            "buffering": "{entity_name} \u958b\u59cb\u7de9\u885d",
+            "changed_states": "{entity_name}\u6253\u958b\u6216\u95dc\u9589",
+            "idle": "{entity_name}\u8b8a\u6210\u9592\u7f6e",
+            "paused": "{entity_name}\u5df2\u66ab\u505c",
+            "playing": "{entity_name}\u958b\u59cb\u64ad\u653e",
+            "turned_off": "{entity_name}\u5df2\u95dc\u9589",
+            "turned_on": "{entity_name}\u5df2\u958b\u555f"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "\u5a92\u9ad4\u64ad\u653e\u5668",
+            "state": {
+                "buffering": "\u7de9\u885d",
+                "idle": "\u5f85\u547d",
+                "off": "\u95dc\u9589",
+                "on": "\u958b\u555f",
+                "paused": "\u5df2\u66ab\u505c",
+                "playing": "\u64ad\u653e\u4e2d",
+                "standby": "\u5f85\u547d"
+            },
+            "state_attributes": {
+                "app_id": {
+                    "name": "App ID"
+                },
+                "app_name": {
+                    "name": "App"
+                },
+                "entity_picture_local": {
+                    "name": "\u672c\u5730\u53ef\u5b58\u53d6\u5be6\u9ad4\u5716\u7247"
+                },
+                "groups_members": {
+                    "name": "\u7fa4\u7d44\u6210\u54e1"
+                },
+                "is_volume_muted": {
+                    "name": "\u975c\u97f3",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "media_album_artist": {
+                    "name": "\u5c08\u8f2f\u85dd\u4eba"
+                },
+                "media_album_name": {
+                    "name": "\u5c08\u8f2f"
+                },
+                "media_artist": {
+                    "name": "\u6f14\u5531\u8005"
+                },
+                "media_channel": {
+                    "name": "\u983b\u9053"
+                },
+                "media_content_id": {
+                    "name": "\u5167\u5bb9 ID"
+                },
+                "media_content_type": {
+                    "name": "\u5167\u5bb9\u985e\u578b",
+                    "state": {
+                        "album": "\u5c08\u8f2f",
+                        "app": "App",
+                        "artist": "\u6f14\u5531\u8005",
+                        "channel": "\u983b\u9053",
+                        "channels": "\u983b\u9053",
+                        "composer": "\u4f5c\u66f2\u8005",
+                        "contributing_artist": "\u53c3\u6f14",
+                        "episode": "\u96c6",
+                        "game": "\u904a\u6232",
+                        "genre": "\u985e\u5225",
+                        "image": "\u5716\u50cf",
+                        "movie": "\u96fb\u5f71",
+                        "music": "\u97f3\u6a02",
+                        "playlist": "\u64ad\u653e\u5217\u8868",
+                        "podcast": "Podcast",
+                        "season": "\u5b63",
+                        "track": "\u97f3\u8ecc",
+                        "tvshow": "\u96fb\u8996\u7bc0\u76ee",
+                        "url": "URL",
+                        "video": "\u5f71\u7247"
+                    }
+                },
+                "media_duration": {
+                    "name": "\u9577\u5ea6"
+                },
+                "media_episode": {
+                    "name": "\u96c6"
+                },
+                "media_playlist": {
+                    "name": "\u64ad\u653e\u5217\u8868"
+                },
+                "media_position": {
+                    "name": "\u4f4d\u7f6e"
+                },
+                "media_position_updated_at": {
+                    "name": "\u4f4d\u7f6e\u5df2\u66f4\u65b0"
+                },
+                "media_season": {
+                    "name": "\u5b63"
+                },
+                "media_series_title": {
+                    "name": "\u7cfb\u5217"
+                },
+                "media_title": {
+                    "name": "\u6a19\u984c"
+                },
+                "media_track": {
+                    "name": "\u97f3\u8ecc"
+                },
+                "repeat": {
+                    "name": "\u91cd\u8907",
+                    "state": {
+                        "all": "\u5168\u90e8",
+                        "off": "\u95dc\u9589",
+                        "one": "\u55ae\u6b21"
+                    }
+                },
+                "shuffle": {
+                    "name": "\u96a8\u6a5f",
+                    "state": {
+                        "false": "\u95dc\u9589",
+                        "true": "\u958b\u555f"
+                    }
+                },
+                "sound_mode": {
+                    "name": "\u97f3\u6548\u6a21\u5f0f"
+                },
+                "sound_mode_list": {
+                    "name": "\u53ef\u7528\u97f3\u6548\u6a21\u5f0f"
+                },
+                "source": {
+                    "name": "\u4f86\u6e90"
+                },
+                "source_list": {
+                    "name": "\u53ef\u7528\u4f86\u6e90"
+                },
+                "volume_level": {
+                    "name": "\u97f3\u91cf"
+                }
+            }
+        },
+        "receiver": {
+            "name": "\u63a5\u6536\u5668"
+        },
+        "speaker": {
+            "name": "\u63da\u8072\u5668"
+        },
+        "tv": {
+            "name": "\u96fb\u8996"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} \u6574\u5408\u7684 {platform} \u5e73\u53f0\u4e0d\u652f\u63f4\u5e73\u53f0\u8a2d\u5b9a\u3002\n\n\u8acb\u5c07\u5176\u7531\u8a2d\u5b9a\u4e2d\u79fb\u9664\uff0c\u4e26\u91cd\u65b0\u555f\u52d5 Home Assistant \u4ee5\u4fee\u6b63\u6b64\u554f\u984c\u3002",
+            "title": "\u4e0d\u652f\u63f4\u5e73\u53f0\u652f\u63f4"
+        }
+    },
+    "services": {
+        "media_pause": {
+            "name": "\u66ab\u505c"
+        },
+        "media_stop": {
+            "name": "\u505c\u6b62"
+        },
+        "select_sound_mode": {
+            "fields": {
+                "sound_mode": {
+                    "description": "\u8981\u5207\u63db\u5230\u7684\u8072\u97f3\u6a21\u5f0f\u7684\u540d\u7a31\u3002"
+                }
+            }
+        },
+        "select_source": {
+            "fields": {
+                "source": {
+                    "description": "\u8981\u5207\u63db\u5230\u7684\u6e90\u7684\u540d\u7a31\u3002\u5e73\u53f0\u76f8\u95dc\u3002"
+                }
+            }
+        },
+        "toggle": {
+            "name": "\u5207\u63db"
+        },
+        "turn_off": {
+            "name": "\u95dc\u9589"
+        },
+        "turn_on": {
+            "name": "\u958b\u555f"
+        }
+    },
+    "title": "\u5a92\u9ad4\u64ad\u653e\u5668"
+}

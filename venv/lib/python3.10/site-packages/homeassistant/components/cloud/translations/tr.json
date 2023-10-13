@@ -1,0 +1,44 @@
+{
+    "issues": {
+        "legacy_subscription": {
+            "fix_flow": {
+                "abort": {
+                    "operation_took_too_long": "Operasyon \u00e7ok uzun s\u00fcrd\u00fc. L\u00fctfen daha sonra tekrar deneyiniz."
+                },
+                "step": {
+                    "confirm_change_plan": {
+                        "description": "Yak\u0131n zamanda abonelik sistemimizi g\u00fcncelledik. Home Assistant Cloud'u kullanmaya devam etmek i\u00e7in PayPal'da de\u011fi\u015fikli\u011fi bir defaya mahsus onaylaman\u0131z gerekir. \n\n Bu i\u015flem 1 dakika s\u00fcrer ve fiyat\u0131 art\u0131rmaz."
+                    }
+                }
+            },
+            "title": "Eski abonelik alg\u0131land\u0131"
+        }
+    },
+    "services": {
+        "remote_connect": {
+            "description": "Home Assistant Cloud'u kullanarak \u00f6rnek kullan\u0131c\u0131 aray\u00fcz\u00fcn\u00fc yerel a\u011f\u0131n d\u0131\u015f\u0131ndan eri\u015filebilir hale getirir.",
+            "name": "Uzaktan ba\u011flant\u0131"
+        },
+        "remote_disconnect": {
+            "description": "Home Assistant Kullan\u0131c\u0131 Arabirimi ile Home Assistant Bulutu aras\u0131ndaki ba\u011flant\u0131y\u0131 keser. Art\u0131k Home Assistant bulut sunucunuza yerel a\u011f\u0131n\u0131z\u0131n d\u0131\u015f\u0131ndan eri\u015femeyeceksiniz.",
+            "name": "Uzaktan ba\u011flant\u0131 kesme"
+        }
+    },
+    "system_health": {
+        "info": {
+            "alexa_enabled": "Alexa Etkin",
+            "can_reach_cert_server": "Sertifika Sunucusuna Ula\u015f\u0131n",
+            "can_reach_cloud": "Home Assistant Cloud'a ula\u015f\u0131n",
+            "can_reach_cloud_auth": "Kimlik Do\u011frulama Sunucusuna Ula\u015f\u0131n",
+            "certificate_status": "Sertifika Durumu",
+            "google_enabled": "Google Etkin",
+            "logged_in": "Giri\u015f Yapt\u0131",
+            "relayer_connected": "Yeniden Katman ba\u011fl\u0131",
+            "relayer_region": "R\u00f6le B\u00f6lgesi",
+            "remote_connected": "Uzaktan Ba\u011fl\u0131",
+            "remote_enabled": "Uzaktan Etkinle\u015ftirildi",
+            "remote_server": "Sunucuyu Uzaktan Kontrol et",
+            "subscription_expiration": "Aboneli\u011fin Sona Ermesi"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u8a08\u6642\u5668",
+            "state": {
+                "active": "\u555f\u7528",
+                "idle": "\u5f85\u547d",
+                "paused": "\u5df2\u66ab\u505c"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "\u6301\u7e8c\u6642\u9593"
+                },
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "finishes_at": {
+                    "name": "\u5b8c\u6210\u65bc"
+                },
+                "remaining": {
+                    "name": "\u5269\u9918"
+                },
+                "restore": {
+                    "name": "\u56de\u5fa9"
+                }
+            }
+        }
+    },
+    "services": {
+        "pause": {
+            "name": "\u66ab\u505c"
+        },
+        "start": {
+            "name": "\u505c\u6b62"
+        }
+    }
+}

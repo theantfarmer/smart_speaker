@@ -1,0 +1,43 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Skript",
+            "state": {
+                "off": "Vypnut\u00fd",
+                "on": "Zapnut\u00fd"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Spu\u0161t\u011bn\u00e9 automatizace"
+                },
+                "last_action": {
+                    "name": "Posledn\u00ed akce"
+                },
+                "last_triggered": {
+                    "name": "Naposledy spu\u0161t\u011bno"
+                },
+                "max": {
+                    "name": "Maxim\u00e1ln\u00ed po\u010det spu\u0161t\u011bn\u00fdch skript\u016f"
+                },
+                "mode": {
+                    "name": "Re\u017eim spu\u0161t\u011bn\u00ed",
+                    "state": {
+                        "parallel": "Paraleln\u011b",
+                        "queued": "Fronta",
+                        "restart": "Restart",
+                        "single": "Jedin\u00fd"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Vypnout"
+        },
+        "turn_on": {
+            "name": "Zapnout"
+        }
+    },
+    "title": "Skript"
+}

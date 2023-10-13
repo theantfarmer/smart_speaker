@@ -1,0 +1,79 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "\u7121\u52b9\u306a\u8a8d\u8a3c",
+            "login_error": "\u30ed\u30b0\u30a4\u30f3\u30a8\u30e9\u30fc ({code}): {msg}"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "access_id": "Tuya IoT Access ID",
+                    "access_secret": "Tuya IoT Access Secret",
+                    "country_code": "\u56fd\u5225\u30b3\u30fc\u30c9",
+                    "password": "\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "\u30a2\u30ab\u30a6\u30f3\u30c8"
+                },
+                "description": "Tuya\u306e\u8a8d\u8a3c\u60c5\u5831\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "basic_anti_flicker": {
+                "state": {
+                    "0": "\u7121\u52b9",
+                    "1": "50 Hz",
+                    "2": "60 Hz"
+                }
+            },
+            "basic_nightvision": {
+                "state": {
+                    "0": "\u30aa\u30fc\u30c8\u30de\u30c1\u30c3\u30af",
+                    "1": "\u30aa\u30d5",
+                    "2": "\u30aa\u30f3"
+                }
+            },
+            "decibel_sensitivity": {
+                "state": {
+                    "0": "\u4f4e\u611f\u5ea6",
+                    "1": "\u9ad8\u611f\u5ea6"
+                }
+            },
+            "fan_angle": {
+                "state": {
+                    "30": "30\u00b0",
+                    "60": "60\u00b0",
+                    "90": "90\u00b0"
+                }
+            },
+            "humidifier_moodlighting": {
+                "state": {
+                    "1": "\u30e0\u30fc\u30c91",
+                    "2": "\u30e0\u30fc\u30c92",
+                    "3": "\u30e0\u30fc\u30c93",
+                    "4": "\u30e0\u30fc\u30c94",
+                    "5": "\u30e0\u30fc\u30c95"
+                }
+            },
+            "ipc_work_mode": {
+                "state": {
+                    "0": "\u4f4e\u96fb\u529b\u30e2\u30fc\u30c9",
+                    "1": "\u9023\u7d9a\u52d5\u4f5c\u30e2\u30fc\u30c9"
+                }
+            },
+            "motion_sensitivity": {
+                "state": {
+                    "0": "\u4f4e\u611f\u5ea6",
+                    "1": "\u4e2d\u7a0b\u5ea6\u306e\u611f\u5ea6",
+                    "2": "\u9ad8\u611f\u5ea6"
+                }
+            },
+            "record_mode": {
+                "state": {
+                    "1": "\u30a4\u30d9\u30f3\u30c8\u306e\u307f\u3092\u8a18\u9332",
+                    "2": "\u9023\u7d9a\u8a18\u9332"
+                }
+            }
+        }
+    }
+}

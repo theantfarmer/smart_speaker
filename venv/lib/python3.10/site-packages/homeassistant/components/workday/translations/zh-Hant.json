@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Workday has already been setup with chosen configuration",
+            "incorrect_province": "\u532f\u5165 Yaml \u884c\u653f\u5340\u4e0d\u6b63\u78ba"
+        },
+        "error": {
+            "add_holiday_error": "\u65e5\u671f\u683c\u5f0f\u932f\u8aa4  (YYYY-MM-DD)",
+            "already_configured": "\u670d\u52d9\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210",
+            "remove_holiday_error": "\u65e5\u671f\u683c\u5f0f\u932f\u8aa4  (YYYY-MM-DD) \u6216\u627e\u4e0d\u5230\u5047\u65e5\u540d\u7a31"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "\u65b0\u589e\u5047\u65e5",
+                    "days_offset": "\u504f\u79fb",
+                    "excludes": "\u6392\u9664",
+                    "province": "\u570b\u5bb6\u884c\u653f\u5340",
+                    "remove_holidays": "\u79fb\u9664\u5047\u65e5",
+                    "workdays": "\u5de5\u4f5c\u65e5"
+                },
+                "data_description": {
+                    "add_holidays": "\u4ee5 YYYY-MM-DD \u683c\u5f0f\u65b0\u589e\u81ea\u8a02\u5047\u65e5",
+                    "days_offset": "\u504f\u79fb\u5929\u6578",
+                    "excludes": "\u6392\u9664\u7684\u5de5\u4f5c\u65e5\u5217\u8868",
+                    "province": "\u5dde\u3001\u9818\u5730\u3001\u7701\u53ca\u570b\u5bb6\u5730\u5340",
+                    "remove_holidays": "\u4ee5 YYYY-MM-DD \u683c\u5f0f\u6216\u4f7f\u7528\u5176\u540d\u7a31\u79fb\u9664\u5047\u65e5",
+                    "workdays": "\u5de5\u4f5c\u65e5\u5217\u8868"
+                },
+                "description": "\u8a2d\u5b9a\u570b\u5bb6\u8a2d\u5b9a {country} \u4e4b {name} \u9644\u52a0\u9078\u9805"
+            },
+            "user": {
+                "data": {
+                    "country": "\u570b\u5bb6",
+                    "name": "\u540d\u7a31"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "\u4f7f\u7528 YAML \u8a2d\u5b9a\u7684 Workday \u5373\u5c07\u9032\u884c\u79fb\u9664\u3002\n\n\u65e2\u6709\u7684 YAML \u8a2d\u5b9a\u5c07\u81ea\u52d5\u532f\u5165\u81f3 UI \u5167\u3002\n\n\u8acb\u65bc configuration.yaml \u6a94\u6848\u4e2d\u79fb\u9664 Workday YAML \u8a2d\u5b9a\u4e26\u91cd\u65b0\u555f\u52d5 Home Assistant \u4ee5\u4fee\u6b63\u6b64\u554f\u984c\u3002",
+            "title": "Workday YAML \u8a2d\u5b9a\u5373\u5c07\u79fb\u9664"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "\u65e5\u671f\u683c\u5f0f\u932f\u8aa4  (YYYY-MM-DD)",
+            "already_configured": "\u670d\u52d9\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210",
+            "remove_holiday_error": "\u65e5\u671f\u683c\u5f0f\u932f\u8aa4  (YYYY-MM-DD) \u6216\u627e\u4e0d\u5230\u5047\u65e5\u540d\u7a31"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "\u65b0\u589e\u5047\u65e5",
+                    "days_offset": "\u504f\u79fb",
+                    "excludes": "\u6392\u9664",
+                    "province": "\u570b\u5bb6\u884c\u653f\u5340",
+                    "remove_holidays": "\u79fb\u9664\u5047\u65e5",
+                    "workdays": "\u5de5\u4f5c\u65e5"
+                },
+                "data_description": {
+                    "add_holidays": "\u4ee5 YYYY-MM-DD \u683c\u5f0f\u65b0\u589e\u81ea\u8a02\u5047\u65e5",
+                    "days_offset": "\u504f\u79fb\u5929\u6578",
+                    "excludes": "\u6392\u9664\u7684\u5de5\u4f5c\u65e5\u5217\u8868",
+                    "province": "\u5dde\u3001\u9818\u5730\u3001\u7701\u53ca\u570b\u5bb6\u5730\u5340",
+                    "remove_holidays": "\u4ee5 YYYY-MM-DD \u683c\u5f0f\u6216\u4f7f\u7528\u5176\u540d\u7a31\u79fb\u9664\u5047\u65e5",
+                    "workdays": "\u5de5\u4f5c\u65e5\u5217\u8868"
+                },
+                "description": "\u8b8a\u66f4\u570b\u5bb6\u8a2d\u5b9a {country} \u4e4b {name} \u9644\u52a0\u9078\u9805"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "\u661f\u671f\u4e94",
+                "holiday": "\u5047\u65e5",
+                "mon": "\u661f\u671f\u4e00",
+                "sat": "\u661f\u671f\u516d",
+                "sun": "\u661f\u671f\u5929",
+                "thu": "\u661f\u671f\u56db",
+                "tue": "\u661f\u671f\u4e8c",
+                "wed": "\u661f\u671f\u4e09"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "\u7121\u884c\u653f\u5340"
+            }
+        }
+    },
+    "title": "\u5de5\u4f5c\u65e5"
+}

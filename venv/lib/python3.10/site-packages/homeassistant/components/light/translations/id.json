@@ -1,0 +1,159 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "Kurangi kecerahan {entity_name}",
+            "brightness_increase": "Tingkatkan kecerahan {entity_name}",
+            "flash": "Lampu kilat {entity_name}",
+            "toggle": "Nyala/matikan {entity_name}",
+            "turn_off": "Matikan {entity_name}",
+            "turn_on": "Nyalakan {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} mati",
+            "is_on": "{entity_name} nyala"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} dinyalakan atau dimatikan",
+            "turned_off": "{entity_name} dimatikan",
+            "turned_on": "{entity_name} dinyalakan"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Lampu",
+            "state": {
+                "off": "Mati",
+                "on": "Nyala"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "Kecerahan"
+                },
+                "color_mode": {
+                    "name": "Mode warna",
+                    "state": {
+                        "brightness": "Hanya kecerahan",
+                        "color_temp": "Temperatur warna",
+                        "hs": "HS",
+                        "onoff": "Nyala/Mati",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Tidak dikenal",
+                        "white": "Putih",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "Suhu warna (mired)"
+                },
+                "color_temp_kelvin": {
+                    "name": "Suhu warna (Kelvin)"
+                },
+                "effect": {
+                    "name": "Efek"
+                },
+                "effect_list": {
+                    "name": "Efek yang tersedia"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "Suhu warna maksimum (Kelvin)"
+                },
+                "max_mireds": {
+                    "name": "Suhu warna maksimum (mired)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "Suhu warna minimum (Kelvin)"
+                },
+                "min_mireds": {
+                    "name": "Suhu warna minimum (mired)"
+                },
+                "supported_color_modes": {
+                    "name": "Mode warna tersedia",
+                    "state": {
+                        "brightness": "Hanya kecerahan",
+                        "color_temp": "Temperatur warna",
+                        "hs": "HS",
+                        "onoff": "Nyala/Mati",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Tidak dikenal",
+                        "white": "Putih",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "services": {
+        "toggle": {
+            "fields": {
+                "profile": {
+                    "name": "Profil"
+                },
+                "rgb_color": {
+                    "name": "Warna"
+                },
+                "transition": {
+                    "description": "Durasi yang diperlukan untuk mencapai status berikutnya.",
+                    "name": "Transisi"
+                },
+                "white": {
+                    "description": "Atur mode lampu ke putih.",
+                    "name": "Putih"
+                },
+                "xy_color": {
+                    "description": "Warna dalam format XY. Daftar dua angka desimal antara 0 dan 1.",
+                    "name": "Warna XY"
+                }
+            },
+            "name": "Alihkan"
+        },
+        "turn_off": {
+            "fields": {
+                "transition": {
+                    "description": "Durasi yang diperlukan untuk mencapai status berikutnya.",
+                    "name": "Transisi"
+                }
+            },
+            "name": "Matikan"
+        },
+        "turn_on": {
+            "fields": {
+                "profile": {
+                    "name": "Profil"
+                },
+                "rgb_color": {
+                    "name": "Warna"
+                },
+                "rgbw_color": {
+                    "name": "Warna RGBW"
+                },
+                "rgbww_color": {
+                    "name": "Warna RGBWW"
+                },
+                "transition": {
+                    "description": "Durasi yang diperlukan untuk mencapai status berikutnya.",
+                    "name": "Transisi"
+                },
+                "white": {
+                    "description": "Atur mode lampu ke putih.",
+                    "name": "Putih"
+                },
+                "xy_color": {
+                    "description": "Warna dalam format XY. Daftar dua angka desimal antara 0 dan 1.",
+                    "name": "Warna XY"
+                }
+            },
+            "name": "Nyalakan"
+        }
+    },
+    "title": "Lampu"
+}

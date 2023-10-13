@@ -1,0 +1,20 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Pole wyboru",
+            "state_attributes": {
+                "editable": {
+                    "name": "Zarz\u0105dzanie przez UI",
+                    "state": {
+                        "false": "nie",
+                        "true": "tak"
+                    }
+                },
+                "options": {
+                    "name": "Opcje"
+                }
+            }
+        }
+    },
+    "title": "Pole wyboru"
+}

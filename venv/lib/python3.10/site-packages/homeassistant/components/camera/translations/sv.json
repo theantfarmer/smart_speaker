@@ -1,0 +1,36 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kamera",
+            "state": {
+                "idle": "Inaktiv",
+                "recording": "Inspelning",
+                "streaming": "Str\u00f6mmar"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "\u00c5tkomsttoken"
+                },
+                "model_name": {
+                    "name": "Modell"
+                },
+                "motion_detection": {
+                    "name": "R\u00f6relsedetektering",
+                    "state": {
+                        "false": "Inaktiverad",
+                        "true": "Aktiverad"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "St\u00e4ng av"
+        },
+        "turn_on": {
+            "name": "Starta"
+        }
+    },
+    "title": "Kamera"
+}

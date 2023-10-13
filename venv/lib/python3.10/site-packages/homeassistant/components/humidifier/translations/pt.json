@@ -1,0 +1,72 @@
+{
+    "device_automation": {
+        "action_type": {
+            "set_humidity": "Definir humidade para {entity_name}",
+            "set_mode": "Alterar modo de {entity_name}",
+            "toggle": "Alternar {entity_name}",
+            "turn_off": "Desligar {entity_name}",
+            "turn_on": "Ligar {entity_name}"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} ligado ou desligado",
+            "target_humidity_changed": "A humidade alvo de {entity_name} foi alterada"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Humidificador",
+            "state": {
+                "off": "Desligado",
+                "on": "Ligado"
+            },
+            "state_attributes": {
+                "available_modes": {
+                    "name": "Modos dispon\u00edveis"
+                },
+                "humidity": {
+                    "name": "Humidade pretendida"
+                },
+                "max_humidity": {
+                    "name": "Humidade M\u00e1x. pretendida"
+                },
+                "min_humidity": {
+                    "name": "Humidade M\u00edn. pretendida"
+                },
+                "mode": {
+                    "name": "Modo",
+                    "state": {
+                        "auto": "Auto",
+                        "away": "Ausente",
+                        "baby": "Beb\u00e9",
+                        "boost": "Turbo",
+                        "comfort": "Conforto",
+                        "eco": "Eco",
+                        "home": "Casa",
+                        "normal": "Normal"
+                    }
+                }
+            }
+        },
+        "dehumidifier": {
+            "name": "Desumidificador"
+        },
+        "humidifier": {
+            "name": "Humidificador"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "A plataforma {platform} para a integra\u00e7\u00e3o {domain} n\u00e3o suporta a configura\u00e7\u00e3o da plataforma.\n\nRemova-a da sua configura\u00e7\u00e3o e reinicie o Home Assistant para corrigir este problema.",
+            "title": "Suporte de plataforma n\u00e3o suportado"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Desligar"
+        },
+        "turn_on": {
+            "name": "Ligar"
+        }
+    },
+    "title": "Humidificador"
+}

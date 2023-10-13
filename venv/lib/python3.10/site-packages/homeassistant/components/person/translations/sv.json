@@ -1,0 +1,34 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Person",
+            "state": {
+                "home": "Hemma",
+                "not_home": "Borta"
+            },
+            "state_attributes": {
+                "device_trackers": {
+                    "name": "Enhetssp\u00e5rare"
+                },
+                "gps_accuracy": {
+                    "name": "GPS-noggrannhet"
+                },
+                "latitude": {
+                    "name": "Latitud"
+                },
+                "longitude": {
+                    "name": "Longitud"
+                },
+                "source": {
+                    "name": "K\u00e4lla"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ladda om"
+        }
+    },
+    "title": "Person"
+}

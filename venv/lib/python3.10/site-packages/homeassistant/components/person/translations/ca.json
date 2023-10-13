@@ -1,0 +1,34 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Persona",
+            "state": {
+                "home": "A casa",
+                "not_home": "Fora"
+            },
+            "state_attributes": {
+                "device_trackers": {
+                    "name": "Seguidors de dispositius"
+                },
+                "gps_accuracy": {
+                    "name": "Precisi\u00f3 GPS"
+                },
+                "latitude": {
+                    "name": "Latitud"
+                },
+                "longitude": {
+                    "name": "Longitud"
+                },
+                "source": {
+                    "name": "Font"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Torna a carregar"
+        }
+    },
+    "title": "Persona"
+}

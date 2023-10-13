@@ -1,0 +1,158 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zaten yap\u0131land\u0131r\u0131lm\u0131\u015f. Yaln\u0131zca tek bir konfig\u00fcrasyon m\u00fcmk\u00fcnd\u00fcr.",
+            "cannot_connect": "Ba\u011flanma hatas\u0131"
+        },
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "one": "Bo\u015f",
+            "other": "Bo\u015f"
+        },
+        "step": {
+            "one": "Bo\u015f",
+            "other": "Bo\u015f",
+            "setup_network": {
+                "data": {
+                    "host": "Ana Bilgisayar",
+                    "port": "Port"
+                },
+                "title": "Ba\u011flant\u0131 adresini se\u00e7in"
+            },
+            "setup_serial": {
+                "data": {
+                    "device": "Cihaz se\u00e7"
+                },
+                "title": "Cihaz"
+            },
+            "setup_serial_manual_path": {
+                "data": {
+                    "device": "USB Cihaz Yolu"
+                },
+                "title": "Yol"
+            },
+            "user": {
+                "data": {
+                    "type": "Ba\u011flant\u0131 t\u00fcr\u00fc"
+                },
+                "title": "Ba\u011flant\u0131 t\u00fcr\u00fcn\u00fc se\u00e7in"
+            }
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "send_command": "Komut g\u00f6nder: {subtype}",
+            "send_status": "Durum g\u00fcncellemesi g\u00f6nder: {subtype}"
+        },
+        "trigger_type": {
+            "command": "Al\u0131nan komut: {subtype}",
+            "status": "Al\u0131nan durum: {subtype}"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "chill": {
+                "name": "So\u011fuk"
+            },
+            "count": {
+                "name": "Say\u0131s\u0131"
+            },
+            "counter_value": {
+                "name": "Saya\u00e7 de\u011feri"
+            },
+            "current_ch_1": {
+                "name": "G\u00fcncel B\u00f6l\u00fcm 1"
+            },
+            "current_ch_2": {
+                "name": "G\u00fcncel B\u00f6l\u00fcm 2"
+            },
+            "current_ch_3": {
+                "name": "G\u00fcncel B\u00f6l\u00fcm 3"
+            },
+            "forecast": {
+                "name": "Tahmin"
+            },
+            "forecast_status": {
+                "name": "Tahmin durumu"
+            },
+            "humidity_status": {
+                "name": "Nem durumu"
+            },
+            "instantaneous_power": {
+                "name": "Anl\u0131k g\u00fc\u00e7"
+            },
+            "sensor_status": {
+                "name": "Sens\u00f6r durumu"
+            },
+            "sound": {
+                "name": "Ses"
+            },
+            "temperature_2": {
+                "name": "S\u0131cakl\u0131k 2"
+            },
+            "total_energy_usage": {
+                "name": "Toplam enerji kullan\u0131m\u0131"
+            },
+            "uv_index": {
+                "name": "UV Endeksi"
+            },
+            "wind_average_speed": {
+                "name": "R\u00fczgar ortalama h\u0131z\u0131"
+            },
+            "wind_direction": {
+                "name": "R\u00fczgar y\u00f6n\u00fc"
+            },
+            "wind_gust": {
+                "name": "R\u00fczgar esintisi"
+            }
+        }
+    },
+    "one": "Bo\u015f",
+    "options": {
+        "error": {
+            "already_configured_device": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "invalid_event_code": "Ge\u00e7ersiz etkinlik kodunu",
+            "invalid_input_2262_off": "Komut kapatma i\u00e7in ge\u00e7ersiz giri\u015f",
+            "invalid_input_2262_on": "A\u00e7ma komutu i\u00e7in ge\u00e7ersiz giri\u015f",
+            "invalid_input_off_delay": "Kapanma gecikmesi i\u00e7in ge\u00e7ersiz giri\u015f",
+            "unknown": "Beklenmeyen hata"
+        },
+        "step": {
+            "prompt_options": {
+                "data": {
+                    "automatic_add": "Otomatik eklemeyi etkinle\u015ftir",
+                    "debug": "Hata ay\u0131klamay\u0131 etkinle\u015ftir",
+                    "device": "Yap\u0131land\u0131rmak i\u00e7in cihaz\u0131 se\u00e7in",
+                    "event_code": "Eklemek i\u00e7in etkinlik kodunu girin",
+                    "protocols": "Protokoller"
+                },
+                "title": "Rfxtrx Se\u00e7enekleri"
+            },
+            "set_device_options": {
+                "data": {
+                    "command_off": "Komut kapatma i\u00e7in veri bitleri de\u011feri",
+                    "command_on": "Komut i\u00e7in veri bitleri de\u011feri",
+                    "data_bit": "Veri biti say\u0131s\u0131",
+                    "off_delay": "Kapanma gecikmesi",
+                    "off_delay_enabled": "Kapatma gecikmesini etkinle\u015ftir",
+                    "replace_device": "De\u011fi\u015ftirilecek cihaz\u0131 se\u00e7in",
+                    "venetian_blind_mode": "Jaluzi modu"
+                },
+                "title": "Cihaz se\u00e7eneklerini yap\u0131land\u0131r\u0131n"
+            }
+        }
+    },
+    "other": "Bo\u015f",
+    "services": {
+        "send": {
+            "description": "Radyoda ham bir olay g\u00f6nderir.",
+            "fields": {
+                "event": {
+                    "description": "G\u00f6nderilecek onalt\u0131l\u0131k bir dize.",
+                    "name": "Olay"
+                }
+            },
+            "name": "G\u00f6nder"
+        }
+    }
+}

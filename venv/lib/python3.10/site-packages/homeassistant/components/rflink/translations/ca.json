@@ -1,0 +1,15 @@
+{
+    "services": {
+        "send_command": {
+            "fields": {
+                "command": {
+                    "name": "Comanda"
+                },
+                "device_id": {
+                    "description": "ID del dispositiu RFLink.",
+                    "name": "ID del dispositiu"
+                }
+            }
+        }
+    }
+}

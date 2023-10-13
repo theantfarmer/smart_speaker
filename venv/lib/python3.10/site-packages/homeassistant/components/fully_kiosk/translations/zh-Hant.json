@@ -1,0 +1,118 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u5e33\u865f\u5df2\u7d93\u8a2d\u5b9a\u5b8c\u6210"
+        },
+        "error": {
+            "cannot_connect": "\u9023\u7dda\u5931\u6557",
+            "unknown": "\u672a\u9810\u671f\u932f\u8aa4"
+        },
+        "step": {
+            "discovery_confirm": {
+                "data": {
+                    "password": "\u5bc6\u78bc"
+                },
+                "description": "\u662f\u5426\u8981\u8a2d\u5b9a {name} ({host})\uff1f"
+            },
+            "user": {
+                "data": {
+                    "host": "\u4e3b\u6a5f\u7aef",
+                    "password": "\u5bc6\u78bc"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "device_admin": {
+                "name": "\u88dd\u7f6e\u7ba1\u7406\u54e1"
+            },
+            "kiosk_mode": {
+                "name": "\u6a5f\u53f0\u6a21\u5f0f"
+            },
+            "plugged_in": {
+                "name": "\u5df2\u63d2\u5165"
+            }
+        },
+        "button": {
+            "load_start_url": {
+                "name": "\u8f09\u5165\u8d77\u59cb URL"
+            },
+            "restart_browser": {
+                "name": "\u91cd\u555f\u700f\u89bd\u5668"
+            },
+            "restart_device": {
+                "name": "\u91cd\u555f\u88dd\u7f6e"
+            },
+            "to_background": {
+                "name": "\u50b3\u9001\u81f3\u5f8c\u53f0"
+            },
+            "to_foreground": {
+                "name": "\u5207\u9084\u56de\u524d\u53f0"
+            }
+        },
+        "number": {
+            "screen_brightness": {
+                "name": "\u87a2\u5e55\u4eae\u5ea6"
+            },
+            "screen_off_time": {
+                "name": "\u87a2\u5e55\u95dc\u9589\u8a08\u6642\u5668"
+            },
+            "screensaver_brightness": {
+                "name": "\u87a2\u5e55\u4fdd\u8b77\u4eae\u5ea6"
+            },
+            "screensaver_time": {
+                "name": "\u87a2\u5e55\u4fdd\u8b77\u8a08\u6642\u5668"
+            }
+        },
+        "sensor": {
+            "current_page": {
+                "name": "\u76ee\u524d\u9801\u9762"
+            },
+            "foreground_app": {
+                "name": "\u524d\u53f0\u61c9\u7528\u7a0b\u5f0f"
+            },
+            "internal_storage_free_space": {
+                "name": "\u5167\u90e8\u5132\u5b58\u53ef\u7528\u5bb9\u91cf"
+            },
+            "internal_storage_total_space": {
+                "name": "\u5167\u90e8\u5132\u5b58\u7e3d\u5bb9\u91cf"
+            },
+            "ram_free_memory": {
+                "name": "\u53ef\u7528\u8a18\u61b6\u9ad4"
+            },
+            "ram_total_memory": {
+                "name": "\u7e3d\u8a18\u61b6\u9ad4"
+            },
+            "screen_orientation": {
+                "name": "\u87a2\u5e55\u986f\u793a\u65b9\u5411"
+            }
+        },
+        "switch": {
+            "kiosk": {
+                "name": "\u6a5f\u53f0\u6a21\u5f0f\u9396\u5b9a"
+            },
+            "maintenance": {
+                "name": "\u7dad\u8b77\u6a21\u5f0f"
+            },
+            "motion_detection": {
+                "name": "\u52d5\u4f5c\u611f\u6e2c"
+            },
+            "screen_on": {
+                "name": "\u87a2\u5e55"
+            },
+            "screensaver": {
+                "name": "\u87a2\u5e55\u4fdd\u8b77"
+            }
+        }
+    },
+    "services": {
+        "load_url": {
+            "fields": {
+                "url": {
+                    "name": "\u7db2\u5740"
+                }
+            }
+        }
+    }
+}

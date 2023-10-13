@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "no_services": "Aucun service trouv\u00e9 au point de terminaison"
+        },
+        "error": {
+            "cannot_connect": "\u00c9chec de connexion"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Voulez-vous configurer Home Assistant pour vous connecter au service Wyoming fourni par le module compl\u00e9mentaire\u00a0: {addon}\u00a0?"
+            },
+            "user": {
+                "data": {
+                    "host": "H\u00f4te",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

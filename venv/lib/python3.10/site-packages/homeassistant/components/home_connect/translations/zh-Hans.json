@@ -1,0 +1,56 @@
+{
+    "config": {
+        "abort": {
+            "missing_configuration": "\u8be5\u7ec4\u4ef6\u672a\u914d\u7f6e\u3002\u8bf7\u53c2\u9605\u6587\u6863\u3002",
+            "no_url_available": "\u6ca1\u6709\u53ef\u7528\u7684 URL\u3002\u6709\u5173\u6b64\u9519\u8bef\u7684\u4fe1\u606f\uff0c\u8bf7[\u68c0\u67e5\u5e2e\u52a9\u90e8\u5206]({docs_url})"
+        },
+        "create_entry": {
+            "default": "\u8ba4\u8bc1\u6210\u529f"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "\u8bf7\u9009\u62e9\u8ba4\u8bc1\u65b9\u6cd5"
+            }
+        }
+    },
+    "services": {
+        "change_setting": {
+            "description": "\u66f4\u6539\u8bbe\u7f6e\u3002",
+            "fields": {
+                "device_id": {
+                    "name": "\u8bbe\u5907ID"
+                },
+                "key": {
+                    "description": "\u8bbe\u7f6e\u7684\u5173\u952e\u3002",
+                    "name": "\u94a5\u5319"
+                },
+                "value": {
+                    "description": "\u8bbe\u7f6e\u7684\u503c\u3002",
+                    "name": "\u503c"
+                }
+            },
+            "name": "\u4fee\u6539\u8bbe\u7f6e"
+        },
+        "pause_program": {
+            "description": "\u6682\u505c\u5f53\u524d\u6b63\u5728\u8fd0\u884c\u7684\u7a0b\u5e8f\u3002",
+            "fields": {
+                "device_id": {
+                    "name": "\u8bbe\u5907ID"
+                }
+            },
+            "name": "\u6682\u505c\u7a0b\u5e8f"
+        },
+        "resume_program": {
+            "description": "\u6062\u590d\u6682\u505c\u7684\u7a0b\u5e8f\u3002",
+            "fields": {
+                "device_id": {
+                    "name": "\u8bbe\u5907ID"
+                }
+            },
+            "name": "\u6062\u590d\u7a0b\u5e8f"
+        },
+        "select_program": {
+            "description": "\u9009\u62e9\u4e00\u4e2a\u7a0b\u5e8f\u800c\u4e0d\u542f\u52a8\u5b83\u3002"
+        }
+    }
+}

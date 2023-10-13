@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispozitivul a fost configurat deja"
+        },
+        "error": {
+            "invalid_auth": "Autentificare nevalid\u0103"
+        },
+        "flow_title": "{ip}",
+        "step": {
+            "user": {
+                "data": {
+                    "ip_address": "Hostname sau adres\u0103 IP",
+                    "password": "Parola",
+                    "port": "Port"
+                },
+                "title": "Completeaz\u0103 informa\u021biile tale"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "use_app_run_times": "Utilizarea timpilor de rulare a zonelor din aplica\u021bia RainMachine",
+                    "zone_run_time": "Timp de rulare \u00een zona implicit\u0103 (\u00een secunde)"
+                },
+                "title": "Configurare RainMachine"
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "device_automation": {
+        "action_type": {
+            "arm_away": "Larma {entity_name} borta",
+            "arm_home": "Larma {entity_name} hemma",
+            "arm_night": "Larma {entity_name} natt",
+            "arm_vacation": "Larma semesterl\u00e4ge {entity_name}",
+            "disarm": "Avlarma {entity_name}",
+            "trigger": "Utl\u00f6sare {entity_name}"
+        },
+        "condition_type": {
+            "is_armed_away": "{entity_name} \u00e4r bortalarmat",
+            "is_armed_home": "{entity_name} \u00e4r hemmalarmat",
+            "is_armed_night": "{entity_name} \u00e4r nattlarmat",
+            "is_armed_vacation": "{entity_name} \u00e4r larmad i semesterl\u00e4ge",
+            "is_disarmed": "{entity_name} \u00e4r bortkopplad",
+            "is_triggered": "{entity_name} har utl\u00f6sts"
+        },
+        "trigger_type": {
+            "armed_away": "{entity_name} larmad borta",
+            "armed_home": "{entity_name} larmad hemma",
+            "armed_night": "{entity_name} larmad natt",
+            "armed_vacation": "{entity_name} larmad i semesterl\u00e4ge",
+            "disarmed": "{entity_name} bortkopplad",
+            "triggered": "{entity_name} utl\u00f6st"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Larmkontrollpanel",
+            "state": {
+                "armed": "Larmat",
+                "armed_away": "Larmat borta",
+                "armed_custom_bypass": "Larmat anpassad f\u00f6rbikoppling",
+                "armed_home": "Larmat hemma",
+                "armed_night": "Larmat natt",
+                "armed_vacation": "Larmat semester",
+                "arming": "Larmar p\u00e5",
+                "disarmed": "Avlarmat",
+                "disarming": "Larmar av",
+                "pending": "V\u00e4ntar",
+                "triggered": "Larmar"
+            },
+            "state_attributes": {
+                "changed_by": {
+                    "name": "\u00c4ndrat av"
+                },
+                "code_arm_required": {
+                    "name": "Kod f\u00f6r p\u00e5larmning",
+                    "state": {
+                        "false": "Kr\u00e4vs ej",
+                        "true": "Kr\u00e4vs"
+                    }
+                },
+                "code_format": {
+                    "name": "Kodformat",
+                    "state": {
+                        "number": "Nummer",
+                        "text": "Text"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "alarm_arm_away": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att aktivera larmet.",
+                    "name": "Kod"
+                }
+            }
+        },
+        "alarm_arm_custom_bypass": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att aktivera larmet."
+                }
+            }
+        },
+        "alarm_arm_home": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att aktivera larmet.",
+                    "name": "Kod"
+                }
+            }
+        },
+        "alarm_arm_night": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att aktivera larmet.",
+                    "name": "Kod"
+                }
+            }
+        },
+        "alarm_arm_vacation": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att aktivera larmet.",
+                    "name": "Kod"
+                }
+            }
+        },
+        "alarm_disarm": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att avaktivera larmet.",
+                    "name": "Kod"
+                }
+            }
+        },
+        "alarm_trigger": {
+            "fields": {
+                "code": {
+                    "description": "Kod f\u00f6r att aktivera larmet.",
+                    "name": "Kod"
+                }
+            }
+        }
+    },
+    "title": "Larmkontrollpanel"
+}

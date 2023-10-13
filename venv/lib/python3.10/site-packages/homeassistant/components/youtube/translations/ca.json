@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "access_not_configured": "Llegeix el missatge seg\u00fcent que hem rebut de Google: \n\n{message}",
+            "already_configured": "El compte ja est\u00e0 configurat",
+            "no_channel": "Crea un canal de YouTube per poder utilitzar aquesta integraci\u00f3. Pots trobar les instruccions a {support_url}.",
+            "reauth_successful": "Re-autenticaci\u00f3 realitzada correctament",
+            "unknown": "Error inesperat"
+        },
+        "error": {
+            "cannot_connect": "Ha fallat la connexi\u00f3",
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida"
+        },
+        "step": {
+            "channels": {
+                "data": {
+                    "channels": "Canals de YouTube"
+                },
+                "description": "Selecciona els canals que vulguis afegir."
+            },
+            "reauth_confirm": {
+                "description": "La integraci\u00f3 YouTube ha de tornar a autenticar el teu compte",
+                "title": "Reautenticaci\u00f3 de la integraci\u00f3"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "latest_upload": {
+                "name": "\u00daltima pujada"
+            },
+            "subscribers": {
+                "name": "Subscriptors"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "channels": "Canals de YouTube"
+                },
+                "description": "Selecciona els canals que vulguis afegir."
+            }
+        }
+    }
+}

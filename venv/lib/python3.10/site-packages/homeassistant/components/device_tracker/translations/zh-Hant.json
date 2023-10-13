@@ -1,0 +1,51 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_home": "{entity_name}\u5728\u5bb6",
+            "is_not_home": "{entity_name}\u4e0d\u5728\u5bb6"
+        },
+        "trigger_type": {
+            "enters": "{entity_name} \u9032\u5165\u5340\u57df",
+            "leaves": "{entity_name} \u96e2\u958b\u5340\u57df"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "\u88dd\u7f6e\u8ffd\u8e64\u5668",
+            "state": {
+                "home": "\u5728\u5bb6",
+                "not_home": "\u96e2\u5bb6"
+            },
+            "state_attributes": {
+                "battery": {
+                    "name": "\u96fb\u91cf"
+                },
+                "gps_accuracy": {
+                    "name": "GPS \u7cbe\u51c6\u5ea6"
+                },
+                "latitude": {
+                    "name": "\u7def\u5ea6"
+                },
+                "longitude": {
+                    "name": "\u7d93\u5ea6"
+                },
+                "source_type": {
+                    "name": "\u4f86\u6e90",
+                    "state": {
+                        "bluetooth": "\u85cd\u7259",
+                        "bluetooth_le": "\u85cd\u7259 BLE",
+                        "gps": "GPS",
+                        "router": "\u8def\u7531\u5668"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} \u6574\u5408\u7684 {platform} \u5e73\u53f0\u4e0d\u652f\u63f4\u5e73\u53f0\u8a2d\u5b9a\u3002\n\n\u8acb\u5c07\u5176\u7531\u8a2d\u5b9a\u4e2d\u79fb\u9664\uff0c\u4e26\u91cd\u65b0\u555f\u52d5 Home Assistant \u4ee5\u4fee\u6b63\u6b64\u554f\u984c\u3002",
+            "title": "\u4e0d\u652f\u63f4\u5e73\u53f0\u652f\u63f4"
+        }
+    },
+    "title": "\u88dd\u7f6e\u8ffd\u8e64\u5668"
+}

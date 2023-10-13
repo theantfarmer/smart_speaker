@@ -1,0 +1,15 @@
+{
+    "services": {
+        "write": {
+            "fields": {
+                "level": {
+                    "description": "Nivell dels registres.",
+                    "name": "Nivell"
+                },
+                "message": {
+                    "name": "Missatge"
+                }
+            }
+        }
+    }
+}

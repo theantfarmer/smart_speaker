@@ -1,0 +1,22 @@
+{
+    "services": {
+        "teach_face": {
+            "description": "U\u010d\u00ed facebox tv\u00e1r pomocou s\u00faboru.",
+            "fields": {
+                "entity_id": {
+                    "description": "Jednotka Facebox na v\u00fdu\u010dbu.",
+                    "name": "Entita"
+                },
+                "file_path": {
+                    "description": "Cesta k s\u00faboru s obr\u00e1zkom.",
+                    "name": "Cesta k s\u00faboru"
+                },
+                "name": {
+                    "description": "Meno tv\u00e1re, ktor\u00fa treba u\u010di\u0165.",
+                    "name": "N\u00e1zov"
+                }
+            },
+            "name": "U\u010di\u0165 tv\u00e1r"
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "config": {
+        "abort": {
+            "addon_install_failed": "Misslyckades att installera Matter Server-till\u00e4gget.",
+            "addon_start_failed": "Misslyckades att starta Matter Server-till\u00e4gget.",
+            "not_matter_addon": "Uppt\u00e4ckt till\u00e4gg \u00e4r inte det officiella Matter Server-till\u00e4gget."
+        },
+        "error": {
+            "invalid_server_version": "Matter server \u00e4r inte r\u00e4tt version",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "flow_title": "{namn}",
+        "progress": {
+            "install_addon": "V\u00e4nligen v\u00e4nta n\u00e4r installationen av Matter Server-till\u00e4gget slutf\u00f6rs. Detta kan ta flera minuter.",
+            "start_addon": "V\u00e4nligen v\u00e4nta n\u00e4r Matter Server-till\u00e4gget startas. Detta till\u00e4gget \u00e4r det som ger kraft till Matter i Home Assistant. Detta kan ta n\u00e5gra sekunder."
+        },
+        "step": {
+            "install_addon": {
+                "title": "Installationen av till\u00e4gget har startat"
+            },
+            "manual": {
+                "data": {
+                    "url": "URL"
+                }
+            },
+            "on_supervisor": {
+                "data": {
+                    "use_addon": "Anv\u00e4nd det officiella till\u00e4gget f\u00f6r Matter Server"
+                }
+            },
+            "start_addon": {
+                "title": "Startar add-on."
+            }
+        }
+    }
+}

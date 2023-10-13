@@ -1,0 +1,24 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Allarme",
+            "state": {
+                "idle": "Inattivo",
+                "off": "Riconosciuto",
+                "on": "Attivo"
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "Commuta"
+        },
+        "turn_off": {
+            "name": "Spegni"
+        },
+        "turn_on": {
+            "name": "Accendi"
+        }
+    },
+    "title": "Allarme"
+}

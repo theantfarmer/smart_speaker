@@ -1,0 +1,90 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u8bbe\u5907\u5df2\u7ecf\u914d\u7f6e\u8fc7\u4e86",
+            "already_in_progress": "\u914d\u7f6e\u6d41\u7a0b\u5df2\u5728\u8fdb\u884c\u4e2d",
+            "no_devices_found": "\u6ca1\u6709\u5728\u7f51\u7edc\u4e0a\u627e\u5230\u8bbe\u5907"
+        },
+        "error": {
+            "cannot_connect": "\u8fde\u63a5\u5931\u8d25"
+        },
+        "flow_title": "{model} {id} ({ipaddr})",
+        "step": {
+            "discovery_confirm": {
+                "description": "\u60a8\u8981\u8bbe\u7f6e{model} {id} ( {ipaddr} ) \u5417\uff1f"
+            },
+            "user": {
+                "data": {
+                    "host": "\u4e3b\u673a"
+                },
+                "description": "\u5982\u679c\u5c06\u4e3b\u673a\u7559\u7a7a\uff0c\u53d1\u73b0\u5c06\u7528\u4e8e\u67e5\u627e\u8bbe\u5907\u3002"
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "unpair_remotes": {
+                "name": "\u53d6\u6d88\u9065\u63a7\u5668\u914d\u5bf9"
+            }
+        },
+        "number": {
+            "effect_speed": {
+                "name": "\u6548\u679c\u901f\u5ea6"
+            },
+            "music_pixels_per_segment": {
+                "name": "\u6bcf\u6bb5\u97f3\u4e50\u50cf\u7d20"
+            },
+            "music_segments": {
+                "name": "\u97f3\u4e50\u7247\u6bb5"
+            },
+            "pixels_per_segment": {
+                "name": "\u6bcf\u6bb5\u50cf\u7d20\u6570"
+            },
+            "segments": {
+                "name": "\u6bb5"
+            }
+        },
+        "select": {
+            "white_channel": {
+                "name": "\u767d\u8272\u901a\u9053"
+            }
+        },
+        "switch": {
+            "music": {
+                "name": "\u97f3\u4e50"
+            },
+            "remote_access": {
+                "name": "\u8fdc\u7a0b\u8bbf\u95ee"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "custom_effect_colors": "\u81ea\u5b9a\u4e49\u6548\u679c\uff1a1 \u81f3 16 \u79cd [R\u3001G\u3001B] \u989c\u8272\u5217\u8868\u3002\u793a\u4f8b\uff1a[255,0,255],[60,128,0]",
+                    "custom_effect_speed_pct": "\u81ea\u5b9a\u4e49\u6548\u679c\uff1a\u5207\u6362\u989c\u8272\u7684\u6548\u679c\u7684\u901f\u5ea6\uff08\u4ee5\u767e\u5206\u6bd4\u4e3a\u5355\u4f4d\uff09\u3002",
+                    "custom_effect_transition": "\u81ea\u5b9a\u4e49\u6548\u679c\uff1a\u989c\u8272\u4e4b\u95f4\u7684\u8fc7\u6e21\u7c7b\u578b\u3002",
+                    "mode": "\u9009\u62e9\u7684\u4eae\u5ea6\u6a21\u5f0f\u3002"
+                }
+            }
+        }
+    },
+    "services": {
+        "set_zones": {
+            "fields": {
+                "colors": {
+                    "description": "\u6bcf\u4e2a\u533a\u57df\u7684\u989c\u8272\u5217\u8868 (RGB)\u3002\u6bcf\u4e2a\u533a\u57df\u7684\u957f\u5ea6\u662f\u6bcf\u6bb5\u7684\u50cf\u7d20\u6570\u9664\u4ee5\u989c\u8272\u6570\u3002 \uff08\u6700\u591a 2048 \u79cd\u989c\u8272\uff09\u3002"
+                },
+                "effect": {
+                    "description": "\u5f71\u54cd\u3002",
+                    "name": "\u5f71\u54cd"
+                },
+                "speed_pct": {
+                    "name": "\u901f\u5ea6"
+                }
+            },
+            "name": "\u8bbe\u7f6e\u533a\u57df"
+        }
+    }
+}

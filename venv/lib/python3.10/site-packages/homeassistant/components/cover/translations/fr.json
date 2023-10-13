@@ -1,0 +1,100 @@
+{
+    "device_automation": {
+        "action_type": {
+            "close": "Fermer {entity_name}",
+            "close_tilt": "Fermer {entity_name}",
+            "open": "Ouvrir {entity_name}",
+            "open_tilt": "Ouvrir {entity_name}",
+            "set_position": "D\u00e9finir la position de {entity_name}",
+            "set_tilt_position": "D\u00e9finir la position d'inclinaison de {entity_name}",
+            "stop": "Arr\u00eater {entity_name}"
+        },
+        "condition_type": {
+            "is_closed": "{entity_name} est ferm\u00e9",
+            "is_closing": "{entity_name} se ferme",
+            "is_open": "{entity_name} est ouvert",
+            "is_opening": "{entity_name} est en train de s'ouvrir",
+            "is_position": "La position de {entity_name} est",
+            "is_tilt_position": "La position d'inclinaison de {entity_name} est"
+        },
+        "trigger_type": {
+            "closed": "{entity_name} ferm\u00e9",
+            "closing": "{entity_name} fermeture",
+            "opened": "{entity_name} ouvert",
+            "opening": "Ouverture de {entity_name}",
+            "position": "Changement de position de {entity_name}",
+            "tilt_position": "Changement d'inclinaison de {entity_name}"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Volets",
+            "state": {
+                "closed": "Ferm\u00e9",
+                "closing": "Fermeture",
+                "open": "Ouvert",
+                "opening": "Ouverture",
+                "stopped": "Arr\u00eat\u00e9"
+            },
+            "state_attributes": {
+                "current_position": {
+                    "name": "Position"
+                },
+                "current_tilt_position": {
+                    "name": "Inclinaison"
+                }
+            }
+        },
+        "awning": {
+            "name": "Auvent"
+        },
+        "blind": {
+            "name": "Store v\u00e9nitien"
+        },
+        "curtain": {
+            "name": "Rideau"
+        },
+        "damper": {
+            "name": "Clapet"
+        },
+        "door": {
+            "name": "Porte"
+        },
+        "garage": {
+            "name": "Garage"
+        },
+        "gate": {
+            "name": "Portail"
+        },
+        "shade": {
+            "name": "Store"
+        },
+        "shutter": {
+            "name": "Volet"
+        },
+        "window": {
+            "name": "Fen\u00eatre"
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "services": {
+        "close_cover": {
+            "name": "Ferm\u00e9"
+        },
+        "open_cover": {
+            "name": "Ouvert"
+        },
+        "stop_cover": {
+            "name": "Arr\u00eater"
+        },
+        "toggle": {
+            "name": "Basculer"
+        }
+    },
+    "title": "Volets"
+}

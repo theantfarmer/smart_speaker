@@ -1,0 +1,48 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Cam\u00e9ra",
+            "state": {
+                "idle": "Inactif",
+                "recording": "Enregistrement",
+                "streaming": "Diffusion en cours"
+            },
+            "state_attributes": {
+                "access_token": {
+                    "name": "Jeton d'acc\u00e8s"
+                },
+                "brand": {
+                    "name": "Marque"
+                },
+                "frontend_stream_type": {
+                    "name": "Type de flux",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Mod\u00e8le"
+                },
+                "motion_detection": {
+                    "name": "D\u00e9tection de mouvement"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "\u00c9teindre"
+        },
+        "turn_on": {
+            "name": "Allumer"
+        }
+    },
+    "title": "Cam\u00e9ra"
+}

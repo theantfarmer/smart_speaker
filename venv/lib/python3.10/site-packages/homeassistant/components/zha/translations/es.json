@@ -1,0 +1,506 @@
+{
+    "config": {
+        "abort": {
+            "not_zha_device": "Este dispositivo no es un dispositivo zha",
+            "single_instance_allowed": "Ya est\u00e1 configurado. Solo es posible una \u00fanica configuraci\u00f3n.",
+            "usb_probe_failed": "Error al sondear el dispositivo USB"
+        },
+        "error": {
+            "cannot_connect": "No se pudo conectar",
+            "invalid_backup_json": "Copia de seguridad JSON no v\u00e1lida"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "Elige una copia de seguridad autom\u00e1tica"
+                },
+                "description": "Restaura la configuraci\u00f3n de tu red desde una copia de seguridad autom\u00e1tica",
+                "title": "Restaurar copia de seguridad autom\u00e1tica"
+            },
+            "choose_formation_strategy": {
+                "description": "Elige la configuraci\u00f3n de red para tu radio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Restaurar una copia de seguridad autom\u00e1tica",
+                    "form_initial_network": "Crear una red",
+                    "form_new_network": "Borrar la configuraci\u00f3n de red y crear una nueva red",
+                    "reuse_settings": "Mantener la configuraci\u00f3n de red de la radio",
+                    "upload_manual_backup": "Subir una copia de seguridad manual"
+                },
+                "title": "Formaci\u00f3n de la red"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Ruta del Dispositivo Serie"
+                },
+                "description": "Selecciona el puerto serie para tu radio Zigbee",
+                "title": "Selecciona un puerto serie"
+            },
+            "confirm": {
+                "description": "\u00bfQuieres configurar {name} ?"
+            },
+            "confirm_hardware": {
+                "description": "\u00bfQuieres configurar {name}?"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Tipo de Radio"
+                },
+                "description": "Elige tu tipo de radio Zigbee",
+                "title": "Tipo de Radio"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "Velocidad del puerto",
+                    "flow_control": "Control de flujo de datos",
+                    "path": "Ruta del dispositivo serie"
+                },
+                "description": "Introduce la configuraci\u00f3n del puerto serie",
+                "title": "Configuraci\u00f3n del puerto serie"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Reemplazar permanentemente la direcci\u00f3n IEEE de la radio"
+                },
+                "description": "Tu copia de seguridad tiene una direcci\u00f3n IEEE diferente a la de tu radio. Para que tu red funcione correctamente, tambi\u00e9n debes cambiar la direcci\u00f3n IEEE de tu radio. \n\nEsta es una operaci\u00f3n permanente.",
+                "title": "Sobrescribir la direcci\u00f3n IEEE de la radio"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Subir un archivo"
+                },
+                "description": "Restaura la configuraci\u00f3n de tu red desde un archivo JSON de copia de seguridad subido. Puedes descargar uno de una instalaci\u00f3n diferente de ZHA desde **Configuraci\u00f3n de red**, o usar un archivo `coordinator_backup.json` de Zigbee2MQTT.",
+                "title": "Subir una copia de seguridad manual"
+            },
+            "verify_radio": {
+                "description": "La radio ({name}) que est\u00e1s utilizando no est\u00e1 recomendada y es posible que se elimine la compatibilidad con ella en el futuro. Consulta la documentaci\u00f3n de la integraci\u00f3n de Zigbee Home Automation para obtener [una lista de adaptadores recomendados]({docs_recommended_adapters_url}).",
+                "title": "Radio no recomendada"
+            }
+        }
+    },
+    "config_panel": {
+        "zha_alarm_options": {
+            "alarm_arm_requires_code": "C\u00f3digo requerido para acciones de armado",
+            "alarm_failed_tries": "El n\u00famero de entradas consecutivas de c\u00f3digos fallidos para disparar una alarma",
+            "alarm_master_code": "C\u00f3digo maestro para el(los) panel(es) de control de alarma",
+            "title": "Opciones del panel de control de alarma"
+        },
+        "zha_options": {
+            "always_prefer_xy_color_mode": "Preferir siempre el modo de color XY",
+            "consider_unavailable_battery": "Considerar que los dispositivos alimentados por bater\u00eda no est\u00e1n disponibles despu\u00e9s de (segundos)",
+            "consider_unavailable_mains": "Considerar que los dispositivos alimentados por la red no est\u00e1n disponibles despu\u00e9s de (segundos)",
+            "default_light_transition": "Tiempo de transici\u00f3n de luz predeterminado (segundos)",
+            "enable_identify_on_join": "Habilitar el efecto de identificaci\u00f3n cuando los dispositivos se unan a la red",
+            "enhanced_light_transition": "Habilitar la transici\u00f3n mejorada de color de luz/temperatura desde un estado apagado",
+            "group_members_assume_state": "Los miembros del grupo asumen el estado del grupo",
+            "light_transitioning_flag": "Habilitar el control deslizante de brillo mejorado durante la transici\u00f3n de luz",
+            "title": "Opciones globales"
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "issue_all_led_effect": "Efecto de emisi\u00f3n para todos los LEDs",
+            "issue_individual_led_effect": "Efecto de emisi\u00f3n para LED individual",
+            "squawk": "Squawk",
+            "warn": "Advertir"
+        },
+        "trigger_subtype": {
+            "both_buttons": "Ambos botones",
+            "button": "Bot\u00f3n",
+            "button_1": "Primer bot\u00f3n",
+            "button_2": "Segundo bot\u00f3n",
+            "button_3": "Tercer bot\u00f3n",
+            "button_4": "Cuarto bot\u00f3n",
+            "button_5": "Quinto bot\u00f3n",
+            "button_6": "Sexto bot\u00f3n",
+            "close": "Cerrar",
+            "dim_down": "Bajar la intensidad",
+            "dim_up": "Subir la intensidad",
+            "face_1": "Con la cara 1 activada",
+            "face_2": "Con la cara 2 activada",
+            "face_3": "Con la cara 3 activada",
+            "face_4": "Con la cara 4 activada",
+            "face_5": "Con la cara 5 activada",
+            "face_6": "Con la cara 6 activada",
+            "face_any": "Con cualquier cara/especificada(s) activada(s)",
+            "left": "Izquierda",
+            "open": "Abrir",
+            "right": "Derecha",
+            "turn_off": "Apagar",
+            "turn_on": "Encender"
+        },
+        "trigger_type": {
+            "device_dropped": "Dispositivo ca\u00eddo",
+            "device_flipped": "Dispositivo volteado \"{subtype}\"",
+            "device_knocked": "Dispositivo golpeado \"{subtype}\"",
+            "device_offline": "Dispositivo sin conexi\u00f3n",
+            "device_rotated": "Dispositivo rotado \"{subtype}\"",
+            "device_shaken": "Dispositivo agitado",
+            "device_slid": "Dispositivo deslizado \"{subtype}\"",
+            "device_tilted": "Dispositivo inclinado",
+            "remote_button_alt_double_press": "\"{subtype}\" pulsado dos veces (modo alternativo)",
+            "remote_button_alt_long_press": "\"{subtype}\" pulsado continuamente (modo alternativo)",
+            "remote_button_alt_long_release": "\"{subtype}\" soltado despu\u00e9s de una pulsaci\u00f3n larga (modo alternativo)",
+            "remote_button_alt_quadruple_press": "\"{subtype}\" cu\u00e1druple pulsaci\u00f3n (modo alternativo)",
+            "remote_button_alt_quintuple_press": "\"{subtype}\" qu\u00edntuple pulsaci\u00f3n (modo alternativo)",
+            "remote_button_alt_short_press": "\"{subtype}\" pulsado (modo alternativo)",
+            "remote_button_alt_short_release": "\"{subtype}\" soltado (modo alternativo)",
+            "remote_button_alt_triple_press": "\"{subtype}\" pulsado tres veces (modo alternativo)",
+            "remote_button_double_press": "\"{subtype}\" pulsado dos veces",
+            "remote_button_long_press": "\"{subtype}\" pulsado continuamente",
+            "remote_button_long_release": "\"{subtype}\" soltado despu\u00e9s de una pulsaci\u00f3n larga",
+            "remote_button_quadruple_press": "\"{subtype}\" pulsado cuatro veces",
+            "remote_button_quintuple_press": "\"{subtype}\" pulsado cinco veces",
+            "remote_button_short_press": "\"{subtype}\" pulsado",
+            "remote_button_short_release": "\"{subtype}\" soltado",
+            "remote_button_triple_press": "\"{subtype}\" pulsado tres veces"
+        }
+    },
+    "options": {
+        "abort": {
+            "not_zha_device": "Este dispositivo no es un dispositivo zha",
+            "single_instance_allowed": "Ya est\u00e1 configurado. Solo es posible una \u00fanica configuraci\u00f3n.",
+            "usb_probe_failed": "Error al sondear el dispositivo USB"
+        },
+        "error": {
+            "cannot_connect": "No se pudo conectar",
+            "invalid_backup_json": "Copia de seguridad JSON no v\u00e1lida"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "choose_automatic_backup": {
+                "data": {
+                    "choose_automatic_backup": "Elige una copia de seguridad autom\u00e1tica"
+                },
+                "description": "Restaura la configuraci\u00f3n de tu red desde una copia de seguridad autom\u00e1tica",
+                "title": "Restaurar copia de seguridad autom\u00e1tica"
+            },
+            "choose_formation_strategy": {
+                "description": "Elige la configuraci\u00f3n de red para tu radio.",
+                "menu_options": {
+                    "choose_automatic_backup": "Restaurar una copia de seguridad autom\u00e1tica",
+                    "form_initial_network": "Crear una red",
+                    "form_new_network": "Borrar la configuraci\u00f3n de red y crear una nueva red",
+                    "reuse_settings": "Mantener la configuraci\u00f3n de red de la radio",
+                    "upload_manual_backup": "Subir una copia de seguridad manual"
+                },
+                "title": "Formaci\u00f3n de la red"
+            },
+            "choose_serial_port": {
+                "data": {
+                    "path": "Ruta del Dispositivo Serie"
+                },
+                "description": "Selecciona el puerto serie para tu radio Zigbee",
+                "title": "Selecciona un puerto serie"
+            },
+            "init": {
+                "description": "ZHA se detendr\u00e1. \u00bfDeseas continuar?",
+                "title": "Reconfigurar ZHA"
+            },
+            "instruct_unplug": {
+                "description": "Tu antigua radio ha sido reiniciada. Si ya no necesitas el hardware, puedes desconectarlo ahora. \n\nPuedes conectar tu nueva radio ahora.",
+                "title": "Desconecta tu antigua radio"
+            },
+            "intent_migrate": {
+                "description": "Antes de conectar tu nueva radio, tu vieja radio necesita ser reiniciada. Se realizar\u00e1 una copia de seguridad autom\u00e1tica. Si est\u00e1s utilizando un adaptador combinado de Z-Wave y Zigbee como el HUSBZB-1, esto solo restablecer\u00e1 la parte de Zigbee. \n\n*Nota: si est\u00e1s migrando desde un **ConBee/RaspBee**, \u00a1aseg\u00farate de que est\u00e9 ejecutando el firmware `0x26720700` o m\u00e1s reciente! De lo contrario, es posible que algunos dispositivos no se puedan controlar despu\u00e9s de la migraci\u00f3n hasta que se apaguen y enciendan.* \n\n\u00bfDeseas continuar?",
+                "title": "Migrar a una nueva radio"
+            },
+            "manual_pick_radio_type": {
+                "data": {
+                    "radio_type": "Tipo de Radio"
+                },
+                "description": "Elige tu tipo de radio Zigbee",
+                "title": "Tipo de Radio"
+            },
+            "manual_port_config": {
+                "data": {
+                    "baudrate": "Velocidad del puerto",
+                    "flow_control": "Control de flujo de datos",
+                    "path": "Ruta del dispositivo serie"
+                },
+                "description": "Introduce la configuraci\u00f3n del puerto serie",
+                "title": "Configuraci\u00f3n del puerto serie"
+            },
+            "maybe_confirm_ezsp_restore": {
+                "data": {
+                    "overwrite_coordinator_ieee": "Reemplazar permanentemente la direcci\u00f3n IEEE de la radio"
+                },
+                "description": "Tu copia de seguridad tiene una direcci\u00f3n IEEE diferente a la de tu radio. Para que tu red funcione correctamente, tambi\u00e9n debes cambiar la direcci\u00f3n IEEE de tu radio. \n\nEsta es una operaci\u00f3n permanente.",
+                "title": "Sobrescribir la direcci\u00f3n IEEE de la radio"
+            },
+            "prompt_migrate_or_reconfigure": {
+                "description": "\u00bfEst\u00e1s migrando a una nueva radio o volviendo a configurar la radio actual?",
+                "menu_options": {
+                    "intent_migrate": "Migrar a una nueva radio",
+                    "intent_reconfigure": "Volver a configurar la radio actual"
+                },
+                "title": "Migrar o volver a configurar"
+            },
+            "upload_manual_backup": {
+                "data": {
+                    "uploaded_backup_file": "Subir un archivo"
+                },
+                "description": "Restaura la configuraci\u00f3n de tu red desde un archivo JSON de copia de seguridad subido. Puedes descargar uno de una instalaci\u00f3n diferente de ZHA desde **Configuraci\u00f3n de red**, o usar un archivo `coordinator_backup.json` de Zigbee2MQTT.",
+                "title": "Subir una copia de seguridad manual"
+            },
+            "verify_radio": {
+                "description": "La radio ({name}) que est\u00e1s utilizando no est\u00e1 recomendada y es posible que se elimine la compatibilidad con ella en el futuro. Consulta la documentaci\u00f3n de la integraci\u00f3n de Zigbee Home Automation para obtener [una lista de adaptadores recomendados]({docs_recommended_adapters_url}).",
+                "title": "Radio no recomendada"
+            }
+        }
+    },
+    "services": {
+        "clear_lock_user_code": {
+            "description": "Borra un c\u00f3digo de usuario de una cerradura.",
+            "fields": {
+                "code_slot": {
+                    "description": "Ranura de c\u00f3digo para borrar el c\u00f3digo.",
+                    "name": "Ranura de c\u00f3digo"
+                }
+            },
+            "name": "Borrar usuario de cerradura"
+        },
+        "disable_lock_user_code": {
+            "description": "Deshabilita un c\u00f3digo de usuario en una cerradura.",
+            "fields": {
+                "code_slot": {
+                    "description": "Ranura de c\u00f3digo a desactivar.",
+                    "name": "Ranura de c\u00f3digo"
+                }
+            },
+            "name": "Deshabilitar usuario de cerradura"
+        },
+        "enable_lock_user_code": {
+            "description": "Habilita un c\u00f3digo de usuario en una cerradura.",
+            "fields": {
+                "code_slot": {
+                    "description": "Ranura de c\u00f3digo para habilitar.",
+                    "name": "Ranura de c\u00f3digo"
+                }
+            },
+            "name": "Habilitar usuario de cerradura"
+        },
+        "issue_zigbee_cluster_command": {
+            "description": "Emite un comando en el cl\u00faster especificado en la entidad especificada.",
+            "fields": {
+                "args": {
+                    "description": "Argumentos a pasar al comando.",
+                    "name": "Args"
+                },
+                "cluster_id": {
+                    "description": "Cl\u00faster ZCL para recuperar atributos.",
+                    "name": "ID de cl\u00faster"
+                },
+                "cluster_type": {
+                    "description": "Tipo del cl\u00faster.",
+                    "name": "Tipo de cl\u00faster"
+                },
+                "command": {
+                    "description": "ID del comando a ejecutar.",
+                    "name": "Comando"
+                },
+                "command_type": {
+                    "description": "Tipo de comando a ejecutar.",
+                    "name": "Tipo de comando"
+                },
+                "endpoint_id": {
+                    "description": "Id. del extremo para el cl\u00faster.",
+                    "name": "ID del extremo"
+                },
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE para el dispositivo.",
+                    "name": "IEEE"
+                },
+                "manufacturer": {
+                    "description": "C\u00f3digo del fabricante.",
+                    "name": "Fabricante"
+                },
+                "params": {
+                    "description": "Par\u00e1metros que se van a pasar al comando.",
+                    "name": "Par\u00e1metros"
+                }
+            },
+            "name": "Emitir comando de cl\u00faster zigbee"
+        },
+        "issue_zigbee_group_command": {
+            "description": "Emitir comando en el cluster especificado en el grupo especificado.",
+            "fields": {
+                "args": {
+                    "description": "Argumentos a pasar al comando.",
+                    "name": "Args"
+                },
+                "cluster_id": {
+                    "description": "Cl\u00faster ZCL al que enviar el comando.",
+                    "name": "ID de cl\u00faster"
+                },
+                "cluster_type": {
+                    "description": "Tipo del cl\u00faster.",
+                    "name": "Tipo de cl\u00faster"
+                },
+                "command": {
+                    "description": "ID del comando a ejecutar.",
+                    "name": "Comando"
+                },
+                "group": {
+                    "description": "Direcci\u00f3n hexadecimal del grupo.",
+                    "name": "Grupo"
+                },
+                "manufacturer": {
+                    "description": "C\u00f3digo del fabricante.",
+                    "name": "Fabricante"
+                }
+            },
+            "name": "Emitir comando de grupo zigbee"
+        },
+        "permit": {
+            "description": "Permite que los nodos se unan a la red Zigbee.",
+            "fields": {
+                "duration": {
+                    "description": "Tiempo durante el que se permiten las uniones.",
+                    "name": "Duraci\u00f3n"
+                },
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE del nodo que permite nuevas uniones.",
+                    "name": "IEEE"
+                },
+                "install_code": {
+                    "description": "Instale el c\u00f3digo del dispositivo de uni\u00f3n (debe usarse con source_ieee).",
+                    "name": "C\u00f3digo de instalaci\u00f3n"
+                },
+                "qr_code": {
+                    "description": "Valor del c\u00f3digo de instalaci\u00f3n QR (diferente entre proveedores).",
+                    "name": "C\u00f3digo QR"
+                },
+                "source_ieee": {
+                    "description": "Direcci\u00f3n IEEE del dispositivo de uni\u00f3n (debe usarse con el c\u00f3digo de instalaci\u00f3n).",
+                    "name": "Fuente IEEE"
+                }
+            },
+            "name": "Permitir"
+        },
+        "reconfigure_device": {
+            "description": "Reconfigura un dispositivo ZHA (curar dispositivo). Usa esto si tienes problemas con el dispositivo. Si el dispositivo en cuesti\u00f3n es un dispositivo alimentado por bater\u00eda, aseg\u00farate de que est\u00e9 activo y acepte comandos cuando uses este servicio.",
+            "fields": {
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE del dispositivo que se va a reconfigurar.",
+                    "name": "IEEE"
+                }
+            },
+            "name": "Volver a configurar el dispositivo"
+        },
+        "remove": {
+            "description": "Elimina un nodo de la red Zigbee.",
+            "fields": {
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE del nodo a eliminar.",
+                    "name": "IEEE"
+                }
+            },
+            "name": "Eliminar"
+        },
+        "set_lock_user_code": {
+            "description": "Establece un c\u00f3digo de usuario en una cerradura.",
+            "fields": {
+                "code_slot": {
+                    "description": "Ranura de c\u00f3digo para establecer el c\u00f3digo.",
+                    "name": "Ranura de c\u00f3digo"
+                },
+                "user_code": {
+                    "description": "C\u00f3digo a configurar.",
+                    "name": "C\u00f3digo"
+                }
+            },
+            "name": "Establecer c\u00f3digo de usuario de bloqueo"
+        },
+        "set_zigbee_cluster_attribute": {
+            "description": "Establece un valor de atributo para el cluster especificado en la entidad especificada.",
+            "fields": {
+                "attribute": {
+                    "description": "ID del atributo a establecer.",
+                    "name": "Atributo"
+                },
+                "cluster_id": {
+                    "description": "Cl\u00faster ZCL para recuperar atributos.",
+                    "name": "ID de cl\u00faster"
+                },
+                "cluster_type": {
+                    "description": "Tipo del cl\u00faster.",
+                    "name": "Tipo de cl\u00faster"
+                },
+                "endpoint_id": {
+                    "description": "Id. del extremo para el cl\u00faster.",
+                    "name": "ID del extremo"
+                },
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE para el dispositivo.",
+                    "name": "IEEE"
+                },
+                "manufacturer": {
+                    "description": "C\u00f3digo del fabricante.",
+                    "name": "Fabricante"
+                },
+                "value": {
+                    "description": "Valor a escribir en el atributo.",
+                    "name": "Valor"
+                }
+            },
+            "name": "Establecer atributo de cl\u00faster zigbee"
+        },
+        "warning_device_squawk": {
+            "description": "Este servicio utiliza las capacidades de WD para emitir un pulso audible/visible r\u00e1pido llamado \"graznido\". El comando de graznido no tiene efecto si el WD est\u00e1 actualmente activo (advertencia en curso).",
+            "fields": {
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE para el dispositivo.",
+                    "name": "IEEE"
+                },
+                "level": {
+                    "description": "El campo de nivel de graznido se usa como una enumeraci\u00f3n de 2 bits y determina la intensidad del sonido de graznido audible como se muestra en la Tabla 8-26 de la especificaci\u00f3n ZCL - Valores de campo de nivel de graznido.",
+                    "name": "Nivel"
+                },
+                "mode": {
+                    "description": "El campo Modo Squawk se usa como una enumeraci\u00f3n de 4 bits y puede tener uno de los valores que se muestran en la Tabla 8-24 de la especificaci\u00f3n ZCL - Campo Modo Squawk. La operaci\u00f3n exacta de cada modo (c\u00f3mo \"grazna\" el WD) es espec\u00edfica de la implementaci\u00f3n.",
+                    "name": "Modo"
+                },
+                "strobe": {
+                    "description": "El campo estrobosc\u00f3pico se usa como valor booleano y determina si tambi\u00e9n se requiere la indicaci\u00f3n visual adem\u00e1s del graznido audible, como se muestra en la Tabla 8-25 de la especificaci\u00f3n ZCL - Bit estrobosc\u00f3pico.",
+                    "name": "Estrobosc\u00f3pico"
+                }
+            },
+            "name": "Graznido del dispositivo de advertencia"
+        },
+        "warning_device_warn": {
+            "description": "Este servicio inicia el funcionamiento del dispositivo de advertencia. El dispositivo de advertencia alerta al \u00e1rea circundante mediante se\u00f1ales audibles (sirena) y visuales (estrobosc\u00f3picas).",
+            "fields": {
+                "duration": {
+                    "description": "Duraci\u00f3n solicitada de la advertencia, en segundos (16 bits). Si tanto el modo estrobosc\u00f3pico como el modo de advertencia son \"0\", este campo se ignora.",
+                    "name": "Duraci\u00f3n"
+                },
+                "duty_cycle": {
+                    "description": "Indica la duraci\u00f3n del ciclo de flash. Esto te permite variar la duraci\u00f3n del destello para diferentes tipos de alarma (por ejemplo, incendio, polic\u00eda, robo). El rango v\u00e1lido es 0-100 en incrementos de 10. Todos los dem\u00e1s valores deben redondearse al valor v\u00e1lido m\u00e1s cercano. Strobe calcula un ciclo de trabajo con una duraci\u00f3n de un segundo. El estado ON debe preceder al estado OFF. Por ejemplo, si el campo Ciclo de trabajo de la luz estrobosc\u00f3pica especifica \"40\", entonces la luz estrobosc\u00f3pica parpadea durante 4/10 de segundo y luego se apaga durante 6/10 de segundo.",
+                    "name": "Ciclo de trabajo"
+                },
+                "ieee": {
+                    "description": "Direcci\u00f3n IEEE para el dispositivo.",
+                    "name": "IEEE"
+                },
+                "intensity": {
+                    "description": "Indica la intensidad de la luz estrobosc\u00f3pica como se muestra en la Tabla 8-23 de la especificaci\u00f3n ZCL. Este atributo est\u00e1 dise\u00f1ado para variar la salida de la luz estrobosc\u00f3pica (es decir, el brillo) y no su frecuencia, que se detalla en la secci\u00f3n 8.4.2.3.1.6 de la especificaci\u00f3n ZCL.",
+                    "name": "Intensidad"
+                },
+                "level": {
+                    "description": "El campo Nivel de sirena se usa como una enumeraci\u00f3n de 2 bits e indica la intensidad del sonido de graznido audible como se muestra en la Tabla 8-22 de la especificaci\u00f3n ZCL.",
+                    "name": "Nivel"
+                },
+                "mode": {
+                    "description": "El campo Modo de advertencia se usa como una enumeraci\u00f3n de 4 bits, puede tener uno de los valores 0-6 definidos a continuaci\u00f3n en la tabla 8-20 de la especificaci\u00f3n ZCL. El comportamiento exacto del dispositivo de advertencia en cada modo est\u00e1 de acuerdo con los est\u00e1ndares de seguridad pertinentes.",
+                    "name": "Modo"
+                },
+                "strobe": {
+                    "description": "El campo Strobe se usa como una enumeraci\u00f3n de 2 bits y determina si se requiere la indicaci\u00f3n visual adem\u00e1s de la sirena audible, como se indica en la Tabla 8-21 de la especificaci\u00f3n ZCL. \"0\" significa que no hay luz estrobosc\u00f3pica, \"1\" significa luz estrobosc\u00f3pica. Si el campo de luz estrobosc\u00f3pica es \"1\" y el modo de advertencia es \"0\" (\"Detener\"), entonces solo se activa la luz estrobosc\u00f3pica.",
+                    "name": "Estrobosc\u00f3pico"
+                }
+            },
+            "name": "El dispositivo de advertencia inicia la alerta"
+        }
+    }
+}

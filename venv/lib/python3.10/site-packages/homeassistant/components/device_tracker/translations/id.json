@@ -1,0 +1,51 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_home": "{entity_name} ada di rumah",
+            "is_not_home": "{entity_name} tidak ada di rumah"
+        },
+        "trigger_type": {
+            "enters": "{entity_name} memasuki zona",
+            "leaves": "{entity_name} meninggalkan zona"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Pelacak perangkat",
+            "state": {
+                "home": "Di Rumah",
+                "not_home": "Keluar"
+            },
+            "state_attributes": {
+                "battery": {
+                    "name": "Baterai"
+                },
+                "gps_accuracy": {
+                    "name": "Akurasi GPS"
+                },
+                "latitude": {
+                    "name": "Lintang"
+                },
+                "longitude": {
+                    "name": "Bujur"
+                },
+                "source_type": {
+                    "name": "Sumber",
+                    "state": {
+                        "bluetooth": "Bluetooth",
+                        "bluetooth_le": "Bluetooth LE",
+                        "gps": "GPS",
+                        "router": "Router"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "title": "Pelacak perangkat"
+}

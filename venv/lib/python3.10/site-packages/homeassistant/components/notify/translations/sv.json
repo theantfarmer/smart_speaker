@@ -1,0 +1,24 @@
+{
+    "services": {
+        "notify": {
+            "fields": {
+                "data": {
+                    "name": "Data"
+                },
+                "message": {
+                    "description": "Meddelandets meddelandetext.",
+                    "name": "Meddelande"
+                },
+                "target": {
+                    "name": "M\u00e5l"
+                },
+                "title": {
+                    "description": "Rubrik f\u00f6r ditt meddelande",
+                    "name": "Titel"
+                }
+            },
+            "name": "Skicka ett meddelande"
+        }
+    },
+    "title": "Meddela"
+}

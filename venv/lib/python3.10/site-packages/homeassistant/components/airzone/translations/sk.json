@@ -1,0 +1,47 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_system_id": "Neplatn\u00e9 ID syst\u00e9mu Airzone"
+        },
+        "step": {
+            "discovered_connection": {
+                "data": {
+                    "host": "Hostite\u013e",
+                    "id": "ID syst\u00e9mu",
+                    "port": "Port"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Hostite\u013e",
+                    "id": "ID syst\u00e9mu",
+                    "port": "Port"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "grille_angles": {
+                "state": {
+                    "40deg": "40\u00b0",
+                    "45deg": "45\u00b0",
+                    "50deg": "50\u00b0",
+                    "90deg": "90\u00b0"
+                }
+            },
+            "sleep_times": {
+                "state": {
+                    "30m": "30 min\u00fat",
+                    "60m": "60 min\u00fat",
+                    "90m": "90 min\u00fat",
+                    "off": "Neakt\u00edvny"
+                }
+            }
+        }
+    }
+}

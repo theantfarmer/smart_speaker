@@ -1,0 +1,36 @@
+{
+    "services": {
+        "add_tracking": {
+            "description": "Aftership'e yeni bir takip numaras\u0131 ekler.",
+            "fields": {
+                "slug": {
+                    "description": "Yeni takibin k\u0131sa ad\u0131 (ta\u015f\u0131y\u0131c\u0131).",
+                    "name": "K\u0131sa ad"
+                },
+                "title": {
+                    "description": "Yeni izleme i\u00e7in \u00f6zel bir ba\u015fl\u0131k.",
+                    "name": "Ba\u015fl\u0131k"
+                },
+                "tracking_number": {
+                    "description": "Yeni takip i\u00e7in takip numaras\u0131.",
+                    "name": "Takip numaras\u0131"
+                }
+            },
+            "name": "\u0130zleme ekle"
+        },
+        "remove_tracking": {
+            "description": "Aftership'ten bir takip numaras\u0131n\u0131 kald\u0131r\u0131r.",
+            "fields": {
+                "slug": {
+                    "description": "K\u0131sa ad\u0131 (ta\u015f\u0131y\u0131c\u0131) izleme kald\u0131rmak i\u00e7in.",
+                    "name": "K\u0131sa ad"
+                },
+                "tracking_number": {
+                    "description": "Kald\u0131r\u0131lacak takibin takip numaras\u0131.",
+                    "name": "Takip numaras\u0131"
+                }
+            },
+            "name": "\u0130zlemeyi kald\u0131r"
+        }
+    }
+}

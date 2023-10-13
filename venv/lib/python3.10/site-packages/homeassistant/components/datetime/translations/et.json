@@ -1,0 +1,19 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kuup\u00e4ev/kellaaeg"
+        }
+    },
+    "services": {
+        "set_value": {
+            "fields": {
+                "datetime": {
+                    "description": "M\u00e4\u00e4ratav kuup\u00e4ev/kellaaeg. Eeldatakse Home Assistanti eksemplari ajav\u00f6\u00f6ndit.",
+                    "name": "Kuup\u00e4ev ja kellaaeg"
+                }
+            },
+            "name": "M\u00e4\u00e4ra kuup\u00e4ev/kellaaeg"
+        }
+    },
+    "title": "Kuup\u00e4ev/kellaaeg"
+}

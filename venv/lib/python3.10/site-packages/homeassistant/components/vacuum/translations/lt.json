@@ -1,0 +1,17 @@
+{
+    "device_automation": {
+        "action_type": {
+            "clean": "Leiskite {entity_name} valyti",
+            "dock": "Leiskite {entity_name} gr\u012f\u017eti \u012f stotel\u0119"
+        },
+        "condition_type": {
+            "is_cleaning": "{entity_name} valo",
+            "is_docked": "{entity_name} yra stotel\u0117je"
+        },
+        "trigger_type": {
+            "cleaning": "{entity_name} prad\u0117jo valyti",
+            "docked": "{entity_name} stotel\u0117je"
+        }
+    },
+    "title": "Dulki\u0173 siurblys"
+}

@@ -1,0 +1,15 @@
+{
+    "services": {
+        "send_voice": {
+            "fields": {
+                "target": {
+                    "name": "Eesm\u00e4rk"
+                },
+                "timeout": {
+                    "description": "H\u00e4\u00e4lteavituse saatmise ajal\u00f5pp. Aitab ajal\u00f5pu vigade korral (kehv Interneti-\u00fchendus jne).",
+                    "name": "Ajal\u00f5pp"
+                }
+            }
+        }
+    }
+}

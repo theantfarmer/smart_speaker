@@ -1,0 +1,147 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'appareil est d\u00e9j\u00e0 configur\u00e9"
+        },
+        "error": {
+            "invalid_code": "Le code que vous avez saisi est incorrect, veuillez le v\u00e9rifier et r\u00e9essayer.",
+            "invalid_email": "Il n'y a pas de compte associ\u00e9 \u00e0 l'e-mail que vous avez saisi, veuillez r\u00e9essayer.",
+            "invalid_email_format": "Il y a un probl\u00e8me avec le formatage de votre e-mail - veuillez r\u00e9essayer.",
+            "unknown": "Erreur inattendue",
+            "unknown_roborock": "Il y a eu une exception roborock inconnue - veuillez v\u00e9rifier vos journaux.",
+            "unknown_url": "Un probl\u00e8me est survenu lors de la d\u00e9termination de l\u2019URL correcte pour votre compte roborock - veuillez v\u00e9rifier vos journaux."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Code de v\u00e9rification"
+                },
+                "description": "Saisissez le code de v\u00e9rification qui vous a \u00e9t\u00e9 envoy\u00e9 par courrier \u00e9lectronique"
+            },
+            "user": {
+                "data": {
+                    "username": "Courriel"
+                },
+                "description": "Entrez votre adresse e-mail Roborock."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Intensit\u00e9 de frottement",
+                "state": {
+                    "custom": "Personnalis\u00e9",
+                    "high": "\u00c9lev\u00e9e",
+                    "intense": "Intense",
+                    "low": "Faible",
+                    "medium": "Moyenne",
+                    "mild": "Doux",
+                    "moderate": "Mod\u00e9r\u00e9e",
+                    "off": "D\u00e9sactiv\u00e9"
+                }
+            },
+            "mop_mode": {
+                "name": "Parcours de lavage de sol",
+                "state": {
+                    "custom": "Personnalis\u00e9",
+                    "deep": "Approfondi",
+                    "deep_plus": "Approfondi+",
+                    "fast": "Rapide",
+                    "standard": "Standard"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "Surface de nettoyage"
+            },
+            "cleaning_time": {
+                "name": "Dur\u00e9e de nettoyage"
+            },
+            "filter_time_left": {
+                "name": "Temps restant filtre"
+            },
+            "main_brush_time_left": {
+                "name": "Temps restant brosse principale"
+            },
+            "sensor_time_left": {
+                "name": "Temps restant capteurs"
+            },
+            "side_brush_time_left": {
+                "name": "Temps restant brosse lat\u00e9rale"
+            },
+            "status": {
+                "name": "\u00c9tat",
+                "state": {
+                    "charger_disconnected": "Chargeur d\u00e9connect\u00e9",
+                    "charging": "Mise en charge",
+                    "charging_complete": "Chargement termin\u00e9",
+                    "charging_problem": "Probl\u00e8me de charge",
+                    "cleaning": "Nettoyage",
+                    "device_offline": "Appareil hors ligne",
+                    "docking": "Vers la base",
+                    "emptying_the_bin": "Vidage du bac",
+                    "error": "Erreur",
+                    "going_to_target": "Vers la cible",
+                    "going_to_wash_the_mop": "Va laver la serpilli\u00e8re",
+                    "idle": "Inactif",
+                    "manual_mode": "Mode manuel",
+                    "paused": "En pause",
+                    "remote_control_active": "Contr\u00f4le \u00e0 distance",
+                    "returning_home": "Retour \u00e0 la base",
+                    "segment_cleaning": "Nettoyage de pi\u00e8ce",
+                    "shutting_down": "Arr\u00eat du syst\u00e8me",
+                    "spot_cleaning": "Nettoyage localis\u00e9",
+                    "starting": "D\u00e9marrage",
+                    "updating": "Mise \u00e0 jour",
+                    "washing_the_mop": "Lavage de la serpilli\u00e8re",
+                    "zoned_cleaning": "Nettoyage de zone"
+                }
+            },
+            "total_cleaning_area": {
+                "name": "Surface de nettoyage totale"
+            },
+            "total_cleaning_time": {
+                "name": "Dur\u00e9e totale de nettoyage"
+            },
+            "vacuum_error": {
+                "state": {
+                    "wall_sensor_dirty": "Capteur mural encrass\u00e9",
+                    "wheels_jammed": "Roues bloqu\u00e9es",
+                    "wheels_suspended": "Roues suspendues"
+                }
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "S\u00e9curit\u00e9 enfant"
+            },
+            "status_indicator": {
+                "name": "Voyant d'\u00e9tat"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Automatique",
+                            "balanced": "\u00c9quilibr\u00e9",
+                            "custom": "Personnalis\u00e9",
+                            "gentle": "Doux",
+                            "max": "Max",
+                            "max_plus": "Max plus",
+                            "medium": "Moyen",
+                            "off": "D\u00e9sactiv\u00e9",
+                            "quiet": "Calme",
+                            "silent": "Silencieux",
+                            "standard": "Standard",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

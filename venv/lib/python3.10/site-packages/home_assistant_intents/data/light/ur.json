@@ -1,0 +1,45 @@
+{
+  "language": "ur",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "<name> برائٹنیس [کو] <brightness> [<set>]",
+            "<brightness> <name> برائٹنیس [<set>]",
+            "برائٹنیس <name> <brightness> [<set>]"
+          ],
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "<area> [برائٹنیس] [کو] <brightness> [<set>]",
+            "<area> <brightness> [برائٹنیس] [<set>]"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "<name> (رنگ | کلر) [کو] {color} [<set>]",
+            "{color} <name> (رنگ | کلر) [کو] [<set>]",
+            "{color} <set> <name> (رنگ | کلر) [کو]"
+          ],
+          "response": "color"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "{{ slots.name }} کے برائٹنیس کو {{ slots.brightness }} کردیآ ھے",
+        "brightness_area": "{{ slots.area }} کے برائٹنیس کو {{ slots.brightness }} کردیآ ھے",
+        "color": "{{ slots.name }} کا رنگ {{ slots.color }} کردیآ ھے",
+        "color_area": "{{ slots.area }} کا رنگ {{ slots.color }} کردیآ ھے"
+      }
+    }
+  }
+}

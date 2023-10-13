@@ -1,0 +1,65 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "A fi\u00f3k m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "column_invalid": "A `{column}` oszlopot nem adja vissza a lek\u00e9rdez\u00e9s",
+            "db_url_invalid": "\u00c9rv\u00e9nytelen adatb\u00e1zis URL-c\u00edm",
+            "query_invalid": "\u00c9rv\u00e9nytelen SQL-lek\u00e9rdez\u00e9s"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "column": "Oszlop",
+                    "db_url": "Adatb\u00e1zis URL",
+                    "name": "Elnevez\u00e9s",
+                    "query": "Lek\u00e9rdez\u00e9s kijel\u00f6l\u00e9se",
+                    "unit_of_measurement": "M\u00e9rt\u00e9kegys\u00e9g",
+                    "value_template": "\u00c9rt\u00e9ksablon"
+                },
+                "data_description": {
+                    "column": "\u00c1llapotk\u00e9nt megjelen\u00edtend\u0151, lek\u00e9rdezett oszlop",
+                    "db_url": "Adatb\u00e1zis URL-c\u00edme, hagyja \u00fcresen az alap\u00e9rtelmezett HA-adatb\u00e1zis haszn\u00e1lat\u00e1hoz",
+                    "name": "A konfigur\u00e1ci\u00f3s bejegyz\u00e9shez \u00e9s az \u00e9rz\u00e9kel\u0151h\u00f6z haszn\u00e1lt n\u00e9v",
+                    "query": "A futtatand\u00f3 lek\u00e9rdez\u00e9snek 'SELECT'-el kell kezd\u0151dnie.",
+                    "unit_of_measurement": "M\u00e9rt\u00e9kegys\u00e9g (nem k\u00f6telez\u0151)",
+                    "value_template": "\u00c9rt\u00e9ksablon (nem k\u00f6telez\u0151)"
+                }
+            }
+        }
+    },
+    "issues": {
+        "entity_id_query_does_full_table_scan": {
+            "description": "A `{query}` lek\u00e9rdez\u00e9s tartalmazza az `entity_id` kulcssz\u00f3t, de nem hivatkozik a `states_meta` t\u00e1bl\u00e1ra. Ez a teljes t\u00e1bla szkennel\u00e9s\u00e9t \u00e9s az adatb\u00e1zis instabilit\u00e1s\u00e1t okozhatja. K\u00e9rem, olvassa el a dokument\u00e1ci\u00f3t, \u00e9s haszn\u00e1lja helyette a `states_meta.entity_id` lek\u00e9rdez\u00e9st.",
+            "title": "Az SQL-lek\u00e9rdez\u00e9s teljes t\u00e1blavizsg\u00e1latot v\u00e9gez"
+        }
+    },
+    "options": {
+        "error": {
+            "column_invalid": "A `{column}` oszlopot nem adja vissza a lek\u00e9rdez\u00e9s",
+            "db_url_invalid": "\u00c9rv\u00e9nytelen adatb\u00e1zis URL-c\u00edm",
+            "query_invalid": "\u00c9rv\u00e9nytelen SQL-lek\u00e9rdez\u00e9s"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "column": "Oszlop",
+                    "db_url": "Adatb\u00e1zis URL",
+                    "name": "Elnevez\u00e9s",
+                    "query": "Lek\u00e9rdez\u00e9s kijel\u00f6l\u00e9se",
+                    "unit_of_measurement": "M\u00e9rt\u00e9kegys\u00e9g",
+                    "value_template": "\u00c9rt\u00e9ksablon"
+                },
+                "data_description": {
+                    "column": "\u00c1llapotk\u00e9nt megjelen\u00edtend\u0151, lek\u00e9rdezett oszlop",
+                    "db_url": "Adatb\u00e1zis URL-c\u00edme, hagyja \u00fcresen az alap\u00e9rtelmezett HA-adatb\u00e1zis haszn\u00e1lat\u00e1hoz",
+                    "name": "A konfigur\u00e1ci\u00f3s bejegyz\u00e9shez \u00e9s az \u00e9rz\u00e9kel\u0151h\u00f6z haszn\u00e1lt n\u00e9v",
+                    "query": "A futtatand\u00f3 lek\u00e9rdez\u00e9snek 'SELECT'-el kell kezd\u0151dnie.",
+                    "unit_of_measurement": "M\u00e9rt\u00e9kegys\u00e9g (nem k\u00f6telez\u0151)",
+                    "value_template": "\u00c9rt\u00e9ksablon (nem k\u00f6telez\u0151)"
+                }
+            }
+        }
+    }
+}

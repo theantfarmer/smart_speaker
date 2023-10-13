@@ -1,0 +1,51 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Palvelu on jo konfiguroitu"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Lis\u00e4\u00e4 lomat"
+                },
+                "data_description": {
+                    "workdays": "Lista ty\u00f6p\u00e4ivist\u00e4"
+                }
+            },
+            "user": {
+                "data": {
+                    "country": "Maa",
+                    "name": "Nimi"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Lis\u00e4\u00e4 lomat",
+                    "remove_holidays": "Poista lomat",
+                    "workdays": "Ty\u00f6p\u00e4iv\u00e4t"
+                },
+                "data_description": {
+                    "workdays": "Lista ty\u00f6p\u00e4ivist\u00e4"
+                }
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Perjantai",
+                "holiday": "Lomat",
+                "mon": "Maanantai",
+                "sat": "Lauantai",
+                "sun": "Sunnuntai",
+                "thu": "Torstai",
+                "tue": "Tiistai",
+                "wed": "Keskiviikko"
+            }
+        }
+    }
+}

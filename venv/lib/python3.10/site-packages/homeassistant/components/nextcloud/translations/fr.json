@@ -1,0 +1,38 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "L'appareil est d\u00e9j\u00e0 configur\u00e9",
+            "connection_error_during_import": "Une erreur de connexion s'est produite lors de l'importation de la configuration yaml",
+            "reauth_successful": "La r\u00e9-authentification a r\u00e9ussi"
+        },
+        "error": {
+            "connection_error": "\u00c9chec de connexion",
+            "invalid_auth": "Authentification non valide"
+        },
+        "flow_title": "Nextcloud",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Mot de passe",
+                    "username": "Nom d'utilisateur"
+                },
+                "description": "Mettez \u00e0 jour vos informations de connexion pour {url}."
+            },
+            "user": {
+                "data": {
+                    "password": "Mot de passe",
+                    "url": "URL",
+                    "username": "Nom d'utilisateur",
+                    "verify_ssl": "V\u00e9rifier le certificat SSL"
+                },
+                "description": "Entrez vos informations Nextcloud."
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "La configuration de Nextcloud \u00e0 l'aide de YAML est obsol\u00e8te. \n\nVotre configuration YAML existante a \u00e9t\u00e9 import\u00e9e automatiquement dans l'interface utilisateur. \n\nSupprimez la configuration YAML \"nextcloud\" de votre fichier configuration.yaml et red\u00e9marrez Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "La configuration Nextcloud YAML est obsol\u00e8te"
+        }
+    }
+}

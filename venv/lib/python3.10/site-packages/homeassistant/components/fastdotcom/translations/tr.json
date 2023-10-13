@@ -1,0 +1,8 @@
+{
+    "services": {
+        "speedtest": {
+            "description": "Fast.com ile hemen bir h\u0131z testi ger\u00e7ekle\u015ftirir.",
+            "name": "H\u0131z testi"
+        }
+    }
+}

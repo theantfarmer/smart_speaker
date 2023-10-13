@@ -1,0 +1,53 @@
+{
+  "language": "uk",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "<зміни> [яскравість] <name> на <brightness>",
+            "<зміни> <name> на <brightness> [яскравості]"
+          ],
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "<зміни> яскравість [світла] <area> [на] <brightness>",
+            "<зміни> світло <area> на <brightness> [яскравості]"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "<зміни> колір <name> на {color}",
+            "<зміни> <name> [на] {color} [колір]",
+            "<зміни> [на] {color} колір <name>"
+          ],
+          "response": "color"
+        },
+        {
+          "sentences": [
+            "<зміни> [колір] світл(а|о) <area> на {color}"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "color_area"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "Яскравість {{ slots.name }} змінено на {{ slots.brightness }}",
+        "brightness_area": "Яскравість світла в {{ slots.area }} змінено на {{ slots.brightness }}",
+        "color": "Колір {{ slots.name }} змінено на {{ slots.color }}",
+        "color_area": "Колір світла в {{ slots.area }} змінено на {{ slots.color }}"
+      }
+    }
+  }
+}

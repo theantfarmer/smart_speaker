@@ -1,0 +1,38 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Entrada de text",
+            "state_attributes": {
+                "editable": {
+                    "name": "Gestionat mitjan\u00e7ant la Interf\u00edcie d'Usuari (IU)",
+                    "state": {
+                        "false": "No",
+                        "true": "S\u00ed"
+                    }
+                },
+                "max": {
+                    "name": "Longitud m\u00e0xima"
+                },
+                "min": {
+                    "name": "Longitud m\u00ednima"
+                },
+                "mode": {
+                    "name": "Mode",
+                    "state": {
+                        "password": "Contrasenya",
+                        "text": "Text"
+                    }
+                },
+                "pattern": {
+                    "name": "Patr\u00f3"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Torna a carregar"
+        }
+    },
+    "title": "Entrada de text"
+}

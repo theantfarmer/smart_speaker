@@ -1,0 +1,17 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "assist_in_progress": {
+                "name": "Assist em curso"
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Canal de assist\u00eancia",
+                "state": {
+                    "preferred": "Preferencial"
+                }
+            }
+        }
+    }
+}

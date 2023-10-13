@@ -1,0 +1,20 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "V\u00fdb\u011br",
+            "state_attributes": {
+                "editable": {
+                    "name": "Spravov\u00e1no p\u0159es u\u017eivatelsk\u00e9 rozhran\u00ed",
+                    "state": {
+                        "false": "Ne",
+                        "true": "Ano"
+                    }
+                },
+                "options": {
+                    "name": "Mo\u017enosti"
+                }
+            }
+        }
+    },
+    "title": "Pomocn\u00edci - v\u00fdb\u011bry"
+}

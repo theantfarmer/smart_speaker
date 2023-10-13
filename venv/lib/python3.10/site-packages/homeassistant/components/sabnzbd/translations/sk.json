@@ -1,0 +1,53 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripoji\u0165",
+            "invalid_api_key": "Neplatn\u00fd API k\u013e\u00fa\u010d"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API k\u013e\u00fa\u010d",
+                    "name": "N\u00e1zov",
+                    "url": "URL"
+                }
+            }
+        }
+    },
+    "services": {
+        "pause": {
+            "description": "Pozastav\u00ed s\u0165ahovanie.",
+            "fields": {
+                "api_key": {
+                    "description": "K\u013e\u00fa\u010d API SABnzbd na pozastavenie s\u0165ahovania.",
+                    "name": "K\u013e\u00fa\u010d API SABnzbd"
+                }
+            },
+            "name": "Pauza"
+        },
+        "resume": {
+            "description": "Obnov\u00ed s\u0165ahovanie.",
+            "fields": {
+                "api_key": {
+                    "description": "K\u013e\u00fa\u010d API SABnzbd na obnovenie s\u0165ahovania.",
+                    "name": "K\u013e\u00fa\u010d API SABnzbd"
+                }
+            },
+            "name": "Pokra\u010dova\u0165"
+        },
+        "set_speed": {
+            "description": "Nastav\u00ed limit r\u00fdchlosti s\u0165ahovania.",
+            "fields": {
+                "api_key": {
+                    "description": "K\u013e\u00fa\u010d API SABnzbd na nastavenie obmedzenia r\u00fdchlosti.",
+                    "name": "K\u013e\u00fa\u010d API SABnzbd"
+                },
+                "speed": {
+                    "description": "Obmedzenie r\u00fdchlosti. Ak je zadan\u00fd ako \u010d\u00edslo bez jednotiek, interpretuje sa ako percento. Ak s\u00fa uveden\u00e9 jednotky (napr. 500K), bud\u00fa interpretovan\u00e9 absol\u00fatne.",
+                    "name": "R\u00fdchlos\u0165"
+                }
+            },
+            "name": "Nastavenie r\u00fdchlosti"
+        }
+    }
+}

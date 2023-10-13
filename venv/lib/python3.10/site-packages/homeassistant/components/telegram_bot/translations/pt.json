@@ -1,0 +1,31 @@
+{
+    "services": {
+        "send_document": {
+            "fields": {
+                "username": {
+                    "name": "Nome de Utilizador"
+                }
+            }
+        },
+        "send_sticker": {
+            "fields": {
+                "password": {
+                    "name": "Palavra-passe"
+                },
+                "url": {
+                    "name": "Endere\u00e7o URL"
+                },
+                "username": {
+                    "name": "Nome de Utilizador"
+                }
+            }
+        },
+        "send_video": {
+            "fields": {
+                "password": {
+                    "name": "Palavra-passe"
+                }
+            }
+        }
+    }
+}

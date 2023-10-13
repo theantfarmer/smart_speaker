@@ -1,0 +1,9 @@
+{
+    "config": {
+        "step": {
+            "confirm": {
+                "description": "Kurulumu ba\u015flatmak istiyor musunuz?"
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositiu ja est\u00e0 configurat"
+        },
+        "error": {
+            "cannot_connect": "Ha fallat la connexi\u00f3",
+            "unknown": "Error inesperat"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Amfitri\u00f3"
+                },
+                "title": "Connexi\u00f3 amb dispositiu Wi-Fi Balboa"
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "balboa": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "ready": "A punt",
+                            "ready_in_rest": "A punt, en rep\u00f2s",
+                            "rest": "En rep\u00f2s"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "sync_time": "Mantingues l'hora del spa Balboa sincronitzada amb Home Assistant"
+                }
+            }
+        }
+    }
+}

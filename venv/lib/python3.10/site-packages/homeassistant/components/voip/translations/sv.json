@@ -1,0 +1,50 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Redan konfigurerad"
+        },
+        "error": {
+            "invalid_ip_address": "Felaktig IPv4-adress"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "ip_address": "IP-adress"
+                },
+                "description": "Ta emot r\u00f6st \u00f6ver IP-samtal f\u00f6r att interagera med Assist."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "call_active": {
+                "name": "Samtal p\u00e5g\u00e5r"
+            },
+            "call_in_progress": {
+                "name": "Samtal p\u00e5g\u00e5r"
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Assist pipeline",
+                "state": {
+                    "preferred": "F\u00f6redragen"
+                }
+            }
+        },
+        "switch": {
+            "allow_call": {
+                "name": "Till\u00e5t samtal"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "sip_port": "SIP-port"
+                }
+            }
+        }
+    }
+}

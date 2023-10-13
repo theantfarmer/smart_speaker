@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalender",
+            "state": {
+                "off": "V\u00e4ljas",
+                "on": "Sees"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Terve p\u00e4ev",
+                    "state": {
+                        "false": "Ei",
+                        "true": "Jah"
+                    }
+                },
+                "description": {
+                    "name": "Kirjeldus"
+                },
+                "end_time": {
+                    "name": "L\u00f5puaeg"
+                },
+                "location": {
+                    "name": "Asukoht"
+                },
+                "messages": {
+                    "name": "S\u00f5num"
+                },
+                "start_time": {
+                    "name": "Algusaeg"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{domain} integreerimise platvorm {platform} ei toeta platvormi seadistamist. \n\n Selle probleemi lahendamiseks eemalda see oma konfiguratsioonist ja taask\u00e4ivita Home Assistant.",
+            "title": "Platvormi tuge ei toetata"
+        }
+    },
+    "title": "Kalender"
+}

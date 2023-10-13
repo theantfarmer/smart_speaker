@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "ID/nama Warncell sudah dikonfigurasi.",
+            "invalid_identifier": "Pengidentifikasi wilayah yang ditentukan tidak valid."
+        },
+        "error": {
+            "invalid_identifier": "Pengidentifikasi wilayah yang ditentukan tidak valid."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "region_identifier": "ID atau nama Warncell"
+                },
+                "description": "Untuk mengidentifikasi wilayah yang diinginkan, ID/nama warncell diperlukan."
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Proses konfigurasi Integrasi Deutsche Wetterdienst (DWD) lewat YAML dalam proses penghapusan.\n\nKonfigurasi YAML yang ada telah diimpor ke antarmuka secara otomatis.\n\nHapus konfigurasi YAML Integrasi Deutsche Wetterdienst (DWD) dari file configuration.yaml dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Konfigurasi YAML Integrasi Deutsche Wetterdienst (DWD) dalam proses penghapusan"
+        }
+    }
+}

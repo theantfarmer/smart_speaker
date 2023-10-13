@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "Integrarea con\u021binutului de e-mail IMAP este perimat\u0103. Configura\u021bia serverului IMAP a fost deja migrat\u0103 la [integrarea IMAP](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Pentru a configura un senzor pentru con\u021binutul de e-mail IMAP, configureaz\u0103 un senzor \u0219ablon cu configura\u021bia:\n\n```yaml\n{yaml_example}```\n\nTe rug\u0103m s\u0103 elimini configura\u021bia perimat\u0103 a senzorului `imap_email_plaform` din `configuration.yaml`.\n\nRe\u021bine c\u0103 filtrul de evenimente ac\u021bioneaz\u0103 doar asupra primului dintre expeditorii permi\u0219i configura\u021bi, a\u0219a c\u0103 poate fi nevoie s\u0103 particularizezi filtrul.\n\nPo\u021bi s\u0103ri peste aceast\u0103 parte dac\u0103 ai configurat deja un senzor \u0219ablon.",
+            "title": "Integrarea con\u021binutului de e-mail IMAP este perimat\u0103"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "Configura\u021bia serverului IMAP a fost deja migrat\u0103 la integrarea IMAP. Elimin\u0103 configura\u021bia senzorului `imap_email_plaform` din `configuration.yaml`.",
+                    "cannot_connect": "Migrarea nu a reu\u0219it. Nu s-a putut conecta la serverul IMAP. Efectueaz\u0103 o migrare manual\u0103."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "\u00cen acest pas, o intrare de configurare `imap` va fi configurat\u0103 cu urm\u0103toarea configura\u021bie:\n\n```text\nServer {server}\nPort {port}\nNume utilizator {username}\nParol\u0103 *****\nFolder {folder}\n```\n\nA se vedea, de asemenea: (https://www.home-assistant.io/integrations/imap/)\n\nConfigurarea filtr\u0103rii pentru expeditorul permis (`sender`) face parte din configurarea senzorului \u0219ablon, care poate fi copiat \u0219i plasat \u00een `configuration.yaml`.\n\nRe\u021bine c\u0103 filtrul de evenimente ac\u021bioneaz\u0103 doar asupra primului dintre expeditorii permi\u0219i configura\u021bi, a\u0219a c\u0103 poate fi nevoie s\u0103 particularizezi filtrul.\n\n```yaml\n{yaml_example}```\nNu uita s\u0103 cure\u021bi `configuration.yaml` dup\u0103 migrare.\n\nMergi mai departe pentru a migra configura\u021bia serverului IMAP la o intrare de configurare `imap`.",
+                        "title": "Set\u0103rile serverului IMAP vor fi migrate"
+                    },
+                    "start": {
+                        "description": "Integrarea con\u021binutului de e-mail IMAP este perimat\u0103. Configura\u021bia serverului IMAP poate fi migrat\u0103 automat la [integrarea IMAP](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), care va permite utilizarea unui declan\u0219ator de eveniment `imap` particularizat. Pentru a configura un senzor care are o stare de con\u021binut IMAP, se poate utiliza un senzor \u0219ablon. Elimin\u0103 configura\u021bia senzorului `imap_email_plaform` din `configuration.yaml` dup\u0103 migrare.\n\nMergi mai departe pentru a \u00eencepe migrarea configura\u021biei serverului IMAP la integrarea `imap`.",
+                        "title": "Migrarea configura\u021biei de e-mail IMAP"
+                    }
+                }
+            },
+            "title": "Integrarea con\u021binutului de e-mail IMAP necesit\u0103 aten\u021bie"
+        }
+    }
+}

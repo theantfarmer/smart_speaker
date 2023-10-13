@@ -1,0 +1,32 @@
+{
+    "config": {
+        "error": {
+            "invalid_code": "Antamasi koodi oli virheellinen, tarkista se ja yrit\u00e4 uudelleen.",
+            "invalid_email": "Antamaasi s\u00e4hk\u00f6postiosoitteeseen ei ole liitetty tili\u00e4. Yrit\u00e4 uudelleen.",
+            "invalid_email_format": "S\u00e4hk\u00f6postisi muotoilussa on ongelma - yrit\u00e4 uudelleen.",
+            "unknown": "Odottamaton virhe",
+            "unknown_url": "Robock-tilisi oikean URL-osoitteen m\u00e4\u00e4ritt\u00e4misess\u00e4 oli ongelma - tarkista lokit."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Vahvistuskoodi"
+                },
+                "description": "Kirjoita s\u00e4hk\u00f6postiisi l\u00e4hetetty vahvistuskoodi"
+            },
+            "user": {
+                "data": {
+                    "username": "S\u00e4hk\u00f6posti"
+                },
+                "description": "Kirjoita Roborock-s\u00e4hk\u00f6postiosoitteesi."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_mode": {
+                "name": "Moppitila"
+            }
+        }
+    }
+}

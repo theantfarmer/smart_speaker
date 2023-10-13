@@ -1,0 +1,73 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Urz\u0105dzenie jest ju\u017c skonfigurowane"
+        },
+        "error": {
+            "invalid_code": "Wprowadzony kod jest nieprawid\u0142owy, sprawd\u017a go i spr\u00f3buj ponownie.",
+            "invalid_email": "Z wprowadzonym adresem e-mail nie jest skojarzone \u017cadne konto, spr\u00f3buj ponownie.",
+            "unknown": "Nieoczekiwany b\u0142\u0105d"
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Kod weryfikacyjny"
+                },
+                "description": "Wpisz kod weryfikacyjny wys\u0142any na Tw\u00f3j adres e-mail"
+            },
+            "user": {
+                "data": {
+                    "username": "Adres e-mail"
+                },
+                "description": "Wpisz sw\u00f3j adres e-mail Roborock."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Intensywno\u015b\u0107 mopa",
+                "state": {
+                    "custom": "niestandardowa",
+                    "intense": "wysoka",
+                    "mild": "\u0142agodna",
+                    "moderate": "umiarkowana",
+                    "off": "wy\u0142\u0105czona"
+                }
+            },
+            "mop_mode": {
+                "name": "Tryb mopa",
+                "state": {
+                    "custom": "niestandardowy",
+                    "deep": "g\u0142\u0119boki",
+                    "deep_plus": "g\u0142\u0119boki+",
+                    "standard": "normalny"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "Obszar sprz\u0105tania"
+            },
+            "total_cleaning_area": {
+                "name": "Ca\u0142kowity obszar sprz\u0105tania"
+            }
+        },
+        "switch": {
+            "dnd_switch": {
+                "name": "Nie przeszkadza\u0107"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "off": "wy\u0142."
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

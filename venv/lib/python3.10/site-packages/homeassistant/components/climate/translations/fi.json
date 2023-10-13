@@ -1,0 +1,13 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Termostaatti",
+            "state_attributes": {
+                "current_temperature": {
+                    "name": "Nykyinen l\u00e4mp\u00f6tila"
+                }
+            }
+        }
+    },
+    "title": "Ilmasto"
+}

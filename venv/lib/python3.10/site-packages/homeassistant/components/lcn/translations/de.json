@@ -1,0 +1,11 @@
+{
+    "device_automation": {
+        "trigger_type": {
+            "codelock": "Codeschloss Code erhalten",
+            "fingerprint": "Fingerabdruckcode empfangen",
+            "send_keys": "Erhaltene Schl\u00fcssel senden",
+            "transmitter": "Sendercode empfangen",
+            "transponder": "Transpondercode empfangen"
+        }
+    }
+}

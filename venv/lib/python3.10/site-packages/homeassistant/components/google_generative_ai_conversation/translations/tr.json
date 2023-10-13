@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "unknown": "Beklenmeyen hata"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API Anahtar\u0131"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "model": "Model",
+                    "prompt": "Bilgi \u0130stemi \u015eablonu",
+                    "temperature": "S\u0131cakl\u0131k",
+                    "top_k": "Yukar\u0131 K",
+                    "top_p": "Yukar\u0131 P"
+                }
+            }
+        }
+    }
+}

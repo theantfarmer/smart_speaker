@@ -1,0 +1,36 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalender",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Hele dagen",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "description": {
+                    "name": "Beskrivelse"
+                },
+                "end_time": {
+                    "name": "Sluttid"
+                },
+                "location": {
+                    "name": "Plassering"
+                },
+                "messages": {
+                    "name": "Melding"
+                },
+                "start_time": {
+                    "name": "Starttid"
+                }
+            }
+        }
+    },
+    "title": "Kalender"
+}

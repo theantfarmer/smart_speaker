@@ -1,0 +1,40 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Redan konfigurerad. Endast en konfiguration m\u00f6jlig."
+        },
+        "step": {
+            "confirm": {
+                "description": "Se till att konfigurera datak\u00e4llorna f\u00f6r \"delat \u00e4mne\" i DSMR Reader."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "electricity_tariff": {
+                "state": {
+                    "high": "H\u00f6g",
+                    "low": "L\u00e5g"
+                }
+            },
+            "low_tariff_returned_price": {
+                "name": "L\u00e5g tariff returpris"
+            },
+            "low_tariff_usage": {
+                "name": "L\u00e5g tariffanv\u00e4ndning"
+            },
+            "power_failure_count": {
+                "name": "Antal str\u00f6mavbrott"
+            },
+            "rejected_telegrams": {
+                "name": "Avvisade telegram"
+            },
+            "telegram_timestamp": {
+                "name": "Telegram tidsst\u00e4mpel"
+            },
+            "total_cost": {
+                "name": "Total kostnad"
+            }
+        }
+    }
+}

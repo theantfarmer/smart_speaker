@@ -1,0 +1,66 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u5929\u6c17",
+            "state": {
+                "clear-night": "\u5feb\u6674\u3001\u591c",
+                "cloudy": "\u66c7\u308a",
+                "exceptional": "\u534a\u7aef\u3058\u3083\u306a\u3044",
+                "fog": "\u9727",
+                "hail": "\u96f9",
+                "lightning": "\u96f7",
+                "lightning-rainy": "\u96f7\u3001\u96e8",
+                "partlycloudy": "\u6674\u308c\u6642\u3005\u66c7\u308a",
+                "pouring": "\u571f\u7802\u964d\u308a",
+                "rainy": "\u96e8",
+                "snowy": "\u96ea",
+                "snowy-rainy": "\u96ea\u3001\u96e8",
+                "sunny": "\u6674\u308c",
+                "windy": "\u5f37\u98a8",
+                "windy-variant": "\u5f37\u98a8"
+            },
+            "state_attributes": {
+                "forecast": {
+                    "name": "\u4e88\u5831"
+                },
+                "humidity": {
+                    "name": "\u6e7f\u5ea6"
+                },
+                "ozone": {
+                    "name": "\u30aa\u30be\u30f3"
+                },
+                "precipitation_unit": {
+                    "name": "\u964d\u6c34\u91cf\u306e\u5358\u4f4d"
+                },
+                "pressure": {
+                    "name": "\u5727\u529b"
+                },
+                "pressure_unit": {
+                    "name": "\u5727\u529b\u306e\u5358\u4f4d"
+                },
+                "temperature": {
+                    "name": "\u6e29\u5ea6"
+                },
+                "temperature_unit": {
+                    "name": "\u6e29\u5ea6\u306e\u5358\u4f4d"
+                },
+                "visibility": {
+                    "name": "\u8996\u754c"
+                },
+                "visibility_unit": {
+                    "name": "\u8996\u754c\u306e\u5358\u4f4d"
+                },
+                "wind_bearing": {
+                    "name": "\u30a6\u30a3\u30f3\u30c9\u30d9\u30a2\u30ea\u30f3\u30b0"
+                },
+                "wind_speed": {
+                    "name": "\u98a8\u901f"
+                },
+                "wind_speed_unit": {
+                    "name": "\u98a8\u901f\u306e\u5358\u4f4d"
+                }
+            }
+        }
+    },
+    "title": "\u5929\u6c17"
+}

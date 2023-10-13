@@ -1,0 +1,37 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Innputt nummer",
+            "state_attributes": {
+                "editable": {
+                    "name": "Administrert via UI",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "initial": {
+                    "name": "Opprinnelig verdi"
+                },
+                "max": {
+                    "name": "Maksimum"
+                },
+                "min": {
+                    "name": "Minimum"
+                },
+                "mode": {
+                    "name": "Modus",
+                    "state": {
+                        "auto": "Automatisk",
+                        "box": "Eske",
+                        "slider": "Glidebryter"
+                    }
+                },
+                "step": {
+                    "name": "Steg"
+                }
+            }
+        }
+    },
+    "title": "Innputt nummer"
+}

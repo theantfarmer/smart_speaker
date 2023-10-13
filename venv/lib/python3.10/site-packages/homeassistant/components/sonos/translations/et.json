@@ -1,0 +1,84 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "V\u00f5rgust ei leitud seadmeid",
+            "not_sonos_device": "Avastatud seade ei ole Sonose seade",
+            "single_instance_allowed": "Juba seadistatud, lubatud on ainult \u00fcks sidumine."
+        },
+        "step": {
+            "confirm": {
+                "description": "Kas soovid Sonose seadistada?"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "microphone": {
+                "name": "Mikrofon"
+            }
+        },
+        "number": {
+            "audio_delay": {
+                "name": "Heli viivitus"
+            },
+            "balance": {
+                "name": "Tasakaal"
+            },
+            "bass": {
+                "name": "Bass"
+            },
+            "music_surround_level": {
+                "name": "Muusika ruumilise heli tase"
+            },
+            "sub_gain": {
+                "name": "Bassi tugevus"
+            },
+            "surround_level": {
+                "name": "Ruumilise heli tase"
+            },
+            "treble": {
+                "name": "K\u00f5rged"
+            }
+        },
+        "sensor": {
+            "audio_input_format": {
+                "name": "Heli sisendvorming"
+            }
+        },
+        "switch": {
+            "buttons_enabled": {
+                "name": "Puutetundlikud juhtnupud"
+            },
+            "cross_fade": {
+                "name": "Crossfade"
+            },
+            "dialog_level": {
+                "name": "K\u00f5ne t\u00e4iustamine"
+            },
+            "loudness": {
+                "name": "Loudness"
+            },
+            "night_mode": {
+                "name": "\u00d6ine heli"
+            },
+            "status_light": {
+                "name": "Oleku m\u00e4rgutuli"
+            },
+            "sub_enabled": {
+                "name": "Subwoofer on lubatud"
+            },
+            "surround_enabled": {
+                "name": "Ruumiline heli on lubatud"
+            },
+            "surround_mode": {
+                "name": "Ruumiline muusika t\u00e4isvaljusega"
+            }
+        }
+    },
+    "issues": {
+        "subscriptions_failed": {
+            "description": "K\u00fcsitlusele tagasi p\u00f6\u00f6rdudes v\u00f5ib funktsionaalsus olla piiratud.\n\nSonose seade aadressil {device_ip} ei saa \u00fchendust Home Assistantiga aadressil {listener_address}.\n\nLisateavet selle probleemi lahendamise kohta leiad meie [dokumentatsioonist]({sub_fail_url}).",
+            "title": "V\u00f5rgut\u00f5rge: tellimused nurjusid"
+        }
+    }
+}

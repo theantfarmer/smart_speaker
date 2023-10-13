@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Serviciul este deja configurat",
+            "reauth_successful": "Re-autentificarea s-a realizat cu succes"
+        },
+        "error": {
+            "cannot_connect": "A e\u0219uat conectarea",
+            "invalid_auth": "Autentificare nevalid\u0103"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Cheie API"
+                },
+                "description": "Token-urile de API Tailscale sunt valabile 90 de zile. Po\u021bi crea o cheie nou\u0103 de API Tailscale la https://login.tailscale.com/admin/settings/authkeys."
+            },
+            "user": {
+                "data": {
+                    "api_key": "Cheie API",
+                    "tailnet": "Tailnet"
+                },
+                "description": "Aceast\u0103 integrare \u00ee\u021bi monitorizeaz\u0103 re\u021beaua Tailscale, **NU** face accesibil\u0103 instan\u021ba ta Home Assistant via Tailscale VPN. \n\nPentru autentificare cu Tailscale va trebui s\u0103 creezi o cheie API la {authkeys_url}.\n\nTailnet este numele re\u021belei tale Tailscale. \u00cel po\u021bi reg\u0103si \u00een col\u021bul din st\u00e2nga-sus \u00een panoul de administrare Tailscale (l\u00e2ng\u0103 logo-ul Tailscale)."
+            }
+        }
+    }
+}

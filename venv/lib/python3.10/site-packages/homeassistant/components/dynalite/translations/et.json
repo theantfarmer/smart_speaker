@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "cannot_connect": "\u00dchendamine nurjus"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port"
+                },
+                "description": "L\u00fc\u00fcsi aadress DYNETi v\u00f5rguga \u00fchenduse loomiseks",
+                "title": "Seadista Dynalite \u00fchendus"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Dynalite'i konfigureerimine YAML-i abil eemaldatakse.\n\nOlemasolev YAML-konfiguratsioon on automaatselt kasutajaliidesesse imporditud.\n\nEemalda Dynalite'i YAML-konfiguratsioon oma configuration.yaml-failist ja k\u00e4ivita Home Assistant uuesti, et see probleem lahendada.",
+            "title": "Dynalite YAML konfiguratsioon eemaldatakse"
+        }
+    }
+}

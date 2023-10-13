@@ -1,0 +1,56 @@
+{
+    "device_automation": {
+        "action_type": {
+            "toggle": "Veksle {entity_name}",
+            "turn_off": "Sl\u00e5 av {entity_name}",
+            "turn_on": "Sl\u00e5 p\u00e5 {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} er av",
+            "is_on": "{entity_name} er p\u00e5"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} sl\u00e5tt p\u00e5 eller av",
+            "turned_off": "{entity_name} sl\u00e5tt av",
+            "turned_on": "{entity_name} sl\u00e5tt p\u00e5"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Vifte",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "direction": {
+                    "name": "Retning",
+                    "state": {
+                        "forward": "Framover",
+                        "reverse": "Omvendt"
+                    }
+                },
+                "oscillating": {
+                    "name": "Oscillerende",
+                    "state": {
+                        "false": "Nei",
+                        "true": "Ja"
+                    }
+                },
+                "percentage": {
+                    "name": "Hastighet"
+                },
+                "percentage_step": {
+                    "name": "Hastighetstrinn"
+                },
+                "preset_mode": {
+                    "name": "Forh\u00e5ndsinnstilt modus"
+                },
+                "preset_modes": {
+                    "name": "Tilgjengelige forh\u00e5ndsinnstilte moduser"
+                }
+            }
+        }
+    },
+    "title": "Vifte"
+}

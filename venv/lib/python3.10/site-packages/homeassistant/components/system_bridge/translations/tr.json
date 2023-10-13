@@ -1,0 +1,89 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "reauth_successful": "Yeniden kimlik do\u011frulama ba\u015far\u0131l\u0131 oldu",
+            "unknown": "Beklenmeyen hata"
+        },
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "unknown": "Beklenmeyen hata"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "authenticate": {
+                "data": {
+                    "api_key": "API Anahtar\u0131"
+                },
+                "description": "{name} i\u00e7in yap\u0131land\u0131rman\u0131zda belirledi\u011finiz API Anahtar\u0131n\u0131 girin."
+            },
+            "user": {
+                "data": {
+                    "api_key": "API Anahtar\u0131",
+                    "host": "Sunucu",
+                    "port": "Port"
+                },
+                "description": "L\u00fctfen ba\u011flant\u0131 bilgilerinizi giriniz."
+            }
+        }
+    },
+    "services": {
+        "open_path": {
+            "description": "Varsay\u0131lan uygulamay\u0131 kullanarak sunucuda bir dosya a\u00e7ar.",
+            "fields": {
+                "bridge": {
+                    "description": "Konu\u015fulacak sunucu.",
+                    "name": "K\u00f6pr\u00fc"
+                },
+                "path": {
+                    "description": "A\u00e7\u0131lacak yol.",
+                    "name": "Yol"
+                }
+            },
+            "name": "A\u00e7\u0131k yol"
+        },
+        "open_url": {
+            "description": "Varsay\u0131lan uygulamay\u0131 kullanarak sunucuda bir URL a\u00e7ar.",
+            "fields": {
+                "bridge": {
+                    "description": "Konu\u015fulacak sunucu.",
+                    "name": "K\u00f6pr\u00fc"
+                },
+                "url": {
+                    "description": "A\u00e7\u0131lacak URL.",
+                    "name": "URL"
+                }
+            },
+            "name": "URL'yi a\u00e7"
+        },
+        "send_keypress": {
+            "description": "Bir klavye tu\u015funa bas\u0131lmas\u0131n\u0131 g\u00f6nderir.",
+            "fields": {
+                "bridge": {
+                    "description": "Komutun g\u00f6nderilece\u011fi sunucu.",
+                    "name": "K\u00f6pr\u00fc"
+                },
+                "key": {
+                    "description": "Bas\u0131lacak anahtar. Listeye buradan ula\u015fabilirsiniz: http://robotjs.io/docs/syntax#keys.",
+                    "name": "Anahtar"
+                }
+            },
+            "name": "Klavye tu\u015funa basmay\u0131 g\u00f6nder"
+        },
+        "send_text": {
+            "description": "Sunucunun yazmas\u0131 i\u00e7in metin g\u00f6nderir.",
+            "fields": {
+                "bridge": {
+                    "description": "Komutun g\u00f6nderilece\u011fi sunucu.",
+                    "name": "K\u00f6pr\u00fc"
+                },
+                "text": {
+                    "description": "Yaz\u0131lacak metin.",
+                    "name": "Metin"
+                }
+            },
+            "name": "Klavye metni g\u00f6nder"
+        }
+    }
+}

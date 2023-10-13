@@ -1,0 +1,13 @@
+{
+    "services": {
+        "reload": {
+            "name": "Muat Ulang"
+        },
+        "restart": {
+            "name": "Mulai Ulang"
+        },
+        "stop": {
+            "name": "Hentikan"
+        }
+    }
+}

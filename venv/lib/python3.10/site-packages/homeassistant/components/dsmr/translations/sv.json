@@ -1,0 +1,109 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad",
+            "cannot_communicate": "Misslyckades med att kommunicera",
+            "cannot_connect": "Det gick inte att ansluta."
+        },
+        "error": {
+            "already_configured": "Enheten \u00e4r redan konfigurerad",
+            "cannot_communicate": "Misslyckades med att kommunicera",
+            "cannot_connect": "Det gick inte att ansluta."
+        },
+        "step": {
+            "setup_network": {
+                "data": {
+                    "dsmr_version": "V\u00e4lj DSMR-version",
+                    "host": "V\u00e4rd",
+                    "port": "Port"
+                },
+                "title": "V\u00e4lj anslutningsadress"
+            },
+            "setup_serial": {
+                "data": {
+                    "dsmr_version": "V\u00e4lj DSMR-version",
+                    "port": "V\u00e4lj enhet"
+                },
+                "title": "Enhet"
+            },
+            "setup_serial_manual_path": {
+                "data": {
+                    "port": "USB-enhetens s\u00f6kv\u00e4g"
+                },
+                "title": "S\u00f6kv\u00e4g"
+            },
+            "user": {
+                "data": {
+                    "type": "Anslutningstyp"
+                },
+                "title": "V\u00e4lj anslutningstyp"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "current_electricity_delivery": {
+                "name": "Energiproduktion"
+            },
+            "current_electricity_usage": {
+                "name": "Energif\u00f6rbrukning"
+            },
+            "electricity_active_tariff": {
+                "name": "Aktiv tariff",
+                "state": {
+                    "low": "L\u00e5g",
+                    "normal": "Normal"
+                }
+            },
+            "electricity_delivered_tariff_1": {
+                "name": "Energiproduktion (tariff 1)"
+            },
+            "electricity_delivered_tariff_2": {
+                "name": "Energiproduktion (tariff 2)"
+            },
+            "electricity_exported_total": {
+                "name": "Energiproduktion (totalt)"
+            },
+            "electricity_imported_total": {
+                "name": "Energif\u00f6rbrukning (totalt)"
+            },
+            "electricity_used_tariff_1": {
+                "name": "Energif\u00f6rbrukning (tariff 1)"
+            },
+            "electricity_used_tariff_2": {
+                "name": "Energif\u00f6rbrukning (tariff 2)"
+            },
+            "gas_meter_reading": {
+                "name": "Gasf\u00f6rbrukning"
+            },
+            "instantaneous_active_power_l1_negative": {
+                "name": "Kraftproduktion fas L1"
+            },
+            "instantaneous_active_power_l1_positive": {
+                "name": "Str\u00f6mf\u00f6rbrukning fas L1"
+            },
+            "instantaneous_active_power_l2_negative": {
+                "name": "Kraftproduktion fas L2"
+            },
+            "instantaneous_active_power_l2_positive": {
+                "name": "Str\u00f6mf\u00f6rbrukning fas L2"
+            },
+            "instantaneous_active_power_l3_negative": {
+                "name": "Kraftproduktion fas L3"
+            },
+            "instantaneous_active_power_l3_positive": {
+                "name": "Str\u00f6mf\u00f6rbrukning fas L3"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "time_between_update": "Minsta tid mellan enhetsuppdateringar [s]"
+                },
+                "title": "DSMR-alternativ"
+            }
+        }
+    }
+}

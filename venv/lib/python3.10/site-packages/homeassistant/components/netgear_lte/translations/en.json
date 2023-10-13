@@ -1,0 +1,56 @@
+{
+    "services": {
+        "connect_lte": {
+            "description": "Asks the modem to establish the LTE connection.",
+            "fields": {
+                "host": {
+                    "description": "The modem that should connect.",
+                    "name": "Host"
+                }
+            },
+            "name": "Connect LTE"
+        },
+        "delete_sms": {
+            "description": "Deletes messages from the modem inbox.",
+            "fields": {
+                "host": {
+                    "description": "The modem that should have a message deleted.",
+                    "name": "Host"
+                },
+                "sms_id": {
+                    "description": "Integer or list of integers with inbox IDs of messages to delete.",
+                    "name": "SMS ID"
+                }
+            },
+            "name": "Delete SMS"
+        },
+        "disconnect_lte": {
+            "description": "Asks the modem to close the LTE connection.",
+            "fields": {
+                "host": {
+                    "description": "The modem that should disconnect.",
+                    "name": "Host"
+                }
+            },
+            "name": "Disconnect LTE"
+        },
+        "set_option": {
+            "description": "Sets options on the modem.",
+            "fields": {
+                "autoconnect": {
+                    "description": "Auto-connect mode.",
+                    "name": "Auto-connect"
+                },
+                "failover": {
+                    "description": "Failover mode.",
+                    "name": "Failover"
+                },
+                "host": {
+                    "description": "The modem to set options on.",
+                    "name": "Host"
+                }
+            },
+            "name": "Set option"
+        }
+    }
+}

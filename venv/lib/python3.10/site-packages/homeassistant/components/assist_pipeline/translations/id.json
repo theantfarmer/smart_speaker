@@ -1,0 +1,25 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "assist_in_progress": {
+                "name": "Assist sedang berlangsung"
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Saluran Assist",
+                "state": {
+                    "preferred": "Diutamakan"
+                }
+            },
+            "vad_sensitivity": {
+                "name": "Sensitivitas hening",
+                "state": {
+                    "aggressive": "Agresif",
+                    "default": "Baku",
+                    "relaxed": "Santai"
+                }
+            }
+        }
+    }
+}

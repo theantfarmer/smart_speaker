@@ -1,0 +1,84 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "Nem tal\u00e1lhat\u00f3 eszk\u00f6z a h\u00e1l\u00f3zaton",
+            "not_sonos_device": "A felfedezett eszk\u00f6z nem Sonos eszk\u00f6z",
+            "single_instance_allowed": "M\u00e1r konfigur\u00e1lva van. Csak egy konfigur\u00e1ci\u00f3 lehets\u00e9ges."
+        },
+        "step": {
+            "confirm": {
+                "description": "Sonos hozz\u00e1ad\u00e1sa a rendszerhez."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "microphone": {
+                "name": "Mikrofon"
+            }
+        },
+        "number": {
+            "audio_delay": {
+                "name": "K\u00e9sleltet\u00e9s"
+            },
+            "balance": {
+                "name": "Balansz"
+            },
+            "bass": {
+                "name": "M\u00e9ly"
+            },
+            "music_surround_level": {
+                "name": "Zenei t\u00e9rhat\u00e1s szintje"
+            },
+            "sub_gain": {
+                "name": "Szub er\u0151s\u00edt\u00e9s"
+            },
+            "surround_level": {
+                "name": "T\u00e9rhat\u00e1s szint"
+            },
+            "treble": {
+                "name": "Magas"
+            }
+        },
+        "sensor": {
+            "audio_input_format": {
+                "name": "Audio bemeneti form\u00e1tum"
+            }
+        },
+        "switch": {
+            "buttons_enabled": {
+                "name": "\u00c9rint\u00e9svez\u00e9rl\u00e9s"
+            },
+            "cross_fade": {
+                "name": "Mixel\u00e9s"
+            },
+            "dialog_level": {
+                "name": "Besz\u00e9d\u00e9rthet\u0151s\u00e9g jav\u00edt\u00e1sa"
+            },
+            "loudness": {
+                "name": "Hangoss\u00e1g"
+            },
+            "night_mode": {
+                "name": "\u00c9jszakai hang"
+            },
+            "status_light": {
+                "name": "Helyzetjelz\u0151"
+            },
+            "sub_enabled": {
+                "name": "Subwoofer enged\u00e9lyezve"
+            },
+            "surround_enabled": {
+                "name": "Surround enged\u00e9lyezve"
+            },
+            "surround_mode": {
+                "name": "Surround zene teljes hanger\u0151"
+            }
+        }
+    },
+    "issues": {
+        "subscriptions_failed": {
+            "description": "Lek\u00e9rdez\u00e9s \u00fczemm\u00f3dban, a funkcionalit\u00e1s korl\u00e1tozott lehet.\n\nA {device_ip} helyen tal\u00e1lhat\u00f3 Sonos eszk\u00f6z nem tudja el\u00e9rni a Home Assistant alkalmaz\u00e1st {listener_address} c\u00edmen.\n\nA probl\u00e9ma megold\u00e1s\u00e1val kapcsolatos tov\u00e1bbi inform\u00e1ci\u00f3k\u00e9rt tekintse meg a [dokument\u00e1ci\u00f3]({sub_fail_url}) dokumentumot.",
+            "title": "H\u00e1l\u00f3zati hiba: a feliratkoz\u00e1s sikertelen"
+        }
+    }
+}

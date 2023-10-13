@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Sz\u00e1ml\u00e1l\u00f3",
+            "state_attributes": {
+                "editable": {
+                    "name": "Felhaszn\u00e1l\u00f3i fel\u00fclet \u00e1ltal kezelt",
+                    "state": {
+                        "false": "Nem",
+                        "true": "Igen"
+                    }
+                },
+                "initial": {
+                    "name": "Alap\u00e9rtelmezett \u00e9rt\u00e9k"
+                },
+                "maximum": {
+                    "name": "Maximum"
+                },
+                "minimum": {
+                    "name": "Minimum"
+                },
+                "step": {
+                    "name": "L\u00e9pt\u00e9k"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_configure_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "A sz\u00e1ml\u00e1l\u00f3 szolg\u00e1ltat\u00e1s `counter.configure` elt\u00e1vol\u00edt\u00e1sra ker\u00fcl, \u00e9s a haszn\u00e1lat\u00e1t \u00e9szlelt\u00e9k. Ha egy sz\u00e1ml\u00e1l\u00f3 aktu\u00e1lis \u00e9rt\u00e9k\u00e9t szeretn\u00e9 megv\u00e1ltoztatni, haszn\u00e1lja helyette az \u00faj `counter.set_value` szolg\u00e1ltat\u00e1st.\n\nK\u00e9rem, t\u00e1vol\u00edtsa el ennek a szolg\u00e1ltat\u00e1snak a haszn\u00e1lat\u00e1t az automatiz\u00e1l\u00e1saib\u00f3l \u00e9s szkriptjeib\u0151l, \u00e9s v\u00e1lassza a **Mehet** lehet\u0151s\u00e9get a probl\u00e9ma lez\u00e1r\u00e1s\u00e1hoz.",
+                        "title": "A sz\u00e1ml\u00e1l\u00f3 konfigur\u00e1ci\u00f3s szolg\u00e1ltat\u00e1s megsz\u00fcntet\u00e9sre ker\u00fcl"
+                    }
+                }
+            },
+            "title": "A sz\u00e1ml\u00e1l\u00f3 konfigur\u00e1ci\u00f3s szolg\u00e1ltat\u00e1s megsz\u00fcntet\u00e9sre ker\u00fcl"
+        }
+    },
+    "title": "Sz\u00e1ml\u00e1l\u00f3"
+}

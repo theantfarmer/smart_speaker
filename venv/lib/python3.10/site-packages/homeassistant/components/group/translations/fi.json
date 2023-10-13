@@ -1,0 +1,31 @@
+{
+    "config": {
+        "step": {
+            "light": {
+                "data": {
+                    "entities": "J\u00e4senet",
+                    "hide_members": "Piilota j\u00e4senet",
+                    "name": "Nimi"
+                },
+                "title": "Lis\u00e4\u00e4 ryhm\u00e4"
+            },
+            "user": {
+                "menu_options": {
+                    "light": "Valoryhm\u00e4"
+                }
+            }
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Ryhm\u00e4",
+            "state": {
+                "closed": "Suljettu",
+                "ok": "Ok",
+                "problem": "Ongelma",
+                "unlocked": "Auki"
+            }
+        }
+    },
+    "title": "Ryhm\u00e4"
+}

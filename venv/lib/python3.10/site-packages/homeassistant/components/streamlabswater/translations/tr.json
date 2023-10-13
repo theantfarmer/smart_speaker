@@ -1,0 +1,14 @@
+{
+    "services": {
+        "set_away_mode": {
+            "description": "Streamlabs Su Monit\u00f6r\u00fc i\u00e7in ev/uzak modunu ayarlar.",
+            "fields": {
+                "away_mode": {
+                    "description": "Evde ya da d\u0131\u015far\u0131da.",
+                    "name": "D\u0131\u015far\u0131da modu"
+                }
+            },
+            "name": "Uzakta modunu ayarla"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Alerta",
+            "state": {
+                "idle": "Em espera",
+                "off": "Reconhecido",
+                "on": "Ativo"
+            }
+        }
+    },
+    "services": {
+        "turn_off": {
+            "name": "Desligar"
+        },
+        "turn_on": {
+            "name": "Ligar"
+        }
+    },
+    "title": "Alerta"
+}

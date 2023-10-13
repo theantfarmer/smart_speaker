@@ -1,0 +1,17 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Siren",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            }
+        }
+    },
+    "services": {
+        "toggle": {
+            "name": "V\u00e4xla"
+        }
+    },
+    "title": "Siren"
+}

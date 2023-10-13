@@ -1,0 +1,27 @@
+{
+    "issues": {
+        "deprecation": {
+            "description": "A integra\u00e7\u00e3o de conte\u00fado de e-mail IMAP est\u00e1 obsoleta. A configura\u00e7\u00e3o do seu servidor IMAP j\u00e1 foi migrada para a [integra\u00e7\u00e3o do imap](https://my.home-assistant.io/redirect/config_flow_start?domain=imap). Para configurar um sensor para o conte\u00fado de e-mail IMAP, configure um modelo de sensor com a configura\u00e7\u00e3o: \n\n ```yaml\n {yaml_example} ``` \n\n Remova a configura\u00e7\u00e3o obsoleta do sensor `imap_email_plaform` de seu `configuration.yaml`. \n\n Observe que o filtro de eventos filtra apenas o primeiro dos remetentes permitidos configurados, personalize o filtro, se necess\u00e1rio. \n\n Voc\u00ea pode pular esta parte se j\u00e1 tiver configurado um modelo de sensor.",
+            "title": "A integra\u00e7\u00e3o de conte\u00fado de e-mail IMAP est\u00e1 obsoleta"
+        },
+        "migration": {
+            "fix_flow": {
+                "abort": {
+                    "already_configured": "A configura\u00e7\u00e3o do servidor IMAP j\u00e1 foi migrada para a integra\u00e7\u00e3o do imap. Remova a configura\u00e7\u00e3o do sensor `imap_email_plaform` de seu `configuration.yaml`.",
+                    "cannot_connect": "A migra\u00e7\u00e3o falhou. Falha ao conectar ao servidor IMAP. Execute uma migra\u00e7\u00e3o manual."
+                },
+                "step": {
+                    "confirm": {
+                        "description": "Nesta etapa, uma entrada de configura\u00e7\u00e3o `imap` ser\u00e1 definida com a seguinte configura\u00e7\u00e3o: \n\n ```texto\n Servidor {server}\n Porta {port}\n Nome de usu\u00e1rio {username}\n Senha *****\n Pasta {folder}\n ``` \n\n Veja tamb\u00e9m: (https://www.home-assistant.io/integrations/imap/) \n\n A configura\u00e7\u00e3o de ajuste no `remetente` permitido faz parte da configura\u00e7\u00e3o do sensor de modelo que pode ser copiada e colocada em seu `configuration.yaml. \n\n Observe que o filtro de eventos filtra apenas o primeiro dos remetentes permitidos configurados, personalize o filtro, se necess\u00e1rio. \n\n ```yaml\n {yaml_example} ```\n N\u00e3o se esque\u00e7a de limpar o seu `configuration.yaml` ap\u00f3s a migra\u00e7\u00e3o. \n\n Envie para migrar a configura\u00e7\u00e3o do seu servidor IMAP para uma entrada de configura\u00e7\u00e3o `imap`.",
+                        "title": "As configura\u00e7\u00f5es do seu servidor IMAP ser\u00e3o migradas"
+                    },
+                    "start": {
+                        "description": "A integra\u00e7\u00e3o de conte\u00fado de e-mail IMAP est\u00e1 obsoleta. A configura\u00e7\u00e3o do seu servidor IMAP pode ser migrada automaticamente para [imap integration](https://my.home-assistant.io/redirect/config_flow_start?domain=imap), isso permitir\u00e1 o uso de um acionador de evento `imap` personalizado. Para configurar um sensor que tenha um estado de conte\u00fado IMAP, um modelo de sensor pode ser usado. Remova a configura\u00e7\u00e3o do sensor `imap_email_plaform` de seu `configuration.yaml` ap\u00f3s a migra\u00e7\u00e3o. \n\n Envie para iniciar a migra\u00e7\u00e3o da configura\u00e7\u00e3o do seu servidor IMAP para a integra\u00e7\u00e3o `imap`.",
+                        "title": "Migre sua configura\u00e7\u00e3o de e-mail IMAP"
+                    }
+                }
+            },
+            "title": "A integra\u00e7\u00e3o de conte\u00fado de e-mail IMAP precisa de aten\u00e7\u00e3o"
+        }
+    }
+}

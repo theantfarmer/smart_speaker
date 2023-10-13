@@ -1,0 +1,23 @@
+{
+    "services": {
+        "process": {
+            "description": "Kopyalanm\u0131\u015f bir metinden bir konu\u015fma ba\u015flat\u0131r.",
+            "fields": {
+                "agent_id": {
+                    "description": "Talebinizi i\u015fleme koymak i\u00e7in konu\u015fma temsilcisi. Konu\u015fma arac\u0131s\u0131 asistan\u0131n\u0131z\u0131n beynidir. Gelen metin komutlar\u0131n\u0131 i\u015fler.",
+                    "name": "Arac\u0131"
+                },
+                "language": {
+                    "description": "Metin dili. Varsay\u0131lan olarak sunucu dili.",
+                    "name": "Dil"
+                },
+                "text": {
+                    "description": "Yaz\u0131ya d\u00f6k\u00fclm\u00fc\u015f metin giri\u015fi.",
+                    "name": "Metin"
+                }
+            },
+            "name": "\u0130\u015flem"
+        }
+    },
+    "title": "Konu\u015fma"
+}

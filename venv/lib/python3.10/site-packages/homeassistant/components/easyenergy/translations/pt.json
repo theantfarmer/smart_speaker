@@ -1,0 +1,12 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O dispositivo j\u00e1 se encontra configurado"
+        },
+        "step": {
+            "user": {
+                "description": "Iniciar setup?"
+            }
+        }
+    }
+}

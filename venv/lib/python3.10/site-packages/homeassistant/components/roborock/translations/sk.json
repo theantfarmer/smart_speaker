@@ -1,0 +1,189 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9"
+        },
+        "error": {
+            "invalid_code": "Zadan\u00fd k\u00f3d bol nespr\u00e1vny, skontrolujte ho a sk\u00faste to znova.",
+            "invalid_email": "K zadan\u00e9mu e-mailu nie je priraden\u00fd \u017eiadny \u00fa\u010det, sk\u00faste to znova.",
+            "invalid_email_format": "Vyskytol sa probl\u00e9m s form\u00e1tovan\u00edm v\u00e1\u0161ho e-mailu \u2013 sk\u00faste to znova.",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba",
+            "unknown_roborock": "Vyskytla sa nezn\u00e1ma roborockov\u00e1 v\u00fdnimka - skontrolujte svoje z\u00e1znamy.",
+            "unknown_url": "Vyskytol sa probl\u00e9m s ur\u010dovan\u00edm spr\u00e1vnej adresy URL v\u00e1\u0161ho \u00fa\u010dtu roborock \u2013 skontrolujte svoje denn\u00edky."
+        },
+        "step": {
+            "code": {
+                "data": {
+                    "code": "Overovac\u00ed k\u00f3d"
+                },
+                "description": "Zadajte overovac\u00ed k\u00f3d odoslan\u00fd na v\u00e1\u0161 e-mail"
+            },
+            "user": {
+                "data": {
+                    "username": "Email"
+                },
+                "description": "Zadajte svoju e-mailov\u00fa adresu Roborock."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "mop_intensity": {
+                "name": "Intenzita mopu",
+                "state": {
+                    "custom": "Vlastn\u00e9",
+                    "high": "Vysok\u00fd",
+                    "intense": "Intenz\u00edvne",
+                    "low": "N\u00edzky",
+                    "medium": "Stredn\u00fd",
+                    "mild": "Jemne",
+                    "moderate": "Mierne",
+                    "off": "Neakt\u00edvny"
+                }
+            },
+            "mop_mode": {
+                "name": "Re\u017eim mopu",
+                "state": {
+                    "custom": "Vlastn\u00e9",
+                    "deep": "Hlbok\u00fd",
+                    "deep_plus": "Hlbok\u00fd+",
+                    "fast": "R\u00fdchlo",
+                    "standard": "\u0160tandardn\u00fd"
+                }
+            }
+        },
+        "sensor": {
+            "cleaning_area": {
+                "name": "Oblas\u0165 \u010distenia"
+            },
+            "cleaning_time": {
+                "name": "\u010cas \u010distenia"
+            },
+            "filter_time_left": {
+                "name": "Zost\u00e1vaj\u00faci \u010das filtra"
+            },
+            "main_brush_time_left": {
+                "name": "Zost\u00e1vaj\u00faci \u010das hlavnej kefy"
+            },
+            "sensor_time_left": {
+                "name": "Zost\u00e1vaj\u00faci \u010das sn\u00edma\u010da"
+            },
+            "side_brush_time_left": {
+                "name": "Zost\u00e1vaj\u00faci \u010das bo\u010dnej kefy"
+            },
+            "status": {
+                "name": "Stav",
+                "state": {
+                    "charger_disconnected": "Nab\u00edja\u010dka je odpojen\u00e1",
+                    "charging": "Nab\u00edja sa",
+                    "charging_complete": "Nab\u00edjanie je dokon\u010den\u00e9",
+                    "charging_problem": "Probl\u00e9m s nab\u00edjan\u00edm",
+                    "cleaning": "\u010cistenie",
+                    "device_offline": "Zariadenie je offline",
+                    "docking": "Dokovanie",
+                    "emptying_the_bin": "Vypr\u00e1zdnenie ko\u0161a",
+                    "error": "Chyba",
+                    "going_to_target": "Ide sa do cie\u013ea",
+                    "going_to_wash_the_mop": "Idem umy\u0165 mop",
+                    "idle": "Ne\u010dinn\u00e1",
+                    "manual_mode": "Manu\u00e1lny re\u017eim",
+                    "paused": "Pozastaven\u00fd",
+                    "remote_control_active": "Dia\u013ekov\u00e9 ovl\u00e1danie akt\u00edvne",
+                    "returning_home": "N\u00e1vrat domov",
+                    "segment_cleaning": "\u010cistenie segmentov",
+                    "shutting_down": "Vypnutie",
+                    "spot_cleaning": "Bodov\u00e9 \u010distenie",
+                    "starting": "Sp\u00fa\u0161\u0165a sa",
+                    "updating": "Aktualizuje sa",
+                    "washing_the_mop": "Um\u00fdvanie mopu",
+                    "zoned_cleaning": "Z\u00f3nov\u00e9 \u010distenie"
+                }
+            },
+            "total_cleaning_area": {
+                "name": "Celkov\u00e1 plocha \u010distenia"
+            },
+            "total_cleaning_time": {
+                "name": "Celkov\u00fd \u010das \u010distenia"
+            },
+            "vacuum_error": {
+                "name": "Chyba v\u00e1kua",
+                "state": {
+                    "battery_error": "Chyba bat\u00e9rie",
+                    "bumper_stuck": "Zaseknut\u00fd n\u00e1razn\u00edk",
+                    "cannot_cross_carpet": "Nemo\u017eno prejs\u0165 cez koberec",
+                    "charging_error": "Chyba nab\u00edjania",
+                    "cliff_sensor_error": "Chyba sn\u00edma\u010da okraja",
+                    "dock_locator_error": "Chyba lok\u00e1tora dokov",
+                    "fan_error": "Chyba ventil\u00e1tora",
+                    "filter_blocked": "Filter je zablokovan\u00fd",
+                    "internal_error": "Vn\u00fatorn\u00e1 chyba",
+                    "invisible_wall_detected": "Zisten\u00e1 nevidite\u013en\u00e1 stena",
+                    "lidar_blocked": "Lidar zablokovan\u00fd",
+                    "low_battery": "N\u00edzky stav bat\u00e9rie",
+                    "main_brush_jammed": "Hlavn\u00e1 kefa sa zasekla",
+                    "no_dustbin": "\u017diadna smetn\u00e1 n\u00e1doba",
+                    "nogo_zone_detected": "Zisten\u00e1 z\u00f3na z\u00e1kazu vstupu",
+                    "none": "\u017diadna",
+                    "return_to_dock_fail": "N\u00e1vrat do doku zlyhal",
+                    "robot_on_carpet": "Robot na koberci",
+                    "robot_tilted": "Robot naklonen\u00fd",
+                    "robot_trapped": "Robot uv\u00e4znen\u00fd",
+                    "side_brush_error": "Chyba bo\u010dnej kefy",
+                    "side_brush_jammed": "Bo\u010dn\u00e1 kefa je zaseknut\u00e1",
+                    "vertical_bumper_pressed": "Vertik\u00e1lny n\u00e1razn\u00edk stla\u010den\u00fd",
+                    "vibrarise_jammed": "VibraRise sa zasekol",
+                    "wall_sensor_dirty": "Sn\u00edma\u010d steny je zne\u010disten\u00fd",
+                    "wheels_jammed": "Zaseknut\u00e9 koles\u00e1",
+                    "wheels_suspended": "Koles\u00e1 zavesen\u00e9"
+                }
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Detsk\u00fd z\u00e1mok"
+            },
+            "dnd_switch": {
+                "name": "Re\u017eim Neru\u0161i\u0165"
+            },
+            "status_indicator": {
+                "name": "Kontrolka stavu"
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Auto",
+                            "balanced": "Vyv\u00e1\u017een\u00e9",
+                            "custom": "Vlastn\u00e9",
+                            "gentle": "Jemn\u00fd",
+                            "max": "Max",
+                            "max_plus": "Max plus",
+                            "medium": "Stredn\u00fd",
+                            "off": "Neakt\u00edvny",
+                            "quiet": "Tich\u00fd",
+                            "silent": "Tich\u00fd",
+                            "standard": "\u0160tandardn\u00fd",
+                            "turbo": "Turbo"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "service_deprecation_start_pause": {
+            "description": "Podpora slu\u017eby vacuum.start_pause v syst\u00e9me Roborock vacuum je zastaran\u00e1 a bude odstr\u00e1nen\u00e1 v aplik\u00e1cii Home Assistant 2024.2; upravte v\u0161etky automatiz\u00e1cie alebo skripty, ktor\u00e9 pou\u017e\u00edvaj\u00fa t\u00fato slu\u017ebu, tak, aby namiesto toho volali vacuum.pause alebo vacuum.start, a vyberte mo\u017enos\u0165 odosla\u0165 ni\u017e\u0161ie, aby ste ozna\u010dili tento probl\u00e9m za vyrie\u0161en\u00fd.",
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Podpora slu\u017eby vacuum.start_pause v syst\u00e9me Roborock vacuum je zastaran\u00e1 a bude odstr\u00e1nen\u00e1 v aplik\u00e1cii Home Assistant 2024.2; upravte v\u0161etky automatiz\u00e1cie alebo skripty, ktor\u00e9 pou\u017e\u00edvaj\u00fa t\u00fato slu\u017ebu, tak, aby namiesto toho volali vacuum.pause alebo vacuum.start, a vyberte mo\u017enos\u0165 odosla\u0165 ni\u017e\u0161ie, aby ste ozna\u010dili tento probl\u00e9m za vyrie\u0161en\u00fd.",
+                        "title": "Odstra\u0148uje sa podpora v\u00e1kua Roborock pre vacuum.start_pause"
+                    }
+                }
+            },
+            "title": "Odstra\u0148uje sa podpora v\u00e1kua Roborock pre vacuum.start_pause"
+        }
+    }
+}

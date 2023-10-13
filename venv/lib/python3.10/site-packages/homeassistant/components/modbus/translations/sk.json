@@ -1,0 +1,72 @@
+{
+    "services": {
+        "reload": {
+            "description": "Znovu na\u010d\u00edta v\u0161etky entity modbus.",
+            "name": "Znovu na\u010d\u00edta\u0165"
+        },
+        "restart": {
+            "description": "Re\u0161tartuje modbusov\u00fd rozbo\u010dova\u010d (ak be\u017e\u00ed stop, potom start).",
+            "fields": {
+                "hub": {
+                    "description": "N\u00e1zov rozbo\u010dova\u010da Modbus.",
+                    "name": "Hub"
+                }
+            },
+            "name": "Re\u0161tart"
+        },
+        "stop": {
+            "description": "Zastav\u00ed rozbo\u010dova\u010d modbus.",
+            "fields": {
+                "hub": {
+                    "description": "N\u00e1zov rozbo\u010dova\u010da Modbus.",
+                    "name": "Hub"
+                }
+            },
+            "name": "Zastavi\u0165"
+        },
+        "write_coil": {
+            "description": "Z\u00e1pis do modbusovej cievky.",
+            "fields": {
+                "address": {
+                    "description": "Adresa registra, do ktor\u00e9ho sa m\u00e1 zapisova\u0165.",
+                    "name": "Adresa"
+                },
+                "hub": {
+                    "description": "N\u00e1zov rozbo\u010dova\u010da Modbus.",
+                    "name": "Hub"
+                },
+                "slave": {
+                    "description": "Adresa jednotky modbus/slave.",
+                    "name": "Slave"
+                },
+                "state": {
+                    "description": "Z\u00e1pis stavu.",
+                    "name": "Stav"
+                }
+            },
+            "name": "Zapisovacia cievka"
+        },
+        "write_register": {
+            "description": "Zapisuje do registra modbus.",
+            "fields": {
+                "address": {
+                    "description": "Adresa holdingov\u00e9ho registra, do ktor\u00e9ho sa m\u00e1 zapisova\u0165.",
+                    "name": "Adresa"
+                },
+                "hub": {
+                    "description": "N\u00e1zov rozbo\u010dova\u010da Modbus.",
+                    "name": "Hub"
+                },
+                "slave": {
+                    "description": "Adresa jednotky modbus/slave.",
+                    "name": "Slave"
+                },
+                "value": {
+                    "description": "Hodnota (jedna hodnota alebo pole) na z\u00e1pis.",
+                    "name": "Hodnota"
+                }
+            },
+            "name": "Zap\u00edsa\u0165 register"
+        }
+    }
+}

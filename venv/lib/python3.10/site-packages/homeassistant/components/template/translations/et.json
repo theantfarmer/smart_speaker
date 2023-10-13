@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "Laeb malli olemid YAML-konfiguratsioonist uuesti.",
+            "name": "Taaslae"
+        }
+    }
+}

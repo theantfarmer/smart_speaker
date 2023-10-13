@@ -1,0 +1,26 @@
+{
+    "services": {
+        "download_file": {
+            "description": "Downloads a file to the download location.",
+            "fields": {
+                "filename": {
+                    "description": "Determine the filename.",
+                    "name": "Filename"
+                },
+                "overwrite": {
+                    "description": "Whether to overwrite the file or not.",
+                    "name": "Overwrite"
+                },
+                "subdir": {
+                    "description": "Download into subdirectory.",
+                    "name": "Subdirectory"
+                },
+                "url": {
+                    "description": "The URL of the file to download.",
+                    "name": "URL"
+                }
+            },
+            "name": "Download file"
+        }
+    }
+}

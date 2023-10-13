@@ -1,0 +1,19 @@
+{
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "\u00d3virkt",
+                "on": "Virkt"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "state": {
+                        "false": "Nei",
+                        "true": "J\u00e1"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Dagatal"
+}

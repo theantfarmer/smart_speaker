@@ -1,0 +1,49 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Script",
+            "state": {
+                "off": "D\u00e9sactiv\u00e9",
+                "on": "Activ\u00e9"
+            },
+            "state_attributes": {
+                "current": {
+                    "name": "Automatisations en cours"
+                },
+                "last_action": {
+                    "name": "Derni\u00e8re action"
+                },
+                "last_triggered": {
+                    "name": "Dernier d\u00e9clenchement"
+                },
+                "max": {
+                    "name": "Nombre maximal de scripts en cours d'ex\u00e9cution"
+                },
+                "mode": {
+                    "name": "Mode d\u2019ex\u00e9cution",
+                    "state": {
+                        "parallel": "Parall\u00e8le",
+                        "queued": "File d'attente",
+                        "restart": "Red\u00e9marrage",
+                        "single": "Unique"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Recharger"
+        },
+        "toggle": {
+            "name": "Basculer"
+        },
+        "turn_off": {
+            "name": "\u00c9teindre"
+        },
+        "turn_on": {
+            "name": "Allumer"
+        }
+    },
+    "title": "Script"
+}

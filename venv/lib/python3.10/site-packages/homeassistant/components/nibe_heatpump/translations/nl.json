@@ -1,0 +1,21 @@
+{
+    "config": {
+        "error": {
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "modbus": {
+                "data": {
+                    "modbus_unit": "Modbus apparaat identificatie",
+                    "modbus_url": "Modbus URL"
+                }
+            },
+            "user": {
+                "menu_options": {
+                    "modbus": "Modbus",
+                    "nibegw": "NibeGW"
+                }
+            }
+        }
+    }
+}

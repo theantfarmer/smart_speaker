@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Der Dienst ist bereits konfiguriert",
+            "no_services": "Keine Dienste am Endpunkt gefunden"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "M\u00f6chtest du Home Assistant so konfigurieren, dass er sich mit dem Wyoming-Dienst verbindet, der vom Add-on bereitgestellt wird: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "port": "Port"
+                }
+            }
+        }
+    }
+}

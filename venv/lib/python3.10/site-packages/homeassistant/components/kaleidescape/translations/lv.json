@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ier\u012bce jau pievienota Home Assistant.",
+            "already_in_progress": "Konfigur\u0101cijas pl\u016bsma jau notiek",
+            "unknown": "Neparedz\u0113ta k\u013c\u016bda",
+            "unsupported": "Neatbalst\u012bta ier\u012bce"
+        },
+        "error": {
+            "cannot_connect": "Piesl\u0113guma k\u013c\u016bda",
+            "unsupported": "Neatbalst\u012bta ier\u012bce"
+        },
+        "flow_title": "{model} ({name})",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Saimniekdators"
+                }
+            }
+        }
+    }
+}

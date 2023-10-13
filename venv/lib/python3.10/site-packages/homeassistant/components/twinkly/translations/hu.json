@@ -1,0 +1,20 @@
+{
+    "config": {
+        "abort": {
+            "device_exists": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s"
+        },
+        "step": {
+            "discovery_confirm": {
+                "description": "{name} - {model} ({host}) hozz\u00e1ad\u00e1sa a rendszerhez."
+            },
+            "user": {
+                "data": {
+                    "host": "C\u00edm"
+                }
+            }
+        }
+    }
+}

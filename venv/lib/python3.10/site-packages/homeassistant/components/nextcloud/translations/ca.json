@@ -1,0 +1,38 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositiu ja est\u00e0 configurat",
+            "connection_error_during_import": "S'ha produ\u00eft un error de connexi\u00f3 durant la importaci\u00f3 de la configuraci\u00f3 de YAML",
+            "reauth_successful": "Re-autenticaci\u00f3 realitzada correctament"
+        },
+        "error": {
+            "connection_error": "Ha fallat la connexi\u00f3",
+            "invalid_auth": "Autenticaci\u00f3 inv\u00e0lida"
+        },
+        "flow_title": "Nextcloud",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Contrasenya",
+                    "username": "Nom d'usuari"
+                },
+                "description": "Actualitza la informaci\u00f3 d'inici de sessi\u00f3 de {url}."
+            },
+            "user": {
+                "data": {
+                    "password": "Contrasenya",
+                    "url": "URL",
+                    "username": "Nom d'usuari",
+                    "verify_ssl": "Verifica el certificat SSL"
+                },
+                "description": "Introdueix la teva informaci\u00f3 de Nextcloud."
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "La configuraci\u00f3 de Nextcloud mitjan\u00e7ant YAML s'eliminar\u00e0 de Home Assistant.\n\nLa configuraci\u00f3 YAML existent s'ha importat autom\u00e0ticament a la interf\u00edcie d'usuari.\n\nElimina la configuraci\u00f3 YAML de Nextcloud del fitxer configuration.yaml i reinicia Home Assistant per solucionar aquest problema.",
+            "title": "La configuraci\u00f3 mitjan\u00e7ant YAML de Nextcloud ha quedat obsoleta"
+        }
+    }
+}

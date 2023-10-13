@@ -1,0 +1,178 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "Ogiltig autentisering",
+            "login_error": "Inloggningsfel ( {code} ): {msg}"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "access_id": "Tuya IoT Access ID",
+                    "access_secret": "Tuya IoT Access Secret",
+                    "country_code": "Landskod f\u00f6r ditt konto (t.ex. 1 f\u00f6r USA eller 86 f\u00f6r Kina)",
+                    "password": "L\u00f6senord",
+                    "username": "Anv\u00e4ndarnamn"
+                },
+                "description": "Ange dina Tuya anv\u00e4ndaruppgifter."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "basic_anti_flicker": {
+                "state": {
+                    "0": "Avaktiverad "
+                }
+            },
+            "basic_nightvision": {
+                "state": {
+                    "1": "Av",
+                    "2": "P\u00e5"
+                }
+            },
+            "countdown": {
+                "state": {
+                    "1h": "1 timme",
+                    "2h": "2 timmar",
+                    "3h": "3 timmar",
+                    "4h": "4 timmar",
+                    "5h": "5 timmar",
+                    "6h": "6 timmar",
+                    "cancel": "Avbryt"
+                }
+            },
+            "curtain_mode": {
+                "state": {
+                    "morning": "Morgon",
+                    "night": "Natt"
+                }
+            },
+            "curtain_motor_mode": {
+                "state": {
+                    "back": "Tillbaka",
+                    "forward": "Fram\u00e5t"
+                }
+            },
+            "decibel_sensitivity": {
+                "state": {
+                    "0": "L\u00e5g k\u00e4nslighet",
+                    "1": "H\u00f6g k\u00e4nslighet"
+                }
+            },
+            "fingerbot_mode": {
+                "state": {
+                    "click": "Tryck",
+                    "switch": "Brytare"
+                }
+            },
+            "humidifier_level": {
+                "state": {
+                    "level_1": "Niv\u00e5 1",
+                    "level_10": "Niv\u00e5 10",
+                    "level_2": "Niv\u00e5 2",
+                    "level_3": "Niv\u00e5 3",
+                    "level_4": "Niv\u00e5 4",
+                    "level_5": "Niv\u00e5 5",
+                    "level_6": "Niv\u00e5 6",
+                    "level_7": "Niv\u00e5 7",
+                    "level_8": "Niv\u00e5 8",
+                    "level_9": "Niv\u00e5 9"
+                }
+            },
+            "humidifier_moodlighting": {
+                "state": {
+                    "1": "St\u00e4mning 1",
+                    "2": "St\u00e4mning 2",
+                    "3": "St\u00e4mning 3",
+                    "4": "St\u00e4mning 4",
+                    "5": "St\u00e4mning 5"
+                }
+            },
+            "humidifier_spray_mode": {
+                "state": {
+                    "auto": "Auto",
+                    "health": "H\u00e4lsa",
+                    "humidity": "Luftfuktighet",
+                    "sleep": "Vilol\u00e4ge",
+                    "work": "Arbetsl\u00e4ge"
+                }
+            },
+            "ipc_work_mode": {
+                "state": {
+                    "0": "L\u00e5g str\u00f6ml\u00e4ge ",
+                    "1": "L\u00f6pande arbetsl\u00e4ge"
+                }
+            },
+            "led_type": {
+                "state": {
+                    "halogen": "Halogen",
+                    "incandescent": "Gl\u00f6dlampa",
+                    "led": "LED"
+                }
+            },
+            "light_mode": {
+                "state": {
+                    "none": "Av",
+                    "pos": "Ange omkopplarens plats",
+                    "relay": "Indikera p\u00e5/av-l\u00e4ge"
+                }
+            },
+            "motion_sensitivity": {
+                "state": {
+                    "0": "L\u00e5g k\u00e4nslighet",
+                    "1": "Medel k\u00e4nslighet",
+                    "2": "H\u00f6g k\u00e4nslighet"
+                }
+            },
+            "record_mode": {
+                "state": {
+                    "1": "Inspelning av h\u00e4ndelser ",
+                    "2": "L\u00f6pande inspelning "
+                }
+            },
+            "relay_status": {
+                "state": {
+                    "last": "Kom ih\u00e5g senaste tillst\u00e5ndet",
+                    "memory": "Kom ih\u00e5g senaste tillst\u00e5ndet",
+                    "off": "Av",
+                    "on": "P\u00e5",
+                    "power_off": "Av",
+                    "power_on": "P\u00e5"
+                }
+            },
+            "vacuum_cistern": {
+                "state": {
+                    "closed": "St\u00e4ngd",
+                    "high": "H\u00f6g",
+                    "low": "L\u00e5g",
+                    "middle": "Mellan"
+                }
+            },
+            "vacuum_collection": {
+                "state": {
+                    "large": "Stor",
+                    "middle": "Mellan",
+                    "small": "Liten"
+                }
+            },
+            "vacuum_mode": {
+                "state": {
+                    "chargego": "\u00c5terv\u00e4nd till laddningsstation",
+                    "mop": "Moppa",
+                    "pick_zone": "V\u00e4lj zon",
+                    "point": "Punkt",
+                    "random": "Slumpvis",
+                    "wall_follow": "F\u00f6lj v\u00e4gg",
+                    "zone": "Zon"
+                }
+            }
+        },
+        "sensor": {
+            "status": {
+                "state": {
+                    "standby": "Standby"
+                }
+            }
+        }
+    }
+}

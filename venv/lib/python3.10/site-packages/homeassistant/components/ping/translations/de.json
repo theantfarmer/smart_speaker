@@ -1,0 +1,8 @@
+{
+    "services": {
+        "reload": {
+            "description": "L\u00e4dt Ping-Sensoren aus der YAML-Konfiguration neu.",
+            "name": "Neu laden"
+        }
+    }
+}

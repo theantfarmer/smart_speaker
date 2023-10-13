@@ -1,0 +1,15 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo konfiguroitu"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Is\u00e4nt\u00e4",
+                    "port": "Portti"
+                }
+            }
+        }
+    }
+}

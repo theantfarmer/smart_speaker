@@ -1,0 +1,14 @@
+{
+    "services": {
+        "teach_face": {
+            "fields": {
+                "entity_id": {
+                    "name": "\u05d9\u05e9\u05d5\u05ea"
+                },
+                "name": {
+                    "name": "\u05e9\u05dd"
+                }
+            }
+        }
+    }
+}

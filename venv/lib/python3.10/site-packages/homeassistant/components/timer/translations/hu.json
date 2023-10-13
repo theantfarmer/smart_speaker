@@ -1,0 +1,41 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Id\u0151z\u00edt\u0151",
+            "state": {
+                "active": "Akt\u00edv",
+                "idle": "T\u00e9tlen",
+                "paused": "Sz\u00fcnetel"
+            },
+            "state_attributes": {
+                "duration": {
+                    "name": "Id\u0151tartam"
+                },
+                "editable": {
+                    "name": "Felhaszn\u00e1l\u00f3i fel\u00fclet \u00e1ltal kezelt",
+                    "state": {
+                        "false": "Nem",
+                        "true": "Igen"
+                    }
+                },
+                "finishes_at": {
+                    "name": "Befejez\u00e9s:"
+                },
+                "remaining": {
+                    "name": "H\u00e1tral\u00e9v\u0151:"
+                },
+                "restore": {
+                    "name": "Vissza\u00e1ll\u00edt\u00e1s"
+                }
+            }
+        }
+    },
+    "services": {
+        "pause": {
+            "name": "Sz\u00fcneteltet\u00e9s"
+        },
+        "start": {
+            "name": "Le\u00e1ll\u00edt\u00e1s"
+        }
+    }
+}

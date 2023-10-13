@@ -1,0 +1,34 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Persona",
+            "state": {
+                "home": "In casa",
+                "not_home": "Fuori casa"
+            },
+            "state_attributes": {
+                "device_trackers": {
+                    "name": "Localizzatori di dispositivi"
+                },
+                "gps_accuracy": {
+                    "name": "Precisione GPS"
+                },
+                "latitude": {
+                    "name": "Latitudine"
+                },
+                "longitude": {
+                    "name": "Longitudine"
+                },
+                "source": {
+                    "name": "Fonte"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Ricarica"
+        }
+    },
+    "title": "Persona"
+}

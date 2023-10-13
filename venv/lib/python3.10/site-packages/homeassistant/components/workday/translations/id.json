@@ -1,0 +1,94 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Hari kerja telah disiapkan dengan konfigurasi yang dipilih",
+            "incorrect_province": "Subdivisi salah dari proses impor yaml"
+        },
+        "error": {
+            "add_holiday_error": "Format tanggal salah (YYYY-MM-DD)",
+            "already_configured": "Layanan sudah dikonfigurasi",
+            "remove_holiday_error": "Format tanggal salah (YYYY-MM-DD) atau nama hari libur tidak ditemukan"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Tambahkan hari libur",
+                    "days_offset": "Offset",
+                    "excludes": "Pengecualian",
+                    "province": "Subdivisi negara",
+                    "remove_holidays": "Hapus Hari Libur",
+                    "workdays": "Hari kerja"
+                },
+                "data_description": {
+                    "add_holidays": "Tambahkan hari libur khusus sebagai YYYY-MM-DD",
+                    "days_offset": "Offset hari",
+                    "excludes": "Daftar hari kerja yang akan dikecualikan",
+                    "province": "Negara Bagian, Wilayah, Provinsi, Wilayah Negara",
+                    "remove_holidays": "Hapus hari libur sebagai YYYY-MM-DD atau dengan menggunakan sebagian nama",
+                    "workdays": "Daftar hari kerja"
+                },
+                "description": "Setel opsi tambahan untuk {name} yang dikonfigurasi untuk negara {country}"
+            },
+            "user": {
+                "data": {
+                    "country": "Negara",
+                    "name": "Nama"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml": {
+            "description": "Proses konfigurasi Integrasi Workday lewat YAML dalam proses penghapusan.\n\nKonfigurasi YAML yang ada telah diimpor ke antarmuka secara otomatis.\n\nHapus konfigurasi YAML Integrasi Workday dari file configuration.yaml dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Konfigurasi YAML Integrasi Workday dalam proses penghapusan"
+        }
+    },
+    "options": {
+        "error": {
+            "add_holiday_error": "Format tanggal salah (YYYY-MM-DD)",
+            "already_configured": "Layanan dengan konfigurasi ini sudah ada",
+            "remove_holiday_error": "Format tanggal salah (YYYY-MM-DD) atau nama hari libur tidak ditemukan"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Tambahkan hari libur",
+                    "days_offset": "Offset",
+                    "excludes": "Pengecualian",
+                    "province": "Subdivisi negara",
+                    "remove_holidays": "Hapus Hari Libur",
+                    "workdays": "Hari kerja"
+                },
+                "data_description": {
+                    "add_holidays": "Tambahkan hari libur khusus sebagai YYYY-MM-DD",
+                    "days_offset": "Offset hari",
+                    "excludes": "Daftar hari kerja yang akan dikecualikan",
+                    "province": "Negara Bagian, Wilayah, Provinsi, Wilayah Negara",
+                    "remove_holidays": "Hapus hari libur sebagai YYYY-MM-DD atau dengan menggunakan sebagian nama",
+                    "workdays": "Daftar hari kerja"
+                },
+                "description": "Ubah opsi tambahan untuk {name} yang dikonfigurasi untuk negara {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Jumat",
+                "holiday": "Hari Libur",
+                "mon": "Senin",
+                "sat": "Sabtu",
+                "sun": "Minggu",
+                "thu": "Kamis",
+                "tue": "Selasa",
+                "wed": "Rabu"
+            }
+        },
+        "province": {
+            "options": {
+                "none": "Tidak ada subdivisi"
+            }
+        }
+    },
+    "title": "Workday"
+}

@@ -1,0 +1,43 @@
+{
+  "language": "id",
+  "intents": {
+    "HassLightSet": {
+      "data": [
+        {
+          "sentences": [
+            "<set_imperatif> kecerahan <nama> [(jadi | menjadi)] <kecerahan>",
+            "<set_imperatif> <nama> [(jadi | menjadi)] <kecerahan>"
+          ],
+          "response": "brightness"
+        },
+        {
+          "sentences": [
+            "<set_imperatif> kecerahan <area> [(jadi | menjadi)] <kecerahan>",
+            "<set_imperatif> <area> [(jadi | menjadi)] <kecerahan>"
+          ],
+          "slots": {
+            "name": "all"
+          },
+          "response": "brightness_area"
+        },
+        {
+          "sentences": [
+            "<set_imperatif> warna <nama> [(jadi | menjadi)] {color}",
+            "<set_imperatif> <nama> [(jadi | menjadi)] {color}"
+          ],
+          "response": "color"
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassLightSet": {
+        "brightness": "{{ slots.name }} brightness set to {{ slots.brightness }}",
+        "brightness_area": "Brightness in {{ slots.area }} set to {{ slots.brightness }}",
+        "color": "{{ slots.name }} color set to {{ slots.color }}",
+        "color_area": "Color in {{ slots.area }} set to {{ slots.color }}"
+      }
+    }
+  }
+}

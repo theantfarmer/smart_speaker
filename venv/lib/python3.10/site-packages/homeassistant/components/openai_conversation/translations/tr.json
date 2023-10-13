@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Ba\u011flanma hatas\u0131",
+            "invalid_auth": "Ge\u00e7ersiz kimlik do\u011frulama",
+            "unknown": "Beklenmeyen hata"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API Anahtar\u0131"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "max_tokens": "Yan\u0131t olarak d\u00f6nd\u00fcr\u00fclecek maksimum anahtar say\u0131s\u0131",
+                    "model": "Tamamlama Modeli",
+                    "prompt": "Bilgi \u0130stemi \u015eablonu",
+                    "temperature": "S\u0131cakl\u0131k",
+                    "top_p": "Yukar\u0131"
+                }
+            }
+        }
+    }
+}

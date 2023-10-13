@@ -1,0 +1,35 @@
+{
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "\u00d3virkt"
+            },
+            "state_attributes": {
+                "fan_mode": {
+                    "state": {
+                        "off": "Virkt",
+                        "on": "Kveikt"
+                    }
+                },
+                "hvac_action": {
+                    "state": {
+                        "off": "Sl\u00f6kkt"
+                    }
+                },
+                "preset_mode": {
+                    "state": {
+                        "away": "Fjarverandi",
+                        "home": "Heima"
+                    }
+                },
+                "swing_mode": {
+                    "state": {
+                        "off": "Sl\u00f6kkt",
+                        "on": "Kveikt"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Loftslag"
+}

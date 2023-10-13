@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispositivo j\u00e1 est\u00e1 configurado",
+            "already_in_progress": "O fluxo de configura\u00e7\u00e3o j\u00e1 est\u00e1 em andamento",
+            "unknown": "Erro inesperado"
+        },
+        "error": {
+            "cannot_connect": "Falha ao conectar",
+            "invalid_auth": "A autentica\u00e7\u00e3o da senha falhou",
+            "invalid_host": "Nome de host ou endere\u00e7o IP inv\u00e1lido"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Senha"
+                },
+                "description": "A autentica\u00e7\u00e3o da senha falhou",
+                "title": "Reautenticar Integra\u00e7\u00e3o"
+            },
+            "user": {
+                "data": {
+                    "host": "Nome do host",
+                    "password": "Senha",
+                    "port": "Porta"
+                },
+                "data_description": {
+                    "host": "Endere\u00e7o IP ou nome de host do projetor",
+                    "password": "Senha opcional se o projetor estiver configurado para uma",
+                    "port": "Porta IP do projetor (o padr\u00e3o \u00e9 20554)"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "already_in_progress": "Seadistamine on juba k\u00e4imas",
+            "no_devices_found": "V\u00f5rgust ei leitud seadmeid"
+        },
+        "error": {
+            "cannot_connect": "\u00dchendamine nurjus"
+        },
+        "flow_title": "{label} ({group})",
+        "step": {
+            "discovery_confirm": {
+                "description": "Kas seadistada {label} ({group})?"
+            },
+            "pick_device": {
+                "data": {
+                    "device": "Seade"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Host"
+                },
+                "description": "Kui j\u00e4tad hosti t\u00fchjaks kasutatakse seadmete leidmiseks avastamist."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "clean_cycle": {
+                "name": "Puhastusts\u00fckkel"
+            }
+        },
+        "select": {
+            "infrared_brightness": {
+                "name": "Infrapuna heledus"
+            },
+            "theme": {
+                "name": "Teema"
+            }
+        },
+        "sensor": {
+            "rssi": {
+                "name": "Signaali tugevus"
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "\u9078\u64c7\u6846",
+            "state_attributes": {
+                "editable": {
+                    "name": "\u900f\u904e UI \u7ba1\u7406",
+                    "state": {
+                        "false": "\u5426",
+                        "true": "\u662f"
+                    }
+                },
+                "options": {
+                    "name": "\u9078\u9805"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "\u91cd\u65b0\u52a0\u8f09"
+        }
+    },
+    "title": "\u9078\u64c7\u6846"
+}

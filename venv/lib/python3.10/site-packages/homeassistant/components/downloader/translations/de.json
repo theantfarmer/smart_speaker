@@ -1,0 +1,26 @@
+{
+    "services": {
+        "download_file": {
+            "description": "L\u00e4dt eine Datei an den Download-Speicherort herunter.",
+            "fields": {
+                "filename": {
+                    "description": "Dateinamen festlegen.",
+                    "name": "Dateiname"
+                },
+                "overwrite": {
+                    "description": "Ob die Datei \u00fcberschrieben werden soll oder nicht.",
+                    "name": "\u00dcberschreiben"
+                },
+                "subdir": {
+                    "description": "In Unterverzeichnis herunterladen.",
+                    "name": "Unterverzeichnis"
+                },
+                "url": {
+                    "description": "Die URL der Datei, die heruntergeladen werden soll.",
+                    "name": "URL"
+                }
+            },
+            "name": "Datei herunterladen"
+        }
+    }
+}

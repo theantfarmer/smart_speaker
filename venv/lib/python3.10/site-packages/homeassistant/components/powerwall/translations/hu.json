@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van",
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "reauth_successful": "Az \u00fajrahiteles\u00edt\u00e9s sikeres volt."
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "invalid_auth": "\u00c9rv\u00e9nytelen hiteles\u00edt\u00e9s",
+            "unknown": "V\u00e1ratlan hiba t\u00f6rt\u00e9nt",
+            "wrong_version": "A Powerwall nem t\u00e1mogatott szoftververzi\u00f3t haszn\u00e1l. K\u00e9rem, fontolja meg a friss\u00edt\u00e9st vagy a probl\u00e9ma jelent\u00e9s\u00e9t megold\u00e1s \u00e9rdek\u00e9ben."
+        },
+        "flow_title": "{name} ({ip_address})",
+        "step": {
+            "confirm_discovery": {
+                "description": "{name} ({ip_address}) hozz\u00e1ad\u00e1sa a rendszerhez.",
+                "title": "Csatlakoz\u00e1s a Powerwallhoz"
+            },
+            "reauth_confim": {
+                "data": {
+                    "password": "Jelsz\u00f3"
+                },
+                "description": "Az alap\u00e9rtelmezett jelsz\u00f3 az \u00fajabb modellek eset\u00e9ben a Backup Gateway belsej\u00e9ben fel van \u00edrva. A r\u00e9gebbi modellek eset\u00e9ben az alap\u00e9rtelmezett jelsz\u00f3 a Backup Gateway sorozatsz\u00e1m\u00e1nak utols\u00f3 \u00f6t karaktere, \u00e9s a Tesla alkalmaz\u00e1sban tal\u00e1lhat\u00f3.",
+                "title": "A Powerwall \u00fajrahiteles\u00edt\u00e9se"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Jelsz\u00f3"
+                },
+                "description": "Az alap\u00e9rtelmezett jelsz\u00f3 az \u00fajabb modellek eset\u00e9ben a Backup Gateway belsej\u00e9ben fel van \u00edrva. A r\u00e9gebbi modellek eset\u00e9ben az alap\u00e9rtelmezett jelsz\u00f3 a Backup Gateway sorozatsz\u00e1m\u00e1nak utols\u00f3 \u00f6t karaktere, \u00e9s a Tesla alkalmaz\u00e1sban tal\u00e1lhat\u00f3.",
+                "title": "A Powerwall \u00fajrahiteles\u00edt\u00e9se"
+            },
+            "user": {
+                "data": {
+                    "ip_address": "IP c\u00edm",
+                    "password": "Jelsz\u00f3"
+                },
+                "description": "Az alap\u00e9rtelmezett jelsz\u00f3 az \u00fajabb modellek eset\u00e9ben a Backup Gateway belsej\u00e9ben fel van \u00edrva. A r\u00e9gebbi modellek eset\u00e9ben az alap\u00e9rtelmezett jelsz\u00f3 a Backup Gateway sorozatsz\u00e1m\u00e1nak utols\u00f3 \u00f6t karaktere, \u00e9s a Tesla alkalmaz\u00e1sban tal\u00e1lhat\u00f3.",
+                "title": "Csatlakoz\u00e1s a Powerwallhoz"
+            }
+        }
+    }
+}

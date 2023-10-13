@@ -1,0 +1,14 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "power_save_idle": {
+                "name": "Ne\u010dinn\u00fd"
+            }
+        },
+        "sensor": {
+            "elevation": {
+                "name": "Nadmo\u0159sk\u00e1 v\u00fd\u0161ka"
+            }
+        }
+    }
+}

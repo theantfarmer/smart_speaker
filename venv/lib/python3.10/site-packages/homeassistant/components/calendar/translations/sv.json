@@ -1,0 +1,36 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalender",
+            "state": {
+                "off": "Av",
+                "on": "P\u00e5"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Hela dagen ",
+                    "state": {
+                        "false": "Nej",
+                        "true": "Ja"
+                    }
+                },
+                "description": {
+                    "name": "Beskrivning"
+                },
+                "end_time": {
+                    "name": "Slut tid"
+                },
+                "location": {
+                    "name": "Plats"
+                },
+                "messages": {
+                    "name": "Meddelande"
+                },
+                "start_time": {
+                    "name": "Start tid"
+                }
+            }
+        }
+    },
+    "title": "Kalender"
+}

@@ -1,0 +1,1089 @@
+{
+  "language": "de",
+  "intents": {
+    "HassTurnOff": {
+      "data": [
+        {
+          "sentences": [
+            "<schalten> <luefter> <area> <aus>",
+            "<schalten> <area> <luefter> <aus>",
+            "stoppe <luefter> <area> [<aus>]",
+            "stoppe <area> <luefter> [<aus>]",
+            "<machen> <luefter> <area> <aus>",
+            "<machen> <area> <luefter> <aus>",
+            "<luefter> <area> <aus>[<schalten>|<machen>]",
+            "<area> <luefter> <aus>[<schalten>|<machen>]",
+            "<schalten> <alle_luefter> [<area>] <aus>",
+            "<schalten> <area> <alle_luefter> <aus>",
+            "stoppe <alle_luefter> [<area>] [<aus>]",
+            "stoppe [<area>] <alle_luefter> [<aus>]",
+            "<machen> <alle_luefter> [<area>] <aus>",
+            "<machen> <area> <alle_luefter> <aus>",
+            "<alle_luefter> [<area>] <aus>[<schalten>|<machen>]",
+            "<area> <alle_luefter> <aus>[<schalten>|<machen>]"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fan_all"
+        },
+        {
+          "sentences": [
+            "(<schalten>|<machen>) <name> <aus>",
+            "stoppe <name>",
+            "<deaktivieren> <name>",
+            "<name> <deaktivieren>",
+            "<name> <aus>[<schalten>|<machen>]"
+          ],
+          "excludes_context": {
+            "domain": [
+              "binary_sensor",
+              "cover",
+              "lock",
+              "scene",
+              "script",
+              "sensor"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "<schalten> (<licht>|<lichter>) <area> <aus>",
+            "<schalten> <area> (<licht>|<lichter>) <aus>",
+            "(<licht>|<lichter>) <area> <aus>[<schalten>]",
+            "<area> (<licht>|<lichter>) <aus>[<schalten>]",
+            "<machen> (<licht>|<lichter>) <area> <aus>",
+            "<machen> <area> (<licht>|<lichter>) <aus>",
+            "(<licht>|<lichter>) <area> <aus><machen>",
+            "<area> (<licht>|<lichter>) <aus><machen>",
+            "<schalten> [<lichter>|<alle_lichter>] [<area>] <aus>",
+            "<schalten> [<area>] [<lichter>|<alle_lichter>] <aus>",
+            "[<lichter>|<alle_lichter>] [<area>] <aus>[<schalten>]",
+            "[<area>] [<lichter>|<alle_lichter>] <aus>[<schalten>]",
+            "<machen> [<lichter>|<alle_lichter>] [<area>] <aus>",
+            "<machen> [<area>] [<lichter>|<alle_lichter>] <aus>",
+            "[<lichter>|<alle_lichter>] [<area>] <aus><machen>",
+            "<machen> [<area>] [<lichter>|<alle_lichter>] <aus><machen>"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "light"
+        },
+        {
+          "sentences": [
+            "<schliessen> <name>",
+            "<name> <schliessen>",
+            "<machen> <name> <zu>",
+            "<name> <zu>[<machen>]"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<schliessen> <area> (<abdeckung>|<tor>|<garage>)",
+            "<schliessen> (<abdeckung>|<tor>|<garage>) <area>",
+            "<machen> <area> (<abdeckung>|<tor>|<garage>) <zu>",
+            "<machen> (<abdeckung>|<tor>|<garage>) <area> <zu>"
+          ],
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<schliessen> [<area>] (<alle_abdeckungen>|<alle_tore>|<alle_garagen>)",
+            "<schliessen> (<alle_abdeckungen>|<alle_tore>|<alle_garagen>) [<area>]",
+            "<machen> [<area>] (<alle_abdeckungen>|<alle_tore>|<alle_garagen>) <zu>",
+            "<machen> (<alle_abdeckungen>|<alle_tore>|<alle_garagen>) [<area>] <zu>"
+          ],
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "close_all"
+        },
+        {
+          "sentences": [
+            "<entsperren> <name> [<area>]",
+            "<entsperren> <area> <name>",
+            "(<sperren>|<machen>) <name> [<area>] auf",
+            "(<sperren>|<machen>) <area> <name> auf",
+            "<name> [<area>] (auf[machen]|<entsperren>)",
+            "<area> <name> (auf[machen]|<entsperren>)"
+          ],
+          "requires_context": {
+            "domain": "lock"
+          },
+          "response": "lock"
+        },
+        {
+          "sentences": [
+            "<entsperren> [<alle>] (<tuer>|<schloss>) <area>",
+            "<entsperren> <area> [<alle>] (<tuer>|<schloss>)",
+            "(<sperren>|<machen>) [<alle>] (<tuer>|<schloss>) <area> auf",
+            "(<sperren>|<machen>) <area> [<alle>] (<tuer>|<schloss>) auf",
+            "[<alle>] (<tuer>|<schloss>) <area> (auf[machen]|<entsperren>)",
+            "<area> [<alle>] (<tuer>|<schloss>) (auf[machen]|<entsperren>)"
+          ],
+          "requires_context": {
+            "domain": "lock",
+            "name": "all"
+          },
+          "response": "lock"
+        }
+      ]
+    },
+    "HassTurnOn": {
+      "data": [
+        {
+          "sentences": [
+            "[<szene>] <name> [<aktivieren>|<ausfuehren>|<an>]",
+            "<name> <szene> (<aktivieren>|<ausfuehren>|<an>)",
+            "führe [<szene>] <name> aus",
+            "führe <name> <szene> aus",
+            "<aktivieren> [<szene>] <name>",
+            "<aktivieren> <name> <szene>"
+          ],
+          "requires_context": {
+            "domain": "scene"
+          },
+          "slots": {
+            "domain": "scene"
+          },
+          "response": "scene"
+        },
+        {
+          "sentences": [
+            "<schalten> (<licht>|<lichter>) <area> <an>",
+            "<schalten> <area> (<licht>|<lichter>) <an>",
+            "(<licht>|<lichter>) <area> <an>[<schalten>]",
+            "<area> (<licht>|<lichter>) <an>[<schalten>]",
+            "<machen> <area> (<licht>|<lichter>) <an>",
+            "<machen> (<licht>|<lichter>) <area> <an>",
+            "<area> (<licht>|<lichter>) <an><machen>",
+            "(<licht>|<lichter>) <area> <an><machen>",
+            "<schalten> [<lichter>|<alle_lichter>] [<area>] <an>",
+            "<schalten> [<area>] [<lichter>|<alle_lichter>] <an>",
+            "[<lichter>|<alle_lichter>] [<area>] <an>[<schalten>]",
+            "[<area>] [<lichter>|<alle_lichter>] <an>[<schalten>]",
+            "<machen> [<area>] [<lichter>|<alle_lichter>] <an>",
+            "<machen> [<lichter>|<alle_lichter>] [<area>] <an>",
+            "[<area>] [<lichter>|<alle_lichter>] <an><machen>",
+            "[<lichter>|<alle_lichter>] [<area>] <an><machen>"
+          ],
+          "slots": {
+            "domain": "light"
+          },
+          "response": "light"
+        },
+        {
+          "sentences": [
+            "<öffnen> <name>",
+            "<name> <öffnen>",
+            "<machen> <name> <auf>",
+            "<name> <auf>[<machen>]"
+          ],
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<öffnen> <area> (<abdeckung>|<tor>|<garage>)",
+            "<öffnen> (<abdeckung>|<tor>|<garage>) <area>",
+            "<machen> <area> (<abdeckung>|<tor>|<garage>) <auf>",
+            "<machen> (<abdeckung>|<tor>|<garage>) <area> <auf>"
+          ],
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "cover"
+        },
+        {
+          "sentences": [
+            "<öffnen> <area> (<alle_tore>|<alle_garagen>)",
+            "<öffnen> (<alle_tore>|<alle_garagen>) <area>",
+            "<machen> <area> (<alle_tore>|<alle_garagen>) <auf>",
+            "<machen> (<alle_tore>|<alle_garagen>) <area> <auf>",
+            "<öffnen> [<area>] (<alle_abdeckungen>|<alle_tore>|<alle_garagen>)",
+            "<öffnen> (<alle_abdeckungen>|<alle_tore>|<alle_garagen>) [<area>]",
+            "<machen> [<area>] (<alle_abdeckungen>|<alle_tore>|<alle_garagen>) <auf>",
+            "<machen> (<alle_abdeckungen>|<alle_tore>|<alle_garagen>) [<area>] <auf>"
+          ],
+          "slots": {
+            "domain": "cover"
+          },
+          "response": "open_all"
+        },
+        {
+          "sentences": [
+            "<schalten> <luefter> <area> <an>",
+            "<schalten> <area> <luefter> <an>",
+            "starte <luefter> <area> [<an>]",
+            "starte <area> <luefter> [<an>]",
+            "<machen> <luefter> <area> <an>",
+            "<machen> <area> <luefter> <an>",
+            "<luefter> <area> <an>[<schalten>|<machen>]",
+            "<area> <luefter> <an>[<schalten>|<machen>]",
+            "starte <alle_luefter> [<area>] [<an>]",
+            "starte [<area>] <alle_luefter> [<an>]",
+            "<schalten> <alle_luefter> [<area>] <an>",
+            "<schalten> <area> <alle_luefter> <an>",
+            "<machen> <alle_luefter> [<area>] <an>",
+            "<machen> <area> <alle_luefter> <an>",
+            "<alle_luefter> [<area>] <an>[<schalten>|<machen>]",
+            "<area> <alle_luefter> <an>[<schalten>|<machen>]"
+          ],
+          "slots": {
+            "domain": "fan",
+            "name": "all"
+          },
+          "response": "fan_all"
+        },
+        {
+          "sentences": [
+            "(<sperren>|<machen>) <name> [<area>] [zu|ab]",
+            "(<sperren>|<machen>) <area> <name> [zu|ab]",
+            "<name> [<area>] (zu[machen]|<absperren>)",
+            "<area> <name> (zu[machen]|<absperren>)",
+            "<absperren> <name> [<area>]",
+            "<absperren> <area> <name>"
+          ],
+          "requires_context": {
+            "domain": "lock"
+          },
+          "response": "lock"
+        },
+        {
+          "sentences": [
+            "(<sperren>|<machen>) [<alle>] (<tuer>|<schloss>) <area> [zu|ab]",
+            "(<sperren>|<machen>) <area> [<alle>] (<tuer>|<schloss>) [zu|ab]",
+            "[<alle>] (<tuer>|<schloss>) <area> (zu[machen]|<absperren>)",
+            "<area> [<alle>] (<tuer>|<schloss>) (zu[machen]|<absperren>)",
+            "<absperren> [<alle>] (<tuer>|<schloss>) <area>",
+            "<absperren> <area> [<alle>] (<tuer>|<schloss>)"
+          ],
+          "requires_context": {
+            "domain": "lock",
+            "name": "all"
+          },
+          "response": "lock"
+        },
+        {
+          "sentences": [
+            "[<skript>] <name> (<ausfuehren>|<aktivieren>)",
+            "<name> <skript> (<ausfuehren>|<aktivieren>)",
+            "führe [<skript>] <name> aus",
+            "führe <name> <skript> aus",
+            "<aktivieren> [<skript>] <name>",
+            "<aktivieren> <name> <skript>"
+          ],
+          "requires_context": {
+            "domain": "script"
+          },
+          "slots": {
+            "domain": "script"
+          },
+          "response": "script"
+        },
+        {
+          "sentences": [
+            "(<schalten>|<machen>) <name> <an>",
+            "starte <name>",
+            "<aktivieren> <name>",
+            "<name> <aktivieren>",
+            "<name> <an>[<schalten>|<machen>]"
+          ],
+          "excludes_context": {
+            "domain": [
+              "binary_sensor",
+              "cover",
+              "lock",
+              "scene",
+              "script",
+              "sensor"
+            ]
+          }
+        }
+      ]
+    },
+    "HassGetState": {
+      "data": [
+        {
+          "sentences": [
+            "ist <name> [<batterie>] [<area>] {bs_battery_states:state}",
+            "ist [<ladestand>] <batterie> <von_dem> <name> [<area>] {bs_battery_states:state}"
+          ],
+          "response": "einzeln_janein",
+          "requires_context": {
+            "domain": "binary_sensor",
+            "device_class": "battery"
+          },
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery"
+          }
+        },
+        {
+          "sentences": [
+            "(ist|sind) <irgend> <batterie> [<area>] {bs_battery_states:state}"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery"
+          }
+        },
+        {
+          "sentences": [
+            "sind <alle> <batterie> [<area>] {bs_battery_states:state}"
+          ],
+          "response": "alle",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery"
+          }
+        },
+        {
+          "sentences": [
+            "<welche> <batterie> [<area>] (ist|sind) {bs_battery_states:state}"
+          ],
+          "response": "welches",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery"
+          }
+        },
+        {
+          "sentences": [
+            "wie viele <batterie> [<area>] (ist|sind) {bs_battery_states:state}"
+          ],
+          "response": "wie_viele",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery"
+          }
+        },
+        {
+          "sentences": [
+            "wird <name> [<batterie>] [<area>] {bs_battery_charging_states:state}",
+            "{bs_battery_charging_states:state} <name> [<batterie>] [<area>] [auf]"
+          ],
+          "response": "einzeln_janein",
+          "requires_context": {
+            "domain": "binary_sensor",
+            "device_class": "battery_charging"
+          },
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery_charging"
+          }
+        },
+        {
+          "sentences": [
+            "(wird|werden) <irgend> <batterie> [<area>] {bs_battery_charging_states:state}",
+            "{bs_battery_charging_states:state} <irgend> <batterie> [<area>] [auf]"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery_charging"
+          }
+        },
+        {
+          "sentences": [
+            "werden <alle> <batterie> [<area>] {bs_battery_charging_states:state}",
+            "{bs_battery_charging_states:state} <alle> <batterie> [<area>] [auf]"
+          ],
+          "response": "alle",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery_charging"
+          }
+        },
+        {
+          "sentences": [
+            "<welche> <batterie> [<area>] [wird|werden] {bs_battery_charging_states:state}"
+          ],
+          "response": "welches",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery_charging"
+          }
+        },
+        {
+          "sentences": [
+            "wie viele <batterie> [<area>] [werden] {bs_battery_charging_states:state}"
+          ],
+          "response": "wie_viele",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "battery_charging"
+          }
+        },
+        {
+          "sentences": [
+            "(ist|wurde) <name> [<area>] {bs_carbon_monoxide_states:state}"
+          ],
+          "response": "einzeln_janein",
+          "requires_context": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide"
+          },
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide"
+          }
+        },
+        {
+          "sentences": [
+            "(ist|sind|wurde[n]) <irgend> <co-sensor> [<area>] {bs_carbon_monoxide_states:state}"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide"
+          }
+        },
+        {
+          "sentences": [
+            "(gibt es|ist) [<irgend>] <co> <area>",
+            "(wird|wurde) [<irgend>] <co> <area> {bs_carbon_monoxide_states:state}"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide",
+            "state": "on"
+          }
+        },
+        {
+          "sentences": [
+            "(sind|wurden) <alle> <co-sensor> [<area>] {bs_carbon_monoxide_states:state}"
+          ],
+          "response": "alle",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide"
+          }
+        },
+        {
+          "sentences": [
+            "<welche> <co-sensor> (ist|sind|wurde[n]) [<area>] {bs_carbon_monoxide_states:state}"
+          ],
+          "response": "welches",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide"
+          }
+        },
+        {
+          "sentences": [
+            "wie viele <co-sensor> (sind|wurden) [<area>] {bs_carbon_monoxide_states:state}"
+          ],
+          "response": "wie_viele",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "carbon_monoxide"
+          }
+        },
+        {
+          "sentences": [
+            "ist <name> [<area>] {bs_cold_states:state}",
+            "ist <area> <name> {bs_cold_states:state}",
+            "ist <name> {bs_cold_states:state} <area>"
+          ],
+          "response": "einzeln_janein",
+          "requires_context": {
+            "domain": "binary_sensor",
+            "device_class": "cold"
+          },
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "cold"
+          }
+        },
+        {
+          "sentences": [
+            "(ist|sind) [<irgend>] <ding> [<area>] kalt",
+            "(ist|sind) [<irgend>] <ding> kalt <area>",
+            "(ist|sind) <area> [<irgend>] <ding> kalt",
+            "ist <etwas> [<area>] kalt",
+            "ist <etwas> kalt <area>",
+            "ist <area> <etwas> kalt"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "cold",
+            "state": "on"
+          }
+        },
+        {
+          "sentences": [
+            "sind <alle> <ding> [<area>] kalt",
+            "sind <alle> <ding> kalt <area>",
+            "sind <area> <alle> <ding> kalt"
+          ],
+          "response": "alle",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "cold",
+            "state": "on"
+          }
+        },
+        {
+          "sentences": [
+            "<welche> <ding> (ist|sind) [<area>] kalt",
+            "<welche> <ding> (ist|sind) kalt <area>",
+            "<welche> <ding> <area> (ist|sind) kalt"
+          ],
+          "response": "welches",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "cold",
+            "state": "on"
+          }
+        },
+        {
+          "sentences": [
+            "wie viele <ding> sind [<area>] kalt",
+            "wie viele <ding> sind kalt <area>",
+            "wie viele <ding> <area> sind kalt"
+          ],
+          "response": "wie_viele",
+          "slots": {
+            "domain": "binary_sensor",
+            "device_class": "cold",
+            "state": "on"
+          }
+        },
+        {
+          "sentences": [
+            "(wie|was) ist [der Zustand (<von_dem>|der|des)] <name> [<area>]"
+          ],
+          "response": "einzeln",
+          "excludes_context": {
+            "domain": [
+              "scene",
+              "script"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "ist <name> {on_off_states:state} [<area>]",
+            "ist <name> [<area>] {on_off_states:state}",
+            "ist [<area>] <name> {on_off_states:state}"
+          ],
+          "response": "einzeln_janein",
+          "excludes_context": {
+            "domain": [
+              "cover"
+            ]
+          }
+        },
+        {
+          "sentences": [
+            "sind [irgendwelche|einige] {on_off_domains:domain} {on_off_states:state} [<area>]",
+            "sind [irgendwelche|einige] {on_off_domains:domain} [<area>] {on_off_states:state}",
+            "sind [<area>] [irgendwelche|einige] {on_off_domains:domain} {on_off_states:state}"
+          ],
+          "response": "irgendeins"
+        },
+        {
+          "sentences": [
+            "(sind alle|ist jede[(r|s)]) {on_off_domains:domain} {on_off_states:state} [<area>]",
+            "(sind alle|ist jede[(r|s)]) {on_off_domains:domain} [<area>] {on_off_states:state}",
+            "(sind|ist) [<area>] (alle|jede[(r|s)]) {on_off_domains:domain} {on_off_states:state}"
+          ],
+          "response": "alle"
+        },
+        {
+          "sentences": [
+            "welche[(r|s)] {on_off_domains:domain} (ist|sind) {on_off_states:state} [<area>]",
+            "welche[(r|s)] {on_off_domains:domain} (ist|sind) [<area>] {on_off_states:state}",
+            "welche[(r|s)] {on_off_domains:domain} [<area>] (ist|sind) {on_off_states:state}"
+          ],
+          "response": "welches"
+        },
+        {
+          "sentences": [
+            "wie viele {on_off_domains:domain} (ist|sind) {on_off_states:state} [<area>]",
+            "wie viele {on_off_domains:domain} (ist|sind) [<area>] {on_off_states:state}",
+            "wie viele {on_off_domains:domain} [<area>] (ist|sind) {on_off_states:state}"
+          ],
+          "response": "wie_viele"
+        },
+        {
+          "sentences": [
+            "ist <name> {cover_states:state} [<area>]",
+            "ist <name> [<area>] {cover_states:state}",
+            "ist [<area>] <name> {cover_states:state}",
+            "{cover_states:state} [sich] <name> [<area>]"
+          ],
+          "response": "einzeln_janein",
+          "requires_context": {
+            "domain": "cover"
+          },
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "sind [irgendwelche|einige] {cover_classes:device_class} {cover_states:state} [<area>]",
+            "sind [irgendwelche|einige] {cover_classes:device_class} [<area>] {cover_states:state}",
+            "sind [<area>] [irgendwelche|einige] {cover_classes:device_class} {cover_states:state}"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "(sind alle|ist jede[(r|s)]) {cover_classes:device_class} {cover_states:state} [<area>]",
+            "(sind alle|ist jede[(r|s)]) {cover_classes:device_class} [<area>] {cover_states:state}",
+            "(sind alle|ist jede[(r|s)]) [<area>] {cover_classes:device_class} {cover_states:state}"
+          ],
+          "response": "alle",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "welche[(r|s)] {cover_classes:device_class} (ist|sind) {cover_states:state} [<area>]",
+            "welche[(r|s)] {cover_classes:device_class} (ist|sind) [<area>] {cover_states:state}",
+            "welche[(r|s)] {cover_classes:device_class} [<area>] (ist|sind) {cover_states:state}"
+          ],
+          "response": "welches",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "wie viele {cover_classes:device_class} (ist|sind) {cover_states:state} [<area>]",
+            "wie viele {cover_classes:device_class} (ist|sind) [<area>] {cover_states:state}",
+            "wie viele {cover_classes:device_class} [<area>] (ist|sind) {cover_states:state}"
+          ],
+          "response": "wie_viele",
+          "slots": {
+            "domain": "cover"
+          }
+        },
+        {
+          "sentences": [
+            "ist <name> {lock_states:state} [<area>]",
+            "ist <name> [<area>] {lock_states:state}",
+            "ist [<area>] <name> {lock_states:state}"
+          ],
+          "response": "einzeln_janein",
+          "requires_context": {
+            "domain": "lock"
+          },
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "(ist|sind) [<irgend>] {lock_domains:domain} {lock_states:state} [<area>]",
+            "(ist|sind) [<irgend>] {lock_domains:domain} [<area>] {lock_states:state}",
+            "(ist|sind) [<area>] [<irgend>] {lock_domains:domain} {lock_states:state}"
+          ],
+          "response": "irgendeins",
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "(sind|ist) <alle> {lock_domains:domain} {lock_states:state} [<area>]",
+            "(sind|ist) <alle> {lock_domains:domain} [<area>] {lock_states:state}",
+            "(sind|ist) [<area>] <alle> {lock_domains:domain} {lock_states:state}"
+          ],
+          "response": "alle",
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "<welche> {lock_domains:domain} (ist|sind) {lock_states:state} [<area>]",
+            "<welche> {lock_domains:domain} (ist|sind) [<area>] {lock_states:state}",
+            "<welche> {lock_domains:domain} [<area>] (ist|sind) {lock_states:state}"
+          ],
+          "response": "welches",
+          "slots": {
+            "domain": "lock"
+          }
+        },
+        {
+          "sentences": [
+            "wie viele {lock_domains:domain} (ist|sind) {lock_states:state} [<area>]",
+            "wie viele {lock_domains:domain} (ist|sind) [<area>] {lock_states:state}",
+            "wie viele {lock_domains:domain} [<area>] (ist|sind) {lock_states:state}"
+          ],
+          "response": "wie_viele",
+          "slots": {
+            "domain": "lock"
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "errors": {
+      "no_intent": "Entschuldigung, das habe ich nicht verstanden",
+      "no_area": "Kein Bereich mit dem Namen {{ area }} vorhanden",
+      "no_domain": "{{ domain }} ist nicht im Bereich {{ area }} vorhanden",
+      "no_device_class": "{{ device_class }} ist nicht im Bereich {{ area }} vorhanden",
+      "no_entity": "{{ entity }} existiert nicht",
+      "handle_error": "Es ist ein unerwarteter Fehler aufgetreten"
+    },
+    "intents": {
+      "HassGetState": {
+        "einzeln": "{{ slots.name | capitalize }} ist {{ state.state_with_unit }}\n",
+        "einzeln_janein": "{% if query.matched %}\n  Ja\n{% else %}\n  Nein\n{% endif %}\n",
+        "irgendeins": "{% if query.matched %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    Ja, {{ match[:3] | join(\", \") }} und {{ (match | length - 3) }} weitere\n  {%- else -%}\n    Ja,\n    {% for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} und {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% else %}\n  Nein\n{% endif %}\n",
+        "alle": "{% if not query.unmatched: %}\n  Ja\n{% else %}\n  {% set no_match = query.unmatched | map(attribute=\"name\") | sort | list %}\n  {% if no_match | length > 4 %}\n    Nein, {{ no_match[:3] | join(\", \") }} und {{ (no_match | length - 3) }} weitere sind es nicht\n  {%- else -%}\n    Nein,\n    {% for name in no_match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} und {% endif -%}\n      {{ name }}\n    {%- endfor %} {% if no_match | length == 1 %}ist{% else %}sind{% endif %} es nicht\n  {% endif %}\n{% endif %}\n",
+        "welches": "{% if not query.matched %}\n  Keins\n{% else: %}\n  {% set match = query.matched | map(attribute=\"name\") | sort | list %}\n  {% if match | length > 4 %}\n    {{ match[:3] | join(\", \") }} und {{ (match | length - 3) }} weitere\n  {% else %}\n    {%- for name in match -%}\n      {% if not loop.first and not loop.last %}, {% elif loop.last and not loop.first %} und {% endif -%}\n      {{ name }}\n    {%- endfor -%}\n  {% endif %}\n{% endif %}\n",
+        "wie_viele": "{{ query.matched | length }}\n"
+      },
+      "HassTurnOff": {
+        "default": "{{ slots.name }} ausgeschaltet",
+        "light": "Licht ausgeschaltet",
+        "fan_all": "Die Ventilatoren sind ausgeschaltet",
+        "cover": "geschlossen",
+        "close_all": "alle geschlossen",
+        "lock": "entsperrt"
+      },
+      "HassTurnOn": {
+        "default": "{{ slots.name }} eingeschaltet",
+        "light": "Licht eingeschaltet",
+        "fan_all": "Die Ventilatoren sind eingeschaltet",
+        "cover": "geöffnet",
+        "open_all": "alle geöffnet",
+        "lock": "abgeschlossen",
+        "scene": "{{ slots.name }} aktiviert",
+        "script": "{{ slots.name }} gestartet"
+      }
+    }
+  },
+  "lists": {
+    "color": {
+      "values": [
+        {
+          "in": "wei(ß|ss)",
+          "out": "white"
+        },
+        {
+          "in": "schwarz",
+          "out": "black"
+        },
+        {
+          "in": "rot",
+          "out": "red"
+        },
+        {
+          "in": "orange",
+          "out": "orange"
+        },
+        {
+          "in": "gelb",
+          "out": "yellow"
+        },
+        {
+          "in": "grün",
+          "out": "green"
+        },
+        {
+          "in": "blau",
+          "out": "blue"
+        },
+        {
+          "in": "violett",
+          "out": "purple"
+        },
+        {
+          "in": "braun",
+          "out": "brown"
+        }
+      ]
+    },
+    "brightness": {
+      "range": {
+        "type": "percentage",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "brightness_level": {
+      "values": [
+        {
+          "in": "(max[imale|imum]|höchste|volle)",
+          "out": 100
+        },
+        {
+          "in": "(min[imale|imum]|niedrigste)",
+          "out": 1
+        }
+      ]
+    },
+    "cover_states": {
+      "values": [
+        {
+          "in": "(offen|auf|oben)",
+          "out": "open"
+        },
+        {
+          "in": "(geschlossen|zu|unten)",
+          "out": "closed"
+        },
+        {
+          "in": "([am] öffnen|öffnet)",
+          "out": "opening"
+        },
+        {
+          "in": "([am] schlie(ß|ss)en|schlie(ß|ss)t)",
+          "out": "closing"
+        }
+      ]
+    },
+    "cover_classes": {
+      "values": [
+        {
+          "in": "Markise[n]",
+          "out": "awning"
+        },
+        {
+          "in": "(Jalousie[n]|Rollo[s])",
+          "out": "blind"
+        },
+        {
+          "in": "(Gardine[n]|Vorhang|Vorhänge)",
+          "out": "curtain"
+        },
+        {
+          "in": "Tür[e|en]",
+          "out": "door"
+        },
+        {
+          "in": "(Garagentür[e|en]|Garagentor[e])",
+          "out": "garage"
+        },
+        {
+          "in": "Tor[e]",
+          "out": "gate"
+        },
+        {
+          "in": "Schirm[e]",
+          "out": "shade"
+        },
+        {
+          "in": "(Rollladen|Rollläden)",
+          "out": "shutter"
+        },
+        {
+          "in": "Fenster",
+          "out": "window"
+        }
+      ]
+    },
+    "lock_domains": {
+      "values": [
+        {
+          "in": "(Schloss|Schlösser|Tür[e|en]|Tor[e])",
+          "out": "lock"
+        }
+      ]
+    },
+    "lock_states": {
+      "values": [
+        {
+          "in": "(([ab|zu]ge|ver)(schlossen|sperrt)|verriegelt)",
+          "out": "locked"
+        },
+        {
+          "in": "(nicht (([ab|zu]ge|ver)(schlossen|sperrt)|verriegelt)|ent(riegelt|sperrt)|aufge(sperrt|schlossen))",
+          "out": "unlocked"
+        }
+      ]
+    },
+    "on_off_domains": {
+      "values": [
+        {
+          "in": "(Lampe[n]|Licht[er]|Leuchte[n]|Beleuchtung[en])",
+          "out": "light"
+        },
+        {
+          "in": "(Ventilator[en]|Lüfter)",
+          "out": "fan"
+        },
+        {
+          "in": "Schalter",
+          "out": "switch"
+        }
+      ]
+    },
+    "on_off_states": {
+      "values": [
+        {
+          "in": "((an|ein)[geschaltet]|auf)",
+          "out": "on"
+        },
+        {
+          "in": "((aus|ab)[geschaltet]|zu)",
+          "out": "off"
+        }
+      ]
+    },
+    "temperature": {
+      "range": {
+        "type": "temperature",
+        "from": 0,
+        "to": 100
+      }
+    },
+    "temperature_unit": {
+      "values": [
+        {
+          "in": "(c|celsius)",
+          "out": "Celsius"
+        },
+        {
+          "in": "(f|fahrenheit)",
+          "out": "Fahrenheit"
+        }
+      ]
+    },
+    "bs_battery_states": {
+      "values": [
+        {
+          "in": "(niedrig|gering|schwach)",
+          "out": "on"
+        },
+        {
+          "in": "normal",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_battery_charging_states": {
+      "values": [
+        {
+          "in": "(lädt|[auf][ge]laden) [auf]",
+          "out": "on"
+        },
+        {
+          "in": "(lädt nicht|nicht [auf][ge]laden|laden nicht) [auf]",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_carbon_monoxide_states": {
+      "values": [
+        {
+          "in": "(entdeckt|ausgelöst|erkannt|an)",
+          "out": "on"
+        },
+        {
+          "in": "(klar|rein|sauber|sicher)",
+          "out": "off"
+        }
+      ]
+    },
+    "bs_cold_states": {
+      "values": [
+        {
+          "in": "kalt",
+          "out": "on"
+        },
+        {
+          "in": "normal",
+          "out": "off"
+        }
+      ]
+    }
+  },
+  "expansion_rules": {
+    "name": "[(der|den|dem|die|das)] {name}",
+    "area": "((in|an|auf) (der|dem)|im|am) {area}",
+    "an": "(an|ein|auf)",
+    "aus": "(aus|ab|zu)",
+    "auf": "(auf|hoch|rauf|nach oben)",
+    "zu": "(zu|[he]runter|nach unten)",
+    "von_dem": "(von [dem]|vom)",
+    "alle": "((alle|sämtliche)[r]|jede[r|s|n]|[die|der] (ganze|komplette|sämtliche)[n]) [der]",
+    "schliessen": "(schlie(ß|ss)[e|en]|zumachen|zu machen)",
+    "öffnen": "(öffne[n]|aufmachen|auf machen)",
+    "schalten": "(schalt[e|en])",
+    "machen": "(mach[e|en])",
+    "setzen": "(setz[e|en]|stell[e|en]|einstellen|änder[e|n]|veränder[e|n])",
+    "abdeckung": "(das Rollo|die Rollos|die (Abdeckung|Abdeckungen)|(den|die) Rolll(a|ä)den|die (Jalousie|Jalousien)|(den|die) Raffstore[s]|die (Markise|Markisen))",
+    "alle_abdeckungen": "<alle> (Rollos|Abdeckungen|Rolll(a|ä)den|Jalousien|Raffstores|Markisen)",
+    "garage": "(die Garage|die Garagen|das Garagentor|die Garagentore)",
+    "alle_garagen": "<alle> (Garagen|Garagentore)",
+    "tor": "(das Tor|die Tore)",
+    "alle_tore": "<alle> (Tore|Garagentore)",
+    "luefter": "([den] Ventilator|[die] Ventilatoren|[den|die] Lüfter)",
+    "alle_luefter": "<alle> (Ventilatoren|Lüfter)",
+    "brightness": "{brightness} [Prozent|%]",
+    "temperature": "{temperature} [Grad] [{temperature_unit}]",
+    "licht": "([das] Licht|[die] Lampe|[die] Beleuchtung)",
+    "lichter": "[die|der|von den] (Lichter|Lichtern|Lampen|Leuchten|Beleuchtungen)",
+    "alle_lichter": "(<alle> (<lichter>|Beleuchtung)|von allen [Lichtern|Lampen|Leuchten|Beleuchtungen])",
+    "tuer": "[die] Tür[e|en]",
+    "schloss": "[das|die] (Schloss|Schlösser)",
+    "sperren": "(sperr|schlie(ss|ß))[e|en]",
+    "entsperren": "((ent|auf)<sperren>|öffne|entrieg(el|le))[n]",
+    "absperren": "(zu|ab)<sperren>|verrieg(el|le)[n]",
+    "aktivieren": "aktivier[e|en]",
+    "deaktivieren": "de<aktivieren>",
+    "ausfuehren": "(start[e|en]|ausführen)",
+    "szene": "[die] Szene",
+    "skript": "[das] Skript",
+    "batterie": "[die|der|des] (Batterie[n]|Akku[s])",
+    "irgend": "(irgend(ein[e][s|r]|welche[s])|einige[s]) [der]",
+    "etwas": "[irgend][et]was",
+    "welche": "(welche[r|s]|was für [ein[e][r|s]]) [der]",
+    "ladestand": "[der] [Lade][zu]Stand",
+    "co": "Kohlen[stoff]monoxid",
+    "co-sensor": "<co>[-]Sensor[en]",
+    "ding": "((Ding|Gerät)[e]|Sensor[en]|Gegenstand|Gegenstände)"
+  },
+  "skip_words": [
+    "bitte",
+    "danke",
+    "gefälligst",
+    "jetzt",
+    "sofort",
+    "gleich",
+    "gerade",
+    "momentan",
+    "im Moment",
+    "mal",
+    "eben",
+    "kannst du",
+    "könntest du",
+    "würdest du",
+    "du sollst",
+    "ähm",
+    "äh"
+  ]
+}

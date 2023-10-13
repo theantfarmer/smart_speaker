@@ -1,0 +1,53 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Enheden er allerede konfigureret",
+            "reauth_successful": "Genautentificering lykkedes"
+        },
+        "error": {
+            "cannot_connect": "Forbindelse mislykkedes",
+            "invalid_auth": "Ugyldig godkendelse",
+            "unknown": "Uventet fejl"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "token": "Adgangstoken"
+                },
+                "title": "Genautentificer integration"
+            },
+            "user": {
+                "data": {
+                    "host": "V\u00e6rt",
+                    "port": "Port",
+                    "token": "Adgangstoken"
+                }
+            }
+        }
+    },
+    "entity": {
+        "lock": {
+            "nuki_lock": {
+                "state_attributes": {
+                    "battery_critical": {
+                        "state": {
+                            "off": "Normal",
+                            "on": "Lav"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "battery": {
+                "name": "Batteri"
+            }
+        }
+    },
+    "issues": {
+        "https_webhook": {
+            "description": "Nuki-broen kan ikke sende begivenheder til en HTTPS-adresse (SSL). Konfigurer venligst en (lokal) HTTP-adresse under \"Home Assistant-webadresse\" i [netv\u00e6rksindstillinger]({network_link}). Den nuv\u00e6rende (lokale) adresse er: `{base_url}}`. En gyldig adresse kunne f.eks. v\u00e6re `http://192.168.1.10:8123`, hvor `192.168.1.10` er Home Assistant-enhedens IP-adresse",
+            "title": "Nuki webhook-URL bruger HTTPS (SSL)"
+        }
+    }
+}

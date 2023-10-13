@@ -1,0 +1,101 @@
+{
+    "device_automation": {
+        "action_type": {
+            "brightness_decrease": "Diminuer la luminosit\u00e9 de {entity_name}",
+            "brightness_increase": "Augmenter la luminosit\u00e9 de {entity_name}",
+            "flash": "Faire clignoter {entity_name}",
+            "toggle": "Basculer {entity_name}",
+            "turn_off": "\u00c9teindre {entity_name}",
+            "turn_on": "Allumer {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} est \u00e9teinte",
+            "is_on": "{entity_name} est allum\u00e9e"
+        },
+        "trigger_type": {
+            "changed_states": "{entity_name} a \u00e9t\u00e9 allum\u00e9e ou \u00e9teinte",
+            "turned_off": "{entity_name} a \u00e9t\u00e9 \u00e9teinte",
+            "turned_on": "{entity_name} a \u00e9t\u00e9 allum\u00e9e"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Lumi\u00e8re",
+            "state": {
+                "off": "D\u00e9sactiv\u00e9",
+                "on": "Activ\u00e9"
+            },
+            "state_attributes": {
+                "brightness": {
+                    "name": "Luminosit\u00e9"
+                },
+                "color_mode": {
+                    "name": "Mode de couleur",
+                    "state": {
+                        "brightness": "Luminosit\u00e9 uniquement",
+                        "color_temp": "Temp\u00e9rature de couleur",
+                        "hs": "HS",
+                        "onoff": "Allum\u00e9/\u00c9teint",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Inconnu",
+                        "white": "Blanc",
+                        "xy": "XY"
+                    }
+                },
+                "color_temp": {
+                    "name": "Temp\u00e9rature de couleur (mireds)"
+                },
+                "color_temp_kelvin": {
+                    "name": "Temp\u00e9rature de couleur (Kelvin)"
+                },
+                "effect": {
+                    "name": "Effet"
+                },
+                "effect_list": {
+                    "name": "Effets disponibles"
+                },
+                "max_color_temp_kelvin": {
+                    "name": "Temp\u00e9rature de couleur maximale (Kelvin)"
+                },
+                "max_mireds": {
+                    "name": "Temp\u00e9rature de couleur maximale (mireds)"
+                },
+                "min_color_temp_kelvin": {
+                    "name": "Temp\u00e9rature de couleur minimale (Kelvin)"
+                },
+                "min_mireds": {
+                    "name": "Temp\u00e9rature de couleur minimale (mireds)"
+                },
+                "supported_color_modes": {
+                    "name": "Modes de couleur disponibles",
+                    "state": {
+                        "brightness": "Luminosit\u00e9 uniquement",
+                        "color_temp": "Temp\u00e9rature de couleur",
+                        "hs": "HS",
+                        "onoff": "Allum\u00e9/\u00c9teint",
+                        "rgb": "RGB",
+                        "rgbw": "RGBW",
+                        "rgbww": "RGBWW",
+                        "unknown": "Inconnu",
+                        "white": "Blanc",
+                        "xy": "XY"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "La plateforme {platform} pour l'int\u00e9gration {domain} ne prend pas en charge la configuration de la plateforme.\n\nVeuillez la supprimer de votre configuration et red\u00e9marrer Home Assistant pour r\u00e9soudre ce probl\u00e8me.",
+            "title": "Prise en charge de la plateforme non prise en charge"
+        }
+    },
+    "services": {
+        "turn_on": {
+            "name": "Allumer"
+        }
+    },
+    "title": "Lumi\u00e8re"
+}

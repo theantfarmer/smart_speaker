@@ -1,0 +1,84 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Po\u010dasie",
+            "state": {
+                "clear-night": "Jasno, v noci",
+                "cloudy": "Zamra\u010den\u00e9",
+                "exceptional": "V\u00fdnimo\u010dn\u00e9",
+                "fog": "Hmla",
+                "hail": "Krupobitie",
+                "lightning": "Blesky",
+                "lightning-rainy": "Blesky, da\u017edivo",
+                "partlycloudy": "\u010ciasto\u010dne zamra\u010den\u00e9",
+                "pouring": "Lej\u00faco",
+                "rainy": "Da\u017edivo",
+                "snowy": "Zasne\u017een\u00e9",
+                "snowy-rainy": "Zasne\u017een\u00e9, da\u017edivo",
+                "sunny": "Slne\u010dno",
+                "windy": "Veterno",
+                "windy-variant": "Veterno"
+            },
+            "state_attributes": {
+                "apparent_temperature": {
+                    "name": "Zdanliv\u00e1 teplota"
+                },
+                "cloud_coverage": {
+                    "name": "Cloudov\u00e9 pokrytie"
+                },
+                "dew_point": {
+                    "name": "Teplota rosn\u00e9ho bodu"
+                },
+                "forecast": {
+                    "name": "Predpove\u010f"
+                },
+                "humidity": {
+                    "name": "Vlhkos\u0165"
+                },
+                "ozone": {
+                    "name": "Oz\u00f3n"
+                },
+                "precipitation_unit": {
+                    "name": "Jednotka zr\u00e1\u017eok"
+                },
+                "pressure": {
+                    "name": "Tlak"
+                },
+                "pressure_unit": {
+                    "name": "Jednotka tlaku"
+                },
+                "temperature": {
+                    "name": "Teplota"
+                },
+                "temperature_unit": {
+                    "name": "Jednotka teploty"
+                },
+                "visibility": {
+                    "name": "Vidite\u013enos\u0165"
+                },
+                "visibility_unit": {
+                    "name": "Jednotka vidite\u013enosti"
+                },
+                "wind_bearing": {
+                    "name": "Vetern\u00e9 lo\u017eisko"
+                },
+                "wind_gust_speed": {
+                    "name": "R\u00fdchlos\u0165 n\u00e1razov\u00e9ho vetra"
+                },
+                "wind_speed": {
+                    "name": "R\u00fdchlos\u0165 vetra"
+                },
+                "wind_speed_unit": {
+                    "name": "Jednotka r\u00fdchlosti vetra"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platforma {platform} pre integr\u00e1ciu {domain} nepodporuje nastavenie platformy. \n\n Odstr\u00e1\u0148te ho z konfigur\u00e1cie a re\u0161tartujte Home Assistant, aby ste tento probl\u00e9m vyrie\u0161ili.",
+            "title": "Podpora platformy nie je podporovan\u00e1"
+        }
+    },
+    "title": "Po\u010dasie"
+}

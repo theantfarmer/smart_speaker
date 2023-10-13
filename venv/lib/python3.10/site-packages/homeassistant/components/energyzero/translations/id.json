@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi"
+        },
+        "step": {
+            "user": {
+                "description": "Ingin memulai penyiapan?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "average_price": {
+                "name": "Rata-rata - hari ini"
+            },
+            "current_hour_price": {
+                "name": "Jam saat ini"
+            },
+            "highest_price_time": {
+                "name": "Waktu harga tertinggi - hari ini"
+            },
+            "lowest_price_time": {
+                "name": "Waktu harga terendah - hari ini"
+            }
+        }
+    }
+}

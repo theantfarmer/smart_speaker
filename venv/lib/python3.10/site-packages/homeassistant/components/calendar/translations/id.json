@@ -1,0 +1,42 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalender",
+            "state": {
+                "off": "Mati",
+                "on": "Nyala"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "name": "Sepanjang hari",
+                    "state": {
+                        "false": "Tidak",
+                        "true": "Ya"
+                    }
+                },
+                "description": {
+                    "name": "Deskripsi"
+                },
+                "end_time": {
+                    "name": "Waktu berakhir"
+                },
+                "location": {
+                    "name": "Lokasi"
+                },
+                "messages": {
+                    "name": "Pesan"
+                },
+                "start_time": {
+                    "name": "Waktu mulai"
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "Platform {platform} untuk integrasi {domain} tidak mendukung penyiapan platform. \n\nHarap hapus dari konfigurasi Anda dan mulai ulang Home Assistant untuk memperbaiki masalah ini.",
+            "title": "Dukungan platform tidak didukung"
+        }
+    },
+    "title": "Kalender"
+}
