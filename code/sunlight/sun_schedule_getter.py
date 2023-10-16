@@ -2,6 +2,8 @@ from datetime import datetime, timedelta
 import requests
 import json
 import sqlite3
+sys.path.append('../speaker')
+from dont_tell import OPEN_WEATHER_MAP_API_KEY 
 
 # Fetch solar events for the given day
 def fetch_solar_events(date):

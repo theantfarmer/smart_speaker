@@ -1,4 +1,4 @@
-#!/Volumes/Moon/Dropbox/Dropbox/smart_speaker/venv/bin/python3
+#!/Users/Mouse/.pyenv/shims/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

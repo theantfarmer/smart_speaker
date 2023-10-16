@@ -11,6 +11,9 @@ def fetch_subway_status(line):
         return status
     else:
         return f"Failed to fetch subway status: {response.status_code}"
+    
+def train_status_phrase(train_line, status):
+    return f'The {train_line}-Train Status is {status}'    
 
 SUBWAY_LINES = [
     "1",

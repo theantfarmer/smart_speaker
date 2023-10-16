@@ -2,6 +2,8 @@ import sqlite3
 import logging
 import os
 
+from dont_tell import HOME_ASSISTANT_TOKEN, SECRET_PHRASES
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(script_dir, 'gpt_chat_history.db')
 
@@ -20,11 +22,7 @@ def save_to_db(role, content):
     with connect_db() as conn:
         cursor = conn.cursor()
         cursor.execute("INSERT INTO history (role, content) VALUES (?, ?)", (role, content))
-        print(f"Debug: Attempting to insert: role-{role}, content-{content}")
-        print("Debug: Committing to DB")
         conn.commit()
-        print("Debug: Committed to DB")
-
 
 def save_conversation(user_text, agent_text):
     print(f"Debug: Inside save_to_db function, user_text: {user_text}, agent_text: {agent_text}")

@@ -4,13 +4,16 @@
 .vscode
 code/speaker/custom_instructions.txt
 code/speaker/dont_tell.py
+code/speaker/gpt_chat_history.db
+code/gpt_chat_history.db    
+venv 
 code/dont_tell.py
 logs
 *.log
 npm-debug.log*
 pids
 *.pid
-
+__pycache__/
 
 *.seed
 

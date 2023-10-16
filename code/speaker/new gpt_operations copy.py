@@ -50,22 +50,26 @@ def talk_to_gpt(messages):
 
 def handle_conversation(messages):
     # Get the response from GPT
-    
     gpt_response = talk_to_gpt(messages)
     print(f"Received GPT response: {gpt_response}")  # Debugging
-    
+
     # Check if there are any lighting commands in the GPT response
     if '@[' in gpt_response and ']@' in gpt_response:
         print("Lighting commands found. Parsing and sending to expressive_light.")  # Debugging
-        
+
         # Parse the commands and texts
         command_text_list = expressive_light.create_command_text_list(gpt_response)
         
-        # Process them for lighting command execution (assuming you have a function for this)
+        # Process them for lighting command execution
         for command, text in command_text_list:
             print(f"Sending command: {command} to lighting control.")  # Debugging
             # Your function here to send `command` to the lighting control system
-            
+
+        # Strip commands and save to DB
+        clean_text = expressive_light.strip_commands(gpt_response)  # Assuming you have a function for this
+        save_to_db(clean_text)  # Your function here to save `clean_text` to the database
+
     else:
         print("No lighting commands found. Sending directly to TTS.")  # Debugging
         text_to_speech_operations.mp3_queue.put((gpt_response, None))
+        send_to_main(gpt_response)  # Your function here to send `gpt_response` back to main.py

@@ -1,31 +1,91 @@
-import re 
+import re
 import spacy
 import requests
-from dont_tell import HOME_ASSISTANT_TOKEN, MTA_API_KEY  # Importing the tokens from gpt_key.py
-from db_operations import initialize_db, save_conversation  # Assuming these imports are correct
-from text_to_speech_operations import talk_with_tts  # Assuming these imports are correct
-from speech_to_text_operations import capture_speech  # Assuming these imports are correct
-from gpt_operations import handle_conversation  # Assuming these imports are correct
-from transit_routes import fetch_subway_status
+import ephem
+from datetime import datetime
+import holidays
+from phrases import PHRASES
+from dont_tell import HOME_ASSISTANT_TOKEN
+from db_operations import save_conversation
+from transit_routes import fetch_subway_status, train_status_phrase
 
 nlp = spacy.load("en_core_web_sm")
+HOME_ASSISTANT_URL = 'http://localhost:8123/api/'
+HEADERS = {
+    'Authorization': f'Bearer {HOME_ASSISTANT_TOKEN}',
+    'content-type': 'application/json',
+}
 
-def smart_home_parse_and_execute(command_text):
-    print(f"Command received: {command_text}")  # Print the command text received
-    doc = nlp(command_text)
-    print(f"Spacy Doc: {doc}")  # Print the spacy doc object
+# Date and holiday related functions
+def get_date(date_text):
+    try:
+        return datetime.strptime(date_text, '%m/%d')
+    except ValueError:
+        return get_holiday_date(date_text)
 
-    HOME_ASSISTANT_URL = 'http://localhost:8123/api/'
-    HEADERS = {
-        'Authorization': f'Bearer {HOME_ASSISTANT_TOKEN}',
-        'content-type': 'application/json',
-    }
+def get_holiday(date):
+    us_holidays = holidays.US()
+    return us_holidays.get(date)
 
+def get_holiday_date(holiday_name):
+    us_holidays = holidays.US(years=datetime.now().year)
+    for date, name in us_holidays.items():
+        if holiday_name.lower() in name.lower():
+            return date
+    return None
+
+def get_next_holiday():
+    us_holidays = holidays.US(years=datetime.now().year)
+    for date, name in sorted(us_holidays.items()):
+        if date > datetime.now().date():
+            return date, name
+    return None, None
+
+# Moon phase function
+def get_moon_phase():
+    moon_phase_num = ephem.Moon(datetime.now()).phase
+    if 0 <= moon_phase_num < 7.4:
+        return "New Moon"
+    elif 7.4 <= moon_phase_num < 14.8:
+        return "First Quarter"
+    elif 14.8 <= moon_phase_num < 22.1:
+        return "Full Moon"
+    else:
+        return "Last Quarter"
+
+# Home assistant related functions
+def is_home_assistant_available():
     try:
         response = requests.get(f'{HOME_ASSISTANT_URL}states', headers=HEADERS)
-        print(f"Response from states API: {response.text}")  # Print the response from the states API
+        return response.status_code == 200
+    except requests.RequestException:
+        return False
+
+def home_assistant_request(endpoint, method, payload=None):
+    url = f'{HOME_ASSISTANT_URL}{endpoint}'
+    try:
+        if method == 'get':
+            response = requests.get(url, headers=HEADERS)
+        elif method == 'post':
+            response = requests.post(url, headers=HEADERS, json=payload)
+        return response
     except requests.RequestException as e:
-        print(f"Failed to fetch states from Home Assistant: {e}")  # Print error if unable to fetch states
+        print(f"Request failed: {e}")
+        return None
+
+# Smart home command parsing and executing
+def smart_home_parse_and_execute(command_text):
+    print(f"Command received: {command_text}")
+    doc = nlp(command_text)
+    print(f"Spacy Doc: {doc}")
+
+    command_text_stripped = command_text.strip().lower()
+
+    response = home_assistant_request('states', 'get')
+    if not response:
+        print("Failed to fetch states from Home Assistant")
+        if "light" in command_text:
+            return False, "Home Assistant is missing, dude."
 
     # Define regex patterns for light control commands
     light_on_patterns = [r'\b(turn\s+on\s+the\s+light|turn\s+the\s+light\s+on|light\s+on)\b']
@@ -33,46 +93,79 @@ def smart_home_parse_and_execute(command_text):
 
     # Check if any of the light on patterns match the command text
     if any(re.search(pattern, command_text, re.IGNORECASE) for pattern in light_on_patterns):
-        payload = {"entity_id": "light.school_show"}  # Use correct entity_id
-        try:
-            response = requests.post(
-                f'{HOME_ASSISTANT_URL}services/light/turn_on',
-                headers=HEADERS,
-                json=payload  # Include payload in the request
-            )
-            print(f"Response from turn on light API: {response.text}")  # Print the response from the turn on light API
-            if response.status_code == 200:
-                print("Light turned on.")
-                return True, "Light turned on."  # return a tuple
-        except requests.RequestException as e:
-            print(f"Failed to turn on light: {e}")  # Print error if unable to turn on light
-            return False, f"Failed to turn on light: {e}"  # return a tuple
+        response = home_assistant_request('services/light/turn_on', 'post', payload={"entity_id": "light.school_show"})
+        if response and response.status_code == 200:
+            print("Light turned on.")
+            return True, "Light turned on."
+        print("Failed to turn on light")
+        return False, "Failed to turn on light"
 
     # Check if any of the light off patterns match the command text
     elif any(re.search(pattern, command_text, re.IGNORECASE) for pattern in light_off_patterns):
-        payload = {"entity_id": "light.school_show"}  # Use correct entity_id
-        try:
-            response = requests.post(
-                f'{HOME_ASSISTANT_URL}services/light/turn_off',
-                headers=HEADERS,
-                json=payload  # Include payload in the request
-            )
-            print(f"Response from turn off light API: {response.text}")  # Print the response from the turn off light API
-            if response.status_code == 200:
-                print("Light turned off.")
-                return True, "Light turned off."  # return a tuple
-        except requests.RequestException as e:
-            print(f"Failed to turn off light: {e}")  # Print error if unable to turn off light
-            return False, f"Failed to turn off light: {e}"  # return a tuple
-
+        response = home_assistant_request('services/light/turn_off', 'post', payload={"entity_id": "light.school_show"})
+        if response and response.status_code == 200:
+            print("Light turned off.")
+            return True, "Light turned off."
+        print("Failed to turn off light")
+        return False, "Failed to turn off light"
+    
     if "mta" in command_text.lower() or ("train" in command_text.lower() and ("status" in command_text.lower() or "running" in command_text.lower())):
         train_line_match = re.search(r'\b([A-Z0-9])\b\s*(?:train)?', command_text, re.IGNORECASE)
         if train_line_match:
-            train_line = train_line_match.group(1).upper()  # Updated this line to correctly extract the train line
+            train_line = train_line_match.group(1).upper()
             status = fetch_subway_status(train_line)
-            response = f'"The {train_line}" Trains Status is: {status}'
+            response = train_status_phrase(train_line, status)  # Use the imported function
             print(response)
-            return True, response  # return True to indicate a command was executed, and the response
+            return True, response
+        
+        
+    holiday_match = re.search(r"when is (\w+)", command_text, re.IGNORECASE)
+    if holiday_match:
+        holiday_name = holiday_match.group(1)
+        holiday_date = get_holiday_date(holiday_name)
+        if holiday_date:
+            response = f"{holiday_name} is on {holiday_date.strftime('%A, %B %d, %Y')}"
+            print(response)
+            return True, response
+        
+    day_of_week_match = None
+    day_of_week_match = re.search(r"what day of the week is ((\w+)|(\d{1,2}/\d{1,2}))", command_text, re.IGNORECASE)
 
-    print("No smart home command identified.")  # Print message if no smart home command is identified
-    return False, None  # return False to indicate no command was executed, and None for the response
+    if day_of_week_match:
+        date_text = day_of_week_match.group(1)
+        date = get_date(date_text)
+        if date:
+            day_of_week = date.strftime('%A')
+            response = f"{date_text} is on a {day_of_week}."
+            print(response)
+            return True, response
+    
+    if command_text_stripped in ["time", "what time is it"]:
+        current_time = datetime.now().strftime('%I:%M %p')
+        return True, f"It's {current_time}"
+
+    if command_text.lower().strip() in ["date", "what's the date today"]:
+        date = datetime.now().strftime('%A, %d %B %Y')
+        holiday_name = get_holiday(datetime.now().date())
+        if holiday_name:
+            date += f" - {holiday_name}"
+        print(date)
+        return True, date
+        
+    if re.search(r'\b(moon\s+phase)\b', command_text, re.IGNORECASE):
+        moon_phase = get_moon_phase()
+        response = f'The moon phase today is {moon_phase}.'
+        print(response)
+        return True, response
+    
+    if command_text_stripped in PHRASES:
+        response = PHRASES[command_text_stripped]
+        return True, response
+    
+    
+    
+    print("No smart home command identified.")  # Existing message
+    return False, "Query not handled by smart home commands, falling back to GPT."  # Modified return statement
+
+
+    
