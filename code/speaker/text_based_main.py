@@ -1,42 +1,53 @@
-from db_operations import initialize_db, save_conversation
+import threading
+import queue
+from time import sleep
+import logging
+import sys
+
+logging.basicConfig(level=logging.INFO)
+
+from db_operations import initialize_db, save_to_db
 from gpt_operations import handle_conversation
 from smart_home_parser import smart_home_parse_and_execute
-import logging
-import sys  # Importing sys to parse command line arguments
 
-print("Debug: text_based_main.py started")
+def main():
+    command_text_stripped = ""
+    initialize_db()
+    messages = []
+    command_text_list = []
+    agent_output = "Hey. Ready"
+    print(agent_output)  # Replaces talk_with_tts
 
-def process_text(user_input):
     try:
-        print(f"Debug: User input received: {user_input}")
+        while True:
+            text = sys.argv[1] if len(sys.argv) > 1 else "No input provided"  # Replaces capture_speech()
 
-        print("Debug: Initializing database")
-        initialize_db()
+            if text is None:
+                continue
+            agent_output = None
 
-        messages = [{"role": "user", "content": user_input}]
-        print(f"Debug: Messages list initialized: {messages}")
-
-        is_command_executed, command_response = smart_home_parse_and_execute(user_input)
-        print(f"Debug: Command execution status: {is_command_executed}, Response: {command_response}")
-
-        if is_command_executed:
-            agent_output = command_response
-        else:
-            agent_output = handle_conversation(messages)
-            print(f"Debug: Agent output: {agent_output}")
-
-        print("Debug: Saving conversation to database")
-        save_conversation(user_input, agent_output)
-
-        print("Debug: Conversation saved successfully")
-        return agent_output
+            save_to_db('User', text)  # Save user text to the database
+            
+            is_command_executed, command_response = smart_home_parse_and_execute(text)
+            if is_command_executed:
+                save_to_db('Agent', command_response)
+                print(command_response)  # Replaces talk_with_tts
+            else:
+                messages.append({"role": "user", "content": text})
+                agent_output = handle_conversation(messages)
+                save_to_db('Agent', agent_output)
+                messages.append({"role": "agent", "content": agent_output})
+                
+                if isinstance(agent_output, tuple):
+                    continue
+                
+                if agent_output is None:
+                    print(None)  # Replaces talk_with_tts(None, None)
+                else:
+                    print(agent_output)  # Replaces talk_with_tts
 
     except Exception as e:
-        print(f"Debug: An exception occurred: {e}")
-        return "Error"
+        pass
 
 if __name__ == "__main__":
-    # Parsing the first command line argument as user_input
-    user_input = sys.argv[1] if len(sys.argv) > 1 else "No input provided"
-    output = process_text(user_input)
-    print(f"Debug: Final output: {output}")
+    main()

@@ -8,9 +8,6 @@ import sys
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-import logging
-import json
-import traceback
 from concurrent.futures import ThreadPoolExecutor
 
 # Constants

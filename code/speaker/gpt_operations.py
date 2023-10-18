@@ -5,14 +5,14 @@ import os
 import openai
 import expressive_light
 import text_to_speech_operations
+import re
 from dont_tell import OPENAI_API_KEY
-
+import db_operations 
 openai.api_key = OPENAI_API_KEY
 
 def load_custom_instructions(file_path=None):
     
     if file_path is None:
-        # Get the directory where the script is located
         dir_path = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(dir_path, 'custom_instructions.txt')
 
@@ -47,25 +47,22 @@ def talk_to_gpt(messages):
 #     )
 #     return response.choices[0].text.strip()
 
-
 def handle_conversation(messages):
-    # Get the response from GPT
-    
     gpt_response = talk_to_gpt(messages)
-    print(f"Received GPT response: {gpt_response}")  # Debugging
-    
-    # Check if there are any lighting commands in the GPT response
+    print(f"Received GPT response: {gpt_response}")
+
     if '@[' in gpt_response and ']@' in gpt_response:
-        print("Lighting commands found. Parsing and sending to expressive_light.")  # Debugging
-        
-        # Parse the commands and texts
+        print("Lighting commands found. Parsing and sending to expressive_light.")
         command_text_list = expressive_light.create_command_text_list(gpt_response)
-        
-        # Process them for lighting command execution (assuming you have a function for this)
         for command, text in command_text_list:
-            print(f"Sending command: {command} to lighting control.")  # Debugging
-            # Your function here to send `command` to the lighting control system
-            
+            print(f"Sending command: {command} to lighting control.")
+        
+        stripped_response = re.sub(r'@\[.*?\]@', '', gpt_response)
+        print(f"Stripped Response: {stripped_response}")
+        db_operations.save_to_db('Agent', stripped_response)
+
+        return command_text_list, None  # return the command_text_list and a None for the text
+
     else:
-        print("No lighting commands found. Sending directly to TTS.")  # Debugging
-        text_to_speech_operations.mp3_queue.put((gpt_response, None))
+        db_operations.save_to_db('Agent', gpt_response)
+        return None, gpt_response  # return a None for the command_text_list and the text
