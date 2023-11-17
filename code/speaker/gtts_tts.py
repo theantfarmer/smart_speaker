@@ -3,7 +3,7 @@ import tempfile
 import os
 
 def gtts_tts(text, pitch=-5.0, credentials=None):
-    tts = gTTS(text=text, lang='en-gb')
+    tts = gTTS(text=text, lang='en')
     
     # Create a temporary file to store audio
     with tempfile.NamedTemporaryFile(delete=True) as fp:

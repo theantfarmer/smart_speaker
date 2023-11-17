@@ -19,7 +19,37 @@ def load_custom_instructions(file_path=None):
     with open(file_path, 'r') as f:
         return f.read().strip()
     
-# for newer gpt models:
+# for gpt4 assistant:
+
+
+# def talk_to_gpt(messages, assistant_id="asst_BPTPmSLF9eaaqyCkVZVCmK07"):
+
+#     openai.api_key = OPENAI_API_KEY
+
+#     thread = openai.Thread.create()
+#     thread_id = thread["id"]
+
+#     for message in messages:
+#         openai.Message.create(
+#             thread_id=thread_id,
+#             role=message["role"],
+#             content=message["content"]
+#         )
+
+#     run = openai.Run.create(
+#         thread_id=thread_id,
+#         assistant_id=assistant_id
+#     )
+
+#     response_messages = openai.Message.list(thread_id=thread_id)
+    
+#     assistant_response = response_messages["data"][-1]["content"]
+
+#     return assistant_response
+
+
+
+for gpt 3.5:
 
 def talk_to_gpt(messages):
     custom_instructions = load_custom_instructions()

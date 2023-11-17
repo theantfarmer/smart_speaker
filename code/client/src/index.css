@@ -1,7 +1,48 @@
-:root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
+/* Global Styles */
+
+body {
+  background-color: #007BFF; /* Approximate blue color */
+  font-family: 'Josefin Sans', sans-serif; /* Typography choice */
+  margin: 0;
+  padding: 0;
 }
 
+/* Colors & Accents */
+
+.button:hover, .highlight-border {
+  background-color: #FFD700; /* Approximate gold color */
+}
+
+.card-background, .primary-text {
+  background-color: #FFFFFF; /* White color */
+}
+
+.alert, .error-text {
+  color: #FF0000; /* Red color */
+}
+
+.secondary-text, .icon-color {
+  color: #FFFF00; /* Yellow color */
+}
+
+/* Layout & Positioning */
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #0099CC;
+}
+
+.centered-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* Transitions & Effects */
+
+.button, .card-background, .alert {
+  transition: all 0.3s ease-in-out;
+}

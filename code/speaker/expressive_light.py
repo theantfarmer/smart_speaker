@@ -31,47 +31,66 @@ def split_text_by_commands(text):
         logging.error(f"An unexpected error occurred in split_text_by_commands: {e}")
         return []
 
-def format_for_home_assistant(command):
+import json
+import logging
+
+def validate_and_convert(values):
+    try:
+        x = float(values[0])
+        y = float(values[1])
+        brightness = int(values[2])
+        transition = int(float(values[3]))  # Convert float to int
+        return x, y, brightness, transition
+    except (ValueError, IndexError):
+        logging.error(f"Invalid values detected: {values}. Expected float,float,int,float.")
+        return None
+
+
+
+def format_for_home_assistant(command, include_only=None):
     try:
         if command is None:
             return None
-        
-        # Split the command string into values
+
         values = command.split(",")
         
-        # Validate the number of values
         if len(values) != 4:
             logging.error(f"Invalid command format: {command}. Expected 4 values separated by commas.")
             return None
 
-        # Convert and validate each value
         try:
             x = float(values[0])
             y = float(values[1])
             brightness = int(values[2])
-            transition = float(values[3])
+            transition = int(float(values[3]))  # Convert float to int
         except (ValueError, IndexError):
             logging.error(f"Invalid values detected: {values}. Expected float,float,int,float.")
             return None
 
-        if not (0 <= x <= 1 and 0 <= y <= 1 and 0 <= brightness <= 254 and transition >= 0):
+        if not (-10 <= x <= 10 and -10 <= y <= 10 and 0 <= brightness <= 254 and transition >= 0):
             logging.error(f"Invalid value ranges in the command: {values}")
             return None
 
-        # Create the formatted command dictionary
         formatted_command = {
-            "xy": [x, y],
-            "brightness": brightness,
-            "transition": transition
+            "entity_id": "light.bedroom"  # Add the entity ID
         }
         
+        if include_only is None or 'xy' in include_only:
+            formatted_command['xy_color'] = [x, y]
+
+        if include_only is None or 'brightness' in include_only:
+            formatted_command['brightness'] = brightness
+
+        if include_only is None or 'transition' in include_only:
+            formatted_command['transition'] = transition
+
         logging.info(f"Formatted command: {formatted_command}")
-        
-        # Return the formatted command as a JSON-formatted string
+
         return json.dumps(formatted_command)
     except Exception as e:
         logging.error(f"An unexpected error occurred in format_for_home_assistant: {e}")
         return None
+
 
 def create_command_text_list(text):
     try:
@@ -97,4 +116,3 @@ def create_command_text_list(text):
     except Exception as e:
         logging.error(f"An unexpected error occurred in create_command_text_list: {e}")
         return []
-

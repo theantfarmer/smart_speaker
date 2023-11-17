@@ -60,12 +60,21 @@ def main():
                 talk_with_tts(command_response)
                 print(f"Returned from talk_with_tts.")  # Debug print
                 continue
-            command_text_list, gpt_response = handle_conversation(messages)
+
+            # If the command is not executed by the smart home system, pass it to GPT
+            if not is_command_executed:
+                # Append the user's input to the messages list
+                messages.append({"role": "user", "content": text})
+                # Handle the conversation with GPT
+                command_text_list, gpt_response = handle_conversation(messages)
+
+            # Process any commands returned from GPT
             if command_text_list:
-                # use command_text_list as needed
+                # Use command_text_list as needed
                 for command, txt in command_text_list:
                     print(f"About to call talk_with_tts with command: {command}, text: {txt}")
                     talk_with_tts(txt, command)
+
             else:
                 if gpt_response:
                     talk_with_tts(gpt_response, None)

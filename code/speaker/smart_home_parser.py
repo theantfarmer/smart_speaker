@@ -10,7 +10,7 @@ from db_operations import save_conversation
 from transit_routes import fetch_subway_status, train_status_phrase
 
 nlp = spacy.load("en_core_web_sm")
-HOME_ASSISTANT_URL = 'http://localhost:8123/api/'
+HOME_ASSISTANT_URL = 'http://homeassistant.local:8123/api/'
 HEADERS = {'Authorization': f'Bearer {HOME_ASSISTANT_TOKEN}', 'content-type': 'application/json'}
 
 def get_date(date_text):
@@ -57,15 +57,28 @@ def is_home_assistant_available():
 
 def home_assistant_request(endpoint, method, payload=None):
     url = f'{HOME_ASSISTANT_URL}{endpoint}'
+    print(f"Sending request to URL: {url}, with payload: {payload}")  # Debug line
+    print(f"Using headers: {HEADERS}")  # Debug line
     try:
         if method == 'get':
-            response = requests.get(url, headers=HEADERS)
+            response = requests.get(url, headers=HEADERS, timeout=10)
         elif method == 'post':
-            response = requests.post(url, headers=HEADERS, json=payload)
+            print(f"About to send payload: {payload}")  # Debug line
+            response = requests.post(url, headers=HEADERS, json=payload, timeout=10)
+
+        
         response.raise_for_status()
+        
+        # Additional debug lines for response
+        print(f"Response received: {response.text}")
+        print(f"Response status code: {response.status_code}")
+        
         return response
-    except (requests.RequestException, ValueError):
+    except (requests.RequestException, ValueError) as e:
+        print(f"Exception occurred: {e}")  # Debug line
         return None
+
+
 
 def smart_home_parse_and_execute(command_text):
     print(f"Command received: {command_text}")
@@ -80,12 +93,12 @@ def smart_home_parse_and_execute(command_text):
     light_off_patterns = [r'\b(turn\s+off\s+the\s+light|turn\s+the\s+light\s+off|light\s+off|dark)\b']
     
     if any(re.search(pattern, command_text, re.IGNORECASE) for pattern in light_on_patterns):
-        response = home_assistant_request('services/light/turn_on', 'post', payload={"entity_id": "light.school_show"})
+        response = home_assistant_request('services/light/turn_on', 'post', payload={"entity_id": "light.bedroom"})
         if response and response.status_code == 200:
             return True, "done"
         return False, "Failed to turn on light"
     elif any(re.search(pattern, command_text, re.IGNORECASE) for pattern in light_off_patterns):
-        response = home_assistant_request('services/light/turn_off', 'post', payload={"entity_id": "light.school_show"})
+        response = home_assistant_request('services/light/turn_off', 'post', payload={"entity_id": "light.bedroom"})
         if response and response.status_code == 200:
             return True, "done"
         return False, "Failed to turn off light"

@@ -31,11 +31,13 @@ def main():
             is_command_executed, command_response = smart_home_parse_and_execute(text)
             if is_command_executed:
                 save_to_db('Agent', command_response)
-                print(command_response)  # Replaces talk_with_tts
+                print(f"About to call talk_with_tts with command_response: {command_response}")  # Debug print
+                talk_with_tts(command_response)
+                print(f"Returned from talk_with_tts.")  # Debug print
+                continue
             else:
                 messages.append({"role": "user", "content": text})
                 agent_output = handle_conversation(messages)
-                save_to_db('Agent', agent_output)
                 messages.append({"role": "agent", "content": agent_output})
                 
                 if isinstance(agent_output, tuple):
