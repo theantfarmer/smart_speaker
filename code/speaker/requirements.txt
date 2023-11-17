@@ -1,0 +1,10 @@
+spacy
+requests
+ephem
+holidays
+speech_recognition (imported as sr)
+pygame.mixer
+google.cloud.texttospeech
+google.oauth2.service_account
+gtts (imported as gTTS)
+openai
