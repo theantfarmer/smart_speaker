@@ -2,12 +2,14 @@
 
 
 import os
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key=OPENAI_API_KEY)
 import expressive_light
 import text_to_speech_operations
 from dont_tell import OPENAI_API_KEY
 
-openai.api_key = OPENAI_API_KEY
+
 
 def load_custom_instructions(file_path=None):
     
@@ -26,9 +28,7 @@ def talk_to_gpt(messages):
     messages.insert(0, {"role": "system", "content": custom_instructions})
     
     model_engine = "gpt-3.5-turbo"
-    response = openai.ChatCompletion.create(
-        model=model_engine, messages=messages, temperature=0.9
-    )
+    response = client.chat.completions.create(model=model_engine, messages=messages, temperature=0.9)
     return response.choices[0].message['content'].strip()
 
 # for older gpt models:

@@ -1,81 +1,107 @@
 # gpt_operations.py
 
-
-import os
 import openai
-import expressive_light
-import text_to_speech_operations
 import re
+import json
+import requests
+import logging
+import time
 from dont_tell import OPENAI_API_KEY
 import db_operations 
-openai.api_key = OPENAI_API_KEY
+import expressive_light
 
-def load_custom_instructions(file_path=None):
-    
-    if file_path is None:
-        dir_path = os.path.dirname(os.path.abspath(__file__))
-        file_path = os.path.join(dir_path, 'custom_instructions.txt')
+# Ensure logging is configured at the beginning of your script
+logging.basicConfig(level=logging.INFO)
 
-    with open(file_path, 'r') as f:
-        return f.read().strip()
-    
-# for gpt4 assistant:
+def talk_to_gpt(messages, assistant_id="asst_BPTPmSLF9eaaqyCkVZVCmK07", model=None, max_retries=10, retry_interval=10, timeout=60):
+    # API endpoint for creating and running a thread in one request
+    api_endpoint = "https://api.openai.com/v1/threads/runs"
+
+    headers = {
+        "Authorization": f"Bearer {OPENAI_API_KEY}",
+        "Content-Type": "application/json",
+        "OpenAI-Beta": "assistants=v1"
+    }
+
+    # Construct the data object for thread creation and running
+    data = {
+        "assistant_id": assistant_id,
+        "thread": {
+            "messages": messages
+        }
+    }
+
+    if model:
+        data["thread"]["model"] = model
+
+    # Making the API request to create and run the thread
+    response = requests.post(api_endpoint, headers=headers, data=json.dumps(data))
+    response_data = response.json()
+    logging.info("Raw API Response: %s", response.text)
+
+    if response_data.get('status') == 'queued':
+        thread_id = response_data['thread_id']
+        run_id = response_data['id']
+
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            step_url = f"https://api.openai.com/v1/threads/{thread_id}/runs/{run_id}/steps"
+            step_response = requests.get(step_url, headers=headers)
+            steps_data = step_response.json()
+            logging.info(f"Steps Data: {steps_data}")
+
+            for step in steps_data.get('data', []):
+                step_status = step.get('status')
+                if step_status == 'completed':
+                    response_text = process_step_data(step, thread_id, headers)
+                    return response_text
+                elif step_status in ['failed', 'cancelled', 'expired']:
+                    return "Run step ended with status: " + step_status
+
+            time.sleep(retry_interval)
+
+        return "Request timed out."
+    else:
+        return "Initial response status not queued."
 
 
-# def talk_to_gpt(messages, assistant_id="asst_BPTPmSLF9eaaqyCkVZVCmK07"):
+def list_run_steps(thread_id, run_id):
+    headers = {
+        "Authorization": f"Bearer {OPENAI_API_KEY}",
+        "Content-Type": "application/json",
+        "OpenAI-Beta": "assistants=v1"
+    }
+    response = requests.get(f"https://api.openai.com/v1/threads/{thread_id}/runs/{run_id}/steps", headers=headers)
+    steps_data = response.json()
+    logging.info(f"Steps Data for Run ID {run_id}: {steps_data}")
 
-#     openai.api_key = OPENAI_API_KEY
+    # Extract step IDs, even if the step status is not 'completed'
+    step_ids = [step['id'] for step in steps_data.get('data', [])]
+    return step_ids
 
-#     thread = openai.Thread.create()
-#     thread_id = thread["id"]
+def process_step_data(step_data, thread_id, headers):
+    """
+    Process the step data to extract and retrieve the GPT model's response.
+    """
+    if 'step_details' in step_data and 'message_creation' in step_data['step_details']:
+        message_id = step_data['step_details']['message_creation']['message_id']
 
-#     for message in messages:
-#         openai.Message.create(
-#             thread_id=thread_id,
-#             role=message["role"],
-#             content=message["content"]
-#         )
+        # API endpoint to retrieve the message
+        message_url = f"https://api.openai.com/v1/threads/{thread_id}/messages/{message_id}"
 
-#     run = openai.Run.create(
-#         thread_id=thread_id,
-#         assistant_id=assistant_id
-#     )
+        # Make the API call to retrieve the message content
+        message_response = requests.get(message_url, headers=headers)
+        message_data = message_response.json()
 
-#     response_messages = openai.Message.list(thread_id=thread_id)
-    
-#     assistant_response = response_messages["data"][-1]["content"]
+        # Extracting the message content
+        if 'content' in message_data and len(message_data['content']) > 0:
+            message_content = message_data['content'][0]['text']['value']
+            return message_content
+        else:
+            return "Message content not found."
+    else:
+        return "No message content found in step data."
 
-#     return assistant_response
-
-
-
-for gpt 3.5:
-
-def talk_to_gpt(messages):
-    custom_instructions = load_custom_instructions()
-    messages.insert(0, {"role": "system", "content": custom_instructions})
-    
-    model_engine = "gpt-3.5-turbo"
-    response = openai.ChatCompletion.create(
-        model=model_engine, messages=messages, temperature=0.9
-    )
-    return response.choices[0].message['content'].strip()
-
-# for older gpt models:
-
-# def talk_to_gpt(messages):
-#     custom_instructions = load_custom_instructions()
-    
-#     model_engine = "davinci-002"
-#     prompt = custom_instructions + " " + " ".join([msg["content"] for msg in messages if msg["role"] != "system"])
-
-#     response = openai.Completion.create(
-#         engine=model_engine,
-#         prompt=prompt,
-#         max_tokens=100,  # Set your desired max tokens here
-#         temperature=0.6
-#     )
-#     return response.choices[0].text.strip()
 
 def handle_conversation(messages):
     gpt_response = talk_to_gpt(messages)

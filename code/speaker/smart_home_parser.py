@@ -1,4 +1,6 @@
 import re
+import os
+import json
 import spacy
 import requests
 import ephem
@@ -69,14 +71,53 @@ def home_assistant_request(endpoint, method, payload=None):
         
         response.raise_for_status()
         
-        # Additional debug lines for response
-        print(f"Response received: {response.text}")
         print(f"Response status code: {response.status_code}")
         
         return response
     except (requests.RequestException, ValueError) as e:
         print(f"Exception occurred: {e}")  # Debug line
         return None
+
+def get_light_state():
+    response = home_assistant_request('states/light.bedroom', 'get')
+    if response and response.status_code == 200:
+        return response.json()
+    else:
+        return None
+    
+    
+    
+
+def get_entity_state(entity_id):
+    response = home_assistant_request(f'states/{entity_id}', 'get')
+    if response and response.status_code == 200:
+        state_data = response.json()
+        attributes = state_data.get("attributes", {})
+
+        # Extracting all possible attributes
+        entity_state = {
+            "state": state_data.get("state"),
+            "brightness": attributes.get("brightness"),
+            "color_temp": attributes.get("color_temp"),
+            "rgb_color": attributes.get("rgb_color"),
+            "xy_color": attributes.get("xy_color"),
+            "hs_color": attributes.get("hs_color"),
+            "effect": attributes.get("effect"),
+            "transition": attributes.get("transition"),
+            "flash": attributes.get("flash"),
+            "scene": attributes.get("scene"),
+            "friendly_name": attributes.get("friendly_name"),
+            "supported_features": attributes.get("supported_features")
+        }
+
+        # Saving to a temporary file in the same directory as the script
+        temp_file_path = os.path.join(os.path.dirname(__file__), f'{entity_id}_state.json')
+        with open(temp_file_path, 'w') as file:
+            json.dump(entity_state, file)
+
+        return True
+    else:
+        return False
 
 
 

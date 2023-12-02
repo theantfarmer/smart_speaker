@@ -1,7 +1,9 @@
 import re
+import logging
 import json
 import logging
-from text_to_speech_operations import talk_with_tts  # Assuming this import is correct in your original code
+from text_to_speech_operations import talk_with_tts
+from smart_home_parser import get_entity_state
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO)
@@ -100,16 +102,26 @@ def create_command_text_list(text):
         commands = find_lighting_commands(text) if text is not None else []
         texts = split_text_by_commands(text) if text is not None else []
         command_text_list = []
-        
-        if text and not text.startswith('@['):
-            command_text_list.append((None, texts.pop(0).strip()))
-            
-        for command, txt in zip(commands, texts):
+
+        # Iterate through the texts and commands simultaneously
+        for i, (command, txt) in enumerate(zip(commands, texts)):
             formatted_command = format_for_home_assistant(command) if command is not None else None
+            
+            # If it's not the first text segment and the previous text doesn't end with a full stop,
+            # append ellipses to indicate continuation
+            if i > 0 and not texts[i-1].strip().endswith('.'):
+                txt = '...' + txt
+
             txt = txt if txt != '' else ' '
             if formatted_command is not None: 
                 command_text_list.append((formatted_command, txt.strip() if txt else None))
-            
+
+        if texts and len(texts) > len(commands):
+            # Handle any remaining text after the last command
+            last_text = texts[-1].strip()
+            if last_text:
+                command_text_list.append((None, '…' + last_text if not last_text.endswith('.') else last_text))
+
         print(f"Command-text list created: {command_text_list}")
 
         return command_text_list

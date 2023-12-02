@@ -68,52 +68,72 @@ def talk_with_tts(text=None, command=None, pitch=0.0):
 
 def play_playlist():
     script_dir = os.path.dirname(__file__)
+    next_mp3_preloaded = False
+
+    def execute_command_async(command):
+        if command:
+            threading.Thread(target=execute_command, args=(command,), daemon=True).start()
 
     def execute_command(command):
-        if command:
-            success, response_message = handle_home_assistant_command(command)
-            logging.info(f"Command execution result: {response_message}")
+        try:
+            command_dict = json.loads(command)
+            response = home_assistant_request('services/light/turn_on', 'post', payload=command_dict)
+            logging.info(f"Light command executed: {command}, Response: {response}")
+        except Exception as e:
+            logging.error(f"Error executing light command: {e}")
 
-    def play_mp3(mp3_file):
-        if mp3_file:
-            mp3_path = os.path.join(script_dir, mp3_file)
-            pygame.mixer.music.load(mp3_path)
-            pygame.mixer.music.play()
-            while pygame.mixer.music.get_busy():
-                sleep(1)
-            os.remove(mp3_path)
-            logging.info(f"Deleted MP3 file: {mp3_path}")
+    def load_and_play_mp3(mp3_file):
+        nonlocal next_mp3_preloaded
+        mp3_path = os.path.join(script_dir, mp3_file)
+        if os.path.exists(mp3_path):
+            try:
+                pygame.mixer.music.load(mp3_path)
+                pygame.mixer.music.play()
+                logging.info(f"Playing MP3: {mp3_path}")
+                next_mp3_preloaded = False  # Reset the flag
+            except Exception as e:
+                logging.error(f"Error playing MP3 file: {e}")
+        else:
+            logging.error(f"MP3 file not found: {mp3_path}")
 
     while True:
         try:
-            queue_item = mp3_queue.get(timeout=5)
+            current_mp3, command = mp3_queue.get(timeout=5)
 
-            if queue_item is None:
-                continue
+            # Play current MP3 first to avoid delays
+            if current_mp3:
+                load_and_play_mp3(current_mp3)
 
-            mp3_file, command = queue_item
+            # Execute associated light command asynchronously
+            execute_command_async(command)
 
-            # Create threads for command execution and MP3 playback
-            command_thread = threading.Thread(target=execute_command, args=(command,))
-            mp3_thread = threading.Thread(target=play_mp3, args=(mp3_file,))
+            # Preload next MP3 if not already preloaded
+            if not next_mp3_preloaded:
+                try:
+                    next_mp3, _ = mp3_queue.get_nowait()
+                    if next_mp3:
+                        pygame.mixer.music.queue(os.path.join(script_dir, next_mp3))
+                        next_mp3_preloaded = True
+                except Empty:
+                    pass
 
-            # Start both threads
-            command_thread.start()
-            mp3_thread.start()
-
-            # Join MP3 thread to ensure it completes before moving to the next item
-            # Command thread can complete independently
-            mp3_thread.join()
+            while pygame.mixer.music.get_busy():
+                sleep(0.1)
 
             mp3_queue.task_done()
-
         except Empty:
-            logging.info("Queue was empty.")
+            continue
         except Exception as e:
-            logging.error(f"Exception occurred: {e}")
+            logging.error(f"Error in play_playlist: {e}")
+            mp3_queue.task_done()
+
+# Run play_playlist in a separate daemon thread
+playlist_thread = threading.Thread(target=play_playlist)
+playlist_thread.daemon = True
+playlist_thread.start()
 
 
-
+            
 # Run play_playlist in a separate daemon thread
 playlist_thread = threading.Thread(target=play_playlist)
 playlist_thread.daemon = True
