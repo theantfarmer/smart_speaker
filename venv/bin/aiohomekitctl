@@ -1,8 +1,0 @@
-#!/Volumes/Moon/Dropbox/Dropbox/smart_speaker/venv/bin/python3
-# -*- coding: utf-8 -*-
-import re
-import sys
-from aiohomekit.__main__ import sync_main
-if __name__ == '__main__':
-    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
-    sys.exit(sync_main())

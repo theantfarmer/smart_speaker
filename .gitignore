@@ -5,6 +5,9 @@
 code/speaker/custom_instructions.txt
 code/speaker/dont_tell.py
 code/speaker/gpt_chat_history.db
+code/speaker/command_list.json
+code/speaker/custom_instructions copy.txt
+code/speaker/home_assistant_entity_list.json
 code/gpt_chat_history.db    
 venv 
 code/dont_tell.py

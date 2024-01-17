@@ -6,14 +6,35 @@ import requests
 import ephem
 from datetime import datetime
 import holidays
+from fuzzywuzzy import process
 from phrases import PHRASES
 from dont_tell import HOME_ASSISTANT_TOKEN
 from db_operations import save_conversation
 from transit_routes import fetch_subway_status, train_status_phrase
+from home_assistant_interactions import is_home_assistant_available, home_assistant_request
+
 
 nlp = spacy.load("en_core_web_sm")
-HOME_ASSISTANT_URL = 'http://homeassistant.local:8123/api/'
-HEADERS = {'Authorization': f'Bearer {HOME_ASSISTANT_TOKEN}', 'content-type': 'application/json'}
+
+def load_commands():
+    with open('command_list.json', 'r') as file:
+        command_list = json.load(file)
+        commands = {}
+        for command_dict in command_list:
+            if len(command_dict) == 1:
+                # Single key-value pair, add directly
+                key, value = next(iter(command_dict.items()))
+                commands[key] = {'command': value}
+            elif 'replacement' in command_dict:
+                # Handle the replacement case
+                command_key = command_dict['replacement']
+                for key, value in command_dict.items():
+                    if key != 'replacement':
+                        commands[key] = {'command': value, 'replacement': command_key}
+        return commands
+
+commands = load_commands()
+flattened_commands = {v['command'].lower(): k for k, v in commands.items()}
 
 def get_date(date_text):
     try:
@@ -50,99 +71,42 @@ def get_moon_phase():
     else:
         return "Last Quarter"
 
-def is_home_assistant_available():
-    try:
-        response = requests.get(f'{HOME_ASSISTANT_URL}states', headers=HEADERS)
-        return True if response.status_code == 200 else False
-    except requests.RequestException:
-        return False
-
-def home_assistant_request(endpoint, method, payload=None):
-    url = f'{HOME_ASSISTANT_URL}{endpoint}'
-    print(f"Sending request to URL: {url}, with payload: {payload}")  # Debug line
-    print(f"Using headers: {HEADERS}")  # Debug line
-    try:
-        if method == 'get':
-            response = requests.get(url, headers=HEADERS, timeout=10)
-        elif method == 'post':
-            print(f"About to send payload: {payload}")  # Debug line
-            response = requests.post(url, headers=HEADERS, json=payload, timeout=10)
-
-        
-        response.raise_for_status()
-        
-        print(f"Response status code: {response.status_code}")
-        
-        return response
-    except (requests.RequestException, ValueError) as e:
-        print(f"Exception occurred: {e}")  # Debug line
-        return None
-
-def get_light_state():
-    response = home_assistant_request('states/light.bedroom', 'get')
-    if response and response.status_code == 200:
-        return response.json()
-    else:
-        return None
-    
-    
-    
-
-def get_entity_state(entity_id):
-    response = home_assistant_request(f'states/{entity_id}', 'get')
-    if response and response.status_code == 200:
-        state_data = response.json()
-        attributes = state_data.get("attributes", {})
-
-        # Extracting all possible attributes
-        entity_state = {
-            "state": state_data.get("state"),
-            "brightness": attributes.get("brightness"),
-            "color_temp": attributes.get("color_temp"),
-            "rgb_color": attributes.get("rgb_color"),
-            "xy_color": attributes.get("xy_color"),
-            "hs_color": attributes.get("hs_color"),
-            "effect": attributes.get("effect"),
-            "transition": attributes.get("transition"),
-            "flash": attributes.get("flash"),
-            "scene": attributes.get("scene"),
-            "friendly_name": attributes.get("friendly_name"),
-            "supported_features": attributes.get("supported_features")
-        }
-
-        # Saving to a temporary file in the same directory as the script
-        temp_file_path = os.path.join(os.path.dirname(__file__), f'{entity_id}_state.json')
-        with open(temp_file_path, 'w') as file:
-            json.dump(entity_state, file)
-
-        return True
-    else:
-        return False
-
-
-
-def smart_home_parse_and_execute(command_text):
+def smart_home_parse_and_execute(command_text, testing_mode=False):
     print(f"Command received: {command_text}")
     doc = nlp(command_text)
+    commands = load_commands()
     command_text_stripped = command_text.strip().lower()
-    response = home_assistant_request('states', 'get')
-    
-    if not response:
-        if "light" in command_text:
-            return False, "Home Assistant is missing, dude."
-    light_on_patterns = [r'\b(turn\s+on\s+the\s+light|turn\s+the\s+light\s+on|light\s+on)\b']
-    light_off_patterns = [r'\b(turn\s+off\s+the\s+light|turn\s+the\s+light\s+off|light\s+off|dark)\b']
-    
-    if any(re.search(pattern, command_text, re.IGNORECASE) for pattern in light_on_patterns):
-        response = home_assistant_request('services/light/turn_on', 'post', payload={"entity_id": "light.bedroom"})
-        if response and response.status_code == 200:
-            return True, "done"
-        return False, "Failed to turn on light"
-    elif any(re.search(pattern, command_text, re.IGNORECASE) for pattern in light_off_patterns):
-        response = home_assistant_request('services/light/turn_off', 'post', payload={"entity_id": "light.bedroom"})
-        if response and response.status_code == 200:
-            return True, "done"
-        return False, "Failed to turn off light"
+
+    # Fuzzy matching
+    flattened_commands = {v["command"].lower(): k for k, v in commands.items()}
+    best_match, score = process.extractOne(command_text_stripped, flattened_commands.keys())
+
+    if score > 85:
+        command_data = commands[flattened_commands[best_match]]
+
+        # Determine which command to use
+        if "replacement" in command_data and command_data["replacement"]:
+            best_match = command_data["replacement"]
+        else:
+            best_match = command_data["command"]
+            
+        if is_home_assistant_available():
+            # Sending a POST request with the sentence to the conversation API
+            endpoint = "conversation/process"
+            payload = {"text": best_match, "language": "en"}  # Assuming English language
+            response = home_assistant_request(endpoint, 'post', payload)
+
+            if response and response.status_code == 200:
+                return True, f" "
+            else:
+                print(f"Failed to trigger automation: {response.text if response else 'No response'}")
+                return True, "Error in triggering automation in Home Assistant."
+        else:
+            print("Home Assistant is not available")
+            return True, "Home Assistant is not available."
+
+
+   
     
     if "mta" in command_text.lower() or ("train" in command_text.lower() and ("status" in command_text.lower() or "running" in command_text.lower())):
         train_line_match = re.search(r'\b([A-Z0-9])\b\s*(?:train)?', command_text, re.IGNORECASE)
@@ -159,6 +123,7 @@ def smart_home_parse_and_execute(command_text):
         if holiday_date:
             response = f"{holiday_name} is on {holiday_date.strftime('%A, %B %d, %Y')}"
             return True, response
+            
     day_of_week_match = re.search(r"what day of the week is ((\w+)|(\d{1,2}/\d{1,2}))", command_text, re.IGNORECASE)
     if day_of_week_match:
         date_text = day_of_week_match.group(1)

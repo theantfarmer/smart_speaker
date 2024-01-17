@@ -1,6 +1,0 @@
-press:
-  name: Press
-  description: Press the button entity.
-  target:
-    entity:
-      domain: button

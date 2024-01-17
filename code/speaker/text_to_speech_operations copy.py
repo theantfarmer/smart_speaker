@@ -15,6 +15,8 @@ from dont_tell import GOOGLE_CLOUD_CREDENTIALS
 from smart_home_parser import is_home_assistant_available, home_assistant_request
 from gtts_tts import gtts_tts
 from google_cloud_tts import google_cloud_tts
+import logging
+from queue import Queue
 
 
 # Initialize logging
@@ -27,7 +29,7 @@ pygame.mixer.init()
 mp3_queue = Queue()
 credentials = service_account.Credentials.from_service_account_info(GOOGLE_CLOUD_CREDENTIALS)
 
-def talk_with_tts(text=None, command=None, pitch=-5.0):
+def talk_with_tts(text=None, command=None):
     print("Inside talk_with_tts function.")
 
     # If both text and command are None, enqueue (None, None)
@@ -44,12 +46,10 @@ def talk_with_tts(text=None, command=None, pitch=-5.0):
     if text and text.strip() != "":
         logging.info(f"Inside talk_with_tts with text: {text}, command: {command}")
         try:
-        #     audio_content = google_cloud_tts(text, pitch, credentials)
-        # except Exception as e:
-        #     logging.error(f"Error in google_cloud_tts: {e}")
-            audio_content = gtts_tts(text, pitch, credentials)  # Replace with your TTS function
+            # Call the google_cloud_tts function
+            audio_content = google_cloud_tts(text)
         except Exception as e:
-            logging.error(f"Error in gtts_tts: {e}")
+            logging.error(f"Error in TTS generation: {e}")
             return
 
         file_name = f'response_{uuid.uuid4().hex}.mp3'
@@ -67,45 +67,57 @@ def talk_with_tts(text=None, command=None, pitch=-5.0):
         mp3_queue.put((None, command))
 
 def play_playlist():
-    script_dir = os.path.dirname(__file__)
+    """
+    Play the playlist of mp3 files and delete them after playing.
+    """
+    # script_dir = os.path.dirname(__file__)
+
     while True:
         try:
             print("Checking mp3_queue")
-            print("Before reading from mp3_queue")
-            
-            queue_item = mp3_queue.get(timeout=5)  # 5 seconds timeout to avoid busy-waiting
+            queue_item = mp3_queue.get(timeout=5)  # 5 seconds timeout
 
             if queue_item is None:
                 print("Received None queue item. Skipping.")
                 continue
 
             mp3_file, command = (queue_item if len(queue_item) == 2 else (queue_item[0], None))
-            
+
             if mp3_file is None and command is None:
                 print("Both mp3_file and command are None. Skipping.")
                 continue
-            
-            print("After reading from mp3_queue")  
-            print(f"Consumed command from queue: {command}")
-    
+
             if mp3_file:
                 mp3_path = os.path.join(script_dir, mp3_file)
                 pygame.mixer.music.load(mp3_path)
                 pygame.mixer.music.play()
                 while pygame.mixer.music.get_busy():
-                    sleep(1)
+                    time.sleep(1)
 
-                os.remove(mp3_path)
-                logging.info(f"Deleted MP3 file: {mp3_path}")
-            else:
-                logging.warning("Received None or empty mp3_file. Skipping playback.")
-                
+                pygame.mixer.music.stop()
+                print("Before deletion check:", mp3_path)
+                # Attempt to delete the MP3 file
+                if os.path.exists(mp3_path):
+                    print("Attempting to delete MP3 file: %s", mp3_path)
+                    
+                    try:
+                        os.remove(mp3_path)
+                        print("os.remove")
+                        logging.info("Deleted MP3 file: %s", mp3_path)
+                    except Exception as e:
+                        print("deletion error"
+                        logging.error("Failed to delete MP3 file %s: %s", mp3_path, e)
+                else:
+                    logging.warning(f"File not found for deletion: {mp3_path}")
+
             mp3_queue.task_done()
 
         except Empty:
             logging.info("Queue was empty.")
         except Exception as e:
-            logging.error(f"Exception occurred: {e}")
+            logging.error("Exception occurred: %s", e)
+
+
 
 
 # Run play_playlist in a separate daemon thread
@@ -132,6 +144,8 @@ def handle_home_assistant_command(command):
             response = home_assistant_request('services/light/turn_off', 'post', payload={"entity_id": "light.your_light"})
             if response and response.status_code == 200:
                 return True, "done"
+            else:
+                return False, f"Failed with status code {response.status_code}" if response else "No response received"
     except json.JSONDecodeError:
         print("Invalid JSON command.")
         return False, "Invalid JSON command."

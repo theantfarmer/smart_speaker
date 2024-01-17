@@ -1,5 +1,4 @@
 
-#works
 import threading
 import queue
 import expressive_light
@@ -13,7 +12,7 @@ from db_operations import initialize_db, save_to_db
 from text_to_speech_operations import talk_with_tts
 from speech_to_text_operations import capture_speech
 from gpt_operations import handle_conversation, talk_to_gpt
-from smart_home_parser import smart_home_parse_and_execute
+from smart_home_parser import smart_home_parse_and_execute, load_commands
 
 WAKE_WORD_ACTIVE = True
 mp3_queue = queue.Queue()
@@ -23,9 +22,25 @@ def main():
     global mp3_queue
     initialize_db()
     messages = []
+    commands = load_commands()
+    flattened_commands = {v['command'].lower(): k for k, v in commands.items()}
     command_text_list = []
+    special_wake_words = []
+    direct_wake_word_chopper = []
     agent_output = "Hey. Ready"
     talk_with_tts(agent_output)
+    for wake_word in wake_words:
+        if "[command]" in wake_word:
+            chop_index = wake_word.find("[command]")
+            direct_wake_word = wake_word[:chop_index].strip()
+            direct_wake_word_chopper.append(direct_wake_word)
+            for command in commands:
+                special_wake_word = wake_word.replace("[command]", command)
+                special_wake_words.append(special_wake_word)
+        else:
+            special_wake_words.append(wake_word)
+
+
     try:
         while True:
             text, error = capture_speech()
@@ -35,11 +50,19 @@ def main():
                 command_text_stripped = text.strip()  # Initialize and define command_text_stripped
 
                 if WAKE_WORD_ACTIVE:
+                    # Check for standard wake words
                     if any(wake_word in text.lower() for wake_word in wake_words):
                         for wake_word in wake_words:
                             if text.lower().startswith(wake_word):
-                                text = text[len(wake_word):].strip()  # Remove the wake word from the text
+                                text = text[len(wake_word):].strip()  # Remove the entire wake word
                                 break
+                    # Check for special wake words
+                elif any(special_wake_word in text.lower() for special_wake_word in special_wake_words):
+                    for direct_wake_word in direct_wake_word_chopper:
+                        if text.lower().startswith(direct_wake_word):
+                            # Remove only the direct wake word part
+                            text = text[len(direct_wake_word):].strip()
+                            break
                     else:
                         continue
                 if text in SECRET_PHRASES:
