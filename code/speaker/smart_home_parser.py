@@ -1,6 +1,8 @@
 import re
 import os
 import json
+import magic
+import magic
 import spacy
 import requests
 import ephem
@@ -11,30 +13,14 @@ from phrases import PHRASES
 from dont_tell import HOME_ASSISTANT_TOKEN
 from db_operations import save_conversation
 from transit_routes import fetch_subway_status, train_status_phrase
-from home_assistant_interactions import is_home_assistant_available, home_assistant_request
+from home_assistant_interactions import is_home_assistant_available, home_assistant_request, load_commands, flattened_commands, execute_command_in_home_assistant 
 
 
 nlp = spacy.load("en_core_web_sm")
 
-def load_commands():
-    with open('command_list.json', 'r') as file:
-        command_list = json.load(file)
-        commands = {}
-        for command_dict in command_list:
-            if len(command_dict) == 1:
-                # Single key-value pair, add directly
-                key, value = next(iter(command_dict.items()))
-                commands[key] = {'command': value}
-            elif 'replacement' in command_dict:
-                # Handle the replacement case
-                command_key = command_dict['replacement']
-                for key, value in command_dict.items():
-                    if key != 'replacement':
-                        commands[key] = {'command': value, 'replacement': command_key}
-        return commands
 
-commands = load_commands()
-flattened_commands = {v['command'].lower(): k for k, v in commands.items()}
+
+           
 
 def get_date(date_text):
     try:
@@ -71,60 +57,64 @@ def get_moon_phase():
     else:
         return "Last Quarter"
 
-def smart_home_parse_and_execute(command_text, testing_mode=False):
-    print(f"Command received: {command_text}")
-    doc = nlp(command_text)
-    commands = load_commands()
-    command_text_stripped = command_text.strip().lower()
+def smart_home_parse_and_execute(command_text_stripped, raw_commands_dict, testing_mode=False):
+    if command_text_stripped is None:
+        return False, ""
 
-    # Fuzzy matching
-    flattened_commands = {v["command"].lower(): k for k, v in commands.items()}
-    best_match, score = process.extractOne(command_text_stripped, flattened_commands.keys())
-
-    if score > 85:
-        command_data = commands[flattened_commands[best_match]]
-
-        # Determine which command to use
-        if "replacement" in command_data and command_data["replacement"]:
-            best_match = command_data["replacement"]
-        else:
-            best_match = command_data["command"]
-            
-        if is_home_assistant_available():
-            # Sending a POST request with the sentence to the conversation API
-            endpoint = "conversation/process"
-            payload = {"text": best_match, "language": "en"}  # Assuming English language
-            response = home_assistant_request(endpoint, 'post', payload)
-
-            if response and response.status_code == 200:
-                return True, f" "
-            else:
-                print(f"Failed to trigger automation: {response.text if response else 'No response'}")
-                return True, "Error in triggering automation in Home Assistant."
-        else:
-            print("Home Assistant is not available")
-            return True, "Home Assistant is not available."
-
-
-   
+    print(f"Command received: {command_text_stripped}")
+    doc = nlp(command_text_stripped) 
+    # print(f"raw commands: {raw_commands_dict}")
     
-    if "mta" in command_text.lower() or ("train" in command_text.lower() and ("status" in command_text.lower() or "running" in command_text.lower())):
-        train_line_match = re.search(r'\b([A-Z0-9])\b\s*(?:train)?', command_text, re.IGNORECASE)
+    # Fuzzy matching
+        
+    # Assuming 'command_text_stripped' is the user's input
+    command_to_execute, score = process.extractOne(command_text_stripped, flattened_commands)
+    print(f"Fuzzy match: {command_to_execute} with score {score}")
+    if score > 90:
+        command_matched = None
+        for command_dict in raw_commands_dict:
+            if command_to_execute in command_dict.values():
+                command_matched = command_dict
+                break
+        
+        if command_matched:
+            # New logic to refine the matched command
+            if "replacement" in command_matched and command_matched["replacement"]:
+                command_to_execute = command_matched["replacement"]
+            else:
+                # Assuming the default command key is "command" which might need to be adjusted
+                command_to_execute = command_matched.get("command", command_to_execute)
+    
+            execute_command_in_home_assistant(command_to_execute)
+            print(f"Executing refined command: {command_to_execute}")
+            return {"executed": True, "boink": command_to_execute}
+        else:
+            print("No matching command found.")
+            return {"executed": False, "message": "No matching command found"}
+  
+    
+    if "mta" in command_to_execute or ("train" in command_text_stripped.lower() and ("status" in command_text_stripped.lower() or "running" in command_text_stripped.lower())):
+        train_line_match = re.search(r'\b([A-Z0-9])\b\s*(?:train)?', command_text_stripped, re.IGNORECASE)
         if train_line_match:
             train_line = train_line_match.group(1).upper()
+            # Assuming fetch_subway_status is a function you've defined elsewhere
             status = fetch_subway_status(train_line)
+            # Assuming train_status_phrase is a function you've defined elsewhere
             response = train_status_phrase(train_line, status)
             return True, response
-    holiday_match = re.search(r"when is (\w+)", command_text, re.IGNORECASE)
-    
+
+
+                
+    holiday_match = re.search(r"when is (\w+)", command_text_stripped, re.IGNORECASE)
+
     if holiday_match:
         holiday_name = holiday_match.group(1)
         holiday_date = get_holiday_date(holiday_name)
         if holiday_date:
             response = f"{holiday_name} is on {holiday_date.strftime('%A, %B %d, %Y')}"
             return True, response
-            
-    day_of_week_match = re.search(r"what day of the week is ((\w+)|(\d{1,2}/\d{1,2}))", command_text, re.IGNORECASE)
+                
+    day_of_week_match = re.search(r"what day of the week is ((\w+)|(\d{1,2}/\d{1,2}))", command_text_stripped, re.IGNORECASE)
     if day_of_week_match:
         date_text = day_of_week_match.group(1)
         date = get_date(date_text)
@@ -132,19 +122,20 @@ def smart_home_parse_and_execute(command_text, testing_mode=False):
             day_of_week = date.strftime('%A')
             response = f"{date_text} is on a {day_of_week}."
             return True, response
+
     
     if command_text_stripped in ["time", "what time is it"]:
         current_time = datetime.now().strftime('%I:%M %p')
         return True, f"It's {current_time}"
     
-    if command_text.lower().strip() in ["date", "what's the date today"]:
+    if command_text_stripped in ["date", "what's the date today"]:
         date = datetime.now().strftime('%A, %d %B %Y')
         holiday_name = get_holiday(datetime.now().date())
         if holiday_name:
             date += f" - {holiday_name}"
         return True, date
     
-    if re.search(r'\b(moon\s+phase)\b', command_text, re.IGNORECASE):
+    if re.search(r'\b(moon\s+phase)\b', command_text_stripped, re.IGNORECASE):
         moon_phase = get_moon_phase()
         response = f'The moon phase today is {moon_phase}.'
         return True, response

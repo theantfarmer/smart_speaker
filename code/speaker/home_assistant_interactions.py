@@ -204,9 +204,6 @@ automations_yaml = read_automations_yaml()
 if automations_yaml:
     conversation_commands,  naked_commands = parse_automations(automations_yaml)
 
-    # Make sure naked_commands is not empty
-    print("Naked Commands:", naked_commands)
-
     # Create localized versions of naked commands
     localized_commands = []
     for command in naked_commands:
@@ -224,3 +221,46 @@ if automations_yaml:
     
     # Continue with writing to the JSON file
     write_to_json_file(full_command_list, 'command_list.json')
+
+     
+def load_commands():
+    with open('command_list.json', 'r') as file:
+        raw_commands_dict = json.load(file)
+        flattened_commands = []  # List to store the values
+
+        for command_dict in raw_commands_dict:
+            # Convert command_dict to a string to check for a comma
+            dict_string = json.dumps(command_dict)
+            if ',' in dict_string:
+                # Find the index of the first comma
+                comma_index = dict_string.find(',')
+                # Trim the string to everything before the first comma
+                trimmed_dict_string = dict_string[:comma_index] + "}"
+                # Convert the trimmed string back to a dictionary
+                trimmed_dict = json.loads(trimmed_dict_string)
+                # Extract the value and add to the list
+                flattened_commands.append(next(iter(trimmed_dict.values())))
+            else:
+                # Extract the value and add to the list
+                flattened_commands.append(next(iter(command_dict.values())))
+        return raw_commands_dict, flattened_commands
+
+raw_commands_dict, flattened_commands = load_commands()
+
+def execute_command_in_home_assistant(command):
+    if is_home_assistant_available():
+        # Sending a POST request with the sentence to the conversation API
+        endpoint = "conversation/process"
+        payload = {"text": command, "language": "en"}  # Assuming English language
+        response = home_assistant_request(endpoint, 'post', payload)
+
+        if response and response.status_code == 200:
+            return True, f" "
+        else:
+            print(f"Failed to trigger automation: {response.text if response else 'No response'}")
+            return True, "Error in triggering automation in Home Assistant."
+    else:
+        print("Home Assistant is not available")
+        return True, "Home Assistant is not available."
+
+

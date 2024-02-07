@@ -4,6 +4,7 @@ from time import sleep
 import json
 import traceback
 import re
+import magic
 from queue import Queue, Empty
 import threading
 import logging
@@ -12,6 +13,7 @@ from home_assistant_interactions import is_home_assistant_available, home_assist
 from gtts_tts import gtts_tts
 from tts_google_cloud import tts_google_cloud
 from tts_piper import tts_piper
+from tts_eleven_labs import tts_eleven_labs
 
 # Initialize logging
 logging.basicConfig(level=logging.INFO)
@@ -43,8 +45,14 @@ def talk_with_tts(text=None, command=None):
         except Exception as e:
             logging.error(f"Error in tts service script: {e}")
             return
-
-        file_extension = 'mp3' if is_mp3(audio_content) else 'wav'
+                                # Check file format
+        file_type = magic.from_buffer(audio_content, mime=True)
+        print(f"File format: {file_type}")  # Print the file format to the terminal
+        if file_type == 'audio/mpeg':
+            file_extension = 'mp3'
+        else:
+            # Handle other formats or set a default
+            file_extension = 'wav'
         file_name = f'response_{uuid.uuid4().hex}.{file_extension}'
         audio_path = os.path.join(os.path.dirname(__file__), file_name)
         
