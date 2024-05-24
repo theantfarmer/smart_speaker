@@ -2,7 +2,7 @@ import requests
 import json
 from dont_tell import ELEVEN_LABS_KEY
 
-def tts_eleven_labs(text, model_id='WsHLrEi4hVFr5gMgQuii'):
+def tts_model(text, model_id='WsHLrEi4hVFr5gMgQuii'):
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{model_id}"
 
 

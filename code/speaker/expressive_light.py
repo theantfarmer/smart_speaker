@@ -23,42 +23,42 @@ logging.basicConfig(level=logging.INFO)
 #         return None
 
 
-def find_lighting_commands(text):
-    """Find lighting commands in the text."""
-    try:
-        if not isinstance(text, str):
-            logging.warning("Text is not a string. Returning an empty list.")
-            return []
-        pattern = r'@\[(.*?)\]@'
-        commands = re.findall(pattern, text)
-        logging.info("Commands found: %s", commands)
-        return commands
-    except Exception as e:
-        logging.error("An unexpected error occurred in find_lighting_commands: %s", e)
-        return []
+# def find_lighting_commands(text):
+#     """Find lighting commands in the text."""
+#     try:
+#         if not isinstance(text, str):
+#             logging.warning("Text is not a string. Returning an empty list.")
+#             return []
+#         pattern = r'@\[(.*?)\]@'
+#         commands = re.findall(pattern, text)
+#         logging.info("Commands found: %s", commands)
+#         return commands
+#     except Exception as e:
+#         logging.error("An unexpected error occurred in find_lighting_commands: %s", e)
+#         return []
 
-def split_text_by_commands(text):
-    """Split the text by lighting commands."""
-    try:
-        if text is None:
-            return []
-        texts = re.split(r'@\[.*?\]@', text)
-        return texts
-    except Exception as e:
-        logging.error("An unexpected error occurred in split_text_by_commands: %s", e)
-        return []
+# def split_text_by_commands(text):
+#     """Split the text by lighting commands."""
+#     try:
+#         if text is None:
+#             return []
+#         texts = re.split(r'@\[.*?\]@', text)
+#         return texts
+#     except Exception as e:
+#         logging.error("An unexpected error occurred in split_text_by_commands: %s", e)
+#         return []
 
-def validate_and_convert(values):
-    """Validate and convert the values."""
-    try:
-        x = float(values[0])
-        y = float(values[1])
-        brightness = int(values[2])
-        transition = int(float(values[3]))  # Convert float to int
-        return x, y, brightness, transition
-    except (ValueError, IndexError):
-        logging.error("Invalid values detected: %s. Expected float,float,int,float.", values)
-        return None
+# def validate_and_convert(values):
+#     """Validate and convert the values."""
+#     try:
+#         x = float(values[0])
+#         y = float(values[1])
+#         brightness = int(values[2])
+#         transition = int(float(values[3]))  # Convert float to int
+#         return x, y, brightness, transition
+#     except (ValueError, IndexError):
+#         logging.error("Invalid values detected: %s. Expected float,float,int,float.", values)
+#         return None
 
 def format_for_home_assistant(command, include_only=None):
     """Format the command for Home Assistant."""
@@ -76,7 +76,8 @@ def format_for_home_assistant(command, include_only=None):
             x = float(values[0])
             y = float(values[1])
             brightness = int(values[2])
-            transition = int(float(values[3]))  # Convert float to int
+            # transition = int(float(values[3]))  # Convert float to int
+            transition = 0
         except (ValueError, IndexError):
             logging.error("Invalid values detected: %s. Expected float,float,int,float.", values)
             return None
@@ -98,7 +99,6 @@ def format_for_home_assistant(command, include_only=None):
         if include_only is None or 'transition' in include_only:
             formatted_command['transition'] = transition
 
-        logging.info("Formatted command: %s", formatted_command)
 
         return json.dumps(formatted_command)
     except Exception as e:
@@ -106,37 +106,45 @@ def format_for_home_assistant(command, include_only=None):
         return None
 
 def create_command_text_list(text):
-    """Create a list of command texts."""
     try:
         print("Inside create_command_text_list")
         print("Text received: %s", text)
+        if text is None:
+            return []
+
+        # Break up the text into individual strings based on line breaks and end of sentences
+        sentences = re.split(r'(?<=[.!?])\s+', text)
         
-        commands = find_lighting_commands(text) if text is not None else []
-        texts = split_text_by_commands(text) if text is not None else []
-        command_text_list = []
+        command_text_tuples = []
+        for sentence in sentences:
+            segments = re.split(r'(@\[.*?\]@)', sentence)
+            segments = [segment for segment in segments if segment.strip()]
 
-        # Iterate through the texts and commands simultaneously
-        for i, (command, txt) in enumerate(zip(commands, texts)):
-            formatted_command = format_for_home_assistant(command) if command is not None else None
-            
-            # If it's not the first text segment and the previous text doesn't end with a full stop,
-            # append ellipses to indicate continuation
-            if i > 0 and not texts[i-1].strip().endswith('.'):
-                txt = '...' + txt
+            print("Segments:")
+            for segment in segments:
+                print(segment)
 
-            txt = txt if txt != '' else ' '
-            if formatted_command is not None: 
-                command_text_list.append((formatted_command, txt.strip() if txt else None))
+            for i in range(0, len(segments), 2):
+                txt = segments[i].strip() if i < len(segments) else ''
+                command_str = segments[i + 1].strip() if i + 1 < len(segments) else None
 
-        if texts and len(texts) > len(commands):
-            # Handle any remaining text after the last command
-            last_text = texts[-1].strip()
-            if last_text:
-                command_text_list.append((None, '…' + last_text if not last_text.endswith('.') else last_text))
+                print(f"\nProcessing segment {i // 2 + 1}:")
+                print(f"Text: {txt}")
+                print(f"Command string: {command_str}")
 
-        print("Command-text list created: %s", command_text_list)
+                if command_str:
+                    command = format_for_home_assistant(command_str[2:-2])
+                    print(f"Formatted command: {command}")
+                else:
+                    command = None
+                    print("No command found")
 
-        return command_text_list
+                command_text_tuple = (command, txt)
+                print(f"Appending tuple: {command_text_tuple}")
+                command_text_tuples.append(command_text_tuple)
+
+        return command_text_tuples
+
     except Exception as e:
         logging.error("An unexpected error occurred in create_command_text_list: %s", e)
         return []

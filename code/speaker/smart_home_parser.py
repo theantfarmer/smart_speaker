@@ -2,25 +2,18 @@ import re
 import os
 import json
 import magic
-import magic
 import spacy
 import requests
 import ephem
 from datetime import datetime
 import holidays
-from fuzzywuzzy import process
 from phrases import PHRASES
 from dont_tell import HOME_ASSISTANT_TOKEN
 from db_operations import save_conversation
 from transit_routes import fetch_subway_status, train_status_phrase
 from home_assistant_interactions import is_home_assistant_available, home_assistant_request, load_commands, flattened_commands, execute_command_in_home_assistant 
 
-
 nlp = spacy.load("en_core_web_sm")
-
-
-
-           
 
 def get_date(date_text):
     try:
@@ -64,42 +57,61 @@ def smart_home_parse_and_execute(command_text_stripped, raw_commands_dict, testi
     print(f"Command received: {command_text_stripped}")
     doc = nlp(command_text_stripped) 
     # print(f"raw commands: {raw_commands_dict}")
-    
-    # Fuzzy matching
         
-    # Assuming 'command_text_stripped' is the user's input
-    command_to_execute, score = process.extractOne(command_text_stripped, flattened_commands)
-    print(f"Fuzzy match: {command_to_execute} with score {score}")
-    if score > 90:
-        command_matched = None
-        for command_dict in raw_commands_dict:
-            if command_to_execute in command_dict.values():
-                command_matched = command_dict
-                break
-        
-        if command_matched:
-            # New logic to refine the matched command
-            if "replacement" in command_matched and command_matched["replacement"]:
-                command_to_execute = command_matched["replacement"]
-            else:
-                # Assuming the default command key is "command" which might need to be adjusted
-                command_to_execute = command_matched.get("command", command_to_execute)
-    
-            execute_command_in_home_assistant(command_to_execute)
-            print(f"Executing refined command: {command_to_execute}")
-            return {"executed": True, "boink": command_to_execute}
+    command_matched = None
+    for command_dict in raw_commands_dict:
+        if command_text_stripped in command_dict.values():
+            command_matched = command_dict
+            break
+
+    command_to_execute = command_text_stripped  # Initialize with a default value
+
+    if command_matched:
+        # New logic to refine the matched command
+        if "replacement" in command_matched and command_matched["replacement"]:
+            command_to_execute = command_matched["replacement"]
         else:
-            print("No matching command found.")
-            return {"executed": False, "message": "No matching command found"}
-  
+            # Assuming the default command key is "command" which might need to be adjusted
+            command_to_execute = command_matched.get("command", command_text_stripped)
+
+        execute_command_in_home_assistant(command_to_execute)
+        print(f"Executing refined command: {command_to_execute}")
+        return {"executed": True, " ": command_to_execute}
+    else:
+        print("No matching command found.")
     
+    mta_line_status_questions = [
+    "Is the [mta-line] running",
+    "Is the [mta-line] train running",
+    "Is the [mta-line]train running",
+    "Is the [mta-line]-train running",
+    "how is the [mta-line] train",
+    "how is the [mta-line]train",
+    "how is the [mta-line]-train",
+    "how is the [mta-line] train today",
+    "how is the [mta-line]train today",
+    "how is the [mta-line]-train today",
+    "What's the status of the [mta-line] train?",
+    "Can you check if the [mta-line] is on schedule?",
+    "Is there any delay on the [mta-line] line?",
+    "How's the [mta-line] line doing?",
+    "Are there any issues with the [mta-line] today?",
+    "Is the [mta-line] operating normally?",
+    "What's up with the [mta-line] line?",
+    "Is the [mta-line] delayed?",
+    "Any service changes for the [mta-line]?",
+    "Is the [mta-line] running on time?",
+    "Status of the [mta-line]?",
+    "[mta-line] train status?",
+    "Is the [mta-line] running today?",
+    "Are there any alerts for the [mta-line]?"
+            ]
     if "mta" in command_to_execute or ("train" in command_text_stripped.lower() and ("status" in command_text_stripped.lower() or "running" in command_text_stripped.lower())):
-        train_line_match = re.search(r'\b([A-Z0-9])\b\s*(?:train)?', command_text_stripped, re.IGNORECASE)
+        train_line_match = re.search(r'\b([A-Z0-9])(?:[ -]?train)?\b', command_text_stripped, re.IGNORECASE)
+
         if train_line_match:
             train_line = train_line_match.group(1).upper()
-            # Assuming fetch_subway_status is a function you've defined elsewhere
             status = fetch_subway_status(train_line)
-            # Assuming train_status_phrase is a function you've defined elsewhere
             response = train_status_phrase(train_line, status)
             return True, response
 
@@ -123,12 +135,27 @@ def smart_home_parse_and_execute(command_text_stripped, raw_commands_dict, testi
             response = f"{date_text} is on a {day_of_week}."
             return True, response
 
+    time_triggers = [
+    "time",
+    "what time is it?",
+    "what time is it now",
+    "can you tell me what time it is",
+    "what is the time"
+    ]
     
-    if command_text_stripped in ["time", "what time is it"]:
+    if any(trigger.lower() in command_text_stripped.lower() for trigger in time_triggers):
         current_time = datetime.now().strftime('%I:%M %p')
         return True, f"It's {current_time}"
-    
-    if command_text_stripped in ["date", "what's the date today"]:
+        
+    date_triggers = [
+    "date",
+    "what's the date today",
+    "what is the date today",
+    "can you tell me the date",
+    "tell me the date",
+    "what day is it today"
+    ]
+    if any(trigger.lower() in command_text_stripped.lower() for trigger in date_triggers):
         date = datetime.now().strftime('%A, %d %B %Y')
         holiday_name = get_holiday(datetime.now().date())
         if holiday_name:

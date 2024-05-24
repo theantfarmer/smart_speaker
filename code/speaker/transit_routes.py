@@ -3,7 +3,7 @@ import requests
 def fetch_subway_status(line):
     url = "https://www.goodservice.io/api/routes?detailed=1"
     response = requests.get(url)
-    print(response.text)  # This will print the raw response to the console
+    # print(response.text)  # This will print the raw response to the console
     if response.status_code == 200:
         data = response.json()
         route_data = data["routes"].get(line, {})

@@ -7,7 +7,7 @@ from dont_tell import GOOGLE_CLOUD_CREDENTIALS
 global_credentials = service_account.Credentials.from_service_account_info(GOOGLE_CLOUD_CREDENTIALS)
 
 # Google-specific function
-def tts_google_cloud(text, credentials=global_credentials):
+def tts_model(text, credentials=global_credentials):
     if credentials is None:
         credentials = global_credentials
 

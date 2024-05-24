@@ -4,7 +4,7 @@ import os
 from dont_tell import ELEVEN_LABS_KEY
 
 
-def tts_eleven_labs(text, model_id='o9k0HV3UbuCBBTyV7oEG'):
+def tts_model(text, model_id='o9k0HV3UbuCBBTyV7oEG'):
     CHUNK_SIZE = 1024
     url = f"https://api.elevenlabs.io/v1/text-to-speech/{model_id}"
 

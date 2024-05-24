@@ -146,7 +146,7 @@ def parse_automations(automations_yaml):
     for automation in automations:
         if 'trigger' in automation:
             for trigger in automation['trigger']:
-                if trigger.get('platform') == 'conversation':
+                if isinstance(trigger, dict) and trigger.get('platform') == 'conversation':
                     friendly_name = automation.get('alias', 'Unnamed Automation')
                     commands = trigger.get('command', [])
                     if not isinstance(commands, list):
@@ -253,7 +253,7 @@ def execute_command_in_home_assistant(command):
         endpoint = "conversation/process"
         payload = {"text": command, "language": "en"}  # Assuming English language
         response = home_assistant_request(endpoint, 'post', payload)
-
+        print("inside execute_command_in_home_assistant")
         if response and response.status_code == 200:
             return True, f" "
         else:
