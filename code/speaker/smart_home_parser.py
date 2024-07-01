@@ -1,3 +1,13 @@
+# this is early code I had chatgpt write for me in the beginning
+# it is scheduled to be scrapped and completely re-written because it is messy and confusing
+# but it works
+# its job is check user text for words and phrases and determine if any its APIs are relevent
+# for example, if the user is looking for train status or the time,
+# this is the section that will identify and send the request to the correct place
+# and receieve its return
+# if no matches are found, it returns the query to main.py which then sends it to a language model
+
+
 import re
 import os
 import json
@@ -11,7 +21,6 @@ from phrases import PHRASES
 from dont_tell import HOME_ASSISTANT_TOKEN
 from db_operations import save_conversation
 from transit_routes import fetch_subway_status, train_status_phrase
-from home_assistant_interactions import is_home_assistant_available, home_assistant_request, load_commands, flattened_commands, execute_command_in_home_assistant 
 
 nlp = spacy.load("en_core_web_sm")
 
@@ -50,35 +59,16 @@ def get_moon_phase():
     else:
         return "Last Quarter"
 
-def smart_home_parse_and_execute(command_text_stripped, raw_commands_dict, testing_mode=False):
+def smart_home_parse_and_execute(command_text_stripped,  testing_mode=False):
     if command_text_stripped is None:
         return False, ""
 
     print(f"Command received: {command_text_stripped}")
     doc = nlp(command_text_stripped) 
-    # print(f"raw commands: {raw_commands_dict}")
         
-    command_matched = None
-    for command_dict in raw_commands_dict:
-        if command_text_stripped in command_dict.values():
-            command_matched = command_dict
-            break
 
-    command_to_execute = command_text_stripped  # Initialize with a default value
 
-    if command_matched:
-        # New logic to refine the matched command
-        if "replacement" in command_matched and command_matched["replacement"]:
-            command_to_execute = command_matched["replacement"]
-        else:
-            # Assuming the default command key is "command" which might need to be adjusted
-            command_to_execute = command_matched.get("command", command_text_stripped)
-
-        execute_command_in_home_assistant(command_to_execute)
-        print(f"Executing refined command: {command_to_execute}")
-        return {"executed": True, " ": command_to_execute}
-    else:
-        print("No matching command found.")
+    command_to_execute = command_text_stripped  
     
     mta_line_status_questions = [
     "Is the [mta-line] running",
@@ -140,9 +130,9 @@ def smart_home_parse_and_execute(command_text_stripped, raw_commands_dict, testi
     "what time is it?",
     "what time is it now",
     "can you tell me what time it is",
-    "what is the time"
+    "what is the time",
+    "whats the time"
     ]
-    
     if any(trigger.lower() in command_text_stripped.lower() for trigger in time_triggers):
         current_time = datetime.now().strftime('%I:%M %p')
         return True, f"It's {current_time}"
@@ -153,7 +143,10 @@ def smart_home_parse_and_execute(command_text_stripped, raw_commands_dict, testi
     "what is the date today",
     "can you tell me the date",
     "tell me the date",
-    "what day is it today"
+    "what day is it today",
+    "day",
+    "what's today",
+    "what day is it"
     ]
     if any(trigger.lower() in command_text_stripped.lower() for trigger in date_triggers):
         date = datetime.now().strftime('%A, %d %B %Y')

@@ -32,9 +32,10 @@
 
 import sounddevice as sd
 import numpy as np
-from scipy.io.wavfile import write
-from scipy.signal import butter, lfilter, get_window
-from scipy.fftpack import fft
+# from scipy.io.wavfile import write
+# from scipy.signal import butter, lfilter, get_window
+# from scipy.fftpack import fft
+from scipy import signal
 import threading
 import tempfile
 import wave
@@ -42,7 +43,6 @@ import pyaudio
 import soundfile as sf
 from pydub import AudioSegment
 import tempfile
-import librosa
 import time
 import os
 import tempfile
@@ -53,6 +53,7 @@ import queue
 import multiprocessing
 from multiprocessing import Process, Queue, Manager, Lock, Value
 from faster_whisper import WhisperModel
+from faster_whisper.vad import get_speech_timestamps, VadOptions
 from text_to_speech_operations import tts_is_speaking, tts_lock
 
 print("Speech module imports completed")
@@ -61,7 +62,7 @@ print("Initializing global variables")
 global samplerate
 samplerate = 16000 
 print(f"Global samplerate variable before audio_device_loop: {samplerate}")
-duration = .3 # duration of each audio buffer in seconds
+duration = .25 # duration of each audio buffer in seconds
 print("Global variables initialized")
 
 is_speech = False
@@ -84,64 +85,134 @@ merged_chunks_condition = threading.Condition()
 # transcribed_text_queue = multiprocessing.Queue()
 
 transcription_lock = Lock()
+notification_counter = 0
+background_noise_profile = None
 
-
-# def centroid(audio_chunk, samplerate):
-#     n_fft = 2048
-#     hop_length = 512
-#     spectral_centroid = librosa.feature.spectral_centroid(y=merged_chunks, sr=samplerate, n_fft=n_fft, hop_length=hop_length)
-#     mean_centroid = np.mean(spectral_centroid)
-#     threshold_low = 1000
-#     threshold_high = 5000
-#     is_speech = threshold_low <= mean_centroid <= threshold_high
-#     return is_speech
-
-# def mfcc(audio_chunk, samplerate):
-#     n_mfcc = 13
-#     n_fft = 2048
-#     hop_length = 512
-
-#     mfccs = librosa.feature.mfcc(y=audio_chunk, sr=samplerate, n_mfcc=n_mfcc, n_fft=n_fft, hop_length=hop_length)
+def background_noise_profiler(audio_chunk, alpha=0.1):
+    global background_noise_profile
     
-#     # Calculate the mean and standard deviation of MFCCs
-#     mean_mfccs = np.mean(mfccs, axis=1)
-#     std_mfccs = np.std(mfccs, axis=1)
+    # Check input
+    if np.any(np.isnan(audio_chunk)):
+        print("Warning: NaN values in input audio chunk")
+        return background_noise_profile
+
+    # Check for zero values
+    if np.all(audio_chunk == 0):
+        print("Warning: All zero values in audio chunk")
+        return background_noise_profile
+
+    # Compute spectrum
+    chunk_spectrum = np.abs(np.fft.rfft(audio_chunk))
     
-#     # Calculate the mean and standard deviation of MFCC deltas
-#     if mfccs.shape[1] > 9:  # Check if there are enough frames for delta calculation
-#         delta_mfccs = librosa.feature.delta(mfccs)
-#         mean_delta_mfccs = np.mean(delta_mfccs, axis=1)
-#         std_delta_mfccs = np.std(delta_mfccs, axis=1)
-#     else:
-#         mean_delta_mfccs = np.zeros_like(mean_mfccs)
-#         std_delta_mfccs = np.zeros_like(std_mfccs)
+    # Check FFT output
+    if np.any(np.isnan(chunk_spectrum)):
+        print("Warning: NaN values after FFT")
+        return background_noise_profile
 
-#     # Combine the features
-#     features = np.concatenate((mean_mfccs, std_mfccs, mean_delta_mfccs, std_delta_mfccs))
+    if background_noise_profile is None:
+        background_noise_profile = chunk_spectrum
+        print("Noise profile initialized")
+    else:
+        # Update profile
+        new_profile = (1 - alpha) * background_noise_profile + alpha * chunk_spectrum
+        
+        # Check for NaN in new profile
+        if np.any(np.isnan(new_profile)):
+            print("Warning: NaN values in updated noise profile")
+            # print(f"Alpha: {alpha}")
+            # print(f"Max background_noise_profile: {np.max(background_noise_profile)}")
+            # print(f"Min background_noise_profile: {np.min(background_noise_profile)}")
+            # print(f"Max chunk_spectrum: {np.max(chunk_spectrum)}")
+            # print(f"Min chunk_spectrum: {np.min(chunk_spectrum)}")
+        else:
+            background_noise_profile = new_profile
 
-#     # Apply normalization
-#     features = (features - np.mean(features)) / np.std(features)
+    mean_profile = np.mean(background_noise_profile)
+    # print(f"Current noise profile mean: {mean_profile:.4f}")
+    # print(f"Max value in profile: {np.max(background_noise_profile):.4f}")
+    # print(f"Min value in profile: {np.min(background_noise_profile):.4f}")
+    
+    return background_noise_profile
 
-#     # Define thresholds for different features
-#     threshold_mean_mfccs = 131
-#     threshold_std_mfccs = 20
-#     threshold_mean_delta_mfccs = 5
-#     threshold_std_delta_mfccs = 2
+def noise_reducer(audio_data, noise_profile, reduction_factor=0.4, threshold=0.2):
+    # print(f"Audio data shape before noise reduction: {audio_data.shape}")
+    # print(f"Noise profile shape: {noise_profile.shape}")
 
-#     # Check if any of the features exceed their respective thresholds
-#     is_speech = (
-#         np.any(mean_mfccs > threshold_mean_mfccs) or
-#         np.any(std_mfccs > threshold_std_mfccs) or
-#         np.any(mean_delta_mfccs > threshold_mean_delta_mfccs) or
-#         np.any(std_delta_mfccs > threshold_std_delta_mfccs)
-#     )
+    # Convert audio to frequency domain
+    audio_spectrum = np.fft.rfft(audio_data)
+    audio_magnitude = np.abs(audio_spectrum).astype(np.float32)
+    audio_phase = np.angle(audio_spectrum).astype(np.float32)
 
-#     return is_speech
-     
+    # Ensure noise_profile and audio_magnitude have the same shape
+    if noise_profile.shape != audio_magnitude.shape:
+        print(f"Warning: Noise profile shape {noise_profile.shape} does not match audio magnitude shape {audio_magnitude.shape}")
+        noise_profile = np.resize(noise_profile, audio_magnitude.shape)
 
+    # Compute the noise reduction gain
+    gain = np.maximum(1 - (noise_profile / (audio_magnitude + 1e-10)) * reduction_factor, threshold)
+    gain = gain.astype(np.float32)
+
+    # Apply the gain and reconstruct the signal
+    enhanced_magnitude = (audio_magnitude * gain).astype(np.float32)
+    enhanced_spectrum = enhanced_magnitude * np.exp(1j * audio_phase).astype(np.complex64)
+    enhanced_audio = np.fft.irfft(enhanced_spectrum).astype(np.float32)
+
+    # print(f"Audio data shape after noise reduction: {enhanced_audio.shape}")
+    
+    return enhanced_audio
+
+def merged_chunk_enhancer(merged_chunks, samplerate):
+    # this is for processes better applied to merged chunks
+    # to improve transcription
+    
+    # Normalize audio
+    max_amplitude = np.max(np.abs(merged_chunks))
+    enhanced_speech = merged_chunks / max_amplitude
+
+    # echo reduction
+    # Parameters for echo reduction (adjust these for lighter effect)
+    delay = int(0.05 * samplerate)  # 50 ms delay
+    decay = 0.1  # Very low decay factor for minimal effect
+
+    # Create echo kernel
+    echo_kernel = np.zeros(delay + 1)
+    echo_kernel[0] = 1  # Original signal
+    echo_kernel[-1] = -decay  # Delayed and inverted echo
+
+    # Apply echo reduction
+    enhanced_speech = signal.convolve(enhanced_speech, echo_kernel, mode='same')
+
+    # Renormalize after echo reduction
+    enhanced_speech /= np.max(np.abs(enhanced_speech))
+
+    return enhanced_speech
 
 def but_is_it_speech(audio_chunk, samplerate, stream_id):
+    # various parameters to check audio for speech
+    # I designed my own system which is still in place,
+    # but commented out in favor of the vad
+    
     global keep_recording
+
+    def vad(audio_chunk):
+        if len(audio_chunk.shape) > 1:
+            audio_chunk = np.mean(audio_chunk, axis=1)
+
+        # Define VAD options with increased sensitivity
+        vad_options = VadOptions(
+            threshold=0.11, 
+            min_speech_duration_ms=10,
+            max_speech_duration_s=float('inf'),
+            min_silence_duration_ms=10,
+            window_size_samples=512, 
+            speech_pad_ms=10
+        )
+
+        # Detect speech
+        speech_timestamps = get_speech_timestamps(audio_chunk, vad_options)
+        vad_speech = len(speech_timestamps) > 0
+
+        return vad_speech
 
     def db_level(audio_chunk):
         """Calculate the dB level of the audio data and return True if it indicates speech (above 70 dB)."""
@@ -149,7 +220,7 @@ def but_is_it_speech(audio_chunk, samplerate, stream_id):
         db = 20 * np.log10(intensity) if intensity > 0 else -np.inf
         calibrated_db = db + 110
         print(f"Calibrated dB level: {calibrated_db:.2f} dB")  # Print the calibrated dB level
-        return calibrated_db >= 71
+        return calibrated_db >= 58
 
     def frequency_analysis(audio_chunk, samplerate):
         audio_chunk = audio_chunk.astype(np.float32) / 32768.0  # Convert audio data to float32
@@ -161,66 +232,70 @@ def but_is_it_speech(audio_chunk, samplerate, stream_id):
         speech_energy = np.sum(np.abs(fft_data[freq_indices])**2)
         total_energy = np.sum(np.abs(fft_data)**2)
         speech_ratio = speech_energy / total_energy
-        threshold = 0.4
+        threshold = 0.35
         is_speech = speech_ratio > threshold
-        return is_speech
+        return is_speech 
+    
+    def energy_detector(audio_chunk, threshold=0.003): 
+        energy = np.sum(audio_chunk**2) / len(audio_chunk)
+        return energy > threshold
+
+    vad_speech = vad(audio_chunk)
+    print(f"vad: {vad_speech}")
 
     db_speech = db_level(audio_chunk)
-    print(f"db: {db_speech}")
+    # print(f"db: {db_speech}")
 
     freqanal_speech = frequency_analysis(audio_chunk, samplerate)
-    print(f"freq: {freqanal_speech}")
-
-    # centroid_checker = centroid(audio_chunk, samplerate)
-    # print(f"centroid: {centroid_checker}")
-
-    # mfcc_speech = mfcc(audio_chunk, samplerate)
-    # print(f"mfcc: {mfcc_speech}")
-
+    # print(f"freq: {freqanal_speech}")
+    
+    energy_speech = energy_detector(audio_chunk)
+    # print(f"energy_speech: {energy_speech}")
+    
     # speech_detected = db_speech
     # speech_detected = freqanal_speech
-    # speech_detected = centroid_checker
-    # speech_detected = mfcc_speech
+    speech_detected = vad_speech
 
-    # inputs = [db_speech, freqanal_speech, centroid_checker, mfcc_speech]
-    inputs = [db_speech, freqanal_speech]
-    speech_detected = sum(inputs) >= 2
+    # inputs = [db_speech, energy_speech, freqanal_speech, vad_speech]
+    # speech_detected = sum(inputs) >= 2
 
-    print(f"But is it speech?: {speech_detected}")
+    # print(f"But is it speech?: {speech_detected}")
     return speech_detected
 
-
 def transcriber(merged_chunks_queue, transcribed_text_queue, transcription_condition, merged_chunks_condition):
-    global whisper_model_loaded, samplerate, is_audio_system_running
+    global whisper_model_loaded, samplerate, is_audio_system_running, notification_counter
 
     print(f"Transcriber process: {multiprocessing.current_process().name}")
     print(f"Transcription condition: {transcription_condition}")
-    if not whisper_model_loaded:
-        print("Loading Whisper model...")
-        whisper_model = WhisperModel("tiny.en", device="cpu", compute_type="int8")
-        print("Whisper model loaded.")
-        whisper_model_loaded = True
 
     while True:
         print("Transcriber waiting for audio data...")
+        
         with merged_chunks_condition:
             print("Transcriber waiting for new chunks...")
-            merged_chunks_condition.wait()
-            print("Transcriber received new chunks.")
+            while merged_chunks_queue.empty() and notification_counter == 0:
+                merged_chunks_condition.wait()
+
+
+        while True:
+            if merged_chunks_queue.empty() and notification_counter < 1:
+                break
+
             merged_chunks, samplerate = merged_chunks_queue.get()
-            print(f"Transcriber received merged chunks: size={len(merged_chunks)}, samplerate={samplerate}")
+            notification_counter -= 1
+            # print(f"Transcriber received merged chunks: size={len(merged_chunks)}, samplerate={samplerate}")
 
-
-        # with tempfile.NamedTemporaryFile(delete=False, suffix='_mono.wav', dir='/tmp') as tmp_file:
+# most transcription issues are due to audio quality
+# uncomment this save section and check /tmp to listen
+    
+        # with tempfile.NamedTemporaryFile(delete=False, suffix='_speech_to_text.wav', dir='/tmp') as tmp_file:
         #     print(f"Temporary file created: {tmp_file.name}")
-        #     expanded_merged_chunks = np.expand_dims(merged_chunks, axis=-1).astype('float32')
-        #     print(f"Expanded audio data shape: {expanded_merged_chunks.shape}, type: {type(expanded_merged_chunks)}")
-        #     sf.write(tmp_file.name, expanded_merged_chunks, int(samplerate))
+        #     print(f"Audio data shape: {merged_chunks.shape}, type: {merged_chunks.dtype}")
+        #     sf.write(tmp_file.name, merged_chunks, int(samplerate))
         #     print(f"Audio data saved to {tmp_file.name}")
 
             try:
              
-
                 print("Transcribing audio data...")
                 start_time = time.time()
                 segments, info = whisper_model.transcribe(merged_chunks.flatten(), beam_size=5, language="en")
@@ -228,93 +303,28 @@ def transcriber(merged_chunks_queue, transcribed_text_queue, transcription_condi
                 transcription_time = end_time - start_time
                 print(f"Transcription completed in {transcription_time:.2f} seconds.")
                                 
-                print("Detected language:", info.language)
-                print("Language probability:", info.language_probability)
-                print("Detected language '%s' with probability %f" % (info.language, info.language_probability))
+                # print("Detected language:", info.language)
+                # print("Language probability:", info.language_probability)
+                # print("Detected language '%s' with probability %f" % (info.language, info.language_probability))
 
-                print("segments:", segments)
-                print("Type of segments:", type(segments))
+                # print("segments:", segments)
+                # print("Type of segments:", type(segments))
                 captured_text = ""
-                print("Iterating over segments...")
+                # print("Iterating over segments...")
                 decompress_times = []
                 captured_texts = []
                 start_time_iteration = time.time()
                 segments = list(segments)
                 for i, segment in enumerate(segments, start=1):
-                    print(f"Processing segment {i}...")
-                    start_time_decompress = time.perf_counter()
                     segment_text = segment.text
-                    segment_tokens = segment.tokens 
-                    segment_words = segment.words
-                    decompress_time = time.perf_counter() - start_time_decompress
-                    decompress_times.append(decompress_time)
-                    print("  avg_logprob:", segment.avg_logprob)
-                    print(f"Processing segment {i}...")
-                    start_time_segment = time.perf_counter()
-                    print("Type of segment:", type(segment))
-                    print("Attributes of segment:", dir(segment))
-                    print("  id:", segment.id)
-                    print("  seek:", segment.seek)
-                    print("  start:", segment.start)
-                    print("  end:", segment.end)
-                    print("  text:", segment.text)
-                    print("  tokens:", segment.tokens)
-                    print(f"Compression ratio: {segment.compression_ratio}")
-                    print("  temperature:", segment.temperature)
-                    print("  avg_logprob:", segment.avg_logprob)
-                    print("  compression_ratio:", segment.compression_ratio)
-                    print("  no_speech_prob:", segment.no_speech_prob)
-                
-                  
-                    print("Getting segment text...")
-                    start_time_decompress = time.perf_counter()
-                    segment_text = segment.text
-                    decompress_time = time.perf_counter() - start_time_decompress
-                    print(f"Time to decompress and get segment text: {decompress_time:.6f} seconds.")
-                    text_time = time.perf_counter() - start_time_decompress
-
-                    print("Getting segment tokens...")
-                    start_time_decompress = time.perf_counter()
                     segment_tokens = segment.tokens
-                    decompress_time = time.perf_counter() - start_time_decompress
-                    print(f"Time to decompress and get segment tokens: {decompress_time:.6f} seconds.")
-                    tokens_time = time.perf_counter() - start_time_decompress
-
-                    print("Getting segment words...")
-                    start_time_decompress = time.perf_counter()
                     segment_words = segment.words
-                    decompress_time = time.perf_counter() - start_time_decompress
-                    print(f"Time to decompress and get segment words: {decompress_time:.6f} seconds.")
-                    words_time = time.perf_counter() - start_time_decompress
-
-                    captured_text += segment_text + " "
-                    # captured_texts.append(segment_text)
-                    # print(f"\[{segment.start:.2f}s -> {segment.end:.2f}s\] {segment_text}")
-                    total_segment_time = time.perf_counter() - start_time_segment
-
-                    print(f"Time to get segment text: {text_time:.6f} seconds.")
-                    print(f"Time to get segment tokens: {tokens_time:.6f} seconds.")
-                    print(f"Time to get segment words: {words_time:.6f} seconds.")
-                    print(f"Total time for segment {i}: {total_segment_time:.6f} seconds.")
-
-                    cpu_percent = psutil.cpu_percent()
-                    print(f"CPU Usage: {cpu_percent}%")
-
-                    # Get memory usage
-                    memory_info = psutil.virtual_memory()
-                    print(f"Memory Usage: {memory_info.percent}%")
-
-                    # Get disk usage
-                    disk_usage = psutil.disk_usage('/')
-                    print(f"Disk Usage: {disk_usage.percent}%")
+                    captured_text += segment_text
                 end_time_iteration = time.time()
                 iteration_time = end_time_iteration - start_time_iteration
                 print(f"Iteration time: {iteration_time:.2f} seconds")
-                # total_decompress_time = sum(decompress_times)
-                # print(f"Total decompression time: {total_decompress_time:.6f} seconds")
-                # # print(f"Captured text: {captured_text}")
+                print(f"Captured text: {captured_text}")
                 
-
             except KeyboardInterrupt:
                 print("Transcription interrupted by the user.")
             except Exception as e:
@@ -323,27 +333,28 @@ def transcriber(merged_chunks_queue, transcribed_text_queue, transcription_condi
             print(f"Captured text after transcription: {captured_text}")
 
             if captured_text:
-                transcribed_text_queue.put(captured_text)
-                print("inside if captured")
-                print(f"Transcription condition in transcriber: {id(transcription_condition)}")
+                # print(f"Transcription condition in transcriber: {id(transcription_condition)}")
                 with transcription_condition:
-                    print(f"Sound channel thread {threading.current_thread().name} acquired the lock")
-                    print("inside with condition")
-                    transcribed_text_queue.put(captured_text)
-                    print(f"Transcribed text added to the queue. Queue size: {transcribed_text_queue.qsize()}")
-                    # print(f"Transcriber process: {multiprocessing.current_process().name}")
-                    print(f"Transcription condition in transcriber before notify: {id(transcription_condition)}")
-                    print("Before notify")
-                    transcription_condition.notify()
-                    # print(f"Transcription process {multiprocessing.current_process().name} released the lock")
-                    print("After notify")
-                print(f"Transcription successful. Text: {captured_text}")
-
+                    # print(f"Sound channel thread {threading.current_thread().name} acquired the lock")
+                    # print("inside with condition")
+                    if not captured_text or captured_text.isspace():
+                        continue
+                    else: 
+                        transcribed_text_queue.put(captured_text)
+                        # print(f"Transcribed text added to the queue. Queue size: {transcribed_text_queue.qsize()}")
+                        # print(f"Transcriber process: {multiprocessing.current_process().name}")
+                        # print(f"Transcription condition in transcriber before notify: {id(transcription_condition)}")
+                        # print("Before notify")
+                        transcription_condition.notify()
+                        # print(f"Transcription process {multiprocessing.current_process().name} released the lock")
+                        # print("After notify")
+                    print(f"Transcription successful. Text: {captured_text}")
+  
 def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
-    global keep_recording, samplerate, whisper_model_loaded, duration
+    global keep_recording, samplerate, whisper_model_loaded, duration, notification_counter, background_noise_profile
 
-    chunk_buffer_size = 1
-    number_of_chunks_to_end_phrase = 1 # sends the contents of continuous buffer to be transcribed
+    chunk_buffer_size = 2
+    number_of_chunks_to_end_phrase = 3 # sends the contents of continuous buffer to be transcribed
     number_of_chunks_to_end_continuous = 3 # holds transcribed text until speaker is fiinsihed speaking
     chunk_buffer = collections.deque(maxlen=chunk_buffer_size)
     continuous_buffer = Queue()
@@ -359,21 +370,27 @@ def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
                     frames_per_buffer=int(duration * samplerate))
 
     while keep_recording:
-
         audio_chunk = stream.read(int(duration * samplerate))
-        numpy_data = np.frombuffer(audio_chunk, dtype=np.int16)
-        numpy_data = numpy_data.astype(np.float32) / 32768.0
-        speech_detected = but_is_it_speech(numpy_data, samplerate, stream_id)
+        raw_chunk = np.frombuffer(audio_chunk, dtype=np.int16).copy() # for profiling
+        numpy_data = raw_chunk.astype(np.float32) / 32768.0  # for transcribing
+
+        if background_noise_profile is not None:
+            numpy_data = noise_reducer(numpy_data, background_noise_profile)
+            speech_detected = but_is_it_speech(numpy_data, samplerate, stream_id)
+        else: 
+            speech_detected = False
         print(f"Speech detected: {speech_detected}")
+
         with tts_lock: 
             if not tts_is_speaking.value:
                 if not continuous_recording:
-                    print("Not in continuous recording mode")
+                    # print("Not in continuous recording mode")
                     if not speech_detected:
-                        print("No speech detected, appending chunk to buffer")
+                        background_noise_profile = background_noise_profiler(raw_chunk)
+                        # print("No speech detected, profiling, appending chunk to buffer")
                         chunk_buffer.append(numpy_data)
                     else:
-                        print("Speech detected, starting continuous recording")
+                        # print("Speech detected, starting continuous recording")
                         if continuous_buffer.empty():
                             continuous_recording = True
                             print("Continuous recording started")
@@ -417,20 +434,24 @@ def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
                             sorted_chunks.sort(key=lambda x: x[0])
                             print(f"Continuous buffer after sorting: {[chunk_id for chunk_id, _ in sorted_chunks]}")
                             
-                            print("Concatenating audio data...")
+                            # print("Concatenating audio data...")
                             merged_chunks = np.concatenate([chunk for _, chunk in sorted_chunks])
                             print(f"Number of chunks concatenated: {len(sorted_chunks)}")
                             
+                            # Pre-process the merged chunks to improve transcription
+                            processed_chunks = merged_chunk_enhancer(merged_chunks, samplerate)
+
                             print("Putting audio data into queue for transcription...")
                             with merged_chunks_condition:
-                                merged_chunks_queue.put((merged_chunks, samplerate))
-                                print("Audio data put into queue.")
+                                merged_chunks_queue.put((processed_chunks, samplerate))
+                                # print("Audio data put into queue.")
                                 merged_chunks_condition.notify()
-                                print("merged chunk notify sent.")
+                                notification_counter += 1
+                                # print("merged chunk notify sent.")
 
-                            print("Clearing the continuous buffer...")
+                            # print("Clearing the continuous buffer...")
                             continuous_buffer = Queue()
-                            print("Continuous buffer cleared.")
+                            # print("Continuous buffer cleared.")
                             
                             chunk_counter_1 = 0
                         else:
@@ -445,11 +466,19 @@ def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
     
 def startup_items(transcribed_text_queue, transcription_condition):
     print("Entering startup_items function.")
-    global keep_recording, merged_chunks_queue, whisper_model, samplerate, duration, transcription_process
+    global keep_recording, merged_chunks_queue, whisper_model, whisper_model_loaded, samplerate, duration, transcription_process
     frames_per_buffer = int(duration * samplerate)
     print(f"Frames per buffer: {frames_per_buffer}")
     keep_recording = True
     
+    if not whisper_model_loaded:
+        print("Loading Whisper model...")
+        whisper_model = WhisperModel("tiny.en", device="cpu", compute_type="int8")
+        print("Whisper model loaded.")
+        whisper_model_loaded = True
+
+
+
     print("Selecting default input device...")
     device_info = sd.query_devices(None, 'input')
     print(f"Default input device: {device_info['name']}")
@@ -490,32 +519,30 @@ def capture_speech():
     if not is_audio_system_running:
         startup_items(transcribed_text_queue, transcription_condition)
         is_audio_system_running = True
-    print("after if not audio")
-    print(f"after with: {threading.current_thread().name}")
-    print(f"Transcription condition in capture_speech: {id(transcription_condition)}")
-    print("before with transcription cap speech")
+    # print("after if not audio")
+    # print(f"after with: {threading.current_thread().name}")
+    # print(f"Transcription condition in capture_speech: {id(transcription_condition)}")
+    # print("before with transcription cap speech")
     with transcription_condition:
-        print("after with transcription cap speech")
-        print(f"External module thread {threading.current_thread().name} acquired the lock")
-        print(f"before with Main thread: {threading.current_thread().name}")
-        print(f"before with Transcription condition: {transcription_condition}")
-        print(f"Main thread: {threading.current_thread().name}")
-        print("Before wait")
-        print(f"Transcription condition: {transcription_condition}")
-        print("Waiting...")
-        transcription_condition.wait()
-        print("After wait")
+        # print(f"Main thread: {threading.current_thread().name}")
+        
+        if transcribed_text_queue.empty():
+            # print("Before wait")
+            # print(f"Transcription condition: {transcription_condition}")
+            # print("Waiting...")
+            transcription_condition.wait()
+            # print("After wait")
+        
         queue_size = transcribed_text_queue.qsize()
         transcribed_texts = []
         for _ in range(queue_size):
             transcribed_text = transcribed_text_queue.get()
             transcribed_texts.append(transcribed_text)
-            # print(f"External module thread {threading.current_thread().name} released the lock")
-        print(f"Capture text complete.")
+        # print(f"Capture text complete.")
         return transcribed_texts[-1]
 
 def stop_recording():
-    print("Entering stop_recording function.")
+    # print("Entering stop_recording function.")
     global keep_recording
     keep_recording = False
     thread1.join()
@@ -523,10 +550,10 @@ def stop_recording():
     print("Leaving stop_recording function.")
 
 if __name__ == "__main__":
-    print("Running speech to text module directly.")
+    # print("Running speech to text module directly.")
     capture_speech()
-    print("System initialized. Enter 'q' to quit...")
+    # print("System initialized. Enter 'q' to quit...")
     while input() != 'q':
         pass
     stop_recording()
-    print("Recording stopped. Exiting system...")
+    # print("Recording stopped. Exiting system...")

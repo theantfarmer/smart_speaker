@@ -10,6 +10,10 @@ wake_words = [
             "hello karen", 
             "hey [command]", 
             "oh my gosh [command]", 
+            "let there be [command]", 
+            "how do i [command]",
+            "how do you [command]",
+            "where is the [command]",
             "hey karen",
             "take care and", 
             "they care and",
@@ -17,8 +21,17 @@ wake_words = [
             "Take care and",
             "hey aaron",
             "hey gpt f[chat_with_gpt]",
+            "hey gp f[chat_with_gpt]",
+            "hey jeep f[chat_with_gpt]",
+            "hey gee f[chat_with_gpt]",
+            "h-g-b-t f[chat_with_gpt]",
+            "h-g-p-t f[chat_with_gpt]",
             "hey chatgpt f[chat_with_gpt]"
-            "hey chat gpt f[chat_with_gpt]"
+            "hey chat gpt f[chat_with_gpt]",
             "hey claude f[chat_with_claude]",
-            "hey dolphin f[chat_with_dolphin]"
+            "hey dolphin f[chat_with_dolphin]",
+            "hey home assistant f[speak_to_home_assistant]",
+            "hey homes f[speak_to_home_assistant]",
+            "hey holmes f[speak_to_home_assistant]",
+            "hey home f[speak_to_home_assistant]"
               ]

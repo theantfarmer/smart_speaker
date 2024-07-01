@@ -2,6 +2,7 @@
 
 .DS_Store
 .vscode
+/gitignore
 code/speaker/custom_instructions.txt
 code/speaker/dont_tell.py
 code/speaker/gpt_chat_history.db

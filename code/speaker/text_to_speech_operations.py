@@ -1,186 +1,264 @@
 import os
 import re
-import uuid
 import time
 import json
-import string
-import traceback
 import re
 import magic
-import shlex
 import emoji
-from queue import Queue, Empty
+from queue import Queue
 import threading
 import logging
-import pygame.mixer
-from home_assistant_interactions import is_home_assistant_available, home_assistant_request
+import wave
+import io
+import uuid
+import tempfile
+import mimetypes
+import numpy as np
+import vlc
+import soundfile as sf
+from home_assistant_interactions import home_assistant_request
 from tts_google_cloud import tts_model
 from multiprocessing import Value, Lock
+from queue_handling import send_to_tts_queue, send_to_tts_condition
 
+# Initialize tts_playlist_queue as thread-safe
+tts_playlist_queue = Queue()
+tts_playlist_notify = threading.Event()
 
-# Initialize logging
-logging.basicConfig(level=logging.INFO)
-
-# Initialize Pygame Mixer
-pygame.mixer.init()
-
-# Initialize mp3_queue as thread-safe
-mp3_queue = Queue()
-playlist_event = threading.Event()
 
 tts_outputs = {}  # Dictionary to store text and timestamps for echo cancellation
-tts_is_speaking = Value('b', False) 
+
+# tts_is_speaking becomes true when speech play back starts
+# and remains true until all files have finishes playing.
+# This is the status used in external moduals
+tts_is_speaking = Value('b', False)
+tts_is_speaking_notification = threading.Event()
 tts_lock = Lock()
 
+# individual_audio_is_playing turns true at the beginning of each indavidual audio file
+# it turns false at the end of that file
+# which triggers the next loop iteration and the next file to play
+# In otherwords, it turns false bewteen each file
+# while tts_is_speaking remains true accross playback of a series of files
 
-def is_mp3(audio_content):
-    return audio_content[:2] == b'ID'
+individual_audio_is_playing = Value('b', False)
+individual_audio_finished_notification = threading.Event()
 
-def talk_with_tts(text=None, command=None):
-    global tts_outputs
-    print("Inside talk_with_tts function.")
+vlc_instance = vlc.Instance()
+player = vlc_instance.media_player_new()
+playback_finished = threading.Event()
 
-    if text is None and command is None:
-        mp3_queue.put((None, None))
-        playlist_event.set()
-        return
+def talk_with_tts():
+    while True:
+        
+        command = None
+        text = None
+        
+        # Wait for and retrieve an item from the queue
+        with send_to_tts_condition:
+            while send_to_tts_queue.empty():
+                send_to_tts_condition.wait()
+            
+            speech_data = send_to_tts_queue.get()
 
-    if text is None and command is not None:
-        mp3_queue.put((None, command))
-        playlist_event.set()
-        return
-
-    if isinstance(text, tuple):
-        print(f"text is a tuple: {text}")
-        text, command = text
-        print(f"After unpacking - text: {text}")
-        print(f"After unpacking - command: {command}")
-
-    if text is not None:
-        print(f"Before demojize - text: {text}")
-        print(f"Before demojize - type of text: {type(text)}")
-
-        # Convert emojis to their text representation
-        text = emoji.demojize(text)
-
-        print(f"After demojize - text: {text}")
-        print(f"After demojize - type of text: {type(text)}")
-        text = text.replace('*', ' ')
-        text = re.sub(r'http\S+', 'online', text)
-
-        # Use json.dumps() to serialize the text into a JSON-formatted string
-        json_text = json.dumps(text)
-
-        # Use json.loads() to deserialize the JSON-formatted string back into a regular string
-        deserialized_text = json.loads(json_text)
+        print(f"talk_with_tts received: {speech_data}")
+    
+        # tuples should contain (command, text) and must be broken apart
+        # text can be a None, a populated string, or an empty string
 
         try:
-            audio_content = tts_model(deserialized_text)
-        except Exception as e:
-            logging.error(f"Error in tts service script: {e}")
-            return
+            if isinstance(speech_data, str):
+                text = speech_data
+            elif isinstance(speech_data, tuple):
+                if len(speech_data) == 2:
+                    command, text = speech_data
+                elif len(speech_data) == 1 and isinstance(speech_data[0], tuple):
+                    command, text = speech_data[0]
+                else:
+                    raise ValueError("Invalid tuple format. Expected (command, text) or ((command, text)).")
+            else:
+                raise ValueError("Invalid input type. Expected string or tuple.")
+        except ValueError as e:
+            print(f"Error in talk_with_tts: {str(e)}")
+        
+        # if text is a string, we attempt to remove characters
+        # that TTS can't read or are unpleasant to listen to
+        # if the string arrives empty or becomes empty after
+        # it is cleaned, we set it to None
+            
+        if text is not None:
+            try:
+                # Convert emojis to their text representation
+                text = emoji.demojize(text)
+                # Remove HTML tags
+                text = re.sub(r'<[^>]*>', '', text)
+                # Remove line break characters
+                text = text.replace('\n', ' ').replace('\r', '')
+                text = text.replace('*', ' ')
+                text = re.sub(r'http\S+', 'online', text)
+            except Exception as e:
+                print(" ")
+            
+            # empty string check!
+            if not text.strip():
+                print("Text is empty after processing, setting to None")
+                text = None
+            else:
+                # if we make it to this point, the string contains
+                # clean text ready to be read aloud
+                # we send the text to the TTS model to
+                # be converted to audio
 
-        # Check file format
-        file_type = magic.from_buffer(audio_content, mime=True)
-        print(f"File format: {file_type}")  # Print the file format to the terminal
+                try:
+                    print(f"Passing text to TTS model: {text}")
+                    audio_content = tts_model(text)
+                    print(f"Generated audio content. Length: {len(audio_content)} bytes")
+              
+                    # because we can easily swap models, we need to determine
+                    # and handle whatever audio format the model returns.  
+                    
+                    file_type = magic.from_buffer(audio_content, mime=True)
+                    print(f"File format: {file_type}")
 
-        if file_type == 'audio/mpeg':
-            file_extension = 'mp3'
-        else:
-            # Handle other formats or set a default
-            file_extension = 'wav'
+                    # currently, we save the tts return as a file and pass the address
+                    file_extension = mimetypes.guess_extension(file_type)
+                    if file_extension:
+                        file_name = str(uuid.uuid4()) + file_extension
+                    else:
+                        file_name = str(uuid.uuid4()) + "text_to_speech.wav"
+                    tmp_filepath = os.path.join("/tmp", file_name)
+                    with open(tmp_filepath, "wb") as f:
+                        f.write(audio_content)
 
-        file_name = f'response_{uuid.uuid4().hex}.{file_extension}'
-        audio_path = os.path.join(os.path.dirname(__file__), file_name)
+                    print(f"Audio content saved to file: {tmp_filepath}")
+                    
+                    # we still use the text variable because
+                    # that is what we pass to the next queue
+                    text = tmp_filepath
+                    
+                except Exception as e:
+                    logging.error(f"Error in tts service script: {e}")
+                    # Add error placeholder to maintain order
+                    continue  # Move to the next item in the queue
 
-        with open(audio_path, "wb") as out:
-            print(f"Audio file saved: {audio_path}")
-            out.write(audio_content)
-            logging.info(f"Saved {file_extension.upper()} file to {audio_path}")
+        # finally, we put the text in the playlist queue
+        # as a tuple, even if there is no command.
+        # in that case, the command will be None
+        print(f"Added to tts_playlist_queue: {command}, {text}")
+        tts_playlist_queue.put((command, text))
+        tts_playlist_notify.set()
 
-        print(f"Adding to mp3_queue: {file_name}, {command}")
-        mp3_queue.put((file_name, command))
-        playlist_event.set()
-    else:
-        mp3_queue.put((None, command))
-        playlist_event.set()
 
-def load_and_play_audio(file_path):
-    global tts_is_speaking
+
+# play_audio is called later by iterate_playlist
+# the play list of tuples must be iterated
+# before calling play_audio
+
+def playback_finished_callback(event):
+    playback_finished.set()
+
+event_manager = player.event_manager()
+event_manager.event_attach(vlc.EventType.MediaPlayerEndReached, playback_finished_callback)
+
+def play_audio(audio_file):
+    global individual_audio_is_playing
+    
     try:
-        pygame.mixer.music.load(file_path)
-        if not pygame.mixer.music.get_busy():
-            with tts_lock:
-                tts_is_speaking.value = True
-                print(f"[load_and_play_audio] Set tts_is_speaking to True before playing audio")
-                
-            pygame.mixer.music.play()
-            print(f"Playing audio file: {file_path}")
+        with individual_audio_is_playing.get_lock():
+            individual_audio_is_playing.value = True
+        
+        print(f"Starting playback of {audio_file}")
+        media = vlc_instance.media_new_path(audio_file)
+        player.set_media(media)
+        player.play()
+        
+        # Wait for playback to finish or timeout after 30 seconds
+        playback_finished.wait(timeout=30)
+        playback_finished.clear()
+        
+        if player.get_state() == vlc.State.Ended:
+            print(f"Playback of {audio_file} completed")
         else:
-            pygame.mixer.music.queue(file_path)
-            print(f"Queued audio file: {file_path}")
-
-        while pygame.mixer.music.get_busy():
-            pygame.time.wait(100)  # Wait for 100 milliseconds
-
-        try:
-            os.remove(file_path)
-            print(f"Deleted audio file: {file_path}")
-        except Exception as e:
-            print(f"Failed to delete audio file {file_path}: {e}")
+            print(f"Playback of {audio_file} did not complete normally")
     except Exception as e:
-        print(f"Error playing audio file: {e}")
+        print(f"Error during audio playback: {str(e)}")
+    finally:
+        with individual_audio_is_playing.get_lock():
+            individual_audio_is_playing.value = False
+        
+        individual_audio_finished_notification.set()
+        
+        player.stop()
+        
+        try:
+            os.unlink(audio_file)
+            print(f"Temporary file {audio_file} deleted.")
+        except Exception as e:
+            print(f"Error deleting temporary file: {str(e)}")
+        
 
-def play_playlist():
-    global tts_is_speaking
+def iterate_playlist():
+    global individual_audio_is_playing
+    to_play = None # play this item
+   
+    
+    # Timeout settings
+    audio_timeout_finish = 3  # seconds
+    playlist_wait_timeout = 15  # seconds
+
+    queue_items_processed = 0
+    last_queue_check_time = time.time()
     while True:
         try:
-            print("[play_playlist] Waiting for playlist_event to be set...")
-            playlist_event.wait()
-            print("[play_playlist] playlist_event set, proceeding...")
-            playlist_event.clear()
 
-            print("[play_playlist] Entering while loop to check mp3_queue...")
-            while not mp3_queue.empty():
-                item = mp3_queue.get(timeout=5)
-                file_name, command = item
+            if tts_playlist_queue.empty():
+                tts_playlist_notify.wait()  
+                tts_playlist_notify.clear()           
+            print(f"Queue size before get: {tts_playlist_queue.qsize()}")
+            to_play = tts_playlist_queue.get(block=False)
+            print(f"Retrieved from tts_playlist_queue: {to_play}")
+            print(f"Queue size after get: {tts_playlist_queue.qsize()}")
 
-                if file_name:
-                    load_and_play_audio(file_name)
 
-                    try:
-                        next_file_name, _ = mp3_queue.get(block=False)
-                        if next_file_name:
-                            pygame.mixer.music.queue(next_file_name)
-                    except Empty:
-                        pass
+            if to_play is not None:
+                command, audio_content = to_play
+                print(f"Processing playlist item: command={command}, audio={audio_content}")
+
+                # we hold iteration while audio is playing
+                # We iterate once per audio file and playback
+                # must complete for iteration to complete
+
+                if individual_audio_is_playing.value:
+                    print("Waiting for previous audio to finish...")
+                    individual_audio_finished_notification.wait(timeout=audio_timeout_finish)
+                    individual_audio_finished_notification.clear()
 
                 if command is not None:
+                    print(f"Processing command: {command}")
                     handle_home_assistant_command(command)
 
-                mp3_queue.task_done()
+                if audio_content is not None:
+                    print("Calling play_audio function")
+                    play_audio(audio_content)
+                else:
+                    continue
 
-                if mp3_queue.empty() and not pygame.mixer.music.get_busy():
-                    with tts_lock:
-                        tts_is_speaking.value = False
-                        print(f"[play_playlist] Set tts_is_speaking to False after processing all items from queue")
-
-        except Empty:
-            print("[play_playlist] Queue is empty")
-            continue
         except Exception as e:
-            print(f"Error in play_playlist: {e}")
-            mp3_queue.task_done()
-
-
-playlist_thread = threading.Thread(target=play_playlist)
-playlist_thread.daemon = True
-playlist_thread.start()
+            print(f"An exception occurred in iterate_playlist: {str(e)}")
 
 def handle_home_assistant_command(command):
     try:
         command_dict = json.loads(command)
         response = home_assistant_request('services/light/turn_on', 'post', payload=command_dict)
-        logging.info(f"Light command executed: {command}, Response: {response}")
     except Exception as e:
         logging.error(f"Error executing light command: {e}")
+        
+                
+tts_thread = threading.Thread(target=talk_with_tts)
+tts_thread.daemon = True
+tts_thread.start()
+
+playlist_thread = threading.Thread(target=iterate_playlist)
+playlist_thread.daemon = True
+playlist_thread.start()
+
