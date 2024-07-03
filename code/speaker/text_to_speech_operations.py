@@ -20,20 +20,16 @@ from home_assistant_interactions import home_assistant_request
 from tts_google_cloud import tts_model
 from multiprocessing import Value, Lock
 from queue_handling import send_to_tts_queue, send_to_tts_condition
+from shared_variables import user_response_window, most_recent_wake_word, user_response_en_route, tts_is_speaking, tts_lock, tts_is_speaking_notification
+
 
 # Initialize tts_playlist_queue as thread-safe
 tts_playlist_queue = Queue()
 tts_playlist_notify = threading.Event()
 
-
 tts_outputs = {}  # Dictionary to store text and timestamps for echo cancellation
 
-# tts_is_speaking becomes true when speech play back starts
-# and remains true until all files have finishes playing.
-# This is the status used in external moduals
-tts_is_speaking = Value('b', False)
-tts_is_speaking_notification = threading.Event()
-tts_lock = Lock()
+
 
 # individual_audio_is_playing turns true at the beginning of each indavidual audio file
 # it turns false at the end of that file
@@ -148,8 +144,40 @@ def talk_with_tts():
         tts_playlist_queue.put((command, text))
         tts_playlist_notify.set()
 
+def set_response_window():
+    # we set the user response window to true for a few
+    # seconds after TTS finishes.  If the useer begins
+    # speaking during that window, en_route becomes True
+    # in the speech to tech module.  If it does not become
+    # true, the most_recent_wake_word, set in main, must be
+    # reset
+    window_duration = 10  # seconds
+    check_interval = 0.1  # seconds
 
+    with user_response_window.get_lock():
+        user_response_window.value = True
+    print("User response window opened")
 
+    for _ in range(int(window_duration / check_interval)):
+        time.sleep(check_interval)
+        with user_response_en_route.get_lock():
+            if user_response_en_route.value:
+                print("User response detected, ending response window")
+                break
+    
+    with user_response_window.get_lock():
+        user_response_window.value = False
+    print("User response window closed")
+
+    with user_response_en_route.get_lock():
+        if not user_response_en_route.value:
+            with most_recent_wake_word.get_lock():
+                most_recent_wake_word.value = b' ' * 150 
+            print("No user response detected, most recent wake word cleared")
+        else:
+            print("user_response_en_route is True, keeping most recent wake word")
+
+            
 # play_audio is called later by iterate_playlist
 # the play list of tuples must be iterated
 # before calling play_audio
@@ -185,7 +213,6 @@ def play_audio(audio_file):
     finally:
         with individual_audio_is_playing.get_lock():
             individual_audio_is_playing.value = False
-        
         individual_audio_finished_notification.set()
         
         player.stop()
@@ -196,12 +223,10 @@ def play_audio(audio_file):
         except Exception as e:
             print(f"Error deleting temporary file: {str(e)}")
         
-
 def iterate_playlist():
     global individual_audio_is_playing
     to_play = None # play this item
    
-    
     # Timeout settings
     audio_timeout_finish = 3  # seconds
     playlist_wait_timeout = 15  # seconds
@@ -212,8 +237,12 @@ def iterate_playlist():
         try:
 
             if tts_playlist_queue.empty():
+                with tts_lock:
+                    if tts_is_speaking.value:
+                        threading.Thread(target=set_response_window).start()
+                        tts_is_speaking.value = False    
                 tts_playlist_notify.wait()  
-                tts_playlist_notify.clear()           
+                tts_playlist_notify.clear()        
             print(f"Queue size before get: {tts_playlist_queue.qsize()}")
             to_play = tts_playlist_queue.get(block=False)
             print(f"Retrieved from tts_playlist_queue: {to_play}")
@@ -239,6 +268,9 @@ def iterate_playlist():
 
                 if audio_content is not None:
                     print("Calling play_audio function")
+                    with tts_lock:
+                        if not tts_is_speaking.value:
+                            tts_is_speaking.value = True  
                     play_audio(audio_content)
                 else:
                     continue

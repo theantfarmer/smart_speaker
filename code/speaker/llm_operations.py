@@ -2,7 +2,7 @@ import re
 import db_operations 
 from expressive_light import create_command_text_list, format_for_home_assistant
 from llm_chatgpt import llm_model as chat_with_gpt
-# from llm_claude import llm_model as chat_with_claude
+from llm_claude import llm_model as chat_with_claude
 from llm_gpt_dolphinmini import llm_model as chat_with_dolphin
 from queue_handling import llm_response_queue, llm_response_condition, send_to_tts_queue, send_to_tts_condition
 import inspect
@@ -23,7 +23,7 @@ def handle_conversation(user_input):
             llm_response = chat_with_gpt(user_input_text)
         elif "chat_with_claude" in user_input:
             user_input_text = user_input["chat_with_claude"]
-            # llm_response = chat_with_claude(user_input_text)
+            llm_response = chat_with_claude(user_input_text)
         elif "chat_with_dolphin" in user_input:
             user_input_text = user_input["chat_with_dolphin"]
             thread = threading.Thread(target=chat_with_dolphin, args=(user_input_text,))
@@ -34,7 +34,7 @@ def handle_conversation(user_input):
     else:
         llm_response = default_model(user_input)
 
-def handle_llm_rersponse(): 
+def handle_llm_response(): 
     # this function handles streaming and non streaming functions
     # text may arrive as a block of text or in streaming chunks
     # if streaming, it must be proceeded by a True boolean
@@ -200,5 +200,5 @@ def handle_llm_rersponse():
             break
 
 
-thread = threading.Thread(target=handle_llm_rersponse,)
+thread = threading.Thread(target=handle_llm_response,)
 thread.start()

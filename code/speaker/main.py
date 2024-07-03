@@ -16,8 +16,8 @@ from smart_home_parser import smart_home_parse_and_execute
 from home_assistant_interactions import flattened_home_assistant_commands, execute_command_in_home_assistant
 from llm_operations import handle_conversation
 from queue_handling import send_to_tts_queue, send_to_tts_condition
+from shared_variables import most_recent_wake_word, user_response_window, user_response_en_route
 
-wake_word_active = True
 # transcribed_texts = Queue()
 mp3_queue = Queue()
 
@@ -134,10 +134,11 @@ def main():
     wake_to_functions_dict = {}
     # These dictionaries map function wake words to their functions 
     
+    response_text = None
+    # user response after TTS finishes speaking
+        
     direct_wake_word_chopper = []    
     
-    wake_word_stripped = False
-    function_wake_word_found = False
     function_input_dict = {}
     function_map = {}
 
@@ -162,6 +163,7 @@ def main():
     # command after the wake word is
     # used.
     
+    # BUILD wake words here:
     for wake_word in wake_words:
         if "[command]" in wake_word:
             chop_index = wake_word.find("[command]")
@@ -199,17 +201,17 @@ def main():
             model=None
             # print("Waiting for speech...")
             print("Before capture speech in main")
-            text = capture_speech()
+            text = capture_speech() if response_text is None else response_text
             print("after capture speech in main")
             print(f"returned to main: {text}")
             stop_iteration = False
-            function_wake_word = False
+            function_wake_word_found = False
             command_wake_word = False
+            user_input_text = ""
 
-            if not text:
+            if not text and not response_text:
                 continue
 
-            
             print(f"Captured text: {text}")
             print(f"Checking for echo: {text}")
             if check_for_echo(text, tts_outputs):
@@ -219,8 +221,10 @@ def main():
             wake_word_found = False
             command_wake_word_found = False
 
-
-            if text:
+            if text or response_text:
+                if response_text:
+                    text = response_text
+                    response_text = None
                 print(f"Captured text: {text}")
                 user_input_text = text.strip()
                 if slow_wake_word_active:
@@ -229,7 +233,8 @@ def main():
                     print(f"old and new user txt combined: {user_input_text}")
                 # Remove punctuation and convert to lowercase
                 user_input_text = user_input_text.translate(str.maketrans('', '', string.punctuation)).replace('-', ' ').lower()
-                        
+                 
+                # DETECT wake words here:        
                 for command_wake_word in command_wake_words:
                     if command_wake_word.lower() in user_input_text:
                         wake_word_found = True
@@ -250,6 +255,8 @@ def main():
                         index = user_input_text.find(function_wake_word.lower())
                         if index != -1:
                             end_index = index + len(function_wake_word)
+                            most_recent_wake_word.value = function_wake_word.encode('utf-8')
+                            print(f"Updated most recent function wake word: {most_recent_wake_word.value.decode('utf-8')}")
                             user_input_text = user_input_text[end_index:].strip()
                             print(f"Query to function: {user_input_text}")
                             if function_wake_word.lower() in wake_to_functions_dict:
@@ -264,7 +271,7 @@ def main():
                                     print("command found after the function wake word.")   
                                     function_input_dict[user_function_request] = user_input_text
                                     wake_word_found = True
-                                    function_wake_word = True
+                                    function_wake_word_found = True
                       
 
                 # Check for wake words. If True, remove the wake word.
@@ -276,6 +283,8 @@ def main():
                         index = user_input_text.find(wake_word.lower())
                         if index != -1:
                             end_index = index + len(wake_word)
+                            most_recent_wake_word.value = wake_word.encode('utf-8')
+                            print(f"Updated most recent wake word: {most_recent_wake_word.value.decode('utf-8')}")
                             user_input_text = user_input_text[end_index:].strip()
                             print(f"Processed user_input_text: '{user_input_text}'")
                             # Check if the input text is empty after trimming and cleaning
@@ -287,10 +296,17 @@ def main():
                                 wake_word_found = True
                                 print(f"Command to execute: {user_input_text}")
                             break
-
+                
                 if stop_iteration:
-                    print("itteration stopped.")  
-                    continue 
+                    with user_response_en_route.get_lock():
+                        if user_response_en_route.value:
+                            user_response_en_route.value = False
+                            with most_recent_wake_word.get_lock():
+                                # most_recent_wake_word.value = -0b' ' * 150
+                                print(f"stop iteration reset most recent ww: {most_recent_wake_word.value.decode('utf-8')}")
+                    response_text = None
+                    stop_iteration = False
+                    continue
 
                 # this handles query text that arrives seperately from the command wake word, allowing user pause            
                 if not function_wake_word_active:
@@ -302,6 +318,22 @@ def main():
                 #ignore everything without a wake word or special wake word
                 if not wake_word_found and wake_word_active:
                         
+                    # If TTS just finished speaking and a previous wake word
+                    #  is stored, we tack it on on to incoming text if 
+                    # no other wake word is present so the user can converse
+                    # with the model
+
+                    with user_response_en_route.get_lock():
+                        print(f"With user_response_en_route.get_lock(). Current value: {user_response_en_route.value}")
+                        if user_response_en_route.value:
+                            print(f"Inside if user_response_en_route.value. Value is True.")
+                            with most_recent_wake_word.get_lock():
+                                if most_recent_wake_word.value:
+                                    response_text = f"{most_recent_wake_word.value.decode('utf-8')} {user_input_text}"
+                                    most_recent_wake_word.value = b' ' * 150
+                                    user_response_en_route.value = False
+                                    continue
+                            
                     # This is where slow wake words are handled.  If a user says
                     # simply "hey," we check it against the all wake words list
                     # and make a new list of all the wake words that start with
@@ -322,16 +354,32 @@ def main():
                     else:
                         threading.Thread(target=enable_slow_wake_word).start()
                         previous_user_input_text = user_input_text
-                    continue                                                                                          
-         
+                    continue  
+                                                                                                        
+            is_command_executed = False
+            
+            # if not function_wake_word:
             #secret phrases are listed in a separate file.
             #they are not recorded in the db
-            if user_input_text in SECRET_PHRASES:
-                secret_response = SECRET_PHRASES[user_input_text]
-                talk_with_tts(secret_response)
-                continue
-           
-            save_to_db('User', user_input_text)
+            if not function_wake_word_found:
+                if user_input_text in SECRET_PHRASES:
+                    secret_response = SECRET_PHRASES[user_input_text]
+                    talk_with_tts(secret_response)
+                    continue
+            
+                save_to_db('User', user_input_text)
+                
+                is_command_executed, command_response = smart_home_parse_and_execute(user_input_text)
+                if is_command_executed:
+                    save_to_db('Agent', command_response) #command response holds the string to be read, as returned from smart home parser
+                    print(f"About to call talk_with_tts with command_response: {command_response}") 
+                    # talk_with_tts(command_response)
+                    with send_to_tts_condition:
+                        send_to_tts_queue.put(command_response)
+                        # print("Added to send_to_tts_queue.")
+                        send_to_tts_condition.notify()
+                        # print("send_to_tts_condition set.")
+                    continue
 
             if user_function_request == "speak_to_home_assistant" or user_input_text in flattened_home_assistant_commands:
                 success, ha_response = execute_command_in_home_assistant(user_input_text)
@@ -339,40 +387,19 @@ def main():
                     talk_with_tts(ha_response)
                 continue
 
-            # if 
-            #     ha_response = execute_command_in_home_assistant(user_input_text)
-            #     # if ha_response:
-            #     #     talk_with_tts(ha_response)
-            #     stop_iteration = True
-            #     continue
-
-# Rest of the code remains the same
-
-            # Here the command is checked for smart home commands.  
-            # Commands are predictable and stop commands from proceeding
-            # further.  
-          
-            is_command_executed, command_response = smart_home_parse_and_execute(user_input_text)
-            if is_command_executed:
-                save_to_db('Agent', command_response) #command response holds the string to be read, as returned from smart home parser
-                print(f"About to call talk_with_tts with command_response: {command_response}") 
-                talk_with_tts(command_response)
-                continue
-
             # If the command is not executed by the smart home system, 
             # it is passed to language model.  
 
             if any(func in function_input_dict for func in ("chat_with_gpt", "chat_with_claude", "chat_with_dolphin")):
-                result = handle_conversation(function_input_dict)
-                talk_with_tts(result) 
-                return result
+                handle_conversation(function_input_dict)
+                print(f"Conversation handled by {next(func for func in function_input_dict if func in ('chat_with_gpt', 'chat_with_claude', 'chat_with_dolphin'))}")
+                continue
+
 
             if not is_command_executed:
                 print(f"Text before handle_conversation call: {user_input_text}")
-                result = handle_conversation(user_input_text)
-                print(f"Result after handle_conversation: {result}")
-                talk_with_tts(result)
-
+                handle_conversation(user_input_text)
+                print("Conversation handled by LLM operations")
 
     except Exception as e:
         print(f"An exception occurred in the main else block: {e}")

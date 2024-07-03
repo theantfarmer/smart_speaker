@@ -54,7 +54,8 @@ import multiprocessing
 from multiprocessing import Process, Queue, Manager, Lock, Value
 from faster_whisper import WhisperModel
 from faster_whisper.vad import get_speech_timestamps, VadOptions
-from text_to_speech_operations import tts_is_speaking, tts_lock
+from shared_variables import user_response_en_route, user_response_window, tts_is_speaking, tts_lock
+
 
 print("Speech module imports completed")
 logging.basicConfig(level=logging.DEBUG)
@@ -66,6 +67,13 @@ duration = .25 # duration of each audio buffer in seconds
 print("Global variables initialized")
 
 is_speech = False
+
+# continuous mode refers to continuous recording
+# when someone is speaking
+# as opposed to chunk mode when someone is not.
+# we export it so other modules know when someone is speaking.
+continuous_recording = Value('b', False)
+
 
 is_audio_system_running = False
 whisper_model_loaded = False
@@ -349,17 +357,21 @@ def transcriber(merged_chunks_queue, transcribed_text_queue, transcription_condi
                         # print(f"Transcription process {multiprocessing.current_process().name} released the lock")
                         # print("After notify")
                     print(f"Transcription successful. Text: {captured_text}")
-  
+            else:                        
+                with user_response_en_route.get_lock():
+                    user_response_en_route.value = False
+                    print("user_response_en_route set to False in transcriber")
+                    
 def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
-    global keep_recording, samplerate, whisper_model_loaded, duration, notification_counter, background_noise_profile
+    global keep_recording, samplerate, user_response_window, whisper_model_loaded, user_response_en_route, duration, notification_counter, background_noise_profile
 
     chunk_buffer_size = 2
     number_of_chunks_to_end_phrase = 3 # sends the contents of continuous buffer to be transcribed
     number_of_chunks_to_end_continuous = 3 # holds transcribed text until speaker is fiinsihed speaking
     chunk_buffer = collections.deque(maxlen=chunk_buffer_size)
+    continuous_recording = False
     continuous_buffer = Queue()
     speech_false_counter = 0
-    continuous_recording = False
     continuous_chunk_counter = 0
 
     p = pyaudio.PyAudio()
@@ -368,7 +380,7 @@ def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
                     rate=samplerate,
                     input=True,
                     frames_per_buffer=int(duration * samplerate))
-
+    print(f"Buffer manager started. Initial user_response_en_route value: {user_response_en_route.value}")
     while keep_recording:
         audio_chunk = stream.read(int(duration * samplerate))
         raw_chunk = np.frombuffer(audio_chunk, dtype=np.int16).copy() # for profiling
@@ -382,7 +394,7 @@ def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
         print(f"Speech detected: {speech_detected}")
 
         with tts_lock: 
-            if not tts_is_speaking.value:
+            if not tts_is_speaking.value:          
                 if not continuous_recording:
                     # print("Not in continuous recording mode")
                     if not speech_detected:
@@ -393,6 +405,12 @@ def buffer_manager(stream_id, fresh_new_chunk_queue, stream_condition):
                         # print("Speech detected, starting continuous recording")
                         if continuous_buffer.empty():
                             continuous_recording = True
+                            with user_response_window.get_lock():
+                                if user_response_window.value:
+                                    with user_response_en_route.get_lock():
+                                        print(f"user_response_en_route value before setting: {user_response_en_route.value}")
+                                        user_response_en_route.value = True
+                                        print(f"user_response_en_route value after setting: {user_response_en_route.value}")
                             print("Continuous recording started")
                             chunk_id = f"chunk_01"
                             print(f"Assigning chunk ID: {chunk_id}")
