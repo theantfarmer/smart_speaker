@@ -29,6 +29,7 @@ wake_words = [
             "hey chatgpt f[chat_with_gpt]"
             "hey chat gpt f[chat_with_gpt]",
             "hey claude f[chat_with_claude]",
+            "hey clyde f[chat_with_claude]",
             "hey dolphin f[chat_with_dolphin]",
             "hey home assistant f[speak_to_home_assistant]",
             "hey homes f[speak_to_home_assistant]",
