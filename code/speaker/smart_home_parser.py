@@ -1,3 +1,10 @@
+# THIS MODULE IS DEPRECIATED
+# it is replaced by centeralized_tools.py
+# but I havent transferred all the tools yet
+
+
+
+
 # this is early code I had chatgpt write for me in the beginning
 # it is scheduled to be scrapped and completely re-written because it is messy and confusing
 # but it works

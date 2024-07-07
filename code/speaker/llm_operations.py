@@ -113,7 +113,7 @@ def handle_llm_response():
                 # print(f"streaming_response 1: {streaming_response}")
                 # we set the pattens to look for when to break up text and send to TTS
                 command_pattern = r'@\['
-                sentence_end_pattern = r'[.!?:](?=\s+[A-Z])|[.!?:]$|,(?=\s+)'
+                sentence_end_pattern = r'(?<!\d)([.!?:])(?=\s+[A-Z])|([.!?])(?!\S)|(?<!\d)(?<!\/)(?<!\w),(?=\s+)(?!\d)'
                 line_break_pattern = r'\r?\n'
                 # if a command is streaming in
                 # if streaming response BEGINS with a command, we need to seperate the command

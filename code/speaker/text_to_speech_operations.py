@@ -78,7 +78,8 @@ def talk_with_tts():
             print(f"Error in talk_with_tts: {str(e)}")
         
         # if text is a string, we attempt to remove characters
-        # that TTS can't read or are unpleasant to listen to
+        # that TTS can't read or are unpleasant to listen to.
+        # We also correct comment terms and names for better pronounciation.
         # if the string arrives empty or becomes empty after
         # it is cleaned, we set it to None
             
@@ -91,7 +92,12 @@ def talk_with_tts():
                 # Remove line break characters
                 text = text.replace('\n', ' ').replace('\r', '')
                 text = text.replace('*', ' ')
+                text = text.replace('_', ' ')
                 text = re.sub(r'http\S+', 'online', text)
+                # Replace "AI" with "A.I." for better pronunciation
+                text = re.sub(r'\b(?<![\w.-])AI(?![\w.-])\b', 'A.I.', text)
+                # Replace "OpenAI" with "Open A.I." for better pronunciation
+                text = re.sub(r'\bOpenAI\b', 'Open A.I.', text)
             except Exception as e:
                 print(" ")
             

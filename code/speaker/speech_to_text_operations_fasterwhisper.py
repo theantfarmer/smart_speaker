@@ -56,7 +56,6 @@ from faster_whisper import WhisperModel
 from faster_whisper.vad import get_speech_timestamps, VadOptions
 from shared_variables import user_response_en_route, user_response_window, tts_is_speaking, tts_lock
 
-
 print("Speech module imports completed")
 logging.basicConfig(level=logging.DEBUG)
 print("Initializing global variables")
@@ -271,7 +270,7 @@ def but_is_it_speech(audio_chunk, samplerate, stream_id):
     return speech_detected
 
 def transcriber(merged_chunks_queue, transcribed_text_queue, transcription_condition, merged_chunks_condition):
-    global whisper_model_loaded, samplerate, is_audio_system_running, notification_counter
+    global whisper_model_loaded, samplerate, is_audio_system_running, notification_counter, user_response_en_route
 
     print(f"Transcriber process: {multiprocessing.current_process().name}")
     print(f"Transcription condition: {transcription_condition}")

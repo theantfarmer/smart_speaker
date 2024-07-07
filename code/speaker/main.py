@@ -1,10 +1,7 @@
 import threading
 import time
 import string
-import logging
-import pyaudio
-import audioop
-import subprocess
+import asyncio
 from dont_tell import SECRET_PHRASES
 import traceback
 from queue import Queue
@@ -12,11 +9,11 @@ from wake_words import wake_words
 from db_operations import initialize_db, save_to_db
 from text_to_speech_operations import talk_with_tts, tts_outputs
 from speech_to_text_operations_fasterwhisper import capture_speech
-from smart_home_parser import smart_home_parse_and_execute
 from home_assistant_interactions import flattened_home_assistant_commands, execute_command_in_home_assistant
 from llm_operations import handle_conversation
 from queue_handling import send_to_tts_queue, send_to_tts_condition
 from shared_variables import most_recent_wake_word, user_response_window, user_response_en_route
+from centralized_tools import handle_tool_request, tool_commands_list, tool_names_list, tool_commands_map_dict
 
 # transcribed_texts = Queue()
 mp3_queue = Queue()
@@ -113,6 +110,8 @@ def main():
     # stop_recording()
     messages = []
        
+
+       
     user_input_text = "" 
     #command text stripped is the user input minus the wake word after the wake word is processed
 
@@ -169,13 +168,17 @@ def main():
             chop_index = wake_word.find("[command]")
             direct_wake_word = wake_word[:chop_index].strip()
             direct_wake_word_chopper.append(direct_wake_word)
-            for command in flattened_home_assistant_commands:
+            all_commands = flattened_home_assistant_commands + tool_commands_list
+            # this is a list of all commands imported from other modules
+            # it will automatically be turned into command wake words   
+            for command in all_commands:
                 command_wake_word = wake_word.replace("[command]", command)
                 command_wake_words.append(command_wake_word)
 
                 # Populate the wake_to_commands_dict
                 full_wake_word = direct_wake_word + " " + command
                 wake_to_commands_dict[full_wake_word.lower()] = command
+                
         elif "f[" in wake_word and "]" in wake_word:
             start_index = wake_word.find("f[") + 2
             end_index = wake_word.find("]")
@@ -361,6 +364,7 @@ def main():
             # if not function_wake_word:
             #secret phrases are listed in a separate file.
             #they are not recorded in the db
+            
             if not function_wake_word_found:
                 if user_input_text in SECRET_PHRASES:
                     secret_response = SECRET_PHRASES[user_input_text]
@@ -368,17 +372,21 @@ def main():
                     continue
             
                 save_to_db('User', user_input_text)
-                
-                is_command_executed, command_response = smart_home_parse_and_execute(user_input_text)
+            
+            if user_input_text in tool_commands_list or user_function_request in tool_names_list:
+                if not function_wake_word_found:
+                    tool_name = tool_commands_map_dict[user_input_text]
+                else:
+                    tool_name = user_function_request
+                tool_input_dict = {user_input_text: tool_name}
+                print("calling tool")
+                is_command_executed, command_response = asyncio.run(handle_tool_request(tool_input_dict))
                 if is_command_executed:
-                    save_to_db('Agent', command_response) #command response holds the string to be read, as returned from smart home parser
-                    print(f"About to call talk_with_tts with command_response: {command_response}") 
-                    # talk_with_tts(command_response)
+                    save_to_db('Agent', command_response)
+                    print(f"About to call talk_with_tts with command_response: {command_response}")
                     with send_to_tts_condition:
                         send_to_tts_queue.put(command_response)
-                        # print("Added to send_to_tts_queue.")
                         send_to_tts_condition.notify()
-                        # print("send_to_tts_condition set.")
                     continue
 
             if user_function_request == "speak_to_home_assistant" or user_input_text in flattened_home_assistant_commands:
@@ -396,7 +404,7 @@ def main():
                 continue
 
 
-            if not is_command_executed:
+            if not is_command_executed and not function_wake_word_found:
                 print(f"Text before handle_conversation call: {user_input_text}")
                 handle_conversation(user_input_text)
                 print("Conversation handled by LLM operations")
@@ -409,38 +417,8 @@ def main():
     print(f"Updated function_map: {function_map}")
 
 
-
-
-
 def check_for_echo(text, tts_outputs, echo_threshold_seconds=60):
     # print(f"Checking for echo: {text}")
-    # # Normalize the input text for comparison
-    # text_no_punctuation = text.translate(str.maketrans('', '', string.punctuation)).lower()
-    # text_segments = text_no_punctuation.split()
-
-    # # Initialize a flag to track echo detection status
-    # echo_detected = False
-
-    # # Iterate through each segment of the input text
-    # for i, segment in enumerate(text_segments):
-    #     segment_text = ' '.join(text_segments[i:]) 
-    #     for spoken_text, timestamp in tts_outputs.items():
-    #         # Normalize stored TTS output for comparison
-    #         spoken_text_no_punctuation = spoken_text.translate(str.maketrans('', '', string.punctuation)).lower()
-
-    #         # Check if the segment matches any recent TTS outputs within the echo threshold
-    #         if time.time() - timestamp <= echo_threshold_seconds and segment_text.startswith(spoken_text_no_punctuation):
-    #             print(f"Echo detected, ignoring: {segment_text}")
-    #             echo_detected = True
-    #             break 
-            
-    #     if echo_detected:
-    #         break 
-        
-    # if not echo_detected:
-    #     print("No echo detected, processing further...")
-    #     return False  # Indicates no echo was detected, and further processing should occur
-
     return
 
 

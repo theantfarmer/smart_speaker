@@ -6,7 +6,7 @@ def get_current_time():
 CLAUDE_TOOLS = [
     {
         "name": "get_current_time",
-        "description": "Get the current time. This tool returns the current time in 12-hour format with AM/PM indicator.",
+        "description": "Get the current time from user system.",
         "input_schema": {
             "type": "object",
             "properties": {},
@@ -18,8 +18,8 @@ CLAUDE_TOOLS = [
 def get_tools_for_claude():
     return CLAUDE_TOOLS
 
-def handle_tool_request(tool_name, tool_input):
+async def handle_tool_request(tool_name, tool_args):
     if tool_name == "get_current_time":
-        return get_current_time()
+        return get_current_time()["current_time"]
     else:
         return {"error": f"Unknown tool: {tool_name}"}
