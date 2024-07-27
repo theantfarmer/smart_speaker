@@ -63,12 +63,13 @@ def handle_llm_response():
             # the tts module will handle text paired with commands so they can be executed together
 
     incoming_text_debug = ""
-    tts_text_debug = "" 
+    tts_text_debug = ""
+    streaming = False 
 
     with llm_response_condition:
         # print("Waiting for notification...")
         llm_response_condition.wait()
-        # print("Received notification from llm_response_condition")
+        print("Received notification from llm_response_condition")
   
     while True:  
         # get the first item from the queue  
@@ -87,12 +88,12 @@ def handle_llm_response():
             if not streaming:
                 # when streaming becomes false, we process the remaining contents of streaming response
                 llm_response = streaming_response
-                print("Incoming text debug:")
-                print(incoming_text_debug)
-                print("TTS text debug:")
-                print(tts_text_debug)
-                print("Final llm_response:")
-                print(llm_response)
+                # print("Incoming text debug:")
+                # print(incoming_text_debug)
+                # print("TTS text debug:")
+                # print(tts_text_debug)
+                # print("Final llm_response:")
+                # print(llm_response)
             if streaming:
                 # we initiate our variables when streaming mode turns on
                 streaming_response = ""
@@ -158,8 +159,8 @@ def handle_llm_response():
                                 # and streaming retains is the text after
                                 # streaming response retains its contents throughout itteration
                                 streaming_response = streaming_response[end_idx:]
-                                print(f"llm_response 2: {llm_response}")
-                                print(f"streaming_response 2: {streaming_response}")
+                                # print(f"llm_response 2: {llm_response}")
+                                # print(f"streaming_response 2: {streaming_response}")
                                 # if llm response contains no letters or numbers, set i to None
                         else:
                             continue
@@ -168,7 +169,7 @@ def handle_llm_response():
                 if creating_command_tuple:
                     formatted_command = format_for_home_assistant(streaming_command)
                     command_text_tuple = (formatted_command, llm_response)
-                    print(f"Command text tuple: {command_text_tuple}")
+                    # print(f"Command text tuple: {command_text_tuple}")
 
 
             if isinstance(command_text_tuple, tuple):

@@ -2,6 +2,7 @@ import threading
 import time
 import string
 import asyncio
+import uuid
 from dont_tell import SECRET_PHRASES
 import traceback
 from queue import Queue
@@ -379,16 +380,18 @@ def main():
                 else:
                     tool_name = user_function_request
                 tool_input_dict = {user_input_text: tool_name}
+                # Generate a unique tool_use_id to track tool call
+                main_tool_use_id = f"main_toolu_{uuid.uuid4()}"
                 print("calling tool")
-                is_command_executed, command_response = asyncio.run(handle_tool_request(tool_input_dict))
+                is_command_executed, command_response, _ = asyncio.run(handle_tool_request(tool_input_dict, main_tool_use_id))
                 if is_command_executed:
                     save_to_db('Agent', command_response)
                     print(f"About to call talk_with_tts with command_response: {command_response}")
                     with send_to_tts_condition:
                         send_to_tts_queue.put(command_response)
                         send_to_tts_condition.notify()
-                    continue
-
+                continue
+            
             if user_function_request == "speak_to_home_assistant" or user_input_text in flattened_home_assistant_commands:
                 success, ha_response = execute_command_in_home_assistant(user_input_text)
                 if success:
