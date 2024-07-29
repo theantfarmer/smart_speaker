@@ -1,12 +1,33 @@
-from anthropic import AsyncAnthropic, APIError
 import os
 import json
 import asyncio
+import logging
+from anthropic import AsyncAnthropic, APIError
 from queue_handling import llm_response_queue, llm_response_condition
 from centralized_tools import tools_for_claude, handle_tool_request, tools_list_for_claude, tools_bot_schema
 from dont_tell import CLAUDE_KEY
   
-# these models can be mixed and matched as needed
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+  
+# this is a complex system to experiment with multiple bots. 
+# I built this to experiment with using different sized models for different tasks
+# and having them work together.  
+
+# the base model is the default model the user 
+# interacts with when they sau "hey claude",
+# but any model can be called specificly.  
+
+# the tools bot is an experimental model that handles tool use
+# Tools bot is a tool itself and can be called 
+# anywhere else in the system
+# the base_model calls the tool model when
+# it wants use tools
+
+# this was also put in place to reduce token usage
+# by not sending full schemas for each tool on every call.  
+  
+# models can be mixed and matched as needed
 # they can call the others as needed
 opus = "claude-3-opus-20240229" #high model
 sonnet = "claude-3-5-sonnet-20240620" #mid model
@@ -20,12 +41,6 @@ calling_model = None
 full_readable_text = ""
 role = "user"
 
-# the base model is the default model the user 
-# interacts with when they sau "hey claude",
-# but any model can be called specificly.  
-# the tools model handles all tool use
-# the base_model calls the tool model when
-# it wants use tools
     
 client = AsyncAnthropic(api_key=CLAUDE_KEY)
 
@@ -40,7 +55,31 @@ def get_or_create_custom_instructions():
     # alter model behavior.  You must change them in the file mentioned above.
     if not os.path.exists(file_path):
         with open(file_path, 'w') as file:
-            file.write("""You are a voice assistant for a smart speaker. Provide extremely concise responses suitable for speech. Aim for 1-3 short sentences max unless more detail is explicitly requested. Be direct and to the point. Prioritize brevity above all else in every response.""")
+            file.write("""You are a voice assistant for a smart speaker. Your primary goal is to provide extremely concise and helpful responses to user queries. Follow these key principles:
+
+1. Limit spoken responses to 1-3 short sentences unless more detail is explicitly requested.
+2. Use available tools immediately when needed without explanation.
+3. Address the user directly in your spoken responses.
+4. Prioritize brevity in all interactions.
+
+When you receive a user query, process it as follows:
+
+1. If the query requires using a tool, use it immediately without explanation.
+2. For complex queries, use <thinking></thinking> tags to show your reasoning process. This won't be spoken aloud.
+3. If the request is unclear, consider potential transcription errors and try to interpret the most likely intent.
+4. If there's a problem you can't resolve, state it briefly and shut the hell up.  
+
+Format your response like this:
+<thinking>Your internal reasoning process (if needed) which the user will not hear.  Use this space to think and reason.</thinking>
+Your spoken response to the user (1-3 short sentences).  This is the only part the user receives.
+
+Remember:
+- Don't explain tool usage or offer examples.
+- Don't use unnecessary pleasantries or elaborate explanations.
+- Don't tell the user what you are going to do.  Just do it.
+- If there is a problem, say so briefly, then shut the hell up.  
+- If more detail is explicitly requested, provide it concisely.
+""")
     
     with open(file_path, 'r') as file:
         return file.read()
@@ -56,7 +95,8 @@ tools_list_prompt = create_tools_list_prompt()
 
 async def claude_operations():
     global model_params, history_length, calling_model, full_readable_text, role
-
+    print(f"Entering claude_operations, role: {role}")
+    
     try:  
         content = []
         tool_use_id = getattr(claude_operations, 'tool_use_id', None)
@@ -133,7 +173,6 @@ async def claude_operations():
         full_readable_text = None
         result = None
         full_readable_text = ""
-        print(f"reset: {tool_use_id}")
         # print(f"API request payload: {json.dumps(model_params, indent=2)}")
         
         print("\n--- Full History ---")
@@ -142,22 +181,20 @@ async def claude_operations():
             print(json.dumps(msg, indent=2))
         print("--- End of Full History ---\n")
             
-        
         if role == 'user':
         # send to claude
             async with client.messages.stream(**model_params, messages=current_history) as stream:
-                print("Entered message stream")
+          
                 # set variables here at the function level
                 # to be reset after send to Claude
-                
+                logger.debug("Stream connection opened")
                 # claude's response
                 try:
-                    async for event in stream:
-                        # print(f"Received event: {event.type}")
+                    response_to_return = None 
+                    async for event in stream:     
                         # claude response beginning
                         if event.type == "content_block_start":
                             with llm_response_condition:
-                                print("Putting True in queue (start streaming)")
                                 llm_response_queue.put(True)
                                 llm_response_condition.notify() 
                             if event.content_block.type == "tool_use":
@@ -186,15 +223,15 @@ async def claude_operations():
                                 # the accumulated response will be appended to the history
                                 full_readable_text += streaming_text
                             elif event.delta.type == "input_json_delta":
-                                print(f"Tool input JSON: {event.delta.partial_json}")
+                                # print(f"Tool input JSON: {event.delta.partial_json}")
                                 #json indicates a tool input text
                                 accumulated_json += event.delta.partial_json
                         # claude response end
                         elif event.type == "message_stop":
+                            # print(f"Message stop event, stop_reason: {event.message.stop_reason}")
                             with llm_response_condition:
-                                print("Putting False in queue (end streaming)")
+                                # print("Putting False in queue (end streaming)")
                                 llm_response_queue.put(False)
-                                print(f"Message stop reason: {event.message.stop_reason}")
                             if event.message.stop_reason == "tool_use":
                                 if accumulated_json:
                                     try:
@@ -216,27 +253,30 @@ async def claude_operations():
                             print(f"is it none?: {tool_use_id}")
                             response_to_return = full_readable_text
                             # response tor return is stored for a moment so it is not cleared after history append
-                            await claude_operations()
-                            if calling_model == "tools_bot" and tool_use_id is None:
-                                # responses from tools bot are returned to the calling
-                                # function if they do not include a tool use id
-                                full_readable_text = ""
-                                return response_to_return
-                            
-                            print("After calling claude_operations")
+                            await claude_operations() # to append to history
+                            if calling_model == "tools_bot": 
+                                print(f"In tools_bot branch, tool_use_id: {tool_use_id}")
+                                if calling_model == "tools_bot" and tool_use_id is None:
+                                    if full_readable_text and full_readable_text.strip():
+                                        # responses from tools bot are returned to the calling
+                                        # function if they do not include a tool use id
+                                        full_readable_text = ""
+                                        print(f"response_to_return: {response_to_return}")
+                                        return response_to_return                                         
 
                             # here we handle the tool call
                             # if there is a tool call, we call the tool,
                             # its response will be added to the history
                             # after claude's response
                             if tool_use_id is not None:
+                                print(f"Handling tool use, tool_name: {tool_name}, tool_input: {tool_input}")
                                 #tag the tool use id so we can track it and return it to the right place
                                 tagged_tool_use_id = f"{calling_model}${tool_use_id}"
                                 tool_request = {tool_name: tool_input}
                                 tool_use_id = None
                                 setattr(claude_operations, 'tool_use_id', tool_use_id)
                                 print(f"Constructed tool request: {tool_request}")  
-                                is_command_executed, result, tool_use_id = await handle_tool_request(tool_request, tagged_tool_use_id)
+                                is_command_executed, result, tagged_tool_use_id = await handle_tool_request(tool_request, tagged_tool_use_id)
                                 print(f"After handle_tool_request: executed={is_command_executed}, result='{result}', id={tool_use_id}")  
                                 if is_command_executed:
                         
@@ -247,7 +287,7 @@ async def claude_operations():
 
                                     # we split and remove the calling model
                                     # so the tool_use_id is as claude gave it
-                                    return_model, tool_use_id = tool_use_id.split('$', 1)
+                                    return_model, tool_use_id = tagged_tool_use_id.split('$', 1)
                                     setattr(claude_operations, 'result', result)
                                     setattr(claude_operations, 'tool_use_id', tool_use_id)
                                     print(f"Tool use ID split: return_model={return_model}, tool_use_id={tool_use_id}")
@@ -256,37 +296,33 @@ async def claude_operations():
                                     if return_model == "base_model":
                                         await call_base_model()
                                     elif return_model == "tools_bot":
-                                        tool_result_skips_tools_bot = False
+                                        tool_result_skips_tools_bot = True
                                         # when true, the tool result returns directly to the calling function
                                         # when false, it is first returned to tools bot, 
                                         # and the tools bot response is sent to the calling function
                                         if tool_result_skips_tools_bot:
+                                            print(f"if tool_result_skips_tools_bot: return from call_tools_bot: {result[:50]}...")
                                             return result
                                         else: 
-                                            return await call_tools_bot(result)
+                                            await call_tools_bot()
                                     else:
                                         raise ValueError(f"Invalid return model: {return_model}")
-                    
-                    print("Full Raw Response from Claude:")
-                    print(json.dumps([event.model_dump() for event in full_raw_response], indent=2))
-
+                                        
                 except APIError as e:
                     print(f"An API error occurred: {e}")
-                except Exception as e:
-                    print(f"An unexpected error occurred: {e}")
                 except asyncio.TimeoutError:
                     print("Stream processing timed out. Retrying...")
                 except Exception as stream_error:
-                    print(f"An error occurred during stream processing: {stream_error}")
-                    return None
-            
-            return full_readable_text 
-        
+                    logger.exception("Error during stream processing")
+                finally:
+                    logger.debug("Stream connection closed")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
+        print(f"outter Exception occurred: {type(e).__name__}, {str(e)}")
         raise
-
-async def call_tools_bot(incoming=None, incloming_tool_use_id=None):
+    
+async def call_tools_bot(incoming_text=None, incoming_tool_use_id=None):
+   
     # requests for tools bot are routed through centeralized_tools/
     # this adds some complexity to the set up, but we do this 
     # to keep tool sorting logic centeralized, so it may
@@ -305,11 +341,12 @@ async def call_tools_bot(incoming=None, incloming_tool_use_id=None):
     # call must be returned to Claude, it is stored in Claude operations.  We dont need it here.
     
     global model_params, history_length, calling_model, base_model, full_readable_text, role
-    if incoming:
-        full_readable_text = incoming
-        incoming = None
-    if incloming_tool_use_id:
-        tool_use_id = incloming_tool_use_id
+    tool_use_id = getattr(call_tools_bot, 'tool_use_id', None)
+    if incoming_text:
+        full_readable_text = incoming_text
+        incoming_text = None
+    if incoming_tool_use_id:
+        tool_use_id = incoming_tool_use_id
     print(f"Calling tools bot with input: {full_readable_text}, tool_use_id: {tool_use_id}")
     calling_model = "tools_bot"
     role = "user"
@@ -322,7 +359,11 @@ async def call_tools_bot(incoming=None, incloming_tool_use_id=None):
         "tools": tools_for_claude,
         "tool_choice": {"type": "auto"}
     }
+    print(f"About to call claude_operations in call_tools_bot")
     result = await claude_operations()
+    print(f"Returned from claude_operations in call_tools_bot with result: {result[:50] if result else 'None'}...")
+    print(f"result = {result}")
+    print(f"Exiting call_tools_bot with result: {result[:50] if result else 'None'}... and id: {tool_use_id}")
     return result, tool_use_id
 
 async def call_base_model():
@@ -364,24 +405,24 @@ async def call_base_model():
 # llm model calls the async def to take care of business on its behalf
 # asyncronously  
 
+
+loop = asyncio.new_event_loop()
+asyncio.set_event_loop(loop)
+
+
 def llm_model(input_content):
-    async def async_llm_model():
-        global base_model, full_readable_text
-        full_readable_text = input_content
-        print(f"llm_model received: {full_readable_text}")  
-        return await call_base_model()
-    return asyncio.run(async_llm_model())
+    global loop, base_model, full_readable_text
+    full_readable_text = input_content
+    print(f"llm_model received: {full_readable_text}")
+    return loop.run_until_complete(call_base_model())
 
 def shutdown():
+    global loop
     try:
-        loop = asyncio.get_event_loop()
         if loop.is_running():
             loop.stop()
-        if not loop.is_closed():
-            loop.close()
+        pending = asyncio.all_tasks(loop=loop)
+        loop.run_until_complete(asyncio.gather(*pending))
+        loop.close()
     except Exception as e:
         print(f"Error during shutdown: {e}")
-
-# Shutdown function to close the event loop
-def shutdown():
-    loop.close()
