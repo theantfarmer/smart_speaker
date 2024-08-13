@@ -27,9 +27,12 @@ def llm_model(user_input, assistant_id="asst_BPTPmSLF9eaaqyCkVZVCmK07"):
             role="user",
             content=user_input
         )
+        streaming = True
         with llm_response_condition:
-            llm_response_queue.put("streaming_start")
+            llm_response_queue.put(streaming)
+            # print("Added streaming mode indicator to the queue.")
             llm_response_condition.notify()
+            # print("GPT Notified the consuming code.")
         with client.beta.threads.runs.stream(
             thread_id=thread_id,
             assistant_id=assistant_id,

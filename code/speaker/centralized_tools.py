@@ -1,7 +1,12 @@
-from datetime import datetime
 import holidays
 import ephem
+import uuid
+import asyncio
+from datetime import datetime
+from queue_handling import tool_response_to_llm_claude_queue, tool_response_to_llm_claude_condition
 from transit_routes import fetch_subway_status, train_status_phrase, SUBWAY_LINES
+
+tool_use_tracker = []
 
 # tools_bot_request_id = None #holds persistant request ID between iterations  
 
@@ -326,161 +331,177 @@ def list_maker():
 ) = list_maker()
 __all__ = ['tools_bot_schema']
 
-async def handle_tool_request(input_data, tool_use_id):
+async def handle_tool_request(tool_use_id, tool_name, tool_input, if_tool_use=None):
+    global tool_use_tracker
+    print(f"handle_tool_request recieved: tool_use_id={tool_use_id}, tool_name={tool_name}, tool_input={tool_input}")
+    print(f"if_tool_use handle_tool_request 1: {if_tool_use}")
+    if tool_use_id is None:
+        tool_use_id = f"default_{uuid.uuid4()}"
         
     # When using tools bot to handle tools calls.
     # set to True to return tool results directlty 
     # to the original caller.  Set to false to return the
     # results to tools bot first.  
 
-    print(f"handle_tool_request received: input_data={input_data}, tool_use_id={tool_use_id}")
-    
-    # # Initialize the tool request tracking list if it doesn't exist
-    # if not hasattr(handle_tool_request, 'tool_request_list'):
-    #     handle_tool_request.tool_request_list = []
-    
-    if isinstance(input_data, dict):
-        tool_name = next(iter(input_data.keys()))
-        tool_input = input_data[tool_name]
-    else:
-        tool_name = input_data
-        tool_input = None
-    print(f"Parsed tool request: tool_name={tool_name}, tool_input={tool_input}")
-
-    # # Add the tool request to the tracking list
-    # tool_request = {
-    #     'tool_name': tool_name
-    # }
-    # # Only add tool_use_id and tool_input if they exist
-    # if tool_use_id is not None:
-    #     tool_request['tool_use_id'] = tool_use_id
-    # if tool_input is not None:
-    #     tool_request['tool_input'] = tool_input
-    # handle_tool_request.tool_request_list.append(tool_request)
-    # print(f"Added tool request to tracking list: {tool_request}")
-
     is_command_executed = True
     tool_response = None
-  
-    if tool_name == "get_date":
-        current_date = datetime.now()
-        date_string = current_date.strftime("%A, %B %d, %Y")     
-        us_holidays = holidays.US()
-        if current_date.date() in us_holidays:
-            holiday_name = us_holidays[current_date.date()]
-            tool_response = f"Today is {date_string}. Today is {holiday_name}."
-        else:
-            tool_response = f"Today is {date_string}."
-            
-    elif tool_name == "get_day_of_week":
-        date_text = tool_input["date_text"]
-        
-        # Try parsing the date as MM/DD
-        try:
-            date = datetime.strptime(date_text, "%m/%d").date()
-            date = date.replace(year=datetime.now().year)
-        except ValueError:
-            # If parsing fails, try to find the date of a holiday
-            date = None
-            for holiday_date, holiday_name in holidays.US(years=datetime.now().year).items():
-                if date_text.lower() in holiday_name.lower():
-                    date = holiday_date
-                    break
-
-            if not date:
-                tool_response = f"Could not find a date for '{date_text}'."
-
-        if date:
-            day_of_week = date.strftime("%A")
-            tool_response = f"{date_text} is on a {day_of_week}."
-            
-    elif tool_name == "get_holiday_date":
-        holiday_name = tool_input.get("holiday_name") if tool_input else None
-        date_str = tool_input.get("date") if tool_input else None
-        
-        current_year = datetime.now().year
-        us_holidays = holidays.US(years=current_year)
-        
-        if date_str:
-            # Get holiday on a specific date
-            date = datetime.strptime(date_str, "%m/%d").date()
-            date = date.replace(year=current_year)
-            holiday = us_holidays.get(date)
-            if holiday:
-                tool_response = f"{holiday} falls on {date.strftime('%m/%d')} this year."
-            else:
-                tool_response = f"There is no holiday on {date.strftime('%m/%d')} this year."
-        
-        elif holiday_name:
-            # Get the date for a specific holiday
-            for date, name in us_holidays.items():
-                if holiday_name.lower() in name.lower():
-                    tool_response = f"{name} falls on {date.strftime('%A, %B %d')} this year."
-                    break
-            else:
-                tool_response = f"Could not find a holiday named '{holiday_name}'."
-        
-        else:
-            # Get the next upcoming holiday
-            today = datetime.now().date()
-            for date, name in sorted(us_holidays.items()):
-                if date > today:
-                    tool_response = f"The next holiday is {name} on {date.strftime('%A, %B %d')}."
-                    break
-            else:
-                tool_response = "LOL.  Holidays."
-            
-    elif tool_name == "get_moon_phase":
-        moon_phase_num = ephem.Moon(datetime.now()).phase
-        if 0 <= moon_phase_num < 7.4:
-            moon_phase = "New Moon"
-        elif 7.4 <= moon_phase_num < 14.8:
-            moon_phase = "First Quarter"
-        elif 14.8 <= moon_phase_num < 22.1:
-            moon_phase = "Full Moon"
-        else:
-            moon_phase = "Last Quarter"
-        tool_response = f'The moon phase today is {moon_phase}.'
-        
-                    
-    elif tool_name == "get_time":
-        current_time = datetime.now().strftime("%I:%M %p")
-        tool_response = f"The current time is {current_time}"
-
-    elif tool_name == "nyc_subway_status":
-        print(f"Processing NYC subway status. User input: {tool_input}")
-        if tool_input in subway_query_dict:
-            print(f"User input found in subway_query_dict")
-            try:
-                train_line = subway_query_dict[tool_input]
-                print(f"Train line extracted from subway_query_dict: {train_line}")
-            except KeyError:
-                train_line = tool_input.upper()
-                print(f"KeyError occurred. Using uppercased user input as train line: {train_line}")
-            print(f"Checking if {train_line} is in SUBWAY_LINES")
-        if tool_input in SUBWAY_LINES:  
-            status = fetch_subway_status(tool_input)
-            tool_response = train_status_phrase(tool_input, status)
-        else:
-            is_command_executed = False
-            tool_response = f"Invalid subway line: {tool_input}"
     
-    elif tool_name == "tools_bot":
-        print(f"inside tools bot handle tools: tool input={tool_input}, tool_use_id={tool_use_id}")
-        if tool_input:
-            from llm_claude import call_tools_bot
-            tool_response, tool_use_id = await call_tools_bot(tool_input, tool_use_id)
-            print(f"handle_tool_request received from call_tools_bot: {tool_response}")
-            is_command_executed = True
-        else:
-            tool_response = "No input provided for tools bot."
-            is_command_executed = False
+    if tool_use_id not in tool_use_tracker:
+        tool_use_tracker.append(tool_use_id)
+        if_tool_use = (tool_use_id, tool_name, tool_input, if_tool_use)
 
-
+        print(f"Parsed tool request: tool_name={tool_name}, tool_input={tool_input}")
+ 
+        # if the tool name is unrecognized, we send to tools bot to decipher
         
-    else:
-        is_command_executed = False
-        tool_response = f"Unknown tool: {tool_name}"
+        # if a tool returns immediately, we can process its response in line
+        # if a tool has any altency or an API, it will need logic to main tain the
+        # tool use ID.  See llm_claude.py for how such logic is implemented.
+        # In line here, we should pass after calling the function for such tools.
+        
+        if tool_name.lower() not in list_of_available_tools:
+            print(f"Unrecognized tool: {tool_name}. Sending to tools bot.")
+            tool_name = "tools_bot"
+            tool_input = str(input_data)
 
-    print(f"handle_tool_request returning: {is_command_executed}, {tool_response}, {tool_use_id}")
-    return is_command_executed, tool_response, tool_use_id
+        if tool_name == "get_date":
+            current_date = datetime.now()
+            date_string = current_date.strftime("%A, %B %d, %Y")     
+            us_holidays = holidays.US()
+            if current_date.date() in us_holidays:
+                holiday_name = us_holidays[current_date.date()]
+                tool_response = f"Today is {date_string}. Today is {holiday_name}."
+            else:
+                tool_response = f"Today is {date_string}."
+                
+        elif tool_name == "get_day_of_week":
+            date_text = tool_input["date_text"]
+            
+            # Try parsing the date as MM/DD
+            try:
+                date = datetime.strptime(date_text, "%m/%d").date()
+                date = date.replace(year=datetime.now().year)
+            except ValueError:
+                # If parsing fails, try to find the date of a holiday
+                date = None
+                for holiday_date, holiday_name in holidays.US(years=datetime.now().year).items():
+                    if date_text.lower() in holiday_name.lower():
+                        date = holiday_date
+                        break
+
+                if not date:
+                    tool_response = f"Could not find a date for '{date_text}'."
+
+            if date:
+                day_of_week = date.strftime("%A")
+                tool_response = f"{date_text} is on a {day_of_week}."
+                
+        elif tool_name == "get_holiday_date":
+            holiday_name = tool_input.get("holiday_name") if tool_input else None
+            date_str = tool_input.get("date") if tool_input else None
+            
+            current_year = datetime.now().year
+            us_holidays = holidays.US(years=current_year)
+            
+            if date_str:
+                # Get holiday on a specific date
+                date = datetime.strptime(date_str, "%m/%d").date()
+                date = date.replace(year=current_year)
+                holiday = us_holidays.get(date)
+                if holiday:
+                    tool_response = f"{holiday} falls on {date.strftime('%m/%d')} this year."
+                else:
+                    tool_response = f"There is no holiday on {date.strftime('%m/%d')} this year."
+            
+            elif holiday_name:
+                # Get the date for a specific holiday
+                for date, name in us_holidays.items():
+                    if holiday_name.lower() in name.lower():
+                        tool_response = f"{name} falls on {date.strftime('%A, %B %d')} this year."
+                        break
+                else:
+                    tool_response = f"Could not find a holiday named '{holiday_name}'."
+            
+            else:
+                # Get the next upcoming holiday
+                today = datetime.now().date()
+                for date, name in sorted(us_holidays.items()):
+                    if date > today:
+                        tool_response = f"The next holiday is {name} on {date.strftime('%A, %B %d')}."
+                        break
+                else:
+                    tool_response = "LOL.  Holidays."
+                
+        elif tool_name == "get_moon_phase":
+            moon_phase_num = ephem.Moon(datetime.now()).phase
+            if 0 <= moon_phase_num < 7.4:
+                moon_phase = "New Moon"
+            elif 7.4 <= moon_phase_num < 14.8:
+                moon_phase = "First Quarter"
+            elif 14.8 <= moon_phase_num < 22.1:
+                moon_phase = "Full Moon"
+            else:
+                moon_phase = "Last Quarter"
+            tool_response = f'The moon phase today is {moon_phase}.'
+                        
+        elif tool_name == "get_time":
+            current_time = datetime.now().strftime("%I:%M %p")
+            tool_response = f"{current_time}"
+
+        elif tool_name == "nyc_subway_status":
+            print(f"Processing NYC subway status. User input: {tool_input}")
+            if tool_input in subway_query_dict:
+                print(f"User input found in subway_query_dict")
+                try:
+                    train_line = subway_query_dict[tool_input]
+                    print(f"Train line extracted from subway_query_dict: {train_line}")
+                except KeyError:
+                    train_line = tool_input.upper()
+                    print(f"KeyError occurred. Using uppercased user input as train line: {train_line}")
+                print(f"Checking if {train_line} is in SUBWAY_LINES")
+            if tool_input in SUBWAY_LINES:  
+                status = fetch_subway_status(tool_input)
+                tool_response = train_status_phrase(tool_input, status)
+            else:
+                is_command_executed = False
+                tool_response = f"Invalid subway line: {tool_input}"
+ 
+        elif tool_name == "tools_bot":
+            print(f"inside tools bot handle tools: tool input={tool_input}, tool_use_id={tool_use_id}")
+            print(f" elif tool_name == tools_bot={if_tool_use}")
+            if tool_input:
+                from llm_claude import call_tools_bot
+                await call_tools_bot(tool_input, if_tool_use)
+                pass
+            else:
+                tool_response = "No input provided for tools bot."
+                is_command_executed = False
+        
+        if tool_response is not None:
+            print(f"if_tool_useif tool_response is not None: {if_tool_use}")
+            await handle_tool_response(tool_response, if_tool_use)   
+
+async def handle_tool_response(tool_response, if_tool_use):
+    global tool_use_tracker
+    print(f"if_tool_use andle_tool_response: {tool_response}")
+    
+    tool_use_id, tool_name, tool_input, nested_if_tool_use = if_tool_use
+    if_tool_use = nested_if_tool_use
+    print(f"after nested_if_tool_use: tool_response {tool_response}")
+    if tool_use_id in tool_use_tracker:
+        tool_use_tracker.remove(tool_use_id)
+        
+        # default indicates we recived tool use ID of None.  
+        # in this case, send the result straight to TTS
+        # anything else must be sent back to its origin for processing.  
+        print(f"if tool_response is not None:")
+        if tool_use_id.startswith("default_"):
+            with send_to_tts_condition:
+                send_to_tts_queue.put(tool_response)
+                send_to_tts_condition.notify()
+        if tool_use_id.startswith("llm_claude_"):
+            print(f"sending back to claude {tool_response}")
+            from llm_claude import tool_response_listener
+            await tool_response_listener(tool_use_id, tool_response, if_tool_use)
+      
+  

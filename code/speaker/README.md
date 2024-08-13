@@ -1,5 +1,20 @@
 This is the main project directory.  Fire up main.py to run the program.  
 
+The purpose of this project is to improve on Apple's HomePod and Siri.  I like the HomePod generally but it is very limited and buggy, and becomes outtaded quickly.  
+
+Here are some of the main objectives of this system:
+- work locally to ensure reliable use even without internet
+- enhance with the internet, but do not require
+- maintain privacy
+- be so easy to use that any guest will use it naturally
+- the user should not have to recall or think of commands 
+- have sensable defaults
+- allow the user to easily override defaults for more advanced features
+- experiment with the latest technologies and models
+- maintain speed and funtionality on par with HomePod
+- be fun and delight guests
+- make it work really well and reliably
+
 These are the core modules of the system:  
 
 main.py - the main module

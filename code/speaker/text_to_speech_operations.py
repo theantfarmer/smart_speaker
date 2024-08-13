@@ -114,13 +114,13 @@ def talk_with_tts():
                 try:
                     print(f"Passing text to TTS model: {text}")
                     audio_content = tts_model(text)
-                    print(f"Generated audio content. Length: {len(audio_content)} bytes")
+                    # print(f"Generated audio content. Length: {len(audio_content)} bytes")
               
                     # because we can easily swap models, we need to determine
                     # and handle whatever audio format the model returns.  
                     
                     file_type = magic.from_buffer(audio_content, mime=True)
-                    print(f"File format: {file_type}")
+                    # print(f"File format: {file_type}")
 
                     # currently, we save the tts return as a file and pass the address
                     file_extension = mimetypes.guess_extension(file_type)
@@ -132,7 +132,7 @@ def talk_with_tts():
                     with open(tmp_filepath, "wb") as f:
                         f.write(audio_content)
 
-                    print(f"Audio content saved to file: {tmp_filepath}")
+                    # print(f"Audio content saved to file: {tmp_filepath}")
                     
                     # we still use the text variable because
                     # that is what we pass to the next queue
@@ -146,7 +146,7 @@ def talk_with_tts():
         # finally, we put the text in the playlist queue
         # as a tuple, even if there is no command.
         # in that case, the command will be None
-        print(f"Added to tts_playlist_queue: {command}, {text}")
+        # print(f"Added to tts_playlist_queue: {command}, {text}")
         tts_playlist_queue.put((command, text))
         tts_playlist_notify.set()
 
@@ -201,7 +201,7 @@ def play_audio(audio_file):
         with individual_audio_is_playing.get_lock():
             individual_audio_is_playing.value = True
         
-        print(f"Starting playback of {audio_file}")
+        # print(f"Starting playback of {audio_file}")
         media = vlc_instance.media_new_path(audio_file)
         player.set_media(media)
         player.play()
@@ -210,10 +210,10 @@ def play_audio(audio_file):
         playback_finished.wait(timeout=30)
         playback_finished.clear()
         
-        if player.get_state() == vlc.State.Ended:
-            print(f"Playback of {audio_file} completed")
-        else:
-            print(f"Playback of {audio_file} did not complete normally")
+        # if player.get_state() == vlc.State.Ended:
+        #     print(f"Playback of {audio_file} completed")
+        # else:
+        #     print(f"Playback of {audio_file} did not complete normally")
     except Exception as e:
         print(f"Error during audio playback: {str(e)}")
     finally:
@@ -225,7 +225,7 @@ def play_audio(audio_file):
         
         try:
             os.unlink(audio_file)
-            print(f"Temporary file {audio_file} deleted.")
+            # print(f"Temporary file {audio_file} deleted.")
         except Exception as e:
             print(f"Error deleting temporary file: {str(e)}")
         
@@ -249,31 +249,31 @@ def iterate_playlist():
                         tts_is_speaking.value = False    
                 tts_playlist_notify.wait()  
                 tts_playlist_notify.clear()        
-            print(f"Queue size before get: {tts_playlist_queue.qsize()}")
+            # print(f"Queue size before get: {tts_playlist_queue.qsize()}")
             to_play = tts_playlist_queue.get(block=False)
-            print(f"Retrieved from tts_playlist_queue: {to_play}")
-            print(f"Queue size after get: {tts_playlist_queue.qsize()}")
+            # print(f"Retrieved from tts_playlist_queue: {to_play}")
+            # print(f"Queue size after get: {tts_playlist_queue.qsize()}")
 
 
             if to_play is not None:
                 command, audio_content = to_play
-                print(f"Processing playlist item: command={command}, audio={audio_content}")
+                # print(f"Processing playlist item: command={command}, audio={audio_content}")
 
                 # we hold iteration while audio is playing
                 # We iterate once per audio file and playback
                 # must complete for iteration to complete
 
                 if individual_audio_is_playing.value:
-                    print("Waiting for previous audio to finish...")
+                    # print("Waiting for previous audio to finish...")
                     individual_audio_finished_notification.wait(timeout=audio_timeout_finish)
                     individual_audio_finished_notification.clear()
 
                 if command is not None:
-                    print(f"Processing command: {command}")
+                    # print(f"Processing command: {command}")
                     handle_home_assistant_command(command)
 
                 if audio_content is not None:
-                    print("Calling play_audio function")
+                    # print("Calling play_audio function")
                     with tts_lock:
                         if not tts_is_speaking.value:
                             tts_is_speaking.value = True  

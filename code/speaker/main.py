@@ -2,7 +2,6 @@ import threading
 import time
 import string
 import asyncio
-import uuid
 from dont_tell import SECRET_PHRASES
 import traceback
 from queue import Queue
@@ -280,26 +279,26 @@ def main():
 
                 # Check for wake words. If True, remove the wake word.
                 # even if wake word is disabled, if the user uses a wake word we need to scrub it
-             
-                for wake_word in wake_words:
-                    if wake_word.lower() in user_input_text:
-                        print(f"Normal wake word detected: {wake_word}")
-                        index = user_input_text.find(wake_word.lower())
-                        if index != -1:
-                            end_index = index + len(wake_word)
-                            most_recent_wake_word.value = wake_word.encode('utf-8')
-                            print(f"Updated most recent wake word: {most_recent_wake_word.value.decode('utf-8')}")
-                            user_input_text = user_input_text[end_index:].strip()
-                            print(f"Processed user_input_text: '{user_input_text}'")
-                            # Check if the input text is empty after trimming and cleaning
-                            if not user_input_text or user_input_text.isspace():
-                                print("No command provided after the wake word. Ignoring...")
-                                threading.Thread(target=disable_normal_wake_word).start()
-                                stop_iteration = True
-                            else:
-                                wake_word_found = True
-                                print(f"Command to execute: {user_input_text}")
-                            break
+                if not function_wake_word_found:
+                    for wake_word in wake_words:
+                        if wake_word.lower() in user_input_text:
+                            print(f"Normal wake word detected: {wake_word}")
+                            index = user_input_text.find(wake_word.lower())
+                            if index != -1:
+                                end_index = index + len(wake_word)
+                                most_recent_wake_word.value = wake_word.encode('utf-8')
+                                print(f"Updated most recent wake word: {most_recent_wake_word.value.decode('utf-8')}")
+                                user_input_text = user_input_text[end_index:].strip()
+                                print(f"Processed user_input_text: '{user_input_text}'")
+                                # Check if the input text is empty after trimming and cleaning
+                                if not user_input_text or user_input_text.isspace():
+                                    print("No command provided after the wake word. Ignoring...")
+                                    threading.Thread(target=disable_normal_wake_word).start()
+                                    stop_iteration = True
+                                else:
+                                    wake_word_found = True
+                                    print(f"Command to execute: {user_input_text}")
+                                break
                 
                 if stop_iteration:
                     with user_response_en_route.get_lock():
@@ -374,24 +373,6 @@ def main():
             
                 save_to_db('User', user_input_text)
             
-            if user_input_text in tool_commands_list or user_function_request in tool_names_list:
-                if not function_wake_word_found:
-                    tool_name = tool_commands_map_dict[user_input_text]
-                else:
-                    tool_name = user_function_request
-                tool_input_dict = {user_input_text: tool_name}
-                # Generate a unique tool_use_id to track tool call
-                main_tool_use_id = f"main_toolu_{uuid.uuid4()}"
-                print("calling tool")
-                is_command_executed, command_response, _ = asyncio.run(handle_tool_request(tool_input_dict, main_tool_use_id))
-                if is_command_executed:
-                    save_to_db('Agent', command_response)
-                    print(f"About to call talk_with_tts with command_response: {command_response}")
-                    with send_to_tts_condition:
-                        send_to_tts_queue.put(command_response)
-                        send_to_tts_condition.notify()
-                continue
-            
             if user_function_request == "speak_to_home_assistant" or user_input_text in flattened_home_assistant_commands:
                 success, ha_response = execute_command_in_home_assistant(user_input_text)
                 if success:
@@ -401,24 +382,41 @@ def main():
             # If the command is not executed by the smart home system, 
             # it is passed to language model.  
 
-            if any(func in function_input_dict for func in ("chat_with_gpt", "chat_with_claude", "chat_with_dolphin")):
+            if any(key.startswith("chat_with_llm_") for key in function_input_dict):
                 handle_conversation(function_input_dict)
-                print(f"Conversation handled by {next(func for func in function_input_dict if func in ('chat_with_gpt', 'chat_with_claude', 'chat_with_dolphin'))}")
                 continue
 
+            if user_input_text in tool_commands_list or user_function_request in tool_names_list:
+                if not function_wake_word_found:
+                    tool_name = tool_commands_map_dict[user_input_text]
+                else:
+                    tool_name = user_function_request
+                print("calling tool")
+                is_command_executed, command_response, tool_use_id = asyncio.run(handle_tool_request(
+                    tool_use_id=None, 
+                    tool_name=tool_name, 
+                    tool_input=user_input_text
+                ))
+                if is_command_executed:
+                    save_to_db('Agent', command_response)
+                    print(f"About to call talk_with_tts with command_response: {command_response}")
+                    with send_to_tts_condition:
+                        send_to_tts_queue.put(command_response)
+                        send_to_tts_condition.notify()
+                continue
 
+            # this is where we send unrecognized requests:  
             if not is_command_executed and not function_wake_word_found:
                 print(f"Text before handle_conversation call: {user_input_text}")
-                handle_conversation(user_input_text)
+                handle_conversation(user_input_text) # general llm
+                # asyncio.run(handle_tool_request(tool_use_id= None, tool_name=tools_bot, user_input_text)) # tools_bot
                 print("Conversation handled by LLM operations")
 
     except Exception as e:
         print(f"An exception occurred in the main else block: {e}")
         traceback.print_exc()
 
-
     print(f"Updated function_map: {function_map}")
-
 
 def check_for_echo(text, tts_outputs, echo_threshold_seconds=60):
     # print(f"Checking for echo: {text}")

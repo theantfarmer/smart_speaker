@@ -1,9 +1,9 @@
 import re
 import db_operations 
 from expressive_light import create_command_text_list, format_for_home_assistant
-from llm_chatgpt import llm_model as chat_with_gpt
-from llm_claude import llm_model as chat_with_claude
-from llm_gpt_dolphinmini import llm_model as chat_with_dolphin
+from llm_chatgpt import llm_model as chat_with_llm_chatgpt
+from llm_claude import llm_model as chat_with_llm_claude
+from llm_gpt_dolphinmini import llm_model as chat_with_llm_dolphin
 from queue_handling import llm_response_queue, llm_response_condition, send_to_tts_queue, send_to_tts_condition
 import inspect
 import queue
@@ -14,19 +14,18 @@ def handle_conversation(user_input):
     # a default model is used when plain text arrives
     # a specific model can be specified in a dict containing user text : model
 
-    streaming = False
-    default_model = chat_with_dolphin
+    default_model = chat_with_llm_dolphin
 
     if isinstance(user_input, dict):
-        if "chat_with_gpt" in user_input:
-            user_input_text = user_input["chat_with_gpt"]
-            llm_response = chat_with_gpt(user_input_text)
-        elif "chat_with_claude" in user_input:
-            user_input_text = user_input["chat_with_claude"]
-            llm_response = chat_with_claude(user_input_text)
-        elif "chat_with_dolphin" in user_input:
-            user_input_text = user_input["chat_with_dolphin"]
-            thread = threading.Thread(target=chat_with_dolphin, args=(user_input_text,))
+        if "chat_with_llm_chatgpt" in user_input:
+            user_input_text = user_input["chat_with_llm_chatgpt"]
+            llm_response = chat_with_llm_chatgpt(user_input_text)
+        elif any(key.startswith("chat_with_llm_claude") for key in user_input):
+            key = next(key for key in user_input if key.startswith("chat_with_llm_claude"))
+            llm_response = chat_with_llm_claude(user_input)
+        elif "chat_with_llm_dolphin" in user_input:
+            user_input_text = user_input["chat_with_llm_dolphin"]
+            thread = threading.Thread(target=chat_with_llm_dolphin, args=(user_input_text,))
             thread.start()
         else:
             user_input_text = user_input.get(None)
@@ -61,15 +60,16 @@ def handle_llm_response():
             # in either case, llm_response is sent to the expressive light module for processing
             # and then to tts
             # the tts module will handle text paired with commands so they can be executed together
-
+            
     incoming_text_debug = ""
-    tts_text_debug = ""
-    streaming = False 
+    tts_text_debug = "" 
+    streaming = None
+    command_text_tuple = None
 
     with llm_response_condition:
         # print("Waiting for notification...")
         llm_response_condition.wait()
-        print("Received notification from llm_response_condition")
+        # print("Received notification from llm_response_condition")
   
     while True:  
         # get the first item from the queue  
@@ -88,12 +88,12 @@ def handle_llm_response():
             if not streaming:
                 # when streaming becomes false, we process the remaining contents of streaming response
                 llm_response = streaming_response
-                # print("Incoming text debug:")
-                # print(incoming_text_debug)
-                # print("TTS text debug:")
-                # print(tts_text_debug)
-                # print("Final llm_response:")
-                # print(llm_response)
+                print("Incoming text debug:")
+                print(incoming_text_debug)
+                print("TTS text debug:")
+                print(tts_text_debug)
+                print("Final llm_response:")
+                print(llm_response)
             if streaming:
                 # we initiate our variables when streaming mode turns on
                 streaming_response = ""
@@ -105,8 +105,6 @@ def handle_llm_response():
         
         if isinstance(llm_response, str):
             llm_response = llm_response.replace("**", "")
-            if isinstance(llm_response, str):
-                incoming_text_debug += llm_response
             if streaming:
                 # print(f"llm_response 1: {llm_response}")
                 # the incoming content is tacked on to held content in streaming response
@@ -114,7 +112,7 @@ def handle_llm_response():
                 # print(f"streaming_response 1: {streaming_response}")
                 # we set the pattens to look for when to break up text and send to TTS
                 command_pattern = r'@\['
-                sentence_end_pattern = r'(?<!\d)([.!?:])(?=\s+[A-Z])|([.!?])(?!\S)|(?<!\d)(?<!\/)(?<!\w),(?=\s+)(?!\d)'
+                sentence_end_pattern = r'[.!?:](?=\s+[A-Z])|[.!?:]$|,(?=\s+)'
                 line_break_pattern = r'\r?\n'
                 # if a command is streaming in
                 # if streaming response BEGINS with a command, we need to seperate the command
@@ -144,6 +142,11 @@ def handle_llm_response():
                 else:
                     # if text is coming in
                     if llm_response is not None:
+                        if "<thinking>" in streaming_response:
+                            if "</thinking>" in streaming_response:
+                                streaming_response = re.sub(r'<thinking>.*?</thinking>', '', streaming_response, flags=re.DOTALL)
+                            else: 
+                                continue
                         # streaming text will be severed at a line break, end of sentence, or start of a command
                         match = re.search(sentence_end_pattern, streaming_response) or re.search(line_break_pattern, streaming_response) or re.search(command_pattern, streaming_response)
                         if match:
@@ -159,8 +162,8 @@ def handle_llm_response():
                                 # and streaming retains is the text after
                                 # streaming response retains its contents throughout itteration
                                 streaming_response = streaming_response[end_idx:]
-                                # print(f"llm_response 2: {llm_response}")
-                                # print(f"streaming_response 2: {streaming_response}")
+                                print(f"llm_response 2: {llm_response}")
+                                print(f"streaming_response 2: {streaming_response}")
                                 # if llm response contains no letters or numbers, set i to None
                         else:
                             continue
@@ -169,8 +172,7 @@ def handle_llm_response():
                 if creating_command_tuple:
                     formatted_command = format_for_home_assistant(streaming_command)
                     command_text_tuple = (formatted_command, llm_response)
-                    # print(f"Command text tuple: {command_text_tuple}")
-
+                    print(f"Command text tuple: {command_text_tuple}")
 
             if isinstance(command_text_tuple, tuple):
                 llm_response = command_text_tuple
@@ -181,6 +183,9 @@ def handle_llm_response():
             # for non streaming, the logic remains how it was before streaming was implemented
             # db logic needs to be rethought for streaming 
             if not streaming:
+                if "<thinking>" in llm_response:
+                    if "</thinking>" in llm_response:
+                        llm_response = re.sub(r'<thinking>.*?</thinking>', '', llm_response, flags=re.DOTALL)
                 if '@[' in llm_response and ']@' in llm_response:
                     # print("Lighting commands found. Parsing and sending to expressive_light.")
                     llm_response = create_command_text_list(llm_response)
@@ -199,7 +204,6 @@ def handle_llm_response():
                     creating_command_tuple = False
         if not streaming:
             break
-
 
 thread = threading.Thread(target=handle_llm_response,)
 thread.start()
