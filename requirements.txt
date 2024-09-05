@@ -1,0 +1,12 @@
+spacy
+requests
+ephem
+holidays
+pygame
+google-cloud-texttospeech
+google-auth
+gtts
+SpeechRecognition
+openai
+openai-whisper
+pyaudio
