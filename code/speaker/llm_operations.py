@@ -9,7 +9,7 @@ import inspect
 import queue
 import threading 
 
-def handle_conversation(user_input):
+def handle_conversation(user_input, user_request_id):
     # this is where we handle which llm model to use
     # a default model is used when plain text arrives
     # a specific model can be specified in a dict containing user text : model
@@ -19,19 +19,19 @@ def handle_conversation(user_input):
     if isinstance(user_input, dict):
         if "chat_with_llm_chatgpt" in user_input:
             user_input_text = user_input["chat_with_llm_chatgpt"]
-            llm_response = chat_with_llm_chatgpt(user_input_text)
+            llm_response = chat_with_llm_chatgpt(user_input_text, user_request_id)
         elif any(key.startswith("chat_with_llm_claude") for key in user_input):
             key = next(key for key in user_input if key.startswith("chat_with_llm_claude"))
-            llm_response = chat_with_llm_claude(user_input)
+            llm_response = chat_with_llm_claude(user_input, user_request_id)
         elif "chat_with_llm_dolphin" in user_input:
             user_input_text = user_input["chat_with_llm_dolphin"]
-            thread = threading.Thread(target=chat_with_llm_dolphin, args=(user_input_text,))
+            thread = threading.Thread(target=chat_with_llm_dolphin, args=(user_input_text, user_request_id))
             thread.start()
         else:
             user_input_text = user_input.get(None)
-            llm_response = default_model(user_input_text)
+            llm_response = default_model(user_input_text, user_request_id)
     else:
-        llm_response = default_model(user_input)
+        llm_response = default_model(user_input, user_request_id)
 
 def handle_llm_response(): 
     # this function handles streaming and non streaming functions
@@ -63,8 +63,14 @@ def handle_llm_response():
             
     incoming_text_debug = ""
     tts_text_debug = "" 
-    streaming = None
+    streaming = False
     command_text_tuple = None
+    user_request_id = None
+    streaming_response = ""
+    command_response = ""
+    command_text_tuple = ""
+    formatted_command = ""
+    creating_command_tuple = False
 
     with llm_response_condition:
         # print("Waiting for notification...")
@@ -78,8 +84,14 @@ def handle_llm_response():
         # it can be a boolean
         # or if its text,it is manipulated and sent to tts
         llm_response = llm_response_queue.get()
-        # print(f"Retrieved item from queue: {llm_response}")
-        
+        if isinstance(llm_response, tuple):
+            if len(llm_response) == 3:
+                llm_response, user_request_id, streaming = llm_response
+            elif len(llm_response) == 2:
+                llm_response, user_request_id = llm_response
+                streaming = False
+            else:
+                raise ValueError("Unexpected tuple length in llm_response")
         # when streaming, the first and last items should be booleans
         # when the boolean is True, we turn on streaming mode
         # when the boolean is false, we turn off streaming mode
@@ -94,16 +106,13 @@ def handle_llm_response():
                 print(tts_text_debug)
                 print("Final llm_response:")
                 print(llm_response)
-            if streaming:
-                # we initiate our variables when streaming mode turns on
                 streaming_response = ""
                 command_response = ""
                 command_text_tuple = ""
                 formatted_command = ""
                 creating_command_tuple = False
-            continue
-        
-        if isinstance(llm_response, str):
+                
+        if isinstance(llm_response, str):        
             llm_response = llm_response.replace("**", "")
             if streaming:
                 # print(f"llm_response 1: {llm_response}")
@@ -190,20 +199,22 @@ def handle_llm_response():
                     # print("Lighting commands found. Parsing and sending to expressive_light.")
                     llm_response = create_command_text_list(llm_response)
                     stripped_response = re.sub(r'@\[(.*?)\]@', '', llm_response)
-                    db_operations.save_to_db('Agent', stripped_response)
+                    # db_operations.save_to_db('Agent', stripped_response)
+                    pass
                 else:
-                    db_operations.save_to_db('Agent', llm_response)
+                    # db_operations.save_to_db('Agent', llm_response)
+                    pass
                 
-            if llm_response is not None:  
-                tts_text_debug += str(llm_response) + "\n"
-                with send_to_tts_condition:
-                    send_to_tts_queue.put(llm_response)
-                    # print("Added to send_to_tts_queue.")
-                    send_to_tts_condition.notify()
-                    # print("send_to_tts_condition set.")
-                    creating_command_tuple = False
-        if not streaming:
-            break
+        if llm_response is not None:  
+            tts_text_debug += str(llm_response) + "\n"
+            with send_to_tts_condition:
+                send_to_tts_queue.put((llm_response, user_request_id, streaming))
+                # print("Added to send_to_tts_queue.")
+                send_to_tts_condition.notify()
+                # print("send_to_tts_condition set.")
+                creating_command_tuple = False
+                llm_response = ""
+
 
 thread = threading.Thread(target=handle_llm_response,)
 thread.start()

@@ -29,9 +29,6 @@
 # capture_speech gets the transcription queue contents, merges it,
 # and returns it to the function that called it.  
 
-
-import sounddevice as sd
-import numpy as np
 # from scipy.io.wavfile import write
 # from scipy.signal import butter, lfilter, get_window
 # from scipy.fftpack import fft
@@ -50,10 +47,13 @@ import logging
 import pdb
 import collections
 import queue
+import numpy as np
+import sounddevice as sd
 import multiprocessing
 from multiprocessing import Process, Queue, Manager, Lock, Value
 from faster_whisper import WhisperModel
 from faster_whisper.vad import get_speech_timestamps, VadOptions
+from queue_handling import user_input_queue, user_input_condition
 from shared_variables import user_response_en_route, user_response_window, tts_is_speaking, tts_lock
 
 print("Speech module imports completed")
@@ -341,18 +341,18 @@ def transcriber(merged_chunks_queue, transcribed_text_queue, transcription_condi
 
             if captured_text:
                 # print(f"Transcription condition in transcriber: {id(transcription_condition)}")
-                with transcription_condition:
+                with user_input_condition:
                     # print(f"Sound channel thread {threading.current_thread().name} acquired the lock")
                     # print("inside with condition")
                     if not captured_text or captured_text.isspace():
                         continue
                     else: 
-                        transcribed_text_queue.put(captured_text)
+                        user_input_queue.put((captured_text, "speech")) # speech is the input source in this instance
                         # print(f"Transcribed text added to the queue. Queue size: {transcribed_text_queue.qsize()}")
                         # print(f"Transcriber process: {multiprocessing.current_process().name}")
                         # print(f"Transcription condition in transcriber before notify: {id(transcription_condition)}")
                         # print("Before notify")
-                        transcription_condition.notify()
+                        user_input_condition.notify()
                         # print(f"Transcription process {multiprocessing.current_process().name} released the lock")
                         # print("After notify")
                     print(f"Transcription successful. Text: {captured_text}")
@@ -540,23 +540,28 @@ def capture_speech():
     # print(f"after with: {threading.current_thread().name}")
     # print(f"Transcription condition in capture_speech: {id(transcription_condition)}")
     # print("before with transcription cap speech")
-    with transcription_condition:
-        # print(f"Main thread: {threading.current_thread().name}")
+
+    # # below is the old system for returning transcribed text
+    # # to the calling system.  but we have replaced this now with a queue
+    # # in trabriber function
+
+    # with transcription_condition:
+    #     # print(f"Main thread: {threading.current_thread().name}")
         
-        if transcribed_text_queue.empty():
-            # print("Before wait")
-            # print(f"Transcription condition: {transcription_condition}")
-            # print("Waiting...")
-            transcription_condition.wait()
-            # print("After wait")
+    #     if transcribed_text_queue.empty():
+    #         # print("Before wait")
+    #         # print(f"Transcription condition: {transcription_condition}")
+    #         # print("Waiting...")
+    #         transcription_condition.wait()
+    #         # print("After wait")
         
-        queue_size = transcribed_text_queue.qsize()
-        transcribed_texts = []
-        for _ in range(queue_size):
-            transcribed_text = transcribed_text_queue.get()
-            transcribed_texts.append(transcribed_text)
-        # print(f"Capture text complete.")
-        return transcribed_texts[-1]
+        # queue_size = transcribed_text_queue.qsize()
+        # transcribed_texts = []
+        # for _ in range(queue_size):
+        #     transcribed_text = transcribed_text_queue.get()
+        #     transcribed_texts.append(transcribed_text)
+        # # print(f"Capture text complete.")
+        # return transcribed_texts[-1]
 
 def stop_recording():
     # print("Entering stop_recording function.")

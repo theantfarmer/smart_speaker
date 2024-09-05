@@ -2,16 +2,19 @@ import threading
 import time
 import string
 import asyncio
-from dont_tell import SECRET_PHRASES
+import uuid
 import traceback
 from queue import Queue
+import settings_manager 
+from web_server import start_web_server
+from dont_tell import secret_phrases
 from wake_words import wake_words
 from db_operations import initialize_db, save_to_db
-from text_to_speech_operations import talk_with_tts, tts_outputs
-from speech_to_text_operations_fasterwhisper import capture_speech
+from text_to_speech_operations import tts_outputs
+from speech_to_text_operations import capture_speech
 from home_assistant_interactions import flattened_home_assistant_commands, execute_command_in_home_assistant
 from llm_operations import handle_conversation
-from queue_handling import send_to_tts_queue, send_to_tts_condition
+from queue_handling import send_to_tts_queue, send_to_tts_condition, user_input_queue, user_input_condition
 from shared_variables import most_recent_wake_word, user_response_window, user_response_en_route
 from centralized_tools import handle_tool_request, tool_commands_list, tool_names_list, tool_commands_map_dict
 
@@ -96,21 +99,18 @@ def enable_slow_wake_word():
     previous_user_input_text = "" 
     print("Slow wake word false.")
 
-def send_to_tts(text):
+def send_to_tts(text, user_request_id, streaming=False):
     with send_to_tts_condition:
-        send_to_tts_queue.put(text)
-        # print("MAIN Added to send_to_tts_queue.")
+        send_to_tts_queue.put((text, user_request_id, streaming))
         send_to_tts_condition.notify()
-        # print("MAIN send_to_tts_condition set.")
 
 def main():
     global user_input_text, mp3_queue, wake_word_active, function_wake_word_active, slow_wake_word_active, user_function_request, previous_user_input_text  
+    start_web_server() # for web interface
     print("Main function started.")
     initialize_db()
     # stop_recording()
     messages = []
-       
-
        
     user_input_text = "" 
     #command text stripped is the user input minus the wake word after the wake word is processed
@@ -140,9 +140,11 @@ def main():
     
     function_input_dict = {}
     function_map = {}
+    
+    input_source = None
 
-    # talk_with_tts("")
-    send_to_tts("hey. ready.")
+    # send_to_tts("")
+    send_to_tts("hey. ready.", "system_speech")
     #startup complete
 
     # below, the special wake words list
@@ -198,15 +200,37 @@ def main():
     all_wake_words_list.extend(function_wake_words)
     all_wake_words_list.extend(command_wake_words)
 
-
     try:
         while True:
             model=None
             # print("Waiting for speech...")
             print("Before capture speech in main")
-            text = capture_speech() if response_text is None else response_text
+            if response_text is None:
+                capture_speech()  
+                with user_input_condition:
+                    if user_input_queue.empty():
+                        user_input_condition.wait()
+                    
+                    queue_size = user_input_queue.qsize()
+                    transcribed_items = []
+                    for _ in range(queue_size):
+                        item = user_input_queue.get()
+                        transcribed_items.append(item)
+                    
+                    if transcribed_items:
+                        text, input_source = transcribed_items[-1]
+                    else:
+                        text, input_source = "", "unknown"
+             
+            else:
+                text = response_text
             print("after capture speech in main")
             print(f"returned to main: {text}")
+            
+            # we set up a user_reqesut_id so we can track where it came from
+            user_request_id = f"{input_source}$user_{uuid.uuid4()}"
+            print(f"Created user request ID: {user_request_id}")
+            
             stop_iteration = False
             function_wake_word_found = False
             command_wake_word = False
@@ -241,10 +265,10 @@ def main():
                 for command_wake_word in command_wake_words:
                     if command_wake_word.lower() in user_input_text:
                         wake_word_found = True
-                        print(f"Special wake word detected: {command_wake_word}")
+                        print(f"Command wake word detected: {command_wake_word}")
                         # Correctly use the command_wake_word to fetch the command from the dictionary
                         if command_wake_word.lower() in wake_to_commands_dict:
-                            # Fetch the command associated with the special wake word
+                            # Fetch the command associated with the command wake word
                             user_input_text = wake_to_commands_dict[command_wake_word.lower()]
                             print(f"Command to execute: {user_input_text}")
                             command_wake_word = True
@@ -273,6 +297,7 @@ def main():
                                 elif user_input_text:
                                     print("command found after the function wake word.")   
                                     function_input_dict[user_function_request] = user_input_text
+                                    user_request_id = f"{user_function_request}%{user_request_id}"
                                     wake_word_found = True
                                     function_wake_word_found = True
                       
@@ -366,50 +391,58 @@ def main():
             #they are not recorded in the db
             
             if not function_wake_word_found:
-                if user_input_text in SECRET_PHRASES:
-                    secret_response = SECRET_PHRASES[user_input_text]
-                    talk_with_tts(secret_response)
+                if user_input_text in secret_phrases:
+                    secret_response = secret_phrases[user_input_text]
+                    # Modify input_source and blank user_input_text
+                    user_request_id = f"{input_source}$_secret"
+                    send_to_tts(secret_response, user_request_id)
+                    user_input_text = ""
                     continue
-            
-                save_to_db('User', user_input_text)
+                  
+            save_to_db('User', user_input_text, user_request_id, False)
             
             if user_function_request == "speak_to_home_assistant" or user_input_text in flattened_home_assistant_commands:
-                success, ha_response = execute_command_in_home_assistant(user_input_text)
+                success, ha_response = execute_command_in_home_assistant(user_input_text, user_request_id)
+                user_request_id = f"speak_to_home_assistant%{user_request_id}"
                 if success:
-                    talk_with_tts(ha_response)
+                    send_to_tts(ha_response, user_request_id)
                 continue
 
             # If the command is not executed by the smart home system, 
             # it is passed to language model.  
 
             if any(key.startswith("chat_with_llm_") for key in function_input_dict):
-                handle_conversation(function_input_dict)
+                print("about to handle conv")
+                handle_conversation(function_input_dict, user_request_id)
                 continue
 
             if user_input_text in tool_commands_list or user_function_request in tool_names_list:
+                print("before tool call main")
                 if not function_wake_word_found:
                     tool_name = tool_commands_map_dict[user_input_text]
+                    user_request_id = f"{tool_name}%{user_request_id}"
                 else:
                     tool_name = user_function_request
                 print("calling tool")
-                is_command_executed, command_response, tool_use_id = asyncio.run(handle_tool_request(
-                    tool_use_id=None, 
+                is_command_executed, command_response, user_request_id = asyncio.run(handle_tool_request(
+                    request_id=user_request_id, 
                     tool_name=tool_name, 
                     tool_input=user_input_text
                 ))
                 if is_command_executed:
-                    save_to_db('Agent', command_response)
-                    print(f"About to call talk_with_tts with command_response: {command_response}")
+                    print(f"About to call send_to_tts with command_response: {command_response}")
                     with send_to_tts_condition:
-                        send_to_tts_queue.put(command_response)
+                        send_to_tts(command_response, user_request_id)
                         send_to_tts_condition.notify()
                 continue
 
             # this is where we send unrecognized requests:  
             if not is_command_executed and not function_wake_word_found:
+                print("inside last result")
+                user_request_id = f"default_%{user_request_id}"
                 print(f"Text before handle_conversation call: {user_input_text}")
-                handle_conversation(user_input_text) # general llm
-                # asyncio.run(handle_tool_request(tool_use_id= None, tool_name=tools_bot, user_input_text)) # tools_bot
+                # handle_conversation(user_input_text, user_request_id) # general llm
+                asyncio.run(handle_tool_request(user_request_id=None, tool_name=tools_bot, user_input_text=user_input_text)) # tools_bot
                 print("Conversation handled by LLM operations")
 
     except Exception as e:

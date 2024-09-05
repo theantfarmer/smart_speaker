@@ -4,25 +4,24 @@ import json
 import asyncio
 import logging
 import threading
+import datetime
 from anthropic import AsyncAnthropic, APIError, APIStatusError
 from queue_handling import llm_response_queue, llm_response_condition, tool_response_to_llm_claude_queue, tool_response_to_llm_claude_condition
 from centralized_tools import tools_for_claude, handle_tool_request, handle_tool_response, tools_list_for_claude, tools_bot_schema
-from dont_tell import CLAUDE_KEY
+from settings_manager import get_setting
 import traceback
+
+
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-logger.debug(f"Module initialization. Main thread: {threading.current_thread().name}")
-logger.debug(f"Initial event loop: {id(asyncio.get_event_loop())}")
+# logger.debug(f"Module initialization. Main thread: {threading.current_thread().name}")
+# logger.debug(f"Initial event loop: {id(asyncio.get_event_loop())}")
 
 def log_call_stack():
     stack = traceback.extract_stack()
     logger.debug("Current call stack:\n" + "".join(traceback.format_list(stack)))
-
-  
-logging.basicConfig(level=logging.DEBUG)
-logger = logging.getLogger(__name__)
   
 # this is a complex system to experiment with multiple bots. 
 # I built this to experiment with using different sized models for different tasks
@@ -52,56 +51,63 @@ base_model = sonnet # default model
 model_params = None
 history_length = None
 calling_model = None
+user_request_id = None
 tool_name = None
 tool_use_id = None
 tool_input = { }
-if_tool_use = None
+upper_level_request_ids = None
 full_readable_text = ""
 role = "user"
 result = None
-    
-client = AsyncAnthropic(api_key=CLAUDE_KEY)
+streaming = False
+   
+
+
+client = None
+
+def get_claude_client():
+    global client
+    if client is None:
+        apis_and_keys = get_setting('apis_and_keys')
+        claude_key = apis_and_keys.get('claude_key', '')
+        if claude_key:
+            client = AsyncAnthropic(api_key=claude_key)
+        else:
+            print("Claude API key is not set. You can set it in user preferences on this app's web page.")
+    return client
+
+
+# the prompt building section is messy
+# please reorganize
+
+def get_user_information_prompt():
+    # save personal prompt information in dont_tell,
+    # so the bot knows your background
+    try:
+        from dont_tell import user_information_prompt
+        user_information_prompt = "The following information about the user is for reference and should only be mentioned if relevant. Otherwise, do not explicitly mention it:\n" + user_information_prompt
+        return user_information_prompt
+    except ImportError:
+        # If user_information_prompt doesn't exist in dont_tell.py, create it
+        try:
+            with open('dont_tell.py', 'a') as file:
+                file.write("\nuser_information_prompt = ''\n")
+            return ''
+        except IOError:
+            print("Warning: Could not create user_information_prompt in dont_tell.py")
+            return ''
+
+# Rest of the code remains the same
 
 def get_or_create_custom_instructions():
     file_path = 'claude_custom_instructions.txt'
-    # custom instructions are set in the file mentioned above.
-    # use them to shape the voice and store persistant info about the user
-    # they are meant to be private and personal, so we create a fresh file
-    # when you first run the the program.
-    # the default instructions below are for the fresh file.
-    # NOTE:  Editing the default instructions below will not
-    # alter model behavior.  You must change them in the file mentioned above.
     if not os.path.exists(file_path):
         with open(file_path, 'w') as file:
-            file.write("""You are a voice assistant for a smart speaker. Your primary goal is to provide extremely concise and helpful responses to user queries. Follow these key principles:
-
-1. Limit spoken responses to 1-3 short sentences unless more detail is explicitly requested.
-2. Use available tools immediately when needed without explanation.
-3. Address the user directly in your spoken responses.
-4. Prioritize brevity in all interactions.
-
-When you receive a user query, process it as follows:
-
-1. If the query requires using a tool, use it immediately without explanation.
-2. For complex queries, use <thinking></thinking> tags to show your reasoning process. This won't be spoken aloud.
-3. If the request is unclear, consider potential transcription errors and try to interpret the most likely intent.
-4. If there's a problem you can't resolve, state it briefly and shut the hell up.  
-
-Format your response like this:
-<thinking>Your internal reasoning process (if needed) which the user will not hear.  Use this space to think and reason.</thinking>
-Your spoken response to the user (1-3 short sentences).  This is the only part the user receives.
-
-Remember:
-- Don't explain tool usage or offer examples.
-- Don't use unnecessary pleasantries or elaborate explanations.
-- Don't tell the user what you are going to do.  Just do it.
-- If there is a problem, say so briefly, then shut the hell up.  
-- If more detail is explicitly requested, provide it concisely.
+            file.write("""
 """)
     
     with open(file_path, 'r') as file:
         return file.read()
-    
     
 # Add this near the top of the file, with the other global variables and constants
 
@@ -128,14 +134,21 @@ def create_tools_list_prompt():
 Use tools when necessary for accurate responses."""
 
 # Generate both prompts
-system_prompt = get_or_create_custom_instructions()
+current_date = datetime.datetime.now().strftime("%A, %B %-d, %Y")
+system_prompt = f"Date at start of conversation: {current_date}\n\n{get_or_create_custom_instructions()}"
+user_info = get_user_information_prompt()
 tools_list_prompt = create_tools_list_prompt()
 
+def make_prompt_cache_block(text):
+    return {
+        "type": "text",
+        "text": text,
+        "cache_control": {"type": "ephemeral"}
+    }
 
 async def history_maker():
     global model_params, history_length, calling_model, full_readable_text, role, tool_name, tool_use_id, tool_input, result
     print(f"Entering history_maker, role: {role}")
-    print(f" history_maker if tool use {if_tool_use}")
     print(f" history_maker result {result}")
     # here we prepare messages to appened to history and send to Claude
     # this is centeralized for all models, user roles, and tool and non-tool
@@ -146,13 +159,14 @@ async def history_maker():
         # construct the content block to append to history
         # content differs by weather it contains a tool block or not
         # not tool content is very straight forward
-
         if not tool_use_id:
             print(f"if not tool_use_id:")
             if not isinstance(full_readable_text, str):
                 content = json.dumps(full_readable_text)
             else:
-                content = full_readable_text
+                current_time = datetime.datetime.now().strftime("%I:%M%p")
+                content = f' {full_readable_text}"'
+                # content = f'{current_time}: "{full_readable_text}"'
         else:
             if '$' in tool_use_id:
                 # we split and remove the calling model
@@ -174,7 +188,6 @@ async def history_maker():
                 # some tools require user input, such as a web earch
                 # others, such as a time check, do not
                 # if there is no user input, please omit
-                
             elif role == "user":
                 print("Creating user tool result block")
                 # this is the response from the tool
@@ -214,23 +227,34 @@ async def history_maker():
         full_readable_text = ""
        
         # print(f"API request payload: {json.dumps(model_params, indent=2)}")
-        print("\n--- Full History ---")
-        for idx, msg in enumerate(current_history):
-            print(f"Message {idx}:")
-            print(json.dumps(msg, indent=2))
-        print("--- End of Full History ---\n")
+        # print("\n--- Full History ---")
+        # for idx, msg in enumerate(current_history):
+        #     print(f"Message {idx}:")
+        #     print(json.dumps(msg, indent=2))
+        # print("--- End of Full History ---\n")
             
         if role == 'user':
         # send to claude
             try:
-                async with client.messages.stream(**model_params, messages=current_history) as stream:
-                    logger.debug("Stream connection opened")
+                client = get_claude_client()
+                if client is None:
+                    raise ValueError("Claude API key is not set.")
+                async with client.messages.stream(
+                    **model_params,
+                    messages=current_history,
+                    extra_headers={
+                        "anthropic-beta": "prompt-caching-2024-07-31"
+                    }
+                ) as stream:
+                    # Process the stream
+                    # logger.debug("Stream connection opened")
                     await handle_claude_response(stream)
             except Exception as e:
-                logger.exception(f"Exception in history_maker: {e}")
+                # logger.exception(f"Exception in history_maker: {e}")
                 raise
             finally:
-                logger.debug(f"Exiting history_maker. Event loop: {id(asyncio.get_running_loop())}")
+                # logger.debug(f"Exiting history_maker. Event loop: {id(asyncio.get_running_loop())}")
+                pass
 
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
@@ -238,25 +262,27 @@ async def history_maker():
         raise
                 
 async def handle_claude_response(stream):
-    global full_readable_text, tool_name, tool_use_id, tool_input, role, calling_model, if_tool_use
+    global full_readable_text, tool_name, tool_use_id, streaming, tool_input, role, calling_model, upper_level_request_ids, user_request_id
     # here we pick apart claude's response
     print(f"inside handle_claude_respons")
-    print(f"if_tool_use handle_claude_response: {if_tool_use}")
+    print(f"upper_level_request_ids handle_claude_response: {upper_level_request_ids}")
     tool_use_id = None
     tagged_tool_use_id = None
     accumulated_json = ""
-
-    logger.debug("Stream connection opened")
+    tool_use_count = 0
+    # logger.debug("Stream connection opened")
     # claude's response
     try:
-        response_to_return = None 
         async for event in stream:     
             # claude response beginning
             if event.type == "content_block_start":
-                with llm_response_condition:
-                    llm_response_queue.put(True)
-                    llm_response_condition.notify() 
+                streaming = True
+                # if not upper_level_request_ids: 
+                #     with llm_response_condition:
+                #         llm_response_queue.put((True, user_request_id, streaming))
+                #         llm_response_condition.notify() 
                 if event.content_block.type == "tool_use":
+                    tool_use_count += 1
                     # tool use id is asigned by the model
                     tool_use_id = event.content_block.id
                     tagged_tool_use_id = f"llm_claude_{calling_model}${tool_use_id}"
@@ -273,12 +299,14 @@ async def handle_claude_response(stream):
                 # this is the response as it streams in,
                 # to be read aloud ASAP
                 if event.delta.type == "text_delta":
-                    # print(f"Received text: {event.delta.text}")
+                    print(f"Received text: {event.delta.text}")
                     streaming_text = event.delta.text
-                    if not if_tool_use: 
+                    print(f"before streaming level ids: {upper_level_request_ids}")
+                    if not upper_level_request_ids: 
+                        print(f"after streaming level ids: {upper_level_request_ids}")
                         with llm_response_condition:
                             # print(f"Putting text chunk in queue: {streaming_text}")
-                            llm_response_queue.put(streaming_text)
+                            llm_response_queue.put((streaming_text, user_request_id, streaming))
                             llm_response_condition.notify()
                     # the accumulated response will be appended to the history
                     full_readable_text += streaming_text
@@ -289,9 +317,12 @@ async def handle_claude_response(stream):
             # claude response end
             elif event.type == "message_stop":
                 # print(f"Message stop event, stop_reason: {event.message.stop_reason}")
-                with llm_response_condition:
-                    # print("Putting False in queue (end streaming)")
-                    llm_response_queue.put(False)
+                if not upper_level_request_ids: 
+                    with llm_response_condition:
+                        # print("Putting False in queue (end streaming)")
+                        llm_response_queue.put((False, user_request_id, streaming))
+                        llm_response_condition.notify()
+                streaming = False
                 if event.message.stop_reason == "tool_use":
                     if accumulated_json:
                         try:
@@ -307,6 +338,7 @@ async def handle_claude_response(stream):
                         except json.JSONDecodeError:
                             print(f"Failed to parse JSON: {accumulated_json}")
                 full_text_as_tool_response = re.sub(r'<thinking>.*?</thinking>', '', full_readable_text, flags=re.DOTALL).strip()
+                
                 # recall the current function here to add
                 # claude's response to history
                 role = "assistant"
@@ -314,14 +346,15 @@ async def handle_claude_response(stream):
                 await history_maker() # to append to history
                 tool_use_id = None
                 
-                
                 if tagged_tool_use_id is not None:
-                    print(f"Calling handle_tool_request with tagged_tool_use_id={tagged_tool_use_id}, tool_name={if_tool_use}, tool_input= {tool_input}, if tool use= {if_tool_use}")
-                    await handle_tool_request(tagged_tool_use_id, tool_name, tool_input, if_tool_use)
+                    if upper_level_request_ids is None:
+                        upper_level_request_ids = user_request_id
+                    print(f"Calling handle_tool_request with tagged_tool_use_id={tagged_tool_use_id}, tool_name={upper_level_request_ids}, tool_input= {tool_input}, if tool use= {upper_level_request_ids}")
+                    await handle_tool_request(tagged_tool_use_id, tool_name, tool_input, upper_level_request_ids)
                 else:
-                    if if_tool_use:
-                        print(f"that was atool response.  calling handle tool response with tagged_tool_use_id={tagged_tool_use_id}, tool_name={if_tool_use}, tool_input= {full_text_as_tool_response}, if tool use= {if_tool_use}")
-                        await handle_tool_response(full_text_as_tool_response, if_tool_use)
+                    if upper_level_request_ids:
+                        print(f"that was atool response.  calling handle tool response with tagged_tool_use_id={tagged_tool_use_id}, tool_name={upper_level_request_ids}, tool_input= {full_text_as_tool_response}, if tool use= {upper_level_request_ids}")
+                        await handle_tool_response(full_text_as_tool_response, upper_level_request_ids)
                 tool_name = None
                 tool_input = { }
                 full_text_as_tool_response = ""
@@ -340,7 +373,7 @@ async def handle_claude_response(stream):
             llm_response_condition.notify()
         await remove_last_user_message()
  
-async def call_tools_bot(incoming_text=None, incoming_if_tool_use=None):
+async def call_tools_bot(incoming_text=None, incoming_upper_level_request_ids=None):
    
     # requests for tools bot are routed through centeralized_tools/
     # this adds some complexity to the set up, but we do this 
@@ -359,14 +392,14 @@ async def call_tools_bot(incoming_text=None, incoming_if_tool_use=None):
     # This means the tool use id for this call is not over riden.  If the tool use ID for the actual tool 
     # call must be returned to Claude, it is stored in Claude operations.  We dont need it here.
     
-    global model_params, history_length, calling_model, full_readable_text, if_tool_use, role
+    global model_params, history_length, calling_model, full_readable_text, upper_level_request_ids, role
  
     if incoming_text:
         full_readable_text = incoming_text
         incoming_text = None  
-    if incoming_if_tool_use:
-        if_tool_use = incoming_if_tool_use
-        incoming_if_tool_use = None
+    if incoming_upper_level_request_ids:
+        upper_level_request_ids = incoming_upper_level_request_ids
+        incoming_upper_level_request_ids = None
     
     calling_model = "tools_bot"
     role = "user"
@@ -375,26 +408,50 @@ async def call_tools_bot(incoming_text=None, incoming_if_tool_use=None):
         "model": haiku,
         "max_tokens": 1000,
         "temperature": 0.0,
-        "system": tools_bot_prompt,
-        "tools": tools_for_claude,
+        "system": [        
+            {
+                "type": "text",
+                "text": tools_bot_prompt,
+                "cache_control": {"type": "ephemeral"}
+            }
+        ],
+        "tools": tools_for_claude,  
         "tool_choice": {"type": "auto"}
-    }
+        }
+    
+    
     print(f"About to call history_maker in call_tools_bot")
     await history_maker()
     
 
 async def call_base_model():
     global model_params, history_length, calling_model, base_model, role
-
+    print(f"base model called")
     calling_model = "base_model"
     role = "user"
-    history_length = 5 # number of user / assistantant exchanges
+    history_length = 25 # pairs!!!! number of user / assistantant exchanges
     model_params = {
         "model": base_model,
         "max_tokens": 1000,
         "temperature": 0.4,
-        "system": f"{system_prompt}\n\n{tools_list_prompt}",
-        "tools": [tools_bot_schema],
+        "system": [
+            {
+                "type": "text",
+                "text": system_prompt,
+                "cache_control": {"type": "ephemeral"}
+            },
+            {
+                "type": "text",
+                "text": user_info,
+                "cache_control": {"type": "ephemeral"}
+            },
+            {
+                "type": "text",
+                "text": tools_list_prompt,
+                "cache_control": {"type": "ephemeral"}
+            }
+        ],
+        "tools": [tools_bot_schema], 
         "tool_choice": {"type": "auto"}
     }
     print(f"call_base_model received: {full_readable_text}")  
@@ -403,7 +460,7 @@ async def call_base_model():
     
 # combined tools/base model for testing:
 
-# async def call_base_model(incoming_text=None, if_tool_use=None):
+# async def call_base_model(incoming_text=None, upper_level_request_ids=None):
 #     global model_params, history_length, calling_model, base_model, role
 #     calling_model = "base_model"
 #     role = "user"
@@ -412,25 +469,43 @@ async def call_base_model():
 #         "model": base_model,
 #         "max_tokens": 1000,
 #         "temperature": 0.0,
-#         "system": f"{system_prompt}\n\n{tools_list_prompt}",
-#         "tools": tools_for_claude,
-#         "tool_choice": {"type": "auto"}
-#     }
+    #     "system": [
+    #         {
+    #             "type": "text",
+    #             "text": system_prompt,
+    #             "cache_control": {"type": "ephemeral"}
+    #         },
+    #         {
+    #             "type": "text",
+    #             "text": tools_list_prompt,
+    #             "cache_control": {"type": "ephemeral"}
+    #         }
+    #     ],
+    #     "tools": tools_for_claude,  
+    #     "tool_choice": {"type": "auto"}
+    # }
 #     print(f"call_base_model received: {full_readable_text}")  
 #     return await history_maker()
 
 loop = asyncio.new_event_loop()
 asyncio.set_event_loop(loop)
-logger.debug(f"Initial event loop created: {id(loop)}")
+# logger.debug(f"Initial event loop created: {id(loop)}")
 
 
-async def tool_response_listener(received_tool_use_id, received_result, received_if_tool_use):
-    global tool_use_id, result, if_tool_use
-    
+async def tool_response_listener(received_tool_use_id, received_result, received_upper_level_request_ids):
+    global tool_use_id, result, upper_level_request_ids, user_request_id
     tool_use_id = received_tool_use_id
     result = received_result
-    if_tool_use = received_if_tool_use
-    print(f"tool_response_listener: {if_tool_use}")
+    
+    if isinstance(upper_level_request_ids, str):
+        # this indicates upper_level_request_ids
+        # contains only the orig user_request_id.
+        user_request_id = received_upper_level_request_ids
+        upper_level_request_ids = None
+    else: 
+        # else there is are still nested IDs
+        upper_level_request_ids = received_upper_level_request_ids
+    print(f"tool_response_listener: {upper_level_request_ids}")
     print(f"tool_response_listener result: {result}")
     
     try:
@@ -450,17 +525,11 @@ async def tool_response_listener(received_tool_use_id, received_result, received
 # llm model calls the async def to take care of business on its behalf
 # asyncronously  
 
-def llm_model(input_content):
-    global loop, base_model, full_readable_text
-    logger.debug(f"Entering llm_model. Current event loop status: {loop.is_closed()}")
-    logger.debug(f"Current thread: {threading.current_thread().name}")
-    log_call_stack()
+def llm_model(input_content, incoming_user_request_id):
+    global loop, base_model, full_readable_text, user_request_id
+    print("inside llm model")
+    user_request_id = incoming_user_request_id
 
-    # if loop.is_closed():
-    #     logger.warning("Event loop is closed. Creating a new one.")
-    #     loop = asyncio.new_event_loop()
-    #     asyncio.set_event_loop(loop)
-        
     if isinstance(input_content, dict):
         claude_key = next(key for key in input_content if key.startswith("chat_with_llm_claude"))
         input_content = input_content[claude_key]
@@ -472,13 +541,15 @@ def llm_model(input_content):
             base_model = haiku
     full_readable_text = input_content
     try:
+        print("about to cal base model")
         loop.run_until_complete(call_base_model())
     except Exception as e:
         logger.exception(f"Exception in llm_model: {e}")
         raise
     finally:
         logger.debug(f"Exiting llm_model. Event loop status: {loop.is_closed()}")
-        
+    
+
 # when there is a serever error, we must remove the last user message
 # because the history must alternate between user/assistant
 # and the error interrupts this

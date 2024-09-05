@@ -2,10 +2,12 @@ import holidays
 import ephem
 import uuid
 import asyncio
-from datetime import datetime
-from queue_handling import tool_response_to_llm_claude_queue, tool_response_to_llm_claude_condition
+import requests
+from datetime import datetime, timedelta
+from queue_handling import send_to_tts_queue, send_to_tts_condition
 from transit_routes import fetch_subway_status, train_status_phrase, SUBWAY_LINES
-
+from home_assistant_interactions import hostname, execute_command_in_home_assistant
+            
 tool_use_tracker = []
 
 # tools_bot_request_id = None #holds persistant request ID between iterations  
@@ -38,8 +40,6 @@ tool_use_tracker = []
 # will not recieve command wake words or be callable from the default system,
 # but will be available to chatgpt and claude by default.
 # Exclude items from the system that require AI.
-
-
 
 # in aplphabetical order 
 tools = {
@@ -139,13 +139,14 @@ tools = {
         ],
         "has_sublist": False,
     },
+    
     "get_moon_phase": {
         "name": "get_moon_phase",
         "description": "Get the current phase of the moon.",
         "notes": "",
         "exclude_from_system": False,
-        "exclude_from_claude": True,
-        "exclude_from_gpt": True,
+        "exclude_from_claude": False,
+        "exclude_from_gpt": False,
         "type": "object",
         "properties": {},
         "required": [],
@@ -169,6 +170,27 @@ tools = {
         ],
         "has_sublist": False
     }, 
+    
+        "home_assistant": {
+        "name": "home_assistant",
+        "description": f"Execute commands in Home Assistant.  The current room is {hostname}.",
+        "notes": "",
+        "exclude_from_system": False,
+        "exclude_from_claude": False,
+        "exclude_from_gpt": False,
+        "type": "object",
+        "properties": {
+            "command": {
+                "type": "string",
+                "description": "The command to execute in Home Assistant"
+            }
+        },
+        "required": ["command"],
+        "trigger_sentences": [
+              
+        ],
+        "has_sublist": False,
+    },
        
     "nyc_subway_status": {
         "name": "nyc_subway_status",
@@ -228,6 +250,68 @@ tools = {
         "has_sublist": True,
     }, 
    
+    "nyt_archive": {
+        "name": "nyt_archive",
+        "description": "Search the NYT archive for articles from a specific year and month.",
+        "notes": "",
+        "exclude_from_system": False,
+        "exclude_from_claude": False,
+        "exclude_from_gpt": False,
+        "type": "object",
+        "properties": {
+            "year": {
+                "type": "integer",
+                "description": "The year to search for articles (1851-present)"
+            },
+            "month": {
+                "type": "integer",
+                "description": "The month to search for articles (1-12)"
+            }
+        },
+        "required": ["year", "month"],
+        "trigger_sentences": [
+            "search nyt archive for [year] [month]",
+            "find articles in nyt archive from [year] [month]",
+            "nyt archive search for [year] [month]"
+        ],
+        "has_sublist": False,
+    },
+
+    "nyt_articles": {
+        "name": "nyt_articles",
+        "description": "Search for NYT articles by keywords, filters, and facets.",
+        "notes": "",
+        "exclude_from_system": False,
+        "exclude_from_claude": False,
+        "exclude_from_gpt": False,
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "The search query"
+            },
+            "begin_date": {
+                "type": "string",
+                "description": "The start date for the search (YYYYMMDD format)"
+            },
+            "end_date": {
+                "type": "string",
+                "description": "The end date for the search (YYYYMMDD format)"
+            },
+            "sort": {
+                "type": "string",
+                "description": "Sort order (newest or oldest)"
+            }
+        },
+        "required": ["query"],
+        "trigger_sentences": [
+            "search nyt articles for [query]",
+            "find nyt articles about [query]",
+            "nyt article search for [query]"
+        ],
+        "has_sublist": False,
+    },
+
     "tools_bot": {
         "name": "tools_bot",
         "description": "Use tool model to call tools and recieve results.",
@@ -249,7 +333,6 @@ tools = {
         "has_sublist": False,
     }
     }
-
 
 def list_maker():
     mta_trigger_sentences = []
@@ -304,6 +387,9 @@ def list_maker():
         
         if tool["name"] == "tools_bot":
             tools_bot_schema = build_schema
+            
+    list_of_lists = [var for name, var in locals().items() 
+            if isinstance(var, (list, dict)) and not name.startswith('_')]
           
     return (
         tools_bot_schema,
@@ -331,32 +417,37 @@ def list_maker():
 ) = list_maker()
 __all__ = ['tools_bot_schema']
 
-async def handle_tool_request(tool_use_id, tool_name, tool_input, if_tool_use=None):
-    global tool_use_tracker
-    print(f"handle_tool_request recieved: tool_use_id={tool_use_id}, tool_name={tool_name}, tool_input={tool_input}")
-    print(f"if_tool_use handle_tool_request 1: {if_tool_use}")
-    if tool_use_id is None:
-        tool_use_id = f"default_{uuid.uuid4()}"
-        
-    # When using tools bot to handle tools calls.
-    # set to True to return tool results directlty 
-    # to the original caller.  Set to false to return the
-    # results to tools bot first.  
 
+async def handle_tool_request(request_id, tool_name, tool_input, upper_level_request_ids=None):
+    global tool_use_tracker
+    print(f"handle_tool_request recieved: request_id={request_id}, tool_name={tool_name}, tool_input={tool_input}")
+    print(f"upper_level_request_ids handle_tool_request 1: {upper_level_request_ids}")
+    
+        # upper_level_request_ids allows us to nest tool calls.
+        # we use IDs to direct tool responses even when they arrive out of order.
+        # the current system allows tools to call tools, allowing for
+        # complex and experimental operations.
+        # Each call requires a unique id so we can handle and track it properly.  
+        # Other modules may send user_request_ids or tool_use_ids.
+        # Both are handled here as request_id.
+        # They are nested hierachicly in upper_level_request_ids, 
+        # which allows unlimited nesting levels.  
+          
     is_command_executed = True
     tool_response = None
-    
-    if tool_use_id not in tool_use_tracker:
-        tool_use_tracker.append(tool_use_id)
-        if_tool_use = (tool_use_id, tool_name, tool_input, if_tool_use)
+        
+    if request_id not in tool_use_tracker:
+        tool_use_tracker.append(request_id)
+        upper_level_request_ids = (request_id, tool_name, tool_input, upper_level_request_ids)
 
         print(f"Parsed tool request: tool_name={tool_name}, tool_input={tool_input}")
+ 
  
         # if the tool name is unrecognized, we send to tools bot to decipher
         
         # if a tool returns immediately, we can process its response in line
-        # if a tool has any altency or an API, it will need logic to main tain the
-        # tool use ID.  See llm_claude.py for how such logic is implemented.
+        # if a tool has any a ltency or an API, it will need logic to maintain the
+        # upper_level_request_ids.  See llm_claude.py for how such logic is implemented.
         # In line here, we should pass after calling the function for such tools.
         
         if tool_name.lower() not in list_of_available_tools:
@@ -446,7 +537,19 @@ async def handle_tool_request(tool_use_id, tool_name, tool_input, if_tool_use=No
                         
         elif tool_name == "get_time":
             current_time = datetime.now().strftime("%I:%M %p")
-            tool_response = f"{current_time}"
+            tool_response = f"It's {current_time}"
+            
+        elif tool_name == "home_assistant":
+            command = tool_input.get("command")
+            if command:
+                success, response = await execute_command_in_home_assistant(command)
+                if success:
+                    tool_response = f"Home Assistant command executed successfully: {response}"
+                else:
+                    tool_response = f"Failed to execute Home Assistant command: {response}"
+            else:
+                tool_response = "No command provided for Home Assistant."
+                is_command_executed = False
 
         elif tool_name == "nyc_subway_status":
             print(f"Processing NYC subway status. User input: {tool_input}")
@@ -465,43 +568,41 @@ async def handle_tool_request(tool_use_id, tool_name, tool_input, if_tool_use=No
             else:
                 is_command_executed = False
                 tool_response = f"Invalid subway line: {tool_input}"
- 
+                
+        elif tool_name.startswith("nyt_"):
+            nyt_api_request(tool_name, tool_input)
+            
         elif tool_name == "tools_bot":
-            print(f"inside tools bot handle tools: tool input={tool_input}, tool_use_id={tool_use_id}")
-            print(f" elif tool_name == tools_bot={if_tool_use}")
+            print(f"inside tools bot handle tools: tool input={tool_input}, request_id={request_id}")
+            print(f" elif tool_name == tools_bot={upper_level_request_ids}")
             if tool_input:
                 from llm_claude import call_tools_bot
-                await call_tools_bot(tool_input, if_tool_use)
+                await call_tools_bot(tool_input, upper_level_request_ids)
                 pass
             else:
                 tool_response = "No input provided for tools bot."
                 is_command_executed = False
         
         if tool_response is not None:
-            print(f"if_tool_useif tool_response is not None: {if_tool_use}")
-            await handle_tool_response(tool_response, if_tool_use)   
+            print(f"upper_level_request_idsif tool_response is not None: {upper_level_request_ids}")
+            await handle_tool_response(tool_response, upper_level_request_ids)   
 
-async def handle_tool_response(tool_response, if_tool_use):
+async def handle_tool_response(tool_response, upper_level_request_ids):
     global tool_use_tracker
-    print(f"if_tool_use andle_tool_response: {tool_response}")
+    print(f"upper_level_request_ids andle_tool_response: {tool_response}")
     
-    tool_use_id, tool_name, tool_input, nested_if_tool_use = if_tool_use
-    if_tool_use = nested_if_tool_use
-    print(f"after nested_if_tool_use: tool_response {tool_response}")
-    if tool_use_id in tool_use_tracker:
-        tool_use_tracker.remove(tool_use_id)
-        
-        # default indicates we recived tool use ID of None.  
-        # in this case, send the result straight to TTS
-        # anything else must be sent back to its origin for processing.  
+    request_id, tool_name, tool_input, nested_upper_level_request_ids = upper_level_request_ids
+    upper_level_request_ids = nested_upper_level_request_ids
+    print(f"after nested_upper_level_request_ids: tool_response {tool_response}")
+    if request_id in tool_use_tracker:
+        tool_use_tracker.remove(request_id)
+       
         print(f"if tool_response is not None:")
-        if tool_use_id.startswith("default_"):
-            with send_to_tts_condition:
-                send_to_tts_queue.put(tool_response)
-                send_to_tts_condition.notify()
-        if tool_use_id.startswith("llm_claude_"):
+        if request_id.startswith("llm_claude_"):
             print(f"sending back to claude {tool_response}")
             from llm_claude import tool_response_listener
-            await tool_response_listener(tool_use_id, tool_response, if_tool_use)
-      
-  
+            await tool_response_listener(request_id, tool_response, upper_level_request_ids)
+        else:
+            with send_to_tts_condition:
+                send_to_tts_queue.put((tool_response, request_id))
+                send_to_tts_condition.notify()

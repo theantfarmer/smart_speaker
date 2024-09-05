@@ -16,20 +16,18 @@ import mimetypes
 import numpy as np
 import vlc
 import soundfile as sf
+from db_operations import save_to_db
 from home_assistant_interactions import home_assistant_request
 from tts_google_cloud import tts_model
 from multiprocessing import Value, Lock
 from queue_handling import send_to_tts_queue, send_to_tts_condition
 from shared_variables import user_response_window, most_recent_wake_word, user_response_en_route, tts_is_speaking, tts_lock, tts_is_speaking_notification
 
-
 # Initialize tts_playlist_queue as thread-safe
 tts_playlist_queue = Queue()
 tts_playlist_notify = threading.Event()
 
 tts_outputs = {}  # Dictionary to store text and timestamps for echo cancellation
-
-
 
 # individual_audio_is_playing turns true at the beginning of each indavidual audio file
 # it turns false at the end of that file
@@ -45,110 +43,136 @@ player = vlc_instance.media_player_new()
 playback_finished = threading.Event()
 
 def talk_with_tts():
+    
+    streaming = False
+    
     while True:
-        
         command = None
         text = None
+        agent_response = None
+        request_id = None
+        speech_data = None
         
         # Wait for and retrieve an item from the queue
         with send_to_tts_condition:
             while send_to_tts_queue.empty():
                 send_to_tts_condition.wait()
             
-            speech_data = send_to_tts_queue.get()
+            agent_response = send_to_tts_queue.get()
 
-        print(f"talk_with_tts received: {speech_data}")
+        print(f"talk_with_tts received: {agent_response}")
     
-        # tuples should contain (command, text) and must be broken apart
-        # text can be a None, a populated string, or an empty string
+        # agent responses come in as tuples containng speech data and an ID.
+        # Other modules may send a user request id or or tool_use_id,
+        # but both are simply request_id here.  # streaming responses 
+        # will contain identical response IDs
+    
+        # Command tuples may be inside the incoming agent responses.
+        # They should contain (command, text) and must be broken apart.
 
         try:
-            if isinstance(speech_data, str):
-                text = speech_data
-            elif isinstance(speech_data, tuple):
-                if len(speech_data) == 2:
-                    command, text = speech_data
-                elif len(speech_data) == 1 and isinstance(speech_data[0], tuple):
-                    command, text = speech_data[0]
+            # we must unpack the tuple to recieve request_id and streaming
+            if isinstance(agent_response, tuple) and len(agent_response) == 3:
+                speech_data, request_id, streaming = agent_response
+                if isinstance(speech_data, bool): #if the first item is a boolean, it indicates streaming
+                    streaming = speech_data
+                if isinstance(speech_data, str):
+                    text = speech_data
+                elif isinstance(speech_data, tuple):
+                    if len(speech_data) == 2:
+                        command, text = speech_data
+                    elif len(speech_data) == 1 and isinstance(speech_data[0], tuple):
+                        command, text = speech_data[0]
+                    else:
+                        raise ValueError("Invalid tuple format. Expected (command, text) or ((command, text)).")
                 else:
-                    raise ValueError("Invalid tuple format. Expected (command, text) or ((command, text)).")
-            else:
-                raise ValueError("Invalid input type. Expected string or tuple.")
+                    raise ValueError("Invalid input type. Expected string or tuple.")
         except ValueError as e:
             print(f"Error in talk_with_tts: {str(e)}")
-        
+                
         # if text is a string, we attempt to remove characters
         # that TTS can't read or are unpleasant to listen to.
         # We also correct comment terms and names for better pronounciation.
         # if the string arrives empty or becomes empty after
         # it is cleaned, we set it to None
-            
-        if text is not None:
-            try:
-                # Convert emojis to their text representation
-                text = emoji.demojize(text)
-                # Remove HTML tags
-                text = re.sub(r'<[^>]*>', '', text)
-                # Remove line break characters
-                text = text.replace('\n', ' ').replace('\r', '')
-                text = text.replace('*', ' ')
-                text = text.replace('_', ' ')
-                text = re.sub(r'http\S+', 'online', text)
-                # Replace "AI" with "A.I." for better pronunciation
-                text = re.sub(r'\b(?<![\w.-])AI(?![\w.-])\b', 'A.I.', text)
-                # Replace "OpenAI" with "Open A.I." for better pronunciation
-                text = re.sub(r'\bOpenAI\b', 'Open A.I.', text)
-            except Exception as e:
-                print(" ")
-            
-            # empty string check!
-            if not text.strip():
-                print("Text is empty after processing, setting to None")
-                text = None
-            else:
-                # if we make it to this point, the string contains
-                # clean text ready to be read aloud
-                # we send the text to the TTS model to
-                # be converted to audio
-
+        
+        # the request id contains user input source.
+        # we save to the db regardless of soruce.  
+        # But we only send to tts if the source was speech
+   
+        if request_id:
+            save_to_db('Agent', speech_data, request_id, streaming)
+        if "speech" in request_id:  
+            if text is not None:
                 try:
-                    print(f"Passing text to TTS model: {text}")
-                    audio_content = tts_model(text)
-                    # print(f"Generated audio content. Length: {len(audio_content)} bytes")
-              
-                    # because we can easily swap models, we need to determine
-                    # and handle whatever audio format the model returns.  
-                    
-                    file_type = magic.from_buffer(audio_content, mime=True)
-                    # print(f"File format: {file_type}")
-
-                    # currently, we save the tts return as a file and pass the address
-                    file_extension = mimetypes.guess_extension(file_type)
-                    if file_extension:
-                        file_name = str(uuid.uuid4()) + file_extension
-                    else:
-                        file_name = str(uuid.uuid4()) + "text_to_speech.wav"
-                    tmp_filepath = os.path.join("/tmp", file_name)
-                    with open(tmp_filepath, "wb") as f:
-                        f.write(audio_content)
-
-                    # print(f"Audio content saved to file: {tmp_filepath}")
-                    
-                    # we still use the text variable because
-                    # that is what we pass to the next queue
-                    text = tmp_filepath
-                    
+                    # Convert emojis to their text representation
+                    text = emoji.demojize(text)
+                    # Remove HTML tags
+                    text = re.sub(r'<[^>]*>', '', text)
+                    # Remove line break characters
+                    text = text.replace('\n', ' ').replace('\r', '')
+                    text = text.replace('*', ' ')
+                    text = text.replace('_', ' ')
+                    text = re.sub(r'http\S+', 'online', text)
+                    # Replace "AI" with "A.I." for better pronunciation
+                    text = re.sub(r'\b(?<![\w.-])AI(?![\w.-])\b', 'A.I.', text)
+                    # Replace "OpenAI" with "Open A.I." for better pronunciation
+                    text = re.sub(r'\bOpenAI\b', 'Open A.I.', text)
                 except Exception as e:
-                    logging.error(f"Error in tts service script: {e}")
-                    # Add error placeholder to maintain order
-                    continue  # Move to the next item in the queue
+                    print(" ")
+                
+                # empty string check!
+                if not text.strip():
+                    print("Text is empty after processing, setting to None")
+                    text = None
+                else:
+                    # if we make it to this point, the string contains
+                    # clean text ready to be read aloud
+                    # we send the text to the TTS model to
+                    # be converted to audio
 
-        # finally, we put the text in the playlist queue
-        # as a tuple, even if there is no command.
-        # in that case, the command will be None
-        # print(f"Added to tts_playlist_queue: {command}, {text}")
-        tts_playlist_queue.put((command, text))
-        tts_playlist_notify.set()
+                    try:
+                        print(f"Passing text to TTS model: {text}")
+                        audio_content = tts_model(text)
+                        # print(f"Generated audio content. Length: {len(audio_content)} bytes")
+                
+                        # because we can easily swap models, we need to determine
+                        # and handle whatever audio format the model returns.  
+                        
+                        file_type = magic.from_buffer(audio_content, mime=True)
+                        # print(f"File format: {file_type}")
+
+                        # currently, we save the tts return as a file and pass the address
+                        file_extension = mimetypes.guess_extension(file_type)
+                        if file_extension:
+                            file_name = str(uuid.uuid4()) + file_extension
+                        else:
+                            file_name = str(uuid.uuid4()) + "text_to_speech.wav"
+                        tmp_filepath = os.path.join("/tmp", file_name)
+                        with open(tmp_filepath, "wb") as f:
+                            f.write(audio_content)
+
+                        # print(f"Audio content saved to file: {tmp_filepath}")
+                        
+                        # we still use the text variable because
+                        # that is what we pass to the next queue
+                        text = tmp_filepath
+                        
+                    except Exception as e:
+                        logging.error(f"Error in tts service script: {e}")
+                        # Add error placeholder to maintain order
+                        continue  # Move to the next item in the queue
+            else:
+                text = None
+                print(f"Web based response:  request_id: {request_id}")
+                
+            # finally, we put the text in the playlist queue
+            # as a tuple, even if there is no command.
+            # in that case, the command will be None
+            # print(f"Added to tts_playlist_queue: {command}, {text}")
+            if command is not None or text is not None:
+                tts_playlist_queue.put((command, text))
+                tts_playlist_notify.set()
 
 def set_response_window():
     # we set the user response window to true for a few

@@ -5,6 +5,9 @@ import threading
 import multiprocessing
 import time
 
+user_input_queue = queue.Queue()
+user_input_condition = threading.Condition()
+
 llm_response_queue = queue.Queue()
 llm_response_condition = threading.Condition()
 

@@ -18,7 +18,6 @@ import paramiko  # for SSH
 import socket # to get host name
 import websocket
 
-
 # Constants
 HOME_ASSISTANT_URL = 'http://homeassistant.local:8123/api/'
 HEADERS = {'Authorization': f'Bearer {HOME_ASSISTANT_TOKEN}', 'content-type': 'application/json'}
@@ -260,31 +259,44 @@ def execute_command_in_home_assistant(command_to_execute, command_type='call_ser
         if response_json["id"] != command_id:
             raise ValueError("Unexpected response ID")
         
-        if response_json["type"] == "result" and response_json["success"]:
-            result = response_json["result"]
-            if "response" in result:
-                if "speech" in result["response"] and "plain" in result["response"]["speech"]:
-                    speech_response = result["response"]["speech"]["plain"]["speech"]
-                    # Check if speech_response is precisely "Done"
-                    if speech_response == "Done":
-                        ws.close()
-                        return True, ""
-                    # Check if speech_response is whitespace, empty, or contains [hostname]
-                    if isinstance(speech_response, str) and (speech_response.strip() == "" or f"[{hostname}]" in speech_response):
-                        ws.close()
-                        return False, ""
-                    ws.close()
-                    return True, speech_response
-                else:
-                    ws.close()
-                    return False, "Response missing 'speech' or 'plain' field"
-            else:
-                ws.close()
-                return False, "Response missing 'response' field"
+        # if response_json["type"] == "result" and response_json["success"]:
+        #     result = response_json["result"]
+        #     if "response" in result:
+        #         if "speech" in result["response"] and "plain" in result["response"]["speech"]:
+        #             speech_response = result["response"]["speech"]["plain"]["speech"]
+        #             # Check if speech_response is precisely "Done"
+        #             if speech_response == "Done":
+        #                 ws.close()
+        #                 return True, ""
+        #             # Check if speech_response is whitespace, empty, or contains [hostname]
+        #             if isinstance(speech_response, str) and (speech_response.strip() == "" or f"[{hostname}]" in speech_response):
+        #                 ws.close()
+        #                 return False, ""
+        #             ws.close()
+        #             return True, speech_response
+        #         else:
+        #             ws.close()
+        #             return False, "Response missing 'speech' or 'plain' field"
+        #     else:
+        #         ws.close()
+        #         return False, "Response missing 'response' field"
+        # else:
+        #     ws.close()
+        #     return False, "Command execution failed or unexpected response type"
+        
+        # Extract the speech response
+        
+        speech_response = response_json.get('result', {}).get('response', {}).get('speech', {}).get('plain', {}).get('speech', '')
+        
+        # Close the WebSocket connection
+        ws.close()
+
+        # If the response is exactly "Done", return an empty string
+        if speech_response == "Done":
+            return True, ""
         else:
-            ws.close()
-            return False, "Command execution failed or unexpected response type"
-    
+            return True, speech_response
+        
     except (websocket.WebSocketException, ValueError, KeyError) as e:
         print(f"Exception occurred: {e}")
         return False, str(e)
