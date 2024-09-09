@@ -8,7 +8,8 @@ import datetime
 from anthropic import AsyncAnthropic, APIError, APIStatusError
 from queue_handling import llm_response_queue, llm_response_condition, tool_response_to_llm_claude_queue, tool_response_to_llm_claude_condition
 from centralized_tools import tools_for_claude, handle_tool_request, handle_tool_response, tools_list_for_claude, tools_bot_schema
-from settings_manager import get_setting
+# from settings_manager import get_setting
+from dont_tell import claude_key
 import traceback
 
 
@@ -63,18 +64,27 @@ streaming = False
    
 
 
-client = None
-
+# client = None
+client = AsyncAnthropic(api_key=claude_key)
 def get_claude_client():
     global client
     if client is None:
-        apis_and_keys = get_setting('apis_and_keys')
-        claude_key = apis_and_keys.get('claude_key', '')
         if claude_key:
             client = AsyncAnthropic(api_key=claude_key)
         else:
-            print("Claude API key is not set. You can set it in user preferences on this app's web page.")
+            print("Claude API key is not set in dont_tell.py.")
     return client
+
+# def get_claude_client():
+#     global client
+#     if client is None:
+#         apis_and_keys = get_setting('apis_and_keys')
+#         claude_key = apis_and_keys.get('claude_key', '')
+#         if claude_key:
+#             client = AsyncAnthropic(api_key=claude_key)
+#         else:
+#             print("Claude API key is not set. You can set it in user preferences on this app's web page.")
+#     return client
 
 
 # the prompt building section is messy

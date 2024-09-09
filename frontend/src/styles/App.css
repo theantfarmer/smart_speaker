@@ -1,0 +1,48 @@
+body {
+  background-color: #e8a3ff;
+  margin: 0;
+  padding: 0;
+  font-family: Times New Roman, serif;
+}
+
+.header {
+  background-color: #d580ff;
+  height: 70px; /* Adjust this value as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  color: rgb(81, 43, 141);
+  font-size: 64px; 
+  line-height: 1; /* Ensures the text doesn't add extra vertical space */
+}
+
+nav {
+  background-color: #c059ff;
+  height: 23px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky; 
+  top: 70px; 
+  z-index: 1000; 
+}
+
+nav a {
+  color: rgb(81, 43, 141);
+  text-decoration: none;
+  padding: 5px 5px;
+  margin: 0 60px;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-top: 5px;
+}

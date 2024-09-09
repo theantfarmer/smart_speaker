@@ -7,21 +7,32 @@ import json
 import redis
 import os
 import re
+from flask_cors import CORS
 from flask_sse import sse
-from flask import Flask, render_template, request, jsonify, redirect, url_for, Response
+from flask import Flask, render_template, request, jsonify, send_from_directory, redirect, url_for, Response
 from werkzeug.utils import secure_filename
 from queue_handling import user_input_queue, user_input_condition
 from db_operations import connect_db, initialize_db
 from default_settings import DEFAULT_SETTINGS
 from settings_manager import load_settings, save_settings, get_setting, update_setting
-from file_operations import get_stored_files, delete_stored_file_by_id, store_file, init_sandbox
+from file_operations import get_allowed_extensions, get_stored_files, delete_stored_file_by_id, store_file, init_sandbox, create_new_file
 
-app = Flask(__name__)
+current_dir = os.path.dirname(os.path.abspath(__file__))
+frontend_dir = os.path.join(os.path.dirname(current_dir), 'frontend')
+static_folder = os.path.join(frontend_dir, 'build')
+app = Flask(__name__, static_folder=static_folder)
+CORS(app)
+
 number_of_messages_to_display = 25 # this number stays static
 current_message_display_count = number_of_messages_to_display # this number will be updated
 
 web_server_thread = None
 redis_process = None
+
+UPLOAD_FOLDER = 'stored_files'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['ALLOWED_EXTENSIONS'] = get_allowed_extensions()
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def start_redis_server():
     global redis_process
@@ -55,6 +66,7 @@ def start_web_server():
     if web_server_thread is None or not web_server_thread.is_alive():
         with app.app_context():
             initialize_db()
+            init_sandbox()
         web_server_thread = threading.Thread(target=app.run, kwargs={
             'debug': False,
             'host': '0.0.0.0',
@@ -72,6 +84,14 @@ def initialize_sse():
             print("SSE blueprint already registered")
     else:
         print("Failed to initialize SSE due to Redis server issues")
+
+def build_react_app():
+    try:
+        # Adjust the path to run npm in the frontend directory
+        subprocess.run(["npm", "run", "build"], cwd=frontend_dir, check=True)
+        print("React app built successfully")
+    except subprocess.CalledProcessError as e:
+        print(f"Error building React app: {e}")
         
 def fetch_messages():
     try:
@@ -113,15 +133,8 @@ def fetch_messages():
         app.logger.error(f"An error occurred while fetching messages: {str(e)}")
         return []
     
-UPLOAD_FOLDER = 'stored_files'
-ALLOWED_EXTENSIONS = {'docx', 'pdf', 'xlsx', 'png', 'jpg', 'jpeg', 'py'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['ALLOWED_EXTENSIONS'] = ALLOWED_EXTENSIONS
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-    
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
 
 def shutdown():
     global redis_process
@@ -142,8 +155,24 @@ def home():
         fetch_messages()  
         return jsonify({"status": "success"}), 200
     else:
+        return send_from_directory(app.static_folder, 'index.html')
+
+@app.route('/<path:path>')
+def serve(path):
+    if os.path.exists(app.static_folder + '/' + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
+    
+# API route for fetching messages
+@app.route('/api/messages', methods=['GET', 'POST'])
+def handle_messages():
+    if request.method == 'POST':
+        fetch_messages()  
+        return jsonify({"status": "success"}), 200
+    else:
         messages = fetch_messages()
-        return render_template('index.html', messages=messages)
+        return jsonify(messages)
 
 @app.route('/scrolled_to_top', methods=['POST'])
 def scrolled_to_top():
@@ -196,20 +225,37 @@ def handle_settings():
 with app.app_context():
     init_sandbox()
 
-
 @app.route('/file_management')
 def file_management():
     files = get_stored_files()
-    return render_template('file_management.html', files=files)
+    allowed_extensions = ','.join(f'.{ext}' for ext in app.config['ALLOWED_EXTENSIONS'])
+    return render_template('file_management.html', files=files, allowed_extensions=allowed_extensions)
 
 @app.route('/upload_file', methods=['POST'])
 def upload_file():
-    if 'file' not in request.files:
+    if 'files' not in request.files:
         return redirect(url_for('file_management'))
-    file = request.files['file']
-    if file.filename == '':
+    
+    files = request.files.getlist('files')
+    
+    if not files or files[0].filename == '':
         return redirect(url_for('file_management'))
-    success, message = upload_file_op(file)
+    
+    for file in files:
+        success, message = store_file(file)
+        if not success:
+            return jsonify({'success': False, 'message': message}), 400
+    
+    return redirect(url_for('file_management'))
+
+@app.route('/create_new_file', methods=['POST'])
+def create_new_file():
+    filename = request.form.get('filename')
+    code_content = request.form.get('codeContent')
+    if not filename or not code_content:
+        return jsonify({'success': False, 'message': 'Filename and code content are required'}), 400
+    
+    success, message = create_new_file(filename, code_content)
     if success:
         return redirect(url_for('file_management'))
     return jsonify({'success': False, 'message': message}), 400
@@ -239,3 +285,16 @@ def stream():
     return Response(event_stream(), content_type='text/event-stream')
         
 initialize_sse()
+
+def run_flask():
+    app.run(debug=False, use_reloader=False, host='0.0.0.0', port=5000, threaded=True)
+
+# Start Flask in a separate thread
+flask_thread = threading.Thread(target=run_flask)
+flask_thread.start()
+
+# Function to build React app
+build_react_app()
+start_web_server()
+
+print("Web server started. Access the app at http://localhost:5000")

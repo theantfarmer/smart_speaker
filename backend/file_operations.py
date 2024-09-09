@@ -7,6 +7,29 @@ import shutil
 
 SANDBOX_DIR = 'sandbox'
 
+ALLOWED_EXTENSIONS = {
+    # Code files
+    'py', 'js', 'html', 'css', 'java', 'cpp', 'c', 'h', 'go', 'rb', 'php', 'swift', 'kt', 'ts',
+    
+    # Text files
+    'txt', 'md', 'json', 'xml', 'csv', 'yaml', 'yml',
+    
+    # Image files
+    'png', 'jpg', 'jpeg', 'gif', 'bmp', 'svg', 'webp',
+    
+    # Document files
+    'pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'odt', 'ods', 'odp',
+    
+    # Archive files
+    'zip', 'tar', 'gz',
+    
+    # Other common formats
+    'log', 'ini', 'cfg', 'env'
+}
+
+def get_allowed_extensions():
+    return ALLOWED_EXTENSIONS
+
 def get_stored_files():
     files = []
     sandbox_path = os.path.join(current_app.config['UPLOAD_FOLDER'], SANDBOX_DIR)
@@ -50,6 +73,25 @@ def store_file(file):
         
         return True, "File stored successfully"
     return False, "Invalid file type"
+
+def create_new_file(filename, code_content):
+    if not allowed_file(filename):
+        return False, "Invalid file type"
+    
+    secure_name = secure_filename(filename)
+    sandbox_path = os.path.join(current_app.config['UPLOAD_FOLDER'], SANDBOX_DIR)
+    file_path = os.path.join(sandbox_path, secure_name)
+    
+    try:
+        with open(file_path, 'w') as file:
+            file.write(code_content)
+        
+        # Set less restrictive permissions (owner read/write, group read, others read)
+        os.chmod(file_path, 0o644)
+        
+        return True, "File created successfully"
+    except Exception as e:
+        return False, f"Error creating file: {str(e)}"
 
 def allowed_file(filename):
     return '.' in filename and \
